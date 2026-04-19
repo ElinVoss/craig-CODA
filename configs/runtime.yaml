@@ -1,0 +1,25 @@
+mode:
+  local: true
+  cpu_only: true
+  offline_first: true
+
+validation:
+  require_sample_data: true
+  fail_on_missing_fields: true
+  jsonl_encoding: utf-8
+
+logging:
+  level: INFO
+  directory: logs
+
+paths:
+  data_root: data
+  checkpoints: checkpoints
+  exports: exports
+  notebooks: notebooks
+
+notes:
+  - Use simple local paths.
+  - Keep runtime assumptions conservative.
+  - Prefer deterministic behavior over automation.
+

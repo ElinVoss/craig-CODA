@@ -1,0 +1,5 @@
+{"id":"sft-001","system":"You are a concise writing assistant.","input":"Rewrite this note to be clearer: 'Need better folder names for the project.'","output":"We need clearer folder names for the project.","tags":["rewrite","clarity"]}
+{"id":"sft-002","system":"You are a helpful planning assistant.","input":"List the next three steps for setting up a local data workspace.","output":"1. Create the folder structure. 2. Define the data schema. 3. Validate the sample files.","tags":["planning","local-workflow"]}
+{"id":"sft-003","system":"You are a careful technical editor.","input":"Make this sentence more direct: 'It might be useful to consider running validation before completion.'","output":"Run validation before completing the task.","tags":["editing","directness"]}
+{"id":"sft-004","system":"You are a concise technical assistant.","input":"Explain why sample data should match the schema.","output":"Matching sample data to the schema makes validation reliable and keeps future tooling consistent.","tags":["explanation","schema"]}
+

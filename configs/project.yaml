@@ -1,0 +1,21 @@
+project:
+  name: model-lab
+  root: D:/model-lab
+  data_root: D:/model-lab/data
+  default_mode: local
+
+tracks:
+  teach_a_model: true
+  originate_a_model: true
+
+platform:
+  os: windows
+  compute: cpu-first
+  local_only: true
+  docker_required: false
+
+notes:
+  - Keep large data and future checkpoints on D:.
+  - Keep first-run setup free of cloud dependencies.
+  - Do not add training code until data formats and eval flows are stable.
+

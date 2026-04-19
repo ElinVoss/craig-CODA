@@ -1,0 +1,47 @@
+sft:
+  description: Supervised fine-tuning records for prompt-to-response examples.
+  required_fields:
+    - id
+    - system
+    - input
+    - output
+    - tags
+  notes:
+    - system provides the instruction context.
+    - input is the user-facing prompt or task.
+    - output is the desired assistant response.
+    - tags should be a short list of labels.
+
+preferences:
+  description: Preference comparison records for ranking responses.
+  required_fields:
+    - id
+    - prompt
+    - chosen
+    - rejected
+    - notes
+  notes:
+    - chosen is the preferred response.
+    - rejected is the lower-quality alternative.
+    - notes may explain the reason for the preference.
+
+pretrain:
+  description: Plain-text corpus for future from-scratch training experiments.
+  required_fields:
+    - text
+  notes:
+    - One text file may contain many paragraphs.
+    - Keep sources local and clearly labeled.
+
+eval:
+  description: Evaluation cases for measuring behavior, quality, and regressions.
+  required_fields:
+    - id
+    - task
+    - input
+    - expected_characteristics
+    - notes
+  notes:
+    - expected_characteristics describes the qualities a good answer should have.
+    - Keep eval cases stable and versioned.
+

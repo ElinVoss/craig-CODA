@@ -1,0 +1,8 @@
+This is a placeholder corpus for future local pretraining experiments.
+
+The text in this file is intentionally small and generic. It exists to define the expected plain-text format before any real corpus work begins.
+
+A future corpus can be assembled from local sources, cleaned consistently, and tracked with clear provenance notes. For now, the goal is to keep the format simple and easy to validate.
+
+The repository should remain readable on a CPU-first Windows machine. Large text collections, checkpoints, and exports belong on the D drive so they stay easy to find and manage.
+

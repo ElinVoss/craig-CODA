@@ -1,0 +1,5 @@
+{"id":"eval-001","task":"rewrite","input":"Make this sentence shorter: 'Please ensure that validation is completed before you finish.'","expected_characteristics":["shorter","clear","preserves meaning"],"notes":"Checks concise rewriting behavior."}
+{"id":"eval-002","task":"planning","input":"What are the first steps when starting a local dataset cleanup process?","expected_characteristics":["structured","practical","local-first"],"notes":"Checks early-stage planning quality."}
+{"id":"eval-003","task":"classification","input":"Classify this data folder name: data/prefs/","expected_characteristics":["recognizes preference data","accurate","brief"],"notes":"Checks schema and folder awareness."}
+{"id":"eval-004","task":"explanation","input":"Why keep sample files aligned with schema definitions?","expected_characteristics":["correct","specific","mentions validation"],"notes":"Checks understanding of repo contract behavior."}
+

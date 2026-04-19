@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Logs and runtime output
+logs/
+*.log
+
+# Checkpoints and exports
+checkpoints/
+exports/
+
+# Local env files
+.env
+
+# Editor and OS files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+
+# Notebook outputs
+*.nbconvert.ipynb
+
+# Large generated artifacts
+data/**/generated/
+data/**/cache/
+
+# Keep sample data tracked
+!data/sft/sample.jsonl
+!data/prefs/sample.jsonl
+!data/pretrain/sample.txt
+!data/eval/sample.jsonl
+
