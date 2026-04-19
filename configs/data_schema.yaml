@@ -6,6 +6,7 @@ sft:
     - input
     - output
     - tags
+    - source_file
   notes:
     - system provides the instruction context.
     - input is the user-facing prompt or task.
@@ -20,6 +21,7 @@ preferences:
     - chosen
     - rejected
     - notes
+    - source_file
   notes:
     - chosen is the preferred response.
     - rejected is the lower-quality alternative.
@@ -41,7 +43,7 @@ eval:
     - input
     - expected_characteristics
     - notes
+    - source_file
   notes:
     - expected_characteristics describes the qualities a good answer should have.
     - Keep eval cases stable and versioned.
-

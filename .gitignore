@@ -23,6 +23,15 @@ logs/
 checkpoints/
 exports/
 
+# Pipeline-generated artifacts
+data/raw/_ingested/
+data/clean/examples/
+data/clean/manifest.json
+data/pretrain/from_cleaned_corpus.txt
+data/sft/generated.jsonl
+data/prefs/generated.jsonl
+data/eval/generated.jsonl
+
 # Local env files
 .env
 
@@ -44,4 +53,3 @@ data/**/cache/
 !data/prefs/sample.jsonl
 !data/pretrain/sample.txt
 !data/eval/sample.jsonl
-

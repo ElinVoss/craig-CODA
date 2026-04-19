@@ -1,0 +1,21 @@
+build:
+  pretrain_output: data/pretrain/from_cleaned_corpus.txt
+  sft_output: data/sft/generated.jsonl
+  prefs_output: data/prefs/generated.jsonl
+  eval_output: data/eval/generated.jsonl
+  include_sample_outputs: true
+
+heuristics:
+  sft:
+    source_paragraph: first
+    output_limit_chars: 240
+  prefs:
+    source_paragraphs: first_two
+  eval:
+    source_paragraph: first
+
+notes:
+  - Dataset generation is placeholder and rule-based.
+  - The outputs are traceable to source files for later review.
+  - This phase does not attempt intelligent labeling.
+

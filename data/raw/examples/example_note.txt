@@ -1,0 +1,6 @@
+Model lab workspace note.
+
+This tiny example text demonstrates a simple local source file.
+
+The pipeline should keep the original text intact in raw storage, then normalize it conservatively for downstream dataset creation.
+

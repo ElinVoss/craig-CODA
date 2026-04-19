@@ -1,0 +1,3 @@
+{"id":"raw-001","text":"This JSONL source is treated as plain text in phase two.","kind":"note"}
+{"id":"raw-002","text":"It is not semantically labeled by the pipeline.","kind":"note"}
+

@@ -1,0 +1,16 @@
+defaults:
+  lowercase: false
+  remove_short_lines: false
+  min_line_length: 3
+  remove_duplicate_lines: false
+  preserve_blank_lines: true
+  max_blank_lines: 2
+  supported_extensions:
+    - .txt
+    - .md
+    - .jsonl
+
+notes:
+  - Cleaning is conservative by default.
+  - JSONL source files are treated as text and copied into the raw staging output without semantic parsing.
+  - The pipeline does not destroy original files in data/raw.

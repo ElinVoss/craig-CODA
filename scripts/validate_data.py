@@ -25,15 +25,27 @@ REQUIRED_DIRS = [
 SCHEMAS = {
     "sft": {
         "path": ROOT / "data/sft/sample.jsonl",
-        "required": ["id", "system", "input", "output", "tags"],
+        "required": ["id", "system", "input", "output", "tags", "source_file"],
     },
     "prefs": {
         "path": ROOT / "data/prefs/sample.jsonl",
-        "required": ["id", "prompt", "chosen", "rejected", "notes"],
+        "required": ["id", "prompt", "chosen", "rejected", "notes", "source_file"],
     },
     "eval": {
         "path": ROOT / "data/eval/sample.jsonl",
-        "required": ["id", "task", "input", "expected_characteristics", "notes"],
+        "required": ["id", "task", "input", "expected_characteristics", "notes", "source_file"],
+    },
+    "generated_sft": {
+        "path": ROOT / "data/sft/generated.jsonl",
+        "required": ["id", "system", "input", "output", "tags", "source_file"],
+    },
+    "generated_prefs": {
+        "path": ROOT / "data/prefs/generated.jsonl",
+        "required": ["id", "prompt", "chosen", "rejected", "notes", "source_file"],
+    },
+    "generated_eval": {
+        "path": ROOT / "data/eval/generated.jsonl",
+        "required": ["id", "task", "input", "expected_characteristics", "notes", "source_file"],
     },
 }
 
@@ -75,6 +87,8 @@ def main() -> int:
 
     for name, spec in SCHEMAS.items():
         path = spec["path"]
+        if name.startswith("generated_") and not path.exists():
+            continue
         if not path.is_file():
             errors.append(f"Missing sample file: {path.relative_to(ROOT)}")
             continue
@@ -84,6 +98,19 @@ def main() -> int:
             print(f"OK {name}: {len(records)} records")
         except ValueError as exc:
             errors.append(str(exc))
+
+    raw_examples = list((ROOT / "data" / "raw" / "examples").rglob("*"))
+    if any(path.is_file() for path in raw_examples):
+        for generated in [
+            ROOT / "data" / "pretrain" / "from_cleaned_corpus.txt",
+            ROOT / "data" / "sft" / "generated.jsonl",
+            ROOT / "data" / "prefs" / "generated.jsonl",
+            ROOT / "data" / "eval" / "generated.jsonl",
+        ]:
+            if not generated.exists():
+                errors.append(f"Missing generated output: {generated.relative_to(ROOT)}")
+            elif generated.is_file() and generated.stat().st_size == 0:
+                errors.append(f"Empty generated output: {generated.relative_to(ROOT)}")
 
     if errors:
         print("Validation failed:")
@@ -97,4 +124,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

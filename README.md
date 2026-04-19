@@ -9,12 +9,15 @@ It is organized around two tracks that share one data core:
 
 This repository is the foundation for both tracks. It does not yet include training code.
 
+Phase two adds a simple, local ingestion and dataset-prep pipeline that turns raw text-like files into cleaned text and placeholder dataset outputs.
+
 ## What is in this repo
 
 - Standard folder layout for raw data, cleaned data, supervised fine-tuning data, preference data, pretraining text, and eval data.
 - Lightweight config files that define the project, schema expectations, and runtime defaults.
 - Bootstrap and validation scripts for Windows.
 - Small sample data files that show the expected formats.
+- A conservative local pipeline for ingesting, cleaning, and building placeholder datasets.
 
 ## Folder structure
 
@@ -33,6 +36,8 @@ model-lab/
 ## Data folders
 
 - `data/raw/`: original source material as captured locally
+- `data/raw/examples/`: tiny example inputs used to smoke-test the pipeline
+- `data/raw/_ingested/`: staged copies of raw files created by the ingestion step
 - `data/clean/`: cleaned or normalized versions of raw data
 - `data/sft/`: supervised fine-tuning examples
 - `data/prefs/`: ranked preference or comparison records
@@ -79,6 +84,46 @@ You can create the expected folders and a venv with:
 
 The script is conservative. It does not install heavy packages.
 
+## Phase two pipeline
+
+The pipeline is intentionally simple and rule-based. It does not label data intelligently. It only prepares outputs from local text using clear heuristics.
+
+### Supported raw inputs
+
+- `.txt`
+- `.md`
+- `.jsonl` treated as plain text in this phase
+
+Unsupported file types are ignored safely.
+
+### Place raw files
+
+Put source files in `data/raw/` or a subfolder like `data/raw/examples/`.
+Do not overwrite raw source files with cleaned outputs.
+
+### Run the full pipeline
+
+```powershell
+python .\scripts\run_pipeline.py
+```
+
+This runs:
+
+1. ingest raw files into `data/raw/_ingested/`
+2. clean text into `data/clean/`
+3. build placeholder dataset outputs
+4. validate the results
+
+### Output folders after phase two
+
+- `data/clean/`: conservative cleaned text artifacts, one per staged input
+- `data/pretrain/`: assembled plain-text corpus for future pretraining work
+- `data/sft/`: rule-based supervised examples generated from cleaned text
+- `data/prefs/`: rule-based preference pairs generated from cleaned text
+- `data/eval/`: rule-based eval cases generated from cleaned text
+
+Generated SFT, preference, and eval files are placeholders. They are traceable to source files, but they are not semantic labels from a real annotator or model.
+
 ## Validate the sample data
 
 Run:
@@ -88,6 +133,8 @@ python .\scripts\validate_data.py
 ```
 
 This checks required folders and validates the sample JSONL files against the current schema family.
+
+You can also validate generated outputs after running the pipeline with the same script.
 
 ## Next milestone
 
@@ -103,6 +150,7 @@ Only after those data formats and eval flows are stable should training code be 
 ## Intentionally not implemented yet
 
 - model training
+- tokenizer training
 - inference serving
 - checkpoint management logic beyond folders
 - dataset downloaders
@@ -111,3 +159,8 @@ Only after those data formats and eval flows are stable should training code be 
 - GPU-specific code paths
 - notebook-driven workflow automation
 
+## Raw file handling notes
+
+- The pipeline never modifies files in `data/raw/` directly.
+- Ingestion creates staged copies in `data/raw/_ingested/`.
+- Cleaning and dataset building operate on staged copies, not the originals.
