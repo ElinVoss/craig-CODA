@@ -20,6 +20,9 @@ REQUIRED_DIRS = [
     "logs",
     "checkpoints",
     "exports",
+    "artifacts/corpus",
+    "artifacts/tokenizers",
+    "artifacts/reports",
 ]
 
 SCHEMAS = {
@@ -46,6 +49,30 @@ SCHEMAS = {
     "generated_eval": {
         "path": ROOT / "data/eval/generated.jsonl",
         "required": ["id", "task", "input", "expected_characteristics", "notes", "source_file"],
+    },
+    "prepared_corpus": {
+        "path": ROOT / "artifacts/corpus/prepared_corpus.txt",
+        "required_text": True,
+    },
+    "tokenizer_report_text": {
+        "path": ROOT / "artifacts/reports/tokenizer_report.txt",
+        "required_text": True,
+    },
+    "tokenizer_report_json": {
+        "path": ROOT / "artifacts/reports/tokenizer_report.json",
+        "required_json": True,
+    },
+    "tokenizer_config": {
+        "path": ROOT / "artifacts/tokenizers/default/tokenizer_config.json",
+        "required_json": True,
+    },
+    "special_tokens_map": {
+        "path": ROOT / "artifacts/tokenizers/default/special_tokens_map.json",
+        "required_json": True,
+    },
+    "training_info": {
+        "path": ROOT / "artifacts/tokenizers/default/training_info.json",
+        "required_json": True,
     },
 }
 
@@ -93,10 +120,18 @@ def main() -> int:
             errors.append(f"Missing sample file: {path.relative_to(ROOT)}")
             continue
         try:
-            records = read_jsonl(path)
-            validate_required_fields(path, records, spec["required"])
-            print(f"OK {name}: {len(records)} records")
-        except ValueError as exc:
+            if spec.get("required_text"):
+                if path.stat().st_size == 0:
+                    raise ValueError(f"{path}: empty file")
+                print(f"OK {name}: text artifact present")
+            elif spec.get("required_json"):
+                json.loads(path.read_text(encoding="utf-8"))
+                print(f"OK {name}: json artifact present")
+            else:
+                records = read_jsonl(path)
+                validate_required_fields(path, records, spec["required"])
+                print(f"OK {name}: {len(records)} records")
+        except (ValueError, json.JSONDecodeError) as exc:
             errors.append(str(exc))
 
     raw_examples = list((ROOT / "data" / "raw" / "examples").rglob("*"))

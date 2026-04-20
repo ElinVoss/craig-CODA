@@ -1,0 +1,27 @@
+inputs:
+  roots:
+    - data/clean
+  extensions:
+    - .txt
+  include_markdown: false
+  max_files: 0
+  max_bytes_per_file: 0
+
+filtering:
+  preserve_case: true
+  min_line_length: 1
+  remove_duplicate_lines: false
+  remove_short_lines: false
+  strip_whitespace: true
+  max_blank_lines: 2
+
+output:
+  corpus_file: artifacts/corpus/prepared_corpus.txt
+  manifest_file: artifacts/corpus/prepared_corpus_manifest.json
+  report_file: artifacts/reports/corpus_prep_report.txt
+
+notes:
+  - Prepared corpus is assembled from cleaned text artifacts only.
+  - The corpus is deterministic and source-traceable.
+  - If the corpus is small, that is expected in this phase and should be reported honestly.
+

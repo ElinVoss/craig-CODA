@@ -1,0 +1,36 @@
+tokenizer:
+  type: wordlevel
+  vocab_size: 1000
+  special_tokens:
+    - "[PAD]"
+    - "[UNK]"
+    - "[BOS]"
+    - "[EOS]"
+    - "[CLS]"
+    - "[SEP]"
+    - "[MASK]"
+
+normalization:
+  lowercase: false
+  strip_accents: false
+
+training:
+  corpus_path: artifacts/corpus/prepared_corpus.txt
+  output_dir: artifacts/tokenizers/default
+  min_frequency: 1
+  show_progress: false
+
+inspection_samples:
+  - "Model lab workspace note."
+  - "This tokenizer is a local segmentation artifact."
+  - "D:\\Model-Lab keeps data local."
+
+reporting:
+  report_text: artifacts/reports/tokenizer_report.txt
+  report_json: artifacts/reports/tokenizer_report.json
+  metadata_json: artifacts/tokenizers/default/training_info.json
+
+notes:
+  - This tokenizer is not a model.
+  - The goal is to create a reusable local segmentation artifact for later work.
+

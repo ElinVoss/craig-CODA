@@ -31,6 +31,14 @@ data/pretrain/from_cleaned_corpus.txt
 data/sft/generated.jsonl
 data/prefs/generated.jsonl
 data/eval/generated.jsonl
+model-lab.zip
+artifacts/corpus/*
+artifacts/tokenizers/*
+artifacts/reports/*
+!artifacts/.gitkeep
+!artifacts/corpus/.gitkeep
+!artifacts/tokenizers/.gitkeep
+!artifacts/reports/.gitkeep
 
 # Local env files
 .env

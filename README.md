@@ -124,6 +124,54 @@ This runs:
 
 Generated SFT, preference, and eval files are placeholders. They are traceable to source files, but they are not semantic labels from a real annotator or model.
 
+## Phase three tokenizer pipeline
+
+Phase three adds a local corpus-prep and tokenizer-training flow. This creates a reusable tokenizer artifact from the cleaned corpus. It does not train a model.
+
+### What it does
+
+- assembles a deterministic prepared corpus from cleaned text in `data/clean/`
+- trains a local tokenizer with the Hugging Face `tokenizers` library
+- writes tokenizer artifacts and simple diagnostics under `artifacts/`
+- validates that the tokenizer can be loaded and used for sample encode/decode checks
+
+### New artifact locations
+
+- `artifacts/corpus/prepared_corpus.txt`: prepared tokenizer corpus
+- `artifacts/corpus/prepared_corpus_manifest.json`: source manifest for the prepared corpus
+- `artifacts/reports/corpus_prep_report.txt`: corpus prep summary
+- `artifacts/tokenizers/default/tokenizer.json`: trained tokenizer
+- `artifacts/tokenizers/default/tokenizer_config.json`: tokenizer config snapshot
+- `artifacts/tokenizers/default/special_tokens_map.json`: special token listing
+- `artifacts/tokenizers/default/training_info.json`: training metadata
+- `artifacts/reports/tokenizer_report.txt`: human-readable inspection report
+- `artifacts/reports/tokenizer_report.json`: structured inspection report
+
+### Prepare and train the tokenizer
+
+From the repo root:
+
+```powershell
+python .\scripts\run_tokenizer_pipeline.py
+```
+
+That runs:
+
+1. `scripts/prepare_corpus.py`
+2. `scripts/train_tokenizer.py`
+3. `scripts/inspect_tokenizer.py`
+4. `scripts/validate_data.py`
+
+### Dependency note
+
+Phase three adds one lightweight dependency:
+
+- `tokenizers` for local tokenizer training and loading
+
+### Important limitation
+
+The tokenizer is only a local segmentation artifact. It is not a trained language model and it does not imply any semantic capability by itself.
+
 ## Validate the sample data
 
 Run:
@@ -150,7 +198,6 @@ Only after those data formats and eval flows are stable should training code be 
 ## Intentionally not implemented yet
 
 - model training
-- tokenizer training
 - inference serving
 - checkpoint management logic beyond folders
 - dataset downloaders
