@@ -1,0 +1,20 @@
+dataset_path: data/sft/generated.jsonl
+tokenizer_dir: artifacts/tokenizers/default
+max_sequence_length: 256
+batch_size: 2
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-4
+max_steps: 10
+output_dir: artifacts/checkpoints/tiny-qwen3-sft
+schema_expectations:
+  required_fields:
+    - id
+    - system
+    - input
+    - output
+    - source_file
+notes:
+  - SFT is a later-stage behavior-shaping path.
+  - This phase includes a schema-validating scaffold, not a fully tuned SFT recipe.
+  - Use after scratch pretraining artifacts exist.
+

@@ -1,0 +1,23 @@
+tokenizer_dir: artifacts/tokenizers/default
+checkpoint_dir: artifacts/checkpoints/tiny-qwen3-scratch
+output_report_json: artifacts/eval_reports/eval_report.json
+output_report_text: artifacts/eval_reports/eval_report.txt
+sample_count: 4
+generation:
+  max_new_tokens: 48
+  temperature: 0.9
+  top_k: 20
+  do_sample: true
+  mode: craig_default
+datasets:
+  - path: exports/user_model_package/style_training/eval_set_curated.jsonl
+    type: user_model_curated
+  - path: data/eval/generated.jsonl
+    type: repo_generated_eval
+rubrics:
+  automatic_checks_enabled: true
+  manual_review_enabled: true
+notes:
+  - Automatic checks are lightweight and string-based.
+  - Reports are modest and meant for local iteration, not benchmarking claims.
+

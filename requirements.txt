@@ -1,2 +1,9 @@
 pyyaml>=6.0
 tokenizers>=0.20
+torch>=2.4
+transformers>=4.52
+tqdm>=4.66
+safetensors>=0.4
+anthropic>=0.25
+openai>=1.30
+groq>=0.5

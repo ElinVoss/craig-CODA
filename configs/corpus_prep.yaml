@@ -1,6 +1,8 @@
 inputs:
   roots:
     - data/clean
+    - data/clean/personal
+    - data/clean/converted
   extensions:
     - .txt
   include_markdown: false

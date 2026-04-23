@@ -1,0 +1,26 @@
+[
+  {
+    "source_file": "chatgpt_user_messages.txt",
+    "cleaned_file": "data/clean/personal/chatgpt_user_messages.txt.cleaned.txt"
+  },
+  {
+    "source_file": "facebook_messages.txt",
+    "cleaned_file": "data/clean/personal/facebook_messages.txt.cleaned.txt"
+  },
+  {
+    "source_file": "onedrive_personal_docs.txt",
+    "cleaned_file": "data/clean/personal/onedrive_personal_docs.txt.cleaned.txt"
+  },
+  {
+    "source_file": "personal_notes.txt",
+    "cleaned_file": "data/clean/personal/personal_notes.txt.cleaned.txt"
+  },
+  {
+    "source_file": "recovered_drive.txt",
+    "cleaned_file": "data/clean/personal/recovered_drive.txt.cleaned.txt"
+  },
+  {
+    "source_file": "user_model_package.txt",
+    "cleaned_file": "data/clean/personal/user_model_package.txt.cleaned.txt"
+  }
+]

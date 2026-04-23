@@ -1,6 +1,6 @@
 tokenizer:
-  type: wordlevel
-  vocab_size: 1000
+  type: bpe
+  vocab_size: 4096
   special_tokens:
     - "[PAD]"
     - "[UNK]"
@@ -17,7 +17,7 @@ normalization:
 training:
   corpus_path: artifacts/corpus/prepared_corpus.txt
   output_dir: artifacts/tokenizers/default
-  min_frequency: 1
+  min_frequency: 2
   show_progress: false
 
 inspection_samples:
@@ -31,6 +31,8 @@ reporting:
   metadata_json: artifacts/tokenizers/default/training_info.json
 
 notes:
-  - This tokenizer is not a model.
+  - BPE at 4096 tokens trained on personal corpus (16 MB).
+  - Switched from WordLevel (96 tokens) to BPE for proper subword coverage.
   - The goal is to create a reusable local segmentation artifact for later work.
+
 

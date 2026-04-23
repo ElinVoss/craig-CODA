@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import sys
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_DIRS = [
@@ -23,6 +25,10 @@ REQUIRED_DIRS = [
     "artifacts/corpus",
     "artifacts/tokenizers",
     "artifacts/reports",
+    "artifacts/models",
+    "artifacts/checkpoints",
+    "artifacts/samples",
+    "artifacts/eval_reports",
 ]
 
 SCHEMAS = {
@@ -73,6 +79,26 @@ SCHEMAS = {
     "training_info": {
         "path": ROOT / "artifacts/tokenizers/default/training_info.json",
         "required_json": True,
+    },
+    "model_architecture_config": {
+        "path": ROOT / "configs/model_architecture.yaml",
+        "required_yaml": True,
+    },
+    "training_scratch_config": {
+        "path": ROOT / "configs/training_scratch.yaml",
+        "required_yaml": True,
+    },
+    "training_sft_config": {
+        "path": ROOT / "configs/training_sft.yaml",
+        "required_yaml": True,
+    },
+    "runtime_modes_config": {
+        "path": ROOT / "configs/runtime_modes.yaml",
+        "required_yaml": True,
+    },
+    "eval_config": {
+        "path": ROOT / "configs/eval.yaml",
+        "required_yaml": True,
     },
 }
 
@@ -127,6 +153,9 @@ def main() -> int:
             elif spec.get("required_json"):
                 json.loads(path.read_text(encoding="utf-8"))
                 print(f"OK {name}: json artifact present")
+            elif spec.get("required_yaml"):
+                yaml.safe_load(path.read_text(encoding="utf-8"))
+                print(f"OK {name}: yaml artifact present")
             else:
                 records = read_jsonl(path)
                 validate_required_fields(path, records, spec["required"])
@@ -146,6 +175,14 @@ def main() -> int:
                 errors.append(f"Missing generated output: {generated.relative_to(ROOT)}")
             elif generated.is_file() and generated.stat().st_size == 0:
                 errors.append(f"Empty generated output: {generated.relative_to(ROOT)}")
+
+    checkpoint_root = ROOT / "artifacts" / "checkpoints" / "tiny-qwen3-scratch"
+    checkpoint_dirs = [path for path in checkpoint_root.iterdir() if path.is_dir()] if checkpoint_root.exists() else []
+    for checkpoint_dir in checkpoint_dirs:
+        for required in ["config.json", "trainer_state.json"]:
+            path = checkpoint_dir / required
+            if not path.is_file():
+                errors.append(f"Checkpoint missing required file: {path.relative_to(ROOT)}")
 
     if errors:
         print("Validation failed:")

@@ -1,0 +1,26 @@
+[
+  {
+    "source_file": ".progress.jsonl",
+    "cleaned_file": "data/clean/converted/.progress.txt"
+  },
+  {
+    "source_file": "douglass_autobiography.txt",
+    "cleaned_file": "data/clean/converted/douglass_autobiography.txt"
+  },
+  {
+    "source_file": "franklin_autobiography.txt",
+    "cleaned_file": "data/clean/converted/franklin_autobiography.txt"
+  },
+  {
+    "source_file": "huckleberry_finn.parts.jsonl",
+    "cleaned_file": "data/clean/converted/huckleberry_finn.parts.txt"
+  },
+  {
+    "source_file": "moby_dick.txt",
+    "cleaned_file": "data/clean/converted/moby_dick.txt"
+  },
+  {
+    "source_file": "walden.txt",
+    "cleaned_file": "data/clean/converted/walden.txt"
+  }
+]

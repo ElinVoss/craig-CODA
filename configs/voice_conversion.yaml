@@ -1,0 +1,85 @@
+# Voice Conversion Configuration
+# Controls which books get converted, via which provider, at what chunk size.
+
+output_dir: data/raw/converted
+progress_file: data/raw/converted/.progress.jsonl
+chunk_words: 700        # target words per API call
+max_retries: 3
+retry_delay: 5          # seconds between retries
+
+# Gutenberg plain-text mirror (no registration required)
+gutenberg_mirror: https://www.gutenberg.org/files/{id}/{id}-0.txt
+
+books:
+  # --- OpenAI GPT-4o batch ---
+  - id: moby_dick
+    title: "Moby Dick"
+    author: "Herman Melville"
+    gutenberg_id: 2701
+    gutenberg_url: https://www.gutenberg.org/files/2701/2701-0.txt
+    provider: openai
+    model: gpt-4o
+
+  - id: walden
+    title: "Walden"
+    author: "Henry David Thoreau"
+    gutenberg_id: 205
+    gutenberg_url: https://www.gutenberg.org/files/205/205-0.txt
+    provider: openai
+    model: gpt-4o
+
+  - id: douglass_autobiography
+    title: "Narrative of the Life of Frederick Douglass"
+    author: "Frederick Douglass"
+    gutenberg_id: 23
+    gutenberg_url: https://www.gutenberg.org/files/23/23-0.txt
+    provider: openai
+    model: gpt-4o
+
+  - id: franklin_autobiography
+    title: "The Autobiography of Benjamin Franklin"
+    author: "Benjamin Franklin"
+    gutenberg_id: 148
+    gutenberg_url: https://www.gutenberg.org/ebooks/148.txt.utf-8
+    provider: openai
+    model: gpt-4o
+
+  # --- skipped (bad Gutenberg IDs — do not attempt) ---
+  # science_of_getting_rich: ID 1081 is Dead Souls (wrong book)
+  # master_key_system: ID 22971 file path wrong
+  # law_of_success: ID 69514 is The Best Man by Grace Hill (wrong book)
+  # the_prince: skipped per user instruction
+  # as_a_man_thinketh: skipped per user instruction
+
+  # --- Groq llama-3.3-70b-versatile (parallel chunks, fast) ---
+  - id: huckleberry_finn
+    title: "Adventures of Huckleberry Finn"
+    author: "Mark Twain"
+    gutenberg_id: 76
+    gutenberg_url: https://www.gutenberg.org/files/76/76-0.txt
+    provider: openai
+    model: gpt-4o
+
+  - id: twain_essays
+    title: "Life on the Mississippi"
+    author: "Mark Twain"
+    gutenberg_id: 245
+    gutenberg_url: https://www.gutenberg.org/files/245/245-0.txt
+    provider: openai
+    model: gpt-4o
+
+  - id: pride_and_prejudice
+    title: "Pride and Prejudice"
+    author: "Jane Austen"
+    gutenberg_id: 1342
+    gutenberg_url: https://www.gutenberg.org/files/1342/1342-0.txt
+    provider: openai
+    model: gpt-4o
+
+  - id: crime_and_punishment
+    title: "Crime and Punishment"
+    author: "Fyodor Dostoevsky"
+    gutenberg_id: 2554
+    gutenberg_url: https://www.gutenberg.org/files/2554/2554-0.txt
+    provider: openai
+    model: gpt-4o

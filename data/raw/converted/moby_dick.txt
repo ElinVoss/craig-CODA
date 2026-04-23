@@ -1,0 +1,1810 @@
+working through this in numbered sections. part 1 below. drop "continue" when youre ready for the next batch.
+
+---
+
+# MOBY DICK — CRAIG'S CUT
+## Part 1: Sub-Sub through Chapter 5
+
+---
+
+**[The Editor's Note, on the Sub-Sub Librarian]**
+
+this guy dug through everything. the long Vaticans, the street stalls, every library and gutter-pamphlet he could find, pulling out whale references wherever they showed. sacred or profane. didn't matter to him.
+
+what he came back with isn't gospel cetology. don't mistake it for that. as far as the ancient authors go, and the poets—these extracts are worth something exactly one way: they show you the panorama. everything mankind ever thought, said, imagined, and sung about Leviathan, across nations and generations, including ours. a glancing bird's-eye view. no more than that.
+
+fare thee well, poor devil Sub-Sub. you belong to that hopeless sallow tribe no wine in this world will ever warm. pale sherry would be too strong for you. but we love sitting with you sometimes—feeling that particular poor-devil sadness, growing convivial on tears. and here's the plain truth to send you off with: give it up. the more pains you take to please the world, the less thanks you'll ever see. wish i could clear out Hampton Court and the Tuileries just for you. but swallow it down and get up to the royal-mast. your friends who went before are already clearing heaven out—running off the long-pampered angels, making room. down here you strike your splintered heart against other splintered hearts. up there, they say, unbreakable glass.
+
+---
+
+**EXTRACTS.**
+
+*(Supplied by a Sub-Sub-Librarian.)*
+
+"And God created great whales." —Genesis
+
+"Leviathan maketh a path to shine after him; One would think the deep to be hoary." —Job
+
+"Now the Lord had prepared a great fish to swallow up Jonah." —Jonah
+
+"There go the ships; there is that Leviathan whom thou hast made to play therein." —Psalms
+
+"In that day, the Lord with his sore, and great, and strong sword, shall punish Leviathan the piercing serpent, even Leviathan that crooked serpent; and he shall slay the dragon that is in the sea." —Isaiah
+
+"And what thing soever besides cometh within the chaos of this monster's mouth, be it beast, boat, or stone, down it goes all incontinently that foul great swallow of his, and perisheth in the bottomless gulf of his paunch." —Holland's Plutarch's Morals
+
+"The Indian Sea breedeth the most and the biggest fishes that are: among which the Whales and Whirlpooles called Balaene, take up as much in length as four acres or arpens of land." —Holland's Pliny
+
+"Scarcely had we proceeded two days on the sea, when about sunrise a great many Whales and other monsters of the sea, appeared. Among the former, one was of a most monstrous size... This came towards us, open-mouthed, raising the waves on all sides, and beating the sea before him into a foam." —Tooke's Lucian
+
+"He visited this country also with a view of catching horse-whales, which had bones of very great value for their teeth, of which he brought some to the king... The best whales were catched in his own country, of which some were forty-eight, some fifty yards long. He said that he was one of six who had killed sixty in two days." —Other's verbal narrative, taken down by King Alfred, A.D. 890
+
+"And whereas all the other things, whether beast or vessel, that enter into the dreadful gulf of this monster's mouth, are immediately lost and swallowed up, the sea-gudgeon retires into it in great security, and there sleeps." —Montaigne
+
+"Let us fly, let us fly! Old Nick take me if it is not Leviathan described by the noble prophet Moses in the life of patient Job." —Rabelais
+
+"This whale's liver was two cartloads." —Stowe's Annals
+
+"The great Leviathan that maketh the seas to seethe like boiling pan." —Lord Bacon's Version of the Psalms
+
+"Touching that monstrous bulk of the whale or ork we have received nothing certain. They grow exceeding fat, insomuch that an incredible quantity of oil will be extracted out of one whale." —Ibid.
+
+"The sovereignest thing on earth is parmacetti for an inward bruise." —King Henry
+
+"Very like a whale." —Hamlet
+
+"Which to secure, no skill of leach's art Mote him availle, but to returne againe To his wound's worker, that with lowly dart, Dinting his breast, had bred his restless paine, Like as the wounded whale to shore flies thro' the maine." —The Fairie Queen
+
+"Immense as whales, the motion of whose vast bodies can in a peaceful calm trouble the ocean till it boil." —Sir William Davenant
+
+"What spermacetti is, men might justly doubt, since the learned Hosmannus in his work of thirty years, saith plainly, Nescio quid sit." —Sir T. Browne
+
+"By art is created that great Leviathan, called a Commonwealth or State—(in Latin, Civitas) which is but an artificial man." —Opening sentence of Hobbes's Leviathan
+
+"Silly Mansoul swallowed it without chewing, as if it had been a sprat in the mouth of a whale." —Pilgrim's Progress
+
+"That sea beast Leviathan, which God of all his works Created hugest that swim the ocean stream." —Paradise Lost
+
+"There Leviathan, Hugest of living creatures, in the deep Stretched like a promontory sleeps or swims, And seems a moving land; and at his gills Draws in, and at his breath spouts out a sea." —Ibid.
+
+"The mighty whales which swim in a sea of water, and have a sea of oil swimming in them." —Fuller's Profane and Holy State
+
+"So close behind some promontory lie The huge Leviathan to attend their prey, And give no chance, but swallow in the fry, Which through their gaping jaws mistake the way." —Dryden's Annus Mirabilis
+
+"While the whale is floating at the stern of the ship, they cut off his head, and tow it with a boat as near the shore as it will come; but it will be aground in twelve or thirteen feet water." —Thomas Edge's Ten Voyages to Spitzbergen
+
+"In their way they saw many whales sporting in the ocean, and in wantonness fuzzing up the water through their pipes and vents, which nature has placed on their shoulders." —Sir T. Herbert's Voyages
+
+"Here they saw such huge troops of whales, that they were forced to proceed with a great deal of caution for fear they should run their ship upon them." —Schouten's Sixth Circumnavigation
+
+"We set sail from the Elbe, wind N.E. in the ship called The Jonas-in-the-Whale... Some say the whale can't open his mouth, but that is a fable... I was told of a whale taken near Shetland, that had above a barrel of herrings in his belly... One of our harpooneers told me that he caught once a whale in Spitzbergen that was white all over." —A Voyage to Greenland, A.D. 1671
+
+"Several whales have come in upon this coast (Fife) Anno 1652, one eighty feet in length of the whale-bone kind came in... The jaws of it stand for a gate in the garden of Pitferren." —Sibbald's Fife and Kinross
+
+"Myself have agreed to try whether I can master and kill this Sperma-ceti whale, for I could never hear of any of that sort that was killed by any man, such is his fierceness and swiftness." —Richard Strafford's Letter from the Bermudas, 1668
+
+"Whales in the sea God's voice obey." —N. E. Primer
+
+"We saw also abundance of large whales, there being more in those southern seas, as I may say, by a hundred to one; than we have to the northward of us." —Captain Cowley's Voyage round the Globe, A.D. 1729
+
+"...and the breath of the whale is frequently attended with such an insupportable smell, as to bring on a disorder of the brain." —Ulloa's South America
+
+"If we compare land animals in respect to magnitude, with those that take up their abode in the deep, we shall find they will appear contemptible in the comparison. The whale is doubtless the largest animal in creation." —Goldsmith, Nat. Hist.
+
+"If you should write a fable for little fishes, you would make them speak like great whales." —Goldsmith to Johnson
+
+"In the afternoon we saw what was supposed to be a rock, but it was found to be a dead whale, which some Asiatics had killed, and were then towing ashore. They seemed to endeavor to conceal themselves behind the whale, in order to avoid being seen by us." —Cook's Voyages
+
+"The larger whales, they seldom venture to attack. They stand in so great dread of some of them, that when out at sea they are afraid to mention even their names, and carry dung, lime-stone, juniper-wood, and some other articles of the same nature in their boats, in order to terrify and prevent their too near approach." —Uno Von Troil's Letters on Banks's and Solander's Voyage to Iceland, 1772
+
+"The Spermacetti Whale found by the Nantuckois, is an active, fierce animal, and requires vast address and boldness in the fishermen." —Thomas Jefferson's Whale Memorial to the French minister, 1778
+
+"And pray, sir, what in the world is equal to it?" —Edmund Burke's reference in Parliament to the Nantucket Whale-Fishery
+
+"Spain—a great whale stranded on the shores of Europe." —Edmund Burke
+
+"A tenth branch of the king's ordinary revenue... is the right to royal fish, which are whale and sturgeon. And these, when either thrown ashore or caught near the coast, are the property of the king." —Blackstone
+
+"Ten or fifteen gallons of blood are thrown out of the heart at a stroke, with immense velocity." —John Hunter's account of the dissection of a whale. (A small sized one.)
+
+"The aorta of a whale is larger in the bore than the main pipe of the water-works at London Bridge, and the water roaring in its passage through that pipe is inferior in impetus and velocity to the blood gushing from the whale's heart." —Paley's Theology
+
+"The whale is a mammiferous animal without hind feet." —Baron Cuvier
+
+"Mad with the agonies he endures from these fresh attacks, the infuriated Sperm Whale rolls over and over; he rears his enormous head, and with wide expanded jaws snaps at everything around him; he rushes at the boats with his head; they are propelled before him with vast swiftness, and sometimes utterly destroyed." —Thomas Beale's History of the Sperm Whale, 1839
+
+"The Cachalot (Sperm Whale) is not only better armed than the True Whale (Greenland or Right Whale) in possessing a formidable weapon at either extremity of its body, but also more frequently displays a disposition to employ these weapons offensively and in manner at once so artful, bold, and mischievous, as to lead to its being regarded as the most dangerous to attack of all the known species of the whale tribe." —Frederick Debell Bennett's Whaling Voyage Round the Globe, 1840
+
+"There she blows," was sung out from the mast-head. "Where away?" demanded the captain. "Three points off the lee bow, sir." "Raise up your wheel. Steady!" "Steady, sir." "Mast-head ahoy! Do you see that whale now?" "Ay ay, sir! A shoal of Sperm Whales! There she blows! There she breaches!" "Sing out! sing out every time!" "Ay Ay, sir! There she blows! there—there—thar she blows—bowes—bo-o-os!" "How far off?" "Two miles and a half." "Thunder and lightning! so near! Call all hands." —J. Ross Browne's Etchings of a Whaling Cruize, 1846
+
+"The Whale-ship Globe, on board of which vessel occurred the horrid transactions we are about to relate, belonged to the island of Nantucket." —Narrative of the Globe Mutiny, by Lay and Hussey survivors, A.D. 1828
+
+"If you make the least damn bit of noise," replied Samuel, "I will send you to hell." —Life of Samuel Comstock (the mutineer), by his brother, William Comstock
+
+"It is impossible to meet a whale-ship on the ocean without being struck by her near appearance. The vessel under short sail, with look-outs at the mast-heads, eagerly scanning the wide expanse around them, has a totally different air from those engaged in regular voyage." —Currents and Whaling, U.S. Ex. Ex.
+
+"It is generally well known that out of the crews of Whaling vessels (American) few ever return in the ships on board of which they departed." —Cruise in a Whale Boat
+
+"Suddenly a mighty mass emerged from the water, and shot up perpendicularly into the air. It was the whale." —Miriam Coffin or the Whale Fisherman
+
+"On one occasion I saw two of these monsters (whales) probably male and female, slowly swimming, one after the other, within less than a stone's throw of the shore (Terra Del Fuego), over which the beech tree extended its branches." —Darwin's Voyage of a Naturalist
+
+"'Stern all!' exclaimed the mate, as upon turning his head, he saw the distended jaws of a large Sperm Whale close to the head of the boat, threatening it with instant destruction;—'Stern all, for your lives!'" —Wharton the Whale Killer
+
+"My God! Mr. Chace, what is the matter?" I answered, "we have been stove by a whale." —Narrative of the Shipwreck of the Whale Ship Essex of Nantucket, By Owen Chace, first mate, New York, 1821
+
+"Sometimes the whale shakes its tremendous tail in the air, which, cracking like a whip, resounds to the distance of three or four miles." —Scoresby
+
+"Oh, the rare old Whale, mid storm and gale In his ocean home will be A giant in might, where might is right, And King of the boundless sea." —Whale Song
+
+---
+
+## CHAPTER 1. Loomings.
+
+call me Ishmael. some years back—dont matter exactly how many—broke, nothing particular on shore to hold me, i decided to go to sea. it's what i do when the walls start closing in. my version of medicine. whenever i catch myself getting tight around the mouth. whenever some damp drizzly November settles into my soul and wont lift. whenever i find myself slowing down outside coffin warehouses, folding myself into funeral processions, feeling that particular itch to walk up to strangers and knock their hats off—that's when i know. time to ship out.
+
+pistol and ball for some men. Cato throws himself on his sword. i take to the ship. nothing surprising in that. most men are carrying some version of this toward the ocean whether they know it or not.
+
+look at Manhattan. water on all sides. the streets run you right to the edge. go down to the Battery any given Sunday. thousands of men just standing there, staring at sea. leaning on pilings, sitting on pier-heads, hanging off the rigging of ships from China, climbing higher like they can't get enough. these are clerks. men nailed to benches all week. what do they want? same thing i want.
+
+it gets you every time. mountain paths curve toward pools. even a man buried in the deepest reverie—set him walking, he'll end up at the nearest water. it's not a choice. it's a design feature. try this: if youre ever lost in the great American desert and your caravan happens to include a metaphysical professor, follow him. he'll lead you to water.
+
+an artist sets out to paint the dreamiest valley scene he can imagine. meadow, sleeping cattle, smoke curling from a cottage, mountains going blue at the edges. all of it still, tranced. but put no stream in it, no pool, and the painting dies. Niagara built out of sand. nobody drives a thousand miles for that. and Narcissus—couldnt grab the image he saw in the fountain, so he plunged in after it and drowned. but that same image stares back from every river and ocean on earth. it's the ungraspable phantom of life. that's the whole key to this thing.
+
+now—when i go to sea, i go as a simple sailor. before the mast. no rank, no command. at first that's an adjustment. they order you around, run you up and down the spars like a grasshopper in May. if youve spent any time as the man with authority—a schoolmaster, say—the transition down is sharp. it requires Seneca. it requires actively choosing not to care about your dignity for a while. it wears off.
+
+what does it matter if some old sea-captain sends me to sweep the deck? weigh that against the New Testament and tell me what you come up with. Gabriel himself doesn't think less of me for obeying the old man. and who isn't a slave somewhere in the chain? universal thump. everybody gets served the same way eventually, physical or metaphysical. might as well rub each other's shoulder-blades and be content.
+
+also: sailors get paid. passengers pay to be there and receive nothing. the act of paying is the original human curse. being paid—that's a completely different creature. watch how cheerfully a man receives money, even one who genuinely believes it's the root of all earthly evil. the urbane activity of the transaction. we consign ourselves to perdition with a smile.
+
+so why whaling this time and not merchant service? the invisible police officer of the Fates would answer that better than i can. whatever the reason, it was part of some grand programme drawn up a long time ago. the playbill probably ran something like:
+
+*GRAND CONTESTED ELECTION FOR THE PRESIDENCY OF THE UNITED STATES. WHALING VOYAGE BY ONE ISHMAEL. BLOODY BATTLE IN AFFGHANISTAN.*
+
+chief among the motives: the overwhelming idea of the whale himself. that monstrous mysterious creature roused every curious fiber in me. the wild distant seas. the nameless perils. ive got an everlasting itch for things remote. i love to sail forbidden waters, land on barbarous coasts. not ignorant of what's good—but quick to perceive a horror, and willing to be social with it if they'll let me. the flood-gates swung open.
+
+and deep in all of it, there floated something—grand, hooded, phantom—white as a snow-hill in the air.
+
+---
+
+## CHAPTER 2. The Carpet-Bag.
+
+stuffed a shirt or two in my old carpet-bag, tucked it under my arm, and started for Cape Horn and the Pacific. landed in New Bedford. Saturday night, December. the little packet for Nantucket had already sailed. next one wasn't until Monday. two days to kill with almost no money in a town where i knew nobody.
+
+now i'd made up my mind: no ship but a Nantucket craft. there was something about that island—fine, boisterous, original—that pulled at me. New Bedford had lately taken over most of the whaling business, and poor Nantucket was behind her in tonnage. but Nantucket was where it started. first dead American whale stranded on those shores. first men to push out in canoes after Leviathan. first adventurous little sloop sent out half-loaded with cobblestones—so the story goes—to throw at whales, just to figure out when they were close enough to risk a harpoon. Nantucket was Tyre. New Bedford was Carthage. one built the other.
+
+two days to get through in New Bedford then. bitter cold. dark. i sounded my pockets and brought up a few pieces of silver. Ishmael, i said to myself, standing in the middle of a dead street with my bag on my shoulder, comparing the gloom north to the gloom south—wherever you land tonight, be sure to inquire the price, and dont be too particular.
+
+i paced the streets. passed the Crossed Harpoons—too expensive, too jolly. the warm light from the windows reached all the way out. kept walking. the Sword-Fish Inn was worse: fervent red windows, light that looked like it had melted the snow right off the walk. too much. your patched boots are stopping the way, Ishmael. go on.
+
+past that, the streets were pure blackness. not houses—blocks of darkness. here and there a candle like a flame moving through a tomb. eventually i came to a smoky light and a low wide building, door hanging open like it was meant for anybody. i walked in and stumbled immediately over an ash-box in the entry. ha, i thought—these the ashes of Gomorrah? looked up and straight into what appeared to be a massive Black Parliament sitting in Tophet. a hundred dark faces turned from their rows to peer at me. at the far end, a Black Angel of Doom was beating a book in a pulpit. negro church. preacher's text: the blackness of darkness, and the weeping and wailing and gnashing of teeth. i backed out.
+
+wretched entertainment at the sign of the Trap.
+
+kept moving. found a dim light near the docks, heard a sign creaking in the air above. looked up: a white painting of a tall jet of misty spray. underneath: *The Spouter-Inn—Peter Coffin.*
+
+Coffin. Spouter. in that particular conjunction of words. i stood with it a moment. but it's a common enough name on Nantucket, and the place looked suitably dilapidated. cheap, probably. pea coffee. the very spot.
+
+---
+
+## CHAPTER 3. The Spouter-Inn.
+
+walking into the Spouter-Inn you found yourself in a low wide entry with old wainscots that made you think of a condemned ship's bulwarks. one wall: a massive oilpainting so thoroughly smoked over and defaced that you had to stand in front of it for some time, study it from different angles, then consult the neighbors, before you could arrive at any understanding of what you were looking at.
+
+unaccountable masses of shade and shadow. the kind of picture some ambitious young artist might have made trying to delineate chaos in the time of the New England witches. but by dint of prolonged staring, by throwing open a small window in the entry behind you, something began to take shape.
+
+in the center of the canvas, a long dark mass hovering over three blue dim perpendicular lines floating in a nameless murk. boggy. squitchy. the kind of thing that drives a nervous man to decisions. but holding something in it—some indefinite half-attained sublimity—that wouldn't let you walk away.
+
+after enough time, my final theory ran like this: a Cape Horner in a great hurricane. three dismantled masts barely showing above the weltering ship. and a whale—exasperated, purposing to spring clean over the wreck—in the enormous act of impaling itself on all three mast-heads at once.
+
+opposite wall: hung all over with monstrous clubs and spears. some thick-set with glittering teeth like ivory saws. some tufted with human hair. one sickle-shaped, its handle sweeping round like the segment made by a long-armed mower in new-mown grass. you shuddered looking at them, wondering what kind of death-harvesting had ever put these things to use. mixed in were rusty broken whaling lances and harpoons. storied weapons. that wildly elbowed lance—Nathan Swain killed fifteen whales with it in a single day, sunrise to sunset, fifty years back. that one twisted like a corkscrew—flung in Javan seas, run away with by a whale, recovered years later when they killed the fish off Cape Blanco. the iron had traveled forty feet through the body. found lodged in the hump.
+
+through the entry and into the public room: low ponderous beams overhead, ancient wrinkled planks underfoot. felt like an old ship's cockpit in a howling night—which, in this storm, it was. the room rocked and creaked with it. one wall held a long shelf of dusty rarities gathered from the world's remotest corners. across the room in the far angle: the bar. a rude attempt at a right whale's head—the vast arched jaw-bone itself, wide enough to drive a coach beneath. inside, among old decanters, bottles, and flasks, a little withered old man worked busily like a condemned Jonah, selling sailors their deliriums and death.
+
+the tumblers he poured into were an elaborate swindle. true cylinders on the outside. inside, tapered down to a cheating bottom. graduated parallel lines etched into the glass like meridians—fill to this mark, a penny; to that, a penny more. all the way up to the Cape Horn measure, which you could have for a shilling.
+
+i found several young seamen at a table going through specimens of scrimshaw. sought out the landlord. told him i needed a room.
+
+full up, he said. not a bed unoccupied. but—and here he tapped his forehead—i didn't have any objections to sharing a harpooneer's blanket, did i? i was going a-whaling, so i'd best get used to that sort of thing.
+
+told him i never liked sleeping two in a bed. that if it came to it, the harpooneer would have to be at least not decidedly objectionable. rather than wander a strange town on a night this cold, i'd put up with half a decent man's blanket.
+
+"I thought so," he said. "All right; take a seat. Supper'll be ready directly."
+
+i sat down on an old wooden settle carved all over like a Battery bench. at one end, a sailor was adding to the carving with his jackknife, working at the space between his legs, trying to cut a ship under full sail. he wasn't making much progress.
+
+supper came: four or five of us in a cold adjoining room, no fire—landlord said he couldnt afford it—two tallow candles and plates of meat and potatoes and dumplings. dumplings for supper. one young fellow in a green box coat set upon those dumplings like it was a mission.
+
+"My boy," said the landlord, "you'll have the nightmare to a dead sartainty."
+
+i leaned over. "Landlord—that aint the harpooneer, is it?"
+
+"Oh, no," he said, with a diabolically funny look. "The harpooneer is a dark complexioned chap. He never eats dumplings—he eats nothing but steaks, and he likes em rare."
+
+"The devil he does," says i. "Where is that harpooneer? Is he here?"
+
+"He'll be here afore long."
+
+i began to feel suspicious. made up my mind that if we were going to share a bed, he would undress and get in first.
+
+supper done, most of the company went back to the bar. i stayed on as a looker. presently a roaring noise at the door—a three years' voyage crew from the Grampus come home, bearded with icicles, bedarned and ragged. they erupted in like bears out of Labrador, made straight for the bar, and the little withered Jonah poured them out brimmers all round. one complained of a head cold; Jonah mixed him gin and molasses and swore it was a cure for every catarrh ever caught on any coast at any temperature. the liquor mounted into their heads fast—newly landed men are the quickest to go—and they started capering.
+
+one man held himself apart. didnt want to spoil his shipmates' noise with a sober face, but he wasn't making any of it himself. tall, full six feet, noble shoulders, chest like a coffer-dam. face deeply brown and burnt, white teeth dazzling in contrast. deep eyes with some reminiscence in them that wasnt joy. his voice announced a Southerner. when the revelry peaked, he slipped away unobserved, and i didnt see him again till the sea. his shipmates missed him almost immediately and raised a cry: "Bulkington! Bulkington! where's Bulkington?" and darted out after him.
+
+quiet now. almost supernaturally so after those orgies.
+
+and i was left with the problem of the harpooneer.
+
+no man chooses to sleep two in a bed if he can help it. you don't even want to sleep next to your own brother. people like to be private when they sleep. but with an unknown stranger—in a strange inn, strange town—and that stranger a harpooneer—your objections multiply indefinitely. the more i thought on it, the more i thought i should sleep on the bench instead.
+
+"Landlord! I've changed my mind. I'll try the bench."
+
+"Just as you please," he said, feeling the knots and notches in the planks. "It's a plaguy rough board here. But wait—" and he went and got a carpenter's plane from the bar and set to planing away at the wood with his old silk handkerchief for a dustcloth, grinning like an ape. shavings flew. the plane-iron hit an indestructible knot and near sprung his wrist.
+
+i told him to quit. the bed was soft enough. all the planing in the world wouldnt make eider-down out of pine.
+
+so i measured the bench. foot too short, which a chair could mend. foot too narrow, with no fixing it. cold air poured in from under the window sill. another current came from the rickety door and met it. small whirlwinds formed right where i was going to sleep.
+
+the harpooneer still hadn't shown. it was hard upon midnight now. the landlord had told me he was out peddling—and couldnt seem to sell his head.
+
+"His head?" i said. "What sort of bamboozling story is this?"
+
+"Well," said the landlord, finally—"this harpooneer, he's just in from the south seas, where he bought up a lot of embalmed New Zealand heads. great curios. sold all but one, and that one he's trying to move tonight before Sunday, because selling human heads on a Lord's day wouldn't do."
+
+this cleared up the mystery and confirmed my assessment: dangerous man. the landlord said he paid his rent regular. which was, apparently, the bottom line.
+
+i resolved to wait him out. if i got a look at him and he seemed decent, maybe we'd do all right.
+
+boarders came in by ones and twos. no harpooneer. midnight. the bench was impossible, the bed was a proper bed. eventually i gave up deliberating, blew out the light, tumbled into bed, and commended myself to heaven.
+
+the mattress was stuffed with something—corn-cobs or broken crockery. i rolled around a good while. finally started to drift.
+
+then: heavy footfall in the passage. a glimmer of light under the door.
+
+Lord save me, thinks i. the head-peddler.
+
+i lay perfectly still. resolved not to say a word till spoken to.
+
+he came in holding a light in one hand and that identical New Zealand head in the other. didnt look toward the bed. set his candle on the floor in the corner and began working at the knotted cords of a large bag. i watched his back, waiting to see his face.
+
+when he turned round—good heavens.
+
+a face of dark purplish-yellow, large blackish squares stuck all over it. i thought: fight. surgeon. fresh from the operating room. but looking closer—those weren't dressings. stains. some kind of tattooing, i began to understand. in the course of his distant voyages he must have encountered the cannibals. it was only his outside. a man can be honest in any sort of skin.
+
+then his hat came off. no hair on his head—none to speak of—except a small scalp-knot twisted up on his forehead. his bald purplish head looked exactly like a mildewed skull.
+
+if the stranger hadnt been standing between me and the door, id have bolted. ignorance is the parent of fear. i was genuinely afraid—the way you get afraid of something you cant explain.
+
+he kept undressing. his chest, his arms, his back—checkered all over with the same dark squares as his face. his legs: like dark green frogs running up the trunks of young palms. he was marked everywhere. some savage shipped aboard a whaleman in the South Seas. i quaked. a peddler of heads. perhaps the heads of his own brothers. he might take a fancy to mine. look at that tomahawk.
+
+but no time for shuddering, because now he went and did something that completely fascinated my attention. he dug into the pocket of his great coat and produced a small deformed image—hunched, three-days-old-Congo-baby color, glistening like polished ebony. a wooden idol.
+
+he went to the empty fireplace, set up this little hunch-backed image between the andirons, took a double handful of shavings from his pocket, laid a piece of ship biscuit on top, and applied the flame. he was making a burnt offering. he kept snatching at the biscuit in the fire—burning his fingers—finally pulled it out, blew off the ash, and offered it to the idol. the idol didn't move. he prayed in some guttural sing-song, his face twitching. then extinguished the fire and put the idol back in his pocket like a dead woodcock.
+
+these proceedings increased my discomfort significantly. and now he was clearly finishing his operations and preparing to get into bed with me.
+
+i should have spoken sooner. i waited too long.
+
+he picked up the tomahawk from the table, looked at the head of it a moment, and then—with his mouth at the handle—began to puff great clouds of tobacco smoke. the next instant he blew out the light. in the darkness, this wild cannibal with a tomahawk between his teeth sprang into bed with me.
+
+i sang out.
+
+he gave a sudden grunt of astonishment and began feeling me.
+
+i stammered something—i don't know what—and rolled away from him against the wall. told him whoever or whatever he was, to keep quiet, to let me get up and light the lamp. his guttural responses made clear he didn't comprehend me.
+
+"Who-e debel you?"—he said at last—"you no speak-e, dam-me, I kill-e."
+
+and the lighted tomahawk began flourishing in the dark.
+
+"Landlord! Peter Coffin! Angels! Save me!"
+
+"Speak-e! tell-ee me who-ee be, or dam-me, I kill-e!" growled the cannibal, his horrid tomahawk scattering hot tobacco ashes around me till i thought my linen would catch.
+
+then the landlord came in with a light. i ran to him.
+
+"Don't be afraid now," he said, grinning. "Queequeg here wouldn't harm a hair of your head."
+
+"Stop grinning," i said. "Why didn't you tell me that infernal harpooneer was a cannibal?"
+
+"I thought ye know'd it—didn't I tell ye he was peddlin heads? But turn flukes again and go to sleep. Queequeg, look here—you sabbee me, I sabbee—you this man sleepe you—you sabbee?"
+
+"Me sabbee plenty"—grunted Queequeg, sitting up in bed with his pipe.
+
+"You gettee in," he said to me, motioning with the tomahawk and throwing the clothes to one side. and he did it—not just civilly—but with something genuinely kind and charitable in the motion.
+
+i stood looking at him a moment. for all the tattooings he was, on the whole, a clean, comely-looking man. what was all this fuss about? he was a human being, same as i was. had just as much reason to fear me as i had to fear him.
+
+better sleep with a sober cannibal than a drunken Christian.
+
+"Landlord," i said. "Tell him to stash the tomahawk—or pipe, whatever it is. Tell him to stop smoking in bed. That's dangerous. Besides, i ain't insured."
+
+the landlord relayed this. Queequeg at once complied and motioned me in again, rolling to one side in a way that said: i wont touch a leg of ye.
+
+"Good night, landlord," i said. "You may go."
+
+i turned in, and never slept better in my life.
+
+---
+
+## CHAPTER 4. The Counterpane.
+
+woke next morning at daylight with Queequeg's arm thrown over me in the most affectionate possible manner. you would have thought i was his wife.
+
+the counterpane was patchwork, full of odd parti-colored squares and triangles. his tattooed arm, lying across it, blended so completely into the pattern that i could barely distinguish the arm from the quilt. it was only by the weight and pressure on me that i knew Queequeg was there at all.
+
+strange sensations. it reminded me of something—a childhood incident i never entirely resolved. i'd been packed off to bed at two in the afternoon on the longest day of the year, midsummer, for some misbehavior—trying to crawl up the chimney, as i recall, like id seen a sweep do. my stepmother sent me up. i lay there in full daylight listening to the coaches in the street, the voices downstairs, calculating that sixteen whole hours would have to pass before i could get up again. eventually i fell into a kind of troubled sleep.
+
+waking from it in the dark—the room that had been sunlit was now black—i felt a shock run through my whole frame. nothing visible. nothing audible. but a supernatural hand seemed placed in mine. something silent, seated at my bedside. i lay frozen for what felt like ages, convinced that if i could just move one single inch, the spell would break—but afraid to try.
+
+i puzzle over that still.
+
+now, take away the awful fear from that memory, and the sensation was something like what i felt waking up to Queequeg's arm. except now, as the events of the night came back one by one in fixed reality, what i felt was mostly comic. i was in bed with a tattooed cannibal in a strange inn in New Bedford, and i could not for the life of me get free of his bridegroom clasp without waking him. i tried. i pushed at his arm. he tightened. i called his name. he snored.
+
+then i felt a slight scratch on my neck. reached under the counterpane. there lay the tomahawk, sleeping alongside him like a hatchet-faced baby.
+
+"Queequeg! In the name of goodness, wake!"
+
+eventually, with much wriggling and loud expostulation on the impropriety of hugging a fellow male in that matrimonial style, i extracted a grunt. then he shook himself like a Newfoundland dog fresh from water, sat up stiff as a pike, and looked at me—rubbing his eyes like a man slowly remembering how i'd come to be there.
+
+when his mind seemed made up about my character, he jumped out on the floor and by signs indicated that he'd dress first and leave the apartment to me, if i pleased.
+
+this was, under the circumstances, a very civilized overture. these savages have an innate sense of delicacy, whatever else you might say about them.
+
+he commenced dressing from the top: beaver hat first, then—minus his trousers—hunted up his boots. then, for reasons i could not account for, he crawled under the bed with them. violent gaspings and strainings followed. he was booting himself under there. no law of propriety i ever heard of requires a man to be private when putting on his boots, but Queequeg was in a transition stage—neither caterpillar nor butterfly. just civilized enough to know boots should be worn; still savage enough to put them on in the way that seemed best to him. when he emerged, his hat was crushed down over his eyes and he creaked and limped around the room like a man breaking in new gear for the first time on a cold morning.
+
+seeing that the narrow street had a direct view into the room, and that Queequeg was making a fairly indecorous figure of himself with little on but hat and boots, i begged him to get into his trousers as soon as possible. he complied. then proceeded to wash—not his face, as any Christian would at that hour, but his chest, arms, and hands.
+
+then lathered his face and reached for his shaving equipment.
+
+what he reached for was the harpoon.
+
+he unscrewed the handle, took out the head, honed it on his boot, strode to the bit of glass on the wall, and went to work on his cheeks with a thoroughness that made me reconsider the sharpness of harpoon-heads. which, afterwards, i confirmed: the best steel, kept razor-sharp. Queequeg was using Rogers's best cutlery with a vengeance, and it served.
+
+the rest of his toilet was soon achieved. he marched out of the room wrapped in his great pilot monkey jacket, harpoon on his shoulder like a marshal's baton.
+
+---
+
+## CHAPTER 5. Breakfast.
+
+i followed quick and descended into the bar-room where i found the landlord, greeted him pleasantly. no malice. the man had been skylarking with me, true, but a good laugh is scarce enough in this world that if any man happens to furnish material for one, he ought to let it be spent. the man who has something bountifully laughable about him has more in him than you think.
+
+the bar-room was full now. all the overnight boarders, mostly whalemen—chief mates, second mates, third mates, sea carpenters, sea coopers, sea blacksmiths, harpooneers, ship keepers. brown and brawny company, with bosky beards, unshorn, all wearing monkey jackets for morning gowns.
+
+you could tell at a glance how long each had been ashore. one young fellow's cheek like a sun-toasted pear—three days off his Indian voyage at most. the man beside him: a shade lighter, two or three weeks' fading. another: still tropical in his tanning, beginning to wash out. and then Queequeg: barred with all the zones of the earth, a skin like the Andes' western slope, every climate in one array.
+
+"Grub, ho!" cried the landlord, flinging open the door. we went in to breakfast.
+
+they say men who have seen the world become self-possessed and easy in company. not always. the great New England traveler Ledyard—who crossed Siberia by dog-sledge—was among the least assured men at a parlor table. Mungo Park, who walked alone into the heart of Africa on an empty stomach—same. that kind of travel doesn't necessarily produce social polish. 
+
+but these whalemen—who had boarded great whales on the high seas, strangers to them, and dueled them dead without a blink—sat around the breakfast table looking at each other like sheep in a sheepfold. not a word. bashful bears. timid warrior whalemen.
+
+Queequeg, though, sat at the head of the table—it so chanced—as cool as an icicle. nobody could say much for his table manners: he had brought the harpoon into breakfast and was using it to reach the beefsteaks—reaching over heads with some risk of life and limb—grappling his meat toward him with a technical efficiency. but whatever you thought of it, it was coolly done. and in most people's estimation, to do anything coolly is to do it genteelly.
+
+he avoided coffee and hot rolls entirely. undivided attention to rare beefsteak. that was his breakfast. when it was over he withdrew to the public room, lit his tomahawk-pipe, and sat there quietly digesting, smoking, hat on.
+
+i went out for a stroll.
+
+---
+
+*— end of Part 1 —*
+
+---
+
+
+
+
+## Part 2: Chapters 6–16
+
+---
+
+## CHAPTER 6. The Street.
+
+once i got over the initial shock of Queequeg circulating through polite New Bedford society, that shock faded fast on my first proper daylight walk through the streets.
+
+any real seaport throws up strange specimens near the docks. Mediterranean mariners jostle ladies on Broadway. Lascars and Malays turn up in Regent Street. Yankees have spooked the natives in Bombay. but New Bedford beats all of them. in these streets you don't just see sailors—you see actual cannibals standing at street corners, chatting, many of them still carrying unholy flesh on their bones. it makes a stranger stare.
+
+but here's the other thing, and maybe more comical than the cannibals: every week scores of green Vermonters and New Hampshire men arrive in this town, all burning for gain and glory in the fishery. mostly young, stalwart, fellows who've felled forests and now want to drop the axe and pick up the whale-lance. some so green you'd think they'd been born that morning. watch that one strutting round the corner—beaver hat, swallow-tail coat, sailor-belt with a sheath-knife. here comes another in a sou'-wester and bombazine cloak.
+
+no town-bred dandy compares to a country-bred one. a downright bumpkin dandy—the kind who mows his two acres in buckskin gloves in the dog-days so as not to tan his hands. when this type decides to make a distinguished reputation in the whale-fishery, you should see what he orders for his sea-outfit. bell-buttons on his waistcoats. straps on his canvas trousers. poor Hay-Seed. those straps will burst in the first howling gale, and he'll go down the throat of the tempest—straps, buttons, and all.
+
+but don't think New Bedford is only harpooneers and cannibals and bumpkins. it's also, in fact, probably the wealthiest town in all New England. it is a land of oil—not like Canaan, milk and honey, but oil. the streets don't run with anything. but the houses—nowhere in America will you find more patrician-like houses, more opulent parks and gardens. where did all this come from, on what was once scraggy rock?
+
+look at the iron harpoons decorating the fence posts of that mansion. those houses were harpooned up from the bottom of the Atlantic and Pacific and Indian oceans. every grand house and flowery garden came out of a dead whale. fathers here give whales for dowry. nieces get portioned off with porpoises. every night they burn spermaceti candles without a thought.
+
+in summer the place is beautiful—fine maples, long avenues of green and gold, horse-chestnuts in August holding their blossoms up like candelabras. art and money have put flowers on bare rock.
+
+and the women of New Bedford bloom like their own red roses. except roses only bloom in summer, and these women are perennial.
+
+---
+
+## CHAPTER 7. The Chapel.
+
+in this same New Bedford stands a Whalemen's Chapel. few fishermen about to depart for the Indian Ocean or Pacific fail to make a Sunday visit. i didn't.
+
+went back out into driving sleet and mist after my morning stroll, fought my way in my shaggy bearskin jacket to the chapel door. inside: a small scattered congregation of sailors and sailors' wives and widows. a muffled silence, broken only by the storm outside shrieking at the windows. each person sat apart from the others, as if each grief was insular and couldn't be communicated. the chaplain hadn't arrived yet.
+
+on the walls, on either side of the pulpit, black-bordered marble tablets masoned into the plaster. memorial slabs. i read:
+
+*Sacred to the memory of John Talbot, who at the age of eighteen was lost overboard near the Isle of Desolation, off Patagonia. This tablet is erected to his memory by his sister.*
+
+*Sacred to the memory of Robert Long, Willis Ellery, Nathan Coleman, Walter Canny, Seth Macy, and Samuel Gleig, forming one of the boats' crews of the ship Eliza, who were towed out of sight by a whale on the off-shore ground in the Pacific. This marble is here placed by their surviving shipmates.*
+
+*Sacred to the memory of the late Captain Ezekiel Hardy, who in the bows of his boat was killed by a sperm whale on the coast of Japan. This tablet is erected to his memory by his widow.*
+
+i shook the sleet off and sat near the door. turned sideways and saw Queequeg beside me, looking at the tablets with a wondering gaze of incredulous curiosity. he was the only one in the room who couldn't read—so he was the only one not reading. he just watched faces, which sometimes tells you more.
+
+i looked back at the tablets and stayed with them. somewhere in this room sat people whose dead lay in no churchyard. no grass over them, no known location. just these stone slabs covering no ashes, marking nothing but absence. the most desolate fact in human experience—to be unable to say: here lies my beloved. here. this place.
+
+but faith, like a jackal, feeds among the tombs. even from dead doubts she gathers her most vital hope.
+
+i thought about my own situation. yes, Ishmael, the same fate might be thine. but somehow i grew merry again. fine chance for promotion, it seemed—a stove boat would make me immortal by brevet. there is death in this business. a quick chaotic bundling of a man into eternity. but methinks we have hugely mistaken this matter of Life and Death. methinks my body is but the lees of my better being. take it who will—it's not me. and therefore: three cheers for Nantucket, and come a stove boat when it will—for stave my soul, Jove himself cannot.
+
+---
+
+## CHAPTER 8. The Pulpit.
+
+presently, a man entered. the congregation eyeing him from the first instant made clear who he was. this was Father Mapple—famous among whalemen, and you could see why. had been a sailor and harpooneer himself in his youth, gave it up for the ministry, but the maritime life had left its marks on him the way long weather leaves marks on a cliff face. he carried no umbrella. his tarpaulin hat ran down with sleet. his great pilot-cloth jacket seemed to want to drag him to the floor.
+
+hat, coat, and overshoes removed, he approached the pulpit in a decent suit.
+
+the pulpit was high. no stairs—instead, a perpendicular side ladder with rope sides and wooden rungs, the kind used to mount a ship from a boat at sea. a whaling captain's wife had donated a pair of red worsted man-ropes for it. Father Mapple grasped the ornamental knobs, glanced upward, and then—with the practiced dexterity of a man who'd done it a thousand times at sea—went hand over hand up the ladder like he was ascending the main-top of his vessel.
+
+at the top, he turned, and slowly, deliberately, pulled the ladder up behind him. hauled it step by step until it was entirely inside the pulpit, leaving him sealed in—impregnable in his little Quebec.
+
+i pondered this for some time. he wasn't the kind of man to do it for effect. it had to mean something. and it came to me: by that act of physical isolation he signified his spiritual withdrawal—for the time—from all outward worldly ties. the pulpit becomes a self-containing stronghold. a lofty Ehrenbreitstein with a perennial well of water within the walls.
+
+the pulpit itself was fashioned after a ship's bluff bows. the Holy Bible rested on a projecting piece of scroll-work shaped like a ship's fiddle-head beak. on the back wall behind the pulpit: a painting of a gallant ship in a storm off a lee shore, and high above the flying scud, a little isle of sunlight with an angel's face looking down—the spot of radiance falling like a beam onto the ship's tossed deck.
+
+the pulpit is ever this earth's foremost part. all the rest comes in its rear. from the pulpit the storm of God's quick wrath is first seen; the bow must bear the earliest brunt. the world is a ship on its passage out. the pulpit is its prow.
+
+---
+
+## CHAPTER 9. The Sermon.
+
+Father Mapple rose and in a mild voice of unassuming authority told the scattered people to condense. "Starboard gangway, there! Side away to larboard—larboard gangway to starboard! Midships! midships!"
+
+heavy sea-boots rumbled along the benches. women's shoes shuffled. then quiet. every eye on the preacher.
+
+he paused. knelt in the pulpit's bows, folded his large brown hands across his chest, lifted his closed eyes, and offered a prayer so deeply devout he seemed kneeling at the bottom of the sea.
+
+that done, he began reading a hymn—the first stanzas in slow tolling tones like a bell in a foundering ship, then the final stanzas breaking open into a pealing exultation. nearly all joined in singing. the sound swelled high above the howling storm outside.
+
+a brief pause. he turned leaves of the Bible. then, placing his hand flat on the proper page:
+
+"Beloved shipmates, clinch the last verse of the first chapter of Jonah—'And God had prepared a great fish to swallow up Jonah.'"
+
+"Shipmates, this book, containing only four chapters—four yarns—is one of the smallest strands in the mighty cable of the Scriptures. Yet what depths of the soul does Jonah's deep sealine sound.
+
+"What is the lesson? It is a two-stranded lesson. To us all as sinful men—a lesson of sin, hard-heartedness, sudden fear, swift punishment, repentance, prayer, and finally deliverance. And to me as a pilot of the living God—a lesson of a different and more awful kind.
+
+"Jonah disobeys God. He doesn't just disobey—he flees. He thinks a ship made by men can carry him beyond God's reach. He skulks along the Joppa wharves, finds a ship bound for Tarshish—which is Cadiz—the farthest west he can think of, clear across the Mediterranean from where he stands. Two thousand miles of sea between Joppa and Tarshish. he's trying to put the whole world between himself and his assignment.
+
+"He is a fugitive. No baggage. No friends at the dock to say goodbye. Dodging from shadow to shadow to board. The sailors who hoist him aboard sense something off immediately—the way sailors will—and spend the passage eyeing him, running their own internal indictments. He can't meet their eyes without showing more. he goes down to his cabin, drops into his berth. the ceiling nearly touches his forehead. the air is close. he gasps. and this is the first hint of what's coming—the smallest of the whale's bowels' wards, foreshadowed here in the ship's contracted berth.
+
+"He sleeps. The storm comes on. Every plank thunders with running feet directly above his head. the ship near breaks. boxes, bales, jars—overboard. wind screaming. the men yelling. and while all this rages over him, Jonah sleeps his hideous sleep. the terrified captain comes down and shrieks in his dead ear: 'What meanest thou, O sleeper! Arise!'
+
+"They cast lots. Jonah's is the lot. The mariners mob him with questions. And here: watch Jonah's behavior. They ask only who he is and where he comes from. But he answers more than what was asked. The hard hand of God forces out a full confession before the question was put. 'I am a Hebrew. I fear the Lord the God of Heaven, who hath made the sea and the dry land.' Full confession. He knows the darkness of his own deserts. He tells them to cast him overboard—he knows the storm is for his sake. they hesitate. try other means. the gale howls louder. at last, one hand raised to God, the other reaching for Jonah—they cast him in.
+
+"Instant calm. An oily smoothness spreads from the east. Jonah goes down into the heart of the maelstrom, and he barely feels the moment he drops into the whale's open jaw—the ivory teeth slamming shut behind him like so many white bolts upon his prison.
+
+"Then Jonah prayed. Not wailing for direct deliverance. That's the remarkable thing—he feels his punishment is just. He leaves his deliverance to God. contents himself with this: that despite all his pangs, he will still look toward the holy temple. that is true repentance. not clamorous for pardon—grateful for punishment. and how pleasing to God was this. The whale breaches toward sunlight and vomits Jonah out upon dry land.
+
+"The second call comes. And Jonah does the Almighty's bidding. What was that bidding? To preach the Truth to the face of Falsehood. That was it.
+
+"Woe to him whom this world charms from that duty. Woe to him who seeks to pour oil on the waters when God has brewed them into a gale. Woe to him who seeks to please rather than to appal. Woe to him who, in this world, courts not dishonor. Woe to him who would not be true, even though to be false were salvation."
+
+he dropped. fell away from himself. then lifted his face again, and something shifted in his eyes—deep joy coming up through the woe:
+
+"But oh! shipmates! on the starboard hand of every woe, there is a sure delight; and higher the top of that delight, than the bottom of the woe is deep. Delight is to him who against the proud gods and commodores of this earth, ever stands forth his own inexorable self. Delight is to him whose strong arms yet support him, when the ship of this base treacherous world has gone down beneath him. Delight is to him who gives no quarter in the truth, and kills, burns, and destroys all sin though he pluck it out from under the robes of Senators and Judges. Delight is to him who acknowledges no law or lord, but the Lord his God. And eternal delight will be his, who coming to lay him down, can say with his final breath—O Father! chiefly known to me by Thy rod—mortal or immortal, here I die. I have striven to be Thine, more than to be this world's, or mine own. Yet this is nothing: I leave eternity to Thee; for what is man that he should live out the lifetime of his God?"
+
+he said no more. slowly waved a benediction, covered his face with his hands, and so remained kneeling until all had departed and he was alone.
+
+---
+
+## CHAPTER 10. A Bosom Friend.
+
+returning to the Spouter-Inn from the chapel, i found Queequeg alone before the fire with his feet on the stove hearth, holding his little idol close to his face, whittling at its nose with a jacknife, humming to himself in his heathenish way.
+
+when he saw me he put the idol aside and went to a large book on the table—a Bible, or something of the kind—and began counting pages with slow deliberate regularity. at every fiftieth page he'd stop, stare vacantly around him, and give out a long-drawn gurgling whistle of astonishment. then start again at fifty, as though he could count no higher, and the astonishment at the accumulated fifties was the point.
+
+i sat watching him. he was savage and hideously marked—at least to my taste—but there was something in his countenance that was by no means disagreeable. you cannot hide the soul. through all the tattooings i thought i saw the traces of a simple honest heart. and in his large deep eyes, fiery black and bold, something that would dare a thousand devils. a certain lofty bearing that his uncouthness couldnt quite maim. he looked like a man who had never cringed and never had a creditor.
+
+his head—shaved, the forehead drawn out in freer relief—was phrenologically excellent. it reminded me, oddly, of busts of George Washington. same long regularly graded retreating slope above the brows, same two long projecting promontories thickly wooded on top. Queequeg was George Washington cannibalistically developed.
+
+we'd slept together the night before, woken up with his arm thrown over me, and now he paid no attention to me at all. didn't even look up. strange, that indifference. but savages are strange beings—at times you cant tell how to take them. at first they overawe you. that calm self-collectedness seems like Socratic wisdom. and then: here was a man twenty thousand miles from home, thrown among people as strange to him as if he were on Jupiter, and yet entirely at ease. always equal to himself. some fine philosophy in that, though i doubt he'd heard the word.
+
+the fire was burning low, evening settling around the casements. i felt something melting in me. the rage was going out of it. no more my splintered heart turned against the wolfish world. this soothing savage had redeemed it somehow—just by sitting there without any civilized hypocrisies and bland deceits, wild and strange, occupying himself with his own business.
+
+Christian kindness had proved but hollow courtesy. i'll try a pagan friend.
+
+i drew my bench near him and made some friendly signs. he was slow to notice—but when i mentioned last night's hospitalities he made out to ask whether we were again to be bedfellows. told him yes; he looked, i thought, pleased. maybe a little complimented.
+
+we turned the book over together and i tried to explain printing and the pictures. soon i had his interest. from there we went to jabbering—best we could—about the sights of the town. i proposed a smoke. he produced his tomahawk-pipe and we passed it back and forth.
+
+if there was any ice left in him toward me, that smoke thawed it. he seemed to take to me as naturally as i to him. when the smoke was done he pressed his forehead against mine, clasped me round the waist, and said that henceforth we were married—meaning, in his country's phrase, bosom friends. he would gladly die for me if need should be.
+
+in a countryman this sudden flame of friendship would have seemed premature, suspicious. in this simple savage, the old rules didn't apply.
+
+after supper we went to our room. he made me a present of his embalmed head. took out his enormous tobacco wallet, groped under the tobacco, drew out some thirty dollars in silver, spread them on the table, divided them mechanically into two equal portions, and pushed one toward me. said it was mine. i tried to remonstrate. he silenced me by pouring them into my trowsers' pockets. i let them stay.
+
+then his evening prayers. out came the idol. off came the paper fireboard. by certain signs i gathered he wanted me to join him. i deliberated.
+
+i was a good Christian, bred in the bosom of the infallible Presbyterian Church. how could i unite with this wild idolator in worshipping a piece of wood?
+
+but what is worship? thought i. do you suppose the magnanimous God of heaven and earth—pagans and all included—can possibly be jealous of an insignificant bit of black wood? impossible. and what is the will of God?—to do to my fellow man what i would have my fellow man do to me. now—what would i wish Queequeg to do? unite with me in my Presbyterian form of worship. consequently, i must unite with him in his. ergo, i must turn idolator.
+
+so i kindled the shavings, helped prop up the innocent little idol, offered it burnt biscuit alongside Queequeg, saluted it twice or thrice, kissed its nose. and that done, we undressed and went to bed, at peace with our own consciences and all the world.
+
+there is no place like a bed for confidential disclosures between friends. thus, in our hearts' honeymoon, lay i and Queequeg—a cozy, loving pair.
+
+---
+
+## CHAPTER 11. Nightgown.
+
+we lay there chatting and napping at short intervals. Queequeg would now and then affectionately throw his brown tattooed legs over mine, then draw them back. entirely sociable, entirely easy.
+
+eventually we were too wakeful to sleep. recumbent position got wearisome. we found ourselves sitting up in bed—clothes well tucked around us, leaning against the headboard, four knees drawn up close together, two noses bending over them like warming-pans.
+
+we felt very nice and snug. colder out of the bedclothes than in—no fire in the room—but that was the point. to fully enjoy bodily warmth, some small part of you must be cold. nothing exists in itself. if you're all over comfortable for a long time, you can't be said to be comfortable anymore. but if the tip of your nose or the crown of your head is slightly chilled—then you feel the full thing. deliciously, unmistakably warm. this is why a sleeping apartment should never have a fire. the height of this deliciousness is to have nothing between you and your snugness but the blanket and the outer cold. then you lie like the one warm spark in the heart of an arctic crystal.
+
+at some point i thought to open my eyes. in bed i usually keep them shut—more to concentrate the snugness than anything else. no man can feel his own identity aright except with his eyes closed; as if darkness were the proper element of our essences, though light be more congenial to our clayey part.
+
+coming out of that pleasant self-created darkness into the coarse outer gloom of midnight—a disagreeable revulsion. Queequeg suggested a light; he wanted a few quiet puffs from the tomahawk. the night before i'd objected to him smoking in bed. now i liked nothing better. our stiff prejudices grow elastic when love comes to bend them. i was only alive to the condensed confidential comfortableness of sharing a pipe and a blanket with a real friend. i had no more concern about the landlord's insurance policy.
+
+with our shaggy jackets drawn about our shoulders, we passed the tomahawk back and forth. slowly a blue tester of smoke built up over us, lit by the new-lit lamp.
+
+whether the smoke carried Queequeg away to distant scenes i don't know, but he began talking of his native island. eager to hear it, i begged him to go on.
+
+---
+
+## CHAPTER 12. Biographical.
+
+Queequeg was a native of Rokovoko, an island far away to the West and South. not down on any map; true places never are.
+
+his father was a High Chief—a King. his uncle a High Priest. his mother's side: aunts who were wives of unconquerable warriors. excellent blood; though sadly vitiated, i feared, by the cannibal propensity he'd nourished in his untutored youth.
+
+a Sag Harbor ship came to his father's bay. Queequeg wanted passage to Christian lands. the ship was full and turned him down. the King his father's influence couldn't change it.
+
+Queequeg vowed a vow.
+
+alone in his canoe, he paddled to a distant strait he knew the ship would have to pass. on one side: a coral reef. on the other: low land covered with mangroves growing out into the water. he hid the canoe among the thickets with its prow seaward, sat in the stern with his paddle low. when the ship came gliding by—in a flash he darted out, gained her side, kicked over and sank his own canoe with one backward stroke of his foot, climbed the chains, threw himself full length on the deck, grappled a ring-bolt, and swore not to let go though they hacked him in pieces.
+
+the captain threatened to throw him overboard. held a cutlass over his naked wrists. Queequeg was the son of a King. Queequeg didn't budge.
+
+struck by his desperate dauntlessness, the captain eventually relented. but this sea Prince of Wales never saw the captain's cabin. they put him down among the sailors and made a whaleman of him. like Peter the Great content to toil in the shipyards of foreign cities, Queequeg disdained no seeming ignominy—if it would help him bring enlightenment back to his own people. that was the plan at bottom: learn what he could among the Christians, take back the arts that would make his people still better than they were.
+
+but alas. the practices of whalemen soon convinced him that even Christians could be both miserable and wicked—infinitely more so than all his father's heathens. arrived at Sag Harbor, seeing what sailors did there. on to Nantucket, seeing how they spent their wages there. poor Queequeg gave it up. thought he, it's a wicked world in all meridians. i'll die a pagan.
+
+and so an old idolator at heart, he lived among Christians, wore their clothes, tried to talk their language. hence the queer ways about him—some time from home, but not yet at peace with any of it.
+
+i asked whether he'd go back, now that his father must be dead. he said not yet. feared Christianity—rather, Christians—had unfitted him for ascending the pure undefiled throne of thirty pagan Kings. he'd return when he felt himself baptized again. for now: sail about, sow his wild oats across all four oceans. they'd made a harpooneer of him, and that barbed iron was his scepter now.
+
+when i told him whaling was my design too, and that i meant to ship from Nantucket, he resolved at once to accompany me. same ship, same watch, same boat, same mess. share my every hap. both my hands in his, boldly dip into the potluck of both worlds.
+
+i joyously agreed. besides affection—Queequeg was an experienced harpooneer. i was wholly ignorant of whaling's mysteries, though well acquainted with the sea.
+
+his story ended with his pipe's last dying puff. he embraced me, pressed his forehead against mine, blew out the light. we rolled over, this way and that, and slept.
+
+---
+
+## CHAPTER 13. Wheelbarrow.
+
+Monday morning. disposed of the embalmed head to a barber for a block. settled the bill—using Queequeg's money. the landlord and the boarders all visibly delighted at the sudden friendship that had sprung up between us, given how badly Peter Coffin's bull stories about Queequeg had alarmed me concerning the very person i was now walking out with.
+
+we borrowed a wheelbarrow and headed down to the wharf with our things—my poor carpet-bag, Queequeg's canvas sack and hammock. the little Nantucket packet schooner Moss lay moored there.
+
+people stared as we went. not at Queequeg so much—they were used to cannibals in New Bedford—but at seeing him and me on such confidential terms. we didn't care. walked along taking turns at the barrow, Queequeg stopping now and then to adjust the sheath on his harpoon barbs.
+
+i asked why he carried the thing ashore. didn't whale ships supply their own harpoons? he replied that though this was true enough, he had a particular affection for his own iron—it was of assured stuff, well tried in many a mortal combat, deeply intimate with the hearts of whales. like inland reapers who bring their own scythes to the farmer's meadow, not obliged to but preferring it—Queequeg preferred his own harpoon. that was his private business.
+
+pushing the barrow, he told me a funny story about the first wheelbarrow he'd ever seen—in Sag Harbor. the owners of his ship had lent him one to carry his heavy chest to his boarding house. not wanting to seem ignorant about how to use it, he put his chest upon it, lashed it fast, and then shouldered the whole barrow and marched up the wharf.
+
+"Didn't the people laugh?" said i.
+
+upon which he told me another story. at Rokovoko, at wedding feasts, the people pour the fragrant water of young coconuts into a large calabash that forms the great central ornament on the mat where the feast is held. a grand merchant ship once came to Rokovoko, and its captain—stately and punctilious—was invited to his sister's wedding feast, she being a pretty young princess of ten. when the guests were assembled, this captain placed himself across from the punchbowl, between the High Priest and the King. grace being said, the High Priest opened the banquet by the immemorial ceremony of dipping his consecrated fingers into the bowl before the blessed beverage circulated. the captain, seated next to the Priest and observing the ceremony, assumed—being Captain of a ship and therefore of plainly superior rank to a mere island King—that it was a huge finger-glass. and coolly proceeded to wash his hands in the punchbowl.
+
+"Now," said Queequeg, "what you tink now? Didn't our people laugh?"
+
+passage paid, luggage safe, we stood on the schooner. hoisting sail, she glided down the Acushnet river. New Bedford on one side, rising in terraces. huge hills of casks piled on her wharves. the whale ships moored in silence after long voyages—and beyond, the sound of carpenters and coopers with blended noises of fire and forge, new cruises being readied.
+
+one long voyage ended, only beginning a second. second ended, beginning a third. forever and for aye. the endlessness of all earthly effort.
+
+gaining open water, the bracing breeze freshened. the little Moss tossed quick foam from her bows like a young colt snorting. i snuffed that Tartar air—i spurned that turnpike earth, all dented with marks of slavish heels and hoofs. i turned to admire the sea, which permits no records.
+
+Queequeg seemed to drink and reel with me. his dusky nostrils flared. he showed his filed teeth. we flew. and jeering glances from the passengers—lubbers, mostly, marveling that two fellow beings should be so companionable, as though a white man were anything more dignified than a whitewashed negro—we didn't notice those, or only just enough to note their greenness.
+
+Queequeg caught one of these young bumpkins mimicking him from behind. i thought the bumpkin's hour of doom had come. Queequeg dropped the harpoon, caught him by the arms, and with a miraculous dexterity sent him high up bodily into the air. then slightly tapped his stern in mid-somerset. the fellow landed with bursting lungs on his feet.
+
+Queequeg turned his back on him, lit the tomahawk-pipe, and passed it to me.
+
+"Capting! Capting!" yelled the bumpkin, running toward the officer. "Here's the devil!"
+
+the Captain—a gaunt rib of the sea—stalked up. "Hallo, you sir. What in thunder do you mean by that? Don't you know you might have killed that chap?"
+
+"What him say?" said Queequeg, turning mildly to me.
+
+"He says you came near killing that man there."
+
+"Kill-e," cried Queequeg, twisting his tattooed face into an expression of disdain. "Ah! him bevy small-e fish-e; Queequeg no kill-e so small-e fish-e; Queequeg kill-e big whale!"
+
+"Look you," roared the Captain. "I'll kill-e you, you cannibal, if you try any more of your tricks aboard here."
+
+it was right about then that the Captain needed to mind his own eye. the main-sail had parted its weather-sheet. the enormous boom was flying side to side, sweeping the after-deck. the poor bumpkin—Queequeg's target—got swept overboard. all hands panicked. nobody could approach the boom. it flew right and left in the ticking of a watch, every instant threatening to snap the mast to splinters.
+
+Queequeg dropped to his knees, crawled under the path of the boom, whipped hold of a rope, secured one end to the bulwarks, and flung the other like a lasso to catch the boom as it swept overhead. at the next jerk: trapped.
+
+then Queequeg stripped to the waist and dove from the side, a long living arc of a leap. for three minutes he swam like a dog through freezing foam. then dove and disappeared. came back up: one arm striking out, the other dragging a lifeless form.
+
+the bumpkin was restored.
+
+all hands voted Queequeg a noble trump. the captain begged his pardon.
+
+from that hour i cleaved to Queequeg like a barnacle. yea, till poor Queequeg took his last long dive.
+
+was there ever such unconsciousness? he didn't seem to think he deserved a medal from any Humane Society. only asked for fresh water—something to wipe the brine off. then dry clothes, his pipe, and leaning against the bulwarks, mildly eyeing those around him, he seemed to be saying to himself:
+
+"It's a mutual, joint-stock world, in all meridians. We cannibals must help these Christians."
+
+---
+
+## CHAPTER 14. Nantucket.
+
+nothing more happened on the passage. we arrived safely in Nantucket.
+
+Nantucket. take out your map and look at it. see what a real corner of the world it occupies. more lonely than the Eddystone lighthouse. a hillock and an elbow of sand. all beach, no background. more sand than you'd use in twenty years as blotting paper. they say the people there plant weeds because nothing grows naturally, import Canada thistles, have to send off-island for a wooden spile to stop a leak in an oil cask. pieces of wood are carried around like bits of the true cross in Rome. one blade of grass makes an oasis. three blades is a prairie. they wear quicksand shoes. clams will sometimes be found adhering to their chairs and tables—the ocean so encloses them on all sides.
+
+look at the legend of how this island was settled. an eagle swooped down on the New England coast and carried off an Indian infant. the parents, with loud lament, watched the child borne out of sight over the water. resolved to follow. set out in canoes. perilous passage. discovered the island. found an empty ivory casket—the poor little skeleton.
+
+those Nantucketers: born on a beach, they took to the sea. first crabs and quohogs from the sand. then nets and mackerel. then boats and cod. then great ships on all oceans—put an incessant belt of circumnavigation around the globe, peeped into Bering Straits, declared everlasting war with the mightiest animated mass that survived the flood. that Himalayan salt-sea mastodon—whose very panics are more to be dreaded than his most fearless assaults.
+
+and these naked Nantucketers, these sea-hermits, have overrun and conquered the watery world like so many Alexanders—parceling out among them the Atlantic, Pacific, and Indian oceans as the three pirate powers did Poland. let America add Mexico to Texas; let England overswarm India—two-thirds of this globe are the Nantucketer's. for the sea is his. he owns it as emperors own empires. merchant ships are but extension bridges; armed ones but floating forts. even pirates and privateers only plunder other fragments of land. the Nantucketer alone resides and riots on the sea itself. that is his home. that is his business. a Noah's flood would not interrupt it, though it overwhelmed all the millions in China.
+
+he lives on the sea as prairie cocks on the prairie. for years he knows not the land—so that when he comes to it at last, it smells like another world. with the landless gull that at sunset folds her wings and is rocked to sleep between billows, so at nightfall the Nantucketer furls his sails and lays him to his rest, while under his very pillow rush herds of walruses and whales.
+
+---
+
+## CHAPTER 15. Chowder.
+
+it was late when the Moss came snugly to anchor. Queequeg and i went ashore. no business that day—just supper and a bed. the Spouter-Inn landlord had recommended us to his cousin Hosea Hussey of the Try Pots, said to be the proprietor of one of the best kept hotels in Nantucket and famous for his chowders.
+
+the directions he'd given were crooked—involving a yellow warehouse on the starboard hand until we opened a white church to larboard, then a corner three points to starboard—and Queequeg insisted throughout that the yellow warehouse should be on the larboard side, while i understood otherwise. we knocked up a peaceable inhabitant or two in the dark to get the way.
+
+eventually we arrived at something unmistakable.
+
+two enormous wooden pots painted black, suspended by asses' ears from the cross-trees of an old top-mast planted in front of the doorway. the horns of the cross-trees sawed off on one side, so the thing looked not unlike a gallows. i stared at this gallows with a vague misgiving. one horn for Queequeg, one for me. ominous, thinks i. Coffin my innkeeper on landing. tombstones in the chapel. and here a gallows and a pair of prodigious black pots. are these casting oblique hints touching Tophet?
+
+a freckled woman with yellow hair stood in the porch under a dull red lamp—it looked like an injured eye—having a brisk scolding session with a man in a purple woollen shirt.
+
+"Get along with ye," said she to the man, "or I'll be combing ye!"
+
+"Come on, Queequeg," said i. "That's Mrs. Hussey."
+
+and so it was. Mr. Hosea Hussey being from home, Mrs. Hussey entirely competent. she postponed the scolding, ushered us into a little room, seated us at a table still bearing relics of a concluded repast, turned to us, and said:
+
+"Clam or Cod?"
+
+"What's that about Cods, ma'am?" said i.
+
+"Clam or Cod?" she repeated.
+
+"A clam for supper? a cold clam—isn't that a rather cold and clammy reception in winter time, Mrs. Hussey?"
+
+she was already heading for the kitchen, having heard only the word "clam." bawled out "Clam for two!" and disappeared.
+
+"Queequeg," said i, "do you think we can make out a supper on one clam?"
+
+but when the smoking chowder came in, the mystery was delightfully explained. small juicy clams—scarcely bigger than hazel nuts—mixed with pounded ship biscuit and salted pork cut into flakes, enriched with butter, seasoned with pepper and salt. our appetites sharpened by the frosty voyage, Queequeg before his favorite fish food—we dispatched it with great expedition.
+
+then, as an experiment, i stepped to the kitchen door and said the word "cod" with great emphasis. a few minutes later: a fine cod-chowder.
+
+we resumed business. thinks i: fishiest of all fishy places was the Try Pots—for the pots there were always boiling chowders. chowder for breakfast, chowder for dinner, chowder for supper, till you began to look for fish-bones coming through your clothes. the area before the house was paved with clam-shells. Mrs. Hussey wore a polished necklace of codfish vertebrae. Hosea Hussey had his account books bound in superior old shark-skin. the milk had a fishy flavor i couldnt account for—until one morning i found Hosea's brindled cow down the beach feeding on fish remnants, marching along with each foot in a cod's decapitated head.
+
+supper concluded, Mrs. Hussey showed us to bed. but as Queequeg was about to go up first, she reached out and demanded his harpoon. no harpoons allowed in her chambers.
+
+"Why not?" said i. "Every true whaleman sleeps with his harpoon."
+
+"Because it's dangerous. Ever since young Stiggs—gone four years and a half, came back with only three barrels of ile—was found dead in my first floor back with his harpoon in his side. No boarders take such dangerous weepons in their rooms at night. Mr. Queequeg, i will just keep this here iron till morning. But the chowder—clam or cod tomorrow for breakfast?"
+
+"Both," says i. "And let's have a couple of smoked herring by way of variety."
+
+---
+
+## CHAPTER 16. The Ship.
+
+in bed we concocted our plans for the morrow. Queequeg informed me then that he'd been diligently consulting Yojo—his little black god—and Yojo had told him two or three times over, and insisted upon it every way, that instead of going together among the whaling-fleet in harbor and jointly selecting a craft, i should go alone. Yojo had already pitched upon a vessel which, if left to myself, i would infallibly light upon, as though by chance. and in that vessel i must immediately ship myself, irrespective of Queequeg for now.
+
+i did not like this plan at all. id rather relied on Queequeg's sagacity to point out the best whaler. but he was immovable. so next morning early, leaving Queequeg shut up with Yojo in our little bedroom—some sort of Ramadan or day of humiliation and prayer, which i could never understand no matter how i applied myself to it—i went out among the shipping.
+
+after prolonged sauntering and many random inquiries, i learned that three ships were up for three-year voyages: the Devil-Dam, the Tit-bit, and the Pequod.
+
+Devil-Dam: no accounting for the name. Tit-bit: obvious. Pequod: the name of a celebrated tribe of Massachusetts Indians, now extinct as the ancient Medes.
+
+i peered and pryed about the Devil-Dam. hopped over to the Tit-bit. and finally went aboard the Pequod, looked around her for a moment, and decided: this was the ship.
+
+you may have seen queer craft in your day—square-toed luggers, mountainous Japanese junks, butter-box galliots—but you never saw anything like the Pequod. she was a ship of the old school. rather small. with an old-fashioned claw-footed look. long seasoned in the typhoons and calms of all four oceans, her hull's complexion darkened like a French grenadier who'd fought in Egypt and Siberia both. her venerable bows looked bearded. her masts—cut on the coast of Japan after the originals were lost overboard in a gale—stood stiffly up like the spines of the three old kings of Cologne. her ancient decks worn and wrinkled like the pilgrim-worshipped flagstone in Canterbury Cathedral where Becket bled.
+
+but it was the additions that made her what she was. Captain Peleg, her former chief-mate and now a principal owner, had built upon her original grotesqueness—inlaid it all over with a quaintness of material and device unmatched by anything except maybe some carved old bedstead. she was apparelled like a barbaric Ethiopian emperor heavy with polished ivory pendants. a cannibal of a craft, tricking herself out in the chased bones of her enemies. her unpaneled open bulwarks garnished all the way round like one continuous jaw—long sharp sperm-whale teeth inserted for pins, to fasten her old hempen thews and tendons. those thews ran not through base land-wood blocks but through sheaves of sea-ivory. at her helm—no wheel—a tiller. carved from the long narrow lower jaw of her hereditary foe. the helmsman who steered by that tiller in a tempest felt like the Tartar clutching his fiery steed by the jaw.
+
+noble craft. but somehow most melancholy. all noble things are touched with that.
+
+i looked around the quarter-deck for someone having authority. saw nobody at first—but noticed a strange sort of tent, or wigwam, pitched a little behind the main-mast. conical, some ten feet high, made from long huge slabs of limber black bone taken from the middle of a right whale's jaw, their broad ends planted on deck, lashed and sloped inward to a tufted point at the apex. hairy fibers waving to and fro like a topknot. a triangular opening faced forward.
+
+inside: half-concealed, a man who by his aspect seemed to have authority, now in respite from command. seated in an old carved oaken chair, wriggling all over with curious carving. the chair's bottom was of the same elastic stuff as the wigwam.
+
+nothing especially remarkable about him. brown and brawny like most old seamen, heavily rolled in blue pilot-cloth cut in the Quaker style. but a fine and microscopic net-work of wrinkles interlacing round his eyes—from continual sailings in hard gales and always looking to windward, which causes the muscles around the eyes to become pursed together. effective in a scowl.
+
+"Is this the Captain of the Pequod?" said i, advancing to the tent door.
+
+"Supposing it be the captain of the Pequod, what dost thou want of him?" he demanded.
+
+"I was thinking of shipping."
+
+"Thou wast, wast thou? I see thou art no Nantucketer—ever been in a stove boat?"
+
+"No, sir, i never have."
+
+"Dost know nothing at all about whaling, i dare say?"
+
+"Nothing, sir; but i have no doubt i shall soon learn. I've been several voyages in the merchant service, and i think—"
+
+"Merchant service be damned. Talk not that lingo to me. Dost see that leg?—I'll take that leg away from thy stern if ever thou talkest of the marchant service to me again. Marchant service! Look suspicious, don't it, eh? Hast not been a pirate? Didst not rob thy last Captain? Dost not think of murdering the officers when thou gettest to sea?"
+
+i protested my innocence. this was clearly an insular Quakerish Nantucketer's prejudice against outsiders. i saw it plainly.
+
+"But what takes thee a-whaling?"
+
+"I want to see what whaling is. I want to see the world."
+
+"Want to see what whaling is, eh? Have ye clapped eye on Captain Ahab?"
+
+"Who is Captain Ahab, sir?"
+
+"Aye, aye. Captain Ahab is the Captain of this ship."
+
+"I thought i was speaking to the Captain himself."
+
+"Thou art speaking to Captain Peleg—that's who ye are speaking to, young man. It belongs to me and Captain Bildad to fit out the Pequod for the voyage and see to crew. We're part owners and agents. Now—if thou wantest to know what whaling is, i can put ye in a way of finding it out before ye bind yourself to it. Clap eye on Captain Ahab, young man, and thou wilt find that he has only one leg."
+
+"What do you mean, sir? Was the other lost by a whale?"
+
+"Lost by a whale! Young man, come nearer to me: it was devoured, chewed up, crunched by the monstrousest parmacetty that ever chipped a boat!—ah, ah!"
+
+there was genuine grief in that exclamation. i waited, then said as calmly as i could—that i couldn't have known there was peculiar ferocity in any particular whale, though i might have inferred as much from the simple fact of the accident.
+
+"Look ye now, young man, thy lungs are soft. Thou dost not talk shark a bit. Sure ye've been to sea before?"
+
+"Sir—i told you—four voyages in the merchant—"
+
+"Hard down out of that! I said about the marchant service. Let us understand each other. I have given thee a hint about what whaling is; do ye yet feel inclined for it?"
+
+"I do, sir."
+
+"Very good. Now, art thou the man to pitch a harpoon down a live whale's throat and then jump after it? Answer, quick!"
+
+"I am, sir, if it should be positively indispensable—though i don't take that to be the fact."
+
+"Good again. Well then—step forward there and take a peep over the weather-bow and come back and tell me what ye see."
+
+i stood puzzled. but his crow's feet scowled me forward.
+
+i went and looked. the ship, swinging to her anchor with the flood tide, was pointing obliquely toward the open ocean. prospect unlimited. monotonous. nothing in it. i reported back: nothing but water, some horizon, a squall coming up maybe.
+
+"Well, what does thou think of seeing the world? Do ye wish to go round Cape Horn to see more of it? Can't ye see the world where you stand?"
+
+i was a little staggered. but i wanted to sail, and i would; and the Pequod was as good a ship as any. i told him so. he expressed his willingness to ship me.
+
+"And thou mayest as well sign the papers right off—come along."
+
+he led me below to the cabin.
+
+seated on the transom: a figure in a faded blue coat and spectacles, reading a ponderous volume with absolute absorption. this was Captain Bildad, co-owner. Nantucketer and Quaker both, though fighting Quaker—the kind who could spill tuns of leviathan gore without ever quite reconciling it with his sworn foe of human bloodshed. a man who had long since reached the sage and sensible conclusion that a man's religion is one thing and this practical world quite another. this world pays dividends.
+
+Bildad was an incorrigible old hunks by reputation. hard task-master. had never swore at his men—but got an inordinate quantity of cruel, unmitigated hard work out of them. his drab-colored eye intently looking at you made you feel nervous enough to grab a hammer and go to work at something, anything, never mind what. indolence perished before him. his body was the exact embodiment of his utilitarian character. no spare flesh, no superfluous beard. a nap so economical on his chin it resembled the worn nap of his broad-brimmed hat.
+
+now Peleg tried to mend a pen with his jackknife while Bildad—one of the principal owners, an interested party in all this—sat quietly reading his Bible and murmuring to himself: "Lay not up for yourselves treasures upon earth, where moth—"
+
+"Well, Captain Bildad," interrupted Peleg, "what lay shall we give this young man?"
+
+"Thou knowest best," was the sepulchral reply. "The seven hundred and seventy-seventh wouldn't be too much, would it?—'where moth and rust do corrupt, but lay—'"
+
+the seven hundred and seventy-seventh lay. meaning the 777th part of the clear net proceeds of the voyage. at first glance, large number. but seven hundred and seventy-seven is a pretty large number, and yet when you make a seventh-hundred-seventy-seventh of it, you come up with something considerably less than seven hundred and seventy-seven gold doubloons. considerably less.
+
+"Blast your eyes, Bildad!" cried Peleg. "Thou dost not want to swindle this young man! He must have more than that."
+
+"Seven hundred and seventy-seventh," said Bildad again, without lifting his eyes. "—for where your treasure is, there will your heart be also."
+
+"I am going to put him down for the three hundredth," said Peleg. "Do ye hear that, Bildad! The three hundredth lay, i say."
+
+Bildad laid down his book and said, solemnly: "Captain Peleg, thou hast a generous heart; but thou must consider the duty thou owest to the other owners—widows and orphans, many of them—and that if we too abundantly reward this young man's labors, we may be taking the bread from those widows and those orphans. The seven hundred and seventy-seventh lay, Captain Peleg."
+
+"Thou Bildad!" roared Peleg, starting up and clattering about the cabin. "If i'd followed thy advice in these matters, i would afore now have a conscience heavy enough to founder the largest ship that ever sailed round Cape Horn!"
+
+"Captain Peleg," said Bildad steadily, "thy conscience may be drawing ten inches of water, or ten fathoms—i can't tell; but as thou art still an impenitent man, i greatly fear lest thy conscience be but a leaky one, and will in the end sink thee foundering down to the fiery pit, Captain Peleg."
+
+"Fiery pit! Fiery pit! Ye insult me, man! It's an all-fired outrage to tell any human creature he's bound to hell. Flukes and flames! Say that again and i'll—i'll swallow a live goat with all his hair and horns on. Out of the cabin, ye canting son of a wooden gun!"
+
+he made a rush at Bildad, who with a marvellous oblique sliding celerity evaded him. Peleg ran out of rage as fast as he'd run in. sat down like a lamb. twitched a little. whistled.
+
+"Whew! The squall's gone off to leeward, i think. Bildad, thou used to be good at sharpening a lance—mend that pen, will ye. My jack-knife needs the grindstone. Now then, my young man, Ishmael's thy name—well, down ye go, Ishmael, for the three hundredth lay."
+
+three hundredth. not the 275th i'd estimated i'd get, but not nothing. not seven hundred and seventy-seventh.
+
+"Captain Peleg—i have a friend with me who wants to ship too. Shall i bring him down tomorrow?"
+
+"To be sure. Fetch him along."
+
+"What lay does he want?" groaned Bildad, glancing up from his book.
+
+"Never thee mind about that, Bildad," said Peleg. "Has he ever whaled it any?" turning to me.
+
+"Killed more whales than i can count, Captain Peleg."
+
+"Well, bring him along then."
+
+i signed the papers and left. hadn't proceeded far when i thought: i'd been shipped, but i still hadn't seen the Captain who was to be the absolute dictator of the voyage the moment we cleared harbor. i turned back and accosted Peleg. where was Captain Ahab?
+
+"And what dost thou want of Captain Ahab? It's all right enough; thou art shipped."
+
+"Yes, but i should like to see him."
+
+"But i don't think thou wilt be able to at present. I don't know exactly what's the matter with him; but he keeps close inside the house. A sort of sick, and yet he don't look so. In fact he ain't sick; but no, he isn't well either. Any how, young man, he won't always see me, so i don't suppose he will thee. He's a queer man, Captain Ahab—so some think—but a good one. Oh, thou'lt like him well enough; no fear. He's a grand, ungodly, god-like man, Captain Ahab; doesn't speak much; but, when he does speak, then you may well listen. Mark ye, be forewarned; Ahab's above the common; Ahab's been in colleges, as well as 'mong the cannibals; been used to deeper wonders than the waves; fixed his fiery lance in mightier, stranger foes than whales. His lance! aye, the keenest and the surest that out of all our isle! Oh! he ain't Captain Bildad; no, and he ain't Captain Peleg; he's Ahab, boy; and Ahab of old, thou knowest, was a crowned king!"
+
+"And a very vile one," i said. "When that wicked king was slain, the dogs, did they not lick his blood?"
+
+Peleg stepped closer. something in his eye that almost startled me. "Look ye, lad; never say that on board the Pequod. Never say it anywhere. Captain Ahab did not name himself. 'Twas a foolish, ignorant whim of his crazy, widowed mother, who died when he was only a twelvemonth old. And yet the old squaw Tistig, at Gayhead, said the name would somehow prove prophetic. And perhaps other fools like her may tell thee the same. i wish to warn thee. It's a lie. i know Captain Ahab well; i've sailed with him as mate years ago; he's a good man—not a pious good man, like Bildad, but a swearing good man—something like me—only there's a good deal more of him. i know that on the passage home he was a little out of his mind for a spell; but it was the sharp shooting pains in his bleeding stump that brought that about, as any one might see. And ever since he lost his leg last voyage by that accursed whale, he's been a kind of moody—desperate moody, and savage sometimes; but that will all pass off. it's better to sail with a moody good captain than a laughing bad one. And he has a wife—not three voyages wedded—a sweet, resigned girl. Think of that; by that sweet girl that old man has a child: hold ye then there can be any utter, hopeless harm in Ahab? No, no, my lad; stricken, blasted, if he be, Ahab has his humanities!"
+
+i walked away full of thoughtfulness. something about what had been incidentally revealed—a certain wild vagueness of painfulness concerning him. something like awe. something i couldn't describe. it didn't disincline me toward him. but the impatience at the mystery. the sense of something enormous not yet visible.
+
+eventually other thoughts carried me elsewhere. and dark Ahab slipped my mind.
+
+---
+
+*— end of Part 2 —*
+
+---
+
+drop "continue" for Part 3 — Chapters 17–28: the Ramadan through Ahab's first appearance on deck. that's where things start getting interesting.
+
+
+## Part 3: Chapters 17–28
+
+---
+
+## CHAPTER 17. The Ramadan.
+
+Queequeg's Ramadan—his fasting and humiliation—was to continue all day. i didn't choose to disturb him till toward nightfall. i cherish the greatest respect for everybody's religious obligations, no matter how comical. i could not find it in my heart to undervalue even a congregation of ants worshipping a toadstool. we good Presbyterian Christians should be charitable in these things and not fancy ourselves vastly superior to other mortals just because they hold what we consider half-crazy conceits about the divine. there was Queequeg, certainly entertaining the most absurd notions about Yojo and his Ramadan—but what of that? he seemed content. let him be. heaven have mercy on us all—Presbyterians and Pagans alike—for we are all somehow dreadfully cracked about the head, and sadly need mending.
+
+toward evening, when i felt assured all his rituals must be over, i went up and knocked at the door.
+
+no answer.
+
+tried the handle. fastened inside.
+
+"Queequeg—it's Ishmael."
+
+silence.
+
+i began to grow alarmed. i'd given him abundant time. what if he'd had a stroke? i looked through the keyhole. the door opened into an odd corner, so i could only see part of the foot-board and a strip of wall. but i could see the wooden shaft of his harpoon—which the landlady had taken from him the evening before—leaning against the wall inside. that meant he was in there. no possible mistake.
+
+"Queequeg! Queequeg!"
+
+nothing.
+
+i ran downstairs and reported my suspicions to the first person i met—the chambermaid. she went pale. "La! la! i went to make the bed after breakfast and the door was locked and not a mouse to be heard—Mrs. Hussey! apoplexy!"—and ran for the kitchen.
+
+Mrs. Hussey appeared with a mustard-pot in one hand and a vinegar-cruet in the other, having just broken away from attending to the castors. i told her the whole case. she ruminated, cruet at her nose, then checked a closet under the landing—and came back to tell me Queequeg's harpoon was missing from it.
+
+"He's killed himself. It's unfort'nate Stiggs done over again—there goes another counterpane—God pity his poor mother! Has the poor lad a sister? Betty, go to Snarles the Painter and tell him to paint me a sign: 'No suicides permitted here, and no smoking in the parlor.' Might as well kill both birds at once."
+
+she was still talking when she caught me trying to force the door again. would not have her premises spoiled. tried a key she had—didn't fit the supplemental bolt Queequeg had thrown inside. i tore from her grip and with a sudden rush dashed myself full against the door.
+
+prodigious noise. the door flew open. the knob slammed the wall, sent plaster to the ceiling.
+
+and there sat Queequeg—cool and self-collected—in the middle of the room, squatting on his hams, holding Yojo on top of his head. looking neither right nor left. a carved image. scarce a sign of active life.
+
+"Queequeg—what's the matter with you?"
+
+not a word.
+
+we couldn't drag a syllable out of him. he sat as if screwed to the floor. the landlady asked had he been sitting like that all day. probably yes—upwards of eight or ten hours, without his regular meals.
+
+i sent Mrs. Hussey off and closed the door. tried every polite art to get him to move—a chair, conversation, reasoning. nothing. he would not move a peg, say a word, look at me, nor notice my presence in the slightest.
+
+a part of his Ramadan, i concluded. they fast on their hams in his country. must be part of the creed. cant last forever, thank God, and his Ramadan only comes once a year.
+
+went down to supper. came back near eleven. Queequeg hadn't stirred an inch.
+
+i threw my heavy bearskin jacket over him—it promised to be a cold night—and eventually dropped off to sleep.
+
+broke of day: first glimpse of sun through the window. up he got, stiff and grating in his joints but with a cheerful look. limped over to where i lay, pressed his forehead against mine, and said his Ramadan was over.
+
+now—i have no objection to anyone's religion, be it what it may, so long as that person doesn't kill or insult any other person because of it. but when a man's religion becomes a positive torment to him, when it makes this earth of ours an uncomfortable inn to lodge in—then i think it high time to take that individual aside and argue the point.
+
+which i now did with Queequeg. got into bed, told him to lie and listen.
+
+went through the whole business. the rise and progress of primitive religions. came down to the present time. labored to show him that all these Lents and Ramadans and prolonged ham-squattings in cold cheerless rooms were stark nonsense—bad for the health, useless for the soul, opposed to all laws of hygiene and common sense. told him that fasting makes the body cave in, hence the spirit caves in, and all thoughts born of a fast must necessarily be half-starved. this is why most dyspeptic religionists cherish such melancholy notions about their hereafters. in one word, Queequeg: hell is an idea first born on an undigested apple-dumpling, and since then perpetuated through hereditary dyspepsias nurtured by Ramadans.
+
+then i asked whether he himself was ever troubled with dyspepsia. he said no—only once, on a memorable occasion. it was after a great feast given by his father the king, on the gaining of a great battle wherein fifty of the enemy had been killed by about two o'clock in the afternoon and all cooked and eaten that very evening.
+
+"No more, Queequeg," said i, shuddering. "That will do."
+
+i knew the inferences without his completing them.
+
+in the end, i don't think my remarks on religion made much impression on Queequeg. he didn't quite hear me on that subject unless it was from his own point of view. and he understood maybe a third of what i said. and he no doubt thought he knew considerably more about the true religion than i did. he looked at me with a sort of condescending concern—as though it was a great pity such a sensible young man should be so hopelessly lost to evangelical pagan piety.
+
+we rose and dressed. Queequeg took a prodigiously hearty breakfast of chowders of all sorts—making sure, i thought, to give the landlady no profit from his Ramadan—and we sallied out to board the Pequod, picking our teeth with halibut bones as we walked.
+
+---
+
+## CHAPTER 18. His Mark.
+
+walking down the wharf toward the ship, Queequeg carrying his harpoon, Captain Peleg hailed us from his wigwam in his gruff voice. said he had not suspected my friend was a cannibal, and furthermore was announcing that he let no cannibals on board that craft unless they previously produced their papers.
+
+"What do you mean, Captain Peleg?" said i, jumping to the bulwarks.
+
+"He must show his papers."
+
+"Yes," said Captain Bildad, sticking his head out from behind Peleg. "He must show he's converted. Son of darkness—art thou at present in communion with any Christian church?"
+
+"Why," said i, "he's a member of the First Congregational Church."
+
+"First Congregational Church!" cried Bildad. "That worships in Deacon Deuteronomy Coleman's meeting-house?" He got out his spectacles, rubbed them with his great yellow bandana, put them on carefully, and leaned stiffly over the bulwarks for a long look at Queequeg.
+
+"How long hath he been a member?" he said, turning to me. "Not very long, i rather guess, young man."
+
+"No," said Peleg, "and he hasn't been baptized right either, or it would have washed some of that devil's blue off his face."
+
+"Do tell, now," cried Bildad. "Is this Philistine a regular member of Deacon Deuteronomy's meeting? I never saw him going there, and i pass it every Lord's day."
+
+"I don't know anything about Deacon Deuteronomy or his meeting," said i. "All i know is that Queequeg here is a born member of the First Congregational Church. He is a deacon himself, Queequeg is."
+
+"Young man," said Bildad sternly, "thou art skylarking with me. Explain thyself. What church dost thee mean?"
+
+finding myself hard pushed, i replied: "I mean, sir, the same ancient Catholic Church to which you and i, and Captain Peleg there, and Queequeg here, and all of us, and every mother's son and soul of us belong; the great and everlasting First Congregation of this whole worshipping world; we all belong to that; only some of us cherish some queer crotchets no ways touching the grand belief; in that we all join hands."
+
+"Splice, thou mean'st splice hands," cried Peleg, drawing nearer. "Young man, you'd better ship for a missionary instead of a fore-mast hand; i never heard a better sermon. Come aboard, come aboard—never mind about the papers. Tell Quohog there—what d'ye call him?—to step along. Look at that harpoon he's got! looks like good stuff. And he handles it about right. I say, Quohog, did you ever stand in the head of a whale-boat? Did you ever strike a fish?"
+
+without a word, Queequeg jumped to the bulwarks, swung into the bow of one of the whale-boats hanging at the side, braced his left knee, poised his harpoon, and cried out something in the following manner:
+
+"Cap'ain, you see him small drop tar on water dere? You see him? well, spose him one whale eye, well, den!"
+
+and he darted the iron right over old Bildad's broad brim, clean across the ship's decks, and struck the glistening tar-spot out of sight.
+
+"Now," said Queequeg, quietly hauling in the line, "spos-ee him whale-e eye; why, dad whale dead."
+
+"Quick, Bildad!" said Peleg. "Get the ship's papers! We must have Hedgehog there—i mean Quohog—in one of our boats. Look ye, Quohog, we'll give ye the ninetieth lay, and that's more than ever was given a harpooneer yet out of Nantucket."
+
+down we went to the cabin. Queequeg was enrolled among the ship's company.
+
+when it came to signing, Peleg turned to me: "I guess Quohog there don't know how to write. Dost thou sign thy name or make thy mark?"
+
+Queequeg, who'd been through similar ceremonies before, looked not at all abashed. he took the offered pen, copied on the paper—in the proper place—an exact counterpart of a queer round figure tattooed upon his arm. so that through Captain Peleg's obstinate mistake touching his name, it stood something like this:
+
+*Quohog. his X mark.*
+
+meanwhile Captain Bildad sat solemnly eyeing Queequeg, and at last rose, fumbled in the huge pockets of his broad-skirted drab coat, took out a bundle of tracts, selected one entitled "The Latter Day Coming; or No Time to Lose," placed it in Queequeg's hands, grasped them and the book both, looked earnestly into his eyes, and said: "Son of darkness, i must do my duty by thee. If thou still clingest to thy pagan ways, which i sadly fear, i beseech thee: remain not for aye a Belial bondsman. Spurn the idol Bell, and the hideous dragon; turn from the wrath to come; mind thine eye—oh! goodness gracious! steer clear of the fiery pit!"
+
+"Avast there, Bildad, avast now spoiling our harpooneer," cried Peleg. "Pious harpooneers never make good voyagers—it takes the shark out of em. There was young Nat Swaine, once the bravest boat-header out of all Nantucket; he joined the meeting, and never came to good. Got so frightened about his soul that he shrinked and sheered away from whales for fear of after-claps, in case he got stove and went to Davy Jones."
+
+Bildad said no more. buttoned his coat, stalked on deck. there he stood, very quietly overlooking some sailmakers mending a topsail. now and then stooping to pick up a patch, or save an end of tarred twine that might otherwise be wasted.
+
+---
+
+## CHAPTER 19. The Prophet.
+
+"Shipmates, have ye shipped in that ship?"
+
+Queequeg and i had just left the Pequod, sauntering away from the water, each occupied with his own thoughts, when these words came from a stranger who stepped before us and leveled his massive forefinger at the vessel. shabbily appareled—faded jacket, patched trousers, a rag of a black handkerchief around his neck. his face was all over confluent small-pox scars, ribbed and furrowed like the bed of a torrent after the water's dried up.
+
+"Have ye shipped in her?" he repeated.
+
+"The Pequod, i suppose," said i, trying to get a clear look at him.
+
+"Aye, the Pequod—that ship there." he drew back his whole arm and then thrust it out straight at her.
+
+"Yes," said i, "we have just signed the articles."
+
+"Anything down there about your souls?"
+
+"About what?"
+
+"Oh, perhaps you hav'n't got any," he said quickly. "No matter though. i know many chaps that hav'n't got any—good luck to em. A soul's a sort of a fifth wheel to a wagon."
+
+"What are you jabbering about, shipmate?" said i.
+
+"He's got enough, though," said the stranger, with a nervous emphasis on the word he, "to make up for all deficiencies of that sort in other chaps."
+
+"Queequeg," said i, "let's go. This fellow has broken loose from somewhere."
+
+"Stop!" cried the stranger. "Ye haven't seen Old Thunder yet, have ye?"
+
+"Who's Old Thunder?"
+
+"Captain Ahab."
+
+"What! The captain of the Pequod?"
+
+"Aye—among some of us old sailor chaps he goes by that name. Ye hav'n't seen him yet, have ye?"
+
+"No, we hav'n't. He's sick, they say."
+
+"All right again before long!" laughed the stranger, with a solemnly derisive sort of laugh. "Look ye; when Captain Ahab is all right, then this left arm of mine will be all right; not before."
+
+"What do you know about him?"
+
+"What did they tell you about him? Say that!"
+
+"They didn't tell much. Only that he's a good whale-hunter and a good captain."
+
+"That's true, that's true—both true enough. But you must jump when he gives an order. Step and growl; growl and go—that's the word with Captain Ahab. But nothing about that thing that happened to him off Cape Horn, long ago, when he lay like dead for three days and nights? Nothing about that deadly skrimmage with the Spaniard afore the altar in Santa? The silver calabash he spat into? And nothing about his losing his leg last voyage, according to the prophecy?"
+
+"My friend," said i, "what all this gibberish is about i don't know, and i don't much care; for it seems to me you must be a little damaged in the head. But if you are speaking of Captain Ahab—then let me tell you that i know all about the loss of his leg."
+
+"All about it, eh—sure you do? All?"
+
+"Pretty sure."
+
+the stranger stood a moment with his finger pointed at the Pequod, staring in a troubled reverie. then:
+
+"Ye've shipped, have ye? Names down on the papers? Well, well—what's signed is signed; and what's to be, will be; and then again perhaps it won't be, after all. Any how, it's all fixed and arranged a'ready; and some sailors or other must go with him. God pity em. Morning to ye, shipmates, morning; the ineffable heavens bless ye; i'm sorry i stopped ye."
+
+"Look here, friend," said i. "If you have anything important to tell us, out with it; but if you're only trying to bamboozle us, you are mistaken in your game. That's all i have to say."
+
+"And it's said very well, and i like to hear a chap talk up that way. Morning to ye, shipmates, morning! Oh—when ye get there, tell em i've concluded not to make one of em."
+
+"Come along, Queequeg. Let's leave this crazy man. But—your name, will you?"
+
+"Elijah."
+
+Elijah. we walked away. both commenting, after our fashion, on this ragged old sailor. agreed he was nothing but a humbug trying to be a bugbear.
+
+but we hadn't gone perhaps a hundred yards when i chanced to turn a corner and glanced back. Elijah, following us. though at a distance. i said nothing to Queequeg. watched to see whether the stranger would turn the same corner. he did. then seemed to be dogging us. what intent i couldn't imagine.
+
+his ambiguous half-hinting half-revealing talk, coupled now with this—all connected with the Pequod, and Captain Ahab, and the leg, and the Cape Horn fit, and the silver calabash, and what Captain Peleg had said, and the squaw Tistig's prediction, and the voyage we'd bound ourselves to—it all begat in me a various wonderment.
+
+i crossed the way with Queequeg to resolve it, retraced our steps on the other side. Elijah passed on without seeming to notice us. this relieved me. once more, and finally as it seemed, i pronounced him in my heart a humbug.
+
+---
+
+## CHAPTER 20. All Astir.
+
+a day or two passed. great activity aboard the Pequod. old sails mended, new sails coming on. bolts of canvas. coils of rigging. everything betokening that the ship's preparations were hurrying to a close. Peleg seldom left his wigwam—sat there keeping a sharp eye on the hands. Bildad did all the purchasing and providing at the stores. men worked below and aloft long after nightfall.
+
+word was given at all the inns where the crew were stopping: chests must be on board before night. no telling how soon the vessel might sail. Queequeg and i got our traps down, resolving to sleep ashore till the last. the ship didn't sail for several days still—as expected; there was a good deal yet to be done, and no telling how many things to be thought of, for a three-year housekeeping upon the wide ocean.
+
+it's like setting up a household. beds, saucepans, knives and forks, napkins, everything. only here you're doing it for a three-year voyage far from all grocers, doctors, bakers, and bankers. and whaling ships are the most exposed of all vessels to accidents of every kind—the very things the voyage depends on are the most likely to be destroyed. hence spare boats, spare spars, spare lines and harpoons, spare everything—almost—except a spare captain and a duplicate ship.
+
+chief among those fetching and carrying was Captain Bildad's sister, a lean old lady of most determined and indefatigable spirit, very kindhearted. Aunt Charity, everybody called her—and like a sister of charity she bustled about hither and thither, ready to turn her hand and heart to anything that promised safety, comfort, or consolation to all on board a ship in which her beloved brother Bildad had a stake, and in which she herself owned a score or two of well-saved dollars.
+
+she came on board the last day with a long oil-ladle in one hand and a still longer whaling lance in the other. not backward about it.
+
+during these days of preparation, Queequeg and i often visited the craft and asked about Captain Ahab—how he was, when he was coming aboard. the answer was always: getting better and better, expected every day; meanwhile the two captains, Peleg and Bildad, could attend to everything necessary.
+
+if i'd been downright honest with myself, i'd have seen plainly that i was more than half uncomfortable committing to this long voyage without once laying eyes on the man who would be its absolute dictator the moment we cleared harbor. but when a man suspects something wrong and is already involved in the matter, he insensibly strives to cover up his suspicions even from himself. i said nothing, tried to think nothing.
+
+at last it was given out that next day the ship would certainly sail.
+
+---
+
+## CHAPTER 21. Going Aboard.
+
+nearly six o'clock. grey imperfect misty dawn when we drew near the wharf.
+
+"There are some sailors running ahead there," said i to Queequeg. "Can't be shadows; she's off by sunrise—come on!"
+
+"Avast!" cried a voice behind us. a hand laid on both our shoulders, and then someone insinuating himself between us stood stooping forward, peering from Queequeg to me in the uncertain twilight.
+
+Elijah.
+
+"Going aboard?"
+
+"Hands off," said i.
+
+"Lookee here," said Queequeg. "Go 'way!"
+
+"Ain't going aboard, then?"
+
+"Yes, we are," said i. "But what business is that of yours? I consider you a little impertinent, Mr. Elijah."
+
+"No, no—wasn't aware of that," said Elijah, slowly and wonderingly looking from me to Queequeg.
+
+"Elijah—you will oblige my friend and me by withdrawing. We are going to the Indian and Pacific Oceans, and would prefer not to be detained."
+
+"Ye be, be ye? Coming back before breakfast?"
+
+"He's cracked, Queequeg. Come on."
+
+he stole after us again. clapped his hand on my shoulder: "Did ye see anything looking like men going toward that ship a while ago?"
+
+i answered: "Yes, i thought i did see four or five men; but it was too dim to be sure."
+
+"Very dim, very dim," said Elijah. "Morning to ye."
+
+we left him again. he came softly after us once more: "See if you can find em now, will ye? Find who? Morning to ye! morning!"—moving off again. "Oh! i was going to warn ye against—but never mind, never mind—it's all one, all in the family; sharp frost this morning, ain't it? Good-bye to ye. Shan't see ye again very soon, i guess—unless it's before the Grand Jury."
+
+and with those cracked words he finally departed.
+
+we stepped on board the Pequod. everything in profound quiet, not a soul moving. the cabin entrance locked. hatches all on, lumbered with coils of rigging. going forward to the forecastle, we found the scuttle open. went down and found only an old rigger there, wrapped in a tattered pea-jacket, thrown at full length upon two chests, face down, in the profoundest sleep.
+
+those four or five figures we'd seen in the dim dawn—where had they gone? i would have thought myself optically deceived were it not for Elijah's inexplicable question. but i beat it down. sat near the sleeping rigger. Queequeg settled himself comfortably on the man's back—"perry dood seat," he said—and we passed the tomahawk-pipe between us over the sleeper, waiting.
+
+the rigger eventually woke, surfacing through the smoke, and we asked when she sailed.
+
+"Aye, aye, ye are going in her. She sails today. The Captain came aboard last night."
+
+"What Captain? Ahab?"
+
+"Who but him indeed."
+
+then a noise on deck. "Starbuck's astir," said the rigger. "He's a lively chief mate, that; good man, and a pious." and he went up.
+
+we followed into clear sunrise.
+
+---
+
+## CHAPTER 22. Merry Christmas.
+
+toward noon: the riggers dismissed, the Pequod hauled out from the wharf, Aunt Charity come off in a whale-boat with her last gifts—a night-cap for Stubb, a spare Bible for the steward—and the two captains, Peleg and Bildad, issued from the cabin.
+
+Peleg turned to the chief mate: "Now, Mr. Starbuck—are you sure everything is right? Captain Ahab is all ready—just spoke to him—nothing more to be got from shore? Well, call all hands. Muster em aft here—blast em!"
+
+"No need of profane words, however great the hurry, Peleg," said Bildad. "But away with thee, friend Starbuck, and do our bidding."
+
+Peleg took command of proceedings, blusteringly. Bildad went forward and began looking over the bows for the approaching anchor, and at intervals singing some psalmody, to cheer the hands at the windlass, who in return roared out a chorus about the girls in Booble Alley—which was somewhat inconsistent with the copy of Watts's hymns Bildad had placed in each seaman's berth with strict instructions against profane songs.
+
+Peleg ripped and swore astern in the most frightful manner. i almost thought he'd sink the ship before the anchor was up. i paused involuntarily on my handspike and told Queequeg to do the same. then felt a sudden sharp poke in my rear. turned around. Captain Peleg was withdrawing his leg from my immediate vicinity.
+
+that was my first kick.
+
+"Is that the way they heave in the marchant service?" he roared. "Spring, thou sheep-head; spring and break thy backbone! Why don't ye spring, all of ye! Quohog! spring, thou chap with the red whiskers; spring there, Scotch-cap; spring, thou green pants. Spring, i say, all of ye, and spring your eyes out!"
+
+the anchor came up. sails set. off we glided.
+
+a short cold Christmas. as the short northern day merged into night, we found ourselves almost broad upon the wintry ocean, its freezing spray casing us in ice, polished armor. the long rows of whale-teeth on the bulwarks glistened in moonlight. vast curving icicles hung from the bows like ivory tusks.
+
+Bildad at the helm, as pilot, his steady notes in the darkness:
+
+*Sweet fields beyond the swelling flood, stand dressed in living green—*
+
+never did those words sound more sweetly than then. full of hope and fruition. spite of freezing spray and wetter jacket, there seemed many a pleasant haven in store.
+
+at last we gained an offing. the two pilots were needed no longer. the stout sail-boat that had accompanied us came ranging alongside.
+
+Peleg and Bildad were affected at this juncture—especially Bildad. he had thousands of his hard-earned dollars in this ship. an old shipmate sailing as captain. long perilous voyage ahead. he lingered on deck. paced with anxious strides. went below to speak a farewell word. came back. looked to windward. looked toward the land. looked aloft. looked everywhere and nowhere.
+
+at last he mechanically coiled a rope upon its pin, convulsively grasped Peleg by the hand, held up a lantern, and looked heroically at his face—as much as to say: nevertheless, friend Peleg, i can stand it; yes, i can.
+
+Peleg took it more like a philosopher. but there was a tear in his eye when the lantern came too near. he too ran from cabin to deck a little—a word below, a word with Starbuck.
+
+finally he turned to Bildad with a last sort of look: "Captain Bildad—come, old shipmate, we must go. Back the main-yard! Boat ahoy! Stand by to come close alongside! Careful, careful—come, Bildad, boy—say your last. Luck to ye, Starbuck—luck to ye, Mr. Stubb—luck to ye, Mr. Flask—good-bye and good luck to ye all—and this day three years i'll have a hot supper smoking for ye in old Nantucket. Hurrah and away!"
+
+"God bless ye, and have ye in His holy keeping, men," murmured old Bildad, almost incoherently. "I hope ye'll have fine weather now, so Captain Ahab may soon be moving among ye—a pleasant sun is all he needs. Be careful in the hunt, ye mates. Don't stave the boats needlessly, ye harpooneers; good white cedar plank is raised full three per cent within the year. Don't forget your prayers, either. Mind that cooper don't waste the spare staves. The sail-needles are in the green locker. Don't whale it too much a' Lord's days, men; but don't miss a fair chance either. Have an eye to the molasses tierce, Mr. Stubb—it was a little leaky, i thought. If ye touch at the islands, Mr. Flask, beware of fornication. Good-bye, good-bye! Don't keep that cheese too long down in the hold, Mr. Starbuck; it'll spoil. Be careful with the butter—"
+
+"Come, come, Captain Bildad; stop palavering—away!" and with that, Peleg hurried him over the side and both dropped into the boat.
+
+ship and boat diverged. cold damp night breeze blew between. a screaming gull flew overhead. we gave three heavy-hearted cheers and plunged like fate into the lone Atlantic.
+
+---
+
+## CHAPTER 23. The Lee Shore.
+
+Bulkington—that tall newlanded mariner encountered back in New Bedford at the inn. remember him? the one who slipped away from his shipmates' revelry and vanished into the night while they all called for him.
+
+when on that shivering winter's night the Pequod thrust her vindictive bows into the cold malicious waves—who should be standing at the helm but Bulkington.
+
+i looked at him with sympathetic awe. a man who, in mid-winter, had just landed from a four-year dangerous voyage, and could so unresting push off again for still another tempestuous term. the land seemed to scorch his feet.
+
+this six-inch chapter is the stoneless grave of Bulkington.
+
+it fared with him as with the storm-tossed ship that miserably drives along toward a lee shore. the port would give succor—in the port is safety, comfort, hearth, supper, warm blankets, friends, all that's kind to our mortalities. but in that gale, the port is the ship's direst jeopardy. she must fly all hospitality. one touch of land, though it but graze the keel, would shudder her through and through. she crowds all sail off shore, fighting the very winds that would blow her homeward; seeks the sea's landlessness again; forlornly rushing into peril, her only friend her bitterest foe.
+
+know ye now, Bulkington? do ye see it—that all deep earnest thinking is but the intrepid effort of the soul to keep the open independence of her sea, while the wildest winds of heaven and earth conspire to cast her on the treacherous slavish shore?
+
+but as in landlessness alone resides highest truth, shoreless and indefinite as God—so, better is it to perish in that howling infinite than be ingloriously dashed upon the lee, even if that were safety. for worm-like then, oh, who would craven crawl to land?
+
+bear thee grimly, demigod. up from the spray of thy ocean-perishing—straight up leaps thy apotheosis.
+
+---
+
+## CHAPTER 24. The Advocate.
+
+as Queequeg and i are now fairly embarked in this business of whaling, and as whaling has somehow come to be regarded among landsmen as an unpoetical and disreputable pursuit, i am anxious to correct the record.
+
+first: the world declines to honor whalemen because it thinks ours is, at best, a butchering sort of business. butchers, yes. but butchers of the bloodiest badge have been all Martial Commanders whom the world invariably delights to honor. and as for the alleged uncleanliness of our business—what disordered slippery decks of a whaler compare to the unspeakable carrion of those battlefields from which soldiers return to receive ladies' plaudits?
+
+but more than this. look at what whaling has actually done.
+
+the whale-ship was the pioneer in ferreting out the remotest and least known parts of the earth. she explored seas and archipelagoes which had no chart, where no Cook or Vancouver had ever sailed. if American and European men-of-war now peacefully ride in once savage harbors, let them fire salutes to the whale-ship that showed them the way. those anonymous Nantucket captains who sailed out into heathenish sharked waters and battled virgin wonders and terrors that Cook with all his marines and muskets would not willingly have dared—they get none of the credit. the things Vancouver devoted three chapters to, these men accounted unworthy of the ship's common log.
+
+the whale fishery rounded Cape Horn and broke through the jealous Spanish colonial policy of the Pacific coast—and from those whalemen at last came the liberation of Peru, Chile, and Bolivia from the yoke of Old Spain. the whaleman gave Australia to the enlightened world. the uncounted isles of Polynesia confess the same truth. Japan—if it ever becomes hospitable to the world—will owe that opening to the whale-ship.
+
+and who composed the first account of our Leviathan? mighty Job himself. who composed the first whaling-voyage narrative? no less a prince than Alfred the Great, taking down the words of Othere the Norwegian whale-hunter with his own royal pen. who pronounced our eulogy in Parliament? Edmund Burke.
+
+no good blood in their veins, you say? the grandmother of Benjamin Franklin was Mary Morrel—afterward Mary Folger, one of the old settlers of Nantucket, ancestress of a long line of Folgers and harpooneers, all kin to noble Benjamin—this day darting the barbed iron from one side of the world to the other.
+
+whaling not respectable? whaling is imperial. by old English statutory law, the whale is a royal fish. cetus is a constellation in the south. i know a man who in his lifetime took three hundred and fifty whales. i account that man more honorable than the great captain of antiquity who boasted of taking as many walled towns.
+
+and for me—if by any possibility there be any yet-undiscovered prime thing in me; if i shall ever deserve any real repute in that small but high hushed world which i might not unreasonably be ambitious of; if i shall do anything that, upon the whole, a man might rather have done than left undone; if, at my death, my executors find any precious manuscripts in my desk—then here i prospectively ascribe all the honor and the glory to whaling; for a whale-ship was my Yale College and my Harvard.
+
+---
+
+## CHAPTER 25. Postscript.
+
+one more thing, in behalf of the dignity of whaling.
+
+at the coronation of kings and queens, a curious process of seasoning them for their functions is performed. there is a saltcellar of state, a castor of state. and the king's head is solemnly oiled at coronation—as a head of salad. 
+
+what kind of oil? cannot be olive oil, nor macassar, nor castor, nor bear's oil, nor train oil, nor cod-liver oil.
+
+what then can it possibly be but sperm oil, in its unmanufactured, unpolluted state—the sweetest of all oils?
+
+think of that, ye loyal Britons. whalemen supply your kings and queens with coronation stuff.
+
+---
+
+## CHAPTER 26. Knights and Squires.
+
+the chief mate of the Pequod was Starbuck—native of Nantucket, Quaker by descent. a long, earnest man. though born on an icy coast he seemed well adapted to endure hot latitudes; his flesh was hard as twice-baked biscuit. transported to the Indies, his live blood would not spoil like bottled ale. he must have been born in some time of drought. only some thirty arid summers had he seen; those summers had dried up all his physical superfluousness—not the token of wasting anxieties, but simply the condensation of the man.
+
+looking into his eyes, you seemed to see there the lingering images of a thousand-fold perils he had calmly confronted through life. a staid, steadfast man, whose life for the most part was a telling pantomime of action and not a tame chapter of sounds.
+
+yet for all his hardy sobriety and fortitude, there were certain qualities that at times affected him in ways that could, under the right circumstances, overbalance all the rest. uncommonly conscientious for a seaman, and endued with deep natural reverence, the wild watery loneliness of his life inclined him toward superstition—not from ignorance, but from intelligence. outward portents and inward presentiments were his. and his far-away domestic memories—his young Cape wife, his child—bent him still further from the original ruggedness of his nature, and opened him to those latent influences which, in some honest-hearted men, restrain the gush of dare-devil daring.
+
+"I will have no man in my boat," said Starbuck, "who is not afraid of a whale."
+
+by this he meant not only that the most reliable courage was that which arises from fair estimation of the encountered peril—but that an utterly fearless man is a far more dangerous comrade than a coward.
+
+courage in Starbuck was not a sentiment. it was a thing simply useful to him, always at hand upon all mortally practical occasions. he thought—perhaps—that in whaling, courage was one of the great staple outfits of the ship, like beef and bread, not to be foolishly wasted. hence no fancy for lowering after sun-down, or for persisting in fighting a fish that too much persisted in fighting him. i am here, thought Starbuck, to kill whales for my living, not to be killed by them for theirs.
+
+but now i must say something about the democratic dignity which radiates without end from God himself. what i want to say is this: if i shall hereafter ascribe high qualities to meanest mariners and renegades and castaways—if i shall touch the workman's arm with some ethereal light—then against all mortal critics, bear me out in it, thou just Spirit of Equality. thou who didst clothe with doubly hammered leaves of finest gold the stumped and paupered arm of old Cervantes; thou who didst pick up Andrew Jackson from the pebbles and hurl him upon a war-horse—bear me out in it, O God.
+
+---
+
+## CHAPTER 27. Knights and Squires.
+
+Stubb was the second mate—native of Cape Cod, hence called a Cape-Cod-man. happy-go-lucky; neither craven nor valiant; taking perils as they came with an indifferent air. while engaged in the most imminent crisis of a chase, he toiled away calm and collected as a journeyman joiner working by the year. good-humored, easy, careless, he presided over his whale-boat as if the deadliest encounter were but a dinner and his crew all invited guests. as particular about the comfortable arrangement of his part of the boat as an old stage-driver about the snugness of his box.
+
+when close to the whale, in the very death-lock of the fight, he handled his unpitying lance coolly and off-handedly, as a whistling tinker his hammer. he would hum over his old rigadig tunes while flank and flank with the most exasperated monster. long usage had for Stubb converted the jaws of death into an easy chair.
+
+what helped make Stubb such an easy-going, unfearing man was his pipe. like his nose, his short black pipe was one of the regular features of his face. you would almost as soon have expected him to turn out of his bunk without his nose as without his pipe. he kept a whole row of pipes ready loaded, stuck in a rack within easy reach, and whenever he turned in, smoked them all out in succession, lighting one from the other to the end, then loading them again to be ready. when Stubb dressed, instead of first putting his legs into his trousers, he put his pipe into his mouth.
+
+this continual smoking must have been one cause of his peculiar disposition. for everyone knows that earthly air, ashore or afloat, is terribly infected with the nameless miseries of the numberless mortals who have died exhaling it. Stubb's tobacco smoke operated as a sort of disinfecting agent against all mortal tribulations.
+
+the third mate was Flask—native of Tisbury in Martha's Vineyard. short, stout, ruddy, very pugnacious concerning whales. seemed to think the great leviathans had personally and hereditarily affronted him; therefore it was a point of honor to destroy them whenever encountered. so utterly lost was he to any reverence for their majestic bulk or mystic ways, so dead to any apprehension of danger from encountering them, that in his poor opinion the wondrous whale was but a species of magnified mouse, requiring only a little circumvention and some small application of time and trouble to kill and boil. this ignorant unconscious fearlessness made him waggish in the matter of whales. he followed them for the fun of it. a three-year voyage round Cape Horn was only a jolly joke that lasted that long. they called him King-Post on board the Pequod—after the short square timber in arctic whalers that braces the ship against the icy concussions of battering seas.
+
+now these three mates—Starbuck, Stubb, and Flask—were momentous men. by universal prescription they commanded three of the Pequod's boats as headsmen. and each headsman was accompanied by his harpooneer, like a Gothic Knight by his squire.
+
+Starbuck's harpooneer: Queequeg—already known.
+
+Stubb's harpooneer: Tashtego—an unmixed Indian from Gay Head, the westernmost promontory of Martha's Vineyard, where the last remnant of a village of red men still supplies Nantucket with many of her most daring harpooneers. long, lean, sable hair, high cheek-bones, black rounding eyes large as an Oriental's but glittering Antarctic in expression. inheritor of the unvitiated blood of those proud warrior hunters who, in quest of the great New England moose, had scoured the aboriginal forests bow in hand. no longer trailing wild beasts of the woodland, Tashtego now hunted in the wake of great whales—the unerring harpoon of the son fitly replacing the infallible arrow of the sires.
+
+Flask's harpooneer: Daggoo—a gigantic coal-black negro-savage, with a lion-like tread. suspended from his ears were two golden hoops so large the sailors called them ring-bolts and talked of securing halyards to them. in his youth Daggoo had voluntarily shipped on a whaler lying in a lonely bay on his native coast. having now led for many years the bold life of the fishery, he retained all his barbaric virtues and moved about the decks—erect as a giraffe—in all the pomp of six feet five in his socks. a white man standing before him seemed a white flag come to beg truce of a fortress. this imperial negro Daggoo was squire to little Flask, who looked like a chess-man beside him.
+
+as for the rest of the Pequod's company—not one in two of the many thousand men in the American whale fishery were Americans born, though nearly all the officers were. the same as with the American army and merchant navies and engineering forces: the native American liberally provides the brains, the rest of the world as generously supplies the muscles.
+
+they were nearly all Isolatoes—i call them such—not acknowledging the common continent of men, but each living on a separate continent of his own. yet now federated along one keel, what a set these Isolatoes were. an Anacharsis Cloots deputation from all the isles of the sea and all the ends of the earth, accompanying old Ahab in the Pequod to lay the world's grievances before that bar from which not very many of them ever come back.
+
+black little Pip—he never did. oh, no. he went before. poor Alabama boy. on the grim Pequod's forecastle ye shall ere long see him, beating his tambourine—prelusive of the eternal time when, sent for to the great quarter-deck on high, he was bid to strike in with angels and beat his tambourine in glory; called a coward here, hailed a hero there.
+
+---
+
+## CHAPTER 28. Ahab.
+
+for several days after leaving Nantucket, nothing above hatches was seen of Captain Ahab. the mates relieved each other at the watches. the orders that sometimes came from below were sudden and peremptory—plain evidence they but commanded vicariously. the supreme lord and dictator was there, in the cabin, unseen by any eyes not permitted into that now sacred retreat.
+
+every time i came up from below i instantly gazed aft—looking for some strange face. my first vague disquietude about the unknown captain had become, in the seclusion of the sea, almost a perturbation. Elijah's diabolical incoherences kept recurring to me uninvited, with a subtle energy i hadnt expected.
+
+but looking around the ship itself—the three mates, the crew—nothing warranted dread. three better sea-officers than Starbuck, Stubb, and Flask you would not readily find. every one of them Americans. the Nantucketer, the Vineyarder, the Cape man.
+
+it was Christmas when we sailed, and for a space we had biting polar weather—though all the while running south, leaving that merciless winter behind degree by degree.
+
+one of those less lowering but still grey and gloomy mornings of the transition—fair wind, the ship rushing through the water with a vindictive sort of leaping and melancholy rapidity—i mounted to the deck at the call of the forenoon watch, and leveled my glance toward the taffrail.
+
+foreboding shivers ran over me.
+
+reality outran apprehension.
+
+Captain Ahab stood upon his quarter-deck.
+
+there seemed no sign of common bodily illness about him, nor of recovery from any. he looked like a man cut away from the stake when the fire has overrunningly wasted all the limbs without consuming them—every particle of compacted aged robustness still there. his whole high broad form seemed made of solid bronze, shaped in an unalterable mold, like Cellini's cast Perseus.
+
+threading from among his grey hairs down one side of his tawny scorched face and neck—until it disappeared in his clothing—was a slender rod-like mark, lividly whitish. like the scar left when lightning tears down a great tree from top to bottom, peeling and grooving the bark without wrenching a single twig, leaving the tree still greenly alive but branded.
+
+whether born with him or the scar of some desperate wound—no one could say for certain. throughout the voyage little or no allusion was made to it, especially by the mates. one old Gay-Head Indian among the crew had superstitiously asserted that not until Ahab was full forty years old did that mark come upon him—and then not in the fury of any mortal fray, but in some elemental strife at sea.
+
+so powerfully did the whole grim aspect of Ahab affect me—and the livid brand which streaked it—that for the first few moments i barely noticed the barbaric white leg upon which he partly stood. the ivory leg fashioned from the polished bone of a sperm whale's jaw, steadied in an auger-hole bored into the quarter-deck plank. one arm elevated, holding by a shroud. Captain Ahab stood erect, looking straight out beyond the ship's ever-pitching prow.
+
+there was an infinity of firmest fortitude in that glance. a determinate unsurrenderable wilfulness in its fixed forward dedication. not a word he spoke. his officers said nothing to him; though by all their minutest gestures and expressions they plainly showed the uneasy, if not painful, consciousness of being under a troubled master-eye. And not only that—moody stricken Ahab stood before them with a crucifixion in his face; all the nameless regal overbearing dignity of some mighty woe.
+
+ere long he withdrew to his cabin.
+
+but after that morning, he was every day visible to the crew—standing in his pivot-hole, or seated on an ivory stool, or heavily walking the deck. as the sky grew less gloomy, he became less of a recluse, as if the dead wintry bleakness of the sea that had kept him so secluded was lifting with the weather. by and by he was almost continually in the air—but still, as yet, for all he said or visibly did, he seemed as unnecessary on the sunny deck as another mast.
+
+the Pequod was only making a passage now. not yet cruising. the mates were fully competent to all whaling preparatives. there was little or nothing, out of himself, to employ or excite Ahab. the clouds piled layer upon layer on his brow, as clouds always choose the loftiest peaks to pile themselves upon.
+
+nevertheless, ere long, the warm warbling persuasiveness of that pleasant holiday weather seemed gradually to charm him from his mood. more than once he put forth the faint blossom of a look which, in any other man, would have soon flowered out in a smile.
+
+---
+
+*— end of Part 3 —*
+
+---
+
+drop "continue" for Part 4 — Chapters 29–40: Enter Ahab through Midnight, Forecastle. Ahab comes alive, the quarter-deck speech, the oath, the grog, the whole machinery of the chase starting to turn.
+
+
+## Part 4: Chapters 29–40
+
+---
+
+## CHAPTER 29. Enter Ahab; to Him, Stubb.
+
+some days elapsed. ice and icebergs all astern. the Pequod now rolled through the bright Quito spring—which at sea almost perpetually reigns on the threshold of the eternal August of the Tropic. warm cool clear ringing perfumed days, like crystal goblets of Persian sherbet heaped with rose-water snow. starred and stately nights like haughty dames in jeweled velvets nursing at home the memory of their absent conquering Earls.
+
+all these witcheries worked on Ahab's texture. old age is always wakeful—the longer linked with life, the less man has to do with anything that looks like death. old sea-commanders leave their berths at night to walk the deck. so with Ahab. more than before, he seemed to live in the open air—his visits to the cabin were more frequent than his visits from it.
+
+"It feels like going down into one's tomb," he would mutter to himself, "for an old captain like me to be descending this narrow scuttle, to go to my grave-dug berth."
+
+almost every night when the watches were set and the band below was sleeping, and the men on deck moved carefully and set things down softly rather than drop them—the silent steersman would watch the cabin-scuttle, and ere long the old man would emerge, gripping at the iron banister, making his crippled way.
+
+some consideration touched him in these hours. he usually abstained from patrolling the quarter-deck while the mates slept below, because the crack and din of that bony ivory step would have crept into their dreams.
+
+but once the mood was on him too deep for common considerateness. and as with heavy lumber-like pace he was measuring the ship from taffrail to mainmast, Stubb—the old second mate—came up from below with a certain unassured deprecating humorousness and hinted that if Captain Ahab was pleased to walk the planks, well and good; but there might be some way of muffling the noise; hinting something indistinctly and hesitatingly about a globe of tow and the insertion of same into the socket of the ivory heel.
+
+ah, Stubb. thou didst not know Ahab then.
+
+"Am I a cannon-ball, Stubb," said Ahab, "that thou wouldst wad me that fashion? But go thy ways; i had forgot. Below to thy nightly grave; where such as ye sleep between shrouds, to use ye to the filling one at last.—Down, dog, and kennel!"
+
+Stubb was speechless a moment. then, stiffening: "I am not used to be spoken to that way, sir; i do but less than half like it, sir."
+
+"Avast!" gritted Ahab between his set teeth, and moved violently away as if avoiding some passionate temptation.
+
+"No, sir; not yet," said Stubb, emboldened. "I will not tamely be called a dog, sir."
+
+"Then be called ten times a donkey, and a mule, and an ass, and begone, or i'll clear the world of thee!"
+
+he advanced on Stubb with such overbearing terrors in his aspect that Stubb involuntarily retreated. found himself descending the cabin-scuttle without quite knowing how.
+
+"It's very queer," muttered Stubb, going down. "Stop, Stubb; somehow, now, i don't well know whether to go back and strike him, or—what's that?—down here on my knees and pray for him? Yes, that was the thought coming up in me; but it would be the first time i ever did pray. It's queer; very queer; and he's queer too; aye, take him fore and aft, he's about the queerest old man Stubb ever sailed with. How he flashed at me—his eyes like powder-pans! Is he mad? Anyway there's something on his mind, as sure as there must be something on a deck when it cracks. He aint in his bed now, either, more than three hours out of the twenty-four; and he don't sleep then. Didn't Dough-Boy tell me that of a morning he always finds the old man's hammock clothes all rumpled and tumbled, and the coverlid almost tied into knots, and the pillow a sort of frightful hot, as though a baked brick had been on it? A hot old man! I guess he's got what some folks ashore call a conscience; it's a kind of Tic-Dolly-row—worse nor a toothache. Well, well; i don't know what it is, but the Lord keep me from catching it. He's full of riddles. Think not, is my eleventh commandment; and sleep when you can, is my twelfth—So here goes again. But how's that? didn't he call me a dog? He called me ten times a donkey and piled jackasses on top of that! He might as well have kicked me. Maybe he did kick me, and i didn't observe it, i was so taken all aback with his brow—it flashed like a bleached bone. What the devil's the matter with me? I don't stand right on my legs. Coming afoul of that old man has sort of turned me wrong side out. By the Lord, i must have been dreaming—but the only way's to stash it; and in the morning i'll see how this plaguey juggling looks by daylight."
+
+---
+
+## CHAPTER 30. The Pipe.
+
+when Stubb had departed, Ahab stood leaning over the bulwarks awhile. then, as had been usual with him of late, called a sailor and sent him below for his ivory stool and his pipe.
+
+lit the pipe at the binnacle lamp. planted the stool on the weather side of the deck. sat and smoked.
+
+in old Norse times, the thrones of the sea-loving Danish kings were fabricated, says tradition, from the tusks of the narwhale. looking at Ahab on that tripod of bones, you couldn't help thinking of the royalty it symbolized. a Khan of the plank, and a king of the sea, and a great lord of Leviathans—that was Ahab.
+
+some moments passed. thick vapor came from his mouth in quick constant puffs that blew back into his face.
+
+"How now," he soliloquized at last, withdrawing the tube. "This smoking no longer soothes. Oh, my pipe! hard must it go with me if thy charm be gone! Here have i been unconsciously toiling, not pleasuring—and ignorantly smoking to windward all the while—with such nervous whiffs, as if, like the dying whale, my final jets were the strongest and fullest of trouble. What business have i with this pipe? This thing that is meant for sereneness, to send up mild white vapors among mild white hairs—not among torn iron-grey locks like mine. I'll smoke no more—"
+
+he tossed the still-lighted pipe into the sea. the fire hissed in the waves. the same instant the ship shot by the bubble the sinking pipe made.
+
+with slouched hat, Ahab lurchingly paced the planks.
+
+---
+
+## CHAPTER 31. Queen Mab.
+
+next morning Stubb accosted Flask.
+
+"Such a queer dream, King-Post—i never had. You know the old man's ivory leg? Well, i dreamed he kicked me with it; and when i tried to kick back, upon my soul, my little man, i kicked my leg right off! And then, presto!—Ahab seemed a pyramid, and i, like a blazing fool, kept kicking at it. But what was still more curious—you know how curious all dreams are—through all this rage that i was in, i somehow seemed to be thinking to myself that after all it was not much of an insult, that kick from Ahab. 'Why,' thinks i, 'what's the row? It's not a real leg, only a false leg.' And there's a mighty difference between a living thump and a dead thump. That's what makes a blow from the hand fifty times more savage to bear than a blow from a cane. The living member—that makes the living insult, my little man.
+
+"And thinks i to myself all the while, mind—while i was stubbing my silly toes against that cursed pyramid—'What's his leg now, but a cane—a whalebone cane. Yes,' thinks i, 'it was only a playful cudgelling—only a whaleboning that he gave me—not a base kick. Besides, look at it once; why, the end of it—the foot part—what a small sort of end it is; whereas, if a broad-footed farmer kicked me, there's a devilish broad insult. But this insult is whittled down to a point only.'
+
+"But now comes the greatest joke of the dream, Flask. While i was battering away at the pyramid, a sort of badger-haired old merman with a hump on his back takes me by the shoulders and slews me round. 'What are you about?' says he. Man, but i was frightened—such a face! But somehow next moment i was over the fright. 'What am i about?' says i. 'And what business is that of yours, Mr. Humpback? Do you want a kick?' By the lord, Flask, no sooner said that than he turned round his stern to me, bent over, and dragging up a lot of seaweed he had for a clout—what do you think i saw? Thunder alive, man, his stern was stuck full of marlinspikes, with the points out. Says i, on second thoughts: 'I guess i won't kick you, old fellow.' 'Wise Stubb,' said he—'wise Stubb;' and kept muttering it all the time, a sort of eating of his own gums like a chimney hag.
+
+"Seeing he wasn't going to stop saying over his 'wise Stubb, wise Stubb,' i thought i might as well fall to kicking the pyramid again. But i had only just lifted my foot for it when he roared out, 'Stop that kicking!' 'Halloa,' says i, 'what's the matter now, old fellow?' 'Look ye here,' says he; 'let's argue the insult. Captain Ahab kicked ye, didn't he?' 'Yes, he did,' says i—'right here it was.' 'Very good,' says he—'he used his ivory leg, didn't he?' 'Yes, he did,' says i. 'Well then,' says he, 'wise Stubb, what have you to complain of? Didn't he kick with right good will? It wasn't a common pitch-pine leg he kicked with, was it? No—you were kicked by a great man, and with a beautiful ivory leg, Stubb. It's an honor; i consider it an honor. Listen, wise Stubb. In old England the greatest lords think it great glory to be slapped by a queen and made garter-knights of; but be your boast, Stubb, that ye were kicked by old Ahab, and made a wise man of. Remember what i say: be kicked by him; account his kicks honors; and on no account kick back; for you can't help yourself, wise Stubb. Don't you see that pyramid?' With that, he all of a sudden swam off into the air. i snored, rolled over; and there i was in my hammock.
+
+"Now, what do you think of that dream, Flask?"
+
+"I don't know; it seems a sort of foolish to me, tho."
+
+"May be; may be. But it's made a wise man of me, Flask. D'ye see Ahab standing there, sideways looking over the stern? Well, the best thing you can do, Flask, is to let the old man alone; never speak to him, whatever he says. Halloa! What's that he shouts? Hark!"
+
+"Mast-head, there! Look sharp, all of ye! There are whales hereabouts!"
+
+"If ye see a white one, split your lungs for him!"
+
+Flask and Stubb looked at each other.
+
+"What do you think of that now, Flask? Ain't there something queer about that—eh? A white whale. Did ye mark that, man? Look ye—there's something special in the wind. Stand by for it, Flask. Ahab has that that's bloody on his mind. But mum—he comes this way."
+
+---
+
+## CHAPTER 32. Cetology.
+
+already we are boldly launched upon the deep; but soon we shall be lost in its unshored harbourless immensities. ere that comes to pass, ere the Pequod's weedy hull rolls side by side with the barnacled hulls of the leviathan, it is well to attend to a matter almost indispensable to a thorough understanding of the more special revelations and allusions that are to follow.
+
+what follows is a systematized exhibition of the whale in his broad genera. no easy task. the classification of the constituents of a chaos—nothing less is here essayed.
+
+"No branch of Zoology is so much involved as that which is entitled Cetology," says Captain Scoresby, A.D. 1820. and the learned Cuvier, and John Hunter, and Lesson—those lights of zoology and anatomy—all declare the field strewn with thorns, the waters unfathomable, the knowledge incomplete. nevertheless of books there are plenty. so let's try.
+
+i promise nothing complete; because any human thing supposed to be complete must for that very reason infallibly be faulty. i am the architect, not the builder. this whole book is but a draught—nay, the draught of a draught.
+
+first settled point: is a whale a fish?
+
+i take the good old-fashioned ground—the whale is a fish. and i call upon holy Jonah to back me. this fundamental thing settled, the next point: how shall we define the whale by his obvious externals?
+
+a whale is a spouting fish with a horizontal tail.
+
+there you have him. contracted, yes. but the result of expanded meditation. a walrus spouts much like a whale, but is not a fish—he is amphibious. and the last term of the definition is the most cogent: almost every fish familiar to landsmen has not a flat but a vertical—up-and-down—tail. spouting fish invariably assume a horizontal position with the tail. that's your boundary.
+
+now. the grand divisions of the entire whale host:
+
+**i. the FOLIO WHALE. ii. the OCTAVO WHALE. iii. the DUODECIMO WHALE.**
+
+---
+
+**FOLIO WHALES:**
+
+**Chapter i. the Sperm Whale.** without doubt the largest inhabitant of the globe. the most formidable of all whales to encounter. the most majestic in aspect. and by far the most valuable in commerce—he being the only creature from which spermaceti is obtained. his peculiarities will be enlarged upon elsewhere. it is chiefly with his name that i now have to do—and philologically considered, it is absurd. but the appellation must have come at last to be bestowed upon the whale from which the spermaceti was really derived, and there it stays.
+
+**Chapter ii. the Right Whale.** most venerable of the leviathans, being the first regularly hunted by man. yields baleen and "whale oil," an inferior article in commerce. among fishermen indiscriminately designated by all the following: The Whale; the Greenland Whale; the Black Whale; the Great Whale; the True Whale; the Right Whale. the Great Mysticetus of the English naturalists. hunted in the Arctic seas by Dutch and English for more than two centuries.
+
+**Chapter iii. the Fin-Back.** by the various names of Fin-Back, Tall-Spout, and Long-John, seen in almost every sea. commonly the whale whose distant jet is so often seen by passengers crossing the Atlantic. in length he resembles the right whale but is of less portly girth and lighter color, approaching olive. his grand distinguishing feature: the fin from which he derives his name, three or four feet long, growing vertically from the hinder part of the back, sharp-pointed. even when no other part of the creature is visible, this isolated fin will at times be seen projecting from the surface. the Fin-Back is not gregarious. he seems a whale-hater, as some men are man-haters. very shy; always going solitary; his straight and single lofty jet rising like a tall misanthropic spear upon a barren plain. gifted with such wondrous power and velocity that he defies all present pursuit from man—the banished and unconquerable Cain of his race.
+
+**Chapter iv. the Hump-Back.** often seen on the northern American coast. has a great pack on him like a peddler. the most gamesome and light-hearted of all the whales—making more gay foam and white water generally than any other.
+
+**Chapter v. the Razor-Back.** of this whale little is known but his name. i have seen him at a distance off Cape Horn. of a retiring nature, he eludes both hunters and philosophers. let him go.
+
+**Chapter vi. the Sulphur-Bottom.** another retiring gentleman, with a brimstone belly, doubtless got by scraping along Tartarean tiles in some of his profounder divings. seldom seen. never chased. would run away with rope-walks of line. adieu, Sulphur Bottom.
+
+---
+
+**OCTAVO WHALES:**
+
+**Chapter i. the Grampus.** well known by his loud sonorous breathing—has furnished a proverb to landsmen. of moderate octavo size, fifteen to twenty-five feet. swims in herds; never regularly hunted, though his oil is considerable in quantity. by some fishermen his approach is regarded as premonitory of the advance of the great sperm whale.
+
+**Chapter ii. the Black Fish.** i call him the Hyena Whale, for blackness is the rule among almost all whales so that name signifies nothing. his voracity is well known. the inner angles of his lips are curved upwards—carries an everlasting Mephistophelean grin. averages sixteen to eighteen feet. found in almost all latitudes. has a peculiar way of showing his dorsal hooked fin in swimming, which looks something like a Roman nose.
+
+**Chapter iii. the Narwhale.** another curiously named whale—so named from his peculiar horn being originally mistaken for a peaked nose. some sixteen feet in length; the horn averages five feet, though some exceed ten. strictly speaking, this horn is but a lengthened tusk, growing from the jaw in a line a little depressed from the horizontal—found only on the sinister side, which gives the creature something of a clumsy left-handed aspect. what precise purpose this ivory horn answers, hard to say. my own opinion: however the Narwhale uses it, it would certainly be very convenient to him for a folder in reading pamphlets.
+
+**Chapter iv. the Killer.** of this whale little is precisely known. very savage—a sort of Feegee fish. sometimes takes the great Folio whales by the lip and hangs there like a leech till the mighty brute is worried to death. never hunted. exception might be taken to the name, on the ground of its indistinctness. for we are all killers, on land and on sea; Bonapartes and sharks included.
+
+**Chapter v. the Thrasher.** famous for his tail, which he uses as a ferule in thrashing his foes. mounts the Folio whale's back and works his passage by flogging him—as some schoolmasters get along in the world by a similar process. both the Killer and the Thrasher are outlaws, even in the lawless seas.
+
+---
+
+**DUODECIMO WHALES:**
+
+**Chapter i. the Huzza Porpoise.** the common porpoise found almost all over the globe. the name is of my own bestowal. i call him thus because he always swims in hilarious shoals which upon the broad sea keep tossing themselves to heaven like caps in a Fourth-of-July crowd. their appearance is generally hailed with delight by the mariner. accounted a lucky omen. a well-fed plump Huzza Porpoise will yield you one good gallon of good oil.
+
+**Chapter ii. the Algerine Porpoise.** a pirate. very savage. found, i think, only in the Pacific. somewhat larger than the Huzza Porpoise but much of the same general make. provoke him and he will buckle to a shark. i have lowered for him many times but never yet saw him captured.
+
+**Chapter iii. the Mealy-mouthed Porpoise.** the largest kind of porpoise. only found in the Pacific. in shape he differs in some degree from the Huzza Porpoise, being of a less rotund and jolly girth—quite a neat and gentleman-like figure. has no fins on his back, has a lovely tail, sentimental Indian eyes of a hazel hue. but his mealy-mouth spoils all. his entire back down to his side-fins is deep sable; a distinct line streaks him stem to stern, black above and white below—as if he had just escaped from a felonious visit to a meal-bag. a most mean and mealy aspect.
+
+---
+
+beyond the Duodecimo this system does not proceed, inasmuch as the porpoise is the smallest of the whales.
+
+there are also a rabble of uncertain, fugitive, half-fabulous whales which as an American whaleman i know by reputation but not personally: the Bottle-Nose Whale; the Junk Whale; the Pudding-Headed Whale; the Cape Whale; the Leading Whale; the Cannon Whale; the Scragg Whale; the Coppered Whale; the Elephant Whale; the Iceberg Whale; the Quog Whale; the Blue Whale; etc. from Icelandic, Dutch, and old English authorities, other lists might be quoted—but i omit them as altogether obsolete, and suspect them for mere sounds, full of Leviathanism, but signifying nothing.
+
+finally: this system will not be perfected here, and at once. you cannot but plainly see that i have kept my word. i now leave my cetological System standing thus unfinished, even as the great Cathedral of Cologne was left with the crane still on the top of the uncompleted tower. for small erections may be finished by their first architects; grand ones, true ones, ever leave the copestone to posterity. God keep me from ever completing anything. this whole book is but a draught—nay, but the draught of a draught. oh, Time, Strength, Cash, and Patience!
+
+---
+
+## CHAPTER 33. The Specksnyder.
+
+concerning the officers of the whale-craft: a domestic peculiarity arising from the existence of the harpooneer class—a class unknown of course in any other marine than the whale-fleet.
+
+in the old Dutch Fishery, two centuries and more ago, the command of a whale ship was divided between the captain and an officer called the Specksnyder—literally: Fat-Cutter; in usage: Chief Harpooneer. the captain's authority was restricted to the navigation and general management of the vessel; while over the whale-hunting department the Specksnyder reigned supreme.
+
+this title is now degraded. at present the Specksnyder ranks simply as senior Harpooneer, a subordinate. nevertheless, since the success of a whaling voyage largely depends on the harpooneers' conduct, and since under certain circumstances the harpooneer has command of the ship's deck too, the grand political maxim of the sea demands that he nominally live apart from the men before the mast and be in some way distinguished as their professional superior—though always, by them, familiarly regarded as their social equal.
+
+now: the grand distinction between officer and man at sea is this—the first lives aft, the last forward. so in whale-ships the harpooneers take their meals in the captain's cabin and sleep in a place indirectly communicating with it.
+
+but though some leniency of discipline sometimes prevails among these whalemen—men whose profits depend not on fixed wages but on common luck, common vigilance, common hard work—the punctilious externals of the quarter-deck are seldom materially relaxed, and in no instance done away.
+
+and though the moody captain of the Pequod was the least given to that shallowest assumption—the only homage he ever exacted being implicit instantaneous obedience—and though he required no man to remove his shoes from his feet ere stepping upon the quarter-deck—yet even Captain Ahab was by no means unobservant of the paramount forms and usages of the sea.
+
+nor will it fail to be eventually perceived that behind those forms and usages he sometimes masked himself; incidentally making use of them for other and more private ends than they were legitimately intended to subserve. that certain sultanism of his brain, which had otherwise in a good degree remained unmanifested—through those forms, that same sultanism became incarnate in an irresistible dictatorship.
+
+but Ahab, my captain, still moves before me in all his Nantucket grimness and shagginess; and in this episode touching Emperors and Kings, i must not conceal that i have only to do with a poor old whale-hunter like him; and therefore all outward majestical trappings are denied me. Oh, Ahab! what shall be grand in thee, it must needs be plucked at from the skies, and dived for in the deep, and featured in the unbodied air!
+
+---
+
+## CHAPTER 34. The Cabin-Table.
+
+noon. Dough-Boy the steward—a pale loaf-of-bread face from the cabin-scuttle—announces dinner to Ahab, who has just been taking an observation of the sun and is now reckoning latitude on the smooth medallion-shaped tablet on the upper part of his ivory leg. complete inattention to the tidings. then Ahab catches hold of the mizen shrouds, swings to the deck, and in an even unexhilarated voice says "Dinner, Mr. Starbuck" and disappears into the cabin.
+
+when the last echo of his step has died, Starbuck rouses from his quietude, takes a few turns along the planks, peeps at the binnacle, and with some touch of pleasantness says "Dinner, Mr. Stubb" and descends the scuttle. Stubb lounges about the rigging awhile, tugs at the main brace, and with a rapid "Dinner, Mr. Flask" follows after. Flask—alone now on the quarter-deck—feels visibly relieved; tips knowing winks in all directions, kicks off his shoes, strikes into a sharp noiseless hornpipe over the Grand Turk's head, then pitching his cap into the mizentop for a shelf, he goes down rollicking—until at the cabin doorway below he assumes an entirely new face and enters King Ahab's presence in the character of Abjectus, or the Slave.
+
+over his ivory-inlaid table, Ahab presided like a mute sea-lion on white coral beach, surrounded by his warlike but deferential cubs. the officers waited to be served in their proper turn. they were as little children before him. not the smallest social arrogance in Ahab's demeanor—yet their intent eyes all fastened on the old man's knife as he carved the chief dish. not one would have broken the silence with even the most neutral observation about the weather.
+
+when the first mate received his meat from Ahab's hand, he took it as though receiving alms—cut it tenderly—startled if the knife grazed against the plate—chewed it noiselessly—swallowed it not without circumspection. these cabin meals were somehow solemn meals, eaten in awful silence—and yet at table old Ahab forbade not conversation; only he himself was dumb.
+
+what a relief it was to choking Stubb when a rat made a sudden racket in the hold below. and poor little Flask—the youngest son, the small boy of this weary family party—his were the shinbones of the salted beef. his would have been the drumsticks. to have helped himself at that table would have seemed to him tantamount to larceny in the first degree. Flask was a butterless man.
+
+then the first table cleared out, and the three harpooneers were bidden to the feast—their residuary legatees. they made a sort of temporary servants' hall of the high and mighty cabin. what a contrast: where the mates had seemed afraid of the sound of their own jaws, the harpooneers chewed with such a relish there was a report to it. they dined like lords; filled their bellies like Indian ships loading with spices. Tashtego would dart a fork at Dough-Boy's back harpoon-wise if he wasn't moving fast enough. Daggoo once seized the little steward bodily and thrust his head into a great empty wooden trencher while Tashtego, knife in hand, began laying out the circle preliminary to scalping him.
+
+Dough-Boy—the progeny of a bankrupt baker and a hospital nurse, his whole life one continuous lip-quiver—would escape from their clutches into his little pantry and fearfully peep out at them through the blinds of its door till all was over.
+
+Ahab lived in this cabin like the last of the Grizzly Bears in settled Missouri—outside the census of Christendom though nominally included in it. in his inclement howling old age, his soul shut up in the caved trunk of his body, there fed upon the sullen paws of its gloom.
+
+---
+
+## CHAPTER 35. The Mast-Head.
+
+it was during more pleasant weather that my first mast-head came round.
+
+in most American whalemen the mast-heads are manned almost simultaneously with the vessel's leaving port—even though she may have fifteen thousand miles to sail before reaching her proper cruising ground. and if after a three or four or five years' voyage she draws nigh home with anything empty in her—even an empty vial—her mast-heads are kept manned to the last, not till her skysail-poles sail in among the spires of the port does she relinquish the hope of one more whale.
+
+the earliest standers of mast-heads were the old Egyptians—i find none prior to them. i believe the first pyramids were founded for astronomical purposes, and that those old astronomers were wont to mount to the apex and sing out for new stars, even as the look-outs of a modern ship sing out for a sail.
+
+in the serene weather of the tropics, the mast-head is exceedingly pleasant—to a dreamy meditative man, delightful. there you stand a hundred feet above the silent decks, striding along the deep as if the masts were gigantic stilts, while beneath you and between your legs the hugest monsters of the sea swim, even as ships once sailed between the boots of the famous Colossus at Rhodes. you hear no news; read no gazettes; extras with startling accounts of commonplaces never delude you into unnecessary excitements. you are never troubled with what you shall have for dinner—for all your meals for three years are snugly stowed in casks and your bill of fare is immutable.
+
+in one of those southern whale voyages, the sum of the various hours you spend at the mast-head would amount to several entire months.
+
+let me make a clean breast of it: i kept sorry guard. with the problem of the universe revolving in me, how could i—being left completely to myself at such a thought-engendering altitude—hold my obligations to observe all whale-ships' standing orders, keep your weather eye open and sing out every time?
+
+let me also admonish you, ye ship-owners of Nantucket: beware of enlisting any lad with lean brow and hollow eye, given to unseasonable meditativeness, who offers to ship with the Phaedon instead of Bowditch in his head. your whales must be seen before they can be killed; and this sunken-eyed young Platonist will tow you ten wakes round the world and never make you one pint of sperm the richer.
+
+for nowadays the whale-fishery furnishes an asylum for many romantic, melancholy, and absent-minded young men disgusted with the carking cares of earth—seeking sentiment in tar and blubber. the captains of such ships take these absent-minded young philosophers to task, upbraiding them with not feeling sufficient interest in the voyage—half-hinting that they'd rather not see whales than otherwise. but all in vain. those young Platonists have a notion their vision is imperfect; they are short-sighted; and they have left their opera-glasses at home.
+
+that absent-minded youth, lulled into opium-like listlessness of vacant unconscious reverie by the blending cadence of waves with thoughts—at last he loses his identity. takes the mystic ocean at his feet for the visible image of that deep blue bottomless soul pervading mankind and nature. and every strange half-seen gliding beautiful thing that eludes him—every dimly discovered uprising fin of some undiscernible form—seems to him the embodiment of those elusive thoughts that only people the soul by continually flitting through it.
+
+in this enchanted mood, thy spirit ebbs away to whence it came; becomes diffused through time and space; like Cranmer's sprinkled Pantheistic ashes, forming at last a part of every shore the round globe over.
+
+there is no life in thee now, except that rocking life imparted by a gently rolling ship; by her, borrowed from the sea; by the sea, from the inscrutable tides of God. but while this sleep, this dream is on ye, move your foot or hand an inch; slip your hold at all—and your identity comes back in horror. over Cartesian vortices you hover. and perhaps at mid-day in the fairest weather, with one half-throttled shriek you drop through that transparent air into the summer sea, no more to rise for ever.
+
+heed it well, ye Pantheists.
+
+---
+
+## CHAPTER 36. The Quarter-Deck.
+
+*(Enter Ahab: then all.)*
+
+it was not long after the affair of the pipe, that one morning shortly after breakfast, Ahab ascended the cabin-gangway to the deck. his steady ivory stride was heard—to and fro he paced his old rounds, upon planks so familiar to his tread they were all over dented, like geological stones, with the peculiar mark of his walk. and if you fixedly gazed upon that ribbed and dented brow, there too you would see strange footprints—the footprints of his one unsleeping ever-pacing thought.
+
+but on this occasion those dents looked deeper, even as his nervous step that morning left a deeper mark. and so full of his thought was Ahab that at every uniform turn—now at the main-mast, now at the binnacle—you could almost see that thought turn in him as he turned, and pace in him as he paced.
+
+"D'ye mark him, Flask?" whispered Stubb. "The chick that's in him pecks the shell. 'Twill soon be out."
+
+the hours wore on. Ahab shut up within his cabin; then pacing the deck again; the same intense bigotry of purpose in his aspect.
+
+it drew near the close of day. suddenly he came to a halt by the bulwarks, inserted his bone leg into the auger-hole, grasped a shroud with one hand, and ordered Starbuck to send everybody aft.
+
+"Sir!" said the mate, astonished at an order seldom given on ship-board except in some extraordinary case.
+
+"Send everybody aft," repeated Ahab. "Mast-heads, there! Come down!"
+
+when the entire ship's company were assembled—eyeing him with curious and not wholly unapprehensive faces, for he looked not unlike the weather horizon when a storm is coming up—Ahab, after rapidly glancing over the bulwarks, and then darting his eyes among the crew, started from his standpoint and as though not a soul were nigh resumed his heavy turns upon the deck. with bent head and half-slouched hat he continued to pace, unmindful of the wondering whispering among the men, till Stubb cautiously whispered to Flask that Ahab must have summoned them there for the purpose of witnessing a pedestrian feat.
+
+then, vehemently pausing, he cried:
+
+"What do ye do when ye see a whale, men?"
+
+"Sing out for him!" came the impulsive rejoinder from a score of voices.
+
+"Good!" cried Ahab, with a wild approval in his tones. "And what do ye next, men?"
+
+"Lower away, and after him!"
+
+"And what tune is it ye pull to, men?"
+
+"A dead whale or a stove boat!"
+
+more and more strangely fiercely glad and approving grew the countenance of the old man at every shout—while the mariners began to gaze at each other curiously, marveling how it was they themselves became so excited at such seemingly purposeless questions.
+
+then Ahab, half-revolving in his pivot-hole, one hand reaching high up a shroud and almost convulsively grasping it, addressed them:
+
+"All ye mast-headers have before now heard me give orders about a white whale. Look ye! D'ye see this Spanish ounce of gold?"—holding up a broad bright coin to the sun—"it is a sixteen dollar piece, men. D'ye see it? Mr. Starbuck, hand me yon top-maul."
+
+while the mate was getting the hammer, Ahab without speaking was slowly rubbing the gold piece against the skirts of his jacket, as if to heighten its lustre, meanwhile lowly humming to himself—producing a sound so strangely muffled and inarticulate that it seemed the mechanical humming of the wheels of his vitality.
+
+receiving the top-maul from Starbuck, he advanced toward the main-mast with the hammer uplifted in one hand, the gold in the other, and with a high raised voice:
+
+"Whosoever of ye raises me a white-headed whale with a wrinkled brow and a crooked jaw; whosoever of ye raises me that white-headed whale, with three holes punctured in his starboard fluke—look ye, whosoever of ye raises me that same white whale, he shall have this gold ounce, my boys!"
+
+"Huzza! Huzza!" cried the seamen, swinging their tarpaulins, hailing the act of nailing the gold to the mast.
+
+"It's a white whale, i say," resumed Ahab, throwing down the top-maul. "Skin your eyes for him, men; look sharp for white water; if ye see but a bubble, sing out."
+
+Tashtego, Daggoo, and Queequeg had looked on with intense interest and surprise—and at the mention of the wrinkled brow and crooked jaw they had started as if each was separately touched by some specific recollection.
+
+"Captain Ahab," said Tashtego, "that white whale must be the same that some call Moby Dick."
+
+"Moby Dick?" shouted Ahab. "Do ye know the white whale then, Tash?"
+
+"Does he fan-tail a little curious, sir, before he goes down?" said the Gay-Header deliberately.
+
+"And has he a curious spout, too," said Daggoo, "very bushy, even for a parmacetty, and mighty quick, Captain Ahab?"
+
+"And he have one, two, three—oh! good many iron in him hide, too, Captain," cried Queequeg disjointedly, "all twiske-tee be-twisk, like him—him—" faltering hard for a word, and screwing his hand round and round as though uncorking a bottle—"like him—him—"
+
+"Corkscrew!" cried Ahab. "Aye, Queequeg, the harpoons lie all twisted and wrenched in him; aye, Daggoo, his spout is a big one, like a whole shock of wheat, and white as a pile of our Nantucket wool after the great annual sheep-shearing; aye, Tashtego, and he fan-tails like a split jib in a squall. Death and devils! men, it is Moby Dick ye have seen—Moby Dick—Moby Dick!"
+
+"Captain Ahab," said Starbuck, who with Stubb and Flask had thus far been eyeing his superior with increasing surprise, but at last seemed struck with a thought which somewhat explained all the wonder—"Captain Ahab, i have heard of Moby Dick—but it was not Moby Dick that took off thy leg?"
+
+"Who told thee that?" cried Ahab; then pausing: "Aye, Starbuck; aye, my hearties all round; it was Moby Dick that dismasted me; Moby Dick that brought me to this dead stump i stand on now. Aye, aye!"—and he shouted with a terrific loud animal sob, like that of a heart-stricken moose—"it was that accursed white whale that razeed me; made a poor pegging lubber of me for ever and a day!" then, tossing both arms, with measureless imprecations he shouted: "Aye, aye! and i'll chase him round Good Hope, and round the Horn, and round the Norway Maelstrom, and round perdition's flames before i give him up. And this is what ye have shipped for, men! to chase that white whale on both sides of land, and over all sides of earth, till he spouts black blood and rolls fin out. What say ye, men, will ye splice hands on it, now? I think ye do look brave."
+
+"Aye, aye!" shouted the harpooneers and seamen, running closer to the excited old man. "A sharp eye for the white whale; a sharp lance for Moby Dick!"
+
+"God bless ye," he seemed to half sob and half shout. "God bless ye, men. Steward! go draw the great measure of grog. But what's this long face about, Mr. Starbuck; wilt thou not chase the white whale? art not game for Moby Dick?"
+
+"I am game for his crooked jaw, and for the jaws of Death too, Captain Ahab, if it fairly comes in the way of the business we follow; but i came here to hunt whales, not my commander's vengeance. How many barrels will thy vengeance yield thee even if thou gettest it, Captain Ahab? it will not fetch thee much in our Nantucket market."
+
+"Nantucket market! Hoot! But come closer, Starbuck; thou requirest a little lower layer. If money's to be the measurer, man, and the accountants have computed their great counting-house the globe, by girdling it with guineas, one to every three parts of an inch—then let me tell thee that my vengeance will fetch a great premium here!"
+
+he smote his chest.
+
+"He smites his chest," whispered Stubb. "What's that for? methinks it rings most vast, but hollow."
+
+"Vengeance on a dumb brute!" cried Starbuck. "That simply smote thee from blindest instinct! Madness! To be enraged with a dumb thing, Captain Ahab, seems blasphemous."
+
+"Hark ye yet again—the little lower layer. All visible objects, man, are but as pasteboard masks. But in each event—in the living act, the undoubted deed—there, some unknown but still reasoning thing puts forth the mouldings of its features from behind the unreasoning mask. If man will strike, strike through the mask! How can the prisoner reach outside except by thrusting through the wall? To me, the white whale is that wall, shoved near to me. Sometimes i think there's naught beyond. But 'tis enough. He tasks me; he heaps me; i see in him outrageous strength, with an inscrutable malice sinewing it. That inscrutable thing is chiefly what i hate; and be the white whale agent, or be the white whale principal, i will wreak that hate upon him. Talk not to me of blasphemy, man; i'd strike the sun if it insulted me. For could the sun do that, then could i do the other; since there is ever a sort of fair play herein, jealousy presiding over all creations. But not my master, man, is even that fair play. Who's over me? Truth hath no confines."
+
+he looked at Starbuck. something passed between them.
+
+"Look! see yonder Turkish cheeks of spotted tawn—living, breathing pictures painted by the sun. The Pagan leopards—the unrecking and unworshipping things, that live; and seek, and give no reasons for the torrid life they feel! The crew, man, the crew! Are they not one and all with Ahab, in this matter of the whale? See Stubb! he laughs! And what is it? Reckon it. 'Tis but to help strike a fin; no wondrous feat for Starbuck. From this one poor hunt, the best lance out of all Nantucket—surely he will not hang back, when every foremast-hand has clutched a whetstone? Ah! constrainings seize thee; i see! the billow lifts thee! Speak, but speak!"
+
+Starbuck's downcast eyes stayed down.
+
+"God keep me!—keep us all!" he murmured lowly.
+
+but in his joy at the tacit acquiescence of the mate, Ahab did not hear his foreboding invocation; nor yet the low laugh from the hold; nor the presaging vibrations of the winds in the cordage; nor the hollow flap of the sails against the masts as for a moment their hearts sank in.
+
+"The measure! the measure!" cried Ahab.
+
+receiving the brimming pewter, and turning to the harpooneers, he ordered them to produce their weapons. then ranging them before him near the capstan—harpoons in their hands, mates with their lances at his side, the rest of the company in a circle—he stood for an instant searchingly eyeing every man of his crew. those wild eyes met his as the bloodshot eyes of prairie wolves meet the eye of their leader ere he rushes on at their head.
+
+"Drink and pass!" he cried, handing the heavy charged flagon to the nearest seaman. "The crew alone now drink. Round with it, round! Short draughts—long swallows, men; 'tis hot as Satan's hoof. It spiralizes in ye; forks out at the serpent-snapping eye."
+
+he called the mates forward. had them cross their lances before him.
+
+"In vain!" he cried after a moment. "But, maybe, 'tis well. For did ye three but once take the full-forced shock, then mine own electric thing had perhaps expired from out me. Perchance, too, it would have dropped ye dead. Down lances! And now, ye mates, i do appoint ye three cup-bearers to my three pagan kinsmen there—yon three most honorable gentlemen and noblemen, my valiant harpooneers. Disdain the task? What, when the great Pope washes the feet of beggars, using his tiara for ewer? Oh, my sweet cardinals! your own condescension, that shall bend ye to it. I do not order ye; ye will it. Cut your seizings and draw the poles, ye harpooneers!"
+
+the three harpooneers stood with the detached iron parts of their harpoons, barbs up, before him.
+
+"Stab me not with that keen steel! Cant them; cant them over! Turn up the socket! So, so; now, ye cup-bearers, advance."
+
+he brimmed the harpoon sockets with the spirits from the pewter, one officer to the next.
+
+"Now, three to three, ye stand. Commend the murderous chalices! Bestow them, ye who are now made parties to this indissoluble league. Ha! Starbuck! but the deed is done! Yon ratifying sun now waits to sit upon it. Drink, ye harpooneers! drink and swear, ye men that man the deathful whaleboat's bow—Death to Moby Dick! God hunt us all, if we do not hunt Moby Dick to his death!"
+
+the long barbed steel goblets lifted. cries and maledictions against the white whale. the spirits quaffed down with a hiss. Starbuck paled, and turned, and shivered.
+
+once more the pewter went round. they dispersed. Ahab retired into his cabin.
+
+---
+
+## CHAPTER 37. Sunset.
+
+*the cabin; by the stern windows; Ahab sitting alone, gazing out.*
+
+i leave a white and turbid wake; pale waters, paler cheeks, where'er i sail.
+
+dry heat upon my brow. time was, when as the sunrise nobly spurred me, the sunset soothed. no more. this lovely light, it lights not me; all loveliness is anguish to me, since i can ne'er enjoy. gifted with the high perception, i lack the low enjoying power; damned, most subtly and most malignantly! damned in the midst of Paradise!
+
+what i've dared, i've willed; and what i've willed, i'll do! they think me mad—Starbuck does; but i'm demoniac, i am madness maddened! that wild madness that's only calm to comprehend itself! the prophecy was that i should be dismembered; and—aye! i lost this leg. i now prophesy that i will dismember my dismemberer. now then, be the prophet and the fulfiller one. that's more than ye, ye great gods, ever were. i laugh and hoot at ye, ye pugilists, ye deaf Burkes and blinded Bendigoes!
+
+i am up again. but ye have run and hidden. come forth from behind your cotton bags! i have no long gun to reach ye. come—Ahab's compliments to ye. come and see if ye can swerve me.
+
+swerve me? ye cannot swerve me, else ye swerve yourselves! man has ye there. the path to my fixed purpose is laid with iron rails, whereon my soul is grooved to run. over unsounded gorges, through the rifled hearts of mountains, under torrents' beds, unerringly i rush! naught's an obstacle, naught's an angle to the iron way!
+
+---
+
+## CHAPTER 38. Dusk.
+
+*by the mainmast; Starbuck leaning against it.*
+
+my soul is more than matched; she's overmanned; and by a madman! insufferable sting, that sanity should ground arms on such a field! but he drilled deep down and blasted all my reason out of me!
+
+i think i see his impious end; but feel that i must help him to it. will i, nill i, the ineffable thing has tied me to him; tows me with a cable i have no knife to cut. horrible old man! who's over him, he cries—aye, he would be a democrat to all above; look how he lords it over all below!
+
+oh! i plainly see my miserable office—to obey, rebelling; and worse yet, to hate with touch of pity! for in his eyes i read some lurid woe that would shrivel me up, had i it. yet is there hope. time and tide flow wide. the hated whale has the round watery world to swim in, as the small gold-fish has its glassy globe. God may wedge aside his heaven-insulting purpose yet.
+
+but my whole clock's run down; my heart the all-controlling weight; i have no key to lift again.
+
+*[a burst of revelry from the forecastle]*
+
+oh God! to sail with such a heathen crew! Whelped somewhere by the sharkish sea. the white whale is their demigorgon. hark! the infernal orgies—that revelry is forward! mark the unfaltering silence aft! methinks it pictures life. foremost through the sparkling sea shoots on the gay embattled bantering bow, but only to drag dark Ahab after it, where he broods within his sternward cabin, builded over the dead water of the wake, and further on, hunted by its wolfish gurglings.
+
+the long howl thrills me through!
+
+Peace! ye revellers—set the watch! oh, life—'tis now that i do feel the latent horror in thee! but 'tis not me! that horror's out of me! and with the soft feeling of the human in me, yet will i try to fight ye, ye grim phantom futures! Stand by me, hold me, bind me, O ye blessed influences!
+
+---
+
+## CHAPTER 39. First Night-Watch.
+
+*Fore-Top. Stubb solus, mending a brace.*
+
+ha! ha! ha! hem! clear my throat—i've been thinking over it ever since, and that ha ha's the final consequence. why so? because a laugh's the wisest, easiest answer to all that's queer; and come what will, one comfort's always left—that unfailing comfort is, it's all predestinated.
+
+i heard not all his talk with Starbuck; but to my poor eye Starbuck then looked something as i the other evening felt. sure as anything, the old Mogul has fixed him too. i twigged it, knew it; had i had the gift, might readily have prophesied it—for when i clapped my eye upon his skull i saw it.
+
+well, Stubb—wise Stubb—that's my title—what of it, Stubb? here's a carcase. i know not all that may be coming, but be it what it will, i'll go to it laughing. such a waggish leering as lurks in all your horribles! i feel funny.
+
+what's my juicy little pear at home doing now? crying its eyes out? giving a party to the latest harpooneers, i dare say, gay as a frigate's pennant—and so am i.
+
+---
+
+## CHAPTER 40. Midnight, Forecastle.
+
+*harpooneers and sailors. foresail rises and discovers the watch standing, lounging, leaning, and lying in various attitudes, all singing in chorus.*
+
+1ST NANTUCKET SAILOR. Oh, boys, don't be sentimental; it's bad for the digestion! Take a tonic, follow me!
+
+*(sings, and all follow—something about watching whales and heaving halyards, cheery men)*
+
+MATE'S VOICE FROM THE QUARTER-DECK. Eight bells there, forward!
+
+2ND NANTUCKET SAILOR. Avast the chorus! Eight bells! d'ye hear, bell-boy? Strike the bell eight, thou Pip! thou blackling! and let me call the watch.
+
+DUTCH SAILOR. Grand snoozing tonight, maty; fat night for that. I mark this in our old Mogul's wine; it's quite as deadening to some as fillipping to others. We sing; they sleep—aye, lie down there, like ground-tier butts. At em again!
+
+FRENCH SAILOR. Hist, boys! let's have a jig or two before we ride to anchor in Blanket Bay. Here comes the other watch. Stand by all legs! Pip! little Pip! hurrah with your tambourine!
+
+PIP. *(sulky and sleepy)* Don't know where it is.
+
+FRENCH SAILOR. Beat thy belly, then, and wag thy ears. Jig it, men—merry's the word! Damn me, won't you dance?
+
+ICELAND SAILOR. I don't like your floor, maty; it's too springy to my taste. I'm used to ice-floors.
+
+MALTESE SAILOR. Me too; where's your girls? Who but a fool would take his left hand by his right and say how d'ye do? Partners! I must have partners!
+
+SICILIAN SAILOR. Aye; girls and a green! Then i'll hop with ye!
+
+LONG-ISLAND SAILOR. Well, well, ye sulkies—there's plenty more of us. Hoe corn when you may, say i. All legs go to harvest soon.
+
+AZORE SAILOR. *(ascending, pitching the tambourine up the scuttle)* Here you are, Pip; and there's the windlass-bitts; up you mount! Now, boys!
+
+*(the half of them dance; some go below; some sleep among the coils of rigging)*
+
+TASHTEGO. *(quietly smoking)* That's a white man; he calls that fun: humph! i save my sweat.
+
+OLD MANX SAILOR. I wonder whether those jolly lads bethink them of what they are dancing over. I'll dance over your grave, i will—that's the bitterest threat of your night-women, that beat head-winds round corners. Oh Christ! to think of the green navies and the green-skulled crews! Well, well; belike the whole world's a ball, as you scholars have it; and so 'tis right to make one ballroom of it. Dance on, lads, you're young; i was once.
+
+*(sky darkens; wind rises)*
+
+LASCAR SAILOR. By Brahma! boys, it'll be douse sail soon. The sky-born, high-tide Ganges turned to wind! Thou showest thy black brow, Seeva!
+
+MALTESE SAILOR. *(reclining, shaking his cap)* It's the waves—the snow's caps turn to jig it now. They'll shake their tassels soon. Now would all the waves were women, then i'd go drown and chassee with them evermore! There's naught so sweet on earth—heaven may not match it!
+
+PORTUGUESE SAILOR. How the sea rolls swashing against the side! Stand by for reefing, hearties! the winds are just crossing swords, pell-mell they'll go lunging presently.
+
+DANISH SAILOR. Crack, crack, old ship! so long as thou crackest, thou holdest! Well done! The mate there holds ye to it stiffly.
+
+4TH NANTUCKET SAILOR. He has his orders, mind ye that. I heard old Ahab tell him he must always kill a squall, something as they burst a waterspout with a pistol—fire your ship right into it!
+
+ENGLISH SAILOR. Blood! but that old man's a grand old cove! We are the lads to hunt him up his whale!
+
+ALL. Aye! aye!
+
+OLD MANX SAILOR. How the three pines shake! Pines are the hardest sort of tree to live when shifted to any other soil, and here there's none but the crew's cursed clay. Steady, helmsman! steady. This is the sort of weather when brave hearts snap ashore, and keeled hulls split at sea.
+
+DAGGOO. What of that? Who's afraid of black's afraid of me! I'm quarried out of it!
+
+SPANISH SAILOR. *(aside)* He wants to bully, ah!—the old grudge makes me touchy. *(advancing)* Aye, harpooneer, thy race is the undeniable dark side of mankind—devilish dark at that. No offence.
+
+DAGGOO *(grimly)*. None.
+
+SPANISH SAILOR *(meeting him)*. Knife thee heartily! big frame, small spirit!
+
+ALL. A row! a row! a row!
+
+TASHTEGO *(with a whiff)*. A row alow, and a row aloft—Gods and men—both brawlers! Humph!
+
+MATE'S VOICE FROM THE QUARTER-DECK. Hands by the halyards! In top-gallant sails! Stand by to reef topsails!
+
+ALL. The squall! the squall! jump, my jollies!
+
+*(they scatter)*
+
+PIP. *(shrinking under the windlass)* Jollies? Lord help such jollies! Crish, crash! there goes the jib-stay! Blang-whang! God! Duck lower, Pip, here comes the royal yard! It's worse than being in the whirled woods, the last day of the year! Who'd go climbing after chestnuts now? But there they go, all cursing, and here i don't. Fine prospects to em; they're on the road to heaven. Hold on hard! Jimmini, what a squall! But those chaps there are worse yet—they are your white squalls, they. White squalls? white whale, shirr! shirr! Here have i heard all their chat just now, and the white whale—shirr! shirr!—but spoken of once! and only this evening—it makes me jingle all over like my tambourine—that anaconda of an old man swore em in to hunt him! Oh, thou big white God aloft there somewhere in yon darkness, have mercy on this small black boy down here; preserve him from all men that have no bowels to feel fear!
+
+---
+
+*— end of Part 4 —*
+
+---
+
+drop "continue" for Part 5 — Chapters 41–52: Moby Dick through The Albatross. the big philosophical chapters—the whiteness, what Moby Dick actually means, Ishmael's oath, Ahab's charts—and then the ship starts moving toward the thing.
+

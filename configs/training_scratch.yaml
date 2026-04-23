@@ -1,0 +1,28 @@
+corpus_path: artifacts/corpus/prepared_corpus.txt
+tokenizer_dir: artifacts/tokenizers/default
+block_size: 128
+batch_size: 2
+gradient_accumulation_steps: 4
+learning_rate: 3.0e-4
+weight_decay: 0.01
+adam_beta1: 0.9
+adam_beta2: 0.95
+adam_eps: 1.0e-8
+max_steps: 2000
+warmup_steps: 100
+checkpoint_interval: 200
+log_interval: 20
+sample_interval: 200
+sample_prompt: "The key constraint in a local model lab is"
+output_dir: artifacts/checkpoints/tiny-qwen3-scratch
+device_preference: cpu
+dtype_preference: float32
+seed: 42
+max_checkpoints: 3
+notes:
+  - Scaled from 20-step smoke test to 2000-step research run.
+  - block_size increased from 128 to 256 for better context.
+  - Corpus is 16 MB of personal authored text (ChatGPT messages, notes, personal docs).
+  - No pretrained weights are loaded.
+
+

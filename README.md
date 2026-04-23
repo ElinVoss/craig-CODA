@@ -172,6 +172,127 @@ Phase three adds one lightweight dependency:
 
 The tokenizer is only a local segmentation artifact. It is not a trained language model and it does not imply any semantic capability by itself.
 
+## Phase four tiny scratch model
+
+Phase four adds a tiny scratch-built causal language model path that uses the Hugging Face Qwen3 architecture family through `Qwen3Config` and `AutoModelForCausalLM.from_config(...)`.
+
+This phase does not use pretrained checkpoints. The model initializes from random weights and is intentionally much smaller than any official Qwen3 release.
+
+### What phase four adds
+
+- tokenizer loading from the phase-three artifacts
+- tiny Qwen3-style model construction from config
+- scratch pretraining on the prepared local corpus
+- SFT dataset validation scaffold for later behavior shaping
+- runtime prompt compilation from the local user-model bundle
+- local sample generation
+- lightweight evaluation runner
+
+### New artifact locations
+
+- `artifacts/models/`: model metadata and initialized-model outputs
+- `artifacts/checkpoints/`: scratch-training checkpoints
+- `artifacts/samples/`: local generation outputs
+- `artifacts/eval_reports/`: eval reports
+
+### Key configs
+
+- `configs/model_architecture.yaml`
+- `configs/training_scratch.yaml`
+- `configs/training_sft.yaml`
+- `configs/runtime_modes.yaml`
+- `configs/eval.yaml`
+
+### Dependency note
+
+Phase four adds:
+
+- `torch` for local model execution and training
+- `transformers` for `Qwen3Config`, model construction, generation, and tokenizer integration
+- `safetensors` for model checkpoint serialization
+- `tqdm` for lightweight progress support
+
+### Inspect the setup
+
+```powershell
+python .\scripts\inspect_model.py
+```
+
+This prints:
+
+- tokenizer location
+- vocab size
+- tiny model summary
+- parameter count
+- context length
+- current checkpoint directories if any
+
+### Run scratch training
+
+```powershell
+python .\scripts\run_scratch_train.py
+```
+
+This uses:
+
+- tokenizer artifacts from `artifacts/tokenizers/default/`
+- prepared corpus from `artifacts/corpus/prepared_corpus.txt`
+- random model initialization from `Qwen3Config`
+- CPU-first defaults from `configs/training_scratch.yaml`
+
+### Run sample generation
+
+After at least one checkpoint exists:
+
+```powershell
+python .\scripts\run_sample_generation.py --prompt "Summarize the local-first constraints." --mode craig_default
+```
+
+You can also test fiction routing and overlays:
+
+```powershell
+python .\scripts\run_sample_generation.py --prompt "Write a short Te'Oga opening." --mode elin_fiction
+python .\scripts\run_sample_generation.py --prompt "Explain the brittle-system failure mode." --mode craig_default --rs1-specialty
+```
+
+### Run evals
+
+After at least one checkpoint exists:
+
+```powershell
+python .\scripts\run_eval_suite.py
+```
+
+This writes reports under `artifacts/eval_reports/`.
+
+### SFT path
+
+The SFT path is intentionally a scaffold in this phase:
+
+```powershell
+python .\scripts\run_sft_train.py
+```
+
+It validates the expected dataset schema and keeps the later behavior-shaping path explicit, but it does not claim a full tuned SFT recipe yet.
+
+### Runtime prompt modes
+
+The runtime compiler uses the local bundle structure and supports:
+
+- `craig_default`
+- `elin_fiction`
+- optional `rs1_specialty` overlay
+
+It will not auto-load `review_before_use/` or other forbidden paths.
+
+### Important limitations
+
+- This is not official Qwen3.
+- No official Qwen3 weights are used.
+- The model is tiny and randomly initialized.
+- CPU-first defaults mean the training loop is for local experimentation, not scale.
+- Early outputs may be weak or nonsensical until enough local training happens.
+
 ## Validate the sample data
 
 Run:
@@ -197,7 +318,6 @@ Only after those data formats and eval flows are stable should training code be 
 
 ## Intentionally not implemented yet
 
-- model training
 - inference serving
 - checkpoint management logic beyond folders
 - dataset downloaders
@@ -205,6 +325,9 @@ Only after those data formats and eval flows are stable should training code be 
 - Docker or container workflows
 - GPU-specific code paths
 - notebook-driven workflow automation
+ - distributed training
+ - pretrained checkpoint loading
+ - full SFT recipe
 
 ## Raw file handling notes
 

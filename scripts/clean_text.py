@@ -36,10 +36,10 @@ def clean_ingested(raw_ingested_root: Path, clean_root: Path, options: CleaningO
         if source.suffix.lower() not in {".txt", ".md", ".jsonl"}:
             continue
         relative = source.relative_to(raw_ingested_root)
-        cleaned_path = clean_root / relative.with_suffix(relative.suffix + ".cleaned.txt")
+        cleaned_path = clean_root / relative.with_suffix(".txt")
         cleaned = clean_text(read_text(source), options)
         write_text(cleaned_path, cleaned)
-        outputs.append({"source_file": relative.as_posix(), "cleaned_file": cleaned_path.relative_to(ROOT).as_posix()})
+        outputs.append({"source_file": relative.as_posix(), "cleaned_file": cleaned_path.resolve().relative_to(ROOT).as_posix()})
     (clean_root / "manifest.json").write_text(json.dumps(outputs, indent=2), encoding="utf-8")
     return outputs
 

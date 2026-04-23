@@ -1,0 +1,42 @@
+default_mode: craig_default
+fiction_mode: elin_fiction
+rs1_specialty_default: false
+safe_auto_load_folders:
+  - identity_core
+  - style_training
+  - technical_domain
+  - reasoning_modes
+  - project_constraints
+forbidden_auto_load_folders:
+  - review_before_use
+  - negative_examples
+modes:
+  craig_default:
+    base_files:
+      - exports/user_model_package/identity_core/system_prompt_core.txt
+      - exports/user_model_package/identity_core/user_identity.yaml
+      - exports/user_model_package/style_training/style_guide.md
+      - exports/user_model_package/style_training/request_patterns.md
+      - exports/user_model_package/reasoning_modes/base_reasoning_core.txt
+      - exports/user_model_package/project_constraints/warehouse_constraints.yaml
+    optional_context_files:
+      - exports/user_model_package/project_context/current_lab_context.yaml
+  elin_fiction:
+    base_files:
+      - exports/user_model_package/identity_core/system_prompt_core.txt
+      - exports/user_model_package/pseudonym_context/pseudonym_profile.yaml
+      - exports/user_model_package/style_training/style_guide.md
+      - exports/user_model_package/reasoning_modes/base_reasoning_core.txt
+      - exports/user_model_package/project_constraints/teoga_constraints.yaml
+    optional_context_files:
+      - exports/user_model_package/pseudonym_context/pseudonym_notes.md
+overlays:
+  rs1_specialty:
+    path: exports/user_model_package/reasoning_modes/rs1_specialty_overlay.txt
+  rs1_creative:
+    path: exports/user_model_package/reasoning_modes/rs1_creative_overlay.txt
+notes:
+  - Review-only and private files must never be auto-loaded.
+  - Context-only files are opt-in.
+  - If a file path is missing, fail clearly.
+

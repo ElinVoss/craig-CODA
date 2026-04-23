@@ -35,10 +35,18 @@ model-lab.zip
 artifacts/corpus/*
 artifacts/tokenizers/*
 artifacts/reports/*
+artifacts/models/*
+artifacts/checkpoints/*
+artifacts/samples/*
+artifacts/eval_reports/*
 !artifacts/.gitkeep
 !artifacts/corpus/.gitkeep
 !artifacts/tokenizers/.gitkeep
 !artifacts/reports/.gitkeep
+!artifacts/models/.gitkeep
+!artifacts/checkpoints/.gitkeep
+!artifacts/samples/.gitkeep
+!artifacts/eval_reports/.gitkeep
 
 # Local env files
 .env
