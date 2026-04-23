@@ -7,3 +7,6 @@ safetensors>=0.4
 anthropic>=0.25
 openai>=1.30
 groq>=0.5
+sentence-transformers>=3.0
+apscheduler>=3.10
+faiss-cpu>=1.8

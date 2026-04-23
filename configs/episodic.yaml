@@ -1,0 +1,18 @@
+weights:
+  semantic: 7
+  temporal: 5
+  emotional: 4
+  circumstantial: 6
+  reinforcement: 5
+  developmental: 3
+
+decay:
+  rate: 0.995
+  reinforce_boost: 1
+  crystallize_threshold: 40
+
+hum:
+  interval_minutes: 60
+
+semantic_model: all-MiniLM-L6-v2
+top_k: 10
