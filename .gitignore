@@ -39,6 +39,7 @@ artifacts/models/*
 artifacts/checkpoints/*
 artifacts/samples/*
 artifacts/eval_reports/*
+artifacts/episodic/*
 !artifacts/.gitkeep
 !artifacts/corpus/.gitkeep
 !artifacts/tokenizers/.gitkeep
