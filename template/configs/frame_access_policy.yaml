@@ -1,0 +1,71 @@
+# Frame Access Policy
+# Defines which entity frames are accessible at each project phase/stage.
+# Frames represent different interpretive lenses on the same entity.
+# Access is gated — locked frames cannot be queried until their stage is reached.
+#
+# ORIGIN: Derived from OmniMeta's INNOCENT_FRAME / GUILTY_FRAME architecture.
+# INNOCENT = the public, surface-level view (accessible always)
+# GUILTY = the hidden truth (locked until the final stage)
+#
+# Your project may use different frame names and access rules.
+# Common patterns:
+#   public / internal / adversarial
+#   novice_view / expert_view
+#   external / internal / classified
+#   draft / reviewed / final
+#
+# HOW TO USE:
+#   1. Define your frames — what interpretive lens does each represent?
+#   2. Set allowed_stages for each frame.
+#   3. src/runtime/frame_policy.py reads this and gates retrieval queries.
+
+meta:
+  project: "{{PROJECT_NAME}}"
+  version: "1.0"
+
+# Stage definitions — the phases of your project arc.
+# These map to your phase_structure in the mastermind template.
+stages:
+  - id: "{{STAGE_1_ID}}"
+    name: "{{STAGE_1_NAME}}"
+    description: "{{STAGE_1_DESCRIPTION}}"
+    sequence: 1
+
+  - id: "{{STAGE_2_ID}}"
+    name: "{{STAGE_2_NAME}}"
+    description: "{{STAGE_2_DESCRIPTION}}"
+    sequence: 2
+
+  - id: "{{STAGE_N_ID}}"
+    name: "{{STAGE_N_NAME}}"
+    description: "{{STAGE_N_DESCRIPTION}}"
+    sequence: 99  # final stage
+
+# Frame definitions.
+frames:
+  - id: "{{FRAME_1_ID}}"
+    name: "{{FRAME_1_NAME}}"
+    description: "{{FRAME_1_DESCRIPTION}}"
+    allowed_stages: ["*"]          # "*" = always accessible
+    priority: "mandatory"          # mandatory | optional | supplementary
+
+  - id: "{{FRAME_2_ID}}"
+    name: "{{FRAME_2_NAME}}"
+    description: "{{FRAME_2_DESCRIPTION}}"
+    allowed_stages:
+      - "{{STAGE_2_ID}}"
+      - "{{STAGE_N_ID}}"
+    priority: "optional"
+
+  - id: "{{FRAME_N_ID}}"
+    name: "{{FRAME_N_NAME}}"
+    description: "{{FRAME_N_DESCRIPTION}}"
+    allowed_stages:
+      - "{{STAGE_N_ID}}"           # locked until final stage
+    priority: "mandatory"
+    unlock_message: "{{FRAME_N_UNLOCK_MESSAGE}}"  # what to tell the agent when this unlocks
+
+# Default behavior when no stage is set.
+defaults:
+  active_stage: "{{STAGE_1_ID}}"
+  deny_unlisted: true              # if a frame isn't listed for a stage, deny it

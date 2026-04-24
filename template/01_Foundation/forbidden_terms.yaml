@@ -1,0 +1,25 @@
+# Forbidden Terms
+# Terms that must never appear in any output for {{PROJECT_NAME}}.
+# tools/lint_outputs.py reads this file and blocks any output containing these terms.
+#
+# HOW TO USE:
+#   Add any term that breaks domain voice, canon, or consistency.
+#   Provide the approved replacement so the agent can self-correct.
+
+meta:
+  project: "{{PROJECT_NAME}}"
+  version: "1.0"
+  action: "block"               # block | warn
+
+terms:
+  - forbidden: "{{FORBIDDEN_TERM_1}}"
+    replacement: "{{REPLACEMENT_1}}"
+    reason: "{{REASON_1}}"
+
+  - forbidden: "{{FORBIDDEN_TERM_2}}"
+    replacement: "{{REPLACEMENT_2}}"
+    reason: "{{REASON_2}}"
+
+  - forbidden: "{{FORBIDDEN_TERM_N}}"
+    replacement: "{{REPLACEMENT_N}}"
+    reason: "{{REASON_N}}"

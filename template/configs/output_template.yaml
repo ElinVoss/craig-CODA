@@ -1,0 +1,97 @@
+# Output Template
+# Defines the required structure for each generated output unit.
+# Every {{OUTPUT_UNIT}} must contain all required sections in order.
+# Optional sections may be omitted if not relevant.
+#
+# ORIGIN: Derived from OmniMeta's 13-section novella bible template.
+# A "bible" is the structured knowledge document that precedes actual generation.
+# This template generalizes that concept to any domain.
+#
+# HOW TO USE:
+#   1. Replace section names and descriptions with your domain's output structure.
+#   2. Set required: true/false for each section.
+#   3. Set unit_count to match your domain's internal structure (chapters, steps, stages).
+#   4. The linter (tools/lint_outputs.py) validates outputs against this template.
+
+meta:
+  project: "{{PROJECT_NAME}}"
+  version: "1.0"
+  output_unit_name: "{{OUTPUT_UNIT}}"          # e.g. "bible", "spec", "plan"
+  output_unit_plural: "{{OUTPUT_UNIT_PLURAL}}"  # e.g. "bibles", "specs", "plans"
+  file_pattern: "{{OUTPUT_FILE_PATTERN}}"       # e.g. "N{:02d}_{title}.md"
+
+# The sections every output unit must contain.
+sections:
+
+  - id: "premise"
+    name: "{{PREMISE_SECTION_NAME}}"
+    required: true
+    description: "Core purpose of this output unit — what it accomplishes and why."
+    max_words: 150
+
+  - id: "constraints"
+    name: "{{CONSTRAINTS_SECTION_NAME}}"
+    required: true
+    description: "Hard rules this output must respect — non-negotiable boundaries."
+
+  - id: "entities"
+    name: "{{ENTITIES_SECTION_NAME}}"
+    required: true
+    description: "Relevant entities and their current state, filtered by frame access policy."
+    frame_policy: "configs/frame_access_policy.yaml"
+
+  - id: "domain_rules"
+    name: "{{DOMAIN_RULES_SECTION_NAME}}"
+    required: true
+    description: "Domain-specific mechanics, systems, or rules that apply to this output."
+    source: "01_Foundation/"
+
+  - id: "context"
+    name: "{{CONTEXT_SECTION_NAME}}"
+    required: true
+    description: "Environmental or situational context relevant to this output unit."
+
+  - id: "objects_motifs"
+    name: "{{OBJECTS_SECTION_NAME}}"
+    required: false
+    description: "Key objects, symbols, or motifs that recur in this output and their meaning."
+
+  - id: "structure"
+    name: "{{STRUCTURE_SECTION_NAME}}"
+    required: true
+    description: "The internal structure of this output unit."
+    unit_count: "{{INTERNAL_UNIT_COUNT}}"    # e.g. 15 chapters, 7 steps, 5 stages
+    unit_schema:
+      - id: 1
+        label: "{{UNIT_1_LABEL}}"
+        description: "{{UNIT_1_DESCRIPTION}}"
+      - id: 2
+        label: "{{UNIT_2_LABEL}}"
+        description: "{{UNIT_2_DESCRIPTION}}"
+      # ... continue for all internal units
+
+  - id: "operation_sequence"
+    name: "{{OPERATION_SEQUENCE_SECTION_NAME}}"
+    required: true
+    description: "The constraint-graph-validated sequence of operations for this output unit."
+    source: "configs/constraint_graph.yaml"
+
+  - id: "forbidden_check"
+    name: "{{FORBIDDEN_CHECK_SECTION_NAME}}"
+    required: true
+    description: "Explicit confirmation that all forbidden elements have been avoided."
+    source: "01_Foundation/forbidden_terms.yaml"
+
+  - id: "validation"
+    name: "Validation Checklist"
+    required: true
+    description: "Inline validation checklist — must be completed before delivery."
+    source: "configs/validation_protocol.yaml"
+    format: "checklist"
+
+# Context chain injection.
+# Craig automatically prepends references to all previous output units.
+context_chain:
+  enabled: true
+  inject_at: "top"               # top | bottom | section:premise
+  format: "list"                 # list | summary | full

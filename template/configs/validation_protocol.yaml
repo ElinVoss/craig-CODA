@@ -1,0 +1,107 @@
+# Validation Protocol
+# Defines quality gates that every output unit must pass before delivery.
+# ORIGIN: Derived from OmniMeta's LAW_TEST — a checklist enforced in every novella bible.
+# This generalizes LAW_TEST to any domain with configurable rule categories.
+#
+# HOW TO USE:
+#   1. Replace example categories and rules with your domain's actual constraints.
+#   2. Set action: block | warn | log for each rule.
+#   3. tools/lint_outputs.py reads this file and validates outputs against it.
+#   4. The mastermind template includes an inline checklist derived from this file.
+
+meta:
+  project: "{{PROJECT_NAME}}"
+  version: "1.0"
+  fail_on: "block"               # any rule with action: block causes validation failure
+
+categories:
+
+  # --- LANGUAGE / VOCABULARY ---
+  - id: "language"
+    name: "{{LANGUAGE_CATEGORY_NAME}}"
+    description: "Ensures vocabulary and terminology is consistent with domain standards."
+    rules:
+      - id: "no_forbidden_terms"
+        description: "Output does not use any terms listed in 01_Foundation/forbidden_terms.yaml"
+        source: "01_Foundation/forbidden_terms.yaml"
+        action: "block"
+
+      - id: "approved_vocabulary"
+        description: "Domain-specific terms use approved forms from 01_Foundation/lexicon.yaml"
+        source: "01_Foundation/lexicon.yaml"
+        action: "warn"
+
+      - id: "{{CUSTOM_LANGUAGE_RULE_1}}"
+        description: "{{CUSTOM_LANGUAGE_RULE_1_DESCRIPTION}}"
+        action: "block"
+
+  # --- CANON / FOUNDATION INTEGRITY ---
+  - id: "canon_integrity"
+    name: "{{CANON_CATEGORY_NAME}}"
+    description: "Ensures output does not contradict established foundational truth."
+    rules:
+      - id: "frame_access_respected"
+        description: "No locked-frame content appears in this output"
+        policy: "configs/frame_access_policy.yaml"
+        action: "block"
+
+      - id: "no_retcons"
+        description: "No established state from 03_State_Tracking/ has been reversed without cause"
+        source: "03_State_Tracking/"
+        action: "block"
+
+      - id: "foundation_sha_verified"
+        description: "All foundation nodes cited have matching SHA pins in knowledge_index.json"
+        source: "knowledge_index.json"
+        action: "block"
+
+      - id: "{{CUSTOM_CANON_RULE_1}}"
+        description: "{{CUSTOM_CANON_RULE_1_DESCRIPTION}}"
+        action: "block"
+
+  # --- QUALITY / DOMAIN STANDARDS ---
+  - id: "quality"
+    name: "{{QUALITY_CATEGORY_NAME}}"
+    description: "Ensures output meets domain-specific quality standards."
+    rules:
+      - id: "{{QUALITY_RULE_1}}"
+        description: "{{QUALITY_RULE_1_DESCRIPTION}}"
+        action: "block"
+
+      - id: "{{QUALITY_RULE_2}}"
+        description: "{{QUALITY_RULE_2_DESCRIPTION}}"
+        action: "warn"
+
+  # --- STRUCTURE ---
+  - id: "structure"
+    name: "Structure"
+    description: "Ensures output contains all required sections in correct form."
+    rules:
+      - id: "required_sections_present"
+        description: "All sections marked required:true in configs/output_template.yaml are present"
+        source: "configs/output_template.yaml"
+        action: "block"
+
+      - id: "constraint_sequence_valid"
+        description: "Operation sequence in this output passes constraint_graph rules"
+        source: "configs/constraint_graph.yaml"
+        action: "block"
+
+      - id: "context_chain_injected"
+        description: "References to all previous output units are present"
+        action: "warn"
+
+  # --- FORBIDDEN ELEMENTS ---
+  - id: "forbidden"
+    name: "Forbidden Elements"
+    description: "Hard blocks — these elements must never appear in any output."
+    rules:
+      - id: "{{FORBIDDEN_RULE_1}}"
+        description: "{{FORBIDDEN_RULE_1_DESCRIPTION}}"
+        pattern: "{{FORBIDDEN_RULE_1_PATTERN}}"   # regex pattern to detect violation
+        action: "block"
+
+      - id: "{{FORBIDDEN_RULE_2}}"
+        description: "{{FORBIDDEN_RULE_2_DESCRIPTION}}"
+        pattern: "{{FORBIDDEN_RULE_2_PATTERN}}"
+        action: "block"

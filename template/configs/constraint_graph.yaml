@@ -1,0 +1,65 @@
+# Constraint Graph
+# Defines the operation repertoire and sequencing rules for {{PROJECT_NAME}}.
+# Operations are the discrete "beats" or "steps" that compose each output unit.
+# Rules prevent repetitive, patterned, or predictable sequences.
+#
+# HOW TO USE:
+#   1. Replace the example operations with your domain's actual operations.
+#   2. For each operation, define which operations it cannot be followed by.
+#   3. Set the window and rule flags appropriate to your domain.
+#   4. The ConstraintTracker in src/runtime/session.py reads this file.
+
+meta:
+  project: "{{PROJECT_NAME}}"
+  version: "1.0"
+  domain: "{{DOMAIN}}"
+
+# The repertoire of valid operations.
+# Each operation is a discrete structural approach — not the content itself.
+operations:
+
+  # --- EXAMPLE OPERATIONS — replace with your domain's actual operations ---
+
+  - id: "op_01"
+    name: "{{OPERATION_1_NAME}}"
+    description: "{{OPERATION_1_DESCRIPTION}}"
+    emotional_weight: 0.7      # 0.0 = low intensity, 1.0 = high intensity
+    forbidden_after:           # operation IDs that cannot immediately follow this one
+      - "op_01"                # never repeat consecutively (minimum rule)
+
+  - id: "op_02"
+    name: "{{OPERATION_2_NAME}}"
+    description: "{{OPERATION_2_DESCRIPTION}}"
+    emotional_weight: 0.4
+    forbidden_after:
+      - "op_02"
+
+  - id: "op_03"
+    name: "{{OPERATION_3_NAME}}"
+    description: "{{OPERATION_3_DESCRIPTION}}"
+    emotional_weight: 0.9
+    forbidden_after:
+      - "op_03"
+      - "op_04"               # example: op_03 cannot be followed by op_04 either
+
+  - id: "op_04"
+    name: "{{OPERATION_4_NAME}}"
+    description: "{{OPERATION_4_DESCRIPTION}}"
+    emotional_weight: 0.3
+    forbidden_after:
+      - "op_04"
+
+  # Add more operations as needed...
+
+# Sequencing rules applied across the full operation window.
+rules:
+  no_consecutive_repeats: true      # op X cannot immediately follow op X
+  no_rotation_cycles: true          # detect and block A→B→C→A→B→C patterns
+  no_sequence_repeats: true         # if X→Y occurred in a previous unit, block X→Y in next unit
+  window: 3                         # how many previous operations to look back
+
+# Intensity balancing — optional.
+# Prevents too many high-intensity operations in a row.
+intensity_rules:
+  max_consecutive_high: 2           # no more than 2 high-intensity ops in a row (weight > 0.7)
+  max_consecutive_low: 3            # no more than 3 low-intensity ops in a row (weight < 0.4)

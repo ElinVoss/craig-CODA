@@ -16,6 +16,7 @@ def retrieve(
     circumstantial: float = 0.5,
     developmental_phase: float = 0.5,
     session_id: str = "default",
+    allowed_frames: list[str] | None = None,  # None = all frames; list = restrict by context_tag
 ) -> list[tuple[MemoryNode, float]]:
 
     qvec = build_query_vector(
@@ -55,6 +56,9 @@ def retrieve(
     for idx in top_idx:
         node = store.get(ids[idx])
         if node:
+            # Apply frame access gate — skip nodes in locked frames
+            if allowed_frames is not None and node.context_tag not in allowed_frames:
+                continue
             results.append((node, float(final_scores[idx])))
             retrieved_ids.append(ids[idx])
             store.reinforce(ids[idx])

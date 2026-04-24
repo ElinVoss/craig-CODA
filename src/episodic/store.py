@@ -1,4 +1,5 @@
 from __future__ import annotations
+import hashlib
 import sqlite3
 import json
 import uuid
@@ -24,7 +25,8 @@ CREATE TABLE IF NOT EXISTS nodes (
     timestamp           TEXT,
     reinforce_count     INTEGER DEFAULT 0,
     crystallized        INTEGER DEFAULT 0,
-    vector              BLOB
+    vector              BLOB,
+    content_hash        TEXT
 );
 
 CREATE TABLE IF NOT EXISTS resonance (
@@ -47,12 +49,23 @@ class EpisodicStore:
         db_path.parent.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(str(db_path), check_same_thread=False)
         self.conn.executescript(SCHEMA)
+        self._migrate()
         self.conn.commit()
+
+    def _migrate(self) -> None:
+        """Apply any schema migrations needed for existing databases."""
+        existing = {
+            row[1] for row in
+            self.conn.execute("PRAGMA table_info(nodes)").fetchall()
+        }
+        if "content_hash" not in existing:
+            self.conn.execute("ALTER TABLE nodes ADD COLUMN content_hash TEXT")
 
     def add(self, node: MemoryNode, vector: np.ndarray) -> str:
         node.id = node.id or str(uuid.uuid4())
+        content_hash = hashlib.sha256(node.content.encode()).hexdigest()
         self.conn.execute(
-            "INSERT OR REPLACE INTO nodes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO nodes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (
                 node.id, node.content,
                 json.dumps(node.keywords),
@@ -61,10 +74,28 @@ class EpisodicStore:
                 node.timestamp.isoformat(),
                 node.reinforce_count, int(node.crystallized),
                 vector.astype(np.float32).tobytes(),
+                content_hash,
             ),
         )
         self.conn.commit()
         return node.id
+
+    def verify_integrity(self) -> list[dict]:
+        """
+        Re-hash all crystallized nodes and return any whose content has changed.
+        Called at session start to ensure foundation nodes have not drifted.
+        """
+        failures = []
+        rows = self.conn.execute(
+            "SELECT id, content, content_hash FROM nodes WHERE crystallized=1"
+        ).fetchall()
+        for nid, content, stored_hash in rows:
+            if stored_hash is None:
+                continue
+            actual = hashlib.sha256(content.encode()).hexdigest()
+            if actual != stored_hash:
+                failures.append({"id": nid, "expected": stored_hash, "actual": actual})
+        return failures
 
     def all_vectors(self) -> tuple[list[str], np.ndarray]:
         rows = self.conn.execute(
@@ -136,6 +167,7 @@ class EpisodicStore:
         self.conn.commit()
 
     def _row_to_node(self, row) -> MemoryNode:
+        # row[13] is content_hash — not stored on MemoryNode, used internally only
         return MemoryNode(
             id=row[0], content=row[1],
             keywords=json.loads(row[2] or "[]"),
