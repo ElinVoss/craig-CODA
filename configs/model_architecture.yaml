@@ -1,29 +1,41 @@
-model_name: tiny-qwen3-scratch
-architecture_family: qwen3-random-init
-vocab_size_source: tokenizer_artifacts
-vocab_size: null
-tokenizer_dir: artifacts/tokenizers/default
-hidden_size: 768
-intermediate_size: 2048
-num_hidden_layers: 12
-num_attention_heads: 12
-num_key_value_heads: 4
+model_name: craig-coda-0.6b
+architecture_family: qwen3
+
+# Tokenizer — Qwen3 reference tokenizer (tiktoken BPE)
+# vocab_size is fixed at 151936 (Qwen3's padded value — base 151643 + 293 reserved slots)
+# tokenizer_dir is still used to resolve special token IDs
+vocab_size_source: fixed
+vocab_size: 151936
+tokenizer_dir: artifacts/tokenizers/qwen3
+
+# Architecture — exact Qwen3-0.6B structure
+hidden_size: 1024
+intermediate_size: 3072
+num_hidden_layers: 28
+num_attention_heads: 16
+num_key_value_heads: 8
 head_dim: 64
-max_position_embeddings: 2048
+max_position_embeddings: 32768
+
+# Qwen3 standard settings
 hidden_act: silu
 rms_norm_eps: 1.0e-6
-tie_word_embeddings: false
+rope_theta: 1000000.0
+tie_word_embeddings: true
 attention_dropout: 0.0
 initializer_range: 0.02
 use_cache: true
-pad_token_fallback: "[PAD]"
-bos_token_fallback: "[BOS]"
-eos_token_fallback: "[EOS]"
-metadata_output: artifacts/models/tiny-qwen3-scratch/model_metadata.json
+
+# Special tokens (Qwen3 convention)
+pad_token_fallback: "<|endoftext|>"
+bos_token_fallback: "<|im_start|>"
+eos_token_fallback: "<|im_end|>"
+
+metadata_output: artifacts/models/craig-coda-0.6b/model_metadata.json
+
 notes:
-  - Scaled from smoke-test (512/8L/8H, 25M params) to research-capable (768/12L/12H, ~90M params).
-  - Vocab upgraded from 96-token WordLevel to 4096-token BPE trained on personal corpus.
-  - CPU-feasible: float32 training footprint approximately 1.5 GB RAM.
-  - Uses Qwen3Config plus AutoModelForCausalLM.from_config with random weights.
-
-
+  - Matches Qwen3-0.6B architecture exactly — random init, not pretrained weights.
+  - vocab_size 151936 (tiktoken BPE, same tokenizer as Qwen3 family).
+  - 28 layers / 16 heads / 8 KV heads (GQA) / 1024 hidden / 3072 FFN.
+  - rope_theta 1000000 matches Qwen3 long-context rope scaling.
+  - CPU-feasible at float32 — estimated ~2.4 GB RAM training footprint.

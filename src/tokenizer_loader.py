@@ -40,23 +40,37 @@ def _build_special_token_kwargs(tokens: list[str]) -> dict[str, str]:
 def load_tokenizer(tokenizer_dir: str | Path | None = None) -> tuple[PreTrainedTokenizerFast, dict]:
     path = _resolve_tokenizer_dir(tokenizer_dir)
     tokenizer_json = path / "tokenizer.json"
-    training_info_path = path / "training_info.json"
-    special_tokens_path = path / "special_tokens_map.json"
 
-    missing = [item.name for item in [tokenizer_json, training_info_path, special_tokens_path] if not item.is_file()]
-    if missing:
+    if not tokenizer_json.is_file():
         raise FileNotFoundError(
-            "Tokenizer artifacts are missing. Run the phase-three tokenizer pipeline first. "
-            f"Missing: {', '.join(missing)}"
+            "tokenizer.json not found. Run the phase-three tokenizer pipeline first "
+            f"or fetch a reference tokenizer. Expected at: {tokenizer_json}"
         )
 
-    training_info = read_json(training_info_path)
-    special_tokens_raw = read_json(special_tokens_path).get("special_tokens", [])
-    if not isinstance(special_tokens_raw, list):
-        raise ValueError(f"{special_tokens_path}: expected 'special_tokens' list")
+    # training_info.json — present in pipeline-trained tokenizers, absent in reference ones
+    training_info_path = path / "training_info.json"
+    training_info = read_json(training_info_path) if training_info_path.is_file() else {}
+
+    # special tokens — prefer special_tokens_map.json, fall back to tokenizer_config.json
+    special_tokens_raw: list[str] = []
+    special_tokens_path = path / "special_tokens_map.json"
+    tokenizer_config_path = path / "tokenizer_config.json"
+
+    if special_tokens_path.is_file():
+        special_tokens_raw = read_json(special_tokens_path).get("special_tokens", [])
+        if not isinstance(special_tokens_raw, list):
+            raise ValueError(f"{special_tokens_path}: expected 'special_tokens' list")
+    elif tokenizer_config_path.is_file():
+        cfg = read_json(tokenizer_config_path)
+        special_tokens_raw = [
+            v["content"]
+            for v in cfg.get("added_tokens_decoder", {}).values()
+            if v.get("special", False)
+        ]
+
     tokenizer = PreTrainedTokenizerFast(
         tokenizer_file=str(tokenizer_json),
-        **_build_special_token_kwargs([str(token) for token in special_tokens_raw]),
+        **_build_special_token_kwargs([str(t) for t in special_tokens_raw]),
     )
     vocab_size = tokenizer.vocab_size
     metadata = {
