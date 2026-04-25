@@ -21,7 +21,7 @@ seed: 42
 max_checkpoints: 3
 notes:
   - Scaled from 20-step smoke test to 2000-step research run.
-  - block_size increased from 128 to 256 for better context.
+  - block_size is 128.
   - Corpus is 16 MB of personal authored text (ChatGPT messages, notes, personal docs).
   - No pretrained weights are loaded.
 

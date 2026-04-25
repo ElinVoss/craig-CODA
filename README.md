@@ -316,6 +316,62 @@ The next milestone is to define local data ingestion and curation flows for:
 
 Only after those data formats and eval flows are stable should training code be added.
 
+## Model Lanes
+
+Phase five adds a pretrained backend integration layer that sits alongside the scratch model path without replacing it. The two lanes are permanently separate.
+
+### Scratch lane
+
+The scratch lane uses the random-init Qwen3-style model built from `configs/model_architecture.yaml`. It is for origin experiments, architecture iteration, and local training research. Output from an untrained scratch model is random-init noise — this is expected and correct.
+
+### Pretrained lane
+
+The pretrained lane provides usable local inference from open-weight models you download yourself. Backends are configured in `configs/pretrained_backends.yaml`. No weights are bundled with this repo. You must download and place the model files at the configured path before enabling a backend.
+
+### Shaping philosophy
+
+Runtime behavior is shaped by mode files and overlays (`configs/runtime_modes.yaml`, `exports/user_model_package/`), not by base model weights. The prompt compiler assembles system prompts from those files before any generation call. This means Craig/Elin/RS-1 behavior is applied identically to any backend.
+
+### List configured backends
+
+```powershell
+python scripts/list_backends.py
+```
+
+Prints a table of all configured backends with name, type, role, path, and default flags.
+
+### Validate backends
+
+```powershell
+python scripts/validate_backends.py --all
+```
+
+Checks required config fields, local path existence, and backend class importability for each enabled backend. Does not load weights.
+
+### Run one backend
+
+```powershell
+python scripts/run_pretrained_generation.py --backend qwen2.5-1.5b-instruct --prompt "Explain the brittle-system failure mode."
+```
+
+Optional flags: `--mode`, `--rs1-specialty`, `--rs1-creative`, `--include-context`, `--max-new-tokens`, `--save`.
+
+### Compare backends
+
+```powershell
+python scripts/compare_backends.py --prompt "Summarize the local-first constraints." --backends qwen2.5-1.5b-instruct smollm2-360m
+```
+
+Compiles the prompt once and runs it through each specified backend. Optional: `--mode`, `--save`, `--report-format json`.
+
+### Current limitations
+
+- No GPU required. All backends default to CPU and float32.
+- Model weights must be downloaded separately. See `notes` in `configs/pretrained_backends.yaml` for source URLs.
+- Scratch model outputs are random-init noise until the model is trained on local data.
+- Set `enabled: false` in `configs/pretrained_backends.yaml` for any backend whose weights are not present.
+- Backend classes are imported lazily — a missing `transformers` install only fails at load time, not at import time.
+
 ## Intentionally not implemented yet
 
 - inference serving
@@ -326,7 +382,6 @@ Only after those data formats and eval flows are stable should training code be 
 - GPU-specific code paths
 - notebook-driven workflow automation
  - distributed training
- - pretrained checkpoint loading
  - full SFT recipe
 
 ## Raw file handling notes

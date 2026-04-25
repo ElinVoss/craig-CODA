@@ -1,0 +1,33 @@
+# backend_selection.yaml
+#
+# Controls which backend is used by default when running generation scripts.
+# Backend names here must match backend_name values in pretrained_backends.yaml.
+
+# The backend used when --backend is not specified on the CLI.
+# Must be a backend_name from pretrained_backends.yaml.
+default_backend: qwen2.5-1.5b-instruct
+
+# The backend_name that maps to the scratch (random-init) model path.
+# The scratch backend is always available for research even when pretrained
+# weights are absent. Its output is random-init noise — this is expected.
+scratch_backend_name: craig-scratch
+
+# The default pretrained backend (production role) to prefer when loading
+# a pretrained model specifically (e.g., run_pretrained_generation.py).
+pretrained_default_backend: qwen2.5-1.5b-instruct
+
+# If true, passing --backend on the CLI overrides default_backend.
+allow_backend_override_from_cli: true
+
+# Backends included in a compare_backends.py run when --backends is not specified.
+# Only lists backends that are realistically available for comparison.
+comparison_backend_names:
+  - qwen2.5-1.5b-instruct
+  - smollm2-360m
+
+notes:
+  - default_backend and pretrained_default_backend may differ if you want
+    a separate production vs. comparison default.
+  - scratch_backend_name does not need an entry in pretrained_backends.yaml
+    because it is handled by ScratchBackend via model_architecture.yaml.
+  - Set enabled: true in pretrained_backends.yaml before adding a backend here.

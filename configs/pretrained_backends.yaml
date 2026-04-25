@@ -1,0 +1,76 @@
+# pretrained_backends.yaml
+#
+# Local open-weight model backend registry.
+#
+# This file defines named backends for local pretrained model inference.
+# It is NOT for the scratch/random-init path (that lives in model_architecture.yaml).
+#
+# IMPORTANT: All models must be downloaded and stored locally before use.
+# No weights are bundled with this repo. Set enabled: false for any backend
+# whose weights have not been placed at model_id_or_local_path.
+#
+# Supported backend_type values:
+#   pretrained_transformers  — HuggingFace AutoModelForCausalLM + AutoTokenizer
+#   scratch                  — random-init scratch model via src.model_factory
+#
+# Supported role values:
+#   production       — default path for interactive use
+#   teacher          — used to generate training signals / distillation data
+#   research         — general research experiments
+#   comparison_only  — used in compare_backends.py bakeoffs only
+#
+# device_preference and dtype_preference are hints only.
+# The backend implementation may override them for CPU-first safety.
+
+backends:
+
+  - backend_name: qwen2.5-1.5b-instruct
+    enabled: false
+    backend_type: pretrained_transformers
+    model_family: qwen2.5
+    # Download from: https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct
+    # Place the full model directory at the path below before enabling.
+    model_id_or_local_path: D:/models/Qwen2.5-1.5B-Instruct
+    tokenizer_path: null  # uses model directory by default
+    quant_format: null    # none — load at native float32 for CPU compatibility
+    device_preference: cpu
+    dtype_preference: float32
+    max_context_length: 32768
+    generation_defaults:
+      temperature: 0.7
+      top_p: 0.9
+      repetition_penalty: 1.1
+      max_new_tokens: 256
+    role: production
+    notes: >
+      Qwen2.5-1.5B-Instruct. Small, capable, instruction-tuned.
+      Good default for CPU inference. Weights not included — download separately.
+
+  - backend_name: smollm2-360m
+    enabled: false
+    backend_type: pretrained_transformers
+    model_family: smollm2
+    # Download from: https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct
+    # Place the full model directory at the path below before enabling.
+    model_id_or_local_path: D:/models/SmolLM2-360M-Instruct
+    tokenizer_path: null  # uses model directory by default
+    quant_format: null
+    device_preference: cpu
+    dtype_preference: float32
+    max_context_length: 8192
+    generation_defaults:
+      temperature: 0.8
+      top_p: 0.95
+      repetition_penalty: 1.05
+      max_new_tokens: 128
+    role: comparison_only
+    notes: >
+      SmolLM2-360M-Instruct. Extremely small — useful as a fast comparison baseline
+      or for sanity-checking the bakeoff harness before loading heavier models.
+      Weights not included — download separately.
+
+notes:
+  - All paths under model_id_or_local_path should be absolute local Windows paths.
+  - Set enabled: true only after weights are present at the specified path.
+  - backend_name values are referenced from backend_selection.yaml and CLI args.
+  - No cloud endpoints, no API keys, no GPU required.
