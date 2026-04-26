@@ -24,6 +24,7 @@ def compile_mode_prompt(
     include_context: bool = False,
     include_rs1_specialty: bool = False,
     include_rs1_creative: bool = False,
+    memory_context: str | None = None,
 ) -> tuple[str, list[Path]]:
     files = resolve_mode_files(
         mode_name=mode_name,
@@ -34,9 +35,11 @@ def compile_mode_prompt(
     missing = [path for path in files if not path.is_file()]
     if missing:
         raise FileNotFoundError("Missing prompt files: " + ", ".join(str(path) for path in missing))
-    prompt = "\n\n".join(_render_file(path) for path in files)
+    blocks = [_render_file(path) for path in files]
+    if memory_context:
+        blocks.append(f"[memory_context]\n{memory_context.strip()}")
+    prompt = "\n\n".join(blocks)
     print("Prompt compiler included:")
     for path in files:
         print(f"- {path}")
     return prompt, files
-

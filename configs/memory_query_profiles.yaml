@@ -1,0 +1,67 @@
+profiles:
+  technical:
+    top_k: 5
+    weights:
+      semantic: 0.26
+      temporal: 0.08
+      phase: 0.05
+      project: 0.2
+      graph: 0.12
+      voice: 0.07
+      reinforcement: 0.08
+      confidence: 0.14
+  autobiographical:
+    top_k: 6
+    weights:
+      semantic: 0.18
+      temporal: 0.18
+      phase: 0.14
+      project: 0.1
+      graph: 0.08
+      voice: 0.06
+      reinforcement: 0.12
+      confidence: 0.14
+  prose:
+    top_k: 5
+    weights:
+      semantic: 0.18
+      temporal: 0.06
+      phase: 0.06
+      project: 0.08
+      graph: 0.1
+      voice: 0.24
+      reinforcement: 0.08
+      confidence: 0.2
+  constraints:
+    top_k: 4
+    weights:
+      semantic: 0.2
+      temporal: 0.04
+      phase: 0.04
+      project: 0.22
+      graph: 0.1
+      voice: 0.04
+      reinforcement: 0.08
+      confidence: 0.28
+  cross_domain:
+    top_k: 6
+    weights:
+      semantic: 0.2
+      temporal: 0.08
+      phase: 0.08
+      project: 0.12
+      graph: 0.16
+      voice: 0.1
+      reinforcement: 0.08
+      confidence: 0.18
+  critique:
+    top_k: 5
+    weights:
+      semantic: 0.2
+      temporal: 0.06
+      phase: 0.04
+      project: 0.18
+      graph: 0.14
+      voice: 0.1
+      reinforcement: 0.08
+      confidence: 0.2

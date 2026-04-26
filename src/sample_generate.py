@@ -9,7 +9,11 @@ from transformers import AutoModelForCausalLM
 
 from .checkpoint_utils import latest_checkpoint
 from .io_utils import write_json, write_text
+from .memory.retrieve_topk import retrieve_nodes
+from .runtime.front_matter_builder import build_prompt_front_matter
 from .runtime.prompt_compiler import compile_mode_prompt
+from .runtime.response_plan_builder import build_response_plan
+from .translation.runtime_context_translator import build_memory_context, render_memory_context
 from .tokenizer_loader import load_tokenizer
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,17 +50,44 @@ def load_model_for_generation(checkpoint_root: str | Path | None = None):
     return model, checkpoint
 
 
+def maybe_build_memory_context(
+    prompt: str,
+    retrieval_profile: str,
+    mode_name: str,
+    top_k: int,
+    disabled: bool = False,
+) -> str | None:
+    if disabled:
+        return None
+    try:
+        results = retrieve_nodes(
+            query=prompt,
+            retrieval_profile=retrieval_profile,
+            mode=mode_name,
+            top_k=top_k,
+        )
+    except FileNotFoundError:
+        return None
+    if not results:
+        return None
+    return render_memory_context(build_memory_context(results))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run local sample generation from a saved checkpoint.")
     parser.add_argument("--prompt", required=True)
     parser.add_argument("--mode", default="craig_default")
     parser.add_argument("--include-context", action="store_true")
     parser.add_argument("--rs1-specialty", action="store_true")
+    parser.add_argument("--rs1-creative", action="store_true")
     parser.add_argument("--checkpoint-root", default=str(ROOT / "artifacts" / "checkpoints" / "tiny-qwen3-scratch"))
     parser.add_argument("--tokenizer-dir", default=str(ROOT / "artifacts" / "tokenizers" / "default"))
     parser.add_argument("--max-new-tokens", type=int, default=64)
     parser.add_argument("--temperature", type=float, default=0.9)
     parser.add_argument("--top-k", type=int, default=20)
+    parser.add_argument("--retrieval-profile", default=None)
+    parser.add_argument("--memory-top-k", type=int, default=None)
+    parser.add_argument("--disable-memory", action="store_true")
     args = parser.parse_args()
 
     tokenizer, _ = load_tokenizer(args.tokenizer_dir)
@@ -65,10 +96,29 @@ def main() -> int:
     model.to(device)
     model.eval()
 
-    system_prompt, included_files = compile_mode_prompt(
+    front_matter = build_prompt_front_matter(args.prompt, overrides={"mode": args.mode})
+    response_plan = build_response_plan(
+        front_matter=front_matter,
         mode_name=args.mode,
         include_context=args.include_context,
         include_rs1_specialty=args.rs1_specialty,
+        include_rs1_creative=args.rs1_creative,
+        retrieval_profile=args.retrieval_profile,
+        memory_top_k=args.memory_top_k,
+    )
+    memory_context = maybe_build_memory_context(
+        prompt=args.prompt,
+        retrieval_profile=response_plan.retrieval_profile,
+        mode_name=response_plan.selected_mode,
+        top_k=response_plan.memory_top_k,
+        disabled=args.disable_memory or not response_plan.include_memory_context,
+    )
+    system_prompt, included_files = compile_mode_prompt(
+        mode_name=response_plan.selected_mode,
+        include_context=response_plan.include_context,
+        include_rs1_specialty=response_plan.include_rs1_specialty,
+        include_rs1_creative=response_plan.include_rs1_creative,
+        memory_context=memory_context,
     )
     composed_prompt = f"System:\n{system_prompt}\n\nUser:\n{args.prompt}\n\nAssistant:\n"
     text = generate_text(
@@ -89,9 +139,12 @@ def main() -> int:
         output_dir / f"sample_{stamp}.json",
         {
             "checkpoint": str(checkpoint),
-            "mode": args.mode,
+            "mode": response_plan.selected_mode,
             "included_files": [str(path) for path in included_files],
             "prompt": args.prompt,
+            "front_matter": front_matter.to_dict(),
+            "response_plan": response_plan.to_dict(),
+            "memory_context": memory_context,
             "output": text,
         },
     )
@@ -102,4 +155,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

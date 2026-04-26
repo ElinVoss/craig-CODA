@@ -372,6 +372,93 @@ Compiles the prompt once and runs it through each specified backend. Optional: `
 - Set `enabled: false` in `configs/pretrained_backends.yaml` for any backend whose weights are not present.
 - Backend classes are imported lazily — a missing `transformers` install only fails at load time, not at import time.
 
+## Context Intelligence Phase
+
+The Context Intelligence Phase adds a lightweight prompt-front-matter layer, a vault-style memory graph, weighted episodic retrieval, and a vault-to-translation pipeline around the existing runtime. It does not replace the scratch lane, the pretrained lane, the mode router, or the prompt compiler.
+
+### Runtime flow
+
+The runtime flow becomes:
+
+```text
+raw prompt
+-> prompt front matter builder
+-> response plan builder
+-> mode router
+-> memory retrieval
+-> prompt compiler
+-> backend
+```
+
+The front matter is rule-based and inspectable. It does not use a heavy classifier. It emits fields such as intent, task type, mode, retrieval profile, privacy level, and confidence. The response plan then decides which backend and mode to use, whether RS-1 overlays apply, and whether memory retrieval should run.
+
+### Trust layers
+
+Vault nodes are classified into explicit trust layers:
+
+- `stable_core`: runtime and training eligible
+- `project_constraints`: runtime eligible and selectively training eligible
+- `episodic_events`: mainly runtime memory, selectively training eligible
+- `prose_voice`: style and prose translation material
+- `interpretive_maps`: reference-only analytical material, not stable truth
+- `review_only`: never auto-loaded into runtime and never auto-translated into training artifacts
+
+This separation is first-class. Review-only and private material must not leak into compiled prompts or generated training outputs. Interpretive notes are not treated as equal to factual event data.
+
+### Vault graph
+
+The vault graph treats files and fragments as nodes with metadata such as source path, time markers, life phase, tags, links, confidence, privacy level, and style scores. Links, shared tags, shared projects, and same-source relationships become edges.
+
+Source ingestion is configurable in `configs/vault_translation.yaml`. The default configuration is conservative:
+
+- `data/raw/examples/`
+- selected `exports/user_model_package/` folders such as `identity_core`, `project_constraints`, and `style_training`
+- review folders stay disabled by default unless you explicitly enable them
+
+The phase does not auto-ingest everything in the repo and does not default to personal raw folders.
+
+### Retrieval
+
+Memory retrieval uses weighted score fusion instead of nearest-neighbor only. Query profiles live in `configs/memory_query_profiles.yaml` and weight:
+
+- semantic similarity
+- temporal relevance
+- life-phase match
+- project relevance
+- graph neighborhood weight
+- voice similarity
+- reinforcement weight
+- confidence weight
+
+Runtime retrieval is bounded and rendered into a `Memory Context` block that is appended to the compiled system prompt only when safe nodes are available. Review-only nodes are excluded. Interpretive nodes are down-weighted and cannot silently dominate factual retrieval.
+
+Semantic retrieval in this phase is a lightweight lexical-overlap scorer. It is inspectable and CPU-friendly, but it is not an embedding-backed retrieval stack.
+
+### Translation pipeline
+
+The same vault graph can emit:
+
+- runtime context packs under `artifacts/memory/runtime_context/`
+- SFT JSONL under `artifacts/translation/sft/`
+- preference pairs under `artifacts/translation/prefs/`
+- prose and style shards under `artifacts/translation/prose/`
+- future adapter manifests under `artifacts/translation/adapter_manifests/`
+
+This is a structured translation phase, not a dump-everything-into-training phase. Dynamic memory stays external by default.
+
+### Key commands
+
+```powershell
+python .\scripts\test_front_matter.py
+python .\scripts\build_vault_graph.py
+python .\scripts\inspect_vault_graph.py
+python .\scripts\query_memory.py --query "Explain the warehouse runtime constraints."
+python .\scripts\build_training_artifacts.py
+python .\scripts\run_memory_ablation.py --query "Explain the warehouse runtime constraints."
+```
+
+See [docs/context_intelligence_phase.md](docs/context_intelligence_phase.md) for the detailed phase notes, trust model, artifact layout, and deferred items.
+
 ## Intentionally not implemented yet
 
 - inference serving

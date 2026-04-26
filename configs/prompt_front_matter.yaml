@@ -1,0 +1,243 @@
+phase_name: Context Intelligence Phase
+defaults:
+  intent: explain
+  task_type: explanation
+  mode: craig_default
+  domain: general
+  style: direct
+  reasoning_mode: standard
+  memory_scope: scoped
+  retrieval_profile: technical
+  output_format: prose
+  tooling: none
+  stakes: normal
+  uncertainty_policy: explicit
+  privacy_level: standard
+  confidence: 0.55
+rules:
+  intent:
+    create:
+      - write
+      - draft
+      - create
+      - compose
+      - imagine
+      - build
+    critique:
+      - critique
+      - audit
+      - review
+      - diagnose
+      - debug
+      - inspect
+    explain:
+      - explain
+      - describe
+      - summarize
+      - clarify
+      - walk through
+    recall:
+      - remember
+      - recall
+      - memory
+      - remind
+      - autobiographical
+  task_type:
+    fiction:
+      - story
+      - fiction
+      - scene
+      - dialogue
+      - character
+    planning:
+      - plan
+      - roadmap
+      - steps
+      - next commands
+    critique:
+      - critique
+      - audit
+      - structural
+      - review
+    coding:
+      - code
+      - script
+      - python
+      - runtime
+      - backend
+    explanation:
+      - explain
+      - summarize
+      - why
+      - how
+  domain:
+    warehouse:
+      - warehouse
+      - pallet
+      - slotting
+      - side bin
+    fiction:
+      - fiction
+      - teoga
+      - scene
+      - character
+    runtime:
+      - prompt
+      - runtime
+      - mode
+      - backend
+      - compiler
+    memory:
+      - memory
+      - vault
+      - retrieval
+      - context
+  style:
+    direct:
+      - direct
+      - concise
+      - blunt
+      - short
+    narrative:
+      - lyrical
+      - prose
+      - scene
+      - narrative
+      - vivid
+    audit:
+      - audit
+      - critique
+      - structural
+      - rigorous
+  reasoning_mode:
+    rs1_specialty:
+      - audit
+      - critique
+      - diagnose
+      - system failure
+      - structural
+      - brittle
+    rs1_creative:
+      - brainstorm
+      - speculative
+      - inventive
+      - analogical
+    standard:
+      - explain
+      - summarize
+      - answer
+  memory_scope:
+    none:
+      - stateless
+      - no memory
+    constrained:
+      - constraints only
+      - policy only
+    scoped:
+      - context
+      - memory
+      - vault
+      - recall
+  retrieval_profile:
+    technical:
+      - technical
+      - runtime
+      - code
+      - backend
+      - architecture
+    autobiographical:
+      - memory
+      - personal
+      - autobiographical
+      - remember
+    prose:
+      - prose
+      - style
+      - fiction
+      - voice
+    constraints:
+      - constraint
+      - policy
+      - allowed
+      - forbidden
+    cross_domain:
+      - analogy
+      - transfer
+      - bridge
+      - cross-domain
+    critique:
+      - critique
+      - audit
+      - review
+      - diagnose
+  output_format:
+    list:
+      - list
+      - bullets
+      - steps
+    json:
+      - json
+      - schema
+      - manifest
+    prose:
+      - explain
+      - prose
+      - paragraph
+  stakes:
+    high:
+      - legal
+      - medical
+      - financial
+      - safety
+      - production
+    normal:
+      - explain
+      - draft
+      - code
+  privacy_level:
+    restricted:
+      - private
+      - confidential
+      - review only
+      - sensitive
+    standard:
+      - public
+      - standard
+routing:
+  fiction_mode_keywords:
+    - fiction
+    - story
+    - scene
+    - elin
+    - teoga
+  rs1_specialty_keywords:
+    - audit
+    - critique
+    - diagnose
+    - failure mode
+    - structural
+  rs1_creative_keywords:
+    - brainstorm
+    - speculative
+    - analogical
+confidence:
+  base: 0.45
+  explicit_keyword_bonus: 0.08
+  explicit_mode_bonus: 0.18
+  ambiguity_penalty: 0.06
+manual_overrides:
+  allowed_fields:
+    - intent
+    - task_type
+    - mode
+    - domain
+    - style
+    - reasoning_mode
+    - memory_scope
+    - retrieval_profile
+    - output_format
+    - tooling
+    - stakes
+    - uncertainty_policy
+    - privacy_level
+    - confidence

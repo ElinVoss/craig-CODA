@@ -1,0 +1,87 @@
+required_fields:
+  - id
+  - node_type
+  - trust_layer
+  - content
+  - summary
+  - source_path
+  - source_kind
+  - created_at
+  - time_start
+  - time_end
+  - life_phase
+  - people
+  - projects
+  - tags
+  - links
+  - confidence
+  - privacy_level
+  - reinforcement_count
+  - voice_score
+  - reasoning_score
+  - prose_score
+  - project_relevance
+trust_layers:
+  stable_core:
+    runtime_eligible: true
+    training_eligible: true
+    notes: Stable identity and durable operating truths.
+  project_constraints:
+    runtime_eligible: true
+    training_eligible: true
+    notes: Project rules, domain constraints, and operating limits.
+  episodic_events:
+    runtime_eligible: true
+    training_eligible: selective
+    notes: Event memories that can guide runtime recall but should not dominate weights.
+  prose_voice:
+    runtime_eligible: true
+    training_eligible: prose_only
+    notes: Voice and stylistic material for mode-specific expression.
+  interpretive_maps:
+    runtime_eligible: reference_only
+    training_eligible: false
+    notes: Interpretive or analytical frames that are not stable truth.
+  review_only:
+    runtime_eligible: false
+    training_eligible: false
+    notes: Private or review-only material that must never auto-load.
+path_rules:
+  - contains: review_only
+    trust_layer: review_only
+    node_type: review_note
+    privacy_level: restricted
+  - contains: review_before_use
+    trust_layer: review_only
+    node_type: review_note
+    privacy_level: restricted
+  - contains: identity_core
+    trust_layer: stable_core
+    node_type: identity_note
+    privacy_level: standard
+  - contains: project_constraints
+    trust_layer: project_constraints
+    node_type: constraint_note
+    privacy_level: standard
+  - contains: episodic_events
+    trust_layer: episodic_events
+    node_type: event_note
+    privacy_level: standard
+  - contains: prose_voice
+    trust_layer: prose_voice
+    node_type: prose_fragment
+    privacy_level: standard
+  - contains: interpretive_maps
+    trust_layer: interpretive_maps
+    node_type: interpretive_note
+    privacy_level: internal
+content_rules:
+  interpretive_markers:
+    - hypothesis:
+    - interpretation:
+    - possible meaning:
+    - pattern read:
+  review_markers:
+    - review only
+    - do not auto-load
+    - private

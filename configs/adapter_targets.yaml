@@ -1,0 +1,29 @@
+targets:
+  - name: craig-core
+    description: Direct operational style plus stable identity and constraint material.
+    include_layers:
+      - stable_core
+      - project_constraints
+    preferred_modes:
+      - craig_default
+  - name: rs1-specialty
+    description: Structural-audit and specialty reasoning support grounded in constraints.
+    include_layers:
+      - project_constraints
+      - stable_core
+    preferred_modes:
+      - craig_default
+  - name: elin-fiction
+    description: Fiction and prose-voice shards for Elin mode.
+    include_layers:
+      - prose_voice
+      - stable_core
+    preferred_modes:
+      - elin_fiction
+  - name: warehouse-domain
+    description: Warehouse domain constraints, events, and terminology.
+    include_layers:
+      - project_constraints
+      - episodic_events
+    preferred_modes:
+      - craig_default

@@ -1,0 +1,44 @@
+runtime_context:
+  include_layers:
+    - stable_core
+    - project_constraints
+    - episodic_events
+    - prose_voice
+  exclude_layers:
+    - review_only
+  summary_prefix:
+    stable_core: Core
+    project_constraints: Constraint
+    episodic_events: Event
+    prose_voice: Voice
+sft:
+  eligible_layers:
+    - stable_core
+    - project_constraints
+    - episodic_events
+  example_types:
+    - instruction_response
+    - rewrite_correction
+    - critique_first
+    - analogical_transfer
+preferences:
+  eligible_layers:
+    - stable_core
+    - project_constraints
+    - episodic_events
+  rejection_labels:
+    - too soft
+    - too generic
+    - too fluffy
+prose:
+  eligible_layers:
+    - prose_voice
+    - stable_core
+  mode_targets:
+    elin_fiction: narrative
+    craig_default: direct
+    rs1_specialty: structural_audit
+adapter_manifest:
+  exclude_layers:
+    - review_only
+    - interpretive_maps
