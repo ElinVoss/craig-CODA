@@ -1,11 +1,7 @@
-import { ChatWidget } from './ChatWidget'
+import { Chat } from './Chat'
 
 function App() {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <ChatWidget />
-    </div>
-  )
+  return <Chat />
 }
 
 export default App
