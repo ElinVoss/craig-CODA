@@ -10,3 +10,6 @@ groq>=0.5
 sentence-transformers>=3.0
 apscheduler>=3.10
 faiss-cpu>=1.8
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-dotenv>=1.0.0
