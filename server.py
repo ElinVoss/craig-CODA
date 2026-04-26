@@ -21,17 +21,16 @@ app.add_middleware(
 
 _openai = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
+CHATKIT_WORKFLOW_ID = "wf_69ed7b947a5c8190b01872f8eec1f6e40f834c1a4ab142ae"
+CHATKIT_WORKFLOW_VERSION = "1"
+
 
 @app.post("/api/chatkit/session")
 def create_chatkit_session():
     try:
         session = _openai.chatkit.sessions.create(
-            model="gpt-4o",
-            instructions=(
-                "You are Craig-CODA, a graph-native AI assistant. "
-                "You reason transparently, surface contradictions, and "
-                "cite sources when possible."
-            ),
+            workflow_id=CHATKIT_WORKFLOW_ID,
+            workflow_version=CHATKIT_WORKFLOW_VERSION,
         )
         return {"client_secret": session.client_secret}
     except Exception as e:
