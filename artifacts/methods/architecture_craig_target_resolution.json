@@ -1,0 +1,112 @@
+{
+  "stage": "architecture",
+  "profile": "craig_target",
+  "vault_root": "exports/user_model_package/method_vault",
+  "walk_path": "weights/architecture/craig_target",
+  "applied_prompts": [
+    {
+      "path": "exports/user_model_package/method_vault/weights/_method.md",
+      "title": "Weight Method",
+      "applies_to": [
+        "scratch",
+        "sft",
+        "architecture"
+      ],
+      "config": {
+        "tokenizer_dir": "artifacts/tokenizers/default",
+        "architectural_principles": [
+          "local-first",
+          "cpu-first",
+          "no pretrained weight inheritance",
+          "inspectable and vault-authored",
+          "parameter choices must be traceable to vault notes"
+        ]
+      },
+      "prompt": "Weights should derive from the vault, not from a disconnected config culture.\nParent weight rules define the shared tokenizer and the principle that parameter choices must remain inspectable and local.\nArchitecture is not exempt from this rule. Model shape, vocab size, and layer counts are architectural decisions and must resolve through the same vault path as training behavior."
+    },
+    {
+      "path": "exports/user_model_package/method_vault/weights/architecture/_method.md",
+      "title": "Architecture Compilation Contract",
+      "applies_to": [
+        "architecture"
+      ],
+      "config": {
+        "architecture_family": "qwen3-random-init",
+        "metadata_output_dir": "artifacts/models"
+      },
+      "prompt": "This note is the compilation contract for architecture resolution.\n\nArchitecture profiles live as child notes under this folder. The compiler walks from the root vault note\nthrough weights, through this note, and into the named profile child. The resolved output is a concrete\nset of fields sufficient to build the model — no inference, no defaults hidden in code.\n\nTwo profiles currently exist:\n\n- tiny_scratch: the first real scratch experiment, small enough to train on CPU, loss still high\n- craig_target: the first serious target profile at Qwen3-0.6B scale, not yet trained\n\nNeither profile imports pretrained weights. Both are random-init. Architecture is not a copy of any\nupstream model even if the parameter count resembles one — the vault governs what gets built here,\nnot any external source.\n\nAdding a new architecture profile means adding a child folder with a _method.md. The compiler picks\nup the profile by name. configs/model_architecture.yaml is now a legacy fallback reference only."
+    },
+    {
+      "path": "exports/user_model_package/method_vault/weights/architecture/craig_target/_method.md",
+      "title": "Craig Target Architecture Profile",
+      "applies_to": [
+        "architecture"
+      ],
+      "config": {
+        "profile": "craig_target",
+        "model_name": "craig-coda-0.6b",
+        "architecture_family": "qwen3-random-init",
+        "description": "First serious target profile. Qwen3-0.6B parameter scale, random init, vault-authored.",
+        "vocab_size_source": "fixed",
+        "vocab_size": 151936,
+        "tokenizer_dir": "artifacts/tokenizers/qwen3",
+        "hidden_size": 1024,
+        "intermediate_size": 3072,
+        "num_hidden_layers": 28,
+        "num_attention_heads": 16,
+        "num_key_value_heads": 8,
+        "head_dim": 64,
+        "max_position_embeddings": 32768,
+        "hidden_act": "silu",
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "tie_word_embeddings": true,
+        "attention_dropout": 0.0,
+        "initializer_range": 0.02,
+        "use_cache": true,
+        "pad_token_fallback": "<|endoftext|>",
+        "bos_token_fallback": "<|im_start|>",
+        "eos_token_fallback": "<|im_end|>",
+        "metadata_output": "artifacts/models/craig-coda-0.6b/model_metadata.json",
+        "status": "untrained_target"
+      },
+      "prompt": "This is the first serious target shape for Craig-CODA.\n\nParameter scale matches Qwen3-0.6B. That is where the resemblance ends. No pretrained weights are\nloaded. This is a random-init model defined by the vault, not a derivative or fine-tune of any\nupstream source. The architecture is recorded here because the vault is the authority, not because\nthis shape is final or permanent.\n\nThis profile has not been trained yet. It exists so the model factory has a concrete target to build\nfrom when the training pipeline is ready to scale past the tiny_scratch experiment.\n\nThe shape may evolve. When it does, update this note. The vault is the record — configs/\nmodel_architecture.yaml is now a legacy fallback and should not be treated as authoritative."
+    }
+  ],
+  "resolved_config": {
+    "tokenizer_dir": "artifacts/tokenizers/qwen3",
+    "architectural_principles": [
+      "local-first",
+      "cpu-first",
+      "no pretrained weight inheritance",
+      "inspectable and vault-authored",
+      "parameter choices must be traceable to vault notes"
+    ],
+    "architecture_family": "qwen3-random-init",
+    "metadata_output_dir": "artifacts/models",
+    "profile": "craig_target",
+    "model_name": "craig-coda-0.6b",
+    "description": "First serious target profile. Qwen3-0.6B parameter scale, random init, vault-authored.",
+    "vocab_size_source": "fixed",
+    "vocab_size": 151936,
+    "hidden_size": 1024,
+    "intermediate_size": 3072,
+    "num_hidden_layers": 28,
+    "num_attention_heads": 16,
+    "num_key_value_heads": 8,
+    "head_dim": 64,
+    "max_position_embeddings": 32768,
+    "hidden_act": "silu",
+    "rms_norm_eps": 1e-06,
+    "rope_theta": 1000000.0,
+    "tie_word_embeddings": true,
+    "attention_dropout": 0.0,
+    "initializer_range": 0.02,
+    "use_cache": true,
+    "pad_token_fallback": "<|endoftext|>",
+    "bos_token_fallback": "<|im_start|>",
+    "eos_token_fallback": "<|im_end|>",
+    "metadata_output": "artifacts/models/craig-coda-0.6b/model_metadata.json",
+    "status": "untrained_target"
+  }
+}

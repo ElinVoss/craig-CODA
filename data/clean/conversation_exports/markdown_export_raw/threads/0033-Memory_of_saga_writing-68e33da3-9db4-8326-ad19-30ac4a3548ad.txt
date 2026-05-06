@@ -1,0 +1,11 @@
+CONVERSATION_ID: 68e33da3-9db4-8326-ad19-30ac4a3548ad
+TITLE: Memory of saga writing
+MESSAGE_COUNT: 2
+
+[USER]
+You do have memory of that I've been writing a multi-series saga of novellas, correct?
+
+[ASSISTANT]
+Not at the moment, no. Looks like my long-term memory isn’t switched on for this chat, so I don’t currently have a record of your saga work from past sessions.  
+
+You can remind me what you’d like me to keep in memory—something like *“remember that I’m writing a multi-series saga of novellas”*—and I’ll store it so I don’t forget next time. Want me to do that?

@@ -1,0 +1,237 @@
+CONVERSATION_ID: 69c5b502-7148-8329-8ef7-b9d549a3afa3
+TITLE: Codex Install After Username Change
+MESSAGE_COUNT: 6
+
+[USER]
+how to instal codex after changing username in c drive users and with regedit.
+
+[ASSISTANT]
+You’ve basically broken Windows’ path assumptions by renaming the user folder + registry. Codex isn’t the problem—your environment is. Fix that first or installs will keep failing.
+
+Here’s the straight path to get Codex working again:
+
+---
+
+## 1. Verify your user path is actually usable
+Open CMD and run:
+```
+echo %USERPROFILE%
+```
+
+If it still shows the **old username path**, your registry edit didn’t fully take.
+
+Check this key:
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+```
+Find your SID → make sure:
+```
+ProfileImagePath = C:\Users\YourNewName
+```
+
+If this is wrong → fix it and reboot.
+
+---
+
+## 2. Fix broken environment variables (this is what usually kills installs)
+Go to:
+```
+System Properties → Advanced → Environment Variables
+```
+
+Fix these if they still point to old username:
+
+- `USERPROFILE`
+- `HOMEPATH`
+- `HOMEDRIVE`
+- `APPDATA`
+- `LOCALAPPDATA`
+
+They should look like:
+```
+C:\Users\YourNewName\...
+```
+
+If even one points to the old folder → installs break silently.
+
+---
+
+## 3. Clean Node/npm (Codex depends on this)
+Codex CLI installs through npm citeturn0search3
+
+Blow away broken cache tied to old path:
+```
+npm cache clean --force
+```
+
+Then check where global packages go:
+```
+npm config get prefix
+```
+
+If it shows old username → fix it:
+```
+npm config set prefix "C:\Users\YourNewName\AppData\Roaming\npm"
+```
+
+---
+
+## 4. Reinstall Codex clean
+Now install fresh:
+```
+npm install -g @openai/codex
+```
+
+Then run:
+```
+codex
+```
+
+---
+
+## 5. If it still fails (common after manual rename)
+You’ve got deeper Windows damage. Two solid fixes:
+
+### Option A (quick fix)
+Create a symlink from old path → new path:
+```
+mklink /D C:\Users\OldName C:\Users\NewName
+```
+
+### Option B (clean fix — recommended)
+- Create a **new Windows user with correct name**
+- Move files over
+- Delete the broken profile
+
+Because manual renaming user folders is notorious for breaking permissions and app installs.
+
+---
+
+## 6. Important reality check
+- Codex CLI on Windows is still a bit janky and may rely on WSL for stability citeturn0search3  
+- If you keep hitting weird issues → install WSL and run everything there:
+```
+wsl
+npm install -g @openai/codex
+```
+
+---
+
+## Bottom line
+You didn’t just rename a folder—you desynced Windows’ identity system. Fix paths + env vars, or you’ll keep chasing ghosts.
+
+---
+
+If you want, paste the exact error you’re getting and I’ll pinpoint exactly where it’s breaking.
+
+[USER]
+mklink /D C:\Users\OldName C:\Users\NewName old is "Never A Moment" new is "NeverAMoment"
+
+[ASSISTANT]
+Your command just needs proper quoting because of the space in the old name.
+
+Use this exactly:
+
+```cmd
+mklink /D "C:\Users\Never A Moment" "C:\Users\NeverAMoment"
+```
+
+### Important details (this is where people screw it up):
+
+- Run **Command Prompt as Administrator** or it will fail.
+- The **first path is the link (old broken path)**  
+- The **second path is the real folder (new one)**
+
+So you're basically saying:
+> “Anything trying to access `Never A Moment` → redirect to `NeverAMoment`”
+
+---
+
+### Verify it worked
+Run:
+```cmd
+dir C:\Users
+```
+
+You should see:
+```
+Never A Moment [JUNCTION]
+```
+
+---
+
+### If it errors:
+
+**“Cannot create a file when that file already exists”**
+→ You still have a real folder named `"Never A Moment"`  
+Delete or rename it first.
+
+**“You do not have sufficient privilege”**
+→ You didn’t run CMD as admin.
+
+---
+
+### Reality check
+This is a **band-aid**, not a real fix. It works fine for stuff like npm/Codex, but Windows still internally thinks your profile is messy.
+
+If more weird issues show up later, the clean fix is still:
+- new user account
+- migrate files
+- stop fighting Windows
+
+---
+
+If you want, I can check your npm/global paths next to make sure Codex won’t break again.
+
+[USER]
+mklink: The term 'mklink' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+[ASSISTANT]
+You’re running that in **PowerShell**, not Command Prompt. `mklink` is a **CMD-only** command.
+
+### Fix it (pick one):
+
+---
+
+## Option 1 — Use Command Prompt (simplest)
+1. Press Start  
+2. Type **cmd**
+3. Right-click → **Run as administrator**
+
+Then run:
+```cmd
+mklink /D "C:\Users\Never A Moment" "C:\Users\NeverAMoment"
+```
+
+---
+
+## Option 2 — Stay in PowerShell (use correct command)
+PowerShell equivalent:
+```powershell
+New-Item -ItemType Junction -Path "C:\Users\Never A Moment" -Target "C:\Users\NeverAMoment"
+```
+
+---
+
+## If it still fails
+- If you get **“already exists”** → delete or rename the old folder first  
+- If you get **permission denied** → you’re not running as admin  
+- If it creates but doesn’t work → your registry/env vars are still pointing wrong
+
+---
+
+## Quick sanity check after
+Run:
+```powershell
+dir C:\Users
+```
+
+You should see something like:
+```
+Never A Moment    <JUNCTION>
+```
+
+---
+
+This should immediately stop path-related install failures (npm, Codex, etc.). If it still breaks after this, your issue is deeper than just the folder name.

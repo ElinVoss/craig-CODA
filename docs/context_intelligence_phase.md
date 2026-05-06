@@ -76,8 +76,11 @@ Vault building is implemented in:
 - `src/memory/classify_nodes.py`
 - `src/memory/build_edges.py`
 - `src/memory/memory_store.py`
+- `src/memory/gguf_mining.py` (offline GGUF capability-seed miner)
 
 The default source roots are conservative and live in `configs/vault_translation.yaml`.
+Node schema now includes optional `extracted_from` provenance metadata for mined capability nodes. This tracks model name, tensor name, optional layer/head indexes, activation pattern label, and mining timestamp.
+Raw conversation markdown exports can be staged under `data/raw/conversation_exports/markdown_export_raw/` and then normalized into `data/clean/conversation_exports/markdown_export_raw/threads/`. The active retrieval/tokenization layer uses those turn-ordered thread transcripts so the corpus is observed as conversation rather than as serialized export JSON.
 
 ### Trust layers
 
@@ -119,7 +122,7 @@ The retrieval stack uses weighted score fusion with profile-specific weights fro
 
 ### Important limitation
 
-Semantic matching in this phase is lexical-overlap based. It is CPU-friendly and inspectable, but it is not a full embedding-backed semantic search stack.
+Semantic matching supports an embedding-backed CPU path configured in `configs/memory_retrieval.yaml`. The scorer uses a local SentenceTransformer model when available and falls back to lexical overlap if the model cannot be loaded.
 
 ## Translation outputs
 
@@ -142,6 +145,14 @@ Output directories:
 - `artifacts/translation/prefs/`
 - `artifacts/translation/prose/`
 - `artifacts/translation/adapter_manifests/`
+- `artifacts/methods/` for resolved vault-driven corpus/tokenizer/weight method configurations
+
+## Vault-driven method control
+
+Corpus preparation, tokenizer behavior, and weight/SFT parameter choices can be derived from `exports/user_model_package/method_vault/`.
+The resolver walks parent and child folders, reads `_method.md` notes, merges their `config:` front matter in order, and writes the resolved method bundle to `artifacts/methods/`.
+
+This makes the effective method stack inspectable in a vault-like format rather than hiding it entirely in flat YAML files.
 
 ## Deferred items
 

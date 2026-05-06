@@ -1,0 +1,110 @@
+{
+  "stage": "architecture",
+  "profile": "tiny_scratch",
+  "vault_root": "exports/user_model_package/method_vault",
+  "walk_path": "weights/architecture/tiny_scratch",
+  "applied_prompts": [
+    {
+      "path": "exports/user_model_package/method_vault/weights/_method.md",
+      "title": "Weight Method",
+      "applies_to": [
+        "scratch",
+        "sft",
+        "architecture"
+      ],
+      "config": {
+        "tokenizer_dir": "artifacts/tokenizers/default",
+        "architectural_principles": [
+          "local-first",
+          "cpu-first",
+          "no pretrained weight inheritance",
+          "inspectable and vault-authored",
+          "parameter choices must be traceable to vault notes"
+        ]
+      },
+      "prompt": "Weights should derive from the vault, not from a disconnected config culture.\nParent weight rules define the shared tokenizer and the principle that parameter choices must remain inspectable and local.\nArchitecture is not exempt from this rule. Model shape, vocab size, and layer counts are architectural decisions and must resolve through the same vault path as training behavior."
+    },
+    {
+      "path": "exports/user_model_package/method_vault/weights/architecture/_method.md",
+      "title": "Architecture Compilation Contract",
+      "applies_to": [
+        "architecture"
+      ],
+      "config": {
+        "architecture_family": "qwen3-random-init",
+        "metadata_output_dir": "artifacts/models"
+      },
+      "prompt": "This note is the compilation contract for architecture resolution.\n\nArchitecture profiles live as child notes under this folder. The compiler walks from the root vault note\nthrough weights, through this note, and into the named profile child. The resolved output is a concrete\nset of fields sufficient to build the model — no inference, no defaults hidden in code.\n\nTwo profiles currently exist:\n\n- tiny_scratch: the first real scratch experiment, small enough to train on CPU, loss still high\n- craig_target: the first serious target profile at Qwen3-0.6B scale, not yet trained\n\nNeither profile imports pretrained weights. Both are random-init. Architecture is not a copy of any\nupstream model even if the parameter count resembles one — the vault governs what gets built here,\nnot any external source.\n\nAdding a new architecture profile means adding a child folder with a _method.md. The compiler picks\nup the profile by name. configs/model_architecture.yaml is now a legacy fallback reference only."
+    },
+    {
+      "path": "exports/user_model_package/method_vault/weights/architecture/tiny_scratch/_method.md",
+      "title": "Tiny Scratch Architecture Profile",
+      "applies_to": [
+        "architecture"
+      ],
+      "config": {
+        "profile": "tiny_scratch",
+        "model_name": "tiny-qwen3-scratch",
+        "architecture_family": "qwen3-random-init",
+        "description": "First real scratch experiment. Small enough to train on CPU in a single session.",
+        "vocab_size_source": "tokenizer_artifacts",
+        "tokenizer_dir": "artifacts/tokenizers/default",
+        "hidden_size": 512,
+        "intermediate_size": 1536,
+        "num_hidden_layers": 8,
+        "num_attention_heads": 8,
+        "num_key_value_heads": 4,
+        "head_dim": 64,
+        "max_position_embeddings": 2048,
+        "hidden_act": "silu",
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 10000.0,
+        "tie_word_embeddings": false,
+        "attention_dropout": 0.0,
+        "initializer_range": 0.02,
+        "use_cache": true,
+        "pad_token_fallback": "<|endoftext|>",
+        "bos_token_fallback": "<|endoftext|>",
+        "eos_token_fallback": "<|endoftext|>",
+        "metadata_output": "artifacts/models/tiny-qwen3-scratch/model_metadata.json",
+        "status": "trained_experimental"
+      },
+      "prompt": "This is the first model that actually ran.\n\n~25M parameters. Vocabulary of 96 tokens — the early custom tokenizer, not the Qwen3 reference vocab.\nTrained for 2000 steps on the prepared vault corpus (~5.3M tokens). Loss around 8.7 at completion.\nOutput is not coherent. That is expected. The point of this run was to prove the pipeline, not to\nproduce a useful model.\n\nCheckpoints exist at artifacts/checkpoints/tiny-qwen3-scratch/. The run also extended further on\nthe Model-Lab machine (step_11400), but those artifacts are not stored in this repo.\n\nThis profile should not be confused with the craig_target profile. They are different shapes serving\ndifferent purposes. This one ran. The other has not."
+    }
+  ],
+  "resolved_config": {
+    "tokenizer_dir": "artifacts/tokenizers/default",
+    "architectural_principles": [
+      "local-first",
+      "cpu-first",
+      "no pretrained weight inheritance",
+      "inspectable and vault-authored",
+      "parameter choices must be traceable to vault notes"
+    ],
+    "architecture_family": "qwen3-random-init",
+    "metadata_output_dir": "artifacts/models",
+    "profile": "tiny_scratch",
+    "model_name": "tiny-qwen3-scratch",
+    "description": "First real scratch experiment. Small enough to train on CPU in a single session.",
+    "vocab_size_source": "tokenizer_artifacts",
+    "hidden_size": 512,
+    "intermediate_size": 1536,
+    "num_hidden_layers": 8,
+    "num_attention_heads": 8,
+    "num_key_value_heads": 4,
+    "head_dim": 64,
+    "max_position_embeddings": 2048,
+    "hidden_act": "silu",
+    "rms_norm_eps": 1e-06,
+    "rope_theta": 10000.0,
+    "tie_word_embeddings": false,
+    "attention_dropout": 0.0,
+    "initializer_range": 0.02,
+    "use_cache": true,
+    "pad_token_fallback": "<|endoftext|>",
+    "bos_token_fallback": "<|endoftext|>",
+    "eos_token_fallback": "<|endoftext|>",
+    "metadata_output": "artifacts/models/tiny-qwen3-scratch/model_metadata.json",
+    "status": "trained_experimental"
+  }
+}

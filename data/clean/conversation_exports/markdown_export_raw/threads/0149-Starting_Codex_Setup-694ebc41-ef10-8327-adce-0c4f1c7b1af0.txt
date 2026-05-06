@@ -1,0 +1,1981 @@
+CONVERSATION_ID: 694ebc41-ef10-8327-adce-0c4f1c7b1af0
+TITLE: Starting Codex Setup
+MESSAGE_COUNT: 77
+
+[USER]
+Let’s start up codex
+
+[ASSISTANT]
+{"search_query":[{"q":"OpenAI Codex 2025 how to use Codex in ChatGPT","recency":30,"domains":["openai.com","help.openai.com"]},{"q":"Codex CLI OpenAI how to install and run","recency":365,"domains":["openai.com","help.openai.com"]},{"q":"OpenAI Codex product status 2025","recency":365,"domains":["openai.com","help.openai.com"]}],"response_length":"short"}
+
+[ASSISTANT]
+Two ways to “start up Codex” (pick whichever matches what you’re doing):
+
+## 1) In ChatGPT (cloud Codex)
+1. Open **chatgpt.com/codex**. citeturn1view2turn1view0  
+2. Connect your **GitHub** account + select the repo/environment. citeturn1view2turn1view0  
+3. In the Codex UI (or ChatGPT sidebar where Codex appears), create a task and choose **Code** (for changes) or **Ask** (questions). citeturn1view1  
+
+## 2) In a terminal (Codex CLI)
+```bash
+npm install -g @openai/codex
+codex
+```
+First run will prompt you to sign in with your ChatGPT account (Plus/Pro/Business/Edu/Enterprise). citeturn1view2turn1view3  
+
+If you tell me which one you’re using (cloud Codex vs CLI) and what repo/task you want to hit first, I’ll write the exact first prompt/spec to paste into Codex.
+
+[USER]
+I’m on my phone
+
+[ASSISTANT]
+{"search_query":[{"q":"OpenAI Codex ChatGPT mobile how to use","recency":30,"domains":["openai.com","chatgpt.com","help.openai.com"]},{"q":"chatgpt.com/codex","recency":365,"domains":["chatgpt.com"]},{"q":"@openai/codex npm install -g @openai/codex","recency":365,"domains":["openai.com","help.openai.com"]}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search0"},{"ref_id":"turn0search3"},{"ref_id":"turn0search5"},{"ref_id":"turn0search6"}],"response_length":"short"}
+
+[ASSISTANT]
+On your phone, use **Codex Cloud** (not the CLI).
+
+### Option A (works on any phone): Mobile browser
+1. Open **chatgpt.com/codex** in Safari/Chrome and sign in. citeturn0search1turn1view3  
+2. Connect **GitHub** and pick the repo/environment. citeturn1view2turn1view3  
+3. Create a new task and paste a spec like:
+   - “Scan the repo, summarize architecture, then propose the smallest PR to fix X.” citeturn1view2turn1view3  
+
+### Option B (iPhone app): Codex inside ChatGPT (if you see it)
+Open the **ChatGPT iOS app** → look for a **Codex tab** / entry point, then kick off tasks and review diffs/PRs from there. citeturn1view2turn1view1  
+
+If you tell me the repo (public link or name) and the first thing you want Codex to do (bugfix, refactor, add feature, write tests), I’ll write the exact task prompt to paste.
+
+[USER]
+https://github.com/ElinVoss/N01Prose
+
+[ASSISTANT]
+{"search_query":[{"q":"GitHub ElinVoss N01Prose repository","recency":30}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"https://github.com/ElinVoss/N01Prose"}],"response_length":"short"}
+
+[ASSISTANT]
+{"click":[{"ref_id":"turn1view0","id":76},{"ref_id":"turn1view0","id":81},{"ref_id":"turn1view0","id":79}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"https://raw.githubusercontent.com/ElinVoss/N01Prose/main/README.md"},{"ref_id":"https://raw.githubusercontent.com/ElinVoss/N01Prose/main/INDEX.md"}],"response_length":"short"}
+
+[ASSISTANT]
+{"find":[{"ref_id":"turn1view0","pattern":"Raw"},{"ref_id":"turn2view1","pattern":"Raw"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn2view1","lineno":150}],"response_length":"long"}
+
+[ASSISTANT]
+{"search_query":[{"q":"OpenAI Codex in ChatGPT connect GitHub repository how to use","recency":90},{"q":"chatgpt.com/codex OpenAI Codex documentation","recency":365}],"response_length":"short"}
+
+[ASSISTANT]
+Use **Codex Cloud** from your phone.
+
+### 1) Connect GitHub (once)
+1. Open **ChatGPT → Settings → Connectors → GitHub**.
+2. Authorize GitHub and allow access to **ElinVoss/N01Prose** (either selected repo(s) or all repos). citeturn6search0
+
+### 2) Open Codex Cloud and attach the repo
+1. In your phone browser, open **chatgpt.com/codex**. citeturn6search4  
+2. Create/configure an **environment** and connect it to the GitHub repo (the UI walks you through repo selection). citeturn6search5
+
+### 3) Run your first Codex task (copy/paste this)
+Use **Code** mode (not Ask). Codex will work in an isolated environment and can draft a PR. citeturn6search11turn6search4
+
+**Task prompt:**
+> Repo: ElinVoss/N01Prose (N01-only innocent frame).  
+> Goal: Do a repo integrity pass and fix obvious inconsistencies.  
+> Steps:  
+> 1) Crawl the repo and build a file map.  
+> 2) Verify README/INDEX references and folder map match the actual tree (README mentions `02_SYSTEMS/` and `data/`; confirm whether they exist).  
+> 3) If missing, add them with minimal placeholder files (`02_SYSTEMS/TEOGA_LEXICON.md` at minimum; `data/README.md` describing intended exports).  
+> 4) Add a simple “lexicon linter” script (python ok) that scans markdown/prose for banned Earth units (meters/feet/miles/minutes/hours/days/weeks/months/years) and fails with file+line hits.  
+> 5) Add a GitHub Actions workflow to run that linter on PRs.  
+> Deliverable: One PR with clean commit messages and a short PR description.
+
+If you want a different first move (e.g., “generate CH01 prose from chapter packet” instead of tooling), say so and I’ll give you a tighter Codex prompt tailored to writing output rather than repo plumbing.
+
+[USER]
+But to do that in one document to write prose without forgetting or unwantingky create your own shit?
+
+[ASSISTANT]
+Yes. You want a **single “source-of-truth prose runbook”** that forces the model/Codex to *pull only from what already exists in your repo* and **blocks invention** unless it’s explicitly marked as a deliberate addition.
+
+Do this by adding one file that everything routes through:
+
+- `N01_PROSE_RUNBOOK.md` (or `00_MASTER/N01_PROSE_RUNBOOK.md`)
+- and making every prose task start with: “Follow N01_PROSE_RUNBOOK.md. No exceptions.”
+
+### What makes it actually work (anti-“make up my own shit”)
+1. **Every non-obvious detail in prose must trace to a repo citation** (file path + heading or line range).
+2. **Hard bans**: no new proper nouns, factions, gods, mechanics, dates, measurements, tech, geography, etc.
+3. **Quarantine lane** for ideas: anything invented goes into `QUARANTINE:` blocks, not into canon/prose.
+4. **Pre-draft “Fact Table”**: before writing, the model must compile a short table of facts it will use, each with a repo citation. If it can’t cite it, it can’t use it.
+
+Below is a one-document template you can copy as-is.
+
+```md
+# N01 PROSE RUNBOOK (N01-ONLY / INNOCENT)
+
+## 0) Purpose
+This document is the single source of truth for generating N01 prose.
+All prose must be derived from repo canon and chapter packets.
+No new canon may be created during prose drafting.
+
+## 1) Scope Lock
+- Allowed: N01-only events, knowledge, vocabulary, rules.
+- Forbidden: any knowledge outside N01, later reveals, meta orchestration, “because future book says so.”
+
+## 2) Source Hierarchy (highest wins)
+1) N01 Chapter Packets (most specific)
+2) N01 Story Bible
+3) Lexicon / Time System / Systems docs
+4) Anything else in repo explicitly marked N01
+
+If conflict exists: stop and report conflict; do not “resolve” by inventing.
+
+## 3) Absolute Hard Rules (No Exceptions)
+### 3.1 No invention
+Do NOT create:
+- new character names, factions, gods, districts, tools, materials, measurements, institutions
+- new magic rules/costs/stages
+- new geography, history, timelines, “how the world works”
+- new terminology that competes with lexicon
+
+### 3.2 Traceability requirement
+Any prose detail beyond basic sensory description MUST cite a repo source in the *drafting notes*:
+- format: [src: path/to/file.md#Heading]
+- If no source exists -> you may not use it.
+
+### 3.3 Earth-unit ban
+No meters/feet/miles; no minutes/hours/days/weeks/months/years.
+Use Te’Oga units only (Tide/Anneal/Crucible/Casting etc.) per lexicon doc.
+
+### 3.4 Quarantine lane
+If an idea is useful but unsourced:
+- write it ONLY under a block labeled:
+  QUARANTINE (UNSOURCED IDEA — NOT CANON)
+- never blend it into prose.
+
+## 4) Prose Style Constraints
+- Deep POV discipline for the POV character.
+- Forge/Glass-punk sensory language.
+- Avoid meta narration, “as you know,” or author explanations.
+- Keep lexicon terms consistent.
+(Reference: [src: path/to/LEXICON.md#Terms])
+
+## 5) Chapter Draft Protocol (must follow in order)
+### Step A — Build the Fact Table (required before drafting)
+Create a table with:
+- Character(s) present + role + state  [src]
+- Location + physical constraints      [src]
+- Timeline marker (Tide/phase)         [src]
+- Beat target / scene goal             [src]
+- Allowed tools/terms/props            [src]
+- Forbidden topics (N02+)              [src]
+
+If any row lacks a [src], STOP and ask for the missing canon file or omit that row.
+
+### Step B — Beat Outline (max 10 bullets)
+Outline only what is explicitly supported by sources.
+
+### Step C — Draft Prose
+Write the chapter.
+Do not introduce any element that isn’t in the Fact Table.
+
+### Step D — Post-Draft Consistency Check
+Provide a checklist:
+- [ ] No Earth units
+- [ ] No new proper nouns
+- [ ] No unsourced world rules
+- [ ] All specialized terms match lexicon
+- [ ] All concrete plot beats match chapter packet
+List any violations and patch them.
+
+## 6) Chapter Inputs (fill this per chapter)
+### CHAPTER ID:
+### POV:
+### Timeline:
+### Location:
+### Required beats:
+### Allowed named entities (whitelist):
+### Disallowed named entities:
+### Primary Sources:
+- [src: ...]
+- [src: ...]
+
+## 7) Canon Change Procedure (if you truly want to add something)
+If you want NEW canon:
+1) Add it to a canon doc first (explicitly)
+2) Mark it as NEW with date + rationale
+3) Only then may prose use it (with [src])
+
+## 8) Output Format Standard
+- Prose only (no explanation) OR
+- Prose + Draft Notes (Fact Table + citations)
+Choose per request.
+Default: Prose + Draft Notes.
+```
+
+### Codex task prompt to implement this (phone-friendly)
+Paste this into Codex Cloud:
+
+> Add a new file `N01_PROSE_RUNBOOK.md` at repo root using the template below. Then update README to include a “Prose Generation Rule: every chapter draft must follow N01_PROSE_RUNBOOK.md; no invention; quarantine unsourced ideas.” Do not change any existing canon content.
+
+If you want, I can tailor the runbook to your repo’s *actual* file paths (so the [src: …] links match reality), but that requires me/Codex to read the repo tree and your current N01 bible/lexicon filenames.
+
+[USER]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": ""}
+
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_0000000078d871f7b6e06fb6c2ea6d6d", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-25T00:28:14.259498+00:00", "format": "wav", "metadata": {"end": 0.57, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 27438, "tool_audio_direction": null}, "audio_start_timestamp": 3.04395481699612, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-25T00:28:14.259498+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "Understood. The runbook approach is now clear: it ensures no accidental invention by strictly enforcing source-based citations and quarantine rules. You now have a template to keep all prose generation on a tight leash.\n\nIf you need any adjustments to the template or a different Codex prompt, let me know."}
+
+{"asset_pointer": "sediment://file_000000006af471f582a6075ff5c4197b", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-25T00:28:14.259557+00:00", "format": "wav", "metadata": {"end": 16, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 768078, "tool_audio_direction": null}
+
+[USER]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": "Good. Chapter 1. But first, I want to go over..."}
+
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_0000000056d871f58ba110d89113fcdc", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-25T00:29:32.034412+00:00", "format": "wav", "metadata": {"end": 2.4, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 115278, "tool_audio_direction": null}, "audio_start_timestamp": 5.088828424923122, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-25T00:29:32.034412+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "Sure. Let's cut straight to the chase. If you want to get into Chapter 1 first, we’ll do exactly that without any fluff. We’ll use the runbook as a backbone so we don’t go off the rails.\n\nHere’s the practical, no-bullshit approach:  \n1. **Fact Table for Chapter 1:** We’ll pull in all the references from your N01 story packet and lexicon and line them up. That way nothing gets invented from thin air.  \n2. **Beat Outline:** A quick bullet list of what needs to happen in the chapter, strictly following the canon.  \n3. **Draft the Prose:** Once we have the facts and beats locked, we’ll write the chapter with zero sugar-coating and zero random add-ons.\n\nIf that’s what you’re after, let’s get that fact table laid out and jump right in."}
+
+{"asset_pointer": "sediment://file_000000000c6071f5b87678c1a28512c5", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-25T00:29:32.034505+00:00", "format": "wav", "metadata": {"end": 36.75, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 1764078, "tool_audio_direction": null}
+
+[ASSISTANT]
+bash -lc ls -lah /mnt/data
+
+[TOOL]
+total 231K
+drwxrwxr-x 2 oai  oai_shared   80 Dec 27 01:09 .
+drwxr-xr-x 2 root root         60 Dec 27 01:09 ..
+-rw-r--r-- 1 root oai_shared 143K Dec 27 01:09 GripThatHolds_repo_CONSOLIDATED.zip
+-rw-r--r-- 1 root root        89K Dec 27 01:09 OMNIMETA-CUSTOM-GPT-PACKAGE-UPDATED.tar.gz
+
+[ASSISTANT]
+bash -lc mkdir -p /mnt/data/n01repo && unzip -q /mnt/data/GripThatHolds_repo_CONSOLIDATED.zip -d /mnt/data/n01repo && tar -xzf /mnt/data/OMNIMETA-CUSTOM-GPT-PACKAGE-UPDATED.tar.gz -C /mnt/data -m
+
+[ASSISTANT]
+bash -lc find /mnt/data/n01repo -maxdepth 3 -type f | head
+
+[TOOL]
+/mnt/data/n01repo/README.md
+/mnt/data/n01repo/.gitignore
+/mnt/data/n01repo/canon/01-TeOga-Physical-Piercing.md
+/mnt/data/n01repo/canon/README_UPDATED.md
+/mnt/data/n01repo/canon/05-Knowledge-Gates-Discovery.md
+/mnt/data/n01repo/canon/N01_Chapter_Grid_12ch_REVISED.md
+/mnt/data/n01repo/canon/11-Factions-Politics.md
+/mnt/data/n01repo/canon/CUSTOM_GPT_SETUP.md
+/mnt/data/n01repo/canon/N01_Beat_Mapping_Layer_FINAL.md
+/mnt/data/n01repo/canon/02-Soulpulse-Core.md
+
+[ASSISTANT]
+bash -lc find /mnt/data/n01repo -maxdepth 4 -type f | grep -i 'chapter 1\|ch01\|ch_01\|CHAPTER_01\|Chapter01' | head -n 50
+
+[TOOL]
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH01_Something_Wrong.md
+
+[ASSISTANT]
+bash -lc sed -n '1,200p' /mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH01_Something_Wrong.md
+
+[TOOL]
+# CH01 — Something Wrong (Beat Stub)
+
+**POV:** Jhace  
+**Tide/Phase:** Tide 0, Kindling  
+**Soulpulse:** 0  
+**Beat type:** Observation  
+**Key events:** Junction Seven ritual → doubled harmonic → worker confrontation → tunnel-wide pulse → deeper first
+
+## Where the real 25 beats live
+This repo intentionally does **not** duplicate the full 25-beat scaffold here to avoid drift.
+
+Use one of:
+- `artifacts/N01-Drafting-Console.jsx` (interactive)
+- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+
+## Beat placeholders (1–25)
+1. …
+2. …
+3. …
+4. …
+5. …
+6. …
+7. …
+8. …
+9. …
+10. …
+11. …
+12. …
+13. …
+14. …
+15. …
+16. …
+17. …
+18. …
+19. …
+20. …
+21. …
+22. …
+23. …
+24. …
+25. …
+
+## Sensory packets (5)
+- Beats 1–5: …
+- Beats 6–10: …
+- Beats 11–15: …
+- Beats 16–20: …
+- Beats 21–25: …
+
+[ASSISTANT]
+bash -lc sed -n '1,240p' /mnt/data/n01repo/artifacts/N01-Prose-Generation-Prompt-COMPLETE.md
+
+[TOOL]
+sed: can't read /mnt/data/n01repo/artifacts/N01-Prose-Generation-Prompt-COMPLETE.md: No such file or directory
+
+[ASSISTANT]
+bash -lc find /mnt/data/n01repo -maxdepth 3 -type f -iname '*Prose*Prompt*COMPLETE*' -o -iname 'N01-Drafting-Console.jsx' -o -iname '*Drafting*Console*'
+
+[ASSISTANT]
+bash -lc grep -R --line-number -i "N01-Drafting-Console" /mnt/data/n01repo | head -n 20
+
+[TOOL]
+/mnt/data/n01repo/canon/README_UPDATED.md:34:- N01-Drafting-Console.jsx (~82KB) - Interactive beat explorer
+/mnt/data/n01repo/canon/N01_Chapter_Grid_UPDATED.md:20:- N01-Drafting-Console.jsx (interactive)
+/mnt/data/n01repo/canon/N01_Chapter_Grid_UPDATED.md:154:Complete beat scaffolds: N01-Drafting-Console.jsx
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md:8:**File:** `N01-Drafting-Console.jsx`
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md:145:→ N01-Drafting-Console.jsx (open in browser/React environment)
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/CHAPTER_GRID.md:29:- `N01-Drafting-Console.jsx` (interactive artifact with all beats + sensory packets)
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md:9:### 1. N01-Drafting-Console.jsx
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md:73:2. Open N01-Drafting-Console.jsx in browser
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md:105:**Drafting Console (N01-Drafting-Console.jsx):**
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md:156:- N01-Drafting-Console.jsx
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/README_CHAPTER_BEATS.md:7:**N01-Drafting-Console.jsx** (Interactive React Artifact)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH01_Something_Wrong.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH02_Glass_That_Listens.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH03_The_Piercing.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH04_After_the_Shudder.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH05_Where_to_Press.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH06_The_Arch_Under_Strain.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH07_Method.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH08_What_Breaks_When_You_Push.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH09_Asking.md:13:- `artifacts/N01-Drafting-Console.jsx` (interactive)
+
+[ASSISTANT]
+bash -lc find /mnt/data/n01repo -type f -iname 'N01-Drafting-Console.jsx' -o -iname '*Prose-Generation*COMPLETE*' -o -iname '*Prose*Generation*Prompt*' | head -n 50
+
+[ASSISTANT]
+bash -lc find /mnt/data -maxdepth 2 -type f | grep -i 'Drafting-Console\|Prose-Generation' | head -n 50
+
+[ASSISTANT]
+bash -lc ls -lah /mnt/data | head -n 50
+
+[TOOL]
+total 469K
+drwxr-xr-x 2 root root        420 Dec 27 01:10 .
+drwxr-xr-x 2 root root         60 Dec 27 01:09 ..
+-rw-r--r-- 1 root root        15K Dec 27 01:10 01-TeOga-Physical-Piercing.md
+-rw-r--r-- 1 root root        19K Dec 27 01:10 02-Soulpulse-Core.md
+-rw-r--r-- 1 root root        14K Dec 27 01:10 03-Divine-Principles.md
+-rw-r--r-- 1 root root        11K Dec 27 01:10 04-Cosmology-Confluence.md
+-rw-r--r-- 1 root root        15K Dec 27 01:10 05-Knowledge-Gates-Discovery.md
+-rw-r--r-- 1 root root        12K Dec 27 01:10 10-World-TeOga.md
+-rw-r--r-- 1 root root        12K Dec 27 01:10 11-Factions-Politics.md
+-rw-r--r-- 1 root root        20K Dec 27 01:10 30-Turning1-All-Characters.md
+-rw-r--r-- 1 root root       8.3K Dec 27 01:10 50-Lexicon-Style.md
+-rw-r--r-- 1 root root        11K Dec 27 01:10 CUSTOM_GPT_SETUP.md
+-rw-r--r-- 1 root oai_shared 143K Dec 27 01:09 GripThatHolds_repo_CONSOLIDATED.zip
+-rw-r--r-- 1 root root       8.2K Dec 27 01:10 N01_Beat_Mapping_Layer_FINAL.md
+-rw-r--r-- 1 root root        19K Dec 27 01:10 N01_Chapter_Grid_12ch_REVISED.md
+-rw-r--r-- 1 root root       6.5K Dec 27 01:10 N01_Chapter_Grid_UPDATED.md
+-rw-r--r-- 1 root root        89K Dec 27 01:09 OMNIMETA-CUSTOM-GPT-PACKAGE-UPDATED.tar.gz
+-rw-r--r-- 1 root root        39K Dec 27 01:10 OMNIMETA_SAGA_META_CANON_MEMORY.md
+-rw-r--r-- 1 root root       1.5K Dec 27 01:10 README_UPDATED.md
+-rw-r--r-- 1 root root        29K Dec 27 01:10 Story_Bible_Template_Structure_v2_1.md
+drwxr-xr-x 2 root root        140 Dec 27 01:10 n01repo
+
+[ASSISTANT]
+bash -lc sed -n '1,220p' /mnt/data/n01repo/canon/N01_Beat_Mapping_Layer_FINAL.md
+
+[TOOL]
+# N01 BEAT MAPPING LAYER
+**Translation Document Between Local and Saga-Level Beat Systems**
+
+---
+
+## PURPOSE
+
+This document translates between:
+- **N01 Local Beat IDs (BEAT_01–BEAT_08):** Used by validators and prose generation
+- **Saga Beat IDs (Beat 1–30+):** Used for cross-novella unpredictability tracking
+
+**Rule of Precedence:**
+- Prose generation + validation → Use **N01 local beats** and N01 constraints
+- Saga tracking → Record **Saga Beat ID** for cross-novella pattern prevention
+
+---
+
+## CORE MAPPING TABLE
+
+| N01 Local Beat | N01 Beat Name (Canon) | Saga Beat ID | Saga Beat Name |
+|----------------|----------------------|--------------|----------------|
+| **BEAT_01** | Observation → Pattern Recognition | **Beat 10** | Observation → Pattern Recognition |
+| **BEAT_02** | Trial → Failure → Compounding → Success/Cost | **Beat 1** | Trial → Failure → Compounding → Success/Cost |
+| **BEAT_03** | Crisis Front-Loaded → Rolling Complications → Partial Resolution | **Beat 3** | External Threat → Narrow Escape |
+| **BEAT_04** | Quiet Recalibration → Offer → Refusal/Choice | **Beat 16** | Investigation → Discovery → Complication *(primary mapping for discovery-driven choices)* |
+| **BEAT_05** | Training Loop → Conflict → Reframe | **Beat 13** | Teaching Moment → Student Failure → Lesson Learned *(or Beat 20 if student-success weighted)* |
+| **BEAT_06** | Debate → Third-Party Insight → Synthesis | **Beat 26** | Faction Confrontation → Ideological Debate → Stalemate |
+| **BEAT_07** | Political Pressure → Moral Line in Sand | **Beat 26** | Faction Confrontation → Ideological Debate → Stalemate *(institutional confrontation analog)* |
+| **BEAT_08** | Recovery → Intimacy → Ongoing Commitment | **Beat 17** | Intimacy → Vulnerability → Connection Deepened *(or Beat 21 if reflection/purpose weighted, minimal intimacy)* |
+
+---
+
+## SPECIAL CASE MAPPINGS
+
+### **BEAT_04 Context-Dependent Mapping:**
+
+**Primary Mapping: Beat 16 (Investigation → Discovery → Complication)**
+- Use when: Character investigates, discovers truth, truth creates choice/complication
+
+**Alternative Mapping: Beat 28 (Moral Compromise → Guilt → Justification)**
+- Use when: Offer requires ethical compromise, character feels moral weight, accepts or refuses with consequences
+- Example: If BEAT_04 chapter centers on moral pressure rather than investigation
+
+**Logging Guideline:** Default to Beat 16 unless moral compromise is central theme.
+
+---
+
+### **BEAT_08 Context-Dependent Mapping:**
+
+**Primary Mapping: Beat 17 (Intimacy → Vulnerability → Connection)**
+- Use when: Chapter emphasizes emotional vulnerability, sharing trauma, relationship deepening
+- Example: Ch 11 (trauma exchange, mutual need acknowledged)
+
+**Alternative Mapping: Beat 21 (Rest → Reflection → Renewed Purpose)**
+- Use when: Chapter emphasizes rest, reflection, renewed commitment with minimal vulnerability
+- Example: Ch 7 (data compilation), Ch 12 (writing priorities on forge wall)
+
+**Logging Guideline:** If intimacy/vulnerability present → Beat 17. If primarily rest/reflection → Beat 21.
+
+---
+
+## N01 CHAPTER LOGGING (CURRENT STATUS)
+
+### **Locked Chapters (1-5):**
+
+| Chapter | Title | N01 Local Beat | Saga Beat | Status |
+|---------|-------|----------------|-----------|--------|
+| 1 | Something Wrong | BEAT_01 | Beat 10 | 🔒 LOCKED |
+| 2 | Glass That Listens | BEAT_01 | Beat 10 | 🔒 LOCKED |
+| 3 | The Sky Breaks | BEAT_03 | Beat 3 | 🔒 LOCKED |
+| 4 | After the Shudder | BEAT_02 | Beat 1 | 🔒 LOCKED |
+| 5 | Lines That Don't Lie | BEAT_01 | Beat 10 | 🔒 LOCKED |
+
+**Note:** Ch 1-2 use BEAT_01 consecutively (opening exception for parallel POV establishment). Ch 5 returns to BEAT_01 for systematic observation/pattern work.
+
+---
+
+### **Remaining Chapters (6-12):**
+
+| Chapter | Title | N01 Local Beat | Saga Beat | Status |
+|---------|-------|----------------|-----------|--------|
+| 6 | Weight That Won't Yield | BEAT_03 | Beat 3 | To Write |
+| 7 | Quiet Calculations | BEAT_08 | Beat 21 | To Write |
+| 8 | Proof and Resistance | BEAT_04 | Beat 16 | To Write |
+| 9 | Ash and Claims | BEAT_07 | Beat 26 | To Write |
+| 10 | Near Collapse | BEAT_03 | Beat 3 | To Write |
+| 11 | Holding Together | BEAT_08 | Beat 17 | To Write |
+| 12 | Choosing the Weight | BEAT_08 | Beat 21 | To Write |
+
+**Beat Usage Summary:**
+- BEAT_01 (Beat 10): Ch 1, 2, 5
+- BEAT_02 (Beat 1): Ch 4
+- BEAT_03 (Beat 3): Ch 3, 6, 10
+- BEAT_04 (Beat 16): Ch 8
+- BEAT_07 (Beat 26): Ch 9
+- BEAT_08 (Beat 17): Ch 11
+- BEAT_08 (Beat 21): Ch 7, 12
+
+---
+
+## CHAPTER GRID LOGGING FORMAT (REQUIRED)
+
+Each chapter entry must list both local and saga beat IDs:
+
+**Template:**
+```
+### CHAPTER X: "[Title]"
+- **N01 Local Beat:** BEAT_0X ([N01 structure name])
+- **Saga Beat:** Beat Y ([Saga structure name])
+```
+
+**Example (Ch 6):**
+```
+### CHAPTER 6: "Weight That Won't Yield"
+- **N01 Local Beat:** BEAT_03 (Crisis Front-Loaded → Rolling Complications)
+- **Saga Beat:** Beat 3 (External Threat → Narrow Escape)
+```
+
+---
+
+## VALIDATOR ENFORCEMENT (N01 LOCAL ONLY)
+
+**N01 Validator checks:**
+- ✅ No consecutive identical beats (BEAT_03 → BEAT_03)
+- ✅ No rotation patterns (BEAT_01 → BEAT_02 → BEAT_03 → BEAT_01...)
+- ✅ Beat-specific constraints from N01 Beat Catalog
+
+**Opening Exception:**
+N01 permits BEAT_01 → BEAT_01 only for Ch 1–2 to establish parallel baseline POVs through deliberate structural mirror. This is the sole consecutive-beat exception in N01.
+
+**Validator does NOT check:**
+- ❌ Saga-level beat sequences (handled by cross-novella tracker)
+- ❌ Beat frequency across N01-N30 (handled by saga audit)
+
+---
+
+## SAGA-LEVEL TRACKING (CROSS-NOVELLA)
+
+**Saga Beat Audit tracks:**
+- ✅ Which Saga Beats used in which novellas
+- ✅ Forbidden follow-pairs (if Beat X → Beat Y in N01, cannot repeat in N02-N30)
+- ✅ Beat frequency across all 30 novellas
+- ✅ Minimum separation requirements for major beats (27, 29, 30)
+
+**Saga tracking uses:**
+- Beat IDs from "Saga Beat" column in chapter tables above
+- N01's local beat constraints don't apply to other novellas
+- Each novella can develop own local beat system mapped to saga repertoire
+
+---
+
+## WHY TWO SYSTEMS COEXIST
+
+### **N01 Local System (8 beats):**
+- **Scope:** Within N01's 12 chapters
+- **Purpose:** Prevent pattern formation inside one novella
+- **Enforcement:** N01 Validator, Constraint_Systems.md
+- **Granularity:** Fine-tuned for N01's specific narrative needs
+
+### **Saga System (30+ beats):**
+- **Scope:** Across all 30 novellas
+- **Purpose:** Prevent pattern formation across entire saga
+- **Enforcement:** Beat Sequence Audit Tracker (N01-N30)
+- **Granularity:** Broad structural categories applicable saga-wide
+
+**These operate at different scales and complement each other without conflict.**
+
+---
+
+## UPDATING THIS MAPPING
+
+**When N01 adds new local beats:**
+1. Add row to Core Mapping Table
+2. Identify closest Saga Beat analog
+3. Update chapter logging tables
+4. Add usage notes if context-dependent
+
+**When Saga adds new beats (Beat 31+):**
+1. Evaluate if any N01 local beats map more precisely to new beat
+2. Update mapping table if better analog exists
+3. Note in "Special Case Mappings" if context-dependent
+
+---
+
+## CROSS-REFERENCE DOCUMENTS
+
+**N01 Local System:**
+- `Beat_Catalog_N01_Scope.md` - Defines BEAT_01-08 structures
+- `N01_Validator_Checklist.md` - Enforces local constraints
+- `Constraint_Systems.md` - N01 beat usage rules
+
+**Saga System:**
+- `02_Beat_Unpredictability_System.md` - Defines Beat 1-30 repertoire
+- `N01-N05_Beat_Sequence_Audit_Tracker.md` - Tracks saga-level usage
+- `[Future: N06-N30 Beat Tracking]` - Extends to full saga
+
+---
+
+## VERSION CONTROL
+
+**Version:** 1.1 (Corrected)
+**Created:** [Current]
+**Updates:** 
+- Added opening exception for BEAT_01 → BEAT_01 in Ch 1-2
+- Corrected Ch 4-5 beat assignments to match locked prose
+- Added Saga Beat IDs to all chapter entries
+
+**Purpose:** Enable dual-scale beat tracking without validator refactoring
+**Status:** Production-ready for Ch 6+ generation
+
+**Next Update:** After N01 completion, when N02 local beat system defined
+
+---
+
+**END OF MAPPING LAYER**
+
+**This document preserves N01 production stability while integrating with saga-level unpredictability architecture.**
+
+[ASSISTANT]
+bash -lc sed -n '1,260p' /mnt/data/n01repo/bibles/N01/04_STRUCTURE/CHAPTER_GRID.md
+
+[TOOL]
+# Chapter Grid — N01: The Grip That Holds
+
+## 12-Chapter Overview
+
+| Ch | Title | POV | Tide/Phase | Soulpulse | Beat Type | Key Events |
+|---:|---|---|---|:---:|---|---|
+| 1 | Something Wrong | Jhace | Tide 0, Kindling | 0 | Observation | Junction Seven ritual → doubled harmonic → worker confrontation → tunnel-wide pulse → deeper first |
+| 2 | Glass That Listens | Tiffani | Tide 0, Pouring | 0 | Observation | Observatory setup → Seven-Three offset → copper-gold discovery → Piercing approach witnessed → descent decision |
+| 3 | The Piercing | Jhace | Tide 0, Shaping/Striking | 2 | Crisis | Street emergence → catastrophe → Chloen rescue → doorway stabilization → Tiffani arrives → pace sync begins |
+| 4 | After the Shudder | Jhace | Tide 1, Kindling | 2 | Trial/Failure | Tremor at rest → failed activation → justified hold → Kylar appears → protocol begins |
+| 5 | Where to Press | Tiffani | Tide 1, Pouring | 0 | Training/Method | Cost curve projection → protocol debate → "Don't Die Today" → method proof → arch warning |
+| 6 | The Arch Under Strain | Jhace | Tide 1, Shaping/Striking | 1 | Crisis | Chalk boundaries → extended hold → Tiffani's release command → collapse → physical catch → trust fact |
+| 7 | Method | Tiffani | Tide 1, Quench | 0 | Recalibration | Practice rig → tremor baseline → Kylar watches → debate escalates → RRO slate → protocol pinned |
+| 8 | What Breaks When You Push | Jhace | Tide 2, Kindling | 1 | Trial/Failure | Kylar unsupervised → structure breaks → seizure → triage → protocol revision → efficiency test |
+| 9 | Asking | Tiffani | Tide 2, Pouring | 1 | Crisis/Synthesis | Kylar recovery → extended hold → boundary symptoms → clinical assessment → RRO summons → Salee alignment |
+| 10 | Integration | Jhace | Tide 2, Shaping | 0 | Recovery/Intimacy | Controlled site → no activation proof → Salee collaboration → quiet moments → finger brush → rest protocol |
+| 11 | The Committee Requires | Tiffani | Tide 3, Kindling | 0 | Political Pressure | Summons → Jhace: "No" → cost logic translation → walkout → made choice → Downslope |
+| 12 | We Hold | Jhace/Tiffani | Tide 3, Shaping | 0 | Recovery/Intimacy | Dregs choice → craft on page → partnership acknowledgment → touch moment → "We hold together" |
+
+## Beat Architecture Reference
+
+**Every chapter contains:**
+- 25 beats (sequential narrative progression)
+- 5 sensory packets (beats 1-5, 6-10, 11-15, 16-20, 21-25)
+- Target word count: 800-1300 words (1000-1200 optimal)
+
+**Full beat scaffolds available in:**
+- `05_CHAPTER_PACKETS/CH##_[Title].md` (individual chapter files)
+- `N01-Drafting-Console.jsx` (interactive artifact with all beats + sensory packets)
+- `N01-Prose-Generation-Prompt-COMPLETE.md` (comprehensive GPT prompt with all beats detailed)
+
+## Relationship Progression Arc
+
+**Ch1-2:** Separate, pre-Piercing, misjudging each other through guild gossip  
+**Ch3:** First meeting during catastrophe, parallel movement begins  
+**Ch4-5:** Partnership formation through protocol debate, friction → method  
+**Ch6:** Physical catch during collapse (first sustained contact)  
+**Ch7-8:** Method refinement, Kylar failure teaches limits  
+**Ch9:** Extended hold pushes boundary, clinical touch carries intimacy  
+**Ch10:** Quiet acknowledgment of partnership beyond work  
+**Ch11:** United front against political pressure  
+**Ch12:** Public commitment ("We hold together"), brief intimate touch  
+
+## Soulpulse Progression
+
+- **Ch3, Beat 12:** Use #1 (Chloen rescue, timber beam hold)
+- **Ch3, Beat 19:** Use #2 (doorway post stabilization)
+- **Ch4, Beat 7:** Use #3 FAILS (no imminent threat, forced testing)
+- **Ch4, Beat 15:** Use #4 (justified, Tiffani authorized)
+- **Ch6, Beat 13:** Use #5 (arch keystone, extended hold)
+- **Ch8, Beat 20:** Use #6 (practice rig efficiency test)
+- **Ch9, Beat 14:** Use #7 (extended hold, boundary symptoms)
+
+**Cost escalation:** Tremor begins → spreads → persists at rest → amplifies → approaches Stage 2 boundary
+
+## Continuity Markers
+
+**Must appear consistently:**
+- Wrong grid-hum (post-Piercing persistent)
+- Copper-gold particulate (visible, sticky)
+- Metallic taste (copper → iron progression)
+- Tremor progression (fingers → wrists → forearms → shoulders)
+- The Seam (visible but unexplained)
+- Dust glitter in light angles
+- Smoke/rot/stone mix in air
+
+## Voice Profiles
+
+**Jhace (1,3,4,6,8,10,12):**
+- Short sentences. Clipped. Action-first.
+- Procedural internal voice
+- Body awareness constant
+- Humor: bitter, dry, rare
+
+**Tiffani (2,5,7,9,11,12):**
+- Analytical precision
+- Measurements embedded naturally
+- Longer sentences with data
+- Humor: internal wry observations, never spoken
+
+## Closing Requirements
+
+**Final chapter must include:**
+- Jhace chooses Dregs over Crown optics (immediate decision)
+- On-page craft (chalk lines, wedge tapping, cord tension, brace placement)
+- Partnership acknowledgment (plain, no vow performance)
+- Boundaries as protocol (rest, food, stop commands)
+- Touch beat (dust cleared from mouth corner, withdrawal, heat lingers)
+- The Seam visible in clear gap (looked at once, unexplained)
+- Recognition as unit ("requests come to both")
+- Commitment line: "We hold together"
+- Final line: "They walk back into the Dregs side by side, with method, boundaries, and public defiance intact."
+
+[ASSISTANT]
+bash -lc grep -R --line-number -i "Prose-Generation-Prompt" /mnt/data | head -n 50
+
+[TOOL]
+/mnt/data/n01repo/canon/README_UPDATED.md:35:- N01-Prose-Generation-Prompt-COMPLETE.md (~35KB) - AI instruction manual
+/mnt/data/n01repo/canon/N01_Chapter_Grid_UPDATED.md:21:- N01-Prose-Generation-Prompt-COMPLETE.md (AI instructions)
+/mnt/data/n01repo/canon/N01_Chapter_Grid_UPDATED.md:155:Prose generation: N01-Prose-Generation-Prompt-COMPLETE.md
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md:24:**File:** `N01-Prose-Generation-Prompt-COMPLETE.md`
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md:138:**All detailed in:** N01-Prose-Generation-Prompt-COMPLETE.md
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md:148:→ N01-Prose-Generation-Prompt-COMPLETE.md (paste into GPT)
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/CHAPTER_GRID.md:30:- `N01-Prose-Generation-Prompt-COMPLETE.md` (comprehensive GPT prompt with all beats detailed)
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md:26:### 2. N01-Prose-Generation-Prompt-COMPLETE.md
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md:81:1. Load N01-Prose-Generation-Prompt-COMPLETE.md into AI system
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md:112:**Prose Prompt (N01-Prose-Generation-Prompt-COMPLETE.md):**
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md:157:- N01-Prose-Generation-Prompt-COMPLETE.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/README_CHAPTER_BEATS.md:13:**N01-Prose-Generation-Prompt-COMPLETE.md** (AI Instruction Manual)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH01_Something_Wrong.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH02_Glass_That_Listens.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH03_The_Piercing.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH04_After_the_Shudder.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH05_Where_to_Press.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH06_The_Arch_Under_Strain.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH07_Method.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH08_What_Breaks_When_You_Push.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH09_Asking.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH10_Integration.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH11_The_Committee_Requires.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH12_We_Hold.md:14:- `artifacts/N01-Prose-Generation-Prompt-COMPLETE.md` (full beat listing + sensory packets)
+/mnt/data/n01repo/artifacts/README.md:5:- `N01-Prose-Generation-Prompt-COMPLETE.md`
+/mnt/data/README_UPDATED.md:35:- N01-Prose-Generation-Prompt-COMPLETE.md (~35KB) - AI instruction manual
+/mnt/data/N01_Chapter_Grid_UPDATED.md:21:- N01-Prose-Generation-Prompt-COMPLETE.md (AI instructions)
+/mnt/data/N01_Chapter_Grid_UPDATED.md:155:Prose generation: N01-Prose-Generation-Prompt-COMPLETE.md
+
+[ASSISTANT]
+bash -lc ls -lah /mnt/data/n01repo/artifacts
+
+[TOOL]
+total 512
+drwxr-xr-x 2 root root  60 Dec 27 01:10 .
+drwxr-xr-x 2 root root 140 Dec 27 01:10 ..
+-rw-r--r-- 1 root root 285 Dec 26 16:45 README.md
+
+[ASSISTANT]
+bash -lc find /mnt/data/n01repo -type f -iname '*chapter*1*' -o -iname 'CH01*' -o -iname '*Something*Wrong*' | head -n 100
+
+[TOOL]
+/mnt/data/n01repo/canon/N01_Chapter_Grid_12ch_REVISED.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH01_Something_Wrong.md
+
+[ASSISTANT]
+bash -lc find /mnt/data/n01repo/bibles/N01 -maxdepth 3 -type f | head -n 50
+
+[TOOL]
+/mnt/data/n01repo/bibles/N01/README.md
+/mnt/data/n01repo/bibles/N01/INDEX.md
+/mnt/data/n01repo/bibles/N01/00_SCOPE/SCOPE_LOCK.md
+/mnt/data/n01repo/bibles/N01/00_SCOPE/KNOWLEDGE_GATES.md
+/mnt/data/n01repo/bibles/N01/00_SCOPE/ACROSTIC_POSITION.md
+/mnt/data/n01repo/bibles/N01/03_CHARACTERS/JHACE_TORRINS.md
+/mnt/data/n01repo/bibles/N01/03_CHARACTERS/TIFFANI_MERROW.md
+/mnt/data/n01repo/bibles/N01/03_CHARACTERS/SUPPORTING_CAST.md
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/CHAPTER_GRID.md
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/ARTIFACTS_MANIFEST.md
+/mnt/data/n01repo/bibles/N01/01_WORLD/SAINT_MERRO.md
+/mnt/data/n01repo/bibles/N01/01_WORLD/THE_PIERCING.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/README_CHAPTER_BEATS.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH01_Something_Wrong.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH02_Glass_That_Listens.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH03_The_Piercing.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH04_After_the_Shudder.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH05_Where_to_Press.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH06_The_Arch_Under_Strain.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH07_Method.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH08_What_Breaks_When_You_Push.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH09_Asking.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH10_Integration.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH11_The_Committee_Requires.md
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH12_We_Hold.md
+/mnt/data/n01repo/bibles/N01/02_SYSTEMS/SOULPULSE_RULES_N01.md
+/mnt/data/n01repo/bibles/N01/02_SYSTEMS/LEXICON_STYLE_N01.md
+/mnt/data/n01repo/bibles/N01/02_SYSTEMS/CRAFT_AS_PLOT_N01.md
+/mnt/data/n01repo/bibles/N01/data/n01_structured.yaml
+/mnt/data/n01repo/bibles/N01/data/n01_structured.json
+
+[ASSISTANT]
+bash -lc sed -n '1,200p' /mnt/data/n01repo/bibles/N01/00_SCOPE/SCOPE_LOCK.md
+
+[TOOL]
+# Scope Lock — N01: The Grip That Holds
+
+## What N01 IS
+- Ground-level survival story during and after planetary catastrophe
+- Partnership formation between two craft specialists under extreme pressure
+- Method development: conventional bracing + Soulpulse protocol + cost awareness
+- Infrastructure failure and stabilization
+- Political resistance to safety protocol
+- Public commitment to shared standards despite institutional pressure
+
+## What N01 is NOT
+- Cosmic explanation (no "why the Piercing happened")
+- God-vessel awareness story (all characters believe they are mortal)
+- Origin mythology (no ancient wars, no Counter-Spark revelation)
+- Magical training narrative (Soulpulse is tool-like, costly, emergency-only)
+- Victory narrative (city remains broken, work continues, no "we won")
+- Romance (intimacy exists but is functional, not genre-romance structure)
+
+## Forbidden Reveals (Reserve for Later Novellas)
+- God-vessel identities (Jhace = Forge, Tiffani = Glass, Kylar = Cord, others)
+- Divine Principles as conscious entities with agency
+- Counter-Spark / Auditor existence or orchestration
+- Fathom Break mechanics (occurs chronologically after N01)
+- Stasis ending and reason for Piercing
+- Guilty frame knowledge (all reserved for N30)
+
+## Knowledge Gate: Innocent Frame Rules
+Characters in N01 operate under "innocent frame" — they do not know:
+- They are god-vessels
+- Their abilities derive from Divine Principles
+- Anyone is observing/orchestrating events
+- The Piercing was intentional or serves a purpose
+- The Seam has metaphysical significance beyond visible scar
+
+Characters in N01 DO know/experience:
+- Piercing happened (observable catastrophe)
+- Soulpulse exists (some people manifest copper-gold glow)
+- Costs are real (tremor, vein-lines, exhaustion, sensory overload)
+- Infrastructure behaves differently post-Piercing (wrong grid-hum)
+- Political institutions prioritize throughput over safety
+- Method can be taught and distributed
+
+## N01's Promise to Reader
+By end of N01, reader understands:
+- How Jhace and Tiffani's partnership formed
+- What Soulpulse costs in practical terms
+- Why conventional bracing + protocol matters
+- That this city will keep demanding choices
+- That "holding together" means shared standards under pressure
+
+By end of N01, reader does NOT understand:
+- Why the Piercing happened
+- What the Seam truly represents
+- Who/what Jhace and Tiffani actually are
+- Whether anyone is watching/guiding
+- What comes next at planetary scale
+
+## Tone Constraints
+- Gritty, body-aware, procedural
+- No cosmic wonder (awe is earned through craft competence)
+- No mysticism (Soulpulse is tool, not spirituality)
+- Humor is dry, cutting, rare
+- Intimacy is functional (care shown through competence)
+- Exhaustion is physical fact, not metaphor
+
+## Structural Constraints
+- 12 chapters, 800-1300 words each (HARD LIMIT)
+- 25 beats per chapter (no exceptions)
+- 5 sensory packets per chapter (mandatory)
+- POV: Jhace (1,3,4,6,8,10,12), Tiffani (2,5,7,9,11,12)
+- Soulpulse: 7 total uses (Ch3:2, Ch4:2, Ch6:1, Ch8:1, Ch9:1)
+- Timeline: Tide 0-3 (approximately 3-4 Tides total span)
+
+## Lexicon Constraints (Non-Negotiable)
+- NO metric units (meters, centimeters, kilometers)
+- NO imperial units (feet, inches, miles, yards)
+- NO Earth time units (minutes, seconds, hours, days, weeks, months, years)
+- USE Te'Oga time: Tide, Anneal, Crucible, Casting; Kindling/Pouring/Shaping/Striking/Quench
+- USE Te'Oga distance: finger, hand, span, forearm, stride, bar, rod, cable, grid
+- NO modern slang or post-1800s idioms
+- NO "adrenaline," "endorphins" — use body responses directly
+
+## Character Voice Constraints
+**Jhace:** Short sentences. Clipped. Action-first. Procedural internal voice.  
+**Tiffani:** Analytical precision. Measurements embedded. Longer sentences with data.  
+**Bram:** Dry humor. Cutting brevity. One-liners.  
+**Others:** Functional dialogue, minimal exposition.
+
+## Cost Visibility Mandate (Soulpulse)
+NEVER: "He felt tired." "She was exhausted." "Pain shot through him."  
+ALWAYS: Show tremor, vein-lines, metallic taste, motor failure, vision narrowing, breath disruption.
+
+## Closing Requirement
+N01 MUST end with:
+- Jhace and Tiffani's explicit partnership commitment
+- Protocol embedded in community practice
+- Local problem continuing (no cosmic resolution)
+- Final line: "They walk back into the Dregs side by side, with method, boundaries, and public defiance intact."
+
+[ASSISTANT]
+bash -lc sed -n '1,240p' /mnt/data/n01repo/bibles/N01/02_SYSTEMS/LEXICON_STYLE_N01.md
+
+[TOOL]
+# Lexicon & Style — N01 Enforcement (Te’Oga)
+
+## Time units (use)
+- Tide, Anneal, Crucible, Casting
+- Phases used in N01 grid: Kindling / Pouring / Shaping / Striking / Quench
+
+## Distance / measure language (use)
+finger, hand, span, forearm, stride, bar, rod, cable (and other setting-native measures)
+
+## Forbidden (don’t use)
+meters, feet, inches, miles, seconds, minutes, hours, days, weeks, months, years
+
+## Prose discipline
+- Deep POV; no omniscient explanations
+- No “this will matter later” framing
+- Costs shown on the body (especially Soulpulse)
+
+[ASSISTANT]
+bash -lc sed -n '1,260p' /mnt/data/n01repo/bibles/N01/01_WORLD/SAINT_MERRO.md
+
+[TOOL]
+# Saint Merro — City Geography and Culture
+
+## Overview
+Saint Merro is a vertically stratified industrial city built on hillside terracing with extensive underground infrastructure. The Piercing exit-side event occurs directly over/through Saint Merro, making it ground zero for the catastrophe.
+
+---
+
+## Vertical Geography
+
+### Upslope (Crown District)
+- **Location:** Upper terraces and hilltop
+- **Population:** Administrative class, guild leadership, merchant elite
+- **Architecture:** Stone buildings, cleaned streets, controlled access
+- **Priorities:** Order, throughput maintenance, appearance of stability
+- **Post-Piercing:** Structural damage but resources for rapid repair
+
+### Midslope (Working Districts)
+- **Location:** Middle terraces
+- **Population:** Craft workers, guild members, inspectors, analysts
+- **Architecture:** Mixed stone/timber, workshop clusters, residential blocks
+- **Priorities:** Production, craft standards, guild reputation
+- **Post-Piercing:** Mixed damage, competition for repair resources
+
+### Downslope (The Dregs)
+- **Location:** Lower terraces and valley floor
+- **Population:** Day laborers, unaffiliated workers, marginalized communities
+- **Architecture:** Salvaged materials, crowded lanes, unstable structures
+- **Priorities:** Survival, mutual aid networks, avoiding authority
+- **Post-Piercing:** Catastrophic damage, minimal official response
+
+---
+
+## Infrastructure Systems
+
+### The Underface
+- **Function:** Below-ground heat distribution, water routing, structural support
+- **Access:** Inspection shafts, ladder systems, maintenance corridors
+- **Grid-Hum:** Baseline vibration from active heat/water flow through pipes
+- **Personnel:** Inspectors (like Jhace), maintenance crews, emergency response
+- **Post-Piercing:** Wrong grid-hum (altered baseline), increased failure density
+
+### Heat Grid
+- **Purpose:** Distribute kiln heat for industrial/residential use
+- **Structure:** Junction points, collar connections, branch feeds
+- **Risk Points:** Mis-seated collars, stress-cracked pipes, overloaded branches
+- **Sectors:** Numbered districts (Sector Fourteen = kiln-quarter feed)
+- **Post-Piercing:** Load tolerances invalid, conventional bracing insufficient
+
+### Observatory (Tiffani's Workplace)
+- **Location:** Midslope high platform with sightlines
+- **Function:** Stellar measurement, trajectory calculation, precision instrumentation
+- **Equipment:** Theodolites, glass plates, logbooks, bell warning system
+- **Personnel:** Analysts, apprentices (like Pella), instrument craftworkers
+- **Post-Piercing:** Destroyed/collapsed, Tiffani salvages logbooks/methods
+
+### Workshop District (Bram's Space)
+- **Location:** Midslope near Underface access
+- **Function:** Metalwork staging, tool storage, emergency coordination
+- **Personnel:** Smiths, inspectors, runners, protocol developers
+- **Post-Piercing:** Becomes staging area for Jhace/Tiffani's protocol development
+
+---
+
+## Cultural Elements
+
+### Guild Structure
+- **Function:** Regulate craft standards, control access to work, enforce hierarchy
+- **Authority:** Foremen, guild masters, administrative council
+- **Priorities:** Throughput, reputation, blame avoidance
+- **Post-Piercing Behavior:** Resist safety protocols that slow production
+
+### RRO (Repair and Recovery Oversight)
+- **Formation:** Post-Piercing administrative body
+- **Function:** Coordinate reconstruction, allocate resources, register "special workers"
+- **Key Figures:** Corlexi (committee authority), Harlen (field representative)
+- **Method:** Registration pressure, resource gatekeeping, co-opt attempts
+- **Conflict:** Safety vs throughput, protocol vs bureaucracy
+
+### Salee's Network
+- **Function:** Unofficial mutual aid, triage coordination, runner deployment
+- **Structure:** Unlabeled operatives, efficient movement, need-first allocation
+- **Alignment:** Pragmatic collaboration with Jhace/Tiffani
+- **Post-Piercing Role:** Fills gaps official response ignores (especially Dregs)
+
+---
+
+## Environmental Conditions Post-Piercing
+
+### Persistent Changes
+- **Wrong Grid-Hum:** Altered baseline vibration in all infrastructure
+- **Copper-Gold Particulate:** Sticky metallic dust coating everything
+- **Air Quality:** Smoke, rot, dust mix; never fully clears
+- **The Seam:** Visible sky-scar across city sightlines (persistent reminder)
+- **Structural Instability:** Load tolerances invalid, aftershocks continue
+
+### Sensory Baseline (Post-Piercing)
+- **Taste:** Metallic (copper/iron) coating tongue/molars
+- **Sound:** Wrong grid-hum audible in quiet; collapses punctuate distance
+- **Skin:** Dust sticks to sweat; tremor becomes common marker
+- **Air:** Thick with particulate; breath catches; lungs feel scraped
+- **Smell:** Stone dust, smoke, wet rot, metallic edge
+
+---
+
+## Key Locations (N01 Specific)
+
+### Junction Seven
+- **Significance:** Memorial plaque with 23 names (previous failure)
+- **Jhace's Ritual:** Reads all names, jaw tight, no outward ceremony
+- **Emotional Weight:** Ignored warnings = bodies (Jhace's wound)
+
+### Junction Twelve
+- **Risk Point:** Mis-seated collar → Sector Fourteen third branch
+- **Chapter 1 Discovery:** Doubled harmonic, tunnel-wide pulse
+- **Chapter 3 Crisis:** Emergency Soulpulse stabilization during Piercing
+- **Ongoing Threat:** Temporary fixes insufficient for new load patterns
+
+### The Arch (Chapter 6)
+- **Location:** Major structural support, high traffic
+- **Crisis:** Keystone creep during aftershock, imminent collapse
+- **Response:** Jhace's extended Soulpulse hold + Tiffani's release command
+- **Outcome:** Temporary stability, Jhace collapse, physical catch moment
+
+### Bram's Workshop
+- **Function:** Staging area, protocol development space, training site
+- **Equipment:** Practice rig, wedges, cord, chalk, slate walls
+- **Social Hub:** Where Jhace, Tiffani, Kylar, Pella, Bram coordinate
+- **Protocol Wall:** Where protocol slates are pinned for public viewing
+
+### The Dregs Collapse Zone (Chapter 12)
+- **Location:** Downslope, neglected district
+- **Crisis Density:** Multiple failures, minimal resources
+- **Decision Point:** Crown optics vs Dregs lives (Jhace chooses Dregs)
+- **Recognition:** People begin to see Jhace/Tiffani as unit ("chalk and shake")
+
+---
+
+## Population Dynamics
+
+### Pre-Piercing
+- Stratified but stable
+- Guild control enforced through access/credentials
+- Underface work seen as necessary but low-status
+- Observatory work seen as abstract/impractical
+
+### Post-Piercing
+- Hierarchy collapses under survival pressure
+- Competence becomes currency (guild credentials meaningless)
+- Underface inspectors suddenly critical (Jhace gains leverage)
+- Analysts become essential (Tiffani's methods prove value)
+- Networks form around need, not affiliation
+
+---
+
+## Saint Merro's Role in N01
+
+**Setting for:**
+- Jhace's pre-Piercing inspection routine (Ch1)
+- Tiffani's observatory anomaly detection (Ch2)
+- Piercing exit-side catastrophe (Ch3)
+- Protocol development and testing (Ch4-10)
+- Political pressure and resistance (Ch11)
+- Public commitment and continued work (Ch12)
+
+**What Saint Merro IS in N01:**
+- Broken city requiring constant stabilization
+- Vertical inequality made visible through crisis response
+- System resisting change despite catastrophic failure
+- Home to two craftspeople learning to hold together
+
+**What Saint Merro is NOT in N01:**
+- Explained cosmically (no "why here?")
+- Restored or resolved (remains unstable)
+- Symbol of anything beyond itself (just a city trying to survive)
+
+[ASSISTANT]
+bash -lc sed -n '1,260p' /mnt/data/n01repo/bibles/N01/03_CHARACTERS/JHACE_TORRINS.md
+
+[TOOL]
+# Jhace Torrins — Character Profile
+
+## Role
+Underface inspector, metalworker, load-reader
+
+## Competencies
+- Vibration literacy (reads grid-hum, detects harmonics)
+- Joint integrity assessment (torque, seating, stress lines)
+- Pattern recognition under noise
+- Emergency stabilization (conventional bracing)
+- Soulpulse manifestation (post-Piercing, costly)
+
+## Wound
+Ignored warnings = bodies. Junction Seven memorial: 23 names he reads every time.
+
+## Need
+Share responsibility without lowering standards
+
+## Lie (N01)
+"If I'm not perfect, people die—so I must control everything."
+
+## Voice Profile
+- **Rhythm:** Short sentences. Clipped. Action-first. Thoughts interrupt mid-task.
+- **Syntax:** Subject-verb-object. Minimal subordinate clauses. Fragment thoughts acceptable.
+- **Internal voice:** Procedural, self-critical, hyper-aware of body/tremor
+- **Humor:** Bitter, dry, self-deprecating. Rare but cutting.
+
+## Craft Expertise
+- Torque reading, collar seating, load path assessment
+- Wedge placement, brace stabilization, cord tension
+- Junction maintenance, pipe harmonics, foundation pressure
+- Custom tool creation (self-built kiln, mirror-bright steel table)
+
+## Cost Progression (N01)
+- Ch3: Tremor begins in fingers after first Soulpulse
+- Ch4: Tremor at rest, spreads to wrists
+- Ch6: Tremor into shoulders, vein-lines visible
+- Ch8: Tremor feels endless, motor control unreliable
+- Ch12: Tremor managed but not cured, permanent baseline
+
+## POV Chapters
+1, 3, 4, 6, 8, 10, 12 (alternates with Tiffani in 12)
+
+[ASSISTANT]
+bash -lc sed -n '1,320p' /mnt/data/n01repo/bibles/N01/03_CHARACTERS/SUPPORTING_CAST.md
+
+[TOOL]
+# Supporting Cast — N01
+
+## Bram (Workshop Master)
+- Role: Forge/workshop authority, protocol enforcer, supplies staging
+- Voice: Dry humor, cutting brevity, one-liners
+- Key Lines: "Different work today." "Stop pretending you're calm." "Romance by wedge."
+- Function: Sets boundaries, enforces rest, provides workspace for protocol development
+
+## Pella (Runner/Apprentice)
+- Role: Observatory apprentice, message runner, practical helper
+- Key Action: Names protocol checklist "Don't Die Today" (Tiffani keeps the title)
+- Function: Grounds Tiffani's abstractions in practical terms, provides youth perspective
+
+## Kylar (Cord-Worker)
+- Role: Infrastructure worker, Soulpulse manifester, cautionary example
+- Arc: Develops tremor → asks for training → activates unsupervised → catastrophic failure → recovery
+- Ch8 Crisis: Stone shear, seizure, vein-lines burn bright, violent tremor
+- Function: Teaches limits of Soulpulse, necessitates "NO SOLO ACTIVATION" protocol revision
+
+## Salee (Network Leader)
+- Role: Unofficial mutual aid coordinator, triage organizer
+- Method: Need-first deployment, no paperwork, efficient runner network
+- Ch10 Offer: Collaboration with Jhace/Tiffani, pragmatic alignment
+- Function: Fills gaps official response ignores, especially Downslope/Dregs
+
+## Chloen (Apprentice)
+- Role: Inspector apprentice, Ch3 rescue victim
+- Crisis: Pinned under beam during Piercing, leg crushed
+- Function: Triggers Jhace's first Soulpulse use (emergency, life-threat)
+
+## Harlen (RRO Representative)
+- Role: Registration enforcement, apologetic bureaucrat
+- Method: Delivers summons, records opposition, bound by duty
+- Ch9/Ch11: Brings RRO pressure, apologizes while enforcing
+- Function: Human face of institutional coercion
+
+## Corlexi (Committee Authority)
+- Role: RRO leadership, registration advocate
+- Method: Calm tone, structured wording, implied coercion
+- Ch11 Meeting: Presents registration as "public safety," avoids naming punishment
+- Function: Institutional antagonist, represents throughput-over-safety priority
+
+[ASSISTANT]
+bash -lc grep -R --line-number -i "Sector Fourteen\|Junction Twelve\|Junction Seven\|Foreman" /mnt/data/n01repo/bibles/N01 | head -n 50
+
+[TOOL]
+/mnt/data/n01repo/bibles/N01/03_CHARACTERS/JHACE_TORRINS.md:14:Ignored warnings = bodies. Junction Seven memorial: 23 names he reads every time.
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md:47:1. Junction Seven plaque: Jhace reads all names in order; jaw tight; no outward ritual.
+/mnt/data/n01repo/bibles/N01/04_STRUCTURE/CHAPTER_GRID.md:7:| 1 | Something Wrong | Jhace | Tide 0, Kindling | 0 | Observation | Junction Seven ritual → doubled harmonic → worker confrontation → tunnel-wide pulse → deeper first |
+/mnt/data/n01repo/bibles/N01/01_WORLD/SAINT_MERRO.md:46:- **Sectors:** Numbered districts (Sector Fourteen = kiln-quarter feed)
+/mnt/data/n01repo/bibles/N01/01_WORLD/SAINT_MERRO.md:107:### Junction Seven
+/mnt/data/n01repo/bibles/N01/01_WORLD/SAINT_MERRO.md:112:### Junction Twelve
+/mnt/data/n01repo/bibles/N01/01_WORLD/SAINT_MERRO.md:113:- **Risk Point:** Mis-seated collar → Sector Fourteen third branch
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/README_CHAPTER_BEATS.md:27:Pre-Piercing detection, Junction Seven ritual → tunnel-wide pulse → "deeper first"
+/mnt/data/n01repo/bibles/N01/05_CHAPTER_PACKETS/CH01_Something_Wrong.md:7:**Key events:** Junction Seven ritual → doubled harmonic → worker confrontation → tunnel-wide pulse → deeper first
+/mnt/data/n01repo/bibles/N01/data/n01_structured.yaml:17:  key_events: Junction Seven ritual → doubled harmonic → worker confrontation → tunnel-wide
+/mnt/data/n01repo/bibles/N01/data/n01_structured.json:20:      "key_events": "Junction Seven ritual → doubled harmonic → worker confrontation → tunnel-wide pulse → deeper first"
+
+[ASSISTANT]
+bash -lc sed -n '1,220p' /mnt/data/n01repo/bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md
+
+[TOOL]
+# Complete N01 Beat Architecture — Reference Document
+
+## Full Beat Scaffolds
+
+The complete 25-beat scaffolds for all 12 chapters, including all 60 sensory packets, are available in the following production artifacts:
+
+### 1. Interactive Drafting Console (React Artifact)
+**File:** `N01-Drafting-Console.jsx`
+
+**Features:**
+- All 12 chapters with 25 beats each (300 total beats)
+- All 60 sensory packets (5 per chapter)
+- Search functionality (find "tremor," "Seam," "protocol," etc.)
+- Filters (POV, Beat Type, Soulpulse activations)
+- Copy functions (beats 1-5, 6-10, etc. with sensory packets)
+- Voice Mode overlays (Jhace, Tiffani, Bram voice profiles)
+- Te'Oga compliance reminders (time units, distance units, cost visibility)
+
+**Use for:** Interactive beat reference during prose generation
+
+---
+
+### 2. Comprehensive Prose Generation Prompt
+**File:** `N01-Prose-Generation-Prompt-COMPLETE.md`
+
+**Contains:**
+- Complete role & mission statement
+- All critical constraints (non-negotiable)
+- Te'Oga lexicon (time, distance, forbidden/required terms)
+- Cost visibility protocol
+- Character voice profiles with examples
+- Beat expansion methodology (40-60 words per beat)
+- Chapter-by-chapter requirements (all 12 detailed)
+- Soulpulse activation protocols (exact beat numbers, contact, intent, visual, duration, cost)
+- Sensory packet integration instructions
+- Production workflow (8-step process)
+- Worked example (Chapter 1, Beats 1-3 expanded)
+
+**Use for:** AI-driven prose generation with full constraint enforcement
+
+---
+
+## Chapter Beat Examples (Detailed)
+
+### Chapter 1: Something Wrong (Jhace POV)
+**Beats 1-25:**
+1. Junction Seven plaque: Jhace reads all names in order; jaw tight; no outward ritual.
+2. He checks his inspector kit by touch: slate, chalk, cord, collar keys, wedge slips, lamp oil.
+3. He logs the time marker as 'Tide 0, Kindling' and writes 'start of route.'
+[... 22 more beats]
+25. Closing: he walks deeper at controlled pace; doubled harmonic strengthens; dust pulse repeats.
+
+**Sensory Packets (5):**
+- Beats 1-5: Neutral taste → copper arrives; baseline grid-hum; metal chill; still damp air
+- Beats 6-10: Copper coating molars; doubled harmonic in teeth; dust taps forearms; pressure shifts
+[... 3 more packets]
+
+**Full details in:** Prose Generation Prompt, Chapter 1 section
+
+---
+
+### Chapter 3: The Piercing (Jhace POV)
+**Critical Beats:**
+- Beat 12: **Soulpulse Use #1** (Chloen rescue, timber beam hold, copper-gold glow threads into grain, tremor begins after release)
+- Beat 19: **Soulpulse Use #2** (doorway post stabilization, glow threads stone/lintel interface, cost escalates)
+
+**Sensory Packets:**
+- Beats 11-15: Copper/iron intensify at activation; timber creaks; Soulpulse heat under palms; immediate tremor; dust shakes loose
+
+**Full details in:** Prose Generation Prompt, Chapter 3 section
+
+---
+
+## Sensory Packet System
+
+**Structure:** Every chapter divided into 5 beat clusters (1-5, 6-10, 11-15, 16-20, 21-25)
+
+**Each packet provides:**
+- **Taste:** Copper/iron progression, particulate coating, dry mouth
+- **Sound:** Grid-hum, crowd noise, tool sounds, structural groans
+- **Skin:** Tremor, dust sticking, temperature, pressure, grip
+- **Air:** Dust density, smoke/rot, pressure shifts, breath quality
+
+**Usage:** Weave sensory details into prose naturally during each 5-beat cluster
+
+**Example (Ch3, Beats 11-15):**
+> Jhace planted both palms under the beam. Metallic taste flooded his mouth—copper coating back molars, then iron joining when he clenched too hard. The timber groaned above. He held contact. Intent narrowed to "hold long enough." Copper-gold glow threaded into grain, following stress lines he couldn't see but felt through his palms. Heat built under his hands—not burning, but present. The crowd noise fractured into individual screams. Then the settling sound changed. The beam stopped creeping. Dust shook loose from roof seams all at once, and his first breath after caught grit halfway down. His lungs felt scraped.
+
+---
+
+## Cost Visibility Examples
+
+### Tremor Progression Across N01
+- **Ch3 (first activation):** "Tremor began in fingers immediately after release."
+- **Ch4 (at rest):** "Jhace woke with tremor at rest; tried to steady hands by pressing palms to table; tremor persisted."
+- **Ch6 (spread):** "Tremor spreads into shoulders; vein-lines visible; exhaustion slams motor control."
+- **Ch8 (endless feel):** "Tremor feels endless; fatigue sits in shoulders; eyes burn from dust."
+- **Ch12 (managed not cured):** "Tremor still present in Jhace, managed not cured."
+
+### Metallic Taste Progression
+- **Ch1:** "Copper taste on tongue; checks gums for blood; none."
+- **Ch3:** "Copper and iron intensify at first contact hold; saliva thick."
+- **Ch6:** "Iron after release; nausea edge from exhaustion."
+- **Ch9:** "Iron after release; blood taste if gums split; swallowing rough."
+- **Ch12:** "Metallic baseline persists into final commitment; becomes part of world's new normal."
+
+---
+
+## Voice Profile Quick Reference
+
+### Jhace
+**Rhythm:** Short. Clipped. Action-first. Thoughts interrupt.  
+**Example:** "Jhace pressed palm to pipe. Cold. Rough. Wrong hum underneath. He counted breaths. Dust fell. Fell again. He wrote: repeat interval."
+
+### Tiffani
+**Rhythm:** Analytical precision. Measurements embedded. Longer sentences.  
+**Example:** "Tiffani marked the stress line in chalk and numbered it: three. Load distribution favored the eastern post by a finger width—enough to matter in a prolonged hold. She wrote the variance and did not allow herself to consider what prolonged meant."
+
+### Bram
+**Rhythm:** Dry humor. Cutting brevity. One-liners.  
+**Example:** "Bram looked at the practice rig and muttered, 'Romance by wedge.' Neither responded. He grinned and kept working."
+
+---
+
+## Production Workflow Reference
+
+**For prose generation:**
+1. Load chapter beat scaffold (25 beats)
+2. Load chapter sensory packets (5 packets)
+3. Apply character voice profile (Jhace or Tiffani)
+4. Expand beats sequentially (40-60 words per beat)
+5. Weave sensory packets into each 5-beat cluster
+6. Check Soulpulse cost visibility (show, don't tell)
+7. Verify lexicon compliance (no metric/Earth time)
+8. Verify word count (800-1300, target 1000-1200)
+9. Verify closing beat lands as written
+
+**All detailed in:** N01-Prose-Generation-Prompt-COMPLETE.md
+
+---
+
+## Where to Find Everything
+
+**Interactive Exploration:**
+→ N01-Drafting-Console.jsx (open in browser/React environment)
+
+**AI Prose Generation:**
+→ N01-Prose-Generation-Prompt-COMPLETE.md (paste into GPT)
+
+**Quick Reference:**
+→ This document + CHAPTER_GRID.md
+
+**Canon Rules:**
+→ 00_SCOPE/SCOPE_LOCK.md
+→ 00_SCOPE/KNOWLEDGE_GATES.md
+
+**World/Systems:**
+→ 01_WORLD/ directory
+→ 02_SYSTEMS/ directory
+
+**Characters:**
+→ 03_CHARACTERS/ directory
+
+[ASSISTANT]
+bash -lc sed -n '1,220p' /mnt/data/n01repo/bibles/N01/01_WORLD/THE_PIERCING.md
+
+[TOOL]
+# The Piercing — Event Physics and Consequences
+
+## What Happened (Observable Facts)
+
+### The Transit
+- Massive object entered Te'Oga on one side of planet
+- Object exited near Saint Merro (exit-side location)
+- Transit time: seconds to minutes (perceived duration varies by witness)
+- Object visible as **spindle**: dark absence with bent-light boundary
+- Exit creates **the Seam**: persistent sky-scar visible post-event
+
+### Physical Consequences
+- **Gravity Disruption:** Brief reduction (items lift, stomach rises) followed by harsh return (knee-buckling impact)
+- **Pressure Wall:** Chest compression felt before audible roar arrives
+- **Copper-Gold Particulate:** Metallic dust coating everything, sticks to sweat/surfaces
+- **Wrong Grid-Hum:** Infrastructure vibration baseline permanently altered
+- **Structural Failure:** Load tolerances invalid, conventional bracing insufficient
+- **Aftershocks/Echo Pulses:** Repeating phenomenon, not random settling
+
+## What N01 Does NOT Explain
+- Why the Piercing occurred
+- What the object was/is
+- Where it came from or went
+- Why Saint Merro was exit point
+- If it will happen again
+- Cosmic/divine significance
+
+## Sensory Experience (For Prose)
+
+### Before Impact (Chapters 1-2)
+- Doubled harmonic in infrastructure
+- Metallic taste without injury source
+- Tunnel-wide pulse (not local settling)
+- Observatory readings beyond tolerance
+- Seven-Three stellar offset (Tiffani's measurement)
+
+### During Impact (Chapter 3)
+- Pressure wall hits chest before sound
+- Breath interrupts involuntarily
+- Gravity reduction: boots lose pressure, stomach lifts
+- Harsh return: knees buckle, items crash
+- Spindle visible as dark absence through dust
+- Bent-light boundary distortion
+- Roar arrives after pressure (sound lagging physics)
+- Copper-gold grit immediate on all surfaces
+
+### After Impact (Chapters 4-12)
+- Wrong grid-hum audible in quiet moments
+- Metallic taste becomes baseline (copper on molars)
+- Copper-gold particulate visible in all light angles
+- The Seam visible in clear sky gaps
+- Dust never fully settles
+- Air quality permanently degraded (smoke, rot, stone dust mix)
+
+## The Seam (Critical Knowledge Gate)
+
+### What Characters See
+- Bent-light scar across sky
+- Persistent (doesn't fade)
+- Visible from most city locations
+- Acts as landmark reference
+
+### What Characters May NOT Do
+- Theorize about metaphysical meaning
+- Suggest it's watching them
+- Treat it as portentous or mystical
+- Connect it to anything beyond "sky broke"
+
+### Correct Usage in Prose
+> The Seam was visible through the clear gap above the roofline. Both glanced up once. Neither spoke. They returned to the brace work.
+
+## Grid Behavior Changes
+
+### Pre-Piercing Normal
+- Predictable vibration patterns
+- Load tolerances tested and known
+- Settling distinguishable from failure
+- Harmonic signatures stable
+
+### Post-Piercing Altered
+- Wrong baseline (doubled harmonic persists)
+- Load patterns unpredictable
+- Echo pulses (system responds to itself)
+- Conventional wisdom insufficient
+
+## N01's Relationship to Piercing
+
+**N01 treats Piercing as:**
+- Observable catastrophe with physical consequences
+- System shock requiring new methods
+- Event that revealed Soulpulse manifestation
+- Catalyst for Jhace/Tiffani partnership
+
+**N01 does NOT treat Piercing as:**
+- Mystical awakening
+- Divine judgment or test
+- Explainable through lore
+- Something with cosmic purpose (from character perspective)
+
+[ASSISTANT]
+bash -lc sed -n '1,220p' /mnt/data/n01repo/bibles/N01/00_SCOPE/KNOWLEDGE_GATES.md
+
+[TOOL]
+# Knowledge Gates — N01: The Grip That Holds
+
+## Dual Canon System
+
+The OmniMeta Saga operates under a **dual canon architecture**:
+- **Innocent Frame (N01-N29):** Characters unaware of divine identities and orchestration
+- **Guilty Frame (N30):** All secrets revealed, orchestrator identity confirmed
+
+N01 operates STRICTLY under **innocent frame rules**.
+
+---
+
+## Innocent Frame: What Characters Know (N01)
+
+### Observable Facts
+- **The Piercing:** A massive object transited Te'Oga, entering one side and exiting near Saint Merro
+- **Spindle:** Dark absence with bent-light boundary visible during transit
+- **The Seam:** Persistent sky-scar visible post-Piercing
+- **Gravity Disruption:** Brief reduction followed by harsh return
+- **Pressure Wall:** Chest compression before audible roar
+- **Copper-Gold Particulate:** Sticky metallic dust coating everything post-Piercing
+- **Wrong Grid-Hum:** Altered baseline vibration in infrastructure (persistent)
+- **Soulpulse Manifestation:** Some people can generate copper-gold glow through contact
+- **Visible Costs:** Tremor, vein-lines, exhaustion, sensory overload after Soulpulse use
+
+### Working Theories (Characters May Speculate)
+- Infrastructure stress patterns differ post-Piercing
+- Soulpulse users share similar cost markers
+- Conventional bracing + timing protocols reduce casualties
+- Political institutions resist safety measures that slow throughput
+- Some failures are predictable with proper measurement
+
+### Explicit Uncertainties (Characters Acknowledge They Don't Know)
+- Why the Piercing happened
+- What the spindle/Seam truly represent
+- Why some people manifest Soulpulse and others don't
+- Whether costs will escalate indefinitely
+- If the Piercing will repeat or worsen
+
+---
+
+## Guilty Frame: What Characters DON'T Know (Hidden Until N30)
+
+### Divine Identities
+- **Jhace Torrins = Forge** (Divine Principle of metalwork, structure, endurance)
+- **Tiffani Merrow = Glass** (Divine Principle of precision, clarity, fragility)
+- **Kylar = Cord** (Divine Principle of connection, tension, binding)
+- **Bram = Anvil** (Divine Principle of resistance, grounding, refusal)
+- Other god-vessels exist but are unaware of their status
+
+### Orchestration
+- **Counter-Spark / The Auditor:** Observing entity who orchestrated the Piercing
+- **Purpose:** Force Stasis to end, trigger god-vessel awakening
+- **Coffee Ring Records:** Auditor's observation logs (clinically tracking god progression)
+- **"Observation continues":** Auditor's framing of ongoing god development
+
+### Metaphysics
+- **Divine Principles:** Eight conscious entities governing fundamental forces
+- **God-Vessels:** Mortals carrying dormant Principles, unaware until late-stage awakening
+- **Soulpulse Origin:** Manifestation of Divine Principle energy through mortal vessel
+- **Cost Mechanism:** Mortal body resisting divine energy expression
+- **Stasis:** Ancient enforced peace that the Piercing was designed to break
+- **Fathom Break:** Later event where god-vessels begin to suspect their nature
+
+---
+
+## N01 Knowledge Gate Enforcement
+
+### ALLOWED in N01 Prose
+- Characters discuss observable Piercing consequences
+- Characters theorize about infrastructure behavior changes
+- Characters note Soulpulse manifestation and costs
+- Characters see the Seam but do not explain it
+- Characters experience wrong grid-hum without cosmic framing
+- Characters develop protocols based on empirical observation
+
+### FORBIDDEN in N01 Prose
+- Any character awareness of god-vessel status
+- Any mention of Divine Principles as entities
+- Any reference to Counter-Spark, Auditor, or orchestration
+- Any implication that Piercing was intentional/purposeful
+- Any suggestion that Soulpulse is "divine" or "mystical"
+- Any cosmic significance attributed to the Seam
+- Any "this was meant to happen" framing
+- Any character suspicion of being watched/guided
+
+### THE SEAM Handling (Critical)
+The Seam is visible in N01 as:
+- A bent-light scar across the sky
+- Persistent environmental marker
+- Observable fact like "the sun rose"
+
+Characters may:
+- Look at it
+- Note its presence
+- Reference it as landmark ("visible in clear gap")
+
+Characters may NOT:
+- Theorize about its metaphysical meaning
+- Suggest it connects to anything beyond visible scar
+- Treat it as mystical or portentous
+- Discuss what it "means" beyond "the sky broke"
+
+**Example ALLOWED:**
+> The Seam was visible in a clear air gap above the roofline. Both looked up once. Neither spoke. They returned to the brace work.
+
+**Example FORBIDDEN:**
+> The Seam hung above them like a cosmic wound, as if the gods themselves had torn reality. Jhace wondered if it watched them, if something beyond the sky cared about their struggle.
+
+---
+
+## Knowledge Progression Across Saga
+
+**N01-N05 (Turning 1 - GLASS):**
+- Innocent frame maintained
+- Observable consequences only
+- No god-vessel awareness
+- Protocol/method development
+
+**N06-N15 (Turnings 2-3 - CRACK/FORGE):**
+- Innocent frame maintained
+- Cost escalation visible
+- Political/faction pressure increases
+- Still no divine awareness
+
+**N16-N25 (Turnings 4-5 - SMELT/CLEAR):**
+- Fathom Break occurs (god-vessels BEGIN to suspect)
+- Innocent frame cracks but doesn't shatter
+- Awareness creeps in gradually
+- Orchestration hints appear
+
+**N26-N29 (Turning 6 - BREAK, first 4 books):**
+- God-vessels aware but resisting implications
+- Counter-Spark presence suspected
+- Principles acknowledged but not fully understood
+
+**N30 (Turning 6 - BREAK, final book):**
+- GUILTY FRAME ACTIVATES
+- All orchestration revealed
+- Auditor identity confirmed
+- Full metaphysics disclosed
+- Dual canon collapses into single truth
+
+---
+
+## Writer Enforcement Checklist
+
+Before any N01 prose passes validation, verify:
+- [ ] No character knows they are a god-vessel
+- [ ] No character references Divine Principles by name or as entities
+- [ ] No character suspects orchestration or observation
+- [ ] Soulpulse described as tool/ability, never "divine power"
+- [ ] The Seam visible but not explained or given cosmic weight
+- [ ] Costs shown through body, never attributed to "divine struggle"
+- [ ] All character theories grounded in observable evidence only
+- [ ] No "meant to be" or "destined" framing anywhere
+- [ ] No narrative voice suggesting cosmic significance
+- [ ] Closing maintains innocent frame integrity
+
+---
+
+## Why This Matters
+
+The dual canon system creates:
+1. **Dramatic Irony:** Readers (who know more) watch characters struggle in ignorance
+2. **Rereadability:** N01-N29 gain new meaning after N30 revelation
+3. **Trust Preservation:** No retcons—innocent frame is TRUE from character perspective
+4. **Narrative Tension:** Characters make choices without cosmic context
+5. **Payoff Intensity:** N30 recontextualizes 29 novellas of innocent-frame struggle
+
+**Maintaining innocent frame integrity in N01 is NON-NEGOTIABLE.**
+
+[ASSISTANT]
+bash -lc sed -n '1,120p' /mnt/data/n01repo/bibles/N01/data/n01_structured.yaml
+
+[TOOL]
+id: N01
+title: The Grip That Holds
+scope: N01-only (innocent frame)
+architecture:
+  beats_per_chapter: 25
+  sensory_packets_per_chapter: 5
+  chapters: 12
+timeline: Tide 0–3
+soulpulse_total_uses: 7
+chapters:
+- number: 1
+  title: Something Wrong
+  pov: Jhace
+  tide_phase: Tide 0, Kindling
+  soulpulse: '0'
+  beat_type: Observation
+  key_events: Junction Seven ritual → doubled harmonic → worker confrontation → tunnel-wide
+    pulse → deeper first
+- number: 2
+  title: Glass That Listens
+  pov: Tiffani
+  tide_phase: Tide 0, Pouring
+  soulpulse: '0'
+  beat_type: Observation
+  key_events: Observatory setup → Seven-Three offset → copper-gold discovery → Piercing
+    approach witnessed → descent decision
+- number: 3
+  title: The Piercing
+  pov: Jhace
+  tide_phase: Tide 0, Shaping/Striking
+  soulpulse: '2'
+  beat_type: Crisis
+  key_events: Street emergence → catastrophe → Chloen rescue → doorway stabilization
+    → Tiffani arrives → pace sync begins
+- number: 4
+  title: After the Shudder
+  pov: Jhace
+  tide_phase: Tide 1, Kindling
+  soulpulse: '2'
+  beat_type: Trial/Failure
+  key_events: Tremor at rest → failed activation → justified hold → Kylar appears
+    → protocol begins
+- number: 5
+  title: Where to Press
+  pov: Tiffani
+  tide_phase: Tide 1, Pouring
+  soulpulse: '0'
+  beat_type: Training/Method
+  key_events: Cost curve projection → protocol debate → "Don't Die Today" → method
+    proof → arch warning
+- number: 6
+  title: The Arch Under Strain
+  pov: Jhace
+  tide_phase: Tide 1, Shaping/Striking
+  soulpulse: '1'
+  beat_type: Crisis
+  key_events: Chalk boundaries → extended hold → Tiffani's release command → collapse
+    → physical catch → trust fact
+- number: 7
+  title: Method
+  pov: Tiffani
+  tide_phase: Tide 1, Quench
+  soulpulse: '0'
+  beat_type: Recalibration
+  key_events: Practice rig → tremor baseline → Kylar watches → debate escalates →
+    RRO slate → protocol pinned
+- number: 8
+  title: What Breaks When You Push
+  pov: Jhace
+  tide_phase: Tide 2, Kindling
+  soulpulse: '1'
+  beat_type: Trial/Failure
+  key_events: Kylar unsupervised → structure breaks → seizure → triage → protocol
+    revision → efficiency test
+- number: 9
+  title: Asking
+  pov: Tiffani
+  tide_phase: Tide 2, Pouring
+  soulpulse: '1'
+  beat_type: Crisis/Synthesis
+  key_events: Kylar recovery → extended hold → boundary symptoms → clinical assessment
+    → RRO summons → Salee alignment
+- number: 10
+  title: Integration
+  pov: Jhace
+  tide_phase: Tide 2, Shaping
+  soulpulse: '0'
+  beat_type: Recovery/Intimacy
+  key_events: Controlled site → no activation proof → Salee collaboration → quiet
+    moments → finger brush → rest protocol
+- number: 11
+  title: The Committee Requires
+  pov: Tiffani
+  tide_phase: Tide 3, Kindling
+  soulpulse: '0'
+  beat_type: Political Pressure
+  key_events: 'Summons → Jhace: "No" → cost logic translation → walkout → made choice
+    → Downslope'
+- number: 12
+  title: We Hold
+  pov: Jhace/Tiffani
+  tide_phase: Tide 3, Shaping
+  soulpulse: '0'
+  beat_type: Recovery/Intimacy
+  key_events: Dregs choice → craft on page → partnership acknowledgment → touch moment
+    → "We hold together"
+
+[ASSISTANT]
+bash -lc sed -n '1,240p' /mnt/data/n01repo/bibles/N01/02_SYSTEMS/CRAFT_AS_PLOT_N01.md
+
+[TOOL]
+# Craft-as-Plot — N01
+
+## Rule
+Every craft action must do at least one:
+1) Reveal information  
+2) Prevent harm  
+3) Raise stakes by consuming time/materials/authority
+
+## Jhace language (infrastructure / smithing)
+Torque, seating, collars, braces, load paths, creep, shear, slip, pin fatigue, controlled bleed, isolation.
+
+## Tiffani language (glass / analysis)
+Stress lines, inclusions, anneal discipline, fracture prediction, clarity through structure, indicator artifacts.
+
+[ASSISTANT]
+bash -lc grep -R --line-number -i "ladder" /mnt/data/n01repo/bibles/N01 | head -n 20
+
+[TOOL]
+/mnt/data/n01repo/bibles/N01/01_WORLD/SAINT_MERRO.md:37:- **Access:** Inspection shafts, ladder systems, maintenance corridors
+
+[ASSISTANT]
+Your archive is missing the two files that supposedly contain the full 25-beat + sensory packet scaffold (`N01-Drafting-Console.jsx`, `N01-Prose-Generation-Prompt-COMPLETE.md`). The repo *references* them, but they are not present in `/artifacts/` (only a README). So: I’m drafting Chapter 1 using **only** what’s actually in the repo (chapter grid + beat architecture snippet + world/character/system docs), and I’m keeping connective tissue “derived” but **not inventing new named entities or new rules**.
+
+## CH01 Fact Table (repo-traceable)
+
+- **POV:** Jhace. [src: `bibles/N01/04_STRUCTURE/CHAPTER_GRID.md#12-Chapter Overview`]
+- **Tide/Phase:** Tide 0, Kindling. [src: `bibles/N01/04_STRUCTURE/CHAPTER_GRID.md#12-Chapter Overview`]
+- **Soulpulse:** 0 (no activation). [src: `bibles/N01/04_STRUCTURE/CHAPTER_GRID.md#12-Chapter Overview`]
+- **Beat Type:** Observation → Pattern Recognition (BEAT_01). [src: `canon/N01_Beat_Mapping_Layer_FINAL.md#Locked Chapters (1-5)`]
+- **Key events (must hit):** Junction Seven ritual → doubled harmonic → worker confrontation → tunnel-wide pulse → deeper first. [src: `bibles/N01/04_STRUCTURE/CHAPTER_GRID.md#12-Chapter Overview`]
+- **Location baseline:** Underface heat-grid tunnels; access via inspection shafts/ladder systems; junctions/collars/branches; Sector Fourteen is kiln-quarter feed; Junction Twelve is a risk point (mis-seated collar → Sector Fourteen third branch); Junction Seven memorial plaque with 23 names. [src: `bibles/N01/01_WORLD/SAINT_MERRO.md#The Underface` + `#Junction Seven` + `#Junction Twelve`]
+- **Jhace wound + ritual:** Reads the 23 names at Junction Seven; “ignored warnings = bodies.” [src: `bibles/N01/03_CHARACTERS/JHACE_TORRINS.md#Wound` + `bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md#Chapter 1: Something Wrong (Jhace POV)`]
+- **Inspector kit (allowed props):** slate, chalk, cord, collar keys, wedge slips, lamp oil. [src: `bibles/N01/04_STRUCTURE/BEAT_ARCHITECTURE.md#Chapter 1: Something Wrong (Jhace POV)`]
+- **Pre-Piercing sensory allowances:** doubled harmonic in infrastructure; metallic taste without injury; tunnel-wide pulse. No cosmic meaning. [src: `bibles/N01/01_WORLD/THE_PIERCING.md#Before Impact (Chapters 1-2)` + `bibles/N01/00_SCOPE/KNOWLEDGE_GATES.md#Innocent Frame: What Characters Know (N01)`]
+
+## CH01 — “Something Wrong” (prose)
+
+The plaque waited at Junction Seven like a bruise that never finished healing.
+
+Jhace stopped with one boot on the iron grate and one on bare stone. Lamp up. Light angled. Names caught the oil-glow and threw it back in dull relief—cut too deep for a memorial meant to be polite.
+
+Twenty-three.
+
+He read them in order. Not fast. Not soft. Mouth moving just enough to make it real. Jaw tight enough to ache. No hand to heart. No bowed head. No ceremony. If he made it a ritual, it became a comfort. Comfort made people sloppy.
+
+When he hit the last name, he exhaled through his nose and let the air go thin.
+
+Work.
+
+He checked his kit by touch the way he checked a joint: without looking, without trusting luck. Slate—edge chipped where he’d dropped it and hated himself for it. Chalk—two sticks, one cracked. Cord—coiled tight, no fray. Collar keys—cold iron teeth biting his palm. Wedge slips—thin, sharp, mean little pieces that saved walls when men wouldn’t. Lamp oil—stopper seated, no leak. He thumbed each piece and put it back where his hand expected it.
+
+Slate out. He wrote the marker at the top: **Tide 0, Kindling.** Under it: **start of route.** Then he slid the slate back into his belt like it weighed more than stone.
+
+The Underface took him the way it always did—swallowing sound, stealing distance, turning every breath into a measured expense. Damp lived in the mortar seams. The heat-grid ran along the walls in thick iron veins, collars clamping branch lines into place, junction housings squared off like knuckles.
+
+Baseline grid-hum rode through it all. Constant. Familiar. A thing most people stopped hearing after their first Anneal in the tunnels.
+
+Jhace never stopped.
+
+He put his palm to the main line, leather and callus bridging iron. Cold at the surface. Warmth bleeding through underneath. The hum met his bones the way a hammer met an anvil—clean, expected, honest.
+
+One. Two. Three.
+
+The count held.
+
+He moved a hand-span downslope and pressed again.
+
+The hum changed. Not loud. Not dramatic. Just… wrong. A second note riding the first, tight enough to rattle his teeth if he let his jaw loosen. A doubled harmonic where there should have been one clean line.
+
+He lifted his hand and pressed again, like repeating a measurement made it less true.
+
+Wrong.
+
+He wrote on the slate without looking at it: **double present.** Then he marked the pipe with chalk—one short line at the seam, one longer line at the collar. A warning only another inspector would read.
+
+He walked on.
+
+Junction housings passed in a rhythm: iron plate, bolt heads, collar clamp, branch feed. Each one had its own voice. Each one told the truth if you listened long enough and didn’t let the truth inconvenience you.
+
+The doubled harmonic followed him.
+
+It wasn’t just one collar singing off-key. It was the line itself. The whole damn run carrying an extra note like someone had tightened a string too far and pretended it wasn’t going to snap.
+
+He stopped at the next junction and pressed his ear to the iron casing. Sound vibrated straight into his skull. The doubled note sharpened there—thin, insistent. He tasted copper on the back of his tongue and paused hard, sudden suspicion cutting through habit.
+
+He ran his thumb along his gum line and checked his teeth with the edge of his tongue.
+
+No blood.
+
+Copper anyway.
+
+He hated that more than blood. Blood had a cause. Copper without cause meant the system was talking in a language he didn’t like.
+
+He moved toward Junction Twelve with his lamp held low, the light cutting along the floor where grit gathered. The access corridor narrowed and then widened again into the junction chamber—old stone, newer braces welded in crooked desperation, collar banks feeding side branches into numbered sectors.
+
+**Sector Fourteen** sat stenciled on the branch plate in faded paint: kiln-quarter feed. The branch line ran out of sight, carrying heat and pressure to people who would scream if you shut it down and never think about what kept their hands warm.
+
+Jhace pressed his palm to the collar at Twelve and felt the doubled harmonic flare under his skin.
+
+Then he saw it.
+
+Not a crack. Not a blowout. The collar wasn’t seated right—just a fraction, a finger’s worth of misalignment that would pass every lazy glance and still kill someone when load shifted.
+
+Mis-seated.
+
+He chalked the collar seam with a hard circle and drew an arrow toward the branch plate: **Fourteen—third.** He didn’t need to write more. If you knew, you knew.
+
+Bootsteps came fast behind him. Not careful. Not tunnel-trained. A pair of workers—maintenance muscle, not inspectors—rounded into the chamber with a coil of cord and a shoulder brace between them.
+
+One saw the chalk and slowed. The other didn’t.
+
+“What’s that?” the second demanded, like chalk belonged to him.
+
+Jhace didn’t turn right away. He kept his hand on the collar. Let them feel how serious he was through his stillness.
+
+“Mis-seat,” he said. One word. Enough.
+
+The one who’d slowed set his load down with a careful grunt. The other barked a laugh that tried to turn worry into offense.
+
+“This feed stays open,” he said. “We’re already behind. You gonna tell Sector Fourteen their kilns go cold because you got a feeling?”
+
+Jhace finally looked at him. Lamp light picked out sweat shine on the man’s upper lip and dust packed into his nail beds. The kind of worker who lived by throughput and lived just long enough to brag about it.
+
+“It isn’t a feeling.” Jhace tapped the collar with a knuckle—light, controlled. The doubled harmonic answered, thin and ugly. “Hear that?”
+
+The man’s eyes flicked to the pipe like it might suddenly confess.
+
+“It always hums.”
+
+“It always hums *one*,” Jhace said. “This is two.”
+
+The first worker—quiet one—leaned in and pressed his ear to the iron. He flinched back, face tightening like he’d bitten a bad seed.
+
+“That’s… not right,” he muttered.
+
+The loud one squared up anyway. “We don’t have the authority—”
+
+Jhace cut him off with his slate, held up like a badge he hadn’t earned from any committee. “I’m the Underface authority when the line is about to shear.”
+
+“About to,” the man repeated, clinging to that word like it was a rope. “Always about to. Never does.”
+
+Jhace’s jaw ticked once. He thought of Junction Seven. Twenty-three names cut into iron because someone had said *about to* and then gone upslope to keep people happy.
+
+He set the collar keys into the clamp and tested the seat with a careful twist. Resistance came too early—wrong. The collar caught like a tooth on a thread.
+
+He backed it off a hair and reseated, pushing with the heel of his palm until iron kissed iron the way it was meant to. The doubled harmonic softened—just a fraction. Not fixed. But less screaming.
+
+The loud worker stepped closer, crowding him in the narrow chamber. “You shut this branch and you’re going to have men on you in a span. You ready for that?”
+
+Jhace didn’t look away from the collar. “They can get in line behind the dead.”
+
+“Don’t talk like—”
+
+A pulse rolled through the tunnel.
+
+Not a settling creak. Not a localized shiver from one wall deciding it had had enough. This was a clean, heavy push—like the whole Underface took a single breath and let it go wrong.
+
+Dust lifted off the floor in a thin sheet and slapped back down. The lamp flame snapped sideways, then steadied. The doubled harmonic deepened, dropping lower into something you didn’t hear so much as feel in your molars.
+
+All three of them went still.
+
+Jhace pressed his palm to the main line again. The vibration rode up his arm and into his shoulder. Tunnel-wide. System-wide. Not Junction Twelve being dramatic. Not Sector Fourteen overloading its branch.
+
+Something bigger.
+
+The quiet worker swallowed hard. “That… that was the whole run.”
+
+Jhace tasted copper again, sharper, like he’d sucked a coin.
+
+He wrote on the slate with a fast, hard scrape: **pulse—wide. repeat?** Then he listened. Counted breaths. Waited for a second.
+
+The second pulse came.
+
+Same weight. Same clean shove. Same dust lift. Same deepened wrongness in the hum.
+
+The loud worker’s face lost its argument. “What is that?”
+
+Jhace didn’t answer because he didn’t know, and pretending you knew was how you got plaques.
+
+He glanced at the inspection shaft ladder set into the wall—rungs disappearing upslope toward street access. His route should have taken him up. Report it. Let foremen fight about whether “wrong” deserved a shutdown.
+
+The doubled harmonic answered for him, steady and ugly. The pulses came like a warning bell without a hand to ring it.
+
+Deeper first.
+
+He tightened the collar clamp as far as it would honestly go, chalked a second mark to show it had been touched, and shoved the collar keys back into his belt.
+
+To the workers: “Keep hands off this joint. If it shifts again, you run. You don’t argue.”
+
+The loud one opened his mouth.
+
+Jhace’s stare shut it for him.
+
+He took his lamp, turned away from the ladder, and walked deeper into the Underface at a controlled pace. No sprint. No panic. Panic wasted breath and broke ankles.
+
+Behind him, Junction Twelve kept singing two notes where there should have been one, and the tunnel-wide pulse repeated like the city was testing its own bones.
+
+Jhace didn’t look back.
+
+He listened. He counted. He went deeper.

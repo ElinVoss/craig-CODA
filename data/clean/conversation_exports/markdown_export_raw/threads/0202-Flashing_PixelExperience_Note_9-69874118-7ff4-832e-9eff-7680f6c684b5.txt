@@ -1,0 +1,1195 @@
+CONVERSATION_ID: 69874118-7ff4-832e-9eff-7680f6c684b5
+TITLE: Flashing PixelExperience Note 9
+MESSAGE_COUNT: 44
+
+[USER]
+walk me through flashing this to my note 9
+https://github.com/PixelExperience-Devices/device_samsung_exynos9810-common.git
+
+[ASSISTANT]
+I’ll outline the practical, lowest-risk flashing path for an Exynos Galaxy Note 9 (N960F/N960N): verify model/bootloader, install recovery, move ROM/firmware, flash in correct order, then handle common failure states.
+
+[ASSISTANT]
+{"search_query":[{"q":"PixelExperience device_samsung_exynos9810-common github flashing Note 9 crownlte","recency":30},{"q":"github PixelExperience-Devices device_samsung_exynos9810-common README","recency":365},{"q":"PixelExperience Note 9 crownlte download","recency":30},{"q":"Exynos Galaxy Note 9 N960F custom recovery Odin flash TWRP steps disable auto reboot","recency":365}],"response_length":"long"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search2"},{"ref_id":"turn0search16"},{"ref_id":"https://get.pixelexperience.org/crownlte","lineno":1}],"response_length":"short"}
+
+[ASSISTANT]
+{"click":[{"ref_id":"turn1view0","id":1}],"response_length":"short"}
+
+[ASSISTANT]
+{"click":[{"ref_id":"turn2view0","id":7}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"https://github.com/PixelExperience-Devices/device_samsung_exynos9810-common"}],"response_length":"short"}
+
+[ASSISTANT]
+You can’t “flash” that entity["company","GitHub","code hosting platform"] repo directly. It’s *device source code* (a device tree) used to **build** PixelExperience, not a flashable ROM package. That repo was also archived (read-only) in April 2024. citeturn4view0
+
+What you *can* do:
+
+- **Option A (normal user path):** flash an official **PixelExperience ROM ZIP + PixelExperience Recovery** for **crownlte** (Note9 Exynos). citeturn2view0turn1view0  
+- **Option B (builder path):** build PixelExperience yourself (that repo is part of the build), then flash the ZIP you build. citeturn5view0turn4view0  
+
+Below is the “just get it installed” path (A), then the build path (B).
+
+---
+
+## 0) Hard gate: confirm your exact Note9 model
+
+This PixelExperience target is **Samsung Galaxy Note9 (crownlte)**, supported models: **SM-N960F** and **SM-N960N**. citeturn3view0  
+
+If your phone is **SM-N960U / N960W / other Snapdragon variants**, stop—this guide won’t apply (bootloader constraints are different).
+
+(Also: this requires **OEM Unlock** the legit way. No FRP-bypass stuff.)
+
+---
+
+## A) Flash the official PixelExperience build (recommended)
+
+### 1) Prep (don’t skip)
+1. Backup everything (this will wipe internal storage).
+2. On the phone:
+   - Enable Developer Options (tap Build Number).
+   - Enable **OEM unlock**.
+   - Enable **USB debugging**. citeturn2view0
+3. Install **ADB** on your PC (Android platform-tools). citeturn2view0turn5view0
+
+### 2) Download the right files (ROM + recovery)
+From the PixelExperience device page for **crownlte**, download:
+- **PixelExperience Recovery** (recovery image)
+- **PixelExperience ZIP** (the ROM)
+
+Note: the site shows Android **13** builds available (e.g., Dec 16, 2023). Android **14** section shows no uploaded files there. citeturn1view0turn2view0  
+
+### 3) Install Heimdall (their recommended Samsung flashing tool)
+PixelExperience’s official install guide uses **Heimdall** (not Odin) and includes driver setup (Zadig on Windows). citeturn2view0  
+
+Quick checklist from their flow:
+- Install Heimdall
+- On Windows, if Heimdall errors, install the VC++ 2015–2019 x86 redistributable (per their note)
+- Use Zadig if needed so the device shows up properly for Heimdall citeturn2view0  
+
+### 4) Boot the phone into Download Mode
+Per the official guide:
+- Power off
+- Hold **Volume Down + Bixby**
+- Follow on-screen “Continue”, then plug in USB citeturn2view0turn3view0  
+
+### 5) Sanity test Heimdall sees the phone
+Run:
+```bash
+heimdall print-pit
+```
+If it reboots, Heimdall is talking to it. citeturn2view0  
+
+### 6) Flash PixelExperience Recovery with Heimdall
+From the folder where your recovery `.img` is:
+```bash
+heimdall flash --RECOVERY <recovery_filename>.img --no-reboot
+```
+(Exact command is in their guide.) citeturn2view0  
+
+### 7) **Immediately** boot into recovery (this matters)
+If you boot normally even once, stock firmware may overwrite the custom recovery.
+
+Official sequence:
+- Unplug USB
+- Force reboot: hold **Volume Down + Power** ~8–10 seconds until screen goes black, **release immediately**, then
+- Boot recovery: hold **Volume Up + Bixby + Power** citeturn2view0turn3view0  
+
+If you don’t see the PixelExperience logo in recovery, you missed it—repeat the recovery flash + immediate boot. citeturn2view0  
+
+### 8) Wipe + install the ROM from recovery (ADB sideload)
+In PixelExperience Recovery:
+1. **Factory Reset → Format data / factory reset** (this removes encryption + wipes internal). citeturn2view0  
+2. Main menu → **Apply Update → Apply from ADB**
+3. On PC:
+```bash
+adb sideload filename.zip
+```
+The guide notes ADB sideload sometimes “finishes” around ~47% with a “success/no error” message—can still be OK. citeturn2view0  
+4. Reboot system.
+
+First boot can take up to ~15 minutes per their note. citeturn2view0  
+
+---
+
+## Common failure points (and the fix)
+
+- **Device boots to stock recovery / recovery vanished**  
+  You booted system before recovery. Reflash recovery and *immediately* key-combo into recovery. citeturn2view0
+
+- **Heimdall doesn’t detect device (Windows)**  
+  Do the Zadig driver replacement steps the guide outlines; uninstall Samsung Kies/driver packages if they conflict. citeturn2view0
+
+- **Bootloop after flashing**  
+  Go back to recovery → format data again → sideload ROM again. (Most “mystery loops” are encryption/data leftovers or wrong ZIP.)
+
+- **No calls / LTE weirdness**  
+  PixelExperience explicitly tells you to verify calling/SMS on stock first and notes some devices need IMS provisioning used on stock (VoLTE/VoWiFi) before switching. citeturn2view0
+
+---
+
+## B) If you truly meant “use that repo” (build PixelExperience yourself)
+
+The official build guide for **crownlte** has the exact high-level commands:
+
+1. Set up Ubuntu build environment and repo tool  
+2. Initialize PE manifest branch (they list `fourteen`, plus discontinued branches)  
+3. Sync sources  
+4. `source build/envsetup.sh` then:
+```bash
+lunch aosp_crownlte-userdebug
+```
+5. Build:
+```bash
+mka bacon -j$(nproc --all)
+```
+6. Output is in `$OUT` including `recovery.img` and a `PixelExperience_*.zip`. citeturn5view0  
+
+Then you flash **exactly like Option A**: Heimdall the `recovery.img`, boot recovery immediately, format data, `adb sideload` your built ZIP. citeturn2view0turn5view0  
+
+---
+
+If you tell me your **exact model number** (SM-N960F vs SM-N960N) and what PC you’re using (Windows vs Linux), I’ll tailor the driver/recovery steps to the least painful path. (But the order and the “boot recovery immediately” rule stays the same.)
+
+[USER]
+trying to install twrp apk through adb side load  and signature verification failed error 21
+
+[ASSISTANT]
+{"search_query":[{"q":"signature verification failed error 21 adb sideload","recency":30},{"q":"TWRP Galaxy Note 9 exynos SM-N960F Odin flash twrp tar","recency":3650},{"q":"TWRP app apk cannot install recovery without root","recency":3650},{"q":"PixelExperience crownlte install recovery heimdall flash --RECOVERY","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+That error means you’re in **stock recovery**, and stock recovery will only accept **properly signed update ZIPs**. An **APK isn’t a recovery update**, so verification fails and you get `Signature verification failed / error: 21` (often alongside “footer is wrong”). citeturn0search5
+
+Also: even if you *successfully* installed the **TWRP app APK** inside Android, it **doesn’t install TWRP recovery by itself** on a Samsung unless you already have the required privileges/flow. citeturn0search3
+
+## What to do instead (Note 9 Exynos)
+
+### 1) Make sure you’re on the right model
+This applies to **Galaxy Note9 Exynos** (typically SM-N960F / SM-N960N). If you’re on a Snapdragon (often N960U), the bootloader situation is different and this won’t work the same way.
+
+### 2) Install TWRP the correct way: flash the **.tar** (not an APK, not sideload)
+TWRP’s official page for **Note 9 (Exynos)** specifically instructs flashing a **.tar with Odin**. citeturn0search2
+
+**Windows (Odin) high-level flow**
+1. Download the correct **TWRP .tar** for Note9 Exynos from the official TWRP page. citeturn0search2  
+2. Boot phone into **Download Mode** (Vol Down + Bixby, then “Continue”, plug USB). (Same key flow PixelExperience uses for crownlte.) citeturn0search4  
+3. Open **Odin** → put the TWRP **.tar** into **AP**.
+4. **Uncheck Auto Reboot** (important).
+5. Flash.
+6. The instant the screen goes black after the forced reboot, **boot straight into recovery** (Vol Up + Bixby + Power). If you let it boot normally, Samsung can replace custom recovery with stock again. citeturn0search1
+
+**Linux/macOS (Heimdall)**
+If you’re following PixelExperience-style tooling, Heimdall flashes a recovery **image** to the RECOVERY partition like this: `heimdall flash --RECOVERY <recovery>.img --no-reboot` citeturn0search4  
+(But TWRP commonly distributes **.tar** for Odin on Samsung; use what your TWRP download provides.)
+
+### 3) After TWRP boots: fix the thing that blocks most installs
+In TWRP, you usually need to:
+- **Format Data** (not just wipe) to clear encryption remnants, then reboot back to recovery.
+- Then flash your ROM ZIP (and any required extras for that ROM).
+
+## If what you actually wanted was PixelExperience
+PixelExperience for crownlte officially uses **PixelExperience Recovery**, not TWRP. If your end goal is PixelExperience, the straight path is: flash PE recovery with Heimdall, then sideload the PE ROM ZIP. citeturn0search4
+
+## Why your method can’t work
+- `adb sideload` in **stock recovery** = only accepts **signed OTA-style ZIPs** → APK fails → `error 21`. citeturn0search5  
+- TWRP recovery must be installed by **flashing the recovery partition** (Odin/Heimdall), not by sideloading an APK.
+
+If you tell me your exact model number (SM-N960F/N960N/N960U) and whether you’re on Windows or Linux, I’ll give you the exact button sequence + file type path for your setup (Odin vs Heimdall) with the least-brick risk.
+
+[USER]
+<ID:0/013> Added!!
+<ID:0/013> Odin engine v(ID:3.1401)..
+<ID:0/013> File analysis..
+<ID:0/013> Total Binary size: 40 M
+<ID:0/013> SetupConnection..
+<OSM> All threads completed. (succeed 0 / failed 1
+
+[ASSISTANT]
+`SetupConnection..` + `succeed 0 / failed 1` is Odin failing **before it even starts transferring**. That’s almost always **USB/driver/port/cable** or **Samsung “custom binary blocked” state** (KG/RMM/OEM lock).
+
+Do this in order.
+
+## 1) Fix the boring stuff first (most common)
+1. **Close** anything Samsung-related in the tray/task manager:
+   - Smart Switch
+   - Kies
+   - Samsung DeX
+2. **Reboot** both the phone and the PC.
+3. **Change the physical connection:**
+   - Use a **different cable** (prefer OEM Samsung cable).
+   - Plug directly into the PC (no hub).
+   - Try a **USB 2.0 port** (black port) if you have one; Samsung download mode is weird on some USB 3.x controllers.
+4. **Reinstall Samsung USB drivers:**
+   - Uninstall old “Samsung USB Driver” packages from Windows.
+   - Reinstall the latest Samsung USB driver.
+   - Plug phone back in (Download Mode), confirm Odin shows **Added!!** again.
+5. Run **Odin as Administrator**.
+
+### Odin Options sanity
+- **ONLY** check: `F. Reset Time`
+- **UNCHECK**: `Auto Reboot` (for TWRP/recovery flashes this is good practice)
+- **Re-Partition** must be **OFF**
+- Load the **.tar** in **AP** only
+
+If it still dies at `SetupConnection`, go to step 2.
+
+---
+
+## 2) Check if Samsung is blocking custom binaries (common on Note 9)
+Boot into **Download Mode** and read the text at the top/left. You’re looking for lines like:
+
+- **OEM LOCK** (should be OFF)
+- **KG STATE** (must be **Normal** to flash custom recovery)
+- **RMM STATE** (should not be Prenormal)
+
+If you see **KG / RMM = Prenormal** or the phone flashes a message like **“Custom binary blocked”**, Odin can fail or instantly abort.
+
+**Fix:**
+- Boot fully into Android (stock).
+- Keep **OEM Unlock ON**.
+- Connect to **Wi-Fi/data**, set **automatic date/time**, sign in, leave it online.
+- After it switches to **KG = Normal**, retry flashing.
+
+(If OEM Unlock toggle disappears or won’t stay on, that’s a different problem—don’t keep trying Odin until that’s resolved.)
+
+---
+
+## 3) Try a different Odin build (quick elimination)
+Your log shows `Odin v3.1401`. On some Samsung setups, swapping versions helps.
+
+- Try **Odin 3.13.1** (often more stable for older devices)
+- Or **Odin 3.14.4** (newer)
+
+Same exact settings, same file, different version.
+
+---
+
+## 4) If it still fails: isolate the PC/driver issue
+- Try another **Windows PC** (this alone fixes a stupid number of SetupConnection failures).
+- If you can, try **Heimdall** on Linux (different driver stack).
+
+---
+
+## The one detail that matters next
+When it fails, does Odin show any **red FAIL reason** (top log window), *or* does the **phone screen** show a block message (OEM/KG/custom binary)?  
+If you paste the next few lines after `SetupConnection..` (or what the phone displays), I can tell you which branch you’re in immediately.
+
+[USER]
+show me how to do it in cmd prompt
+
+[ASSISTANT]
+{"search_query":[{"q":"PixelExperience crownlte heimdall flash --RECOVERY --no-reboot","recency":30},{"q":"TWRP Samsung Galaxy Note9 Exynos heimdall flash recovery.img","recency":365},{"q":"Heimdall Windows Zadig Samsung download mode driver libusbK","recency":365}],"response_length":"short"}
+
+[ASSISTANT]
+`error 21 / signature verification failed` happens because you’re trying to sideload an **APK** in **stock recovery**. Stock recovery only accepts **signed OTA ZIPs**, not APKs. To get **TWRP** (or PixelExperience recovery) on a entity["company","Samsung","android oem"] Note 9, you must **flash the recovery partition** first, then you can `adb sideload` a ROM **ZIP**.
+
+Below is the **CMD prompt (Windows) method** using **Heimdall** (command-line alternative to Odin). PixelExperience’s own install guide uses Heimdall for crownlte. citeturn0search0
+
+---
+
+## 1) Get the right file (this is where you went wrong)
+
+You need **one of these**, **NOT** a TWRP “app” APK:
+
+- **TWRP recovery image (.img)** for Note 9 Exynos (crownlte) from entity["organization","Team Win Recovery Project","android recovery project"]. citeturn0search4  
+- OR **PixelExperience Recovery (.img)** + **PixelExperience ROM ZIP** for entity["organization","PixelExperience","android custom rom project"] crownlte. citeturn0search0
+
+If what you downloaded is a **.tar** (Odin package), Heimdall wants an **.img**. Grab the `.img` build, or extract the `recovery.img` from the tar with 7-Zip.
+
+---
+
+## 2) Install Heimdall and the required USB driver (Zadig)
+
+Heimdall on Windows needs a libusb driver. The easiest tool is **Zadig** (installs WinUSB/libusbK). citeturn0search8
+
+### A. Put phone in Download Mode
+Power off → **Vol Down + Bixby + Power** → then “Continue” to Download Mode, plug USB.
+
+### B. Use Zadig to swap the driver (critical)
+1. Run **zadig.exe** as Administrator  
+2. Menu: **Options → List All Devices** citeturn0search8  
+3. In the dropdown, select your phone entry (often **“Samsung USB Composite Device”** or **“Gadget Serial”**)  
+4. Driver choice: **libusbK** (usually works best) or **WinUSB**  
+5. Click **Install Driver** / **Replace Driver**
+
+> Note: After this, **Odin may stop working** until you restore Samsung’s driver. That’s normal.
+
+---
+
+## 3) Flash recovery from CMD (Heimdall)
+
+### A. Open CMD in the Heimdall folder
+Example:
+```bat
+cd C:\heimdall
+```
+
+### B. Verify Heimdall sees the device
+With the phone still in Download Mode:
+```bat
+heimdall detect
+```
+If it says it found a device, you’re good.
+
+If `detect` fails, it’s driver/USB/port/cable. Fix Zadig selection or switch USB port (USB 2.0 ports are often more reliable).
+
+### C. (Optional) Confirm communication
+```bat
+heimdall print-pit
+```
+PixelExperience uses this as a sanity check too. citeturn0search0
+
+### D. Flash the recovery image
+Put your recovery image in the same folder (example: `twrp.img` or `recovery.img`), then:
+```bat
+heimdall flash --RECOVERY recovery.img --no-reboot
+```
+The `--no-reboot` part matters because booting system can overwrite custom recovery. citeturn0search9turn0search0
+
+---
+
+## 4) Boot straight into recovery (don’t let it boot normally)
+
+Immediately after Heimdall finishes:
+
+1. Unplug USB  
+2. Force reboot: hold **Vol Down + Power** until screen goes black  
+3. The instant it goes black, switch to **Vol Up + Bixby + Power** and keep holding to boot into recovery citeturn0search0
+
+If you see stock recovery again, you missed the timing—repeat the flash and try again.
+
+---
+
+## 5) Now you can use `adb sideload` (ZIP only)
+
+### If you flashed PixelExperience Recovery
+In recovery: **Apply update → Apply from ADB**, then on CMD:
+```bat
+adb sideload PixelExperience_crownlte-xxxx.zip
+```
+This is the official flow. citeturn0search0
+
+### If you flashed TWRP
+In TWRP:
+- **Wipe → Format Data** (often required on Samsung to clear encryption), then reboot back to recovery
+- Use **Advanced → ADB Sideload** (or push the ZIP with `adb push`)
+
+CMD examples:
+```bat
+adb devices
+adb sideload your_rom.zip
+```
+
+---
+
+## Fast troubleshooting (based on what you already hit)
+
+- **Still getting “signature verification failed / error 21”**  
+  You’re still in **stock recovery**, or trying to sideload the wrong file type (APK). You must first boot into TWRP/PE recovery.
+
+- **`heimdall detect` can’t find device**  
+  Zadig driver wrong device selected, or bad USB port/cable. Re-do Zadig with “List All Devices” enabled. citeturn0search8
+
+- **Recovery flashes but disappears**  
+  You booted system once; reflash with `--no-reboot` and boot recovery immediately. citeturn0search0turn0search9
+
+---
+
+If you paste **the exact filename** you’re trying to flash (the recovery file you have: `.img` or `.tar`) and your **model number** (SM-N960F / N960N / N960U), I’ll give you the exact command line using *your* file without guessing.
+
+[USER]
+heimdall: The term 'heimdall' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+[ASSISTANT]
+{"search_query":[{"q":"Heimdall Suite Windows download heimdall.exe","recency":30},{"q":"Heimdall Suite official site glass echidna download","recency":365},{"q":"Zadig list all devices WinUSB libusbK instructions","recency":365}],"response_length":"short"}
+
+[ASSISTANT]
+That message means **Windows can’t find `heimdall`** (either you don’t have it, or it’s not in your PATH). Also: that exact wording (“cmdlet”) usually means you ran it in **PowerShell**, not classic CMD.
+
+### 1) Put Heimdall somewhere predictable
+Download **Heimdall Suite for Windows** (the Samsung flasher tool) from the official Heimdall site, then unzip it to something like:
+
+`C:\heimdall\`  citeturn0search1turn0search3
+
+You should see `heimdall.exe` inside that folder.
+
+### 2) Run it from the folder (no PATH needed)
+
+#### If you’re in **CMD**
+Open CMD and do:
+```bat
+cd /d C:\heimdall
+dir
+heimdall.exe version
+heimdall.exe detect
+```
+
+#### If you’re in **PowerShell** (your error text suggests you are)
+PowerShell requires `.\` when running an exe from the current directory:
+```powershell
+cd C:\heimdall
+dir
+.\heimdall.exe version
+.\heimdall.exe detect
+```
+
+If `version` works, Heimdall is installed correctly.
+
+### 3) (Optional) Make `heimdall` work from anywhere (current session only)
+In **CMD**:
+```bat
+set PATH=%PATH%;C:\heimdall
+heimdall.exe version
+```
+
+(In PowerShell you can still just run it from `C:\heimdall` and avoid PATH headaches.)
+
+### 4) If `detect` fails: you still need the right USB driver (Zadig)
+Heimdall on Windows usually needs a libusb-compatible driver, installed via **Zadig**:
+1. Run `zadig.exe` as admin  
+2. **Options → List All Devices**  
+3. Select the Samsung download-mode device
+4. Install **WinUSB** or **libusbK** citeturn0search2turn0search15
+
+**Important:** After using Zadig, **Odin may stop working** until you reinstall Samsung’s normal USB driver (they use different driver stacks).
+
+---
+
+If you paste what you get from:
+```bat
+cd /d C:\heimdall
+dir
+heimdall.exe version
+```
+I can tell you immediately whether it’s “wrong folder/file missing” vs “driver/device connection” next.
+
+[USER]
+PS C:\Users\Never a Moment> cd C:\heimdall
+Set-Location: Cannot find path 'C:\heimdall' because it does not exist.
+PS C:\Users\Never a Moment> cd C:\heimdall
+PS C:\heimdall> heimdall detect
+heimdall: The term 'heimdall' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\heimdall> cd /d C:\heimdall
+Set-Location: A positional parameter cannot be found that accepts argument 'C:\heimdall'.
+PS C:\heimdall> dir
+
+    Directory: C:\heimdall
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+da---            2/7/2026  8:41 AM                Heimdall Suite
+
+PS C:\heimdall> heimdall.exe version
+heimdall.exe: The term 'heimdall.exe' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\heimdall> heimdall.exe detect
+heimdall.exe: The term 'heimdall.exe' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\heimdall> cd C:\heimdall
+PS C:\heimdall> dir
+
+    Directory: C:\heimdall
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+da---            2/7/2026  8:41 AM                Heimdall Suite
+
+PS C:\heimdall> .\heimdall.exe version
+.\heimdall.exe: The term '.\heimdall.exe' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\heimdall> .\heimdall.exe detect
+.\heimdall.exe: The term '.\heimdall.exe' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\heimdall> set PATH=%PATH%;C:\heimdall
+C:\heimdall: The term 'C:\heimdall' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\heimdall> heimdall.exe version
+heimdall.exe: The term 'heimdall.exe' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\heimdall> cd /d C:\heimdall
+Set-Location: A positional parameter cannot be found that accepts argument 'C:\heimdall'.
+PS C:\heimdall> dir
+
+    Directory: C:\heimdall
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+da---            2/7/2026  8:41 AM                Heimdall Suite
+
+PS C:\heimdall> heimdall.exe version
+heimdall.exe: The term 'heimdall.exe' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\heimdall>
+
+[ASSISTANT]
+You’re in the wrong folder. `C:\heimdall` only contains a subfolder (`Heimdall Suite`). There is **no `heimdall.exe` in your current directory**, so PowerShell can’t run it.
+
+Also: you keep mixing **CMD commands** (`cd /d`, `set PATH=%PATH%`) inside **PowerShell**. Different syntax.
+
+## PowerShell: find where `heimdall.exe` actually is
+Run this exactly:
+
+```powershell
+cd C:\heimdall
+Get-ChildItem -Recurse -File -Filter "heimdall*.exe" | Select-Object FullName
+```
+
+It will print the full path, something like:
+`C:\heimdall\Heimdall Suite\...\heimdall.exe`
+
+Then run it using the full path (quotes matter because of spaces):
+
+```powershell
+& "C:\FULL\PATH\TO\heimdall.exe" version
+& "C:\FULL\PATH\TO\heimdall.exe" detect
+```
+
+If you’d rather `cd` into the exact folder first:
+
+```powershell
+cd "C:\FULL\PATH\TO\FOLDER\THAT\CONTAINS\heimdall.exe"
+.\heimdall.exe version
+.\heimdall.exe detect
+```
+
+## If the search prints nothing
+Then you don’t actually have Heimdall extracted/installed—your zip is missing the executable or you extracted the wrong thing. The suite folder should contain `heimdall.exe` somewhere inside.
+
+## If you want to add it to PATH (PowerShell way)
+Once you know the folder that contains `heimdall.exe`:
+
+```powershell
+$env:Path += ";C:\FULL\PATH\TO\FOLDER"
+heimdall.exe version
+```
+
+## If you insist on real CMD prompt
+From PowerShell, start CMD:
+
+```powershell
+cmd
+```
+
+Then in CMD:
+
+```bat
+cd /d C:\heimdall
+dir /s /b heimdall*.exe
+```
+
+Copy the path it prints and run:
+
+```bat
+"C:\FULL\PATH\TO\heimdall.exe" version
+```
+
+Run the PowerShell search command and paste the `FullName` line it outputs. I’ll tell you the exact next command to run with your path.
+
+[ASSISTANT]
+You don’t have Heimdall in `C:\heimdall`. You have a **subfolder** named `Heimdall Suite`, and `heimdall.exe` is either **inside that** (possibly in a `bin\` folder) or you downloaded a package that doesn’t include the binary.
+
+Also: you’re in **PowerShell**, not CMD. That’s why `cd /d` and `set PATH=%PATH%...` blew up.
+
+## Step 1 — Find where `heimdall.exe` actually is (PowerShell)
+
+Run these exactly:
+
+```powershell
+cd C:\heimdall
+Get-ChildItem -Recurse -Filter heimdall*.exe
+```
+
+You should see a path like:
+`C:\heimdall\Heimdall Suite\heimdall.exe`
+or
+`C:\heimdall\Heimdall Suite\bin\heimdall.exe`
+
+## Step 2 — Run it (PowerShell)
+Once you see the path, run it using the call operator `&` (needed because of spaces):
+
+Example (adjust to the path you found):
+
+```powershell
+& "C:\heimdall\Heimdall Suite\heimdall.exe" version
+& "C:\heimdall\Heimdall Suite\heimdall.exe" detect
+```
+
+If it’s in `bin`:
+
+```powershell
+& "C:\heimdall\Heimdall Suite\bin\heimdall.exe" version
+& "C:\heimdall\Heimdall Suite\bin\heimdall.exe" detect
+```
+
+## Step 3 — If you insist on CMD Prompt (not PowerShell)
+Open **Command Prompt** (not PowerShell) and run:
+
+```bat
+cd /d "C:\heimdall\Heimdall Suite"
+dir
+heimdall.exe version
+heimdall.exe detect
+```
+
+If it’s in `bin`:
+
+```bat
+cd /d "C:\heimdall\Heimdall Suite\bin"
+dir
+heimdall.exe version
+heimdall.exe detect
+```
+
+## If Step 1 finds **no** `heimdall.exe`
+Then you don’t actually have the Heimdall executable—just a folder. Fix: download the **Windows Heimdall Suite binary** and extract it again. After extracting, you must be able to see `heimdall.exe` somewhere under that folder.
+
+## One more thing (you’ll hit this next)
+Even when `heimdall.exe` runs, `detect` will fail unless the phone is in **Download Mode** and you have the right **libusb driver** (Zadig WinUSB/libusbK). But first: get `heimdall.exe version` working.
+
+Paste the output of:
+
+```powershell
+Get-ChildItem -Recurse -Filter heimdall*.exe
+```
+
+and I’ll give you the exact one-line command to run it from where it actually sits.
+
+[USER]
+C:\heimdall\Heimdall Suite\heimdall-frontend.exe
+C:\heimdall\Heimdall Suite\heimdall.exe
+
+[ASSISTANT]
+You have the executables. You’re just not invoking them correctly in PowerShell (and you’re currently sitting in `C:\heimdall`, not `C:\heimdall\Heimdall Suite`).
+
+## PowerShell commands (copy/paste)
+
+### 1) Go to the folder that actually contains heimdall.exe
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+dir
+```
+
+### 2) Run Heimdall
+PowerShell needs `.\` for local executables:
+```powershell
+.\heimdall.exe version
+.\heimdall.exe detect
+```
+
+If `detect` works, you’re connected.
+
+---
+
+## If `detect` fails (most likely next issue)
+That means **driver**. Heimdall on Windows needs a libusb-compatible driver on the phone in **Download Mode**.
+
+### Make sure the phone is in Download Mode
+Power off → **Vol Down + Bixby + Power** → “Continue” → plug USB.
+
+### Install driver with Zadig
+1. Run Zadig as admin
+2. **Options → List All Devices**
+3. Select the Samsung download-mode device entry
+4. Install **libusbK** (or WinUSB)
+
+Then retry:
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe detect
+```
+
+---
+
+## Flash recovery (once detect works)
+Assuming your recovery image is `recovery.img` in the same folder:
+```powershell
+.\heimdall.exe flash --RECOVERY recovery.img --no-reboot
+```
+
+Then immediately boot recovery (do not let it boot system):
+- Hold **Vol Down + Power** until screen black
+- Instantly switch to **Vol Up + Bixby + Power** to enter recovery
+
+---
+
+If you run:
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe detect
+```
+and paste the exact output, I’ll tell you whether you’re good or it’s still driver/USB.
+
+[USER]
+PS C:\heimdall\Heimdall Suite> .\heimdall.exe flash --RECOVERY recovery.img --no-reboot
+Heimdall v1.4.0
+
+Copyright (c) 2010-2013, Benjamin Dobell, Glass Echidna
+http://www.glassechidna.com.au/
+
+This software is provided free of charge. Copying and redistribution is
+encouraged.
+
+If you appreciate this software and you would like to support future
+development please consider donating:
+http://www.glassechidna.com.au/donate/
+
+Initialising connection...
+Detecting device...
+ERROR: Failed to access device. libusb error: -12
+PS C:\heimdall\Heimdall Suite>
+
+[ASSISTANT]
+`libusb error: -12` = Heimdall can see “something” on USB, but the **Windows USB driver stack for the phone in Download Mode is wrong/incompatible** (or another program has the interface hooked). This is not a ROM/recovery.img problem yet—it’s a **PC↔phone connection/driver** problem.
+
+Do this, in this order.
+
+## 1) Kill anything that grabs Samsung USB
+Close these completely (system tray + Task Manager):
+- **Odin**
+- **Smart Switch**
+- **Kies**
+- **Samsung DeX**
+- Any “ADB server” windows
+
+Then unplug the phone.
+
+## 2) Use a better port/cable (matters more than people admit)
+- Use a **different cable** (prefer an OEM Samsung cable).
+- Plug into a **rear USB 2.0 port** (black port) if you have one.
+- No hubs, no front-panel ports.
+
+## 3) Put the phone in Download Mode (again)
+Power off → **Vol Down + Bixby + Power** → “Continue” → plug USB.
+
+## 4) Fix the driver with Zadig (this is the real fix)
+You need a libusb-compatible driver on the **Download Mode** device.
+
+1. Run **Zadig** as **Administrator**
+2. `Options` → **List All Devices**
+3. In the dropdown, pick the device that appears when the phone is in Download Mode. Common names:
+   - **Samsung USB Composite Device**
+   - **Gadget Serial**
+   - **Samsung Mobile USB CDC Composite Device**
+4. In the right side “Driver” box:
+   - Try **WinUSB** first  
+   - If it still fails, try **libusbK**
+5. Click **Replace Driver / Install Driver**
+
+Unplug/replug the phone after the driver install.
+
+> Note: after Zadig, **Odin may stop working** until you restore Samsung’s normal driver. That’s expected.
+
+## 5) Re-test Heimdall (don’t go straight to flash)
+In PowerShell (Admin is best):
+
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe detect
+```
+
+Expected: it should say it found a device (no libusb errors).
+
+If `detect` still throws `-12`, repeat step 4 but switch driver type (WinUSB ↔ libusbK), and swap USB port.
+
+## 6) Flash recovery (only after detect works)
+Put `recovery.img` in the same folder (or use a full path), then:
+
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe flash --RECOVERY recovery.img --no-reboot
+```
+
+Then **immediately** boot to recovery (do not let it boot system):
+- Hold **Vol Down + Power** until screen goes black
+- Instantly switch to **Vol Up + Bixby + Power**
+
+---
+
+### If you want the fastest confirmation of what’s wrong
+Run this and paste the output:
+
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe detect
+```
+
+If it fails, tell me which driver you selected in Zadig (**WinUSB** or **libusbK**) and what the device name was in the dropdown. That’s enough to pinpoint the next move.
+
+[USER]
+Samsung USB Composite Device it used to say this but after messing with zadig it now shows this- sdm845
+
+[ASSISTANT]
+{"search_query":[{"q":"sdm845 Snapdragon 845 codename sdm845","recency":3650},{"q":"Samsung Galaxy Note9 Snapdragon 845 model SM-N960U SM-N960W","recency":3650},{"q":"Samsung Galaxy Note9 Exynos 9810 model SM-N960F SM-N960N","recency":3650},{"q":"Heimdall libusb error -12 Windows Zadig Samsung USB Composite Device","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+Seeing **`sdm845`** in Zadig strongly suggests your phone is presenting itself as a **Snapdragon 845 (Qualcomm SDM845)** device. citeturn0search0turn0search4turn0search7  
+That matters because the GitHub repo you linked (`exynos9810-common`) is for **Exynos 9810**, not SDM845, and **Note 9 has two different chipsets** depending on model/region. citeturn0search8
+
+### Step 1 — Confirm which Note 9 you actually have (do this now)
+Boot to **Download Mode** and read the top-left lines:
+
+- Look for **PRODUCT NAME: SM-N960F / SM-N960N** → Exynos 9810 (matches “crownlte / exynos9810”). citeturn0search5  
+- If it’s **SM-N960U / SM-N960W** (often Snapdragon) → SDM845 (does *not* match that repo / crownlte Exynos builds). citeturn0search1turn0search8  
+
+If you’re Snapdragon: stop trying to flash Exynos stuff. It won’t end well.
+
+---
+
+## If you ARE Exynos (SM-N960F/N) and Zadig got “weird”
+Zadig can rename the device entry; the name isn’t the important part—the **driver binding is**. Your `libusb error: -12` is almost always “wrong/half-broken driver binding” on Windows.
+
+### Clean reset the driver, then re-bind it correctly
+
+#### A) Remove the bad Zadig driver (Device Manager)
+1. Unplug phone.
+2. Open **Device Manager** → View → **Show hidden devices**.
+3. Look under these sections and remove anything that looks like your Download Mode device:
+   - **libusbK USB Devices**
+   - **WinUSB devices**
+   - **Universal Serial Bus devices**
+4. Right-click the `sdm845` (or similar) entry → **Uninstall device** → check **Delete the driver software for this device** → OK.
+5. Reboot PC.
+
+(Conceptually the same “restore original composite driver” fix people use after Heimdall/Zadig driver swaps.) citeturn0search6
+
+#### B) Re-bind for Heimdall (Zadig)
+1. Put phone in **Download Mode** and plug it in.
+2. Run **Zadig** as Admin.
+3. Options → **List All Devices**
+4. Select the device that appears **only when in Download Mode** (whatever it’s named now—could be `sdm845`, could be something else).
+5. Driver: try **WinUSB** first. If it still fails, repeat and try **libusbK**.
+6. Click **Replace Driver**.
+
+Zadig’s job is exactly this driver swap. citeturn0search13
+
+#### C) Test before flashing (PowerShell)
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe detect
+```
+
+If `detect` fails, don’t flash—swap USB port (prefer USB 2.0), swap cable, and re-check Zadig selection.
+
+#### D) Then flash recovery (only after detect works)
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe flash --RECOVERY recovery.img --no-reboot
+```
+
+---
+
+## If you are Snapdragon (SDM845 / SM-N960U/W)
+Two blunt truths:
+
+1. **That Exynos repo/build path is not for your phone.** citeturn0search8  
+2. Many Snapdragon Note 9 variants (especially US/carrier) have bootloader restrictions that prevent custom recovery/ROM flashing through normal means. I’m not going to give “bypass” instructions.
+
+What you *can* do safely:
+- Use stock Samsung firmware tools/updates for your exact model.
+- If you want custom ROMs, start by confirming whether **OEM Unlock** exists and stays enabled, and whether Download Mode shows **KG/RMM state = Normal**. If not, custom recovery flashing is a dead end.
+
+---
+
+### Paste one thing and I’ll route you correctly
+From Download Mode, paste exactly:
+- `PRODUCT NAME: ...`
+and (if shown)
+- `KG STATE: ...`
+- `OEM LOCK: ...`
+
+That tells me immediately whether you’re on the correct chipset path and whether flashing recovery is even possible.
+
+[ASSISTANT]
+{"search_query":[{"q":"Heimdall \"libusb error: -12\" failed to access device windows","recency":30},{"q":"Heimdall libusb error -12 Device detected flash failed to access device","recency":365},{"q":"libusb error -12 heimdall print-pit","recency":365},{"q":"Heimdall windows libusb error -12 WinUSB libusbK","recency":365}],"response_length":"short"}
+
+[USER]
+FullName
+--------
+C:\heimdall\Heimdall Suite\heimdall-frontend.exe
+C:\heimdall\Heimdall Suite\heimdall.exe
+
+PS C:\heimdall\Heimdall Suite> .\heimdall.exe detect
+Device detected
+PS C:\heimdall\Heimdall Suite> .\heimdall.exe flash --RECOVERY recovery.img --no-reboot
+Heimdall v1.4.0
+
+Copyright (c) 2010-2013, Benjamin Dobell, Glass Echidna
+http://www.glassechidna.com.au/
+
+This software is provided free of charge. Copying and redistribution is
+encouraged.
+
+If you appreciate this software and you would like to support future
+development please consider donating:
+http://www.glassechidna.com.au/donate/
+
+Initialising connection...
+Detecting device...
+ERROR: Failed to access device. libusb error: -12
+PS C:\heimdall\Heimdall Suite>
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search12"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search14"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search4"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search16"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search3"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search0"}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"\"Failed to access device\" \"libusb error: -12\" heimdall windows winusb","recency":3650},{"q":"\"libusb error: -12\" Heimdall WinUSB libusbK administrator","recency":3650},{"q":"Heimdall detect works flash fails libusb error -12","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn7search3"}],"response_length":"short"}
+
+[ASSISTANT]
+You’ve reproduced a known Heimdall failure mode: **`detect` works, but `flash` fails with `libusb error: -12`**. That almost always comes down to **the wrong USB driver bound to the wrong interface** (Windows often shows multiple “Gadget Serial” / composite entries), not your `recovery.img`. citeturn8view0turn1view0
+
+Also: you seeing **`sdm845`** is a big hint you may have a **Snapdragon 845 Note 9** (not Exynos 9810). The Note 9 shipped as Snapdragon 845 *or* Exynos 9810 depending on model/region, so make sure you’re flashing a recovery/ROM built for your exact variant. citeturn1view0turn8view0
+
+### Do this exactly (PowerShell)
+
+#### 0) Don’t “detect” first
+Some Samsung bootloaders get flaky after commands; the safest pattern is: **reboot back into Download Mode, then run ONE flash attempt immediately**. citeturn2view0
+
+1. Unplug USB.
+2. Force reboot out of Download Mode (hold **Vol Down + Power** until it restarts).
+3. Re-enter Download Mode.
+4. Plug USB.
+5. Run:
+
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe flash --RECOVERY .\recovery.img --no-reboot
+```
+
+If you still get `-12`, continue.
+
+---
+
+## 1) Fix the Zadig binding (this is the real fix)
+
+The key detail: **Zadig may show multiple entries**. You must bind **WinUSB/libusbK** to the *correct* download-mode interface (often “Gadget Serial …”, sometimes it shows chipset-ish names like your `sdm845`). Wrong interface = `detect` may work, `flash` fails. citeturn8view0
+
+### A) Rebind the driver in Zadig
+1. Open **Zadig** as Administrator  
+2. **Options → List All Devices**
+3. In the dropdown, look for **duplicate-looking entries** (e.g., two “Gadget Serial” / composite entries, or “sdm845”).
+4. For the one that corresponds to the phone in **Download Mode**, set driver to:
+   - **WinUSB** first
+   - If still failing, switch to **libusbK**
+   - If still failing, try **libusb-win32 (libusb0)** (older, but sometimes works on stubborn setups) citeturn8view0
+5. Click **Replace Driver**.
+6. Unplug/replug and re-enter Download Mode again.
+
+### B) Then flash (first command after reconnect)
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe flash --RECOVERY .\recovery.img --no-reboot
+```
+
+---
+
+## 2) Quick sanity checks (command-line)
+
+### Confirm the file is actually there and readable
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+Test-Path .\recovery.img
+Get-Item .\recovery.img
+```
+
+### If Heimdall can do a “real” operation, this should work
+(This often fails the same way as flash if the binding is wrong.)
+```powershell
+.\heimdall.exe print-pit --no-reboot
+```
+
+---
+
+## 3) If Heimdall keeps being a pain: Odin workaround (still uses your recovery.img)
+
+A common workaround for persistent `libusb error -12` is: **wrap `recovery.img` into a `.tar` and flash with Odin AP**. citeturn6view0
+
+### Create `recovery.img.tar` from PowerShell
+From the folder containing `recovery.img`:
+```powershell
+tar -cf recovery.img.tar recovery.img
+```
+
+Then in Odin:
+- Put `recovery.img.tar` into **AP**
+- Flash
+- Boot straight into recovery immediately after flash
+
+(If Odin can’t connect, you’ll likely need to **undo Zadig** bindings and reinstall Samsung USB drivers first.)
+
+---
+
+### One hard warning (because `sdm845`)
+If your device is Snapdragon (sdm845), **do not** flash Exynos 9810 “common” device trees/ROMs. Confirm the model in Download Mode (PRODUCT NAME line) and only use recovery/ROM that matches that model/chipset. citeturn1view0
+
+[USER]
+samsung_android is showing twice
+
+[ASSISTANT]
+That’s normal: **Download Mode exposes multiple USB interfaces**, and Zadig lists them separately. If you bind the driver to the “wrong” one, Heimdall can still `detect` but fails on `flash` with `libusb error: -12`.
+
+Do this methodically.
+
+## 1) Identify which “samsung_android” is the real Download Mode interface
+1. **Unplug** the phone.
+2. Open **Zadig (Admin)** → `Options` → **List All Devices**.
+3. In the dropdown, click one of the `samsung_android` entries and note:
+   - the **USB ID** shown (VID:PID)
+   - the **current driver** shown on the right
+4. Now **plug the phone in (Download Mode)** and watch which entry/entries appear or become selectable.
+5. If both are present, use this quick test:
+   - Select `samsung_android` #1 → do nothing yet
+   - Unplug/replug the phone
+   - See if the same entry disappears/reappears consistently (that’s the real one)
+
+## 2) Bind WinUSB to ONE entry, test, then swap if needed
+Start with **WinUSB** (it’s usually the most stable for Heimdall on Windows).
+
+### A) Bind WinUSB
+In Zadig:
+- Select `samsung_android` (first one)
+- Driver: **WinUSB**
+- Click **Replace Driver**
+
+Unplug/replug phone (still Download Mode).
+
+### B) Test Heimdall (don’t run detect first)
+In PowerShell:
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe flash --RECOVERY .\recovery.img --no-reboot
+```
+
+### C) If you still get `libusb error: -12`
+Repeat the exact same process but bind WinUSB to the **other** `samsung_android` entry instead.
+
+(Yes, it’s dumb. Yes, it works.)
+
+## 3) If WinUSB on both entries still fails
+Try **libusbK** (again: one entry at a time, test after each change).
+
+Same steps as above, just pick **libusbK** in Zadig.
+
+## 4) Clean reset if you’ve made a driver mess
+If things are getting weirder each attempt:
+
+1. Unplug phone.
+2. **Device Manager** → View → **Show hidden devices**
+3. Under **Universal Serial Bus devices** / **libusbK USB Devices** / **WinUSB devices**, uninstall anything that looks like the phone in download mode.
+4. Check **“Delete the driver software for this device”** when offered.
+5. Reboot PC.
+6. Re-enter Download Mode and redo Zadig binding (WinUSB first).
+
+## 5) One more thing: don’t let other Samsung software grab the device
+Before flashing, make sure these are CLOSED (taskbar tray + Task Manager):
+- Odin
+- Smart Switch
+- Kies / DeX
+
+---
+
+If you tell me the **VID:PID** Zadig shows for each of the two `samsung_android` entries (it’s displayed in the Zadig window when selected), I can tell you which one to bind without trial-and-error.
+
+[USER]
+it failed to download the driver selecting the first samsung_android
+
+[ASSISTANT]
+That “failed to download/install driver” in Zadig usually means **Windows refused the driver swap** (permissions, driver still in use, or you picked the wrong duplicate interface). Fix it by cleaning the device entries and rebinding **one** interface at a time.
+
+### 0) Close anything that can grab the USB interface
+Kill these completely (tray + Task Manager):
+- Odin
+- Smart Switch / Kies / DeX
+- Any ADB windows
+
+Unplug the phone.
+
+---
+
+## 1) Clean out the messed-up USB entries (Device Manager)
+1. Put the phone back in **Download Mode**, plug it in.
+2. Open **Device Manager** → **View → Show hidden devices**.
+3. Look under:
+   - **Universal Serial Bus devices**
+   - **libusbK USB Devices**
+   - **WinUSB devices**
+4. For anything that looks like your download-mode device (often shows as `samsung_android`, `Gadget Serial`, or similar):
+   - Right-click → **Uninstall device**
+   - Check **Delete the driver software for this device** (important)
+5. Unplug the phone.
+6. **Reboot** the PC.
+
+This resets the driver binding so Zadig isn’t fighting leftovers.
+
+---
+
+## 2) Rebind with Zadig (do it right)
+1. Boot phone into **Download Mode** again and plug it in (direct port, preferably USB 2.0).
+2. Run **Zadig as Administrator**.
+3. **Options → List All Devices**
+4. You’ll see `samsung_android` twice. Do **one at a time**:
+
+### Try Entry #1
+- Select first `samsung_android`
+- Driver: **WinUSB**
+- Click **Replace Driver**
+- If it fails, don’t keep hammering it—move to Entry #2.
+
+### Try Entry #2
+- Select second `samsung_android`
+- Driver: **WinUSB**
+- Click **Replace Driver**
+
+If WinUSB fails on both, repeat the same but choose **libusbK** instead.
+
+**Key rule:** only one of those two interfaces is the one Heimdall needs. The other one can fail or be protected—totally normal.
+
+---
+
+## 3) Immediately test Heimdall (no “detect” first)
+Unplug/replug phone (still Download Mode), then run:
+
+```powershell
+cd "C:\heimdall\Heimdall Suite"
+.\heimdall.exe flash --RECOVERY .\recovery.img --no-reboot
+```
+
+If it still throws `libusb error: -12`, that means you still bound the wrong interface (or Windows didn’t actually swap it).
+
+---
+
+## 4) If Zadig keeps failing on one entry no matter what
+That’s fine—ignore that entry and bind the other one. But if **both** entries fail:
+
+- Switch cable + port (use rear USB, avoid hubs)
+- Run Zadig **as admin**
+- Disable antivirus “device control” if you have it
+- Try **libusbK** instead of WinUSB
+
+---
+
+### Paste the exact Zadig error text
+Zadig shows a specific message (often mentions `Driver installation failed`, `Access denied`, `The system cannot find the file`, etc.). Copy/paste that line, and tell me whether the failure happened on **Entry #1 or #2** and whether you chose **WinUSB or libusbK**. That will determine the exact next move.

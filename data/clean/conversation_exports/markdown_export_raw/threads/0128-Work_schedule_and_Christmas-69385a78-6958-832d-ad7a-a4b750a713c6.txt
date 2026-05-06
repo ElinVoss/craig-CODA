@@ -1,0 +1,79 @@
+CONVERSATION_ID: 69385a78-6958-832d-ad7a-a4b750a713c6
+TITLE: Work schedule and Christmas
+MESSAGE_COUNT: 16
+
+[USER]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": "If I work a shift where I work Monday and Tuesday, off Wednesday-Thursday, work Friday-Saturday-Sunday, and then it swaps the next week, so I'm off Monday-Tuesday, work Wednesday-Thursday, off Friday-Saturday-Sunday, and I worked last night and I work tonight, will I be off for Christmas?"}
+
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_00000000faa471f78695373f92279634", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:07.091290+00:00", "format": "wav", "metadata": {"end": 16.79, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 805998, "tool_audio_direction": null}, "audio_start_timestamp": 18.75099433201831, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-07T17:22:07.091290+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "All right, let’s map that out. So if your rotation flips every other week—one week you do Monday-Tuesday on, then Wednesday-Thursday off, then Friday-Saturday-Sunday on, and the next week you swap that pattern—then we just need to figure out where Christmas falls in that cycle.\n\nSince you mentioned you worked last night and you're working tonight, it sounds like right now you're in the part of the week where you're on a Friday-Saturday-Sunday shift.\n\nIf we track forward to Christmas, and let’s say Christmas is on a Wednesday this year, then you just count out the pattern. Based on your current rotation, if this week you’re working through the weekend and that means next week you’ll be off on those weekend days and shift your workdays to the middle of the week, then yes, you’d end up being off on Christmas if it falls on one of those off days.\n\nSo the short answer is: it looks like you will be off for Christmas!"}
+
+{"asset_pointer": "sediment://file_0000000008d071f59a52c2bd3010e8ff", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:07.091360+00:00", "format": "wav", "metadata": {"end": 50.65, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 2431278, "tool_audio_direction": null}
+
+[USER]
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_000000000c9871f7b7cc468bbc469466", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:14.200871+00:00", "format": "wav", "metadata": {"end": 1.59, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 76398, "tool_audio_direction": null}, "audio_start_timestamp": 71.46097507001832, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-07T17:22:14.200871+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": "Christmas is on Wednesday."}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "Perfect, thanks for confirming that. So with Christmas on a Wednesday, and your schedule flipping like we"}
+
+{"asset_pointer": "sediment://file_00000000c9d471f5a3348c069826f18d", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:14.200940+00:00", "format": "wav", "metadata": {"end": 2.75, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 132078, "tool_audio_direction": null}
+
+[USER]
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_00000000c50871f7811e81371eb85bc3", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:24.658955+00:00", "format": "wav", "metadata": {"end": 1.52, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 73038, "tool_audio_direction": null}, "audio_start_timestamp": 75.721889878012, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-07T17:22:24.658955+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": "No, I'm asking you that."}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "Oh, got it! Thanks for clarifying. So if Christmas is indeed on a Wednesday and we apply your rotating schedule, then let’s see what that means.\n\nSince you mentioned you worked last night and tonight, that"}
+
+{"asset_pointer": "sediment://file_0000000046f071f59cbec56124fa0ef2", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:24.659021+00:00", "format": "wav", "metadata": {"end": 9.75, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 468078, "tool_audio_direction": null}
+
+[ASSISTANT]
+search("What day of the week is Christmas on in 2024?")
+
+[TOOL]
+hristmas Day in 2024 falls on Wednesday, December 25. Print a Calendar  his year, Hanukkah also begins on Christmas Day, a rare occurrence that has only happened four times since 1900. AP News  dditionally, the NFL has scheduled games on Christmas Day, featuring matchups such as the Kansas City Chiefs vs. the Pittsburgh Steelers and the Baltimore Ravens vs. the Houston Texans. New York Post  AP News
+
+[USER]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": "Note, I'm asking you, this year, is Christmas on a Wednesday?"}
+
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_0000000076d871f7950fca180d490609", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:38.905322+00:00", "format": "wav", "metadata": {"end": 4.02, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 193038, "tool_audio_direction": null}, "audio_start_timestamp": 89.96276445701369, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-07T17:22:38.905322+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "Sure! So for 2024, Christmas does fall on a Wednesday. That lines up perfectly with what we just talked about."}
+
+{"asset_pointer": "sediment://file_00000000279471f7a70dc2095f6d3410", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:38.905396+00:00", "format": "wav", "metadata": {"end": 6.85, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 328878, "tool_audio_direction": null}
+
+[USER]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": "Cool, thanks. Bye."}
+
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_00000000955c71f5ac618376d4a57d1d", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:48.749240+00:00", "format": "wav", "metadata": {"end": 1.46, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 70158, "tool_audio_direction": null}, "audio_start_timestamp": 104.89984326600097, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-07T17:22:48.749240+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "You're very welcome! I'm glad we got that sorted out. If you need anything else, just let me know."}
+
+{"asset_pointer": "sediment://file_00000000417c71f79fbe5450aa6bd77c", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:22:48.749306+00:00", "format": "wav", "metadata": {"end": 6.1, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 292878, "tool_audio_direction": null}
+
+[USER]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": "Color-coding lights are already on."}
+
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_00000000d80071f7b07fb7d449943bc8", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:25:07.843466+00:00", "format": "wav", "metadata": {"end": 1.27, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 61038, "tool_audio_direction": null}, "audio_start_timestamp": 241.19286883901805, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-07T17:25:07.843466+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "Absolutely, anytime! If you ever need to double-check schedules or just chat about anything else, I'm here. Have a great one!"}
+
+{"asset_pointer": "sediment://file_000000003ac071f781ff4f17dfb6938e", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:25:07.843532+00:00", "format": "wav", "metadata": {"end": 8.75, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 420078, "tool_audio_direction": null}
+
+[USER]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "in", "text": ""}
+
+{"audio_asset_pointer": {"asset_pointer": "sediment://file_00000000a1c871f7a66c4f5dfd265903", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:25:36.493154+00:00", "format": "wav", "metadata": {"end": 2.61, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 125358, "tool_audio_direction": null}, "audio_start_timestamp": 269.8039896720147, "content_type": "real_time_user_audio_video_asset_pointer", "expiry_datetime": "2026-06-07T17:25:36.493154+00:00", "frames_asset_pointers": [], "video_container_asset_pointer": null}
+
+[ASSISTANT]
+{"content_type": "audio_transcription", "decoding_id": null, "direction": "out", "text": "Yeah, no worries at all! It sounds like you're just thinking out loud. If you've got any other questions or anything else on your mind, just let me know!"}
+
+{"asset_pointer": "sediment://file_00000000090071f7b738162aca3edfdc", "content_type": "audio_asset_pointer", "expiry_datetime": "2026-06-07T17:25:36.493236+00:00", "format": "wav", "metadata": {"end": 8.6, "end_timestamp": null, "interruptions": null, "original_audio_source": null, "pretokenized_vq": null, "start": 0, "start_timestamp": null, "transcription": null, "word_transcription": null}, "size_bytes": 412878, "tool_audio_direction": null}

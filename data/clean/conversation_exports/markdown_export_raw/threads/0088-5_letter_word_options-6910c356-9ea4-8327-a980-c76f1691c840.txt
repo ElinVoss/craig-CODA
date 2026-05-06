@@ -1,0 +1,27 @@
+CONVERSATION_ID: 6910c356-9ea4-8327-a980-c76f1691c840
+TITLE: 5 letter word options
+MESSAGE_COUNT: 2
+
+[USER]
+5 letter word starting with s endind with p cannot include the letters t h i b or y
+
+[ASSISTANT]
+Here are solid options:
+
+- scalp  
+- scamp  
+- scarp  
+- scrap  
+- scoop  
+- sloop  
+- snoop  
+- sweep  
+- sleep  
+- slump  
+- slurp  
+- swamp  
+- swoop  
+- skelp  
+- scaup
+
+If you’ve got any known letters (greens/yellows), I’ll zero it down fast.

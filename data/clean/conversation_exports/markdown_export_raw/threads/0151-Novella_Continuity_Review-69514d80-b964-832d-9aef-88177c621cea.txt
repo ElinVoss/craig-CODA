@@ -1,0 +1,1002 @@
+CONVERSATION_ID: 69514d80-b964-832d-9aef-88177c621cea
+TITLE: Novella Continuity Review
+MESSAGE_COUNT: 2
+
+[USER]
+# N01: FIRST NOVELLA - COMPLETE DRAFT
+
+**Series:** OmniMeta Saga  
+**World:** Te’Oga  
+**Turning:** GLASS (Books 1-5)  
+**Target Length:** 25,000 words (first draft ~12,000 words)  
+**Status:** Structural draft complete, ready for expansion
+
+-----
+
+## NOVELLA METADATA
+
+**Timeline:** Tide 0 (The Piercing) through Tide 3  
+**Protagonists:** Jhace Torrins (metalworker/inspector) & Tiffani Merrow (glassworker/analyst)  
+**Total Soulpulse Activations:** 8 (Jhace: 7, Tiffani: 0, Kylar: 1 failed)  
+**Beat Type Distribution:** 2 Observation, 3 Crisis, 2 Trial/Failure, 1 Training/Method, 2 Recovery/Intimacy, 1 Political Pressure, 1 Recalibration/Debate
+
+**Key Themes:**
+
+- Cost of power (physical degradation)
+- Method vs. heroics
+- Partnership through competence
+- Institutional control vs. survival needs
+- Trust as earned, not given
+
+-----
+
+## Chapter 1: Something Wrong
+
+**POV: Jhace | Tide 0, Kindling | Beat Type: Observation | Soulpulse: 0**
+
+Junction Seven.
+
+Jhace stops at the plaque. Twenty-three names cut into stone. He reads them. All of them. Every time. Jaw tight. No ritual. Just accountability.
+
+His hands move through the inspector kit by touch. Slate, chalk, cord, collar keys, wedge slips, lamp oil. All there. He logs the time marker on slate: *Tide 0, Kindling. Start of route.*
+
+The grid-hum sits under everything. Always has. Baseline pitch, steady, predictable. But there’s something else now. A second note riding under it. Tight. Narrow. Wrong.
+
+Jhace presses his palm flat against the pipe at Junction Seven. Metal cold. The baseline hum vibrates through skin, into bone. And there—doubled. A harmonic that shouldn’t exist.
+
+He shifts hand pressure. Moves contact point. Tries different angles.
+
+The doubled harmonic persists.
+
+Ear to metal. Cheek goes cold fast against the pipe casing. The sound carries sharper this way. That narrow edge digs into his back teeth. He pulls away. Jaw aches.
+
+Dust falls from a ceiling seam. Narrow strip. Controlled fall. He watches it drift through lamplight, counts the interval by breath. The dust falls again. Same strip. Same rhythm.
+
+He writes: *Repeat interval.*
+
+Chloen passes through the junction corridor carrying message slates. Young. Eager. Doesn’t notice the dust pattern. She nods at him—“Master Jhace”—and keeps moving.
+
+He doesn’t stop her. Doesn’t explain. What would he say? *The grid sounds wrong*? She’d write it off. Everyone would. Until they couldn’t.
+
+Collar seam inspection next. He runs fingers along the sealant bead. No active steam. No obvious leak. The joint looks fine.
+
+It isn’t.
+
+He moves to Junction Nine. Palm check. Same doubled harmonic. He tests a side spur valve—turns it slow, feels the baseline shift—but the doubled note stays.
+
+*Off-local*, he writes.
+
+Copper taste spreads across his tongue. He checks his gums. No blood. No injury. Just metal, coating the back of his molars.
+
+He logs it: *Metal taste without injury.*
+
+A guild chalk board hangs crooked near Junction Ten. *KEEP FLOW. MEET SCHEDULE.* Big letters. Aggressive. He stares at it. Thinks about ripping it down.
+
+Doesn’t.
+
+Work first.
+
+-----
+
+## Chapter 2: Glass That Listens
+
+**POV: Tiffani | Tide 0, Pouring | Beat Type: Observation | Soulpulse: 0**
+
+Observatory platform. Tide 0, Pouring.
+
+Tiffani sets the theodolite base. Scrapes grit from the mounting plate. Checks foot seating. All three points contact stone. Stable enough.
+
+Lens plate inspection. Edges clean. No micro-chips visible under lamplight. She swaps the plate anyway. Eliminate error at the source.
+
+Logbook header goes in first. Always. Tide and phase. Target designation. Instrument set number. Air notes. And a line for grid-hum—she started adding that three Tides ago when the pitch began drifting.
+
+Seven-Three read: the star’s position offset beyond tolerance. She resets the instrument. Runs the measurement again.
+
+Same offset.
+
+Control star next. Reference point. Known stable position. She sights it, logs the reading.
+
+Stable.
+
+She writes: *Instrument not source.*
+
+The glass plate bins along the north wall begin a low resonance. Faint. She wouldn’t notice it if the room weren’t so quiet. Tiffani crosses to the bins, touches the rim with two fingers. Vibration climbs into her wrist bones.
+
+The pitch changes. Higher. Then settles lower than baseline.
+
+She logs it.
+
+Grid-hum shifts next. Whine—brief, sharp—then drops to a lower register. Her teeth register it before her ears do. Nails buzzing. Jaw tension rising without her permission.
+
+Back to the theodolite. Seven-Three steps again. Discrete increments. She tracks the progression and draws curve segments in the logbook margin. The offset is increasing. Predictable rate. Measurable.
+
+Pella arrives with bread wrapped in cloth.
+
+“Master Tiffani, I brought—”
+
+“Distance. Silence.”
+
+Pella stops three strides back. Tiffani keeps her eyes on the sight. Watches Seven-Three continue its wrong trajectory.
+
+Metallic taste arrives. Sudden. Copper on her tongue. She checks the corners of her mouth with a fingertip—dust contamination, probably, wind-carried grit from the kilns below.
+
+The fingertip comes away with copper-gold shimmer. Particulate. Sticky.
+
+She tests it on a slate seam edge. It doesn’t brush off clean. Sticks. Adheres.
+
+Tiffani writes: *External forcing.* Underlines it once. Hard enough the chalk snaps.
+
+Warning protocol exists for deviations this severe. She crosses to the bell cord. Pulls the sequence. Three sharp rings.
+
+The bell tone rings flat. Then corrects itself mid-decay.
+
+Below, in the glass workshop, apprentices look up. The grinding wheels stop. Everyone listens for the second strike that would mean evacuation.
+
+It doesn’t come. Not yet.
+
+Structure tremor begins. The theodolite feet scrape across stone. Her logbook page lifts, slaps back down. She pins it with her palm. Holds.
+
+Air pressure arrives before sound. Her ribs vibrate. Breath interrupts—short, forced—then returns. She writes: *Pressure wall.*
+
+Dust column rises beyond the roofline. She tracks it. Debris arcs widen. The centerline is visible through the chaos. Something massive. Something fast.
+
+Gravity reduction begins.
+
+Her boots lose full pressure contact with stone. Stomach lifts. She counts heartbeats without deciding to. Five. Six. Seven.
+
+Gravity returns.
+
+Harsh. Immediate. Her knees flex hard to absorb it. Gums split. Blood taste joins the copper taste already coating her mouth.
+
+Through the dust, she sees it.
+
+A dark absence. Spindle-shaped. The boundary distorts light as it moves. She logs: *Bent-light phenomenon.*
+
+The Seam becomes visible in clear gaps between dust surges. A scar path across the sky. Persistent. Wrong.
+
+Dust fall begins in earnest. Particulate sticks to her lashes. Lip seams. Throat feels coated. She coughs once. Swallows grit.
+
+Pella points at the street below. Chaos. Bodies running. Structures collapsing in sequence.
+
+Tiffani doesn’t look long. She finishes one last notation. Measurement. Duration. Trajectory.
+
+Field response pivot.
+
+“Chalk, cord, spare slate, plates, logbook. Secure them.”
+
+Pella moves fast. Ties down what can’t be carried. Tiffani bans the lift—grid instability makes it a trap—and calls descent order.
+
+Stairs. Now.
+
+They go down into the screaming.
+
+-----
+
+## Chapter 3: The Piercing
+
+**POV: Jhace | Tide 0, Shaping/Striking | Beat Type: Crisis | Soulpulse: 2**
+
+Jhace climbs out from Underface into street fracture. Dust hangs in curtains. Sightlines cut to arm’s length.
+
+Copper-gold particulate sticks to every sweat seam. First breath brings copper-iron taste. Thick. Coating.
+
+The grid-hum is *wrong*. Audible now in open air. Low edge that grinds into his teeth.
+
+Pressure wall hits.
+
+His ribs vibrate. Breath stops mid-inhale. The roar follows after—distant, massive, getting closer.
+
+Gravity reduction begins.
+
+Loose items lift. Dust rises in sheets. His boots lose contact. Stomach drops. He counts heartbeats. Doesn’t decide to. Just does. Eight. Nine. Ten.
+
+Gravity *slams* back.
+
+His knees buckle. A post near him snaps at the base—clean break, no warning. People fall into stone. Hard. Blood spreads into dust, turns it rust-dark.
+
+Eruption column visible beyond the rooflines. Debris rising fast. Fragments arc wider with each heartbeat. The sky is *wrong*. Torn. Light bending around something he can’t see directly.
+
+He moves toward the market corridor. Screaming has direction. Has density. People trapped.
+
+The corridor roof beam drops.
+
+Chloen pinned. Leg crushed under timber. Blood spreads fast into the dust. She’s gasping. Can’t get full breath.
+
+Jhace tries brute lift. Hands under the beam. Legs drive. Load doesn’t move. Another tremor underfoot threatens secondary collapse.
+
+He shifts to contact hold instead. Palms flat against timber. Intent narrows. *Hold long enough.*
+
+Copper-gold glow enters the timber grain.
+
+He doesn’t decide it. Doesn’t *will* it. His hands are just there and the light threads into the wood along stress lines. Following the load path. Showing him where it wants to break.
+
+The beam stops settling.
+
+Evac hands pull Chloen free. Her apprentice coat tears. She gasps. Breathes. Screams once when they move her leg.
+
+Jhace holds two more heartbeats. Prevents roll. Then releases.
+
+The glow cuts.
+
+Tremor starts in his fingers. Spreads to wrists. He tries to clench his hands into stillness. Can’t. The shake persists.
+
+Second failure call. Doorway post cracking. People trapped under the lintel. Crowd pushing from behind makes it worse.
+
+He clears bodies with voice and shoulder pressure. Uses authority tone. No badge. Doesn’t matter right now.
+
+Palms to the doorway post. Feet set. Elbows locked. Eyes on the crack mouth.
+
+Copper-gold threads again. Into stone this time. Into the lintel interface. Load paths light briefly. Show him what’s holding. What’s failing.
+
+Evac completes. He counts heartbeats. Holds until the last body clears. Releases.
+
+The glow cuts.
+
+Cost escalates. Forearm pain. Deep. Bone-deep. Tremor amplitude increases. His mouth tastes like he’s been chewing nails.
+
+Tiffani arrives. Logbook open. Chalk in hand. She looks at his hands first. Then at the failure geometry.
+
+“Your name.”
+
+“No.”
+
+“Rumor control requires data. Your name.”
+
+He doesn’t answer. She writes anyway. Probably describes him. Height. Build. Coat. Enough.
+
+She orders bracing points with chalk. Fast marks. Precise. He looks at the geometry. Feels the load in his gut.
+
+She’s right.
+
+He obeys. Sets wedges where she marks. Crowd starts to settle. Panic dropping to exhausted grief.
+
+They move toward the next failure site. No agreement stated. But their pace syncs.
+
+Behind them, the Seam cuts across the sky. Scar tissue in reality. Dust glitters copper-gold in every seam, every breath, every surface.
+
+The world has changed.
+
+Jhace’s hands won’t stop shaking.
+
+-----
+
+## Chapter 4: After the Shudder
+
+**POV: Jhace | Tide 1, Kindling | Beat Type: Trial/Failure | Soulpulse: 2**
+
+Bram’s workshop becomes staging. Slate stacks in corners. Wedges piled near the door. Cord coils hanging from wall pegs. Triage lists chalked on every flat surface. Dust on everything.
+
+Jhace wakes slumped against a workbench. Tremor at rest. His hands shake without load, without cause. He presses both palms flat to the table. Tries to steady them through pressure.
+
+The tremor persists.
+
+He finds a bent nail in the scrap bin. Simple task. Straighten it. Prove the hands still work.
+
+First hammer strike misses. Second glances off the nail head. Third sends the nail skittering across the bench.
+
+He stops before he breaks something. Before he breaks himself.
+
+Bram appears from the back room. Watches. Doesn’t comment immediately. Just sets a water jug within reach.
+
+“Different work today.”
+
+Not comfort. Just direction.
+
+Jhace drinks. Water tastes like copper anyway. Doesn’t help.
+
+Tiffani arrives with her logbook. She looks at his hands first. Then his face. Assessing. Always assessing.
+
+“Field call. Hairline crack in a stable wall. No imminent threat. I need you to confirm.”
+
+She’s testing him. He knows it. She knows he knows.
+
+They go.
+
+The wall is cracked but not failing. Load paths are clear. No immediate danger. Just… there. Waiting.
+
+Jhace places his palms on the stone. Tries to feel for the glow. For the thread of light that came so easily yesterday.
+
+Nothing.
+
+He narrows intent. Focuses harder. *Hold. Stabilize. Show me.*
+
+Nothing answers.
+
+Frustration spikes. The tremor gets worse. His breath shortens.
+
+“Jhace.”
+
+Tiffani’s voice. Clinical. Not worried. Just observing.
+
+He pulls his hands back. Looks at them. Useless.
+
+She writes: *Failed activation. No imminent failure present. Wall stable.*
+
+No blame in the notation. Just data.
+
+Runner arrives before they make it back to Bram’s. Young. Breathless.
+
+“Kiln corridor! Brace shifted! People trapped behind—sagging span—they said get you—”
+
+They move as a unit. Bram’s already there when they arrive. Has wedges. Has manpower. Pella runs messages between stations.
+
+Tiffani reads the crack map. Marks unsafe zones with chalk. Uses her voice to push the crowd back. They listen. Fear makes people obedient.
+
+Jhace braces conventionally first. Wedges under load points. Cord tension across the span. Temporary posts where the structure wants to fold. Buys time. Nothing more.
+
+Aftershock begins.
+
+The conventional brace creeps. Crack mouth widens. Dust streams down in visible lines. People scream behind the span.
+
+Jhace looks at Tiffani.
+
+She nods once.
+
+Authorization. Not impulse. Protocol.
+
+He sets his palms on the brace interface. Feet planted. Elbows locked. Intent narrows to single purpose: *Hold until they’re out.*
+
+Copper-gold glow threads into the brace. Into the load path. Shows him where the structure is trying to tear itself apart.
+
+The span holds.
+
+Evacuation continues. Bodies move in waves. Tiffani counts them. Calls out numbers. “Twelve. Thirteen. Fourteen.”
+
+“Release.”
+
+First command. He hesitates. One more heartbeat. Make sure.
+
+“Jhace. Release. Now.”
+
+He releases.
+
+The glow cuts. The conventional braces take over. The span settles but holds.
+
+Cost: tremor persists after. Worse than before. Vein-lines visible during the hold—faint copper-gold traces under his skin that fade slowly. Exhaustion drops his motor control. He can barely grip the chalk Tiffani hands him.
+
+Kylar appears near the edge of the cleared zone. Hands hidden in sleeves. Eyes fixed on where Jhace’s hands were glowing.
+
+Tremor shows when Kylar pulls his hands out. Not as bad as Jhace’s. But there. Visible. Real.
+
+Jhace clocks it immediately. Fear lands cold in his gut.
+
+He’s not alone in this.
+
+Kylar crosses to them. Doesn’t ask permission. Just speaks.
+
+“I need—I felt it during the Piercing. The copper taste. The pull. I can feel cracks now. Structures that want to fail. I need to know how to—”
+
+“No.”
+
+Jhace’s voice comes out harder than intended. Kylar flinches.
+
+Tiffani steps in. Clinical framing. “Training requires baseline assessment. Safety criteria must be established before—”
+
+“He’s not ready.”
+
+“Neither were you.”
+
+The argument sits between them. Unresolved.
+
+Kylar’s tremor worsens. Shame shows as tension in his shoulders. He keeps his hands visible now. Defiant. Or desperate.
+
+Tiffani pulls out a slate. Writes criteria. Safety requirements. What would need to be true before Kylar attempts anything.
+
+- Spotter present
+- Timer established
+- Conventional bracing in place first
+- No solo attempts
+- Release command authority assigned
+
+Jhace wants to add “not yet” to the list. Wants delay. Wants certainty.
+
+Tiffani doesn’t give him that option. She hands the slate to Kylar.
+
+“When you meet these requirements, we begin assessment. Not before.”
+
+Kylar takes the slate. Nods. Leaves.
+
+Bram speaks from behind them. Dry. Cutting.
+
+“Stop pretending you’re calm.”
+
+Both glare. Bram keeps working. Stacking wedges. Coiling cord. Workshop tasks. Steady.
+
+Tiffani collects baseline notes. Jhace’s tremor at rest. Tremor after exertion. Recovery slope—if there is one.
+
+Small humor cuts through: Bram mutters something about “a pair of slates with feet.” They both glare. He grins. Keeps working.
+
+Later. Lamplight. Jhace stares at his shaking hands.
+
+He pulls out his own slate. Writes: *Cost persists.*
+
+The tremor makes the letters uneven. Proof in the writing itself.
+
+-----
+
+## Chapter 5: Where to Press
+
+**POV: Tiffani | Tide 1, Pouring | Beat Type: Training/Method | Soulpulse: 0**
+
+Tiffani salvages what’s left of the observatory. Bent theodolite parts—the base is cracked but the adjustment screws are intact. Glass plates, half of them fractured. The logbook survived. She prioritizes paper over tools. Data over instruments.
+
+Bram’s forge corner becomes her new measurement station. She chalks a grid on the stone floor. Stretches cord line for distance markers. Labels everything with slate fragments.
+
+Jhace’s four activation events get structured entries. Each one documented:
+
+- Activation condition (life-threat present, imminent failure)
+- Duration (heartbeat count, she estimates based on witness accounts)
+- Visible cost markers (tremor onset, vein-lines, exhaustion depth)
+
+She draws the cost curve. Projects forward with conservative assumptions. The slope is bad. Unsustainable.
+
+Jhace looks at the projection. Jaw tight.
+
+“That’s fear talking.”
+
+“That’s math.”
+
+He pivots. Tries ethics. Triage. “If someone’s dying and I can—”
+
+“Dead operators save no one tomorrow.”
+
+He doesn’t like that. She doesn’t soften it.
+
+Bram backs her from across the workshop. Doesn’t look up from his cord coiling. Just speaks.
+
+“My space, my rules.”
+
+Jhace’s hands shake harder when he’s angry. He can’t hide it.
+
+Tiffani proposes protocol. Writes it on slate:
+
+1. Conventional brace first (always)
+1. Timer present (always)
+1. Spotter present (always)
+1. Release command authority (assigned to spotter)
+
+Jhace fights number four. Hard.
+
+“I know when to stop.”
+
+“Your tremor suggests otherwise.”
+
+She marks his current tremor as data. Not insult. Continues.
+
+They agree. Finally. Her marks. His execution. Bram enforces boundaries. Pella enforces food and rest.
+
+Tiffani drafts field checklist slates. Clear steps:
+
+- Assess load
+- Mark contact points
+- Clear crowd
+- Brace conventionally
+- Then decide
+
+Pella looks over her shoulder. Reads the checklist. Thinks for a moment.
+
+“Call it ‘Don’t Die Today.’”
+
+Tiffani doesn’t laugh. Doesn’t smile. Keeps the title.
+
+She notices her own micro-tremor that evening. Exhaustion tremor, not Soulpulse. She logs it anyway. Refuses to make it dramatic. Just data.
+
+Teaching begins the next morning.
+
+“Single failure points. Not whole structure hold.”
+
+Jhace admits he held too long on the arch. Doesn’t apologize. States it as fact.
+
+“You held four heartbeats past threshold.”
+
+“People were still—”
+
+“You do not get to be brave with my data.”
+
+The statement lands. He doesn’t argue further.
+
+Runner brings new failure reports. Tiffani triages by risk density. High body count areas first. Optics work can wait.
+
+She packs field kit: chalk, cord, spare slate, glass plates for measuring angles, water, cloth strips, wedge slips.
+
+Pella threads cord through kit loops without being asked. Fast-access rigging. Tiffani accepts the help. Doesn’t comment.
+
+They move to the next site. Protocol already spoken aloud once. It’s becoming reflex.
+
+Tiffani marks the street with chalk. Boundary zones. Safe standing areas. Load vectors. People watch. Some obey. Some don’t.
+
+Jhace uses voice to clear bodies. Command tone. No badge needed.
+
+Tiffani uses geometry to convince them. Shows them where the structure wants to fall. Makes it visible.
+
+Complementary authority.
+
+They succeed without activation. Conventional bracing holds. The structure stabilizes.
+
+Tiffani logs it: *Method proof. Not luck.*
+
+Evening. Workshop. Kylar appears in the doorway. Hands visible this time. Tremor present.
+
+The copper taste in Tiffani’s mouth shifts when he’s close. Still metallic. But different. Bitter edge. Like tin left too long in acid.
+
+She notes it. Doesn’t understand it yet.
+
+Kylar asks again. Quiet. Determined.
+
+“I meet your criteria. Spotter. Timer. Conventional brace first. I need to learn before I—before something happens and I don’t know what I’m doing.”
+
+Jhace wants to refuse again. Fear sits in his silence.
+
+Tiffani speaks first.
+
+“Baseline assessment tomorrow. Tremor at rest. Tremor after conventional work. Response time. Then we determine next steps.”
+
+Not a promise. Not a denial. Process.
+
+Kylar nods. Leaves.
+
+Bram mutters something about “collecting strays.” Neither Jhace nor Tiffani responds.
+
+A slate arrives late. Delivered by an older runner. Official language. Formal edges.
+
+*Resource Regulation Office requests coordination of structural interventions for public safety documentation.*
+
+Tiffani reads it once. Expression goes flat. She files it under the workbench.
+
+Future problem. Not today’s.
+
+Jhace reads it over her shoulder. Crumples the corner before catching himself. Bram tells him not to—slate’s still needed for records.
+
+Tiffani pins the protocol slate to the forge wall where everyone must see it. The title “Don’t Die Today” sits at the top in Pella’s handwriting.
+
+Outside, the wrong grid-hum continues. The copper-gold dust hasn’t settled. Won’t settle.
+
+The world has changed. They’re building method to survive it.
+
+Tiffani closes her logbook. Chalks tomorrow’s assessment schedule on the wall.
+
+Kylar. Tide 1, Shaping. Baseline tremor measurement. Conventional brace drill.
+
+No activation. Not yet.
+
+Method first.
+
+-----
+
+## Chapter 6: The Arch Under Strain
+
+**POV: Jhace | Tide 1, Shaping/Striking | Beat Type: Crisis | Soulpulse: 1**
+
+Approaching the arch. Crowd noise. Dust in throats. Wrong grid-hum underfoot like a warning that never stops. Keystone creep visible even from a distance.
+
+Jhace wants to rush. Tremor makes speed dangerous. He forces pace control. Steady. Don’t trip. Don’t fail before you arrive.
+
+Tiffani’s already there when he reaches the sightline. Chalk boundary zone marked. Clean lines. Clear geometry.
+
+She orders evacuation lanes. Bodies start moving. Salee’s runners—unlabeled, no guild marks—move through the crowd efficiently. Organizing without being asked.
+
+Tiffani inspects the keystone seat. Finds slip direction. Marks three contact points on stone with chalk. Numbers them.
+
+Jhace tests the stone. Knuckles first. Then palm. Feels the load shift under his hand. Minute. Grinding. Wrong.
+
+He agrees. The marks are correct.
+
+Conventional bracing goes in. Posts set. Wedges tapped. Cord tensioned. Bram’s crew moves fast. Practiced now. They’ve done this enough times to have rhythm.
+
+Crowd pushes back toward the arch. Belongings left behind. Risk assessment broken by attachment to objects.
+
+Jhace blocks with body and voice. Uses the inspector authority he technically doesn’t have anymore. Grim humor slips once—something about “stay back or become part of the stone”—bitter edge makes it land wrong.
+
+No one laughs. They move.
+
+Aftershock begins.
+
+Dust bursts from mortar seams. The arch throat sound changes. Lower pitch. Settling. Breath catches in Jhace’s chest before the vibration even reaches him.
+
+Keystone creeps. Visible movement. The conventional brace begins to walk. Posts scraping stone. Wedges losing bite.
+
+Imminent failure. Clear.
+
+Tiffani meets his eyes. Nods once.
+
+Authorization. Protocol satisfied. He can act.
+
+Jhace places palms on the marked points. One and three. Elbows locked. Feet planted wide. Intent narrows to single purpose: *Hold.*
+
+Copper-gold threads appear. They trace Tiffani’s predicted load paths exactly. Up through the keystone. Down through the arch legs. Following stress. Following want-to-break.
+
+The arch holds through peak vibration.
+
+Evacuation lane clears. Bodies move in waves. Children first. Elderly next. Then everyone else.
+
+Jhace feels time stretch. Strain becomes its own duration. Tremor tries to climb into his shoulders. He fights it. Keeps the hold steady.
+
+Tiffani’s voice cuts through.
+
+“Release. Threshold reached.”
+
+Jhace hesitates. Two more heartbeats. Make sure.
+
+“Jhace. Release. Now.”
+
+Command voice. Force behind it.
+
+He releases.
+
+Glow cuts. Keystone settles but stays. Conventional braces take over. The structure stabilizes.
+
+Cost spike immediate. Tremor spreads into shoulders. Vein-lines visible—copper-gold traces under skin that don’t fade fast enough. Exhaustion slams his motor control like a hammer.
+
+His knees fail.
+
+He drops toward stone.
+
+Tiffani catches him. Under the arm and across the ribs. Shifts his weight to prevent head strike. Her shoulder takes the load. She’s stronger than she looks. Or more determined.
+
+Brief contact. Sustained. No softness. Just care. Competence.
+
+Bram appears with water and cloth. Makes one cutting joke—something about “dramatic exits”—cuts the panic rising in the crowd. It works. People laugh nervously. Tension breaks.
+
+Jhace tries to stand too soon. Legs don’t obey.
+
+Tiffani blocks him. Palm to his chest. Command voice again.
+
+“Stay down. Thirty count minimum.”
+
+He obeys. Anger burns. Relief burns with it. He hates both. Hates needing her authority. Hates that it works.
+
+The metallic taste in his mouth is overwhelming. Not just copper anymore. Iron. Something bitter underneath. His gums feel swollen.
+
+Water helps. Barely.
+
+Tiffani’s already writing. Event log. Duration. Cost markers. Her hands stay steady while his shake.
+
+He watches her write. Watches her hands not shake. Trust becomes physical fact. Not spoken. Just there. Proven through repetition.
+
+She finishes notation. Closes the logbook. Looks at him.
+
+“Can you walk?”
+
+“Yes.”
+
+“Prove it.”
+
+He stands. Tremor present but manageable. Legs hold. Barely.
+
+They walk back to Bram’s workshop together. Slow pace. She stays close. Not touching. But close enough to catch him if he falls again.
+
+People watch them. Some grateful. Some afraid. The rumors are building. “The ones who glow.” “Grid-blessed.” “Cursed.”
+
+Jhace hears fragments. Doesn’t respond.
+
+Tiffani hears them too. Makes no comment. Just keeps walking.
+
+At the workshop, she makes him sit. Checks his pupils. Tests grip strength. Times tremor frequency.
+
+Clinical. Distant. But thorough.
+
+“You held past threshold.”
+
+“I know.”
+
+“Don’t.”
+
+Not a request. Statement of boundary.
+
+He doesn’t argue. Too tired.
+
+Bram brings food. Pella brings more water. Kylar watches from the corner. Eyes fixed on Jhace’s still-shaking hands.
+
+The cost is visible. Undeniable.
+
+Later. Lamplight. Tiffani reviewing her notes.
+
+Jhace stares at his hands. Tremor still present. Vein-lines faded but not gone. Copper-gold traces like cracks in glass.
+
+He closes his eyes. Feels the ghost of her hand across his ribs. Catching him. Holding weight he couldn’t carry himself.
+
+Trust.
+
+Uncomfortable. Necessary. Real.
+
+-----
+
+## Chapter 7: Method
+
+**POV: Tiffani | Tide 1, Quench | Beat Type: Recalibration/Debate | Soulpulse: 0**
+
+Tiffani selects salvage for a practice rig. Straight posts. Intact brackets. Stable wall section that won’t collapse if someone makes a mistake.
+
+She marks stress lines in chalk. Numbers them. Treats it like instrument calibration. Find the baseline. Measure deviation. Adjust.
+
+Bram complains about wasting good timber. Still drills holes. Still sets brackets. Mutters the whole time.
+
+Jhace arrives impatient. Drops a wedge. Tremor makes his grip unreliable. He curses once. Low. Bitter.
+
+Tiffani frames the rig as capacity gain.
+
+“Fewer activations. Lower cost per event. More functional days.”
+
+She times his tremor baseline at rest. Writes the number on slate. Shows him without judgment.
+
+They run conventional brace drills first. Wedges. Cord tension. Load transfer sequences. Release timing.
+
+Jhace admits his hands fail at fine hammer work now. Hates saying it. She doesn’t react. Just notes it.
+
+Teaching continues. She calls it “narrowing intent” because calling it anything else sounds mystical and she refuses mysticism.
+
+“Smaller contact area. Shorter duration. Pre-load with conventional bracing so you’re only stabilizing, not holding entire load.”
+
+Jhace practices contact placement on chalk marks. No activation. Just muscle memory. Hand here. Feet here. Posture like this.
+
+Kylar watches from the doorway. Hands hidden in sleeves. Eyes fixed on every movement.
+
+He steps forward. Asks.
+
+“Can I—I meet the criteria. Spotter. Timer. I’m ready.”
+
+Jhace’s voice goes hard immediately. “No.”
+
+Fear sits under the hardness. Obvious.
+
+Tiffani corrects the framing.
+
+“Safety criteria. Not readiness assessment.”
+
+She writes criteria on slate:
+
+- Tremor baseline established
+- Conventional brace proficiency confirmed
+- Spotter assigned and briefed
+- Timer present
+- No activation without life-threat present
+
+Debate escalates. Jhace wants delay. More assessment. More certainty before risk.
+
+Tiffani wants controlled practice now. Small loads. Measured attempts. Learn the boundaries before crisis forces discovery.
+
+Both protecting Kylar. Different methods.
+
+Bram cuts through from across the workshop. Doesn’t look up.
+
+“Stop pretending you’re calm.”
+
+Both glare. Bram keeps working.
+
+Tiffani drafts protocol slates. Detailed. Explicit:
+
+- Spotter required (no exceptions)
+- Timer required (no exceptions)
+- No solo attempts (ever)
+- Rest intervals (minimum one bell between attempts)
+
+She adds stop command hierarchy. Writes her name as primary authority. Jhace as secondary.
+
+Jhace pushes back. Doesn’t like hierarchy. Doesn’t like giving control.
+
+She doesn’t argue philosophy. Just points at his tremor. At the vein-lines still faintly visible under his skin.
+
+He signs the slate.
+
+Pella brings water.
+
+[ASSISTANT]
+## Continuity + structure audit (what’s solid, what’s busted)
+
+### What’s solid
+- **Core engine works:** competence-based partnership, method over heroics, cost curve forcing discipline.
+- **Sensory motif is consistent:** copper taste + wrong hum + particulate adhesion = clean “something changed” signature.
+- **Protocol escalation feels believable:** conventional brace → authorization nod → activation → release command → logged cost.
+
+### What’s busted / dragging you down
+- **You overuse “log/write/notes” as action.** It reads like an incident report with occasional tragedy. Keep the logging, but **make it the punctuation, not the drumbeat**.
+- **Repetition without escalation:** copper taste, hum, dust, heartbeats show up constantly but don’t always *change*. Each recurrence should either (a) intensify, (b) invert, or (c) reveal new info.
+- **Jhace’s voice is too controlled too often.** He’s allowed to be ugly inside. Right now he’s a disciplined machine who occasionally shakes. Let him have a few raw, petty, frightened thoughts.
+- **Supporting cast needs sharper hooks:** Bram’s great; Pella and Kylar risk blurring into “helpful runner / anxious trainee.” Give each one a signature move and a boundary.
+- **Beat math mismatch risk:** Your metadata lists a distribution that implies **12-ish beats**, but you’ve only shown **7 chapters** and some beats overlap. That’s fine—just lock it deliberately so it doesn’t drift.
+
+## Expansion plan to hit ~25k without bloat
+Do this by **thickening scenes**, not adding random new scenes.
+
+- **Add “micro-failure” moments** inside chapters (a brace slips, a crowd surges, a tool breaks) so tension isn’t only “big collapse.”
+- **Give each chapter 2–3 “hard specifics”:**
+  - exact brace geometry choice,
+  - exact failure signature,
+  - exact crowd-control tactic,
+  - exact cost symptom progression.
+- **Upgrade conflict from “they disagree” to “a wrong decision has a price”:**
+  - Jhace ignores threshold → can’t hold a hammer later.
+  - Tiffani pushes protocol → someone accuses her of playing god with access.
+- **Make the dust *do* things** (conducts heat, clogs lungs, sticks to glass, shorts a mechanism, changes friction). Right now it’s mostly atmosphere.
+
+---
+
+# Chapter 7: Method (finish + lock the turning point)
+
+**POV: Tiffani | Tide 1, Quench | Beat Type: Recalibration/Debate | Soulpulse: 0**
+
+Pella brings water. Not offered—placed. The cup hits stone with a quiet finality that makes argument feel childish.
+
+Jhace drinks like it’s a task. Hands shaking around the rim. He hates that Tiffani sees it. He hates more that Bram sees it too and doesn’t even pretend not to.
+
+Tiffani wipes chalk dust from her palms, resets the practice rig markers, and speaks like she’s calibrating an instrument.
+
+“We’re not training power. We’re training **release**.”
+
+Jhace scoffs. Too tired to hide the fear under it.
+
+“Release gets people killed.”
+
+“Holding past threshold gets *you* killed. Dead operators save no one tomorrow.”
+
+Same line as before. Different weight this time, because his knees already proved she’s right.
+
+Bram finally looks up. Eyes narrow.
+
+“Your pride’s loud today.”
+
+Jhace snaps back automatically. “Your mouth’s always loud.”
+
+Bram nods, satisfied. “Good. Means you’re still you.”
+
+Tiffani doesn’t let them spiral. She chalks three marks on the stone—tight cluster.
+
+“Contact discipline. You held with your whole body, like you were trying to become a brace. That’s heroics. Heroics are expensive.”
+
+She points with the chalk tip, precise.
+
+“**One point.** Not two. Not three. One. You stabilize the *highest-leverage stress seam*, not the whole damned world.”
+
+Jhace steps forward, almost eager to argue, and his hand betrays him—tremor makes the wedge slip from his fingers. It clacks on stone, loud as a confession.
+
+He freezes.
+
+Kylar flinches at the sound. Hands hidden. Shoulders up around ears like he’s trying to crawl inside his own ribs.
+
+Tiffani watches Jhace’s reaction more than the wedge.
+
+“Pick it up.”
+
+Jhace bends. The tremor makes the simple motion awkward. Rage flashes hot in his throat—at his hands, at the dust, at the copper taste, at the fact that “method” is now what stands between him and being useless.
+
+He picks it up anyway. Slower. Two-handed. Controlled.
+
+Tiffani nods once. Not praise. Confirmation that he didn’t quit.
+
+Kylar steps forward a half stride.
+
+“I can do conventional braces. I can do timer. I can do spotter. I can—”
+
+“No,” Jhace says, immediate and hard.
+
+Kylar’s shoulders drop like he expected it.
+
+Tiffani doesn’t contradict Jhace. She redirects.
+
+“Show me your baseline.”
+
+Kylar hesitates, then pulls his hands out of his sleeves.
+
+Tremor. Real. Small, but present—like a tool vibrating against stone when it shouldn’t.
+
+Tiffani’s mouth tastes bitter tin again. Not copper. Not iron. Different contaminant. Different signature.
+
+She writes it down without comment.
+
+Bram mutters, “Ah. Another one.”
+
+Kylar stares at him. “You knew?”
+
+Bram shrugs. “I know what fear looks like.”
+
+Tiffani holds up the slate with the protocol. Flat, unavoidable.
+
+“You don’t get to *want* this. You get to **qualify** for it.”
+
+She points at the bullet list and adds one more line under the existing criteria:
+
+- **Abort reflex demonstrated** (release on command without argument)
+
+Jhace bristles. “That’s—”
+
+“That’s survival.”
+
+Jhace glares. His tremor spikes with anger. He can’t hide it. The anger makes it worse, which makes him angrier. Perfect little loop.
+
+Tiffani keeps the tone clinical. A mercy disguised as coldness.
+
+“We do a controlled attempt. Not today. Tomorrow. Small load. No crowd. No heroics. If you can’t release on my word, you don’t touch the seam. If he can’t release on your word, he doesn’t touch it either.”
+
+Kylar swallows. “Tomorrow.”
+
+Jhace says nothing. Silence as refusal. Silence as fear.
+
+Bram breaks it by pushing a coil of cord toward Jhace.
+
+“Hands shake? Use the cord. Tie your pride to something useful.”
+
+Jhace takes it. The joke lands because it’s not a joke. It’s a job.
+
+Tiffani pins the updated slate to the forge wall beside “DON’T DIE TODAY.”
+
+Below it, she adds a second title in her own handwriting:
+
+**RELEASE IS A SKILL.**
+
+No flourish. No ceremony. Just the new law of their little workshop.
+
+Outside, the wrong grid-hum continues like a low argument the city can’t stop having.
+
+And inside, for the first time since the Piercing, their work stops being reaction.
+
+It becomes practice.
+
+---
+
+# Chapters 8–12 (locked structural draft to complete N01)
+
+## Chapter 8: The First Attempt
+**POV: Tiffani | Tide 2, Kindling | Beat Type: Trial/Failure | Soulpulse: Kylar (1 failed)**
+
+- Practice rig set with **small controlled load**.
+- Kylar meets criteria; spotter assigned (Jhace), timer (Pella), Bram enforces space.
+- Kylar attempts contact—**copper taste hits, tin edge worsens**, particulate clings to his fingertips like glue.
+- **Failed activation:** glow flickers wrong, not threading load paths—more like surface burn. He panics and tries to *hold harder*.
+- Tiffani issues release command. Kylar hesitates—Jhace forcibly breaks contact (protocol enforced).
+- Cost marker on Kylar: tremor spike + nausea + brief nose bleed (or gum split) + shame spiral.
+- Outcome: protocol proved necessary; Kylar not safe yet; new rule added: **touch duration cap** (heartbeat max) even on failed flicker.
+
+## Chapter 9: Quiet Repairs
+**POV: Jhace | Tide 2, Pouring | Beat Type: Recovery/Intimacy | Soulpulse: 0**
+
+- Jhace tries fine work again—still can’t. The loss hits harder than any collapse.
+- Tiffani does something “soft” in her language: adjusts tasks so he stays useful without saying it’s pity.
+- Bram forces them to eat and sleep by turning off access to tools. “You don’t get to martyr in my shop.”
+- Jhace finally asks the real question: “Why me?” Tiffani refuses mysticism and answers with **conditions and probabilities**, which somehow comforts him more.
+- Trust deepens through competence: she tapes his fingers for grip stability; he builds her a better measurement mount.
+- End hook: official runners seen outside again—Resource Regulation Office is circling.
+
+## Chapter 10: The Collapse That Wants Them
+**POV: Jhace | Tide 2, Shaping/Striking | Beat Type: Crisis | Soulpulse: 2 (Jhace +2)**
+
+- High-density failure zone: a terrace edge or corridor with **stacked load and crowd pressure**.
+- Officials (or Salee-aligned runners) push for speed over safety: “Keep flow. Keep schedule.” Same bullshit, louder.
+- Conventional braces start, but the dust has changed friction; wedges creep faster; cord bites wrong.
+- Jhace activates twice:
+  1) short stabilization to prevent initial mass-casualty drop,
+  2) second activation to create a controlled “release” path (not just holding).
+- Tiffani’s release command saves him from overhold. He obeys fast this time—**growth shown, not spoken**.
+- Cost: tremor worsens again; vein-lines linger longer; he loses grip strength for a full bell-count after.
+- Outcome: they save lives, but they’re now **publicly visible** as “the glow pair,” and officials lock onto them.
+
+## Chapter 11: Registration
+**POV: Tiffani | Tide 3, Kindling | Beat Type: Political Pressure | Soulpulse: 0**
+
+- Resource Regulation Office meeting (or confrontation): they want documentation, oversight, “public safety coordination.”
+- Translation: **control**.
+- Tiffani plays it like negotiation: gives them *method language* (protocols, checklists) while withholding *activation triggers*.
+- They threaten tool seizure, workshop shutdown, or “mandatory deployment.”
+- Bram draws a hard line: “My shop isn’t your stable.”
+- Kylar becomes leverage—officials hint at “training programs” that sound like cages.
+- End hook: Tiffani realizes the dust signatures differ by person (copper vs tin edge). That’s a future system clue.
+
+## Chapter 12: Commitment
+**POV: Jhace | Tide 3, Pouring/Quench | Beat Type: Recovery/Intimacy | Soulpulse: 1 (Jhace +1)**
+
+- Aftershock hits during a politically tense moment (a public demonstration, forced deployment attempt, or workshop raid).
+- Jhace uses **one last clean, short activation**—single point, perfect release—proving method mastery.
+- He chooses *not* to chase heroics afterward. He sits. He lets others brace. He accepts limits.
+- Tiffani makes the real commitment: not romance-talk, but **shared work pact** (mutual authority, shared protocol custody, shared data).
+- Kylar accepts being “not yet” without storming off—small victory.
+- Closing image: “DON’T DIE TODAY” slate stays on the wall. Next to it: a second slate, newly hung, in official handwriting—proof the institution is closing in.
+- Final line vibe: the city is still humming wrong, but now they have **a way to press without breaking**.
+
+---
+
+## Soulpulse count check (matches your metadata)
+- Jhace: Ch3 (2) + Ch4 (1) + Ch6 (1) + Ch10 (2) + Ch12 (1) = **7**
+- Tiffani: **0**
+- Kylar: Ch8 (1 failed) = **1**
+- Total = **8**
+
+If you want, next step is turning this into a **chapter-by-chapter expansion map** (exact scene list + target word counts + escalation notes + repeating motif rules) so you can safely blow it up to 25k without losing the clean method spine.

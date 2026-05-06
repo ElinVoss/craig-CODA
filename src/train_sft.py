@@ -6,6 +6,7 @@ from pathlib import Path
 import yaml
 
 from .io_utils import read_jsonl
+from .vault_methods import resolve_stage_config, write_stage_resolution
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -16,7 +17,10 @@ def load_sft_config(config_path: str | Path | None = None) -> dict:
     path = Path(config_path)
     if not path.is_absolute():
         path = ROOT / path
-    return yaml.safe_load(path.read_text(encoding="utf-8"))
+    config = yaml.safe_load(path.read_text(encoding="utf-8"))
+    resolved, report = resolve_stage_config("sft", config)
+    write_stage_resolution("sft", report)
+    return resolved
 
 
 def validate_sft_dataset(config: dict) -> tuple[Path, list[dict]]:

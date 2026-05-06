@@ -43,12 +43,14 @@ DEFAULT_REGISTRY = BackendRegistry()
 
 
 def _register_defaults() -> None:
-    """Auto-register scratch and pretrained_transformers backend types."""
+    """Auto-register scratch and local pretrained backend types."""
     from .scratch_backend import ScratchBackend
     from .pretrained_transformers_backend import PretrainedTransformersBackend
+    from .qwen2_5_omni_backend import Qwen2_5OmniBackend
 
     DEFAULT_REGISTRY.register("scratch", ScratchBackend)
     DEFAULT_REGISTRY.register("pretrained_transformers", PretrainedTransformersBackend)
+    DEFAULT_REGISTRY.register("qwen2_5_omni", Qwen2_5OmniBackend)
 
 
 # Register on module import so callers can use DEFAULT_REGISTRY immediately.

@@ -1,0 +1,10 @@
+# Policy nodes define system-level behavioral rules that apply
+# regardless of routing — e.g., privacy enforcement, trust layer
+# access control, provenance citation requirements.
+#
+# At L1, policies are implicit in constraint nodes.
+# Separate policy nodes become useful at L2+ when the constraint
+# compiler needs to distinguish "content constraints" from
+# "behavioral policies."
+
+nodes: {}

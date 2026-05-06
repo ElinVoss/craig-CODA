@@ -1,0 +1,120 @@
+CONVERSATION_ID: 693cfb9d-b290-8333-8fe7-2b18286e5019
+TITLE: Increasing forklift speed
+MESSAGE_COUNT: 4
+
+[USER]
+How do I increase the maximum speed on a Toyota forklift?
+
+[ASSISTANT]
+You generally **shouldn’t** “increase max speed” on a Toyota forklift by bypassing limiters or safety controls. That’s how you end up with a tip-over, a smashed rack, or an OSHA-shaped headache. I can’t walk you through defeating governors/passworded settings or hacking the controller.
+
+What I *can* do is tell you the legit, safe routes and the common “it’s slow because something’s wrong” checks.
+
+## The legit ways (no sketchy tampering)
+1. **Verify the truck is even spec’d for more speed**
+   - Toyota sells different travel-speed configurations by model/class. Some trucks are intentionally capped for stability and braking distance.
+
+2. **Have an authorized tech adjust travel-speed parameters (if available)**
+   - Many Toyota forklifts have **programmable travel speed** and **acceleration** parameters in the controller, but they’re typically **dealer/service-tool + password** protected.
+   - If your site policy allows it, a Toyota service tech can set it within safe limits for that model.
+
+3. **If you truly need faster travel: get the right truck**
+   - If you’re trying to make a warehouse lift behave like a yard truck, the answer is usually “wrong machine for the job,” not “turn it up.”
+
+## The “it’s slow because something is limiting it” checklist
+These are common and fixable, and they *feel* like a speed limiter when they’re really not:
+
+### Electric trucks
+- **Battery condition/voltage sag**
+  - Weak battery = controller derates travel speed under load. Check battery health, connections, watering, and voltage under acceleration.
+- **Speed mode set low**
+  - Some have operator-selectable modes (turtle/rabbit, economy/performance). Make sure it’s not stuck in low mode.
+- **Brake drag**
+  - Jack it safely and check wheel drag. Dragging brakes will make it feel gutless.
+- **Tire size/type**
+  - Wrong diameter tires (or low pneumatics) change effective speed and can trigger traction limits.
+- **Controller derate / fault codes**
+  - Many systems reduce speed if they see certain faults (traction, temp, sensor, seat switch weirdness).
+
+### IC (LP/Diesel) trucks
+- **Engine not making power**
+  - Dirty air filter, fuel restriction, bad LPG regulator, ignition issues = “won’t rev under load.”
+- **Transmission/hydraulic issues**
+  - Heat or low/incorrect fluid can cause sluggish response.
+- **Brake drag / parking brake not fully releasing**
+  - Very common.
+
+### Both
+- **Load/backrest/attachments**
+  - Big attachments can trigger conservative handling or simply add rolling resistance.
+- **SAS / stability behavior**
+  - Toyota’s stability systems can limit behavior depending on conditions and model.
+
+## Practical next step
+If you tell me:
+- the **exact Toyota model** (e.g., 8FGCU25 / 7FBEU18 / etc.),
+- **electric vs LP/diesel**,
+- and whether it’s **always slow** or only **with a load / on turns / after warming up**,
+
+…I can give you a tight troubleshooting path to find what’s *actually* holding it back—without getting you into “defeat safety systems” territory.
+
+[USER]
+No, I work for a warehouse company. We just got a new Toyota lift and the speed isn’t as bad as the one we do have already my old supervisor doesn’t work here anymore so I don’t know the process. My superintendent is now asking me to do it can you help me or what?
+
+[ASSISTANT]
+I can help, but only the legit route. I’m not going to walk you through bypassing governors, cracking service passwords, or defeating stability/safety logic. That’s how people get hurt and you get promoted to “example” in the next safety meeting.
+
+What you *can* do (and what warehouses usually do) is this:
+
+## What the “process” usually is
+### 1) Get the exact truck info
+Go to the **data plate** (usually near the operator compartment/mast area) and write down:
+- **Model**
+- **Serial number**
+- **Power type** (electric vs LP/diesel)
+- **Any attachment** (sideshift, clamp, fork positioner, etc.)
+
+Your dealer/service will ask for this.
+
+### 2) Make sure it’s not just set to a slow mode
+Before anyone touches parameters, check the obvious:
+- Is it in **eco/turtle/low performance** mode (if your truck has mode selection)?
+- Is there a **speed limit setting tied to key/fob/operator profile** (some fleets do this)?
+- Any **seatbelt/seat switch** issues causing derate?
+- If electric: is the **battery low/weak** or connections crusty (speed will derate hard)?
+
+If the old truck is “slow,” it may be sick, not “turned down.”
+
+### 3) Get approval internally (so it’s not on you)
+This is the part your old supervisor probably handled:
+- Superintendent + **EHS/safety** sign-off (even an email) stating: “Adjust travel speed to site standard.”
+- Confirm the **aisle type**, pedestrian traffic, dock plates/ramps, and if you have **speed limits by zone** (some sites do).
+
+This protects you.
+
+### 4) Call Toyota Material Handling / your dealer service
+Tell them exactly what you want:
+- “We want the **travel speed and acceleration set to match our site standard** (or match Truck #X), within Toyota’s allowed settings for this model/attachment.”
+They’ll either:
+- Send a tech with the service tool, or
+- If your company has an in-house certified tech program, they’ll tell you who has access.
+
+### 5) After changes: quick verification
+- Test **unloaded and loaded**, straight line + turns.
+- Confirm **braking distance feels sane** and it doesn’t get sketchy on corners/ramps.
+- Document the change (who/when/what setting category) for maintenance records.
+
+## If your superintendent is pushing “just do it”
+Your clean answer is:
+“I can coordinate the dealer/service adjustment and do the pre-checks, but the speed parameters are dealer/service-tool controlled and need EHS approval.”
+
+That’s not you being difficult—that’s you not being the fall guy.
+
+## If you give me these, I’ll tell you the most likely setup path
+- Model (exact)
+- Electric or LP?
+- Any attachments?
+- Does it have a display with selectable modes, or just basic gauges?
+- What’s the old truck model and what exactly is “slow” (top speed only, or acceleration too)?
+
+With that, I can point you to the correct *above-board* steps and the most common “it’s derating” causes.

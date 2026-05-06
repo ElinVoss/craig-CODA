@@ -1,0 +1,10 @@
+{
+  "threads": 233,
+  "utterances": 23184,
+  "reply_pairs": 2733,
+  "raw_source": "D:\\craig-CODA\\data\\raw\\conversation_exports\\markdown_export_raw",
+  "thread_dir": "D:\\craig-CODA\\data\\clean\\conversation_exports\\markdown_export_raw\\threads",
+  "pretrain_threads": "D:\\craig-CODA\\data\\pretrain\\conversation_exports\\markdown_export_raw\\conversation_threads.txt",
+  "pretrain_utterances": "D:\\craig-CODA\\data\\pretrain\\conversation_exports\\markdown_export_raw\\conversation_utterances.txt",
+  "sft_pairs": "D:\\craig-CODA\\data\\sft\\conversation_exports\\markdown_export_raw\\reply_pairs.jsonl"
+}

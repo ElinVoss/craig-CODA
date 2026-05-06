@@ -1,478 +1,303 @@
-# model-lab
+# craig-CODA
 
-`model-lab` is a local, CPU-first workspace for building and evaluating small AI systems on Windows without cloud dependencies.
+## Read Every Word Before Working
 
-It is organized around two tracks that share one data core:
+If you are a model being pointed at this directory for work, read every word in this README before doing meaningful work.
+There is a continuation prompt at the end of the root handoff path.
+Do not skim for headings and do not begin with broad repo search.
+Use the user-given scope and follow `SCOPE_MAP.yaml`.
+You must also read `LIVE_HANDOFF.md` and keep updating that same file between meaningful actions so the next model inherits the freshest operational state.
 
-- Teach-a-model track: collect examples, corrections, ranked preferences, and eval cases for adapting an existing model later.
-- Originate-a-model track: prepare a small from-scratch model workflow using local datasets and experiments later.
+## What This Repo Is Now
 
-This repository is the foundation for both tracks. It does not yet include training code.
+`craig-CODA` is a Windows-friendly, local-first, CPU-first workspace that now spans five connected layers:
 
-Phase two adds a simple, local ingestion and dataset-prep pipeline that turns raw text-like files into cleaned text and placeholder dataset outputs.
+- a root handoff and continuity system that keeps model-to-model transitions from drifting
+- a shared local data core for raw exports, cleaned transcripts, pretraining text, SFT pairs, preferences, and evals
+- a graph-native memory and runtime stack with route classification, vault retrieval, prompt compilation, and adapter-backed execution
+- a local agent surface, browser surface, and CLI surface for interacting with that stack
+- a method-vault and donor-vaultization layer for extracting, mutating, promoting, and later refilling a living substrate
 
-## What is in this repo
+This repo did not stay a plain training lab.
+It started that way, but the current center of gravity is broader:
 
-- Standard folder layout for raw data, cleaned data, supervised fine-tuning data, preference data, pretraining text, and eval data.
-- Lightweight config files that define the project, schema expectations, and runtime defaults.
-- Bootstrap and validation scripts for Windows.
-- Small sample data files that show the expected formats.
-- A conservative local pipeline for ingesting, cleaning, and building placeholder datasets.
+- preserve and normalize source material
+- resolve behavior from vault-authored notes where possible
+- route prompts through explicit runtime layers instead of one opaque model call
+- use graph structure to shape what the system is allowed to say
+- extract donor residue, mutate overlap zones, and promote substrate cells
+- eventually strip donor identity from the working structure and refill it with Craig-authored self material
 
-## Folder structure
+## What Is Real Today
+
+The following are already real in this checkout:
+
+- scratch-training and SFT scaffolds exist under `src/` and `scripts/`
+- tokenizer preparation, training, and inspection are implemented and have produced artifacts
+- imported one-markdown-per-conversation corpora exist under `data/raw/conversation_exports/markdown_export_raw/`
+- normalized turn-ordered conversation transcripts exist under `data/clean/conversation_exports/markdown_export_raw/threads/`
+- model architecture now resolves from the method vault, with JSON resolution artifacts written under `artifacts/methods/`
+- the CODA intermediate representation and adapter contract exist under `src/coda_ir.py` and `src/adapters/`
+- the pure L1 route/classify layer exists under `runtime/` and is backed by `graph/` route rules
+- the richer runtime package exists under `src/runtime/`
+- vault graph extraction, retrieval, async indexing, GGUF mining, and graph-derived routing exist under `src/memory/`
+- the agent surface pre-retrieves graph state and injects both `[GRAPH ROUTING]` and `[MEMORY CONTEXT]` before the model sees the user turn
+- donor vaultization is no longer hypothetical: Dolphin and exact-donor Qwen2.5-Omni-7B passes both exist, and a promoted substrate baseline exists under `exports/user_model_package/method_vault/substrate/cells/`
+
+## What Is Not Finished
+
+The following are still unresolved and should not be overstated:
+
+- the tiny scratch lane is real, but not coherent enough yet to justify strong model claims
+- the `craig_target` architecture profile exists as the serious target shape, but it has not been trained
+- the graph-derived routing layer is real, but it still shapes a model call by injected contract text rather than replacing the deeper computation
+- the frontend is still a minimal chat surface, not the primary continuity layer
+- depersonalization, refill, and heartbeat-grade stability remain design-frontier work rather than settled implementation
+
+## Root Control Docs
+
+Read these before leaving the root handoff path:
+
+- `CURRENT_STATE.md` - the best concise picture of what is working now
+- `DECISIONS.md` - the decisions that are already locked and the ones that are not
+- `NEXT_STEPS.md` - the active queue and the longer arc after the handoff layer
+- `ARTIFACTS.md` - the main artifact families and deep references
+- `HANDOFF_PROMPT.md` - the startup contract of record
+- `LIVE_HANDOFF.md` - the shared baton file
+- `MASTER_HANDOVER_NEXT_SESSION.md` - the long-form continuity bridge across sessions
+- `MASTER_INDEX.md` - the current structural index of the repo
+- `SCOPE_MAP.yaml` - scope routing contract for every major branch
+
+## Active Scope Names
+
+- `handoff`
+- `vault`
+- `tokenizer`
+- `weights`
+- `memory`
+- `runtime`
+- `coda`
+- `frontend`
+- `agent`
+- `configs`
+- `artifacts`
+- `data`
+
+## Major Branches
+
+| Branch | What it owns |
+| --- | --- |
+| root handoff | continuity, scope routing, baton state, current-state docs |
+| `configs/` | YAML contracts for data, runtime, retrieval, backends, front matter, and training |
+| `data/` | raw imports, clean transcripts, pretraining text, SFT pairs, preferences, eval data |
+| `scripts/` | execution surface for ingest, normalize, build, train, inspect, compare, validate |
+| `src/` | core Python implementation: vault methods, training, runtime, memory, adapters, handoff utilities |
+| `runtime/` | pure L1 prompt classification and route engine |
+| `agent/` | HTTP and CLI agent surfaces backed by the runtime and vault graph |
+| `frontend/` | React/Vite browser chat surface |
+| `graph/` | prompt-axis and route-rule declarations for the L1 route layer |
+| `exports/user_model_package/method_vault/` | vault-authored behavior, donor extraction rules, substrate rules, architecture profiles |
+| `artifacts/` | generated corpus, tokenizer, model, eval, vault, and resolution outputs |
+| `tests/` | runtime, routing, adapter, scope-map, and backend smoke coverage |
+
+## Top-Level Map
 
 ```text
-model-lab/
-  configs/         Project, schema, and runtime configuration
-  data/            Shared local data core
-  scripts/         Bootstrap and validation helpers
-  src/             Future Python package code
-  notebooks/       Optional local exploration notebooks
-  logs/            Runtime logs
-  checkpoints/     Local model checkpoints and artifacts
-  exports/         Exported datasets, reports, and deliverables
+craig-CODA/
+  AGENTS.md                          Root contract for assistants entering this repo
+  README.md                          Root architecture and navigation guide
+  CURRENT_STATE.md                   What is real now
+  DECISIONS.md                       Locked and unresolved decisions
+  NEXT_STEPS.md                      Immediate queue and longer-range arc
+  ARTIFACTS.md                       Generated-output and artifact map
+  HANDOFF_PROMPT.md                  Startup contract of record
+  LIVE_HANDOFF.md                    Shared baton file
+  MASTER_HANDOVER_NEXT_SESSION.md    Long-form session bridge
+  MASTER_INDEX.md                    Exhaustive current-state structural index
+  SCOPE_MAP.yaml                     Scope router contract
+
+  agent/                             Local HTTP and CLI agent surfaces
+  artifacts/                         Generated tokenizer, model, vault, and eval outputs
+  cog/                               Sparse experimental field/C branch
+  configs/                           YAML contracts
+  data/                              Shared local data core
+  docs/                              Architecture notes and design specs
+  eval/                              Retrieval test suite and result logs
+  examples/                          Example prompts and fixtures
+  exports/                           User model package and method vault
+  frontend/                          Browser UI
+  graph/                             L1 route axes, capability nodes, constraints, route rules
+  runtime/                           Pure L1 classify/route layer
+  scripts/                           Executable pipeline and validation surface
+  src/                               Core Python implementation
+  tests/                             Smoke and contract tests
 ```
 
-## Data folders
+## How Requests Flow
 
-- `data/raw/`: original source material as captured locally
-- `data/raw/examples/`: tiny example inputs used to smoke-test the pipeline
-- `data/raw/_ingested/`: staged copies of raw files created by the ingestion step
-- `data/clean/`: cleaned or normalized versions of raw data
-- `data/sft/`: supervised fine-tuning examples
-- `data/prefs/`: ranked preference or comparison records
-- `data/pretrain/`: plain-text corpora for future from-scratch experiments
-- `data/eval/`: evaluation cases and expected characteristics
+There are now three related runtime surfaces:
 
-## Windows setup
+### 1. Pure route surface
 
-### 1. Create a virtual environment
+`runtime/classify_prompt.py` and `runtime/route_prompt.py` implement the L1 route layer.
+This layer is intentionally simple and inspectable:
 
-From `D:\model-lab`:
+- classify a prompt into explicit axes
+- match those axes against `graph/routes/route_rules.yaml`
+- activate a constrained subgraph of capabilities and constraints
 
-```powershell
-python -m venv .venv
-```
+This layer has no backend calls and no vector search.
+It exists to make route logic explicit and testable before the rest of the runtime gets involved.
 
-### 2. Activate it
+### 2. Full runtime package
 
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-If PowerShell blocks script activation, run:
-
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-```
-
-Then activate the venv again.
-
-### 3. Install requirements
-
-```powershell
-pip install -r requirements.txt
-```
-
-## Bootstrap
-
-You can create the expected folders and a venv with:
-
-```powershell
-.\scripts\bootstrap.ps1
-```
-
-The script is conservative. It does not install heavy packages.
-
-## Phase two pipeline
-
-The pipeline is intentionally simple and rule-based. It does not label data intelligently. It only prepares outputs from local text using clear heuristics.
-
-### Supported raw inputs
-
-- `.txt`
-- `.md`
-- `.jsonl` treated as plain text in this phase
-
-Unsupported file types are ignored safely.
-
-### Place raw files
-
-Put source files in `data/raw/` or a subfolder like `data/raw/examples/`.
-Do not overwrite raw source files with cleaned outputs.
-
-### Run the full pipeline
-
-```powershell
-python .\scripts\run_pipeline.py
-```
-
-This runs:
-
-1. ingest raw files into `data/raw/_ingested/`
-2. clean text into `data/clean/`
-3. build placeholder dataset outputs
-4. validate the results
-
-### Output folders after phase two
-
-- `data/clean/`: conservative cleaned text artifacts, one per staged input
-- `data/pretrain/`: assembled plain-text corpus for future pretraining work
-- `data/sft/`: rule-based supervised examples generated from cleaned text
-- `data/prefs/`: rule-based preference pairs generated from cleaned text
-- `data/eval/`: rule-based eval cases generated from cleaned text
-
-Generated SFT, preference, and eval files are placeholders. They are traceable to source files, but they are not semantic labels from a real annotator or model.
-
-## Phase three tokenizer pipeline
-
-Phase three adds a local corpus-prep and tokenizer-training flow. This creates a reusable tokenizer artifact from the cleaned corpus. It does not train a model.
-
-### What it does
-
-- assembles a deterministic prepared corpus from cleaned text in `data/clean/`
-- trains a local tokenizer with the Hugging Face `tokenizers` library
-- writes tokenizer artifacts and simple diagnostics under `artifacts/`
-- validates that the tokenizer can be loaded and used for sample encode/decode checks
-
-### New artifact locations
-
-- `artifacts/corpus/prepared_corpus.txt`: prepared tokenizer corpus
-- `artifacts/corpus/prepared_corpus_manifest.json`: source manifest for the prepared corpus
-- `artifacts/reports/corpus_prep_report.txt`: corpus prep summary
-- `artifacts/tokenizers/default/tokenizer.json`: trained tokenizer
-- `artifacts/tokenizers/default/tokenizer_config.json`: tokenizer config snapshot
-- `artifacts/tokenizers/default/special_tokens_map.json`: special token listing
-- `artifacts/tokenizers/default/training_info.json`: training metadata
-- `artifacts/reports/tokenizer_report.txt`: human-readable inspection report
-- `artifacts/reports/tokenizer_report.json`: structured inspection report
-
-### Prepare and train the tokenizer
-
-From the repo root:
-
-```powershell
-python .\scripts\run_tokenizer_pipeline.py
-```
-
-That runs:
-
-1. `scripts/prepare_corpus.py`
-2. `scripts/train_tokenizer.py`
-3. `scripts/inspect_tokenizer.py`
-4. `scripts/validate_data.py`
-
-### Dependency note
-
-Phase three adds one lightweight dependency:
-
-- `tokenizers` for local tokenizer training and loading
-
-### Important limitation
-
-The tokenizer is only a local segmentation artifact. It is not a trained language model and it does not imply any semantic capability by itself.
-
-## Phase four tiny scratch model
-
-Phase four adds a tiny scratch-built causal language model path that uses the Hugging Face Qwen3 architecture family through `Qwen3Config` and `AutoModelForCausalLM.from_config(...)`.
-
-This phase does not use pretrained checkpoints. The model initializes from random weights and is intentionally much smaller than any official Qwen3 release.
-
-### What phase four adds
-
-- tokenizer loading from the phase-three artifacts
-- tiny Qwen3-style model construction from config
-- scratch pretraining on the prepared local corpus
-- SFT dataset validation scaffold for later behavior shaping
-- runtime prompt compilation from the local user-model bundle
-- local sample generation
-- lightweight evaluation runner
-
-### New artifact locations
-
-- `artifacts/models/`: model metadata and initialized-model outputs
-- `artifacts/checkpoints/`: scratch-training checkpoints
-- `artifacts/samples/`: local generation outputs
-- `artifacts/eval_reports/`: eval reports
-
-### Key configs
-
-- `configs/model_architecture.yaml`
-- `configs/training_scratch.yaml`
-- `configs/training_sft.yaml`
-- `configs/runtime_modes.yaml`
-- `configs/eval.yaml`
-
-### Dependency note
-
-Phase four adds:
-
-- `torch` for local model execution and training
-- `transformers` for `Qwen3Config`, model construction, generation, and tokenizer integration
-- `safetensors` for model checkpoint serialization
-- `tqdm` for lightweight progress support
-
-### Inspect the setup
-
-```powershell
-python .\scripts\inspect_model.py
-```
-
-This prints:
-
-- tokenizer location
-- vocab size
-- tiny model summary
-- parameter count
-- context length
-- current checkpoint directories if any
-
-### Run scratch training
-
-```powershell
-python .\scripts\run_scratch_train.py
-```
-
-This uses:
-
-- tokenizer artifacts from `artifacts/tokenizers/default/`
-- prepared corpus from `artifacts/corpus/prepared_corpus.txt`
-- random model initialization from `Qwen3Config`
-- CPU-first defaults from `configs/training_scratch.yaml`
-
-### Run sample generation
-
-After at least one checkpoint exists:
-
-```powershell
-python .\scripts\run_sample_generation.py --prompt "Summarize the local-first constraints." --mode craig_default
-```
-
-You can also test fiction routing and overlays:
-
-```powershell
-python .\scripts\run_sample_generation.py --prompt "Write a short Te'Oga opening." --mode elin_fiction
-python .\scripts\run_sample_generation.py --prompt "Explain the brittle-system failure mode." --mode craig_default --rs1-specialty
-```
-
-### Run evals
-
-After at least one checkpoint exists:
-
-```powershell
-python .\scripts\run_eval_suite.py
-```
-
-This writes reports under `artifacts/eval_reports/`.
-
-### SFT path
-
-The SFT path is intentionally a scaffold in this phase:
-
-```powershell
-python .\scripts\run_sft_train.py
-```
-
-It validates the expected dataset schema and keeps the later behavior-shaping path explicit, but it does not claim a full tuned SFT recipe yet.
-
-### Runtime prompt modes
-
-The runtime compiler uses the local bundle structure and supports:
-
-- `craig_default`
-- `elin_fiction`
-- optional `rs1_specialty` overlay
-
-It will not auto-load `review_before_use/` or other forbidden paths.
-
-### Important limitations
-
-- This is not official Qwen3.
-- No official Qwen3 weights are used.
-- The model is tiny and randomly initialized.
-- CPU-first defaults mean the training loop is for local experimentation, not scale.
-- Early outputs may be weak or nonsensical until enough local training happens.
-
-## Validate the sample data
-
-Run:
-
-```powershell
-python .\scripts\validate_data.py
-```
-
-This checks required folders and validates the sample JSONL files against the current schema family.
-
-You can also validate generated outputs after running the pipeline with the same script.
-
-## Next milestone
-
-The next milestone is to define local data ingestion and curation flows for:
-
-- capturing teach-a-model examples
-- recording preferences and corrections
-- preparing eval cases
-- preparing a small pretraining corpus
-
-Only after those data formats and eval flows are stable should training code be added.
-
-## Model Lanes
-
-Phase five adds a pretrained backend integration layer that sits alongside the scratch model path without replacing it. The two lanes are permanently separate.
-
-### Scratch lane
-
-The scratch lane uses the random-init Qwen3-style model built from `configs/model_architecture.yaml`. It is for origin experiments, architecture iteration, and local training research. Output from an untrained scratch model is random-init noise — this is expected and correct.
-
-### Pretrained lane
-
-The pretrained lane provides usable local inference from open-weight models you download yourself. Backends are configured in `configs/pretrained_backends.yaml`. No weights are bundled with this repo. You must download and place the model files at the configured path before enabling a backend.
-
-### Shaping philosophy
-
-Runtime behavior is shaped by mode files and overlays (`configs/runtime_modes.yaml`, `exports/user_model_package/`), not by base model weights. The prompt compiler assembles system prompts from those files before any generation call. This means Craig/Elin/RS-1 behavior is applied identically to any backend.
-
-### List configured backends
-
-```powershell
-python scripts/list_backends.py
-```
-
-Prints a table of all configured backends with name, type, role, path, and default flags.
-
-### Validate backends
-
-```powershell
-python scripts/validate_backends.py --all
-```
-
-Checks required config fields, local path existence, and backend class importability for each enabled backend. Does not load weights.
-
-### Run one backend
-
-```powershell
-python scripts/run_pretrained_generation.py --backend qwen2.5-1.5b-instruct --prompt "Explain the brittle-system failure mode."
-```
-
-Optional flags: `--mode`, `--rs1-specialty`, `--rs1-creative`, `--include-context`, `--max-new-tokens`, `--save`.
-
-### Compare backends
-
-```powershell
-python scripts/compare_backends.py --prompt "Summarize the local-first constraints." --backends qwen2.5-1.5b-instruct smollm2-360m
-```
-
-Compiles the prompt once and runs it through each specified backend. Optional: `--mode`, `--save`, `--report-format json`.
-
-### Current limitations
-
-- No GPU required. All backends default to CPU and float32.
-- Model weights must be downloaded separately. See `notes` in `configs/pretrained_backends.yaml` for source URLs.
-- Scratch model outputs are random-init noise until the model is trained on local data.
-- Set `enabled: false` in `configs/pretrained_backends.yaml` for any backend whose weights are not present.
-- Backend classes are imported lazily — a missing `transformers` install only fails at load time, not at import time.
-
-## Context Intelligence Phase
-
-The Context Intelligence Phase adds a lightweight prompt-front-matter layer, a vault-style memory graph, weighted episodic retrieval, and a vault-to-translation pipeline around the existing runtime. It does not replace the scratch lane, the pretrained lane, the mode router, or the prompt compiler.
-
-### Runtime flow
-
-The runtime flow becomes:
+`src/runtime/` carries the richer runtime pipeline:
 
 ```text
 raw prompt
--> prompt front matter builder
+-> front matter builder / classifier
 -> response plan builder
 -> mode router
 -> memory retrieval
 -> prompt compiler
--> backend
+-> backend adapter
 ```
 
-The front matter is rule-based and inspectable. It does not use a heavy classifier. It emits fields such as intent, task type, mode, retrieval profile, privacy level, and confidence. The response plan then decides which backend and mode to use, whether RS-1 overlays apply, and whether memory retrieval should run.
+This is where prompt shaping, vault directives, memory usage, and backend selection meet.
 
-### Trust layers
+### 3. Agent surface
 
-Vault nodes are classified into explicit trust layers:
+`agent/src/server.ts` and `agent/src/cli.ts` sit on top of the runtime and graph layers.
+The live server path now does this before the model sees a user turn:
 
-- `stable_core`: runtime and training eligible
-- `project_constraints`: runtime eligible and selectively training eligible
-- `episodic_events`: mainly runtime memory, selectively training eligible
-- `prose_voice`: style and prose translation material
-- `interpretive_maps`: reference-only analytical material, not stable truth
-- `review_only`: never auto-loaded into runtime and never auto-translated into training artifacts
+```text
+user message
+-> Python memory query bridge
+-> graph-derived routing block
+-> rendered memory context block
+-> model run
+```
 
-This separation is first-class. Review-only and private material must not leak into compiled prompts or generated training outputs. Interpretive notes are not treated as equal to factual event data.
+That means the graph gets to speak first.
+The model is no longer treated as the only seat of behavior.
 
-### Vault graph
+## Data And Training Flow
 
-The vault graph treats files and fragments as nodes with metadata such as source path, time markers, life phase, tags, links, confidence, privacy level, and style scores. Links, shared tags, shared projects, and same-source relationships become edges.
+The data and training side now has multiple linked stages:
 
-Source ingestion is configurable in `configs/vault_translation.yaml`. The default configuration is conservative:
+1. import or place raw text-like material under `data/raw/`
+2. normalize conversation exports into clean thread transcripts
+3. prepare corpora and tokenizer artifacts
+4. build placeholder SFT, preference, and eval outputs
+5. train or inspect scratch and pretrained-local backends conservatively
 
-- `data/raw/examples/`
-- selected `exports/user_model_package/` folders such as `identity_core`, `project_constraints`, and `style_training`
-- review folders stay disabled by default unless you explicitly enable them
+Important reality:
 
-The phase does not auto-ingest everything in the repo and does not default to personal raw folders.
+- scratch training and SFT scaffolds exist
+- checkpoint artifacts exist
+- the scratch lane is still experimental
+- the presence of training code is not proof of coherence
 
-### Retrieval
+## Vault, Donor, And Substrate Flow
 
-Memory retrieval uses weighted score fusion instead of nearest-neighbor only. Query profiles live in `configs/memory_query_profiles.yaml` and weight:
+The method vault is no longer only about corpus and tokenizer settings.
+It now also governs:
 
-- semantic similarity
-- temporal relevance
-- life-phase match
-- project relevance
-- graph neighborhood weight
-- voice similarity
-- reinforcement weight
-- confidence weight
+- architecture profiles
+- CODA adapter rules
+- process-mind layers
+- donor vaultization workflows
+- substrate schema and winner policy
 
-Runtime retrieval is bounded and rendered into a `Memory Context` block that is appended to the compiled system prompt only when safe nodes are available. Review-only nodes are excluded. Interpretive nodes are down-weighted and cannot silently dominate factual retrieval.
+The current donor path is:
 
-Semantic retrieval in this phase is a lightweight lexical-overlap scorer. It is inspectable and CPU-friendly, but it is not an embedding-backed retrieval stack.
+- Copilot IDE agent mode as the internal process-mind host
+- Dolphin as the first donor organism
+- exact-donor `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B` as the second donor organism
+- GPT-5 only as an external teacher/comparator
 
-### Translation pipeline
+The current substrate path is:
 
-The same vault graph can emit:
+- collect donor specimens
+- cluster residue
+- mutate overlap zones
+- promote winners into `substrate/cells/`
+- refine activation and link structure
+- later strip donor identity and refill the structure with Craig-authored self material
 
-- runtime context packs under `artifacts/memory/runtime_context/`
-- SFT JSONL under `artifacts/translation/sft/`
-- preference pairs under `artifacts/translation/prefs/`
-- prose and style shards under `artifacts/translation/prose/`
-- future adapter manifests under `artifacts/translation/adapter_manifests/`
+## Commands You Will Actually Use
 
-This is a structured translation phase, not a dump-everything-into-training phase. Dynamic memory stays external by default.
-
-### Key commands
+### Root bring-up and validation
 
 ```powershell
-python .\scripts\test_front_matter.py
-python .\scripts\build_vault_graph.py
-python .\scripts\inspect_vault_graph.py
-python .\scripts\query_memory.py --query "Explain the warehouse runtime constraints."
-python .\scripts\build_training_artifacts.py
-python .\scripts\run_memory_ablation.py --query "Explain the warehouse runtime constraints."
+python .\scripts\validate_data.py
+python .\scripts\validate_scope_map.py
 ```
 
-See [docs/context_intelligence_phase.md](docs/context_intelligence_phase.md) for the detailed phase notes, trust model, artifact layout, and deferred items.
+### Conversation import and normalization
 
-## Intentionally not implemented yet
+```powershell
+python .\scripts\import_markdown_export_raw.py
+python .\scripts\normalize_markdown_export_raw.py
+```
 
-- inference serving
-- checkpoint management logic beyond folders
-- dataset downloaders
-- cloud APIs
-- Docker or container workflows
-- GPU-specific code paths
-- notebook-driven workflow automation
- - distributed training
- - full SFT recipe
+### Tokenizer and corpus pipeline
 
-## Raw file handling notes
+```powershell
+python .\scripts\run_tokenizer_pipeline.py
+python .\scripts\inspect_tokenizer.py
+```
 
-- The pipeline never modifies files in `data/raw/` directly.
-- Ingestion creates staged copies in `data/raw/_ingested/`.
-- Cleaning and dataset building operate on staged copies, not the originals.
+### Memory and vault graph
+
+```powershell
+python .\scripts\build_vault_graph.py
+python .\scripts\inspect_vault_graph.py
+python .\scripts\query_memory.py --query "Explain the current runtime path."
+python .\scripts\run_async_indexer.py --once
+python .\scripts\mine_gguf.py --gguf D:\gguf-models\Qwen3-4B-Instruct-2507-Q4_K_M.gguf
+```
+
+### Runtime and backend checks
+
+```powershell
+python .\scripts\list_backends.py
+python .\scripts\validate_backends.py --all
+python .\scripts\run_pretrained_generation.py --backend qwen2.5-1.5b-instruct --prompt "Summarize the local-first constraints."
+python .\scripts\compare_backends.py --prompt "Summarize the local-first constraints."
+```
+
+### Training and eval
+
+```powershell
+python .\scripts\run_scratch_train.py
+python .\scripts\run_sft_train.py
+python .\scripts\run_eval_suite.py
+```
+
+### Agent surfaces
+
+```powershell
+cd .\agent
+npm install
+npm run dev
+```
+
+## Master Index
+
+For the exhaustive current-state map, read `MASTER_INDEX.md`.
+It absorbs the local additions that are absent from older GitHub snapshots and indexes the repo as it actually exists now.
+
+## Continue From Here
+
+If you are continuing work in this directory:
+
+1. finish the root handoff path
+2. read `SCOPE_MAP.yaml`
+3. resolve the user's scope
+4. follow only that branch
+
+Do not start with broad repo search.
+Do not re-derive the current repo state from scratch.
+Take the continuation prompt from the branch you are routed into and work from there.
+Keep `LIVE_HANDOFF.md` current while you work.

@@ -1,0 +1,121 @@
+CONVERSATION_ID: 69a529e7-3fc4-832e-9e0c-f73e1e6f72a6
+TITLE: DFU Restore Error Fix
+MESSAGE_COUNT: 2
+
+[USER]
+{"asset_pointer": "sediment://file_00000000d2cc71f89b2f5527ecff0eb3", "content_type": "image_asset_pointer", "fovea": null, "height": 197, "metadata": {"asset_pointer_link": null, "container_pixel_height": null, "container_pixel_width": null, "dalle": null, "emu_omit_glimpse_image": null, "emu_patches_override": null, "generation": null, "gizmo": null, "is_no_auth_placeholder": null, "lpe_delta_encoding_channel": null, "lpe_keep_patch_ijhw": null, "sanitized": true, "watermarked_asset_pointer": null}, "size_bytes": 10795, "width": 540}
+
+TRYING TO RESTORE IPHONE IN DFU MODE WITH APPLE DEVICES APP ON WINDOWS
+
+[ASSISTANT]
+Error **1109** in the **entity["software","Apple Devices","windows app"]** app on Windows during a **DFU restore** usually points to a communication or driver failure between Windows and the phone — not a bad IPSW.
+
+Here’s the no-nonsense fix order.
+
+---
+
+## 1. Kill the Driver Stack Completely
+
+Unplug the iPhone.
+
+1. Press **Win + X → Device Manager**
+2. Expand:
+   - **Universal Serial Bus devices**
+   - **Portable Devices**
+3. Delete anything labeled:
+   - *Apple Mobile Device USB Device*
+   - *Apple Recovery (DFU) USB Device*
+   - *iPhone*
+   - Any duplicate “Apple” USB entries  
+4. Check **“Delete the driver software for this device”** if it appears.
+5. Reboot Windows.
+
+Do not skip reboot.
+
+---
+
+## 2. Install Clean Apple Drivers (Not Half-Broken Ones)
+
+Uninstall from Settings → Apps:
+- Apple Devices
+- Apple Application Support
+- Apple Mobile Device Support
+- Bonjour (if present)
+
+Reboot again.
+
+Now reinstall **Apple Devices** fresh from Microsoft Store.  
+Do not use old iTunes installer unless the Store version keeps failing.
+
+---
+
+## 3. Use a Different USB Port + Cable
+
+No hubs.  
+No front panel ports.  
+Use a direct rear motherboard USB port.
+
+If you’re using a cheap cable, stop. Use an OEM or certified cable.
+
+Error 1109 is very commonly a flaky cable.
+
+---
+
+## 4. Force Proper DFU Again
+
+Do it clean:
+
+1. Plug phone in
+2. Quick press Volume Up
+3. Quick press Volume Down
+4. Hold Side button until screen goes black
+5. Immediately hold **Side + Volume Down** for 5 seconds
+6. Release Side, keep holding Volume Down for 10 more seconds
+
+Screen must stay black.
+
+Apple Devices should say it detected a device in recovery.
+
+---
+
+## 5. If It Still Throws 1109
+
+Try one of these:
+
+### Option A – Use iTunes Instead
+Install legacy **entity["software","iTunes","windows app"]** (not Store version) from Apple’s site and restore there.  
+Sometimes Apple Devices app just glitches.
+
+### Option B – Different PC
+If it restores fine on another computer, your Windows USB stack is the issue.
+
+### Option C – IPSW Manual Restore
+Download the correct IPSW for your model and:
+- Hold **Shift**
+- Click **Restore**
+- Select IPSW manually
+
+---
+
+## 6. If Restore Fails at the Same Percentage Every Time
+
+That’s hardware.
+
+Usually:
+- NAND issue
+- Baseband chip failure
+- Board-level damage
+
+If it fails randomly at different percentages → communication problem.
+If it fails at exact same point → internal hardware.
+
+---
+
+## Quick Diagnostic Question
+
+Does it:
+- Fail immediately?
+- Fail at a certain % every time?
+- Or disconnect randomly?
+
+Tell me which, and I’ll narrow it down fast.

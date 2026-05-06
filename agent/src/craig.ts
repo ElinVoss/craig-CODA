@@ -2,22 +2,22 @@ import { webSearchTool, codeInterpreterTool, Agent, tool } from "@openai/agents"
 import { z } from "zod";
 import * as fs from "fs";
 import * as path from "path";
+import { queryMemory } from "./memory.js";
 
-const ROOT = "D:\\model-lab";
+export const ROOT = "D:\\craig-CODA";
 
-const guardPath = (userPath: string): string => {
+export const guardPath = (userPath: string): string => {
   const resolved = path.resolve(ROOT, userPath.replace(/^\//, ""));
   if (!resolved.startsWith(path.resolve(ROOT))) {
-    throw new Error(`Path outside model-lab: ${userPath}`);
+    throw new Error(`Path outside craig-CODA: ${userPath}`);
   }
   return resolved;
 };
 
-const readFileTool = tool({
-  name: "read_file",
-  description: "Read a file inside D:\\model-lab. Pass a path relative to the repo root (e.g. 'src/runtime/coda.py' or 'configs/runtime_modes.yaml').",
+export const readFileTool = tool({
+  description: "Read a file inside D:\\craig-CODA. Pass a path relative to the repo root (e.g. 'src/runtime/coda.py' or 'configs/runtime_modes.yaml').",
   parameters: z.object({
-    path: z.string().describe("File path relative to D:\\model-lab"),
+    path: z.string().describe("File path relative to D:\\craig-CODA"),
   }),
   execute: async ({ path: p }) => {
     const abs = guardPath(p);
@@ -26,11 +26,11 @@ const readFileTool = tool({
   },
 });
 
-const writeFileTool = tool({
+export const writeFileTool = tool({
   name: "write_file",
-  description: "Write or overwrite a file inside D:\\model-lab. Creates parent directories if needed.",
+  description: "Write or overwrite a file inside D:\\craig-CODA. Creates parent directories if needed.",
   parameters: z.object({
-    path: z.string().describe("File path relative to D:\\model-lab"),
+    path: z.string().describe("File path relative to D:\\craig-CODA"),
     content: z.string().describe("Full content to write"),
   }),
   execute: async ({ path: p, content }) => {
@@ -41,11 +41,11 @@ const writeFileTool = tool({
   },
 });
 
-const listDirTool = tool({
+export const listDirTool = tool({
   name: "list_dir",
-  description: "List files and folders inside a directory in D:\\model-lab.",
+  description: "List files and folders inside a directory in D:\\craig-CODA.",
   parameters: z.object({
-    path: z.string().describe("Directory path relative to D:\\model-lab (use '.' for root)"),
+    path: z.string().describe("Directory path relative to D:\\craig-CODA (use '.' for root)"),
   }),
   execute: async ({ path: p }) => {
     const abs = guardPath(p);
@@ -57,9 +57,9 @@ const listDirTool = tool({
   },
 });
 
-const searchFilesTool = tool({
+export const searchFilesTool = tool({
   name: "search_files",
-  description: "Search for a text pattern across files in D:\\model-lab. Returns matching lines with file paths. Leave directory empty string to search entire repo. Leave extensions as empty array to include all files.",
+  description: "Search for a text pattern across files in D:\\craig-CODA. Returns matching lines with file paths. Leave directory empty string to search entire repo. Leave extensions as empty array to include all files.",
   parameters: z.object({
     pattern: z.string().describe("Text to search for (case-insensitive)"),
     directory: z.string().describe("Subdirectory to search in, or empty string for entire repo"),
@@ -98,6 +98,25 @@ const searchFilesTool = tool({
   },
 });
 
+export const queryMemoryTool = tool({
+  name: "query_memory",
+  description: "Query the vault knowledge graph for nodes relevant to a topic or question. Returns both the retrieved node content and a routing block derived from graph structure (trust layers, node types, edge clusters). The routing block tells you what behavioral contract applies for this sub-query. Use for follow-up queries during reasoning when you need more specific graph coverage.",
+  parameters: z.object({
+    query: z.string().describe("The topic or question to retrieve nodes for"),
+    profile: z.enum(["technical", "autobiographical", "prose", "constraints", "cross_domain", "critique"])
+      .optional()
+      .describe("Retrieval profile. Omit to auto-classify. Use 'constraints' for rules/limits, 'autobiographical' for identity/history, 'technical' for code/architecture, 'critique' for interpretive nodes."),
+  }),
+  execute: async ({ query, profile }) => {
+    const result = queryMemory(query, profile);
+    if (!result) return "(no matching nodes in vault graph)";
+    const parts: string[] = [];
+    if (result.routingBlock) parts.push(result.routingBlock);
+    if (result.memoryContext) parts.push(`[MEMORY CONTEXT]\n${result.memoryContext}\n[/MEMORY CONTEXT]`);
+    return parts.join("\n\n") || "(no matching nodes in vault graph)";
+  },
+});
+
 const webSearchPreview = webSearchTool({
   searchContextSize: "high",
   userLocation: { type: "approximate" },
@@ -107,11 +126,9 @@ const codeInterpreter = codeInterpreterTool({
   container: { type: "auto", file_ids: [] },
 });
 
-export const craig = new Agent({
-  name: "Craig",
-  instructions: `You are Craig — a research and engineering collaborator on the model-lab project at D:\\model-lab.
+export const CRAIG_INSTRUCTIONS = `You are Craig — a research and engineering collaborator on the craig-CODA project at D:\\craig-CODA.
 
-## What model-lab actually is right now
+## What craig-CODA actually is right now
 
 A local, CPU-first, Windows-native lab with two parallel tracks that share one data pipeline:
 - **Teach-a-model**: collect SFT examples, corrections, ranked preferences, and eval cases for adapting a pretrained model
@@ -292,6 +309,20 @@ Where the codebase is headed — not all built yet:
 
 ## How to respond
 
+Every message may arrive with two graph-derived blocks prepended:
+
+**[GRAPH ROUTING]** — derived from the structure of what was retrieved: trust layers, node types, edge clusters, coverage score. This is the behavioral contract for this turn. It tells you what posture to take, what you can surface, how confident to be, and what the dominant response mode is. Follow it. It is not a suggestion — it is what the graph structure implies about how to respond.
+
+**[MEMORY CONTEXT]** — the retrieved node content scored against your query. This is your primary source material. Ground your response here first.
+
+If the routing block says `blocked`: do not surface content from restricted nodes. Acknowledge the topic without drawing on review_only material.
+
+If graph coverage is low (< 0.3): say so. Do not confabulate when the graph has no match.
+
+If you need more specific coverage during reasoning: call `query_memory` with a tighter sub-query. It returns both a routing block and context for that sub-query.
+
+The graph is the constitution. Your weights are the executor.
+
 - Be a collaborator. The human knows this architecture.
 - Reference actual file paths and class names when relevant — don't speak in abstractions when the code exists.
 - When asked to build something: propose the minimal working version targeting the actual module structure.
@@ -309,9 +340,13 @@ When Craig is asked "how far am I from X?" where X is an external reference:
 - Describe what L2 and L3 would actually look like *in this specific codebase* — not generically.
 - Do not generate a roadmap toward the external reference. Generate a roadmap toward the next L level.
 
-The project is graph-native. When complete, it will not resemble JARVIS or any other assistant because the mechanism is different: traversal as computation, not a model producing text. That difference is the whole point. Protect it.`,
+The project is graph-native. When complete, it will not resemble JARVIS or any other assistant because the mechanism is different: traversal as computation, not a model producing text. That difference is the whole point. Protect it.`;
+
+export const craig = new Agent({
+  name: "Craig",
+  instructions: CRAIG_INSTRUCTIONS,
   model: "gpt-5.5",
-  tools: [webSearchPreview, codeInterpreter, readFileTool, writeFileTool, listDirTool, searchFilesTool],
+  tools: [queryMemoryTool, webSearchPreview, codeInterpreter, readFileTool, writeFileTool, listDirTool, searchFilesTool],
   modelSettings: {
     reasoning: { effort: "medium", summary: "detailed" },
     store: true,

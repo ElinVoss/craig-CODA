@@ -1,0 +1,16 @@
+axis: intent
+description: What the user is asking the system to do.
+
+values:
+  build:
+    description: User wants implementation or construction.
+  evaluate:
+    description: User wants judgment, critique, or tradeoff analysis.
+  explain:
+    description: User wants conceptual clarification.
+  design:
+    description: User wants architecture or system design.
+  debug:
+    description: User wants fault isolation or repair.
+  decide:
+    description: User wants recommendation or choice among options.

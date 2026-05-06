@@ -1,0 +1,121 @@
+<h2>Vault Frontend Directions</h2>
+<p class="subtitle">First version for Craig-CODA. The goal is to force a fast bring-up-to-speed before any model or human starts making changes.</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">A. Briefing Desk</div>
+        <div class="mockup-body">
+          <div class="label">Read First</div>
+          <div class="mock-content" style="margin-bottom:12px;">
+            status summary<br>
+            completed work<br>
+            unresolved items<br>
+            next moves
+          </div>
+          <div style="display:flex; gap:10px;">
+            <div class="mock-sidebar" style="flex:1;">active decisions</div>
+            <div class="mock-content" style="flex:2;">method note editor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. Briefing Desk</h3>
+      <p>Default landing screen. Top half is the mandatory state report. Lower half lets you append decisions and edit live vault notes.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Forces context first</li>
+            <li>Best handoff to future models</li>
+            <li>Still keeps editing close by</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Less file-system-like than a pure vault browser</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">B. Vault Explorer</div>
+        <div class="mockup-body">
+          <div style="display:flex; gap:10px;">
+            <div class="mock-sidebar" style="flex:1;">folder tree</div>
+            <div class="mock-content" style="flex:2;">current note editor</div>
+            <div class="mock-sidebar" style="flex:1;">status panel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. Vault Explorer</h3>
+      <p>Feels closest to Obsidian. Browse folders and `_method.md` notes first, with the report living beside the editor.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Strong vault feel</li>
+            <li>Great for browsing parent-child method chains</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>The briefing can become secondary</li>
+            <li>Easier to skip the state report</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">C. Mission Log</div>
+        <div class="mockup-body">
+          <div class="mock-content" style="margin-bottom:12px;">
+            timeline of completed work<br>
+            decisions by date<br>
+            checkpoints and artifacts
+          </div>
+          <div class="mock-content">open editor only when needed</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. Mission Log</h3>
+      <p>Report-first to the extreme. The main screen is a chronological operating record, with editing moved behind an action button.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Strongest audit trail</li>
+            <li>Best for project memory</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Editing becomes slower</li>
+            <li>Less like a live vault workspace</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:28px;">
+  <p><strong>Recommendation:</strong> A. <strong>Briefing Desk</strong>.</p>
+  <p>It satisfies your strongest requirement first: the next model cannot miss the current state. Then it still lets you edit the live vault notes that drive corpus, tokenizer, architecture, and weight behavior.</p>
+</div>

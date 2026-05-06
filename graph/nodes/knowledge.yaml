@@ -1,0 +1,9 @@
+# Knowledge nodes are populated by:
+#   - GGUF mining pipeline (Phase 1, step 13b)
+#   - Human authoring
+#   - Strong model construction pass (Phase 1, step 13d)
+#
+# At L1, knowledge nodes are not yet part of routing.
+# They become active at L2+ when the traversal engine uses them as context.
+
+nodes: {}

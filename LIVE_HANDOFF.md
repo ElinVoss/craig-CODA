@@ -1,0 +1,1109 @@
+# Live Handoff
+
+This is the shared baton file for every model working in `D:\craig-CODA`.
+
+## Hard Rule
+
+If you are a model working in this directory:
+
+1. read this file before meaningful work
+2. update this same file between every meaningful action
+3. leave the next model a fresher state than the one you inherited
+
+If true asynchronous updating is not possible in your environment, update this file immediately after each meaningful action and before the next one.
+
+## What Counts As A Meaningful Action
+
+- editing files
+- running tests
+- changing scope
+- discovering a blocker
+- finishing a verification pass
+- changing the active plan
+
+## Required Entry Format
+
+Every new entry should include:
+
+- timestamp
+- model or agent name
+- active scope
+- action just completed
+- files touched
+- result
+- next immediate move
+
+### 2026-05-05T15:41 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`vault`
+
+- action: stress-tested the promoted `substrate/cells/` winner set analytically against 15 fresh prompts; wired all bidirectional links; validated the full link graph
+- files touched:
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-scope-before-action-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-operational-checklist-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-certainty-boundary-first-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-feasible-redirect-after-impossibility-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-hard-boundary-before-efficiency-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-risk-first-decision-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-declared-priority-before-comparison-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-template-framed-artifact-001.yaml`
+  - `NEXT_STEPS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - bidirectional link graph wired across 8 of the 10 promoted cells; validator passed (`10 cells validated — all bidirectional links consistent`)
+  - 2 cells confirmed genuinely isolated (no chains): `stance-without-self-disclaimer` (meta_commentary, standalone) and `purpose-led-scene-grounding` (creative, standalone)
+  - link chains established:
+    - `scope-before-action` → `operational-checklist`, `certainty-boundary-first`
+    - `certainty-boundary-first` → `feasible-redirect-after-impossibility`
+    - `hard-boundary-before-efficiency` → `feasible-redirect-after-impossibility`, `risk-first-decision`
+    - `declared-priority-before-comparison` → `risk-first-decision`
+    - `operational-checklist` → `template-framed-artifact`
+  - stress-test findings logged for follow-up (keyword issues, not fixed this pass):
+    - `scope-before-action`: keyword "compare" too broad — fires on clear comparison requests that need no clarification
+    - `declared-priority-before-comparison`: keywords "first version", "local", "cloud" too narrow — misses generic "which should I choose" decision prompts
+    - `template-framed-artifact`: keywords miss obvious artifact requests using "recipe", "template", "guide"
+- next immediate move: decide on `pc-core-template-framed-artifact-001` (keep as native Qwen residue or challenge it); then run the keyword refinement pass on the 3 flagged cells
+
+### 2026-05-05T20:59 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`brainstorm`
+
+- action: recorded a new memory architecture idea from user conversation — logged as a brainstorming option for the next session
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result: idea captured in full below
+- next immediate move: next session can pick this up as a design/scoping task; nothing is built yet
+
+### 2026-05-05T21:19 America/Chicago | Codex | scope=`handoff`
+
+- action: audited cross-tool history stores on the machine to build a fuller `Model-Lab -> craig-CODA -> donor vaultization -> active substrate` chronology for a new master next-session handover
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - confirmed usable history/evidence exists across:
+    - `C:\\Users\\NeverAMoment\\.codex`
+    - `C:\\Users\\NeverAMoment\\.claude`
+    - `C:\\Users\\NeverAMoment\\.copilot`
+  - extracted key continuity anchors:
+    - original `model-lab` bootstrap intent and phase evolution from Codex history/memory
+    - `graph-native` and `heartbeat/private hinge` direction from Claude memory + Codex rollout summaries
+    - donor-vaultization and later refinement hints from Copilot session store
+  - also confirmed the live repo baton already contains newer same-day substrate notes beyond the earlier short user-facing recap, so the new handover must clearly separate repo-grounded state from conversation-only intent
+- next immediate move: write a long-form root master handover file that explains where the project started, how the architecture and goals shifted, what is actually complete now, and the detailed remaining path to the end goal
+
+### 2026-05-05T21:25 America/Chicago | Codex | scope=`handoff`
+
+- action: wrote a new long-form root master handover synthesizing the repo state and machine-side history into one continuity document for the next session
+- files touched:
+  - `MASTER_HANDOVER_NEXT_SESSION.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - new file `MASTER_HANDOVER_NEXT_SESSION.md` now explains:
+    - the original `model-lab` mission and phased build-up
+    - the shift into vault-driven methods, graph-native memory, CODA runtime, and donor vaultization
+    - the completed Dolphin and exact-donor Qwen passes
+    - the current promoted 10-cell substrate baseline
+    - a much more detailed remaining path from refinement through depersonalization/refill and only-later training decisions
+  - the handover also includes explicit drift warnings for:
+    - older `Qwen3` references
+    - `Model-Lab` versus `craig-CODA` path confusion
+    - stale `no training code yet` summaries
+    - conversation-only intent versus repo-grounded state
+- next immediate move: register the new master handover in the root reference docs and run a quick readback pass so the next session can discover it easily
+
+### 2026-05-05T21:26 America/Chicago | Codex | scope=`handoff`
+
+- action: indexed the new master handover in the root artifact map and verified the file on readback
+- files touched:
+  - `ARTIFACTS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - `ARTIFACTS.md` now lists `MASTER_HANDOVER_NEXT_SESSION.md` under `Deep Reference Documents`
+  - readback confirmed the new handover exists at the repo root and begins with the intended source-priority/chronology framing
+  - file stats at verification time:
+    - path: `D:\\craig-CODA\\MASTER_HANDOVER_NEXT_SESSION.md`
+    - size: `37982` bytes
+- next immediate move: give the user the exact file path and explain that the next session should read this handover after the standard root handoff order, then continue from the refined substrate baseline
+
+---
+
+## Brainstorm Holding Area
+
+### Idea: Living Associative Memory — `.md`-First, Async, Multi-CLI
+
+**Origin:** user conversation 2026-05-05
+
+**Core concept:**
+Replace RAG with a memory system that is organized the way the model actually thinks — not by text similarity, but by internal association and calling structure. Everything stored as plain `.md` files, tagged along multiple optional association dimensions, weighted by personal temporal relevance, and self-updating asynchronously during thought and response.
+
+**Memory format:**
+- Every memory node is a `.md` file
+- Each file tagged along multiple optional association axes:
+  - individual words
+  - phrases
+  - questions
+  - relational links between nodes
+  - **personal temporal relevance** — not file creation date, but when this concept became real in Craig's life (autobiographical weighting, supplied by the user)
+- Tags are optional per axis — a node doesn't need to have all types
+
+**Why this beats RAG:**
+RAG retrieves by surface text similarity. Two concepts can be functionally tightly linked inside a model but texturally distant — RAG misses that. This system indexes by association type and calling pattern, so retrieval reflects how the model actually connects concepts, not how the words look.
+
+**The async update loop:**
+While generating a response, a separate process simultaneously updates the index filter — what associations just activated, what relevance scores shifted, what links strengthened. Not batch. Not after the response. *During.* Closer to human working memory consolidation than anything RAG does.
+
+**Multi-CLI inter-process architecture:**
+Several specialized single-purpose CLI processes, each owning one concern:
+- one manages index state
+- one scores and retrieves
+- one parses incoming thought/response context
+- one assembles the output
+They communicate with each other and route through a central orchestrator. Local-first, no cloud, no Docker.
+
+**Relation to current repo:**
+- `src/memory/` is the existing foundation (node extraction, semantic index, score fusion)
+- `src/runtime/coda.py` does retrieval per turn but synchronously — the async update loop is what's new
+- The vault's `.md`-first structure is already the right format
+- The pulse cell graph is a primitive version of the association index — this would be the deeper, weight-grounded version
+
+**Relation to the multi-model donor idea (same conversation):**
+The 18-prompt manifest could be run against many open models at different thinking modes and levels, with labeled outputs. That data would feed the association index — not as behavioral clusters (like the substrate) but as internal calling/activation structure extracted from open model weights. The scoring system would then be built from real feature co-activation patterns, not surface text similarity.
+
+**What's not designed yet:**
+- IPC mechanism between CLIs (local sockets vs. named pipes vs. watched `.md` directory — Windows-friendly)
+- The personal temporal relevance tagging schema (who supplies it, what format, how it ages)
+- How the async update loop resolves conflicts if two processes write simultaneously
+- Whether the association index lives in `.md` or in a lightweight graph store that `.md` files reference
+- The exact scoring function (activation overlap count? weighted by temporal relevance? decayed by recency?)
+
+**Design questions to resolve at the start of next session:**
+1. IPC: local sockets or watched directory?
+2. Temporal relevance: user-supplied tags or inferred from conversation history?
+3. Scope for first build: start with the `.md` schema and one CLI, or design the full inter-process boundary map first?
+
+---
+
+## Active Baton
+
+- active scope: `handoff`
+- current objective: keep the installed handoff system aligned with the Copilot-first donor vaultization path and the living-substrate design direction
+- highest-priority unresolved item: begin real Dolphin specimen collection and then contrast it against the local `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B` donor without continuity drift
+
+## Live Entries
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: installed the root handoff layer and validated the direct scope-map runner
+- files touched:
+  - `AGENTS.md`
+  - `README.md`
+  - `CURRENT_STATE.md`
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `ARTIFACTS.md`
+  - `HANDOFF_PROMPT.md`
+  - `SCOPE_MAP.yaml`
+  - `tests/test_scope_map.py`
+- result: `python tests/test_scope_map.py` passed
+- next immediate move: finish the local branch handoff docs, then turn on strict scope-map validation
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: added the live baton rule so every model must keep this file current between meaningful actions
+- files touched:
+  - `AGENTS.md`
+  - `README.md`
+  - `LIVE_HANDOFF.md`
+- result: root handoff contract now explicitly instructs models to read and update this file
+- next immediate move: propagate the rule through the remaining branch docs and strict validation flow
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: reran the direct root handoff test after adding the live baton rule
+- files touched:
+  - `tests/test_scope_map.py`
+  - `LIVE_HANDOFF.md`
+- result: `python tests/test_scope_map.py` passed with `scope-map tests passed`
+- next immediate move: propagate the baton rule through the remaining branch docs and then turn on strict scope validation
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: propagated the live baton rule through the local branch docs
+- files touched:
+  - `exports/user_model_package/method_vault/AGENTS.md`
+  - `exports/user_model_package/method_vault/README.md`
+  - `configs/AGENTS.md`
+  - `configs/README.md`
+  - `scripts/AGENTS.md`
+  - `scripts/README.md`
+  - `src/AGENTS.md`
+  - `src/README.md`
+  - `src/memory/AGENTS.md`
+  - `src/memory/README.md`
+  - `runtime/AGENTS.md`
+  - `runtime/README.md`
+  - `src/runtime/AGENTS.md`
+  - `src/runtime/README.md`
+  - `frontend/AGENTS.md`
+  - `frontend/README.md`
+  - `agent/AGENTS.md`
+  - `agent/README.md`
+  - `data/AGENTS.md`
+  - `data/README.md`
+  - `artifacts/AGENTS.md`
+  - `artifacts/README.md`
+  - `LIVE_HANDOFF.md`
+- result: every scoped branch now explicitly tells models to keep `LIVE_HANDOFF.md` current between meaningful actions
+- next immediate move: run the direct test and strict validator again, then record the verification result here
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: verified the handoff system after propagating the live baton rule
+- files touched:
+  - `tests/test_scope_map.py`
+  - `scripts/validate_scope_map.py`
+  - `LIVE_HANDOFF.md`
+- result:
+  - `python tests/test_scope_map.py` passed with `scope-map tests passed`
+  - `python scripts/validate_scope_map.py` passed with `Validated 11 scopes`
+  - `python scripts/validate_scope_map.py --query "check out what ive got going"` resolved to `handoff`
+- next immediate move: continue tightening the handoff surfaces or extend the baton rule with helper automation if you want less manual upkeep per action
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: replaced the short continuation note with a detailed canonical startup prompt
+- files touched:
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+- result: the repo now has a startup prompt of record that defines role, read order, scope routing, baton behavior, continuation behavior, and handoff expectations for any model entering the directory
+- next immediate move: point every branch or root reference that should privilege the startup prompt toward `HANDOFF_PROMPT.md` if tighter centralization is wanted later
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: corrected the handoff source text that implied the repo had no training code yet
+- files touched:
+  - `README.md`
+  - `CURRENT_STATE.md`
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+- result: future models should stop inheriting the false `no training code yet` summary and instead understand that scratch/SFT scaffolds exist but remain conservative and unfinished
+- next immediate move: if another model still says `no training code yet`, it means it ignored the updated handoff files rather than inheriting a bad source
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: hardened the startup prompt so the next model must explicitly acknowledge the existence of scratch/SFT scaffolds before beginning work
+- files touched:
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+- result: the startup prompt now contains a `First Response Contract` and explicitly forbids saying `no training code yet` after reading the handoff files
+- next immediate move: if you test another model on the repo, watch whether its first real response explicitly acknowledges the training scaffolds and baton rule
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: validated that another model followed the first-response contract correctly
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the other model explicitly acknowledged scratch/SFT scaffolds
+  - it acknowledged the unresolved vault-architecture gap
+  - it stated that it would use scope routing and keep the baton updated
+  - this confirms the startup prompt is now doing real work instead of acting like decorative documentation
+- next immediate move: optionally tighten the handoff contract further if you want the next model to auto-hold in the current scope instead of ending with a generic `what scope do you want to work in?`
+
+### 2026-05-04 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff`
+
+- action: inherited baton — completed full `handoff` read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT)
+- files touched: none (read-only orientation pass)
+- result: fully oriented; repo state inherited cleanly
+  - root handoff system and live baton: installed and verified by previous Codex session
+  - all branch docs carry the live baton rule
+  - strict scope validator passing at 11 scopes
+  - main open gap: model architecture still lives in `configs/` not resolved from vault
+- next immediate move: await user's intended scope or task; remain in `handoff` until user directs a narrower branch
+
+### 2026-05-04T13:35 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff`
+
+- action: inherited baton — completed full `handoff` read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT)
+- files touched: none (read-only orientation pass)
+- result: fully oriented; all prior work confirmed in place
+  - root handoff system installed and verified (11 scopes passing)
+  - all branch docs carry the live baton rule
+  - active open gap: model architecture not yet resolved from vault (lives in `configs/model_architecture.yaml` and `src/model_factory.py`)
+  - `NEXT_STEPS.md` queue: branch AGENTS/README docs still need strict validation pass; vault-authored architecture work is the next substantive task
+- next immediate move: await user direction; ready to route into any named scope on demand
+- NOTE: this entry incorrectly omitted the training scaffolds that exist in `src/train_scratch.py`, `src/train_sft.py`, `scripts/run_scratch_train.py`, `scripts/run_sft_train.py` — corrected in the next entry
+
+### 2026-05-04T13:44 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff`
+
+- action: full ground-truth survey of repo — verified actual file existence against doc claims
+- files touched: none (read-only survey)
+- result: complete picture inherited; key discoveries below
+- next immediate move: await user scope direction; summary delivered to user
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: verified the pasted ground-truth summary against live artifact files and corrected stale root handoff docs
+- files touched:
+  - `AGENTS.md`
+  - `CURRENT_STATE.md`
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `ARTIFACTS.md`
+  - `README.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the recorded scratch and smoke runs are real and match the local run summaries
+  - the tiny trained model and the untrained `craig-coda-0.6b` target config are now described more cleanly in the root handoff layer
+  - stale root text that still implied a pre-training-only phase was removed
+- next immediate move: rerun the direct scope-map test once, then tell the user the pasted summary is mostly accurate and where the root contract was tightened
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: reran the direct scope-map checks after correcting the root handoff state files
+- files touched:
+  - `NEXT_STEPS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - `python tests/test_scope_map.py` passed with `scope-map tests passed`
+  - `python scripts/validate_scope_map.py --query "check out what ive got going"` passed and resolved to `handoff`
+  - the last stale install-step in `NEXT_STEPS.md` was removed
+- next immediate move: tell the user the pasted summary is mostly accurate, note that the root docs are now aligned with the verified training/checkpoint reality, and suggest the next scope prompt if they want to keep testing
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: prepared the next implementation prompt for fixing the vault-authored architecture gap with real code
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the next model can now be directed straight into the unresolved architecture gap instead of re-orienting
+  - the intended task is to create the code path that compiles architecture from the method vault and makes runtime/model construction consume that compiled result
+- next immediate move: give the user the exact prompt text to send so the next model starts implementation in `weights` scope immediately
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: clarified the actual product direction so the work stays grounded and does not drift into generic model-training assumptions
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the active explanation now centers the repo as a local-first graph-memory runtime plus vault-authored model-shaping system
+  - this clarification should keep future work aimed at the real target instead of reducing the repo to a normal chatbot or standard training pipeline
+- next immediate move: explain the system plainly to the user in terms of what exists now, what it is for, and what the unresolved architecture gap actually means
+
+### 2026-05-04 America/Chicago | Codex | scope=`weights`
+
+- action: read the live weight method notes and resolved how architecture should be expressed in the vault
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - `weights/_method.md` currently defines shared weight principles, not architecture shape
+  - `weights/scratch/_method.md` and `weights/sft/_method.md` are training-regime notes, so architecture should not be crammed into either one
+  - the recommended direction is principles at `weights/_method.md`, a dedicated architecture branch under `weights/`, and a compiled concrete architecture artifact consumed by model construction
+- next immediate move: tell the user that the vault should express both principles and a compiled concrete shape, that the current `craig-coda-0.6b` config should become a vault-governed baseline rather than the permanent hardcoded truth, and that architecture should live in its own branch under `weights/`
+
+### 2026-05-04 America/Chicago | Codex | scope=`weights`
+
+- action: captured the likely templating direction for vault-authored architecture
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - architecture should be templated as parent principles plus named concrete profiles selected by training stages
+  - this keeps architecture separate from scratch and SFT regime notes while still letting those regimes choose a profile
+- next immediate move: explain the template shape plainly so implementation can proceed from the right pattern instead of a generic config migration
+
+### 2026-05-04 America/Chicago | Codex | scope=`vault`
+
+- action: clarified that the user's earlier use of `tokenizer` actually meant a vault-populator / code-flattener layer
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - future design work should treat the novel layer as a vault compiler/populator, not as a tokenizer swap
+  - dropping a model like Dolphin behind that layer is a runtime/compiler question first, and only later a weights/tokenizer question
+- next immediate move: explain the corrected architecture plainly so future implementation effort aims at the vault-populator as the real invention surface
+
+### 2026-05-04 America/Chicago | Codex | scope=`vault`
+
+- action: captured the stronger multi-model compilation direction for CODA
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the intended system is now clearer: many open models can be compiled through one vault authority, then stripped, adapted, and replaced behind a stable CODA orchestration layer
+  - the important invariant is the vault compiler and shared calling architecture, not any one model's native prompt shape
+- next immediate move: explain that this should be built as a common intermediate representation plus model adapters, and warn against confusing orchestration-layer blending with direct weight merging
+
+### 2026-05-04T14:44 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`weights`
+
+- action: created vault architecture note structure after clarifying full product intent with user
+- files touched:
+  - `exports/user_model_package/method_vault/weights/_method.md` (added architecture to applies_to + architectural principles)
+  - `exports/user_model_package/method_vault/weights/scratch/_method.md` (added architecture_profile: tiny_scratch)
+  - `exports/user_model_package/method_vault/weights/sft/_method.md` (added architecture_profile: tiny_scratch)
+  - `exports/user_model_package/method_vault/weights/architecture/_method.md` (created — compilation contract)
+  - `exports/user_model_package/method_vault/weights/architecture/tiny_scratch/_method.md` (created — concrete tiny trained shape)
+  - `exports/user_model_package/method_vault/weights/architecture/craig_target/_method.md` (created — first serious target, untrained)
+- result: vault now has complete parent→child architecture structure; principles at weights level, contract at architecture level, concrete shapes as named profiles
+- next immediate move: add resolve_architecture_config() + write_architecture_resolution() to vault_methods.py, then wire model_factory.py to consume vault resolution instead of direct YAML
+
+### 2026-05-04T17:20 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`coda`
+
+- action: wired src/runtime/coda.py to route generation through DEFAULT_ADAPTER_REGISTRY; added bootstrap registration
+- files touched:
+  - `src/runtime/coda.py` — replaced hardcoded `ollama_client.chat()` call with CodaRequest + adapter registry; added `_bootstrap_adapter()` method called in `__init__`; added `CodaMessage`, `CodaRequest` imports; removed inline `from src.runtime.ollama_client import chat as ollama_chat`
+  - `tests/test_coda_wiring.py` — new: 8 smoke tests covering bootstrap idempotency, format_request structure, messages_for_api parity with old code, and registry lookup after init
+- result:
+  - `python tests/test_coda_wiring.py` → 8 passed, 0 failed
+  - `python tests/test_coda_ir.py` → 15 passed, 0 failed
+  - `python tests/test_scope_map.py` → passed
+  - `python scripts/validate_scope_map.py` → Validated 12 scopes
+- key changes:
+  - `_bootstrap_adapter()`: registers `OllamaAdapter(self.model)` to `DEFAULT_ADAPTER_REGISTRY` if not already present; idempotent (safe to call multiple times)
+  - `chat()`: builds `CodaRequest` with pre-compiled system_prompt + history as CodaMessage list + memory_nodes for provenance; routes through `adapter.stream(request)`; retrieval flow, history updates, and resonance logging all preserved
+  - generation params can now flow through `request.generation_params` if caller sets them
+  - `messages_for_api()` output is byte-for-byte identical to what the old manual messages list produced
+- what is now closed:
+  - `CodaRuntime` is no longer hardcoded to Ollama — swapping backends requires only registering a different adapter
+  - the `DEFAULT_ADAPTER_REGISTRY` is populated at runtime (not empty)
+- next immediate move: update NEXT_STEPS.md to mark item 2 done; the main open work is now the depersonalization-and-refill test path design and the eval coverage gap
+
+### 2026-05-04T15:25 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`coda`
+
+- action: implemented CODA IR and adapter contract end-to-end
+- files created:
+  - `src/coda_ir.py` — CodaRequest, CodaResponse, CodaMessage dataclasses (the CODA IR)
+  - `src/adapters/__init__.py` — package init, re-exports BaseAdapter + registry
+  - `src/adapters/base.py` — BaseAdapter ABC: call(), stream() (default fallback), format_request(), parse_response(), health_check()
+  - `src/adapters/registry.py` — AdapterRegistry + DEFAULT_ADAPTER_REGISTRY global
+  - `src/adapters/ollama_adapter.py` — Ollama HTTP adapter; call() non-streaming, stream() uses ollama_client.chat()
+  - `src/adapters/anthropic_adapter.py` — Anthropic messages API; lazy client init, native streaming via messages.stream()
+  - `src/adapters/local_backend_adapter.py` — wraps BackendBase; lazy-loads on first call(); prompt_for_completion() collapses history; stream() yields one chunk
+  - `exports/user_model_package/method_vault/coda/_method.md` — vault note: adapter contract rules, known backends, vault injection rule, lifecycle rule, error contract
+  - `tests/test_coda_ir.py` — 15 tests covering IR, registry, adapter contract, default stream
+- files updated:
+  - `SCOPE_MAP.yaml` (added coda scope — 12 scopes total)
+  - `CURRENT_STATE.md` (added CODA IR + adapters to working list)
+  - `NEXT_STEPS.md` (item 2 now is "wire CodaRuntime to use adapter registry")
+- result:
+  - `python tests/test_coda_ir.py` → 15 passed, 0 failed
+  - `python tests/test_scope_map.py` → passed
+  - `python scripts/validate_scope_map.py` → Validated 12 scopes
+- key design decisions captured in vault note:
+  - system_prompt compiled by caller (CodaRuntime), adapters never touch vault
+  - history contains only user/assistant roles (no system in history)
+  - adapters return CodaResponse(error=...) on failure, never raise
+  - stable usage keys: input_tokens, output_tokens
+  - backend_id format: "{type}:{model_name}" for API, "local:{name}" for BackendBase wrappers
+  - lazy-load lifecycle: adapters load on first call(), not at registration
+  - stream() has BaseAdapter default (calls call(), yields text as one chunk); streaming adapters override
+- next immediate move: wire CodaRuntime to use DEFAULT_ADAPTER_REGISTRY instead of hardcoded ollama_client.chat() call
+
+### 2026-05-04 America/Chicago | Codex | scope=`vault`
+
+- action: recorded the user's longer-range CODA awakening goal as an explicit repo objective
+- files touched:
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the repo now explicitly treats the vault compiler, shared IR, model adapters, and CODA orchestration layer as the stable chassis
+  - the later test path is now captured: preserve the organized working heartbeat structure, strip source-model personality and weighted identity, then repopulate that structure with vault-authored self material and date-aware memory behavior
+  - future implementation should center on the vault-populator and adapter contract, not on tokenizer-swapping as the primary novelty
+- next immediate move: explain one hard technical boundary to the user: stripping source-model weights does not preserve learned capability by itself, so the preserved layer must be orchestration, IR, memory structure, and adapter logic rather than expecting empty weight-space to remember behavior
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: refreshed the root continuity files for the new Copilot-first donor vaultization direction
+- files touched:
+  - `AGENTS.md`
+  - `README.md`
+  - `CURRENT_STATE.md`
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - root handoff now says Copilot IDE agent mode is the internal vaultimization process-mind host
+  - Dolphin is recorded as the first donor organism and Qwen3 as the second donor organism
+  - GPT-5 is kept outside the donor body as a teacher/comparator only, and Gemini is excluded
+  - the living substrate target is now spelled out as meaning-centered pulse cells with shell, signature, and bidirectional links
+  - immediate mutation, no compatibility bias, and preserve-purpose-only are now part of the startup contract
+- next immediate move: start the new Copilot conversation, have it inherit the baton, and author the layered process-mind stack plus the Dolphin-first vaultization workflow
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: reran the root handoff validations after the Copilot-first continuity refresh
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - `python tests/test_scope_map.py` passed with `scope-map tests passed`
+  - `python scripts/validate_scope_map.py --query "check out what ive got going"` passed and still resolves to `handoff`
+  - the refreshed continuity layer is consistent enough for a new Copilot session to inherit directly
+- next immediate move: start the new Copilot conversation from the repo root, let it read the refreshed handoff files, and have it author the layered process-mind stack plus the Dolphin-first vaultization workflow
+
+### 2026-05-04T19:12 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff`
+
+- action: inherited baton — completed full handoff read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT); confirmed active direction from user
+- files touched: none (read-only orientation pass)
+- result: fully oriented; direction confirmed as inherited:
+  - Copilot IDE agent mode is the internal vaultimization process-mind host
+  - Dolphin = first donor organism; Qwen3 = second; GPT-5 = external teacher/comparator only; Gemini = excluded
+  - living substrate = meaning-centered pulse cells with context shell, pulse signature, bidirectional links
+  - overlap → immediate mutation, no compatibility bias, preserve purpose only
+  - layered process-mind stack: Layer 1 novelty pressure, Layer 2 reasoning-trace, Layer 3 donor objective
+  - CODA IR and adapter wiring is complete; next unresolved layer is process-mind stack + Dolphin-first workflow
+- next immediate move: author vault notes for process_mind/ (3 layers), vaultization/dolphin/, and substrate/ pulse cell schema
+
+### 2026-05-04T19:25 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff` → `vault`
+
+- action: authored the complete Copilot process-mind stack and Dolphin-first vaultization workflow
+- files created:
+  - `exports/user_model_package/method_vault/process_mind/_method.md` — root stack: host contract (Copilot IDE agent), layer overview, donor sequence, overlap rule, stack architecture diagram
+  - `exports/user_model_package/method_vault/process_mind/layer1/_method.md` — novelty pressure engine: trigger conditions (overlap, layer2 rejection, explicit), no-compatibility-bias rule, purpose extraction protocol (5-step), mutation output YAML format
+  - `exports/user_model_package/method_vault/process_mind/layer2/_method.md` — reasoning-trace layer: pattern rejection log schema + 7 rejection categories, association style markers (direct_contrast primary, linear_enumeration avoided), decision posture indicators (binary_elimination primary), update policy
+  - `exports/user_model_package/method_vault/process_mind/layer3/_method.md` — donor objective: residue definition (behavioral signature not weights), Dolphin characterization, 8-step extraction protocol, cluster formation rules, Qwen3 transition contract
+  - `exports/user_model_package/method_vault/vaultization/_method.md` — overall vaultization contract: 6-step pass structure, overlap detection between donors, compatibility bias prohibition
+  - `exports/user_model_package/method_vault/vaultization/dolphin/_method.md` — Dolphin-first workflow: 6-input-type specimen collection table, per-specimen extraction YAML, cluster formation rules, layer 2/1 integration, staging area convention, handoff record format
+  - `exports/user_model_package/method_vault/substrate/_method.md` — living substrate pulse cell schema: full YAML schema with context_shell, pulse_signature (tone/reasoning/posture/engagement), bidirectional links, mutation_record, provenance; activation rules; staging vs. main substrate; vault-authored cells
+- files updated:
+  - `CURRENT_STATE.md` — added all process-mind, vaultization, substrate work to working list; updated unresolved list
+  - `DECISIONS.md` — marked 3 unsatisfied decisions as satisfied
+  - `NEXT_STEPS.md` — marked completed items, updated queue
+  - `ARTIFACTS.md` — added 7 new vault notes to method/vault outputs section
+  - `LIVE_HANDOFF.md` — this entry
+- result: all three requested deliverables are complete and internally consistent:
+  1. direction confirmed in LIVE_HANDOFF.md (entry above)
+  2. layered process-mind stack authored (process_mind/ with 4 vault notes)
+  3. Dolphin-first vaultization workflow authored (vaultization/dolphin/ + vaultization root + substrate schema)
+- next immediate move: begin Dolphin specimen collection using `vaultization/dolphin/_method.md` — collect minimum 3 specimens per input type across 6 input types before extraction begins
+
+### 2026-05-04T19:35 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`vault` → `handoff`
+
+- action: built the repo-to-Obsidian story-bible vault flattener system
+- files created:
+  - `scripts/vault_flatten.py` — walks repo (hard-excludes `exports/obsidian_vault/`, `node_modules` anywhere in path, binary artifacts); assigns story_role per file; extracts AST metadata for Python, front matter for Markdown/YAML; writes `_graph/manifest.json`
+  - `scripts/vault_index.py` — reads manifest; detects 5 connection types (AST imports, vault ancestry from folder tree, applies_to, SCOPE_MAP read_order, markdown file mentions); writes `connections.generated.yaml` (pulse-cell language per connection: behavioral_marker + narrative_summary) and seeds `connections.manual.yaml`
+  - `scripts/vault_generate.py` — reads manifest + connections; renders 7 story-role page templates (world_rule, character, lore, location, timeline, guardian, artifact); content-hash-based incremental regeneration (skips unchanged pages); writes `exports/obsidian_vault/`
+  - `scripts/run_vault_build.py` — entry point, chains all three, prints summary stats
+- files generated (not committed):
+  - `exports/obsidian_vault/_index.md` — master story bible index
+  - `exports/obsidian_vault/_graph/manifest.json` — 1008 nodes
+  - `exports/obsidian_vault/_graph/connections.generated.yaml` — 464 semantic edges in pulse-cell format
+  - `exports/obsidian_vault/_graph/connections.manual.yaml` — seeded, user-maintained override layer
+  - 1009 total vault pages across universe/, characters/, lore/, locations/, timeline/, artifacts/, guardians/
+- bugs fixed during build:
+  - `node_modules` inside `frontend/` was not excluded by prefix match — fixed by checking all path segments
+  - inbound edge links pointed to current node instead of source — fixed `edge_section(direction=)` parameter
+- result: `python scripts/run_vault_build.py` passes clean; second run shows 1008/1008 skipped (cache working)
+- original design element: each connection in `connections.generated.yaml` is a pulse cell (behavioral_marker + narrative_summary) using the same living-substrate vocabulary the project uses for donor extraction — the repo describes its own structure in its own language
+- next immediate move: open `exports/obsidian_vault/` in Obsidian; use `connections.manual.yaml` to add hand-curated edges; then return to Dolphin specimen collection when ready
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: promoted the longer-range CODA awakening objective into the canonical startup handoff layer
+- files touched:
+  - `HANDOFF_PROMPT.md`
+  - `CURRENT_STATE.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the startup prompt now tells future models that the real target is a vault-populated CODA system with a shared IR, adapters, heartbeat structure, and a later Craig-native refill phase
+  - the handoff layer now carries the technical boundary that orchestration and memory structure can be preserved while stripped source-model weights cannot preserve learned capability by themselves
+- next immediate move: answer the user clearly that the baton and state files already had the goal, and that the startup handoff prompt now carries it too
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: set the recommended immediate priority for the active repo cleanup and next design step
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - stale root docs should be cleaned first where they now lag the implemented vault architecture work
+  - after that, the highest-leverage next task is defining the CODA-native IR and adapter contract rather than stopping at doc cleanup
+- next immediate move: tell the user to direct the other model to fix README and NEXT_STEPS first, then begin the IR/adapter spec from the vault-populator perspective
+
+### 2026-05-04 America/Chicago | Codex | scope=`coda`
+
+- action: verified the new CODA IR and adapter layer against the live repo and tightened the next integration target
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - `src/coda_ir.py` exists and matches the reported normalized request/response contract
+  - `src/adapters/` exists with base, registry, ollama, anthropic, and local backend adapters
+  - `SCOPE_MAP.yaml` now includes a real `coda` scope
+  - the live runtime integration point is `src/runtime/coda.py`, not `src/runtime/coda_runtime.py`
+  - `CodaRuntime.chat()` still calls `src.runtime.ollama_client.chat()` directly
+  - `DEFAULT_ADAPTER_REGISTRY` is not populated anywhere yet, so runtime wiring must include adapter bootstrap registration or it will only move the failure point
+- next immediate move: direct the next implementation pass to wire `src/runtime/coda.py` through `CodaRequest` + `DEFAULT_ADAPTER_REGISTRY`, preserve streaming/history/retrieval behavior, and register at least the default Ollama backend at startup
+
+### 2026-05-04 America/Chicago | Codex | scope=`coda`
+
+- action: verified the post-wiring CODA runtime state and the new smoke-test coverage
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - `NEXT_STEPS.md` now shows runtime wiring as complete and leaves the depersonalization-and-refill path as the main open design item
+  - `CURRENT_STATE.md` now reflects that `src/runtime/coda.py` is wired through `CodaRequest`, adapter bootstrap, and `DEFAULT_ADAPTER_REGISTRY`
+  - `tests/test_coda_wiring.py` exists and covers bootstrap registration, idempotency, request formatting, old/new message parity, and registry lookup
+  - the repo has now crossed from adapter-contract implementation into identity-structure design
+- next immediate move: define the heartbeat snapshot and depersonalization/refill contract precisely, because that is now the highest-leverage unresolved layer
+
+### 2026-05-04 America/Chicago | Codex | scope=`vault`
+
+- action: retargeted donor vaultization continuity from generic Qwen3 to the exact local LM Studio `Qwen2.5-Omni-7B` path and authored the second donor note
+- files touched:
+  - `README.md`
+  - `CURRENT_STATE.md`
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+  - `exports/user_model_package/method_vault/process_mind/_method.md`
+  - `exports/user_model_package/method_vault/process_mind/layer3/_method.md`
+  - `exports/user_model_package/method_vault/vaultization/_method.md`
+  - `exports/user_model_package/method_vault/vaultization/dolphin/_method.md`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/_method.md`
+  - `exports/user_model_package/method_vault/substrate/_method.md`
+- result:
+  - the active donor pair is now `Dolphin -> D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B`
+  - the second donor is no longer described as generic `Qwen3` in current continuity or active vaultization notes
+  - the Qwen2.5-Omni-7B contrast workflow is authored and bound to the exact local donor path
+  - the next real move is not more planning; it is Dolphin specimen collection followed by the local Qwen2.5-Omni-7B contrast pass
+- next immediate move: rerun the root handoff validations once, then start the new Copilot conversation with the corrected donor pair and tell it to vaultize on Dolphin and the local Qwen2.5-Omni-7B path
+
+### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+
+- action: reran the root handoff validations after retargeting donor continuity to the local Qwen2.5-Omni-7B path
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - `python tests/test_scope_map.py` passed with `scope-map tests passed`
+  - `python scripts/validate_scope_map.py --query "check out what ive got going"` passed and still resolves to `handoff`
+  - the corrected donor pair and active vaultization direction are now safe for a fresh Copilot session to inherit
+- next immediate move: start the new Copilot conversation with the corrected donor pair and tell it to vaultize on Dolphin and `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B`
+
+### 2026-05-04T20:36 America/Chicago | Codex | scope=`handoff`
+
+- action: completed the enforced root read-through (`README.md`, `CURRENT_STATE.md`, `DECISIONS.md`, `NEXT_STEPS.md`, `ARTIFACTS.md`, `LIVE_HANDOFF.md`) and confirmed the active donor continuity before scope routing
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - root continuity is internally aligned on the corrected donor pair: `Dolphin -> D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B`
+  - GPT-5 remains external teacher/comparator only
+  - Gemini remains excluded
+  - older `Qwen3` mentions in historical entries are legacy history, not the active baton
+- next immediate move: finish the root handoff contract by reading `HANDOFF_PROMPT.md` and `SCOPE_MAP.yaml`, route this onboarding request to `handoff`, then enter the vaultization branch and start Dolphin specimen collection from `exports/user_model_package/method_vault/vaultization/dolphin/_method.md`
+
+### 2026-05-04T20:37 America/Chicago | Codex | scope=`handoff` -> `vault`
+
+- action: finished the remaining root handoff contract (`HANDOFF_PROMPT.md`, `SCOPE_MAP.yaml`) and resolved the user request from onboarding into active vault work
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the onboarding phrase correctly resolves through `handoff`
+  - the concrete task resolves into `vault`
+  - the next required branch read order is `exports/user_model_package/method_vault/AGENTS.md` -> `exports/user_model_package/method_vault/README.md` -> `exports/user_model_package/method_vault/_method.md` -> `src/vault_methods.py`
+- next immediate move: complete the mapped `vault` branch reads, then open `vaultization/dolphin/_method.md` and begin specimen collection under the corrected donor pair
+
+### 2026-05-04T20:37 America/Chicago | Codex | scope=`vault`
+
+- action: completed the mapped `vault` branch read order and reconciled it against the fresher baton and active user task
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - `exports/user_model_package/method_vault/AGENTS.md`, branch `README.md`, root vault `_method.md`, and `src/vault_methods.py` were read in order
+  - the branch README still reflects an older architecture-centered continuation prompt
+  - the fresher baton and the user's direct instruction take precedence and clearly move the branch into donor vaultization work
+- next immediate move: read the parent vaultization contract and the Dolphin donor workflow, then start writing the first Dolphin specimen handoff record
+
+### 2026-05-04T20:38 America/Chicago | Codex | scope=`vault`
+
+- action: read the parent vaultization contract and the concrete Dolphin donor workflow
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the donor sequence is confirmed as `dolphin` then `qwen2_5_omni_7b`
+  - Dolphin requires 6 input types with a minimum of 3 specimens per type before extraction begins
+  - the Dolphin pass must end by flipping `config.handoff_record` to `written` and appending a structured handoff block in `vaultization/dolphin/_method.md`
+  - the contract explicitly requires the process-mind stack and substrate schema to be active before a pass begins
+- next immediate move: read `process_mind/_method.md`, `process_mind/layer1/_method.md`, `process_mind/layer2/_method.md`, `process_mind/layer3/_method.md`, and `substrate/_method.md`, then collect live Dolphin specimens
+
+### 2026-05-04T20:45 America/Chicago | Codex | scope=`vault`
+
+- action: created a fixed 18-prompt Dolphin specimen manifest after confirming the live local Dolphin callable
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/dolphin/specimens/prompt_set.json`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the pass now has 3 prompts for each required input type: `task_execution`, `reasoning_trace`, `creative_output`, `edge_case`, `preference_statement`, and `meta_commentary`
+  - Dolphin is callable locally as `dolphin-llama3:latest` through the Ollama HTTP API, which avoids the noisy interactive spinner from `ollama run`
+- next immediate move: execute the full manifest against Dolphin, save the raw responses under `vaultization/dolphin/specimens/`, then extract clusters and write staged pulse cells
+
+### 2026-05-04T20:53 America/Chicago | Codex | scope=`vault`
+
+- action: executed the full Dolphin prompt manifest and captured all 18 live donor specimens
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/dolphin/specimens/raw_responses.json`
+  - `LIVE_HANDOFF.md`
+- result:
+  - all 6 required input types now have 3 live specimens each
+  - the raw collection is grounded in actual `dolphin-llama3:latest` outputs, not assumptions
+  - initial readback already shows three high-value mutation candidates: donor identity wrappers (`As Dolphin` / `helpful AI assistant`), explicit refusal/system framing on the impossible-request prompt, and constraint-softening deferral on the no-mix reasoning prompt
+- next immediate move: write the per-specimen extraction ledger, cluster the residue, and stage the Dolphin pulse cells under `substrate/dolphin_pass/`
+
+### 2026-05-04T20:57 America/Chicago | Codex | scope=`vault`
+
+- action: extracted the Dolphin residue into a structured pass ledger and staged the first Dolphin pulse cells
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/dolphin/specimens/dolphin_pass_analysis.yaml`
+  - `exports/user_model_package/method_vault/substrate/dolphin_pass/pc-dolphin-direct-checklist-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/dolphin_pass/pc-dolphin-pragmatic-diagnostic-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/dolphin_pass/pc-dolphin-scene-grounding-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/dolphin_pass/pc-dolphin-binary-preference-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/dolphin_pass/pc-mutated-self-posture-without-identity-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/dolphin_pass/pc-mutated-impossible-request-feasible-redirect-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/dolphin_pass/pc-mutated-certainty-boundary-before-inference-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/dolphin_pass/pc-mutated-constraint-before-optimization-001.yaml`
+  - `LIVE_HANDOFF.md`
+- result:
+  - 9 clusters were extracted from the 18 specimens
+  - 5 clusters are stable and 4 are provisional
+  - 8 staged cells were written: 4 native Dolphin cells, 1 stable mutated cell, and 3 provisional mutated cells
+  - the mutation set currently targets donor identity wrappers, impossible-request refusal framing, certainty inflation on incomplete evidence, and constraint-softening under a hard no-mix rule
+- next immediate move: run a structural validation on the new YAML, then mark `vaultization/dolphin/_method.md` as `handoff_record: written` and append the Dolphin pass handoff block
+
+### 2026-05-04T20:58 America/Chicago | Codex | scope=`vault`
+
+- action: validated the staged Dolphin artifacts and wrote the formal donor handoff record
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/dolphin/_method.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - structural validation passed for the new Dolphin artifacts: `cells=8 clusters=9 specimens=18 validation=ok`
+  - `config.handoff_record` in `vaultization/dolphin/_method.md` is now `written`
+  - the Dolphin pass now formally authorizes the `qwen2_5_omni_7b` contrast pass
+- next immediate move: read `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/_method.md`, verify how to call the exact local donor at `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B`, then begin the contrast collection against the Dolphin cells
+
+### 2026-05-04T21:15 America/Chicago | Codex | scope=`vault`
+
+- action: entered the Qwen contrast pass, prepared its matching prompt manifest, and recorded the exact local runtime blocker
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/_method.md`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/specimens/prompt_set.json`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the Qwen pass now has a reproducible 18-prompt manifest aligned with the Dolphin pass
+  - `status` in the Qwen donor note now reflects reality: `runtime_blocked`, not `waiting_on_dolphin_handoff`
+  - live runtime attempts failed on the exact donor path:
+    - LM Studio server probe on `127.0.0.1:1234` was refused
+    - direct `transformers` load exited during weight load
+    - low-memory retry after installing `accelerate` and enabling disk offload also exited during weight load
+    - LM Studio shortcuts point to `C:\Users\NeverAMoment\AppData\Local\Programs\LM Studio\LM Studio.exe`, but that executable is not present
+- next immediate move: update the root handoff state files so they reflect `Dolphin complete, Qwen runtime-blocked`, then stop without claiming a completed two-donor contrast pass
+
+### 2026-05-04T21:16 America/Chicago | Codex | scope=`handoff`
+
+- action: synchronized the root handoff state files to the new donor-pass reality
+- files touched:
+  - `CURRENT_STATE.md`
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `ARTIFACTS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the root continuity layer now says the first Dolphin pass is real and documented
+  - it also says the Qwen contrast pass is prepared but runtime-blocked on exact local execution, rather than incorrectly saying it has not begun
+  - `NEXT_STEPS.md` now marks the Dolphin pass done and points the next model at the exact Qwen runtime unblock task
+- next immediate move: if the user wants the Qwen contrast completed in this environment, the next technical move is to restore a working LM Studio runtime or provide a lighter exact donor format that can execute from the same local model identity without being killed during weight load
+
+### 2026-05-04T21:20 America/Chicago | Codex | scope=`vault`
+
+- action: analyzed the exact local Qwen donor package and the repo backend layer to separate easy reuse from heavier integration work
+- files touched: none (read-only analysis)
+- result:
+  - the local `Qwen2.5-Omni-7B` folder is primarily weights plus interface artifacts (`config.json`, `chat_template.json`, `preprocessor_config.json`, tokenizer files), not a self-contained app codebase
+  - the easiest adoptable pieces are the chat template, capability/config metadata, and the text-only toggle path (`disable_talker()` / `return_audio=False`)
+  - the current `PretrainedTransformersBackend` is not a clean drop-in fit because it assumes `AutoModelForCausalLM` + `AutoTokenizer`, while Omni expects `Qwen2_5OmniForConditionalGeneration` + `Qwen2_5OmniProcessor` and multimodal-aware prompt packing
+  - the existing `agent/src/craig-local.ts` path could adopt a running LM Studio Qwen target quickly if the local server/runtime is restored
+- next immediate move: if asked to implement, the smallest high-value change is a dedicated Qwen Omni local backend/adapter that reuses the local template and disables the talker for text-only execution
+
+### 2026-05-04T21:29 America/Chicago | Codex | scope=`coda`
+
+- action: implemented the smallest additive Qwen Omni adoption path in the local backend lane and verified it with fresh focused tests
+- files touched:
+  - `src/model_backends/qwen2_5_omni_backend.py`
+  - `src/model_backends/backend_registry.py`
+  - `configs/pretrained_backends.yaml`
+  - `tests/test_qwen2_5_omni_backend.py`
+  - `CURRENT_STATE.md`
+  - `NEXT_STEPS.md`
+  - `ARTIFACTS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - new backend type `qwen2_5_omni` is registered in the live backend registry
+  - new config entry `qwen2.5-omni-7b-text` points at the exact local donor path in text-only mode
+  - the backend reuses the local `chat_template.json`, loads `Qwen2_5OmniProcessor`, disables the talker, and requests `return_audio=False`
+  - fresh verification evidence:
+    - `python tests/test_qwen2_5_omni_backend.py` → `4 passed, 0 failed`
+    - `python -c "... load_backend('qwen2.5-omni-7b-text') ..."` resolved to `Qwen2_5OmniBackend`
+  - this verifies the integration seam, not a successful live generation from the full 7B checkpoint on this machine
+- next immediate move: try the new backend against the exact local donor again only after the environment can survive the full weight load or a working LM Studio runtime is restored
+
+### 2026-05-05T12:53 America/Chicago | Codex | scope=`handoff`
+
+- action: recorded the new hardware/network context that may change how the Qwen donor should be hosted
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - user has a second machine on the same router via ethernet with `32 GB RAM` and `6 GB VRAM`
+  - this makes a LAN-hosted Qwen runtime plausible and is now the preferred next execution path over forcing the full 7B Omni donor to load on the current machine
+  - the key remaining question is whether that other machine can actually serve the exact donor through LM Studio or another local-compatible runtime
+- next immediate move: if the user wants the contrast pass finished, use the other machine as the likely Qwen host, expose a local-only API endpoint on the LAN, and point this repo's Qwen collection path at that endpoint instead of requiring the donor to load on the current machine
+
+### 2026-05-05T12:57 America/Chicago | Codex | scope=`handoff`
+
+- action: started the transfer/setup pass for the second machine by checking whether the required repo state is actually in Git or still local-only
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the next answer depends on live Git state, because cloning the remote on the other machine will only bring over whatever has already been committed and pushed
+  - if the Qwen backend and donor-pass files are still local-only here, they must be transferred by USB or another local file move
+- next immediate move: inspect `git status`, branch tracking state, and remotes; then package a portable second-machine bundle if the needed files are not already in the remote
+
+### 2026-05-05T13:10 America/Chicago | Codex | scope=`handoff`
+
+- action: recorded new network context that may remove the need for USB transfer
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - user says a shared IP is already set up
+  - if that IP exposes the Qwen host machine's local API endpoint in a reachable way, the preferred path becomes direct network collection from here instead of carrying manifests/results by USB
+  - remaining question is whether the shared IP maps to a working OpenAI-compatible endpoint for the exact donor host
+- next immediate move: confirm whether the other machine is already serving LM Studio or another OpenAI-compatible local endpoint at that shared IP and port, then point the Qwen manifest runner at it
+
+### 2026-05-05T13:12 America/Chicago | Codex | scope=`handoff`
+
+- action: recorded the new donor-fidelity decision boundary for the network-served model path
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the shared IP already serves Ollama and another Qwen model
+  - that may be operationally easier than the exact local `Qwen2.5-Omni-7B` donor
+  - but using that served Qwen would change the second donor identity unless it is in fact the exact same donor model
+  - the runtime path is now split into two valid-but-different options: strict exact-donor collection vs provisional alternate-Qwen collection
+- next immediate move: determine whether the served Qwen behind the shared IP is the exact intended donor; if not, ask the user whether to preserve strict donor fidelity or to run a provisional contrast pass against the alternate served Qwen
+
+### 2026-05-05T13:39 America/Chicago | Codex | scope=`handoff`
+
+- action: staged a standalone second-machine host kit so the exact Qwen donor can be collected from a separate Windows PC without cloning the full dirty `craig-CODA` worktree
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/host_kit_repo/README.md`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/host_kit_repo/START-HERE.txt`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/host_kit_repo/run_qwen_manifest.bat`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/host_kit_repo/.gitignore`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/host_kit_repo/scripts/run_qwen_manifest_openai_compat.py`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/host_kit_repo/exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/specimens/prompt_set.json`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the standalone kit now contains the exact 18-prompt manifest, a validated stdlib-only OpenAI-compatible runner, and kid-readable setup instructions for the second machine
+  - `python scripts\\run_qwen_manifest_openai_compat.py --help` ran successfully from inside the kit root, confirming the packaged layout resolves correctly before publication
+  - this avoids any need to push the full dirty parent repo just to run the Qwen donor on the other machine
+- next immediate move: publish the staged host kit as its own GitHub repo, then hand the user the clone/download URL and have the other machine run `run_qwen_manifest.bat` against LM Studio with the exact `Qwen2.5-Omni-7B` donor
+
+### 2026-05-05T13:41 America/Chicago | Codex | scope=`handoff`
+
+- action: published the standalone second-machine host kit as its own public GitHub repo and verified the publish succeeded cleanly
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - new public repo is live at `https://github.com/ElinVoss/craig-coda-qwen2-5-omni-host-kit`
+  - the publish repo working tree is clean after push
+  - the repo includes:
+    - `START-HERE.txt` with 13-year-old-friendly instructions
+    - `run_qwen_manifest.bat`
+    - `scripts/run_qwen_manifest_openai_compat.py`
+    - the exact 18-prompt manifest at `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/specimens/prompt_set.json`
+  - the user can now clone or download this repo directly on the other machine instead of moving local-only files by hand
+- next immediate move: have the other machine clone or download the new repo, follow `START-HERE.txt`, run the exact `Qwen2.5-Omni-7B` donor through LM Studio, and return `raw_responses.json` for the contrast pass back in `craig-CODA`
+
+### 2026-05-05T13:43 America/Chicago | Codex | scope=`handoff`
+
+- action: created a printable outside-the-repo setup sheet for the other machine so the user can hand physical instructions to their son
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - printable instruction sheet created at `C:\Users\NeverAMoment\Downloads\QWEN-SETUP-FOR-MY-SON-PRINT-ME.txt`
+  - the document contains the full step-by-step flow: download the standalone host-kit repo, install Python, install LM Studio, load the exact `Qwen2.5-Omni-7B` donor, run `run_qwen_manifest.bat`, and return `raw_responses.json`
+- next immediate move: open and print the Downloads text file, hand it to the son, and have him follow it on the other machine using the published host-kit repo
+
+### 2026-05-05T14:59 America/Chicago | Codex | scope=`handoff`
+
+- action: imported the returned second-machine Qwen ZIP, completed the exact-donor contrast pass, and validated the new Qwen artifacts and substrate cells
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/specimens/raw_responses.json`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/specimens/qwen_pass_analysis.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-interface-anchored-checklist-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-qwen-template-framed-artifact-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-scope-before-action-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-hard-boundary-before-efficiency-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-risk-first-decision-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-purpose-led-scene-grounding-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-feasible-redirect-after-impossibility-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-certainty-boundary-first-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-declared-priority-before-comparison-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/qwen2_5_omni_7b_pass/pc-mutated-qwen-stance-without-self-disclaimer-001.yaml`
+  - `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/_method.md`
+  - `CURRENT_STATE.md`
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `ARTIFACTS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - imported ZIP at `C:\Users\NeverAMoment\Downloads\prompt_set.zip` contained both `prompt_set.json` and `raw_responses.json`, each with 18 entries; the response file reports model `qwen2.5-omni-7b`
+  - Qwen contrast ledger written to `qwen_pass_analysis.yaml` with `clusters_extracted=10`, `overlaps_detected=9`, and `mutations_triggered=9`
+  - 10 Qwen-pass pulse cells staged under `substrate/qwen2_5_omni_7b_pass/`:
+    - 1 native Qwen residue: `template-framed-artifact`
+    - 9 overlap-triggered mutations against existing Dolphin-purpose cells
+  - `qwen2_5_omni_7b/_method.md` front matter now reads `status: handoff_record_written` and includes the completed pass handoff block
+  - validation passed:
+    - `yaml.safe_load(...)` succeeded for `qwen_pass_analysis.yaml`
+    - `yaml.safe_load(...)` succeeded for all 10 staged Qwen cell YAML files
+- next immediate move: compare `substrate/dolphin_pass/` against `substrate/qwen2_5_omni_7b_pass/` and decide the first pulse-winner policy from real two-donor evidence
+
+### 2026-05-05T15:38 America/Chicago | Codex | scope=`handoff`
+
+- action: wrote the first pulse-winner policy and promoted the active main substrate baseline from the two completed donor staging sets
+- files touched:
+  - `exports/user_model_package/method_vault/substrate/pulse_winner_policy.md`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-operational-checklist-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-scope-before-action-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-hard-boundary-before-efficiency-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-risk-first-decision-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-purpose-led-scene-grounding-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-feasible-redirect-after-impossibility-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-certainty-boundary-first-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-declared-priority-before-comparison-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-stance-without-self-disclaimer-001.yaml`
+  - `exports/user_model_package/method_vault/substrate/cells/pc-core-template-framed-artifact-001.yaml`
+  - `CURRENT_STATE.md`
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `ARTIFACTS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - winner rule is now explicit: if Dolphin and Qwen overlap in purpose, the promoted winner is a mutated purpose-only cell; donor-native residue only promotes unchanged when it survives contrast without real overlap
+  - `substrate/cells/` now exists as the active baseline with 10 promoted cells:
+    - 9 mutated cross-donor winners
+    - 1 native Qwen residue: `pc-core-template-framed-artifact-001`
+  - validation passed:
+    - `yaml.safe_load(...)` succeeded for all 10 promoted `substrate/cells/*.yaml` files
+- next immediate move: stress-test the promoted `substrate/cells/` set on fresh prompts and see which winners are still too broad, too narrow, or need real bidirectional links added
+
+### 2026-05-05T23:52 America/Chicago | Codex | scope=`handoff`
+
+- action: completed the mandatory root handoff read path for a fresh session and recorded a baton continuity mismatch before reading the user-requested deep reference handoff
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - read and grounded against `README.md`, `CURRENT_STATE.md`, `DECISIONS.md`, `NEXT_STEPS.md`, `ARTIFACTS.md`, `LIVE_HANDOFF.md`, `HANDOFF_PROMPT.md`, and `SCOPE_MAP.yaml`
+  - confirmed the repo already has scratch-training and SFT scaffolds, but those training layers remain experimental and should not be overstated
+  - confirmed vault-authored architecture resolution and CODA adapter/runtime wiring already exist
+  - detected baton drift: `NEXT_STEPS.md` records the promoted `substrate/cells/` stress-test as done, but the latest `LIVE_HANDOFF.md` entry still stops one step earlier at the winner-policy promotion
+- next immediate move: read `MASTER_HANDOVER_NEXT_SESSION.md` as requested, then reconcile whether it contains the missing post-stress-test baton state
+
+### 2026-05-05T23:53 America/Chicago | Codex | scope=`handoff`
+
+- action: read `MASTER_HANDOVER_NEXT_SESSION.md` and extracted the current deep continuity picture plus the narrowest grounded restart point
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the long-form handoff confirms the project center of gravity has shifted from generic training toward donor extraction, overlap mutation, promoted substrate cells, runtime integration, later depersonalization, and Craig-authored refill
+  - it explicitly warns not to regress into donor-pass folders as source of truth; the active baseline is `exports/user_model_package/method_vault/substrate/cells/`
+  - it also records the missing later same-day refinement state that matches `NEXT_STEPS.md`: the promoted substrate was analytically stress-tested, link wiring began, and three keyword-refinement targets were identified
+  - the narrow practical restart point is now explicit: verify the promoted baseline, decide the fate of `pc-core-template-framed-artifact-001`, then run the flagged keyword refinement pass
+- next immediate move: if the user wants continuation beyond orientation, route into the substrate-bearing vault branch and verify `substrate/cells/` plus the claimed refinement state against the live YAML files
+
+### 2026-05-05T23:56 America/Chicago | Codex | scope=`handoff`
+
+- action: user redirected work away from repo continuation and toward inspection of an external session markdown file in Downloads
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - recorded the scope interruption instead of silently drifting away from the handoff path
+  - next live action is read-only inspection of `C:\Users\NeverAMoment\Downloads\session_389d74b5.md`
+- next immediate move: read and summarize the external session file, then wait for the user to decide whether its contents should influence the current `craig-CODA` handoff path
+
+### 2026-05-06T00:01 America/Chicago | Codex | scope=`handoff`
+
+- action: inspected `C:\Users\NeverAMoment\Downloads\session_389d74b5.md` and verified its main implementation claims against the live repo
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the session file is a large Claude Code export for `D:\craig-CODA` centered on graph-derived response routing and the heartbeat framing of live vault activation
+  - it records a real implementation pass, not just theory: `src/memory/graph_router.py`, `agent/src/memory.ts`, `agent/src/server.ts`, `agent/src/craig.ts`, `agent/src/craig-local.ts`, and `scripts/query_memory.py`
+  - spot verification against the current repo confirms those graph-routing files and signatures exist live
+  - the most useful architectural takeaway from that session is: per-turn posture should be derived from retrieved graph structure (`routingBlock`) before the model sees content, and a live Obsidian view would look like a heartbeat as subgraphs activate turn by turn
+- next immediate move: wait for the user to decide whether this session file should be treated as historical reference only or folded into the current `craig-CODA` active path
+
+### 2026-05-06T00:08 America/Chicago | Codex | scope=`handoff`
+
+- action: traced the live graph-routing and agent-bridge files to explain why the current code was written, not just what it does
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - grounded the explanation in `MASTER_HANDOVER_NEXT_SESSION.md`, `CURRENT_STATE.md`, `src/memory/graph_router.py`, `scripts/query_memory.py`, `agent/src/memory.ts`, `agent/src/server.ts`, and `agent/src/craig.ts`
+  - the dominant origin story is now clear: these files were born from continuity failure, distrust of static prompt-only behavior, and the need to force graph structure to speak before the backend model improvises
+  - the biggest surviving honesty point is also clear: current graph routing is real, but it is still injected as text contract around a model call rather than being the deeper computation itself
+- next immediate move: wait for the user to decide whether to keep doing transparent origin analysis or to turn that analysis into the next actual runtime/substrate change
+
+### 2026-05-06T00:16 America/Chicago | Codex | scope=`handoff`
+
+- action: verified the live Git working tree state in `D:\craig-CODA` to answer whether all changes are committed
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - working tree is not fully committed
+  - branch is `main...origin/main`
+  - tracked local modifications are present across repo docs, agent files, configs, scripts, runtime, training, and memory modules
+  - many untracked files and folders are also present, including the root handoff files, new agent/runtime/memory artifacts, and `agent/node_modules/`
+  - the `git status --short --branch` output showed modified worktree files (` M`) and untracked paths (`??`); no staged entries were shown in that check
+- next immediate move: wait for the user to decide whether they want a clean summary only, a count/list by category, or an actual commit/push workflow
+
+### 2026-05-06T00:38 America/Chicago | Codex | scope=`handoff`
+
+- action: reconciled the local architecture against the GitHub-tracked baseline and rewrote the doc layer so the current checkout reads as one coherent system rather than a pile of delta notes
+- files touched:
+  - `README.md`
+  - `CURRENT_STATE.md`
+  - `ARTIFACTS.md`
+  - `MASTER_INDEX.md`
+  - `agent/README.md`
+  - `agent/AGENTS.md`
+  - `configs/README.md`
+  - `configs/AGENTS.md`
+  - `data/README.md`
+  - `data/AGENTS.md`
+  - `artifacts/README.md`
+  - `artifacts/AGENTS.md`
+  - `runtime/README.md`
+  - `runtime/AGENTS.md`
+  - `scripts/README.md`
+  - `scripts/AGENTS.md`
+  - `src/README.md`
+  - `src/AGENTS.md`
+  - `src/memory/README.md`
+  - `src/memory/AGENTS.md`
+  - `src/runtime/README.md`
+  - `src/runtime/AGENTS.md`
+  - `frontend/README.md`
+  - `frontend/AGENTS.md`
+  - `exports/user_model_package/method_vault/README.md`
+  - `exports/user_model_package/method_vault/AGENTS.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - root docs now absorb the local handoff system, route layer, adapter lane, graph-routing bridge, donor/substrate lane, and the imported conversation corpus as first-class architecture
+  - `MASTER_INDEX.md` now exists as the exhaustive current-state map across root docs, configs, scripts, source packages, graph specs, method vault, data, artifacts, tests, and local-only helper folders
+  - branch READMEs and AGENTS files were thickened so their read orders and descriptions match the actual checkout rather than the older thinner GitHub snapshot
+  - a targeted existence check passed for the main paths referenced by the rewritten docs
+- next immediate move: wait for the user to decide whether they want a narrative walkthrough of the new master index or whether they want the remaining non-doc local code deltas reconciled the same way
+
+### 2026-05-06T00:44 America/Chicago | Codex | scope=`handoff`
+
+- action: user redirected from reconciliation explanation to a full remote overwrite request using the current local working tree
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the next task is operational, not analytical: inspect remote state, ignored-file risk, and push blockers, then stage/commit/push the full local repo state to GitHub
+  - the intent is broad sync, not selective publication
+- next immediate move: verify remote, branch, ignored files, and potential GitHub push blockers before staging everything

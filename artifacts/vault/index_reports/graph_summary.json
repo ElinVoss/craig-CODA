@@ -1,0 +1,60 @@
+{
+  "node_count": 398,
+  "edge_count": 34614,
+  "trust_layers": {
+    "review_only": 100,
+    "episodic_events": 202,
+    "interpretive_maps": 6,
+    "project_constraints": 80,
+    "prose_voice": 4,
+    "stable_core": 6
+  },
+  "source_kinds": {
+    "conversation_transcript": 233,
+    "curated_memory": 32,
+    "runtime_bundle": 59,
+    "gguf_extraction": 74
+  },
+  "top_tags": [
+    [
+      "chatgpt",
+      233
+    ],
+    [
+      "conversations",
+      233
+    ],
+    [
+      "transcript",
+      233
+    ],
+    [
+      "#extracted_capability",
+      74
+    ],
+    [
+      "#transformer",
+      74
+    ],
+    [
+      "style",
+      52
+    ],
+    [
+      "voice",
+      52
+    ],
+    [
+      "#attention",
+      36
+    ],
+    [
+      "#ffn",
+      36
+    ],
+    [
+      "examples",
+      32
+    ]
+  ]
+}

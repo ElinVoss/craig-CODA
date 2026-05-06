@@ -14,6 +14,9 @@ def temporal_relevance(node: VaultNode, reference_time: datetime | None = None, 
     now = reference_time or datetime.utcnow()
     try:
         created = datetime.fromisoformat(node.time_end or node.time_start or node.created_at)
+        # Strip timezone info so naive utcnow() can be compared against any source.
+        if created.tzinfo is not None:
+            created = created.replace(tzinfo=None)
     except ValueError:
         return 0.5
     delta_days = abs((now - created).total_seconds()) / 86400

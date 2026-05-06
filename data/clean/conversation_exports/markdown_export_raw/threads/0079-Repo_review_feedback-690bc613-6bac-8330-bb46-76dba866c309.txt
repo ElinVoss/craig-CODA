@@ -1,0 +1,852 @@
+CONVERSATION_ID: 690bc613-6bac-8330-bb46-76dba866c309
+TITLE: Repo review feedback
+MESSAGE_COUNT: 20
+
+[USER]
+check this out...
+https://github.com/ElinVoss/omnimeta-saga-universe.git
+
+[ASSISTANT]
+{"open": [{"ref_id": "https://github.com/ElinVoss/omnimeta-saga-universe.git"}], "response_length": "short"}
+
+[ASSISTANT]
+{"find": [{"ref_id": "turn0view0", "pattern": "README"}, {"ref_id": "turn0view0", "pattern": "PERPLEXITY_SPACE_SETUP_GUIDE"}, {"ref_id": "turn0view0", "pattern": "Makefile"}], "response_length": "short"}
+
+[ASSISTANT]
+{"click": [{"ref_id": "turn0view0", "id": 95}], "response_length": "short"}
+
+[ASSISTANT]
+{"click": [{"ref_id": "turn0view0", "id": 94}, {"ref_id": "turn0view0", "id": 93}, {"ref_id": "turn0view0", "id": 92}], "response_length": "short"}
+
+[ASSISTANT]
+{"click": [{"ref_id": "turn0view0", "id": 78}, {"ref_id": "turn0view0", "id": 79}, {"ref_id": "turn0view0", "id": 81}], "response_length": "short"}
+
+[ASSISTANT]
+Spicy. Here’s the blunt read:
+
+## What’s already working
+- **Clear purpose + canon.** The README lays out a 30-novella plan with the GLASS/CRACK/FORGE/SMELT/CLEAR/BREAK acrostics and audited titles. That’s ambitious and—crucially—machine-readable. Nice. citeturn0view0  
+- **Sane repo scaffolding.** You’ve got foundation lore, character dossiers, structural timelines, deliverables, a continuity ledger, and Perplexity Space setup/quickstart docs all broken into folders. There’s even a Story Bible template, Makefile, and pre-commit config. Great bones for a living “writer’s OS.” citeturn0view0
+
+## What’s wobbly (fix these first)
+- **Weird folder name.** `03_OmniMeta_System/ 03_Protocols` has a space before `03_Protocols`. That’s a foot-gun for tooling and links. Standardize to `03_OmniMeta_System/03_Protocols`. citeturn0view0
+- **Docs are partially visible but flaky.** Some markdown pages don’t render via the normal GitHub view (likely due to size or JS hiccups). Consider splitting long docs, and add a lightweight static site (see below) so readers aren’t wrestling GitHub’s UI. citeturn3view0turn3view1
+- **Single-point-of-truth drift risk.** You’ve got canon in multiple places (README + foundation + timelines). Without schema checks, things will diverge.
+
+## Fast wins (1–2 hour upgrades)
+1. **Rename + lint pass**
+   - Fix the `03_Protocols` path issue and run a link check. Add a CI job that fails on broken intra-repo links and trailing spaces.  
+   - Action: add `actions/markdown-link-check` + a `pre-commit` hook for `mdformat`/`markdownlint`.
+2. **Add a Table of Contents to README**  
+   - The acrostic/novella list is gold. Add anchor links to each Turning and to the audited titles so readers (and LLMs) can jump cleanly. citeturn0view0
+3. **Pin a minimal CONTRIBUTING.md**  
+   - Define file naming rules (e.g., `N07_Resonance_Awakens.md`), glossary updates, and how to propose canon edits (PR labels: `canon-change`, `retcon`, `typo`).
+4. **Drop in a JSON/YAML schema**  
+   - Represent characters, factions, places, timelines as typed records (e.g., `02_Character_Dossiers/*.yaml`). Validate with CI (e.g., `pykwalify` or `jsonschema`). That stops “Jhace/Jhaece” style drift before it happens.
+
+## Structural upgrades (weekend project, worth it)
+- **Docs site with search.** Stand up GitHub Pages via Docusaurus or MkDocs-Material. Auto-build on push, auto-index the canon, and expose a clean sidebar (Foundation → Characters → Timelines → Protocols). This also fixes the flaky markdown rendering and gives you versioned docs (v4.1 now; v4.2 later). citeturn0view0
+- **Canonical data layer.**  
+  - Create `/data/` with:
+    - `turnings.yaml` (GLASS..BREAK, with start/end novella indices and metaphors),
+    - `novellas.yaml` (N01…N30 with titles, status, POV, beats),
+    - `characters.yaml` (aliases, arcs, secrets, “innocent/guilty frame” flags).  
+  - Generate human-readable pages from this data (Makefile target `make render`), then LLM ingest uses the data, not freeform prose.
+- **Continuity tests.**  
+  - Add a tiny Python script that asserts invariants (e.g., “If character is ‘alive=false’ at N14, they don’t speak in N15 unless tagged ‘spectral’”). Fail CI on violations. Treat lore like code.
+
+## AI-workflow polish (since you’re leaning into Perplexity/LLM ops)
+- **Prompt contracts.** In `05_Perplexity_Space_Instructions`, define strict I/O: input keys (turning, novella id, POV), output sections (beats, conflicts, continuity hooks). Include negative prompts (“do not contradict Foundation X/Y”). Then include **examples**: 1 request → 1 perfect response. citeturn0view0
+- **Chunking strategy.** Add `docs/INGEST_RULES.md` explaining how to chunk by semantic unit (Turning → Novella → Scene), and forbid cross-chunk references unless an explicit “xref” tag exists. This keeps RAG from hallucinating bridges.
+- **Golden set.** Keep a `tests/golden/` folder with 5–10 prompt→expected-output pairs. Run them in CI against your current model settings; fail if outputs drift beyond a similarity threshold. It’s “unit tests for your muse.”
+
+## Editorial nitpicks (tighten the language, reduce ambiguity)
+- **Dual-Craft Metaphor language.** It’s clear but occasionally poetic enough to invite misreads by models. Add one practical line per Turning: “Models must interpret CRACK as fracture-propagation of alliances, not literal geology unless a scene demands it.” citeturn0view0
+- **Novella titles audit.** Lock the list under a `NOVELLAS.md` with a version header and checksum; reference that file everywhere. If titles change, bump version. citeturn0view0
+- **Guilty/innocent frames.** Great device—mark it as an access level in metadata so N30 tools can safely flip the switch without bleeding into N01–N29. citeturn0view0
+
+## Housekeeping you’ll thank yourself for later
+- **LICENSE is present.** Good. Also add `CODE_OF_CONDUCT.md` and `SECURITY.md` (even for a lore repo) to keep drive-by issues civilized. citeturn0view0
+- **Images under version control.** If `06_Reference_Resources/images` gets heavy, move to Git LFS to avoid repo bloat. citeturn0view0
+- **Release tags.** Tag `v4.1` to match “Document Version: 4.1” in the README, then make GitHub Releases your audit trail. citeturn0view0
+
+## Bottom line
+You’ve got a legit “universe ops” repo here—clear theme, mapped structure, and a plan to keep the AI in-bounds. Fix the path gremlin, add a hard schema + CI, and publish a docs site. Then this stops being a cool folder and becomes a production-grade story factory.
+
+Want me to drop in a starter `novellas.yaml` schema + a GitHub Actions workflow that validates it and builds a MkDocs site?
+
+[ASSISTANT]
+# Inspect and extract the uploaded ZIP, then inventory its contents
+import os, zipfile, pandas as pd, textwrap, json, pathlib
+
+zip_path = "/mnt/data/BIBLEs_FOR_PROSE_ENGINE.zip"
+extract_dir = "/mnt/data/BIBLEs_FOR_PROSE_ENGINE"
+
+# Create extract dir if needed
+os.makedirs(extract_dir, exist_ok=True)
+
+# Extract if not already extracted or if folder is empty
+def is_empty_dir(d):
+    return not any(os.scandir(d))
+
+if is_empty_dir(extract_dir):
+    with zipfile.ZipFile(zip_path, 'r') as z:
+        z.extractall(extract_dir)
+
+# Walk and build an inventory
+rows = []
+for root, dirs, files in os.walk(extract_dir):
+    for f in files:
+        fp = os.path.join(root, f)
+        try:
+            size = os.path.getsize(fp)
+        except FileNotFoundError:
+            size = None
+        rel = os.path.relpath(fp, extract_dir)
+        ext = pathlib.Path(fp).suffix.lower()
+        rows.append({"path": rel, "ext": ext, "size_bytes": size})
+
+inv = pd.DataFrame(rows).sort_values(["ext","path"]).reset_index(drop=True)
+
+# Save a CSV inventory for the user
+csv_path = "/mnt/data/BIBLEs_FOR_PROSE_ENGINE_inventory.csv"
+inv.to_csv(csv_path, index=False)
+
+# Try to preview up to 6 small text-like files (md, txt, yaml, yml, json) with size < 200KB
+preview_exts = {".md", ".txt", ".yaml", ".yml", ".json", ".ini", ".cfg", ".csv"}
+previews = []
+for _, row in inv.iterrows():
+    if row["ext"] in preview_exts and (row["size_bytes"] or 0) < 200_000:
+        fp = os.path.join(extract_dir, row["path"])
+        try:
+            with open(fp, "r", encoding="utf-8", errors="replace") as f:
+                content = f.read(4000)  # read first 4KB
+            previews.append({
+                "path": row["path"],
+                "preview": content
+            })
+        except Exception as e:
+            previews.append({
+                "path": row["path"],
+                "preview": f"<read error: {e}>"
+            })
+        if len(previews) >= 6:
+            break
+
+# Display inventory as a spreadsheet to the user
+from caas_jupyter_tools import display_dataframe_to_user
+display_dataframe_to_user("BIBLEs_FOR_PROSE_ENGINE inventory", inv)
+
+# Save previews to a JSON file for download
+preview_path = "/mnt/data/BIBLEs_FOR_PROSE_ENGINE_previews.json"
+with open(preview_path, "w", encoding="utf-8") as f:
+    json.dump(previews, f, ensure_ascii=False, indent=2)
+
+{
+    "extract_dir": extract_dir,
+    "csv_inventory": csv_path,
+    "preview_json": preview_path,
+    "num_files": len(inv)
+}
+
+[TOOL]
+{'extract_dir': '/mnt/data/BIBLEs_FOR_PROSE_ENGINE',
+ 'csv_inventory': '/mnt/data/BIBLEs_FOR_PROSE_ENGINE_inventory.csv',
+ 'preview_json': '/mnt/data/BIBLEs_FOR_PROSE_ENGINE_previews.json',
+ 'num_files': 30}
+
+[ASSISTANT]
+# Retry: Inspect and extract the uploaded ZIP, then inventory its contents.
+import os, zipfile, pandas as pd, textwrap, json, pathlib
+
+zip_path = "/mnt/data/BIBLEs_FOR_PROSE_ENGINE.zip"
+extract_dir = "/mnt/data/BIBLEs_FOR_PROSE_ENGINE"
+
+os.makedirs(extract_dir, exist_ok=True)
+
+def is_empty_dir(d):
+    try:
+        return not any(os.scandir(d))
+    except FileNotFoundError:
+        return True
+
+# Extract if directory is empty
+if is_empty_dir(extract_dir):
+    with zipfile.ZipFile(zip_path, 'r') as z:
+        z.extractall(extract_dir)
+
+# Walk inventory
+rows = []
+for root, dirs, files in os.walk(extract_dir):
+    for f in files:
+        fp = os.path.join(root, f)
+        try:
+            size = os.path.getsize(fp)
+        except Exception:
+            size = None
+        rel = os.path.relpath(fp, extract_dir)
+        ext = pathlib.Path(fp).suffix.lower()
+        rows.append({"path": rel, "ext": ext, "size_bytes": size})
+
+inv = pd.DataFrame(rows).sort_values(["ext", "path"]).reset_index(drop=True)
+
+# Save CSV
+csv_path = "/mnt/data/BIBLEs_FOR_PROSE_ENGINE_inventory.csv"
+inv.to_csv(csv_path, index=False)
+
+# Previews
+preview_exts = {".md", ".txt", ".yaml", ".yml", ".json", ".ini", ".cfg", ".csv"}
+previews = []
+for _, row in inv.iterrows():
+    if row["ext"] in preview_exts and (row["size_bytes"] or 0) < 200_000:
+        fp = os.path.join(extract_dir, row["path"])
+        try:
+            with open(fp, "r", encoding="utf-8", errors="replace") as f:
+                content = f.read(4000)
+        except Exception as e:
+            content = f"<read error: {e}>"
+        previews.append({"path": row["path"], "preview": content})
+        if len(previews) >= 6:
+            break
+
+# Display dataframe
+from caas_jupyter_tools import display_dataframe_to_user
+display_dataframe_to_user("BIBLEs_FOR_PROSE_ENGINE inventory", inv)
+
+# Save previews JSON
+preview_path = "/mnt/data/BIBLEs_FOR_PROSE_ENGINE_previews.json"
+with open(preview_path, "w", encoding="utf-8") as f:
+    json.dump(previews, f, ensure_ascii=False, indent=2)
+
+print("Extracted to:", extract_dir)
+print("Files inventoried:", len(inv))
+print("Inventory CSV:", csv_path)
+print("Previews JSON:", preview_path)
+
+[TOOL]
+Code execution state reset.
+IMPORTANT: The Python code did not successfully execute.
+Do not assume that any outputs (files, variables, or side effects, etc...) were created.
+You should retry execution if needed, but do so without telling the user that the previous session or environment was reset.
+
+[ASSISTANT]
+# Minimal check: list files in /mnt/data and confirm the uploaded ZIP exists
+import os, pandas as pd
+paths = []
+for root, dirs, files in os.walk("/mnt/data"):
+    for f in files:
+        paths.append({"path": os.path.join(root, f)})
+df = pd.DataFrame(paths)
+from caas_jupyter_tools import display_dataframe_to_user
+display_dataframe_to_user("All files under /mnt/data", df)
+print("Done")
+
+[TOOL]
+Done
+
+[ASSISTANT]
+Nice—got your **BIBLEs_FOR_PROSE_ENGINE.zip**. Here’s how to wire it into the repo so it stops being a blob and starts being a machine.
+
+## Make it the single source of truth
+Treat the “bibles” as typed data, not just prose. Drop these files in and you’ve got validation, docs, and CI in one shot.
+
+### 1) Data schemas (put under `/data/`)
+**`/data/novellas.schema.yaml`**
+```yaml
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Novellas
+type: object
+properties:
+  novellas:
+    type: array
+    items:
+      type: object
+      required: [id, turning, title, status, pov, beats]
+      properties:
+        id: {type: string, pattern: "^N(0[1-9]|[12][0-9]|30)$"}
+        turning: {type: string, enum: [GLASS, CRACK, FORGE, SMELT, CLEAR, BREAK]}
+        title: {type: string, minLength: 1}
+        status: {type: string, enum: [idea, outline, draft, revise, locked]}
+        pov: {type: array, items: {type: string}}
+        hooks: {type: array, items: {type: string}}
+        continuity_flags: {type: array, items: {type: string}}
+        beats:
+          type: array
+          items:
+            type: object
+            required: [slug, summary]
+            properties:
+              slug: {type: string}
+              summary: {type: string}
+              references: {type: array, items: {type: string}}
+additionalProperties: false
+```
+
+**`/data/characters.schema.yaml`**
+```yaml
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Characters
+type: object
+properties:
+  characters:
+    type: array
+    items:
+      type: object
+      required: [id, display_name, status, arc]
+      properties:
+        id: {type: string, pattern: "^[a-z0-9_-]+$"}
+        display_name: {type: string}
+        aliases: {type: array, items: {type: string}}
+        status: {type: string, enum: [alive, dead, unknown, spectral]}
+        innocence_frame: {type: string, enum: [innocent, guilty, ambiguous]}
+        first_appearance: {type: string, pattern: "^N(0[1-9]|[12][0-9]|30)$"}
+        arc:
+          type: array
+          items:
+            type: object
+            required: [at, note]
+            properties:
+              at: {type: string, pattern: "^N(0[1-9]|[12][0-9]|30)$"}
+              note: {type: string}
+additionalProperties: false
+```
+
+**`/data/novellas.yaml` (starter)**
+```yaml
+novellas:
+  - id: N01
+    turning: GLASS
+    title: "Resonance Awakens"
+    status: outline
+    pov: [Aria, Kade]
+    hooks: ["first fracture", "innocence motif"]
+    continuity_flags: ["no-time-travel", "pre-spectral"]
+    beats:
+      - slug: inciting
+        summary: "Aria detects forbidden signal; Kade covers it up."
+        references: ["CHAR:aria", "LOC:spire"]
+```
+
+**`/data/characters.yaml` (starter)**
+```yaml
+characters:
+  - id: aria
+    display_name: "Aria S."
+    aliases: ["Signalist"]
+    status: alive
+    innocence_frame: innocent
+    first_appearance: N01
+    arc:
+      - at: N01
+        note: "Hears resonance; denies involvement."
+```
+
+### 2) Continuity checks (put under `/scripts/`)
+**`/scripts/validate_lore.py`**
+```python
+import sys, json, yaml, jsonschema, pathlib
+
+root = pathlib.Path(__file__).resolve().parents[1]  # repo root
+data_dir = root / "data"
+
+def load_yaml(p): return yaml.safe_load(p.read_text(encoding="utf-8"))
+
+def validate(data_path, schema_path):
+    data = load_yaml(data_path)
+    schema = load_yaml(schema_path)
+    jsonschema.validate(data, schema)
+
+def continuity_guards(novellas, characters):
+    # Example guard: dead characters can't have new beats unless spectral
+    char_status = {c["id"]: c["status"] for c in characters["characters"]}
+    spectral = {c["id"] for c in characters["characters"] if c["status"]=="spectral"}
+    for n in novellas["novellas"]:
+        mentioned = set()
+        for b in n.get("beats", []):
+            for r in b.get("references", []):
+                if r.startswith("CHAR:"):
+                    mentioned.add(r.split(":",1)[1])
+        for cid in mentioned:
+            if char_status.get(cid) == "dead" and cid not in spectral:
+                raise AssertionError(f"Continuity: dead character {cid} in {n['id']} without spectral status")
+
+if __name__ == "__main__":
+    validate(data_dir/"novellas.yaml", data_dir/"novellas.schema.yaml")
+    validate(data_dir/"characters.yaml", data_dir/"characters.schema.yaml")
+    continuity_guards(
+        load_yaml(data_dir/"novellas.yaml"),
+        load_yaml(data_dir/"characters.yaml"),
+    )
+    print("Lore validation passed.")
+```
+
+### 3) CI to enforce it (put under `.github/workflows/`)
+**`lore-ci.yml`**
+```yaml
+name: Lore CI
+on:
+  push:
+    paths: ["data/**", "scripts/**", "docs/**", "mkdocs.yml"]
+  pull_request:
+    paths: ["data/**", "scripts/**", "docs/**", "mkdocs.yml"]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pyyaml jsonschema mkdocs mkdocs-material
+      - run: python scripts/validate_lore.py
+      - run: mkdocs build --strict
+```
+
+### 4) Minimal docs site (root `mkdocs.yml` + `docs/`)
+**`mkdocs.yml`**
+```yaml
+site_name: OmniMeta Saga Bible
+theme:
+  name: material
+nav:
+  - Overview: index.md
+  - Canon Data:
+      - Novellas: canon/novellas.md
+      - Characters: canon/characters.md
+plugins: []
+markdown_extensions: [tables, toc]
+```
+
+**`docs/index.md`**
+```md
+# OmniMeta Saga Bible
+Authoritative, versioned canon. Do not edit prose canon outside `/data/*` without a matching PR to data.
+```
+
+**`docs/canon/novellas.md`**
+```md
+# Novellas
+Source of truth: `/data/novellas.yaml`
+
+> Keep titles + status synced to the data file; prose summaries live here, but facts live there.
+```
+
+**`docs/canon/characters.md`**
+```md
+# Characters
+Source of truth: `/data/characters.yaml`
+```
+
+### 5) Two guardrails you want yesterday
+- Kill ambiguous paths and broken links: add `markdown-link-check` in CI and fix the stray `.../ 03_Protocols` space.
+- Pre-commit: `yamllint`, `mdformat`, trailing whitespace hook. Make PRs fail *loudly* when canon drifts.
+
+---
+
+If you want, I’ll also convert whatever’s inside that ZIP into `novellas.yaml` / `characters.yaml` for you and hand back a PR-ready branch name and diff.
+
+[USER]
+i want a full detailed comprehensive instructions page that i can hand over to manus ai to directly push into my repo
+
+[ASSISTANT]
+{"name":"Manus AI Handoff — OmniMeta Repo Upgrade (Canon-as-Data + CI + Docs)","type":"document","content":"# Manus AI Handoff — OmniMeta Repo Upgrade (Canon-as-Data + CI + Docs)\n\n**Goal:** Convert the OmniMeta Saga repo into a production-grade, validated, and documented canon system. This playbook is written so an autonomous agent can run it end-to-end and open a PR.\n\n**Repo:** `https://github.com/ElinVoss/omnimeta-saga-universe`\n\n---\n\n## 0) Assumptions\n- The repo uses a standard GitHub default branch (likely `main`).\n- Python 3.11+ is acceptable for CI scripts.\n- GitHub Pages via `gh-pages` can be enabled for the repo (built by MkDocs).\n- Existing LICENSE stays as-is.\n\n---\n\n## 1) High-level Tasks\n1. Create a feature branch: `feat/canon-data-ci-docs`.\n2. Normalize a stray path containing a space in the folder name.\n3. Add a canonical **data layer** (YAML + JSON Schema) for novellas and characters.\n4. Add **continuity validation** (Python) that runs in CI.\n5. Add a **MkDocs Material** site that renders human-readable docs from the data.\n6. Add **pre-commit** hooks and Markdown link checking in CI.\n7. Add **LFS** rules for heavy images to prevent repo bloat.\n8. Add contributor hygiene files: CONTRIBUTING, CODE_OF_CONDUCT, SECURITY.\n9. Add Makefile shortcuts.\n10. Open a PR with a summary and step-by-step instructions for maintainers, including enabling GitHub Pages.\n\n---\n\n## 2) File/Folder Changes (Target State)\nCreate/modify the following files. Paths are relative to repo root.\n\n```\n.data/\n├─ characters.schema.yaml\n├─ characters.yaml\n├─ novellas.schema.yaml\n└─ novellas.yaml\n\n.scripts/\n├─ validate_lore.py\n└─ normalize_paths.py\n\n.github/workflows/\n├─ lore-ci.yml\n└─ link-check.yml\n\n.docs/\n├─ canon/\n│  ├─ characters.md\n│  └─ novellas.md\n└─ index.md\n\n.pre-commit-config.yaml\n.gitattributes\n.markdownlint.yml\n.markdown-link-check.json\n.editorconfig\nmkdocs.yml\nMakefile\nCONTRIBUTING.md\nCODE_OF_CONDUCT.md\nSECURITY.md\n```\n\n> Also **rename** misnamed directory: `03_OmniMeta_System/ 03_Protocols` → `03_OmniMeta_System/03_Protocols`.\n\n---\n\n## 3) Rename Path With Space (idempotent)\nCreate `scripts/normalize_paths.py` to fix the known issue and future-proof.\n\n```python\n# scripts/normalize_paths.py\nimport os\nimport pathlib\n\nROOT = pathlib.Path(__file__).resolve().parents[1]\nBAD = ROOT / \"03_OmniMeta_System\" / \" 03_Protocols\"\nGOOD = ROOT / \"03_OmniMeta_System\" / \"03_Protocols\"\n\nif BAD.exists():\n    GOOD.parent.mkdir(parents=True, exist_ok=True)\n    os.rename(BAD, GOOD)\n    print(f\"Renamed: {BAD} -> {GOOD}\")\nelse:\n    print(\"No bad path found — nothing to do.\")\n```\n\n---\n\n## 4) Canon-as-Data (Schemas + Starters)\n\n**`data/novellas.schema.yaml`**\n```yaml\n$schema: \"http://json-schema.org/draft-07/schema#\"\ntitle: Novellas\ntype: object\nproperties:\n  novellas:\n    type: array\n    items:\n      type: object\n      required: [id, turning, title, status, pov, beats]\n      properties:\n        id: {type: string, pattern: \"^N(0[1-9]|[12][0-9]|30)$\"}\n        turning: {type: string, enum: [GLASS, CRACK, FORGE, SMELT, CLEAR, BREAK]}\n        title: {type: string, minLength: 1}\n        status: {type: string, enum: [idea, outline, draft, revise, locked]}\n        pov: {type: array, items: {type: string}}\n        hooks: {type: array, items: {type: string}}\n        continuity_flags: {type: array, items: {type: string}}\n        beats:\n          type: array\n          items:\n            type: object\n            required: [slug, summary]\n            properties:\n              slug: {type: string}\n              summary: {type: string}\n              references: {type: array, items: {type: string}}\nadditionalProperties: false\n```\n\n**`data/characters.schema.yaml`**\n```yaml\n$schema: \"http://json-schema.org/draft-07/schema#\"\ntitle: Characters\ntype: object\nproperties:\n  characters:\n    type: array\n    items:\n      type: object\n      required: [id, display_name, status, arc]\n      properties:\n        id: {type: string, pattern: \"^[a-z0-9_-]+$\"}\n        display_name: {type: string}\n        aliases: {type: array, items: {type: string}}\n        status: {type: string, enum: [alive, dead, unknown, spectral]}\n        innocence_frame: {type: string, enum: [innocent, guilty, ambiguous]}\n        first_appearance: {type: string, pattern: \"^N(0[1-9]|[12][0-9]|30)$\"}\n        arc:\n          type: array\n          items:\n            type: object\n            required: [at, note]\n            properties:\n              at: {type: string, pattern: \"^N(0[1-9]|[12][0-9]|30)$\"}\n              note: {type: string}\nadditionalProperties: false\n```\n\n**`data/novellas.yaml` (starter)**\n```yaml\nnovellas:\n  - id: N01\n    turning: GLASS\n    title: \"Resonance Awakens\"\n    status: outline\n    pov: [Aria, Kade]\n    hooks: [\"first fracture\", \"innocence motif\"]\n    continuity_flags: [\"no-time-travel\", \"pre-spectral\"]\n    beats:\n      - slug: inciting\n        summary: \"Aria detects forbidden signal; Kade covers it up.\"\n        references: [\"CHAR:aria\", \"LOC:spire\"]\n```\n\n**`data/characters.yaml` (starter)**\n```yaml\ncharacters:\n  - id: aria\n    display_name: \"Aria S.\"\n    aliases: [\"Signalist\"]\n    status: alive\n    innocence_frame: innocent\n    first_appearance: N01\n    arc:\n      - at: N01\n        note: \"Hears resonance; denies involvement.\"\n```\n\n> Agent: migrate any canonical facts from existing README/story bible into these YAMLs in later PRs. For now, just commit starters to bootstrap CI and docs.\n\n---\n\n## 5) Continuity Validation Script\n\n**`scripts/validate_lore.py`**\n```python\nimport sys, json, yaml, jsonschema, pathlib\n\nroot = pathlib.Path(__file__).resolve().parents[1]\ndata_dir = root / \"data\"\n\n\ndef load_yaml(p):\n    return yaml.safe_load(p.read_text(encoding=\"utf-8\"))\n\n\ndef validate(data_path, schema_path):\n    data = load_yaml(data_path)\n    schema = load_yaml(schema_path)\n    jsonschema.validate(data, schema)\n\n\ndef continuity_guards(novellas, characters):\n    # Example guard: dead characters can't appear unless spectral\n    char_status = {c[\"id\"]: c[\"status\"] for c in characters[\"characters\"]}\n    spectral = {c[\"id\"] for c in characters[\"characters\"] if c[\"status\"] == \"spectral\"}\n    for n in novellas[\"novellas\"]:\n        mentioned = set()\n        for b in n.get(\"beats\", []):\n            for r in b.get(\"references\", []) or []:\n                if r.startswith(\"CHAR:\"):\n                    mentioned.add(r.split(\":\", 1)[1])\n        for cid in mentioned:\n            if char_status.get(cid) == \"dead\" and cid not in spectral:\n                raise AssertionError(\n                    f\"Continuity: dead character {cid} in {n['id']} without spectral status\"\n                )\n\n\nif __name__ == \"__main__\":\n    validate(data_dir / \"novellas.yaml\", data_dir / \"novellas.schema.yaml\")\n    validate(data_dir / \"characters.yaml\", data_dir / \"characters.schema.yaml\")\n    continuity_guards(\n        load_yaml(data_dir / \"novellas.yaml\"),\n        load_yaml(data_dir / \"characters.yaml\"),\n    )\n    print(\"Lore validation passed.\")\n```\n\n---\n\n## 6) GitHub Actions — CI\n\n**`.github/workflows/lore-ci.yml`**\n```yaml\nname: Lore CI\non:\n  push:\n    paths: [\"data/**\", \"scripts/**\", \"docs/**\", \"mkdocs.yml\", \".pre-commit-config.yaml\"]\n  pull_request:\n    paths: [\"data/**\", \"scripts/**\", \"docs/**\", \"mkdocs.yml\", \".pre-commit-config.yaml\"]\n\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: \"3.11\"\n      - name: Install deps\n        run: |\n          python -m pip install --upgrade pip\n          pip install pyyaml jsonschema mkdocs mkdocs-material markdown-link-check\n      - name: Normalize paths\n        run: |\n          python scripts/normalize_paths.py || true\n      - name: Validate lore\n        run: python scripts/validate_lore.py\n      - name: Pre-commit (lint)\n        run: |\n          pip install pre-commit mdformat mdformat-gfm mdformat-frontmatter yamllint\n          pre-commit run --all-files\n      - name: Build docs\n        run: mkdocs build --strict\n```\n\n**`.github/workflows/link-check.yml`**\n```yaml\nname: Markdown Link Check\non:\n  workflow_dispatch:\n  schedule:\n    - cron: \"0 9 * * 1\"  # Mondays at 09:00 UTC\n\njobs:\n  mlc:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Markdown link check\n        uses: gaurav-nelson/github-action-markdown-link-check@v1\n        with:\n          use-verbose-mode: \"yes\"\n          config-file: .markdown-link-check.json\n```\n\n**`.markdown-link-check.json`**\n```json\n{\n  \"ignorePatterns\": [\n    {\"pattern\": \"^https://github.com/.+/(issues|pull)/[0-9]+$\"}\n  ],\n  \"httpHeaders\": [\n    {\"urls\": [\"*\"], \"headers\": {\"User-Agent\": \"github-action-mlc\"}}\n  ]\n}\n```\n\n---\n\n## 7) MkDocs Site\n\n**`mkdocs.yml`**\n```yaml\nsite_name: OmniMeta Saga Bible\ntheme:\n  name: material\nnav:\n  - Overview: docs/index.md\n  - Canon Data:\n      - Novellas: docs/canon/novellas.md\n      - Characters: docs/canon/characters.md\nmarkdown_extensions: [tables, toc]\n```\n\n**`docs/index.md`**\n```md\n# OmniMeta Saga Bible\nAuthoritative, versioned canon. Facts live in `/data/*` and are validated in CI. Prose in docs must not contradict data.\n```\n\n**`docs/canon/novellas.md`**\n```md\n# Novellas\nSource of truth: `/data/novellas.yaml`\n\n- Each novella requires: `id`, `turning`, `title`, `status`, `pov`, and `beats`.\n- Beats contain short summaries and `references` to characters/locations (e.g., `CHAR:aria`).\n```\n\n**`docs/canon/characters.md`**\n```md\n# Characters\nSource of truth: `/data/characters.yaml`\n\n- Track `status` and `innocence_frame`. CI blocks invalid appearances.\n```\n\n---\n\n## 8) Pre-commit + Lint\n\n**`.pre-commit-config.yaml`**\n```yaml\nrepos:\n  - repo: https://github.com/pre-commit/pre-commit-hooks\n    rev: v4.6.0\n    hooks:\n      - id: end-of-file-fixer\n      - id: trailing-whitespace\n      - id: check-yaml\n      - id: check-case-conflict\n  - repo: https://github.com/executablebooks/mdformat\n    rev: 0.7.17\n    hooks:\n      - id: mdformat\n        additional_dependencies: [mdformat-gfm, mdformat-frontmatter]\n  - repo: https://github.com/adrienverge/yamllint\n    rev: v1.35.1\n    hooks:\n      - id: yamllint\n  - repo: https://github.com/igorshubovych/markdownlint-cli\n    rev: v0.41.0\n    hooks:\n      - id: markdownlint\n        args: [\"-c\", \".markdownlint.yml\"]\n```\n\n**`.markdownlint.yml`**\n```yaml\nMD013: false   # line length\nMD033: false   # inline HTML allowed\n```\n\n**`.editorconfig`**\n```ini\nroot = true\n\n[*]\nindent_style = space\nindent_size = 2\nend_of_line = lf\ncharset = utf-8\ntrim_trailing_whitespace = true\ninsert_final_newline = true\n```\n\n---\n\n## 9) Git LFS for Images\n\n**`.gitattributes`**\n```\n# Large binary assets\n*.png filter=lfs diff=lfs merge=lfs -text\n*.jpg filter=lfs diff=lfs merge=lfs -text\n*.jpeg filter=lfs diff=lfs merge=lfs -text\n*.gif filter=lfs diff=lfs merge=lfs -text\n*.webp filter=lfs diff=lfs merge=lfs -text\n```\n\n> Agent: if `06_Reference_Resources/images` is heavy, move binaries to LFS and commit pointers.\n\n---\n\n## 10) Contributor Hygiene\n\n**`CONTRIBUTING.md`**\n```md\n# Contributing\n\n## Canon source of truth\n- Facts live in `/data/*.yaml` and must pass `scripts/validate_lore.py`.\n- Docs in `/docs` reflect data but do not override it.\n\n## Naming & IDs\n- Novella IDs: `N01`..`N30`. Turnings: `GLASS | CRACK | FORGE | SMELT | CLEAR | BREAK`.\n- Characters use lowercase `kebab_case` IDs, referenced as `CHAR:<id>`.\n\n## Workflow\n1. Update YAML in `/data`.\n2. Run `make validate`.\n3. If docs need prose, update `/docs` accordingly.\n4. Ensure pre-commit hooks pass: `pre-commit run --all-files`.\n5. Open a PR; CI must be green.\n```\n\n**`CODE_OF_CONDUCT.md`**\n```md\n# Code of Conduct\nBe excellent to each other. Harassment, bigotry, or bad-faith derailment is not tolerated. Maintainers may moderate issues/PRs at their discretion.\n```\n\n**`SECURITY.md`**\n```md\n# Security Policy\nNo executable product code here, but report sensitive exposure (tokens, private keys) via private email to the maintainer. Remove exposed secrets immediately and rotate.\n```\n\n---\n\n## 11) Makefile (DX sugar)\n\n**`Makefile`**\n```make\n.PHONY: setup validate docs fix-paths\n\nsetup:\n\tpip install -U pip\n\tpip install pyyaml jsonschema mkdocs mkdocs-material pre-commit mdformat mdformat-gfm mdformat-frontmatter yamllint\n\tpre-commit install\n\nvalidate:\n\tpython scripts/validate_lore.py\n\nfix-paths:\n\tpython scripts/normalize_paths.py || true\n\ndocs:\n\tmkdocs serve -a 0.0.0.0:8000\n```\n\n---\n\n## 12) GitHub Pages\n- After merge, enable **Settings → Pages → Build and deployment → GitHub Actions**.\n- Docs build is already in CI; you can add a publish step later if desired.\n\n---\n\n## 13) Branch + Commit Procedure (Agent)\n1. `git checkout -b feat/canon-data-ci-docs`\n2. Add all files above.\n3. Run `make setup && make fix-paths && make validate`.\n4. Commit: `chore: add canon data layer, CI, docs, and contributor hygiene`\n5. Push and open PR with title `Canon-as-Data + CI + Docs` and body:\n   - What changed\n   - How to validate locally\n   - How to enable Pages\n   - Future work: migrate full canon from prose into `/data/*.yaml`.\n\n---\n\n## 14) Future Work (separate PRs)\n- Migrate existing story bible facts into `/data/*.yaml`.\n- Add `scripts/golden_tests.py` to snapshot LLM prompt/response pairs for regression guarding.\n- Add `/data/turnings.yaml` and `/data/locations.yaml` as needed.\n\n---\n\n## 15) Idempotency & Safety\n- All scripts are idempotent; reruns won’t break the repo.\n- CI will fail for invalid canon or broken links.\n- Heavy binaries default to LFS; text remains in Git for diffs.\n\n---\n\n**Done.** Open the PR and ping maintainers to enable Pages.\n"}
+
+[ASSISTANT]
+Loaded a battle-ready handoff doc into the canvas with everything Manus AI needs: branch plan, exact file tree, schemas, scripts, CI, MkDocs, pre-commit, LFS, and the PR checklist. It’s turnkey.
+
+Want me to tailor any of it to a non-`main` default branch or wire in Docusaurus instead of MkDocs?
+
+[TOOL]
+Successfully created text document 'Manus Ai Handoff — Omni Meta Repo Upgrade (canon-as-data + Ci + Docs)' which will be referenced in all future messages with the unique identifier textdoc_id: '690bd847a0148191a16667f05cb94aab'
+
+Important: This identifier is for tool calls only to reference or update this document. It is not an external ID and it is not possible to link the user to the textdoc.
+
+[USER]
+is there a way to just write code directly intogit hub that will do all of this for me in one fell swoop?
+
+[ASSISTANT]
+Yep. Drop **one** GitHub Actions workflow into `.github/workflows/omnimeta-bootstrap.yml`. Trigger it manually, and it will generate all the files, run validation, and open a PR. One fell swoop, zero yak-shaving.
+
+Paste this file verbatim:
+
+```yaml
+name: OmniMeta — One-Shot Bootstrap
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: feat/canon-data-ci-docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate repo upgrades (files + dirs)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Fix the stray-spaced path if it exists (idempotent)
+          if [ -d "03_OmniMeta_System/ 03_Protocols" ]; then
+            mkdir -p "03_OmniMeta_System"
+            git mv "03_OmniMeta_System/ 03_Protocols" "03_OmniMeta_System/03_Protocols" || true
+          fi
+
+          mkdir -p data scripts .github/workflows docs/canon
+
+          # --- Schemas ---
+          cat > data/novellas.schema.yaml <<'YAML'
+          $schema: "http://json-schema.org/draft-07/schema#"
+          title: Novellas
+          type: object
+          properties:
+            novellas:
+              type: array
+              items:
+                type: object
+                required: [id, turning, title, status, pov, beats]
+                properties:
+                  id: {type: string, pattern: "^N(0[1-9]|[12][0-9]|30)$"}
+                  turning: {type: string, enum: [GLASS, CRACK, FORGE, SMELT, CLEAR, BREAK]}
+                  title: {type: string, minLength: 1}
+                  status: {type: string, enum: [idea, outline, draft, revise, locked]}
+                  pov: {type: array, items: {type: string}}
+                  hooks: {type: array, items: {type: string}}
+                  continuity_flags: {type: array, items: {type: string}}
+                  beats:
+                    type: array
+                    items:
+                      type: object
+                      required: [slug, summary]
+                      properties:
+                        slug: {type: string}
+                        summary: {type: string}
+                        references: {type: array, items: {type: string}}
+          additionalProperties: false
+          YAML
+
+          cat > data/characters.schema.yaml <<'YAML'
+          $schema: "http://json-schema.org/draft-07/schema#"
+          title: Characters
+          type: object
+          properties:
+            characters:
+              type: array
+              items:
+                type: object
+                required: [id, display_name, status, arc]
+                properties:
+                  id: {type: string, pattern: "^[a-z0-9_-]+$"}
+                  display_name: {type: string}
+                  aliases: {type: array, items: {type: string}}
+                  status: {type: string, enum: [alive, dead, unknown, spectral]}
+                  innocence_frame: {type: string, enum: [innocent, guilty, ambiguous]}
+                  first_appearance: {type: string, pattern: "^N(0[1-9]|[12][0-9]|30)$"}
+                  arc:
+                    type: array
+                    items:
+                      type: object
+                      required: [at, note]
+                      properties:
+                        at: {type: string, pattern: "^N(0[1-9]|[12][0-9]|30)$"}
+                        note: {type: string}
+          additionalProperties: false
+          YAML
+
+          # --- Starter data ---
+          cat > data/novellas.yaml <<'YAML'
+          novellas:
+            - id: N01
+              turning: GLASS
+              title: "Resonance Awakens"
+              status: outline
+              pov: [Aria, Kade]
+              hooks: ["first fracture", "innocence motif"]
+              continuity_flags: ["no-time-travel", "pre-spectral"]
+              beats:
+                - slug: inciting
+                  summary: "Aria detects forbidden signal; Kade covers it up."
+                  references: ["CHAR:aria", "LOC:spire"]
+          YAML
+
+          cat > data/characters.yaml <<'YAML'
+          characters:
+            - id: aria
+              display_name: "Aria S."
+              aliases: ["Signalist"]
+              status: alive
+              innocence_frame: innocent
+              first_appearance: N01
+              arc:
+                - at: N01
+                  note: "Hears resonance; denies involvement."
+          YAML
+
+          # --- Continuity validators ---
+          cat > scripts/validate_lore.py <<'PY'
+          import json, yaml, jsonschema, pathlib
+
+          root = pathlib.Path(__file__).resolve().parents[1]
+          data_dir = root / "data"
+
+          def load_yaml(p): return yaml.safe_load(p.read_text(encoding="utf-8"))
+
+          def validate(data_path, schema_path):
+              data = load_yaml(data_path)
+              schema = load_yaml(schema_path)
+              jsonschema.validate(data, schema)
+
+          def continuity_guards(novellas, characters):
+              char_status = {c["id"]: c["status"] for c in characters["characters"]}
+              spectral    = {c["id"] for c in characters["characters"] if c["status"] == "spectral"}
+              for n in novellas["novellas"]:
+                  mentioned = set()
+                  for b in n.get("beats", []):
+                      for r in (b.get("references") or []):
+                          if r.startswith("CHAR:"):
+                              mentioned.add(r.split(":", 1)[1])
+                  for cid in mentioned:
+                      if char_status.get(cid) == "dead" and cid not in spectral:
+                          raise AssertionError(f"Continuity: dead character {cid} in {n['id']} without spectral status")
+
+          if __name__ == "__main__":
+              validate(data_dir / "novellas.yaml",   data_dir / "novellas.schema.yaml")
+              validate(data_dir / "characters.yaml", data_dir / "characters.schema.yaml")
+              continuity_guards(load_yaml(data_dir / "novellas.yaml"), load_yaml(data_dir / "characters.yaml"))
+              print("Lore validation passed.")
+          PY
+
+          cat > scripts/normalize_paths.py <<'PY'
+          import os, pathlib
+          ROOT = pathlib.Path(__file__).resolve().parents[1]
+          BAD = ROOT / "03_OmniMeta_System" / " 03_Protocols"
+          GOOD = ROOT / "03_OmniMeta_System" / "03_Protocols"
+          if BAD.exists():
+              GOOD.parent.mkdir(parents=True, exist_ok=True)
+              os.rename(BAD, GOOD)
+              print(f"Renamed: {BAD} -> {GOOD}")
+          else:
+              print("No bad path found — nothing to do.")
+          PY
+
+          # --- Docs ---
+          cat > mkdocs.yml <<'YAML'
+          site_name: OmniMeta Saga Bible
+          theme:
+            name: material
+          nav:
+            - Overview: docs/index.md
+            - Canon Data:
+                - Novellas: docs/canon/novellas.md
+                - Characters: docs/canon/characters.md
+          markdown_extensions: [tables, toc]
+          YAML
+
+          cat > docs/index.md <<'MD'
+          # OmniMeta Saga Bible
+          Authoritative, versioned canon. Facts live in `/data/*` and are validated in CI.
+          MD
+
+          cat > docs/canon/novellas.md <<'MD'
+          # Novellas
+          Source of truth: `/data/novellas.yaml`
+
+          - Required: `id`, `turning`, `title`, `status`, `pov`, `beats`
+          - Beats include short summaries and `references` (e.g., `CHAR:aria`)
+          MD
+
+          cat > docs/canon/characters.md <<'MD'
+          # Characters
+          Source of truth: `/data/characters.yaml`
+
+          - Track `status` and `innocence_frame`
+          - CI blocks invalid appearances (e.g., dead-but-not-spectral)
+          MD
+
+          # --- Dev hygiene ---
+          cat > .pre-commit-config.yaml <<'YAML'
+          repos:
+            - repo: https://github.com/pre-commit/pre-commit-hooks
+              rev: v4.6.0
+              hooks:
+                - id: end-of-file-fixer
+                - id: trailing-whitespace
+                - id: check-yaml
+                - id: check-case-conflict
+            - repo: https://github.com/executablebooks/mdformat
+              rev: 0.7.17
+              hooks:
+                - id: mdformat
+                  additional_dependencies: [mdformat-gfm, mdformat-frontmatter]
+            - repo: https://github.com/adrienverge/yamllint
+              rev: v1.35.1
+              hooks:
+                - id: yamllint
+            - repo: https://github.com/igorshubovych/markdownlint-cli
+              rev: v0.41.0
+              hooks:
+                - id: markdownlint
+                  args: ["-c", ".markdownlint.yml"]
+          YAML
+
+          cat > .markdownlint.yml <<'YAML'
+          MD013: false
+          MD033: false
+          YAML
+
+          cat > .editorconfig <<'INI'
+          root = true
+
+          [*]
+          indent_style = space
+          indent_size = 2
+          end_of_line = lf
+          charset = utf-8
+          trim_trailing_whitespace = true
+          insert_final_newline = true
+          INI
+
+          cat > .markdown-link-check.json <<'JSON'
+          {
+            "ignorePatterns": [
+              {"pattern": "^https://github.com/.+/(issues|pull)/[0-9]+$"}
+            ],
+            "httpHeaders": [
+              {"urls": ["*"], "headers": {"User-Agent": "github-action-mlc"}}
+            ]
+          }
+          JSON
+
+          cat > .gitattributes <<'GITATTR'
+          *.png filter=lfs diff=lfs merge=lfs -text
+          *.jpg filter=lfs diff=lfs merge=lfs -text
+          *.jpeg filter=lfs diff=lfs merge=lfs -text
+          *.gif filter=lfs diff=lfs merge=lfs -text
+          *.webp filter=lfs diff=lfs merge=lfs -text
+          GITATTR
+
+          cat > CONTRIBUTING.md <<'MD'
+          # Contributing
+
+          ## Canon source of truth
+          - Facts live in `/data/*.yaml` and must pass `scripts/validate_lore.py`.
+          - Docs in `/docs` reflect data but never override it.
+
+          ## IDs & Naming
+          - Novellas: `N01`..`N30`; Turnings: `GLASS|CRACK|FORGE|SMELT|CLEAR|BREAK`
+          - Characters: lowercase `kebab_case` IDs, referenced as `CHAR:<id>`
+
+          ## Workflow
+          1. Edit YAML in `/data`
+          2. `python scripts/validate_lore.py`
+          3. Update `/docs` when prose changes
+          4. `pre-commit run --all-files`
+          5. Open a PR (CI must be green)
+          MD
+
+          cat > CODE_OF_CONDUCT.md <<'MD'
+          # Code of Conduct
+          Be excellent to each other. Harassment, bigotry, or bad-faith derailment is not tolerated.
+          MD
+
+          cat > SECURITY.md <<'MD'
+          # Security Policy
+          No runtime product here; if secrets ever leak, remove immediately and rotate.
+          MD
+
+          # --- Secondary workflow: link check on a schedule (optional) ---
+          cat > .github/workflows/link-check.yml <<'YAML'
+          name: Markdown Link Check
+          on:
+            workflow_dispatch: {}
+            schedule:
+              - cron: "0 9 * * 1"
+          jobs:
+            mlc:
+              runs-on: ubuntu-latest
+              steps:
+                - uses: actions/checkout@v4
+                - uses: gaurav-nelson/github-action-markdown-link-check@v1
+                  with:
+                    use-verbose-mode: "yes"
+                    config-file: .markdown-link-check.json
+          YAML
+
+          # --- CI for lore (the steady-state pipeline) ---
+          cat > .github/workflows/lore-ci.yml <<'YAML'
+          name: Lore CI
+          on:
+            push:
+              paths: ["data/**","scripts/**","docs/**","mkdocs.yml",".pre-commit-config.yaml"]
+            pull_request:
+              paths: ["data/**","scripts/**","docs/**","mkdocs.yml",".pre-commit-config.yaml"]
+          jobs:
+            check:
+              runs-on: ubuntu-latest
+              steps:
+                - uses: actions/checkout@v4
+                - uses: actions/setup-python@v5
+                  with:
+                    python-version: "3.11"
+                - name: Install deps
+                  run: |
+                    python -m pip install --upgrade pip
+                    pip install pyyaml jsonschema mkdocs mkdocs-material pre-commit mdformat mdformat-gfm mdformat-frontmatter yamllint
+                - name: Normalize paths
+                  run: python scripts/normalize_paths.py || true
+                - name: Validate lore
+                  run: python scripts/validate_lore.py
+                - name: Pre-commit
+                  run: pre-commit run --all-files
+                - name: Build docs
+                  run: mkdocs build --strict
+          YAML
+
+      - name: Install bootstrap deps and validate locally (smoke test)
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml jsonschema mkdocs mkdocs-material pre-commit mdformat mdformat-gfm mdformat-frontmatter yamllint
+          python scripts/normalize_paths.py || true
+          python scripts/validate_lore.py
+          pre-commit run --all-files
+          mkdocs build --strict
+
+      - name: Create PR with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+            branch: ${{ env.BRANCH }}
+            title: "Canon-as-Data + CI + Docs (bootstrap)"
+            commit-message: "chore: add canon data layer, CI, docs, and contributor hygiene"
+            body: |
+              This PR bootstraps a validated canon system:
+              - data/*.yaml + JSON Schemas
+              - scripts/validate_lore.py + normalize_paths.py
+              - MkDocs site + docs
+              - Pre-commit + lint + markdown link check
+              - Lore CI workflow
+              After merge: enable **Settings → Pages → GitHub Actions** for docs.
+            labels: bootstrap, infra
+            delete-branch: false
+```
+
+### How you use it
+1. Create a new file in your repo at `.github/workflows/omnimeta-bootstrap.yml`.
+2. Go to **Actions → OmniMeta — One-Shot Bootstrap → Run workflow**.
+3. It opens a PR with everything wired: data layer, validators, MkDocs, pre-commit, link check, and the steady-state CI. Merge. Then enable **Settings → Pages → GitHub Actions** to publish docs.
+
+### Notes (so you don’t get surprised)
+- The workflow uses the built-in `GITHUB_TOKEN` to create the PR. No extra secrets needed.
+- It also fixes that cursed `.../ 03_Protocols` folder if it exists.
+- Git LFS is configured, but you still need to run `git lfs install` locally if you’re pushing big binaries later; LFS pointers are harmless if you never use them.
+
+If you want this to **auto-merge** on green CI, I can add a step to set a branch protection rule and use an automerge action.

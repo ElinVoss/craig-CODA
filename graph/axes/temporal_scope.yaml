@@ -1,0 +1,10 @@
+axis: temporal_scope
+description: Time horizon the prompt is addressing.
+
+values:
+  current_project:
+    description: What exists now or is being built in this iteration.
+  future:
+    description: North star targets, L3/L4 research, long-term direction.
+  prior_context:
+    description: Past decisions, handoff history, earlier iterations.

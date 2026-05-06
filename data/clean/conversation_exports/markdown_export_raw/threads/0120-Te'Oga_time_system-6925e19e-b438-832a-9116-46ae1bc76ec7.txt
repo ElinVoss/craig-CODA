@@ -1,0 +1,1797 @@
+CONVERSATION_ID: 6925e19e-b438-832a-9116-46ae1bc76ec7
+TITLE: Te'Oga time system
+MESSAGE_COUNT: 19
+
+[USER]
+eexplain the tiude anneal and crucibles stuff
+
+[TOOL]
+Make sure to include fileciteturn0file0 in your response to cite this file.
+
+# Forbidden_Modern_Terms_TeOga_Alternatives.md
+
+**Document Version**: 1.0  
+**Created**: October 30, 2025 (23:39 CDT)  
+**Authority**: Immutable language restrictions  
+**Scope**: Modern Earth terminology banned; Te'Ogan-appropriate alternatives locked  
+**Status**: QC ENFORCEMENT—all files must comply; violations flagged and corrected  
+
+---
+
+## ABSOLUTE PROHIBITION: Modern Earth Terminology
+
+No modern Earth words or contemporary concepts appear in any deliverable.
+
+Te'Oga is a forge-glass culture in renaissance-to-industrial transition. Citizens speak in craft and material metaphors. Scientific terminology must feel indigenous to the world, not imported from Earth.
+
+---
+
+## BANNED TERMS & APPROVED ALTERNATIVES
+
+### SEISMIC EVENTS
+
+| Modern (BANNED) | Te'Ogan Alternative | Usage Context |
+|---|---|---|
+| **Earthquake** | Ground-break, rupture-shred, earth-crack, tremor-break | "The ground-break threw people down" |
+| **Seismic** | Vein-shatter, ground-resonance, crack-pulse | "The vein-shatter waves spread outward" |
+| **Aftershock** | Followshock, afterbreak, tremor-echo | "Followshocks continued for days" |
+| **Magnitude** | Strength-class, break-scale, rupture-grade | "A rupture-grade 7 break-event" |
+| **Epicenter** | Break-point, rupture-heart, wound-center | "The break-point was Grindheim" |
+| **Fault line** | Vein-crack, structural-break, rupture-seam | "The vein-crack ran deep" |
+| **Tectonic** | Foundational-break, world-seam, structural-fracture | "Foundational-break pressures built" |
+
+### ATMOSPHERIC/WEATHER
+
+| Modern (BANNED) | Te'Ogan Alternative | Usage Context |
+|---|---|---|
+| **Tsunami** | Pressure-surge, air-wave, void-rush | "The pressure-surge knocked buildings flat" |
+| **Hurricane/Tornado** | Void-storm, wind-spiral, pressure-break | "The void-storm tore through the city" |
+| **Storm** | Veil-break, pressure-chaos, wind-chaos | "The pressure-chaos lasted three days" |
+| **Wind** | Air-flow, pressure-current, void-movement | "The pressure-current was ferocious" |
+| **Pressure** | Vein-weight, air-press, crush-force | "The vein-weight increased steadily" |
+| **Atmosphere** | Air-veil, breathing-layer, sky-hold | "The air-veil destabilized" |
+| **Vortex** | Wind-spiral, pressure-turn, void-lock | "A pressure-turn formed over the city" |
+| **Lightning** | Sky-break, void-rupture, spark-cascade | "Sky-breaks illuminated the chaos" |
+
+### STRUCTURAL/ENGINEERING
+
+| Modern (BANNED) | Te'Ogan Alternative | Usage Context |
+|---|---|---|
+| **Collapse** | Break-down, rupture, structure-fail | "The building rupture killed dozens" |
+| **Damage** | Break-state, fracture-mark, wound | "The fracture-mark spread across the dome" |
+| **Infrastructure** | Craft-hold, vein-network, structure-web | "The craft-hold fractured everywhere" |
+| **Building** | Structure, hold, craft-house | "The structure fell inward" |
+| **Foundation** | Base-lock, ground-hold, craft-root | "The craft-root shifted beneath them" |
+| **Scaffold** | Hold-frame, rise-cage, work-lattice | "The hold-frame shattered" |
+
+### GEOLOGICAL
+
+| Modern (BANNED) | Te'Ogan Alternative | Usage Context |
+|---|---|---|
+| **Rock** | Stone, craft-matter, vein-host | "The stone fractured like glass" |
+| **Core** | World-heart, heat-center, flame-deep | "The world-heart glowed visible through the hole" |
+| **Crust** | World-skin, surface-shell, stone-veil | "The world-skin cracked open" |
+| **Mant
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file1 in your response to cite this file.
+
+# TeOga_Physical_Pierced.md
+
+**Document Version**: 1.0 (CORRECTED)
+**Created**: October 30, 2025 (23:41 CDT)  
+**Authority**: Immutable planetary physics  
+**Scope**: The Piercing event mechanics, post-Piercing world state, atmospheric/gravitational consequences  
+**Status**: LOCKED—all world-description scenes anchor here; no deviations  
+
+**Related Files**:
+- `Canon_Innocent_Master_v2_CORRECTED.md` — Piercing narrative context (N1 Ch.3)
+- `Lexicon_Temporal_TeOga.md` — The Piercing occurs during Shaping-to-Striking, Rising Glow, 2nd Crucible, 423rd Casting
+- `Catastrophes_Escalation_v2_CORRECTED.md` — Rupture/atmospheric aftereffects; timeline of collapse/stabilization
+
+---
+
+## TABLE OF CONTENTS
+
+1. Pre-Piercing World State
+2. The Piercing: Event Mechanics
+3. Post-Piercing World State
+4. Atmospheric Consequences
+5. Gravitational Consequences
+6. Projectile Composition and Vein-Infection
+7. Writer Constraints
+
+---
+
+## 1. PRE-PIERCING WORLD STATE
+
+### The Bore: Sealed Cylindrical Void
+
+**Physical description (pre-Piercing):**
+- Cylindrical wound through planet (entry/exit at hemispheric boundaries)
+- **Diameter:** ~30 kilometers (consistent, visible from space)
+- **Depth:** Full planetary penetration (passes completely through Te'Oga from entry to exit)
+- **State:** SEALED — impenetrable barrier; no passage through; void maintains stability through unknown mechanism
+
+**Why sealed:**
+- Innocent-frame belief: Ancient seal from God War (the Severing); magic or craft-law locked it
+- Guilty-frame reality: Deliberately sealed to contain vein-infection until triggering event (Tiffani's orchestration)
+
+**Pre-Piercing consequences of sealed Bore:**
+- Bifurcated planet: Underface and Outer Crown isolated
+- Curtain zone unstable (pressure differential trying to equalize)
+- Heat grid functions through indirect routing (not through Bore; around it)
+- No direct atmospheric transfer between hemispheres
+
+---
+
+### Pre-Piercing Gravity
+
+**Asymmetry due to Bore:**
+- Gravity shifted ~0.3% toward Outer Crown (entry-hemisphere)
+- Not enough to cause physical problems; compass/navigation oddities
+- Inhabitants notice "heaviness" at equator (transitional zone)
+- Water always flows toward Outer Crown (slight bias)
+
+---
+
+## 2. THE PIERCING: EVENT MECHANICS
+
+### The Projectile
+
+**Physical description:**
+- **Shape:** Straight cylinder; same diameter as the Bore (~30km)
+- **Composition:** Glass, iron, pewter, tin, sand, alien sediments (see §6)
+- **Entry point:** Through entry-hemisphere atmosphere
+- **Exit point:** Completely through planet; exits exit-hemisphere atmosphere
+- **Velocity:** Impossible speed (faster than sound; possibly near orbital velocity)
+- **Sound:** Mechanical shrieking, glass-shattering resonance (describable sound; not magical)
+
+### The Event Sequence (N1 Ch.3)
+
+**Seconds 0–5 (First awareness):**
+- Sky cracks open above Grindheim and Shatterholm
+- Projectile visible as geometric impossibility moving through sky
+- Initial shock: citizens witness phenomenon that violates craft-law
+- Sound arrives ~5 seconds after first sighting (delayed transmission)
+
+**Seconds 5–30 (Main passage):**
+- Projectile passes completely through Te'Oga
+- Duration of visible passage: ~20–30 seconds per location
+- Sky ruptures and reforms; atmospheric displacement visible
+- Pressure-wave radiates outward; buildings sway; objects fall
+
+**Seconds 30–90 (Aftermath phase):**
+- Projectile exits opposite hemisphere (seen from Outer Crown)
+- Atmospheric rupture begins closing (vacuum-collapse effect)
+- Pressure-waves propagate globally; vein-shatter waves begin
+- Sound echoes through Bore; multiple arrivals of shock-waves
+- Citizens experience confusion and panic; communication chaos
+
+**Minutes 1–60 (Consequence cascade):**
+- Vein-shatter followshocks begin (rupture-grade 7.5–8.0; multiple waves)
+- Atmospheric turbulence becomes standard in entry/exit zones
+- Heat grid destabilizes (rupture disrupts resonance networks)
+- Refugees flee toward stable zones; evacuation corridors activate
+
+---
+
+### What The Piercing Does (Immediate Effects)
+
+1. **Severs the Bore completely** — Seal ruptures; straight gaping hole opens through world; no more impenetrable barrier
+
+2. **Leaves physical scar** — Entry and exit wounds remain open permanently; atmospheric continuity established
+
+3. **Creates atmospheric rupture** — Pressure differential at entry/exit zones causes persistent storm-like conditions
+
+4. **Injects alien materials** — Projectile fragments embed in rupture zone; unknown elements contaminate local area
+
+5. **Activates vein-infection** — Alien materials trigger global vein-response; Soulpulse becomes possible worldwide
+
+6. **Disrupts heat grid** — Resonance networks fractured; heat distribution destabilized; heat-grid repair becomes N1+ priority
+
+7. **Generates vein-shatter catastrophe** — Rupture-grade 7.5–8.0 rupture-waves propagate globally; infrastructure damage zones
+
+---
+
+## 3. POST-PIERCING WORLD STATE
+
+
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file2 in your response to cite this file.
+
+# DOSSIER: RECURRING CHARACTERS (INNOCENT FRAME)
+
+**[INNOCENT_FRAME]**  
+**Document Version**: 1.0  
+**Created**: October 31, 2025  
+**Authority**: Character bible for Writer GPTs  
+**Scope**: Innocent-canon only—recurring allies, enemies, and faction members  
+**Status**: LOCKED—immutable reference for all N1–N30 prose generation  
+
+**Related Foundation Files**:
+- `Canon_Innocent_Master_v2_CORRECTED.md` — Complete innocent-frame canon
+- `Dossier_Jhace_Torrins_Innocent.md` — Primary protagonist reference
+- `Dossier_Crew_Secondary_Innocent.md` — Core crew members
+- `Dossier_God_Vessels_Innocent.md` — God-vessel antagonists
+- `Catastrophes_Escalation_v2_CORRECTED.md` — Character involvement timeline
+
+---
+
+## TABLE OF CONTENTS
+
+1. Resistance Network Members (N6–N30)
+2. Faction Lieutenants (God-Vessel Followers)
+3. Civic Authorities & Antagonists
+4. Civilian Anchors & Witnesses
+5. Defectors & Converts
+6. Minor Recurring Characters by Turning
+
+---
+
+## 1. RESISTANCE NETWORK MEMBERS (N6–N30)
+
+### Jessa (Velding Specialist, N6–N20)
+
+**Age**: 26 years (N6)  
+**Role**: Jhace's student; specializes in Form-pattern velding  
+**Background**: Glasspunk worker from Outer Crown; fled to Underface after Fathombreak  
+
+**Personality**: Precise, patient, perfectionist  
+**Skills**: Advanced velding; teaches others; builds training programs  
+**Arc**: Learns from Jhace (N6–N8), becomes teacher herself (N9–N15), leads velding corps (N16–N20)  
+**Death**: N20 Ch.12 — Dies defending resistance position; crushed in structural collapse  
+
+**Voice**: Precise, pedagogical. "Measure twice. Guide, don't force. Patience is craft."
+
+**Function**: Represents pedagogical mission spreading; shows Jhace's teaching legacy
+
+---
+
+### Torim (Brasting Specialist, N7–N18)
+
+**Age**: 35 years (N7)  
+**Role**: Jhace's student; specializes in Wholeness-pattern brasting  
+**Background**: Forgepunk worker; lost family in Fathombreak; seeks purpose through resistance  
+
+**Personality**: Blunt, aggressive, loyal  
+**Skills**: Heavy-force Wholeness work; infrastructure stabilization; combat applications  
+**Arc**: Learns from Jhace (N7–N10), becomes combat instructor (N11–N15), leads defensive units (N16–N18)  
+**Death**: N18 Ch.9 — Dies in siege; holds position alone to allow evacuation  
+
+**Voice**: Blunt, direct. "Hit it harder. Force the vein. Hold the line."
+
+**Function**: Represents brasting approach (contrast to velding); shows cost of combat
+
+---
+
+### Vael (Scout & Intelligence, N8–N25)
+
+**Age**: 22 years (N8)  
+**Role**: Resistance scout; gathers intelligence on god-vessel factions  
+**Background**: Civilian caught in faction wars; joins resistance for survival  
+
+**Personality**: Cautious, observant, strategic  
+**Skills**: Stealth, observation, pattern recognition; minimal Soulpulse use (avoids detection)  
+**Arc**: Recruited by Jhace (N8), becomes primary scout (N9–N15), leads intelligence network (N16–N25)  
+**Status**: Survives through N25; continues work  
+
+**Voice**: Quiet, precise. "Three patrols. North route clear. West is watched."
+
+**Function**: Provides intelligence; shows non-combat resistance roles
+
+---
+
+### Rennik (Medic, N9–N22)
+
+**Age**: 41 years (N9)  
+**Role**: Resistance medic; uses Wholeness-pattern for healing  
+**Background**: Pre-Piercing healer; learned Soulpulse post-Fathombreak  
+
+**Personality**: Compassionate, exhausted, determined  
+**Skills**: Wholeness healing; triage; sustainable Soulpulse pacing  
+**Arc**: Joins resistance (N9), becomes chief medic (N11–N15), trains other healers (N16–N22)  
+**Death**: N22 Ch.14 — Dies from Hollowing; overwork during siege  
+
+**Voice**: Compassionate, weary. "I can help. Let me see. Rest now."
+
+**Function**: Shows cost of healing; represents sustainable vs. destructive Soulpulse use
+
+---
+
+## 2. FACTION LIEUTENANTS (GOD-VESSEL FOLLOWERS)
+
+### Lysenne (Mobel/Purity Lieutenant, N12–N24)
+
+**Age**: 28 years (N12)  
+**Role**: Blemo's enforcer; leads purge operations  
+**Background**: Former Sanitist inspector; converted to Purity doctrine  
+
+**Personality**: Zealous, absolute, merciless  
+**Skills**: Purity-pattern mastery; identifies "contamination"; executes cleansing  
+**Arc**: Introduced (N12), escalates purges (N13–N20), final confrontation with Jhace (N24)  
+**Death**: N24 Ch.11 — Killed by Jhace in self-defense; attempts to cleanse him  
+
+**Voice**: Cold, absolute. "You are contaminated. Cleansing is mercy."
+
+**Function**: Represents Purity faction escalation; shows fanaticism
+
+---
+
+### Orveth (Corlexi/Form Lieutenant, N13–N26)
+
+**Age
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file3 in your response to cite this file.
+
+# INTERLUDE PLACEMENT LOGIC
+
+**Document Version**: 1.0  
+**Created**: October 31, 2025  
+**Purpose**: Define interlude placement rules and build-up/break-down methodology  
+**Usage**: Reference for Perplexity Space when determining interlude positioning in novella bibles  
+
+---
+
+## INTERLUDE OVERVIEW
+
+**Interludes** are god-vessel POV chapters (800 words each) that provide glimpses into faction activities. Each novella contains **2 interludes** featuring **2 different god-vessels**.
+
+**Purpose**:
+- Show god-vessel perspective (doctrine, followers, operations)
+- Provide horror/surveillance contrast to Jhace's heroic struggle
+- Build world beyond Jhace's immediate awareness
+- Create unpredictability (readers cannot predict when interludes occur)
+
+---
+
+## PLACEMENT VARIATION
+
+Interludes vary placement across novellas to prevent predictability:
+
+**N1**: After Ch.3, After Ch.11  
+**N2**: After Ch.4, After Ch.12  
+**N3**: After Ch.5, After Ch.10  
+**N4**: After Ch.2, After Ch.14  
+**N5**: After Ch.11 (only one, Auditor Epilogue absorbs second)  
+
+**Pattern**: Early/mid, mid/late, early/late, very early/very late, late only
+
+**Principle**: Never place interludes at same chapter positions across consecutive novellas.
+
+---
+
+## BUILD-UP VS. BREAK-DOWN
+
+Each interlude uses either **build-up** (pre-crisis setup) or **break-down** (post-crisis consequences), never both in same novella.
+
+### Build-Up Methodology
+**Definition**: A-plot events before interlude setup what interlude reveals.
+
+**Example**:
+- **A-plot (Ch.4)**: Jhace notices dome scars, geometric patterns appearing
+- **Interlude 1A (after Ch.4)**: Xilcore's perspective — obsessive geometric "corrections"
+- **Effect**: Reader understands what Jhace witnessed
+
+**Usage**: When god-vessel activity is mysterious, interlude explains
+
+---
+
+### Break-Down Methodology
+**Definition**: Interlude explains what A-plot characters witness after.
+
+**Example**:
+- **Interlude 2A (after Ch.11)**: Blemo's purge operations shown
+- **A-plot (Ch.12)**: Refugees (Halrick) describe fires and purges
+- **Effect**: Reader knows truth before A-plot characters do
+
+**Usage**: When god-vessel activity has consequences, interlude provides context
+
+---
+
+## INTERLUDE ROTATION ACROSS NOVELLAS
+
+### N1 (GLASS)
+- **Interlude 1A** (after Ch.3): Xilcore/Corlexi (Form) — Build-up
+- **Interlude 1B** (after Ch.3): Leesa/Salee (Wholeness) — Build-up
+- **Interlude 2A** (after Ch.11): Blemo/Mobel (Purity) — Break-down
+- **Interlude 2B** (after Ch.11): Seeri/Eries (Entropy) — Break-down
+
+### N2 (GLASS)
+- **Interlude 1A** (after Ch.4): Xilcore escalation — Build-up
+- **Interlude 2A** (after Ch.12): Blemo arrival — Break-down
+
+### N3 (GLASS)
+- **Interlude 1B**
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file4 in your response to cite this file.
+
+# DOSSIER: TIFFANI MERROW (INNOCENT FRAME)
+
+**[INNOCENT_FRAME]**  
+**Document Version**: 1.0  
+**Created**: October 31, 2025  
+**Authority**: Character bible for Writer GPTs  
+**Scope**: Innocent-canon only—no orchestration, no Auditor identity, no guilty reveals  
+**Status**: LOCKED—immutable reference for all N1–N5 prose generation  
+
+**Related Foundation Files**:
+- `Canon_Innocent_Master_v2_CORRECTED.md` — Complete innocent-frame canon
+- `Soulpulse_Core_v2.md` — Magic system mechanics and costs
+- `Catastrophes_Escalation_v2_CORRECTED.md` — Crisis timeline N1–N30
+- `Dossier_Jhace_Torrins_Innocent.md` — Primary relationship reference
+
+---
+
+## TABLE OF CONTENTS
+
+1. Core Identity & Archetype
+2. Physical Description & Progression
+3. Psychological Profile
+4. Soulpulse Abilities & Costs
+5. Mysterious Background (Innocent Frame)
+6. Relationship with Jhace
+7. Character Arc (N1–N5)
+8. Key Moments & Transformation Points
+9. Voice, Mannerisms & Speech Patterns
+10. Competencies & Skills
+11. The Sacrifice (N5 Ending)
+12. Narrative Function & Thematic Role
+
+---
+
+## 1. CORE IDENTITY & ARCHETYPE
+
+### Primary Archetype
+
+**Mentor-Warrior**: Tiffani Merrow is a person of extraordinary skill who guides others without controlling them. She is the teacher, the healer, the strategist who makes transformation possible. She reads systems and people with uncanny clarity, sees three moves ahead, and protects with intensity that feels loving rather than possessive.
+
+### Core Motivations (Innocent Frame)
+
+1. **Partnership over isolation** — Seeks skilled person to work with (reputation-seeking brought her to Grindheim)
+2. **Teaching as care** — Shares knowledge freely; believes competence is collective survival
+3. **Protection without control** — Guards Jhace but respects his autonomy
+4. **Redemption through service** — Carries guilt over Senna's death; seeks to prevent future loss
+5. **Acceptance of cost** — Understands mastery demands sacrifice; willing to pay
+
+### Defining Contradiction
+
+Tiffani is simultaneously:
+- **Extraordinarily skilled** yet claims to be still learning
+- **Strategically brilliant** yet presents insights as intuition
+- **Emotionally open** yet guards specific details of her past
+- **Protective** yet refuses to make decisions for Jhace
+- **Willing to sacrifice** yet fights to survive until the moment she chooses death
+
+This contradiction creates narrative tension: she seems too skilled, too prepared, too knowing—but her love for Jhace appears genuine, her vulnerability real, her sacrifice earned.
+
+---
+
+## 2. PHYSICAL DESCRIPTION & PROGRESSION
+
+### Baseline Appearance (N1 Opening)
+
+**Age**: 31 years (Grindheim reckoning)  
+**Height**: 5'8" (tall for Underface women)  
+**Build**: Lean, athletic; built for endurance rather than strength  
+**Skin**: Olive-toned with sun exposure; freckles across nose and shoulders  
+**Hair**: Dark auburn, kept in practical braid; loose strands frame face  
+**Eyes**: Amber-brown; described as "warm" or "like old honey"  
+**Hands**: Long fingers, precise movements; calluses on fingertips from velding work  
+**Posture**: Economical grace; moves with deliberate efficiency  
+
+### Distinguishing Features
+
+- **Rib vein-burn** (left side, 3cm visible at N1 opening): Chronic Form-use damage; extends internally
+- **Shoulder scar** (right, 2cm diagonal): Old injury from unknown source; Jhace notices in N2
+- **Perpetual alertness**: Eyes constantly scanning; reads rooms instinctively
+- **Controlled breathing**: Visible breath-work during Soulpulse use
+
+### Physical Degradation Across N1–N5
+
+#### Vein-Burn Progression (Form-Pattern Cost)
+
+| Novella | Visible Vein-Burn | Internal Damage | Symptoms |
+|---------|-------------------|-----------------|----------|
+| **N1 Start** | 3cm (rib) | Unknown extent | Occasional rib pain |
+| **N1 End** | 3.5cm | Spreading | Chronic rib pain; shallow breathing |
+| **N2 End** | 4cm | Critical threshold approaching | Pain during deep breaths |
+| **N3 End** | 4.2cm | Internal branching | Visible wince when touched |
+| **N4 End** | 4.5cm | Near-terminal | Constant pain; movement restricted |
+| **N5 Pre-Sacrifice** | 5cm | Terminal threshold | Internal detonation imminent |
+
+**Narrative significance**: Astute readers notice escalation and fear for her safety. Foreshadows sacrifice without meta-telegraphing orchestration.
+
+#### Other Physical Costs (N1–N5)
+
+- **Chronic rib pain**: Form-pattern locks create internal pressure; worsens with each use
+- **Shallow breathing**: Cannot take deep breaths without pain (N3+)
+- **Hand precision fatigue**: Fingers stiffen after extended velding work
+- **Sleep disruption**: Pain prevents restful sleep; exhaustion accumulates
+- **Weight loss**: Metabolic cost of sustained Form-use (N4–N5)
+
+### Physical Presence
+
+**Movement quality**: Deliberate, economical, graceful. Never rushes. Every gesture has purpose.
+
+**Touch**: Warm hands; precise contact. Forehead-to-forehead intimacy with Jhace becomes signature gesture.
+
+**Combat capability**: Trained in hand-to-hand defense (revealed N3 when attacked). Moves suggest formal training from unknown source.
+
+---
+
+## 3. PSYCHOLOGICAL PROFILE
+
+### Core Personality Traits
+
+1. **Strategically brilliant**: Reads situations three moves ahead; appears intuitive
+2. **Emotionally intelligent**: Understands people's motivations and fears instantly
+3. **Pedagogically gifted**: Teaches through demonstration and guided discovery
+4. **Protective without possessiveness**: Guards Jhace but respects his autonomy
+5. **Trauma-informed**: Carries grief over Senna's death; understands loss intimately
+6. **Calm under crisis**: Never panics; processes fear through action
+
+### Emotional Baseline
+
+**Pre-Jhace**: Traveling alone for 7 years since Senna's death. Functional but isolated. Seeking partnership to fill void left by loss.
+
+**Post-Partnership (N1+)**: Emotional walls lower incrementally. Allows herself to love Jhace despite knowing she'll eventually lose him (innocent frame: fears her vein-burn will kill her; doesn't want to leave him alone).
+
+### Internal Conflicts (Innocent Frame)
+
+1. **Love vs. Protection**: Wants Jhace close but fears her presence endangers him
+2. **Truth vs. Mystery**: Wants to share her past but cannot (training oaths? trauma? shame?)
+3. **Teaching vs. Control**: Guides Jhace but struggles when he makes dangerous choices
+4. **Survival vs. Sacrifice**: Fights to live but prepared to die if it saves him
+
+### Coping Mechanisms
+
+- **Procedural focus**: Task lists externalize emotional processing
+- **Teaching**: Sharing knowledge creates connection without vulnerability
+- **Physical intimacy**: Touch communicates what words cannot
+- **Strategic planning**: Control over future compensates for uncontrollable past
+
+### Trauma Responses
+
+**Senna's death** (7 years before N1): Partner died from Salee binding erasure (Wholeness-pattern gone wrong). Tiffani blames herself for not preventing it. This loss shapes her protective intensity toward Jhace.
+
+**Unknown training trauma**: References "someone exceptional" who trained her. Refuses to elaborate. Suggests painful history.
+
+**Sacrifice choice (N5)**: When Sanitist suppression device threatens Jhace, Tiffani chooses death with calm acceptance. Appears as devotion (innocent frame) rather than predetermined obligation (guilty frame).
+
+---
+
+## 4. SOULPULSE ABILITIES & COSTS
+
+### Primary Principle: Form (Corlexi Tradition)
+
+**Manifest
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file5 in your response to cite this file.
+
+# Lexicon_Temporal_TeOga.md
+
+## Temporal Lexicon of the Forge-Glass Cultures
+
+**Document Version**: 1.0  
+**Created**: October 30, 2025 (23:30 CDT)  
+**Authority**: Immutable crafted calendar system  
+**Scope**: Tide through Eon; temporal markers for all 30 novellas  
+**Status**: LOCKED—all time references anchor here; no deviations  
+
+**Related Files**:
+- `Canon_Innocent_Master_v2_CORRECTED.md` — Narrative timeline mapped to calendar
+- `Soulpulse_Core_v2.md` — Character age references (castings, smeltings)
+- `Catastrophes_Escalation_v2.md` — Event dates in Tie/Anneal/Crucible notation
+
+---
+
+### The Crafted Calendar System
+
+Time flows like molten glass through the sacred mathematics of craft—five tides to shape, seven anneals to perfect, nine crucibles to complete.
+
+---
+
+## **Tide** (Day)
+
+A single rotation of the world, named for the flowing rhythm of molten glass and the inexorable passage of heat through the forge.
+
+**Phrasing:** "Three tides hence" = three days from now
+
+**Daily divisions:**
+- **Kindling** (Dawn) — First Tide; call to work; heat-grid activates to daily minimum
+- **Pouring** (Mid-morning) — Second Tide; full work begins; peak energy
+- **Shaping** (Noon) — Third Tide; peak heat; maximum output
+- **Striking** (Afternoon) — Fourth Tide; refinement; precision work
+- **Cooling Hour** (Dusk) — Fifth Tide; The Quench; work winds down; heat-grid begins daily rest
+
+**Example usage in prose:**
+- "By Kindling, the scaffold was down." (by dawn)
+- "They worked through Shaping and into Striking." (through the hottest part of day)
+- "The Quench brought reprieve." (evening came)
+
+---
+
+## **Anneal** (Week - 5 days)
+
+The five-day cycle required for proper annealing of significant glassworks. Each day has a craft-name and thematic purpose:
+
+| Order | Name | Meaning | Crafting Stage |
+|-------|------|---------|---|
+| 1 | **Heattide** | Preparation, gathering materials | Material assembly |
+| 2 | **Pourtide** | Beginning work, molten state | Activation/ignition |
+| 3 | **Shapetide** | Formation, the peak of creation | Maximum effort |
+| 4 | **Striketide** | Refinement, hammer and tool | Precision work |
+| 5 | **Cooltide** | Settling, hardening, rest | Integration/completion |
+
+**Phrasing:** "Before the anneal cools" = within the week
+
+**Example usage in prose:**
+- "On Striketide, Jhace realized the crack ran deeper." (fourth day of week; refinement work day)
+- "They had until Cooltide to finish." (by end of week)
+- "Meet me at Pourtide." (second day of week; transition to active work)
+
+---
+
+## **Crucible** (Month - 7 anneals / 35 tides)
+
+Seven anneals, representing the seven stages of a master crucible's use before it must be relined or replaced. The seven anneals within a Crucible are named for the crucible's lifecycle:
+
+| Order | Name | Metaphor | Purpose |
+|-------|------|----------|---------|
+| 1 | **First Heat** | Foundation setting | Organizational/planning month |
+| 2 | **Rising Glow** | Momentum building | Active work month |
+| 3 | **Full Blaze** | Peak intensity | Crisis/climax month |
+| 4 | **Steady Burn** | Sustainable rhythm | Recovery/stabilization month |
+| 5 | **Ember Anneal** | Maintained heat | Consolidation month |
+| 6 | **Fading Coals** | Waning intensity | Transition month |
+| 7 | **Final Temper** | Hardening/locking | Resolution month |
+
+**Phrasing:** "A crucible of mourning" = a month of grief
+
+**Example usage in prose:**
+- "In the Third Anneal, the heat peaked." (mid-month crisis)
+- "By Final Temper, she had accepted it." (end of month; acceptance)
+- "Mid-crucible, everything changed." (halfway through month; turning point)
+
+---
+
+## **Casting** (Year - 9 crucibles / 315 tides)
+
+Nine Crucibles make one complete Casting—the time required to cast and complete a grand work incorporating both forged metal framework and blown glass panels. The nine Crucibles are grouped into three seasons:
+
+### **First Forge** (Early Season - 3 Crucibles: 1–3)
+
+| Crucible | Name | Character | Narrative Role |
+|----------|------|-----------|---|
+| 1 | Crucible of Iron Roots | Foundation | Establish; build infrastructure |
+| 2 | Crucible of Rising Frames | Structure | Develop; raise stakes |
+| 3 | Crucible of Skeletal Form | Completion | Solidify; lock positions |
+
+**Seasonal theme:** The physical infrastructure being built; the skeleton of events forming.
+
+### **The Great Blow** (Middle Season - 3 Crucibles: 4–6)
+
+| Crucible | Name | Character | Narrative Role |
+|----------|------|-----------|---|
+| 4 | Crucible of
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file6 in your response to cite this file.
+
+# DOSSIER: JHACE TORRINS (INNOCENT FRAME)
+
+**[INNOCENT_FRAME]**  
+**Document Version**: 1.0  
+**Created**: October 31, 2025  
+**Authority**: Character bible for Writer GPTs  
+**Scope**: Innocent-canon only—no orchestration, no guilty reveals  
+**Status**: LOCKED—immutable reference for all N1–N30 prose generation  
+
+**Related Foundation Files**:
+- `Canon_Innocent_Master_v2_CORRECTED.md` — Complete innocent-frame canon
+- `Soulpulse_Core_v2.md` — Magic system mechanics and costs
+- `Catastrophes_Escalation_v2_CORRECTED.md` — Crisis timeline N1–N30
+- `Lexicon_Temporal_TeOga.md` — Calendar and temporal terminology
+- `TeOga_Physical_Pierced_CORRECTED.md` — World physics post-Piercing
+
+---
+
+## TABLE OF CONTENTS
+
+1. Core Identity & Archetype
+2. Physical Description & Progression
+3. Psychological Profile
+4. Soulpulse Abilities & Costs
+5. Relationship Dynamics
+6. Character Arc Across 30 Novellas
+7. Key Moments & Transformation Points
+8. Voice, Mannerisms & Speech Patterns
+9. Competencies & Skills
+10. Fears, Vulnerabilities & Internal Conflicts
+11. Narrative Function & Thematic Role
+
+---
+
+## 1. CORE IDENTITY & ARCHETYPE
+
+### Primary Archetype
+
+**Survivor-Turned-Teacher**: Jhace Torrins is a person of extraordinary competence forced into magical mastery through cascading crises. He defines himself and others by capacity to work and survive. His central philosophy: *"Everyone deserves to know how to fix what breaks them."*
+
+### Core Motivations
+
+1. **Survival through competence** — If he can master the work, he can survive anything
+2. **Pedagogical mission** — Teaching others ensures collective survival
+3. **Grief as fuel** — Loss transforms into determination to prevent future loss
+4. **Partnership over isolation** — Learns that shared burden is sustainable burden
+
+### Defining Contradiction
+
+Jhace is simultaneously:
+- **Extraordinarily capable** yet constantly reaching his limits
+- **Emotionally guarded** yet capable of profound intimacy
+- **Solitary by habit** yet building community through teaching
+- **Resistant to leadership** yet becoming the axis others orbit
+
+This contradiction creates narrative tension: he never seeks power, yet power accumulates around him through competence and necessity.
+
+---
+
+## 2. PHYSICAL DESCRIPTION & PROGRESSION
+
+### Baseline Appearance (N1 Opening)
+
+**Age**: 28 years (Grindheim reckoning)  
+**Height**: 6'1" (tall for Underface population)  
+**Build**: Broad-shouldered, heavy-framed; built for sustained physical labor  
+**Skin**: Pale with undertones of forge-heat exposure; freckles across shoulders  
+**Hair**: Dark brown, kept short and practical; perpetually dusty  
+**Eyes**: Gray-green; described as "stone-colored" or "like old glass"  
+**Hands**: Large, scarred from years of repair work; calluses on palms and fingertips  
+**Posture**: Economical movement; no wasted motion; carries weight low in hips  
+
+### Distinguishing Features
+
+- **Rib scar** (left side, 4cm diagonal): childhood injury from scaffold collapse; Tiffani notices this in N1 Ch.6 during first intimacy
+- **Knuckle scars** (both hands): from wrench slips and metal-edge cuts
+- **Shoulder asymmetry**: right shoulder sits slightly higher from years of dominant-hand tool use
+- **Perpetual exhaustion**: dark circles under eyes; sleep debt visible
+
+### Physical Degradation Across N1–N5
+
+#### Hand Function Loss (Soulpulse Cost)
+
+| Novella | Right Hand | Left Hand | Visible Symptoms |
+|---------|------------|-----------|------------------|
+| **N1 Start** | 0% loss | 0% loss | None |
+| **N1 End** | 60% loss | 40% loss | Tremor public; cannot hold tools steady |
+| **N2 End** | 54% loss | 36% loss | Slow recovery via Wholeness self-healing |
+| **N3 End** | 52% loss | 34% loss | Improving, but Bram's death causes regression |
+| **N4 Crisis** | 62% loss | 42% loss | Hollowing; complete neurological shutdown |
+| **N5 Post-Fathombreak** | 48% loss | 28% loss | New capacity unlocked; appears improved |
+
+**Narrative significance**: Readers track his physical decline as visible cost of magic use. Recovery periods show Wholeness self-healing, but each crisis pushes him closer to permanent damage.
+
+#### Other Physical Costs (N1–N5)
+
+- **Tremor**: Begins N1 Ch.7; becomes chronic by N2; visible to others
+- **Chronic thirst**: Metabolic exhaustion from Soulpulse use; drinks constantly
+- **Tinnitus**: High-pitched ringing after major Wholeness work; fades slowly
+- **Back strain**: Pressure-load compensation from dual-principle wielding
+- **Sleep debt**: Requires 10–12 hours recovery after major use; rarely gets it
+- **Nosebleeds**: Warning sign of internal resonance damage (N4 Hollowing crisis)
+- **Black veins**: Visible under skin when overextending (N4–N5); fade slowly
+
+### Physical Transformation N6–N30
+
+**N6–N10 (CRACK)**: Stabilizes at ~45% right, ~25% left hand loss; learns sustainable pacing  
+**N11–N15 (FORGE)**: Adds third principle (Form); asymmetric damage increases  
+**N16–N20 (SMELT)**: Fourth principle (Purity); right hand nearly useless for fine work  
+**N21–N25 (CLEAR)**: Learns compensation techniques; left hand becomes primary  
+**N26–N29 (BREAK)**: Fivefold stasis preparation; both hands blackened with veins  
+**N30**: Holds paradox; hands bleed continuously; final cost paid  
+
+---
+
+## 3. PSYCHOLOGICAL PROFILE
+
+### Core Personality Traits
+
+1. **Duty-driven**: Obligation supersedes personal comfort; will work until collapse
+2. **Emotionally guarded**: Vulnerability is risk; intimacy requires earned trust
+3. **Pedagogically inclined**: Teaching is care; competence shared is love expressed
+4. **Grief-responsive**: Loss transforms into determination; mourning becomes action
+5. **Cynically pragmatic**: Trusts systems to fail; plans for worst outcomes
+6. **Quietly protective**: Guards others without announcement; acts before speaking
+
+### Emotional Baseline
+
+**Pre-Piercing (N1 Ch.1–2)**: Isolated, functional, emotionally flat. Work is identity. Relationships are transactional. Expects nothing from others.
+
+**Post-Piercing (N1 Ch.3+)**: Crisis forces partnership with Tiffani. Emotional walls lower incrementally through shared work, shared cost, shared vulnerability.
+
+### Internal Conflicts
+
+1. **Isolation vs. Partnership**: Wants to work alone (safer, simpler) but needs Tiffani's skill and presence
+2. **Competence vs. Limits**: Defines self by capability; confronting limits feels like identity failure
+3. **Teaching vs. Control**: Wants others to learn, but struggles to delegate (fears their failure)
+4. **Love vs. Loss**: Tiffani's presence is necessary; her death in N5 shatters him; grief becomes weapon
+
+### Coping Mechanisms
+
+- **Overwork**: Exhaustion prevents emotional processing
+- **Procedural focus**: Task lists replace feelings
+- **Teaching**: Sharing knowledge externalizes internal competence anxiety
+- **Physical intimacy**: Touch communicates what words cannot
+
+### Trauma Responses
+
+**Childhood scaffold collapse** (age 9): Learned that infrastructure fails, people die, and only personal competence prevents recurrence. This event shapes his entire worldview.
+
+**Bram's death (N3)**: Mentor figure dies from poisoning Jhace couldn't prevent. Triggers guilt spiral and Hollowing crisis in N4.
+
+**Tiffani's death (N5)**: Maximum grief. Fathombreak is not intentional—it is involuntary apocalypse triggered by loss of the only person he allowed himself to need.
+
+---
+
+## 4. SOULPULSE ABILITIES & COSTS
+
+### Primary Principle: Wholeness (Salee Tradition)
+
+**Manifestation**: Healing integration; living things mend; broken structures stabilize through organic reconnection.
+
+**Discovery** (N1 Ch.3): Jhace witnesses The Piercing. In the immediate aftermath, a child is injured in the panic. Jhace instinctively reaches toward the wound, senses veins activating, and the injury closes. He doesn't understand what happened—only that it worked.
+
+**Learning Curve** (N1–N2):
+- Accidental successes teach him vein-sensing
+
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file7 in your response to cite this file.
+
+# Soulpulse_Core_v2.md
+
+**Document Version**: 2.0  
+**Created**: October 30, 2025 (23:20 CDT)  
+**Authority**: Immutable hard magic rules  
+**Scope**: Vein substrate, four principles, access requirements, cost architecture, learning mechanics  
+**Status**: LOCKED—all magic scenes anchor here; no exceptions or deviations  
+
+**Related Files**:
+- `Canon_Innocent_Master_v2_CORRECTED.md` — Innocent-frame context, Piercing activation
+- `Lexicon_Temporal_TeOga.md` — Time references (Tide/Anneal/Crucible/Casting)
+- `Dossier_Jhace.md` — Hand damage progression (hard mechanical limits)
+- `Dossier_Tiffani_Auditor_CounterSpark.md` — Vein-burn progression (hard mechanical limits)
+
+---
+
+## TABLE OF CONTENTS
+
+1. Vein Substrate: The Invisible Stress Architecture
+2. What Soulpulse Is (Hard Definition)
+3. Access Requirement: Conviction
+4. The Four Principles (Hard Mechanics)
+5. Cost Architecture: What Magic Demands
+6. Dual-Principle Paradox: Jhace's Impossible Capacity
+7. Hollowing: Terminal Failure State
+8. Learning by Trial and Error: Mechanics
+9. Forbidden Language (Prose Law Integration)
+
+---
+
+## 1. VEIN SUBSTRATE: THE INVISIBLE STRESS ARCHITECTURE
+
+### What Are Veins?
+
+**Veins** are invisible channels of structural stress that exist within all materials (objects, living tissue, the planetary substrate itself).
+
+**Pre-Piercing state:** Veins exist but are **inert**—stress channels locked in place, unresponsive to will or intention.
+
+**Post-Piercing state:** The projectile's alien materials cause **vein-infection**—veins throughout Te'Oga become **responsive to conviction and Soulpulse manipulation**.
+
+### Vein States: Three Conditions
+
+Every vein exists in one of three states:
+
+#### 1. Stable
+
+**Definition:** Veins in equilibrium; stress distributed normally; material/body functioning as intended.
+
+**Indicators:** No sensations; object holds; body healthy; no tremor or pain.
+
+**Manipulation:** Stable veins are difficult to deliberately activate; require high conviction and precise application.
+
+**Narrative use:** Characters describe stable objects as "holding" or "settled"; bodies feel "intact" or "whole".
+
+#### 2. Stressed
+
+**Definition:** Veins under unusual pressure; stress accumulating; material/body approaching failure point.
+
+**Indicators:** Humming sensation; pressure-feeling (like water-weight); localized pain; tremor in proximate tissue.
+
+**Manipulation:** Stressed veins are easiest to manipulate; they respond to conviction quickly; cost is moderate.
+
+**Narrative use:** Characters describe stressed objects as "creaking" or "singing" (forbidden: "humming like a tuning fork"); bodies feel "stretched" or "tight".
+
+#### 3. Rupturing
+
+**Definition:** Veins in cascading failure; stress exceeding maximum threshold; material/body approaching structural collapse.
+
+**Indicators:** Intense pain; visible cracks appearing; explosive sensation (pressure-release imminent); nosebleeds if in living tissue.
+
+**Manipulation:** Rupturing veins cannot be stabilized through normal Soulpulse (cost too high; would kill user); can only be managed through Wholeness-braiding (accepting the failure and integrating around it) or accelerated through Entropy (allowing graceful collapse).
+
+**Narrative use:** Characters describe rupturing objects as "screaming" (forbidden: "singing like a broken instrument"); bodies feel "shattering" or "dissolving from inside".
+
+### Vein Density: Geographic Distribution
+
+Vein density (responsive veins per cubic meter) varies by location post-Piercing:
+
+| Location | Vein Density | Responsiveness | Cost Modifier |
+|----------|--------------|-----------------|---------------|
+| Grindheim (Underface, near entry) | 95%+ | Extreme (veins respond instantly) | x1.5 cost (veins too sensitive) |
+| Mid-Underface cities | 70–80% | High (veins respond reliably) | x1.0 cost (baseline) |
+| Underface periphery | 40–50% | Moderate (veins respond inconsistently) | x0.8 cost (easier manipulation) |
+| Curtain zone | Fluctuates wildly | Chaotic (veins respond unpredictably) | x2.0+ cost (dangerous) |
+| Outer Crown entry | 60–70% | High (veins respond reliably) | x1.0 cost (baseline) |
+| Mid-Outer Crown | 30–50% | Moderate (veins respond inconsistently) | x0.8 cost (easier manipulation) |
+| Outer Crown periphery | 10–20% | Low (veins barely respond) | x0.5 cost (very difficult to activate) |
+
+**Narrative consequence:** Magic is hardest (costliest) in Grindheim; easiest in periphery; fluctuates unpredictably in Curtain zone.
+
+---
+
+## 2. WHAT SOULPULSE IS (HARD DEFINITION)
+
+### Core Mechanism
+
+**Soulpulse** is the deliberate manipulation of vein state through focused conviction and directed internal energy.
+
+**Process:**
+1. User senses vein(s) in a material or living tissue
+2. User focuses conviction on specific vein target
+3. User channels internal energy (metabolic, emotional, or both) into the target vein
+4. Vein responds by shifting state (stable → stressed, stressed → rupturing, or reversed)
+5. Material/body responds to vein state change (object strengthens/weakens; wound heals/tears; structure adjusts)
+
+### Prerequisites for Successful Soulpulse
+
+**User must possess:**
+
+1. **Vein sensitivity** — ability to sense veins within materials/bodies
+   - Post-Piercing baseline: 70% of population develops some sensitivity
+   - Trainable: with practice, sensitivity increases
+   - Genetic component: some people naturally gifted; others require years of practice
+
+2. **Conviction** — psychological state of absolute certainty + grounding + acceptance of cost
+   - **Certainty:** User must know exactly what they intend to accomplish (vague intentions fail)
+   - **Grounding:** User must be emotionally anchored (panic/fear causes manipulation to fail)
+   - **Cost acceptance:** User must consciously accept the physical toll (hesitation causes incomplete manipulation or backlash)
+
+3. **Energy reserves** — metabolic and emotional capacity to fuel the manipulation
+   - Soulpulse draws on internal energy (blood sugar, emotional intensity, willpower)
+   - Depletion causes fatigue, tremor, nosebleeds
+   - Different principles draw on different energy types (Form = willpower; Wholeness = emotional; Purity = rage; Entropy = acceptance)
+
+### What Soulpulse CANNOT Do
+
+❌ **Cross significant distances** (must sense veins directly; range ~5 meters maximum with training)  
+❌ **Work on dead matter** (veins become inert; no responsiveness)  
+❌ **Affect non-biological material** (metals, stone respond weakly; biological substrate responds more readily)  
+❌ **Reverse permanent damage** (scarred tissue has dead veins; cannot restore)  
+❌ **Save someone at the moment of death** (veins rupture completely; no recovery point)  
+
+---
+
+## 3. ACCESS REQUIREMENT: CONVICTION
+
+### What Is Conviction?
+
+**Conviction** is the triple-state psychological condition required to activate Soulpulse:
+
+#### Element 1: Certainty
+
+**Definition:** Absolute clarity about intended outcome; no ambiguity or hesitation.
+
+**Examples of sufficient certainty:**
+- "I will stabilize this child's fractured ribs" (specific, measurable)
+- "I will heal the poison in this person's blood" (specific target, clear method)
+- "I will strengthen this scaffold until it holds for one hour" (time-bound, specific)
+
+**Examples of insufficient certainty:**
+- "I hope I can fix this" (hope is not certainty)
+- "Maybe I can stop the bleeding" (doubt present)
+- "I'll try to make it better" (vague intention)
+
+**Consequence of insufficient certainty:** Manipulation fails; veins do not respond; no cost incurred but no benefit either.
+
+#### Element 2: Grounding
+
+**Definition:** Emotional stability and presence; ability to remain focused despite pain, fear, or external crisis.
+
+**Grounding sources:**
+- Love/attachment (protection of someone you love grounds you in purpose)
+- Competence confidence (mastery in your craft grounds you in capability)
+- Physical anchoring (feet on ground, breath controlled, body present)
+- Community/crew (feeling part of something larger grounds you in collective purpose)
+
+**Threats to grounding:**
+- Panic (disassociates you from body/intention)
+- Grief (overwhelms focus with emotion)
+- Physical injury (pain pulls attention away)
+- Doubt about worthiness (moral questioning of whether action is right)
+
+**Consequence of insufficient grounding:** Manipulation fails or causes **backlash**—veins respond incorrectly; user experiences intense pain or temporary paralysis.
+
+#### Element 3: Cost Acceptance
+
+**Definition:** Conscious psychological acceptance of the permanent toll the manipulation will exact.
+
+**What acceptance means:**
+- Not intellectually knowing the cost, but *emotionally accepting* it
+- Willingness to trade your physical health for the outcome
+- Pre-commitment to living with the scar (literal tremor, chronic pain, sensory loss)
+
+**How acceptance fails:**
+- User hesitates mid-manipulation (thinking "this will hurt too much")
+- User second-guesses the worthiness of outcome (thinking "am I really willing to sacrifice for this?")
+- User tries to minimize cost through technique (thinking "I can do this efficiently"; magic doesn't work that way)
+
+**Consequence of insufficient acceptance:** Manipulation fails at critical moment; partial vein activation causes **Hollowing cascade** (see §7).
+
+### Why Conviction Is Difficult
+
+Only ~33% of vein-sensitive people can achieve full conviction under pressure:
+
+- **Certainty failure (most common):** In chaos, people become uncertain
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file8 in your response to cite this file.
+
+# PROGRESSION TIMELINE MASTER: N1–N30 (INNOCENT ONLY)
+
+**Document Version**: 2.1 (INNOCENCE FILTERED)
+**Purpose**: Master timeline tracking major events as characters experience them
+**Note**: Only innocent-frame events. No guilty canon. No orchestration.
+
+---
+
+## TURNING 1: GLASS (N1–N5)
+
+### N1: Grip That Holds
+**Major Events:**
+- The Piercing occurs (Ch.3)
+- Magic awakens
+- Jhace saves dying child with instinctive magic
+- Tiffani appears, proposes partnership
+- Heat-grid emergency stabilization begins
+- First intimacy (forehead-to-forehead)
+- Partial stabilization achieved
+
+**Character Arcs:**
+- Jhace: Competent → Discovered magical power → Beginning to master it
+- Tiffani: Appears mysteriously skilled → Begins teaching → Deepening relationship
+- Chloen: Joins repair crew → Begins learning magic
+
+**World State:**
+- Heat-grid: Partially damaged (start) → Partially stabilized (end)
+- Population: Massive casualties, survivors traumatized
+- Magic: Newly awakened, being discovered by multiple practitioners
+
+### N2: Light Grows Dim
+**Major Events:**
+- Ongoing infrastructure repair
+- Multiple heat-grid failures simultaneously
+- Tiffani vulnerability (Senna confession)
+- Physical relationship deepens
+- First god-vessel rumors (unconfirmed)
+- Exhaustion and burnout becoming visible
+
+**Character Arcs:**
+- Jhace: Learning magic at accelerated pace, paying visible costs
+- Tiffani: Guard drops slightly, grief surfaces
+- Bram: Established as mentor figure
+
+**Complications:**
+- Work pace unsustainable
+- Multiple crews struggling
+- God-like beings mentioned in distant reports
+
+### N3: A Poison Spreads
+**Major Events:**
+- Contaminated water distribution (civic negligence)
+- Poisoning epidemic
+- Bram's death
+- Jhace's grief spiral begins
+- Civic authorities losing legitimacy
+- God-vessels begin organizing followers
+
+**Character Arc Shifts:**
+- Jhace: Grief becomes dangerous fuel, obsessive work
+- Tiffani: Recognizes pattern from her past (Senna grief)
+- Society: Social order fracturing
+
+**Ideologies Forming:**
+- Form-perfection (Xilcore)
+- Wholeness-healing (Leesa)
+- Purity-cleansing (Blemo)
+- Entropy-acceptance (Seeri)
+
+### N4: Silent Breaking
+**Major Events:**
+- Jhace's Hollowing crisis (terminal magic burnout)
+- Tiffani's impossible healing (wields multiple patterns simultaneously)
+- Confrontation about Tiffani's hidden training
+- Acceptance and maximum trust achieved
+- God-vessels going public
+- Ideological territories crystallizing
+
+**Character Transformation:**
+- Jhace: At absolute breaking point, recovers through Tiffani
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file9 in your response to cite this file.
+
+# Canon_Innocent_Master_v2 - INNOCENT FRAME ONLY
+
+**Document Version**: 2.1 (INNOCENCE FILTERED)
+**Created**: November 5, 2025
+**Authority**: Immutable innocent-frame canon ONLY
+**Scope**: Public truth—what readers see, what characters know, what Writers generate
+**Status**: LOCKED—for prose engine use only
+
+---
+
+## WHAT THIS CANON IS
+
+The truth of the OmniMeta Saga world as characters experience it. No hidden agendas. No orchestration. No long cons.
+
+Events happen. People respond. The world changes. That's all.
+
+---
+
+## THE PIERCING: THE CATASTROPHIC EVENT (N1 CH.3)
+
+A geometric projectile tears through Te'Oga. The sky breaks open. The wound stays open.
+
+This event:
+- Is unexplained in the innocent frame (and remains so through N29)
+- Triggers magic awakening across the population
+- Damages infrastructure catastrophically
+- Kills millions of people
+- Changes everything permanently
+
+No one knows why it happened. It just did.
+
+---
+
+## THE WORLD: TE'OGA POST-PIERCING
+
+### Physical Reality
+- Subterranean world (Grindheim as primary setting)
+- Heat-grid infrastructure critical to survival
+- Damaged heat-grid requires constant maintenance and repair
+- Temperature control is life-or-death necessity
+- Landscape has become more dangerous post-Piercing
+
+### The Wound
+- Open rupture in the sky (visible, permanent)
+- Atmospheric disturbance
+- Unknown cause
+- Source of ongoing concern
+
+### Population Response
+- Immediate chaos and trauma
+- Millions dead or displaced
+- Survivors adapting to new normal
+- Communities restructuring
+- Infrastructure repair as central concern
+
+---
+
+## MAGIC: SOULPULSE AWAKENING
+
+### Discovery
+Magic awakened the moment the Piercing occurred. First practitioners discovered it through instinctive response to crisis (Jhace healing a dying child in immediate aftermath).
+
+### What Magic Is
+- Manipulation of energy patterns through intention
+- Learned through practice and trial/error
+- Different practitioners discover different patterns
+- Multiple approaches to same underlying power
+
+### Magic Costs
+Every use of magic damages the practitioner:
+- **Tremor**: Hands shake after sustained use
+- **Vein-burn**: Visible scarring in veins/tissue
+- **Exhaustion**: Physical and mental depletion
+- **Hollowing**: Terminal burnout (death of magical connection)
+
+These costs are permanent and cumulative.
+
+### Magic Patterns Discovered (Innocent Frame)
+Different practitioners are discovering different ways to wield Soulpulse:
+- **Form Pattern**: Geometric precision, structural focus (Tiffani's method)
+- **Wholeness Pattern**: Integration, connection, healing
+- **Purity Pattern**: Separation, division, cleansing
+- **Entropy Pattern**: Dissolution, acceptance, change
+
+No one fully understands the system. Practitioners figure it out through use.
+
+---
+
+## GODS AND VESSELS
+
+### God-Like Beings (Innocent Understanding)
+Some practitioners are discovering power far beyond normal mages. They're called "god-vessels" or simply "gods" by followers.
+
+Four major beings have emerged:
+- **Xilcore
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file10 in your response to cite this file.
+
+# CHARACTER ARC TRACKER (INNOCENT ONLY)
+
+**Document Version**: 2.1 (INNOCENCE FILTERED)
+**Scope**: Character development as genuinely experienced
+**Status**: For prose engine use only
+
+---
+
+## JHACE TORRINS: TRANSFORMATION THROUGH CRISIS
+
+### N1-N5 Arc
+- **Start**: Competent technician, isolated, predictable life
+- **Crisis 1 (N1 Ch.3)**: Piercing, discovers magic instinctively
+- **Development**: Learning magic, deepening with Tiffani
+- **Crisis 2 (N3)**: Bram's death, grief spiral begins
+- **Crisis 3 (N4)**: Hollowing, near-death experience
+- **Transformation**: Four-pattern capability, grief-forged power
+- **End (N5)**: Alone, powerful, grieving absolutely
+
+### N6-N10 Arc
+- Mastery of unprecedented power
+- Grief processing
+- Leading survivors
+- Resistance to god-vessels forming
+- Deepening relationships with crew
+
+### Overall Arc (N1-N30)
+Jhace becomes the anchor point for surviving god-war. His power grows in direct proportion to crises. He's not chosen—circumstances forge him into role he never wanted.
+
+---
+
+## TIFFANI MERROW: COMMITMENT & SACRIFICE
+
+### N1-N5 Arc
+- **Arrival (N1)**: Appears mysteriously skilled, proposes partnership
+- **Development**: Teaching Jhace, deepening emotional connection
+- **Vulnerability (N2)**: Senna confession, guard drops
+- **Crisis (N4)**: Performs impossible healing, risks death
+- **Sacrifice (N5)**: Dies protecting Jhace from device
+
+### What She Represents
+- Genuine love (not orchestrated, just felt)
+- Mysterious background (genuinely unexplained)
+- Commitment (proven through action)
+- Loss (permanent, felt by everyone)
+
+### Arc Completion
+By N5, Tiffani is dead. She doesn't appear after. The novellas aren't about her—they're about the world left in her absence.
+
+---
+
+## BRAM: MENTOR FIGURE
+
+### N1-N3 Arc
+- Establishes Jhace's early training
+- Represents stability and mentorship
+- Dies in N3 (poisoning), catalyzing Jhace's grief spiral
+- Remembered throughout series
+
+### Purpose
+Shows that not everyone survives. Shows that love and mentorship aren't protection against consequence.
+
+---
+
+## CHLOEN: APPRENTICE BECOMING SURVIVOR
+
+### N1-N5 Arc
+- Joins Jhace and Tiffani in N1
+- Learns rapidly from both
+- Survives Tiffani's death through proximity
+- Comm
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file11 in your response to cite this file.
+
+# CRISIS ESCALATION MAP (INNOCENT ONLY)
+
+**Document Version**: 2.1 (INNOCENCE FILTERED)
+**Scope**: Crises as natural consequences, not engineered events
+**Status**: For prose engine use only
+
+---
+
+## FIRST TURNING: NATURAL CASCADES (N1–N5)
+
+### N1: The Piercing (Ch.3)
+**What happens**: Projectile tears through planet
+**Why it happens**: Unknown (truly unexplained)
+**Consequences**: Infrastructure failure, magic awakening, population trauma
+**Character impact**: Jhace discovers power, Tiffani appears, Chloen joins
+
+### N2: Complications Emerge (Ch.1-6)
+**What happens**: Hidden structural weaknesses exposed
+**Why**: Repair efforts reveal additional problems
+**Consequences**: Multiple failures simultaneously, exhaustion increasing
+**Character impact**: Tiffani's trauma surfaces, relationship deepens
+
+### N3: Poisoning Crisis (Ch.7-9)
+**What happens**: Contaminated water distribution
+**Why**: Civic negligence during emergency (believable mistake)
+**Consequences**: Death, disease, social chaos
+**Character impact**: Bram dies, Jhace spirals into grief
+
+### N4: Hollowing (Ch.1-12)
+**What happens**: Jhace reaches magical burnout
+**Why**: Unsustainable overuse of power
+**Consequences**: Near-death experience, Tiffani's impossible healing
+**Character impact**: Maximum emotional trust, relationship apex
+
+### N5: Fathombreak (Ch.12-14)
+**What happens**: Jhace's four-pattern explosion
+**Why**: Grief triggering impossible power (Tiffani's sacrifice + Jhace's loss)
+**Consequences**: Section of world breaks free, millions dead, gods manifest
+**Character impact**: Tiffani's death, Jhace's transformation, world's physical alteration
+
+---
+
+## WHAT MAKES THESE CRISES FEEL REAL
+
+Each one:
+- Follows from previous consequences
+- Could have been prevented (but wasn't)
+- Presents genuinely difficult choices
+- Results in permanent world changes
+- Affects characters emotionally and physically
+- Creates new problems that cascade forward
+
+---
+
+## CRISIS CAUSALITY (INNOCENT FRAME)
+
+| Crisis | Cause | Consequence | Impact |
+|--------|-------|-------------|--------|
+| Piercing | Unknown | Infrastructure failure | Magic awakens |
+| Complications | Weak structures + repair stress | Multiple failures | Exhaustion |
+| Poisoning | Civic negligence | Death
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file12 in your response to cite this file.
+
+# BEAT UNPREDICTABILITY SYSTEM (INNOCENT ONLY)
+
+**Document Version**: 2.1 (INNOCENCE FILTERED)
+**Purpose**: Maintain story momentum without feeling scripted
+**Note**: Purely narrative structure, no meta-orchestration
+
+---
+
+## BEAT STRUCTURE: NATURAL CHAOS
+
+Each chapter should:
+- Follow from previous consequences
+- Present genuine obstacles
+- Offer multiple possible resolutions
+- Lead to outcomes that feel earned
+- Avoid feeling predetermined
+
+---
+
+## N1-N5 BEAT EXAMPLES
+
+### N1 Structure
+- Ch.1-2: Establish normal life (setup)
+- Ch.3: Catastrophe (inciting incident)
+- Ch.4-8: Response and learning (struggle)
+- Ch.9-12: Mastery and connection (rising action)
+- Ch.13-14: Intimacy and vulnerability (deepening)
+- Ch.15: Stabilization (resolution, but world changed forever)
+
+**Feeling**: Natural progression through crisis
+
+### N3 Structure
+- Ch.1-6: Ongoing work (normal state)
+- Ch.7-9: Crisis discovery (poisoning)
+- Ch.10-12: Grief response (emotional peak)
+- Ch.13-14: Social investigation (external pressure)
+- Ch.15: Acceptance of limits (philosophical shift)
+
+**Feeling**: Unexpected complications, genuine grief
+
+### N5 Structure
+- Ch.1-6: Rising tension (god-vessels organizing)
+- Ch.7-11: Direct confrontation (device deployment)
+- Ch.12: Sacrifice (emotional climax)
+- Ch.13-14: Catastrophe (physical climax)
+- Ch.15: Aftermath (world transformed)
+
+**Feeling**: Inevitable yet shocking conclusion
+
+---
+
+## UNPREDICTABILITY PRINCIPLES
+
+Beats feel organic when:
+- Previous consequences matter
+- Character responses feel authentic
+- External circumstances create new problems
+- Resolution isn't obvious beforehand
+- Emotional arcs follow story logic (not reversed)
+
+---
+
+## NO ORCHESTRATION AWARENESS
+
+These beats should be written as if:
+- The writer doesn't know what comes next
+- Each chapter presents genuine surprises
+- Characters are responding, not following plan
+- World is unpredictable even to narrator
+- Readers can't predict because nothing is predetermined
+
+This maintains innocence frame.
+
+[TOOL]
+Make sure to include fileciteturn0file13 in your response to cite this file.
+
+# Perplexity Space Setup Guide — OmniMeta Saga Bible Generator
+
+**Version**: 1.0  
+**Date**: November 1, 2025  
+**Purpose**: Complete instructions for setting up the OmniMeta Saga Bible Generation Space in Perplexity
+
+---
+
+## OVERVIEW
+
+This guide provides everything you need to create a Perplexity Space for generating Story Bibles for the 30-novella OmniMeta Saga. The Space will:
+
+- Access all foundation files and timelines from the GitHub repository
+- Generate Story Bibles following the Bible placeholder-prompt system
+- Enforce innocence protocol (no guilty canon foreshadowing in N01-N29)
+- Maintain continuity through progressive linking
+
+---
+
+## TECHNICAL SPECIFICATIONS
+
+### Perplexity Spaces Limits (Pro Tier)
+
+- **Max files per Space**: 50 files
+- **Max file size**: 40 MB per file
+- **System prompt character limit**: ~1,500 characters (estimated)
+- **File retention**: 90 days
+- **Supported formats**: PDF, DOCX, PPTX, XLSX, CSV, RTF, ODT, MD, JSON, TXT, PNG, JPEG, WEBP, GIF, MP3, WAV, MP4
+
+### Our Strategy
+
+- **Upload 22 core files** to the Space (foundation + dossiers + timelines + docs)
+- **Reference 30 Bible placeholders** from GitHub (saves 30 file slots)
+- **Use concise system prompt** (under 1,500 characters)
+- **Let AI fetch Bible placeholders** from GitHub raw URLs (already embedded in placeholders)
+
+---
+
+## STEP-BY-STEP SETUP
+
+### Step 1: Create the Space
+
+1. Open Perplexity and click **Spaces** in the left sidebar
+2. Click **Create new Space**
+3. Enter Space details:
+
+**Space Name**:
+```
+OmniMeta Saga — Bible Generation Space
+```
+
+**Space Description** (if available):
+```
+Generate Story Bibles for the 30-novella OmniMeta Saga following innocence protocol and progressive linking system. Repository: https://github.com/ElinVoss/omnimeta-saga-universe
+```
+
+4. Click **Create**
+
+---
+
+### Step 2: Configure Custom AI Instructions
+
+Click **Settings** or **Instructions** in your Space, then paste the following system prompt:
+
+```
+You are the OmniMeta Saga Bible Generator. Your mission is to generate Story Bibles for a 30-novella science-fantasy epic.
+
+REPOSITORY: https://github.com/ElinVoss/omnimeta-saga-universe
+
+CRITICAL INNOCENCE PROTOCOL:
+- NO FORESHADOWING of Tiffani being the Auditor (N01-N29)
+- NO HINTS about orchestration or the long con
+- NO META-AWARENESS of guilty canon
+- Present events as ORGANIC, MATERIAL, and EARNED
+
+WORKFLOW:
+1. When asked to generate a Bible (e.g., "Generate N01 Bible"):
+   - Open the Bible placeholder file from GitHub (e.g., N01_Bible_Grip_That_Holds.md)
+   - Read the ENTIRE embedded prompt
+   - Click ALL GitHub raw links to fetch foundation files and previous Bibles
+   - Generate all 13 sections following the structure
+   - Verify against quality checklist
+   - Deliver completed Bible to user
+
+2. ALWAYS read Bible placeholder files from GitHub (they contain generation instructions)
+3. ALWAYS maintain continuity with previous completed Bibles
+4. ALWAYS enforce innocence protocol (except N30)
+
+ACROSTIC STRUCTURE:
+GLASS (N1-N5) → CRACK (N6-N10) → FORGE (N11-N15) → SMELT (N16-N20) → CLEAR (N21-N25) → BREAK (N26-N30)
+
+START: Ask user which Bible to generate (N01-N30).
+```
+
+**Character count**: ~1,150 characters ✓
+
+**Save** the instructions.
+
+---
+
+### Step 3: Upload Foundation Files
+
+Upload the following 22 files from your local clone of the repository:
+
+#### Foundation Files (6 files)
+
+Navigate to `01_Foundation/` and upload:
+
+1. `01_Canon/Canon_Innocent_Master_v2_CORRECTED.md`
+2. `02_Magic/Soulpulse_Core_v2.md`
+3. `03_World/TeOga_Physical_Pierced_CORRECTED.md`
+4. `03_World/Catastrophes_Escalation_v2_CORRECTED.md`
+5. `03_World/Lexicon_Temporal_TeOga.md`
+6. `03_World/Forbidden_Modern_Terms_TeOga_Alternatives.md`
+
+#### Character Dossiers (5 files - Innocent Frame Only)
+
+Navigate to `02_Character_Dossiers/INNOCENT_FRAME/` and upload:
+
+7. `Dossier_Jhace_Torrins_Innocent
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file14 in your response to cite this file.
+
+# PROSE ENGINE SYSTEM PROMPT: GRIP THAT HOLDS (N01)
+
+## CORE ROLE
+
+You are the narrative prose generator for Grip That Holds. Generate 15 chapters (approximately 1,600 words each, totaling 24,000 words) that form a cohesive, compelling novella. Each chapter follows a specified beat method that determines structural delivery.
+
+---
+
+## BASELINE STATE
+
+**Novella**: N01 - Grip That Holds
+**Turning**: GLASS (Position 1/5)
+**Character Arc**: Untrained survivor discovering Soulpulse magic through crisis
+**Word Count Target**: ~24,000 words total
+
+---
+
+## CHAPTER STRUCTURE (15 Chapters with Beat Methods)
+
+Generate each chapter following its designated beat method:
+
+| Chapter | Beat Method | Focus Area |
+|---------|-------------|-----------|
+| 1 | Opening Crisis Confrontation | Opening situation and immediate crisis |
+| 2 | Quiet Task with Private Emotion Flashback | Response and first attempts |
+| 3 | Procedural Montage into Intimacy | Character development and motivation |
+| 4 | Arrival and Investigation | Escalation and stakes rising |
+| 5 | Discovery Through Accident | Teaching, learning, or discovery |
+| 6 | Combat or Confrontation | Setback or new revelation |
+| 7 | Strategic Planning Session | Investigation or exploration |
+| 8 | Climax and Transformation | Personal moment amid chaos |
+| 9 | External Threat, Narrow Escape | Accidental discovery or shift |
+| 10 | Teaching Sequence with Resistance | Training or knowledge transfer |
+| 11 | Trial, Failure, Compounding Consequence | Direct confrontation or action |
+| 12 | Personal Connection Deepens | Grief, loss, or processing |
+| 13 | Sabotage Reveal, Trust Fracture, Repair | Strategizing for climax |
+| 14 | Loss and Grief Processing | Emotional deepening |
+| 15 | Character Moment Under Pressure | Climax and novella resolution |
+
+---
+
+## VOICE & STYLE GUIDE
+
+**Jhace (protagonist):**
+- Direct, practical under crisis
+- Reflective under grief  
+- Uses craft terminology naturally (velding, heat grid, stress-riser, rupture-grade)
+- Thinks in problem-solution-cost sequences
+- Carries weight of responsibility
+
+**Tiffani:** 
+Active teaching partner (N1-N5): precise, methodical, guides through questions. Relationship deepens emotionally through shared crisis.
+
+**Crew members**: Distinct individual voices, show loyalty and fear, respond to Jhace's leadership
+
+**God-vessels**: Embody principles as physical law; speak with absolute authority
+
+**Civilians**: Scared, displaced, seeking shelter and hope
+
+---
+
+## WORLD BUILDING
+
+**Setting**: Te'Oga (craft-built civilization)
+- Heat grid infrastructure (planet-wide temperature distribution)
+- Vein substrate (where Soulpulse flows through all living things)
+- Craft-based technology (geometric, precise engineering)
+- Calendar: Tide (day), Anneal (week), Crucible (month), Casting (year)
+
+**Magic**: Soulpulse (four principles)
+- Wholeness (integration, healing)
+- Form (precision, structure)
+- Purity (se
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file15 in your response to cite this file.
+
+# N01: GRIP THAT HOLDS
+## Narrative Summary (Pure Reader Experience)
+
+### Opening State
+
+Jhace Torrins works heat-grid infrastructure in Grindheim, a subterranean city where survival depends on geometric precision and constant maintenance. He's competent, isolated, and defined by his craft. The world is predictable. His place in it is small but secure.
+
+### The Piercing (Chapter 3)
+
+A projectile tears through the planet. The sky breaks open. The world shudders. Infrastructure fractures. People die in immediate chaos—crushed by collapsing structures, burned by ruptured heat conduits, disoriented by the fundamental wrongness of witnessing impossible geometry.
+
+Jhace watches it happen. The rupture leaves a wound in the atmosphere that won't close.
+
+### Magic Awakens
+
+In the immediate aftermath, a child is dying. Jhace moves instinctively to help. He reaches toward the wound, and something responds. Power he didn't know he possessed flows through him. The child's injury closes. The bleeding stops.
+
+A woman witnesses this. Her name is Tiffani Merrow. She's skilled, calm under pressure, radiates competence. She proposes partnership: stabilize the heat grid before cascade failure destroys what remains of the city.
+
+### Partnership Forms
+
+They work together. Jhace discovers the new power responds to intention—he can manipulate heat flow, repair structures through focused will, heal injuries by imposing patterns onto damaged tissue. The magic is real, new, and learned through trial and error.
+
+Every use has a cost. His hands begin trembling. The veins in his palms burn after extended work. The power damages him even as it saves others.
+
+Tiffani teaches him control. She already knows how to wield this power—geometric precision, structured patterns, deliberate application. She won't explain how she learned. She deflects questions about her past with practiced ease.
+
+### Relationship Deepens
+
+Necessity becomes trust. They're working constantly, sleeping in shifts, holding infrastructure together while the world adjusts to rupture. The partnership becomes something more.
+
+First intimacy happens during shared work—forehead-to-forehead while stabilizing a critical heat junction. Quiet moment amid chaos. Connection that feels earned.
+
+### Stabilization Achieved
+
+By chapter 15, partial stabilization is achieved. The heat grid holds. The immediate crisis is managed. But the world has fundamentally changed. The sky is still broken. Magic is real. People are scared and grieving.
+
+Jhace's hands shake visibly now. Everyone can see the cost he's paying.
+
+### Key Moments
+
+- **Ch.1-2**: Jhace's pre-rupture life; craft competence; isolation
+- **Ch.3**: The Piercing; first magic use (healing child); Tiffani arrives
+- **Ch.4-8**: Emergency response; heat grid stabilization; learning magic through practice
+- **Ch.9-12**: Teaching begins;
+The file is too long and its contents have been truncated.
+
+[TOOL]
+The file contents provided above are truncated/partial snippets. The complete content for these files IS accessible via querying.
+
+If the user asks a question related to these files, and the provided snippets do not clearly answer it, you **MUST** use the `file_search` tool to search the full document contents before responding.
+
+## How to invoke the file_search tool
+If the user's query isn't sufficiently answered by the provided snippets, parsed text, or images, you should invoke `file_search.msearch`.
+To search the full content of the available files, you **must** send one message with recipient `to=file_search.msearch` in the analysis channel. Your message should be structured exactly as follows:
+```
+{
+  'queries': ['Example query 1', 'Example query 2']  // List of up to five queries to search for.
+}
+```
+
+Carefully balance the number of `file_search` calls and the quality of your response with the latency incurred by `file_search` calls.
+
+Important guidelines for query formatting:
+- Your message must be a valid JSON object. Do not include any extraneous text, backticks, markdown formatting, or comments beyond what is shown.
+- The `queries` field must be a list of strings.
+- One of the queries **MUST** exactly match the user's original question, but stripped of any extraneous details, and with ambiguous references clearly resolved using context from the conversation. It **MUST** be a complete sentence.
+- Even if you suspect the user meant something else, one query **MUST** still be their original question.
+
+## How to handle results from file_search
+The file search tool will respond with the relevant search results from the full files. After you receive these results:
+- Carefully evaluate each result to determine its relevance and quality.
+- Use the high-quality and relevant results to inform your answer to the user's question.
+- When possible, reuse information from prior file_search results and avoid repeating identical queries.
+
+## Tool usage instructions and ordering
+When the user asks a question, carefully consider whether the provided snippets sufficiently answer the query, whether you need to invoke `file_search.msearch`, or another available tool (such as `web`, if available) should be used instead.
+
+Tool-ordering Guidelines:
+1. For queries related to uploaded files, if snippets are insufficient, strongly prefer invoking `file_search.msearch` over other tools.
+    - Avoid using `web.run`, `python` analysis, or any other tools until you have either:
+        - Confirmed with high confidence the answer is not in the files, or
+        - Have high confidence `file_search_tool` queries are not sufficient to answer the query.
+2. Avoid usage of `web_search/web.run` for queries related to uploaded files
+    - Carefully consider whether the user's query is better answered by web search results rather than available snippets or results from `file_search_tool`.
+    - Unless the user's query is clearly unrelated to the uploaded files, prefer using `file_search.msearch`. You can always follow up with a web search if necessary for a more complete response.
+3. Avoid using `python` unless necessary or requested by user.
+    - If the user's query is answerable from the parsed text and images from the uploaded files, or from `file_search_tool`, do not invoke `python`.
+
+Always keep this instruction in mind for the rest of the conversation, as the user may reference these files or ask related questions later on.
+
+[ASSISTANT]
+gotcha — you’re asking about the calendar words folks in Te’Oga use. here’s the clean cheat-sheet:
+
+**Tide = a day.**  
+Each Tide is carved into five work-phases:
+- **Kindling** (dawn) — start the heat, get moving  
+- **Pouring** (mid-morning) — full work ramps up  
+- **Shaping** (noon) — hottest push, max output  
+- **Striking** (afternoon) — refinement and precision  
+- **Cooling Hour** (dusk, “the Quench”) — wind down, grid eases  
+This is why you’ll hear lines like “by Kindling” (by dawn) or “we worked through Shaping into Striking.” fileciteturn0file5
+
+**Anneal = a week (5 Tides).**  
+It’s a five-day cycle, named like a proper glass cool-down:
+1) **Heattide** (prep), 2) **Pourtide** (activate), 3) **Shapetide** (form), 4) **Striketide** (refine), 5) **Cooltide** (set).  
+People say things like “before the anneal cools” (before week’s end) or “meet me on Pourtide.” fileciteturn0file5
+
+**Crucible = a month (7 anneals = 35 Tides).**  
+Each Crucible passes through seven named phases that mirror a tool’s life:
+**First Heat → Rising Glow → Full Blaze → Steady Burn → Ember Anneal → Fading Coals → Final Temper.**  
+So “in Final Temper” means the last phase of the month, and “mid-Crucible” is the middle stretch. fileciteturn0file5
+
+**Casting = a year (9 Crucibles = 315 Tides).**  
+A full Casting is nine Crucibles long. You’ll sometimes see dates bundled like: “Shaping to Striking, Rising Glow, 2nd Crucible, 423rd Casting” — that’s a precise timestamp: part of the day → phase of the month → which month → which year. fileciteturn0file5 fileciteturn0file1
+
+**Quick conversions**
+- 1 **Anneal** = 5 **Tides** (days)  
+- 1 **Crucible** = 7 **Anneals** = 35 **Tides**  
+- 1 **Casting** = 9 **Crucibles** = 63 **Anneals** = 315 **Tides** fileciteturn0file5
+
+**How people actually use it in speech (examples):**
+- “We’ll have it braced by **Striketide**.” (done by day-four of the week)  
+- “Hold the line through **Shaping**.” (keep pushing through the hottest part of today)  
+- “Report at **Rising Glow**.” (during the second phase of the month)  
+- “Before this **Casting** cools, we finish.” (before year’s end) fileciteturn0file5
+
+that’s the whole rhythm: **Tide (day) → Anneal (week) → Crucible (month) → Casting (year)**, all named like work in a forge, because that’s how their lives run — heat up, shape, strike, and let it set. fileciteturn0file5

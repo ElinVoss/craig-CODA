@@ -1,0 +1,8 @@
+axis: trust_layer
+description: Provenance and reliability tier of the information context.
+
+values:
+  internal:
+    description: From the repo, handoff docs, constitution, or direct collaboration.
+  external:
+    description: From web sources, citations, or unverified references.

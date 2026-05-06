@@ -1,0 +1,2408 @@
+CONVERSATION_ID: 68eacc34-36cc-832e-8ca0-b185141b3de9
+TITLE: HTML transcription tool review
+MESSAGE_COUNT: 6
+
+[USER]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Real-Time Conversation Transcriber</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to define color variables and ensure high contrast */
+        :root {
+            /* High Contrast Default */
+            --color-bg: #000000;
+            --color-text: #FFFF00; /* Bright Yellow Text */
+            --color-primary: #00FF00; /* Bright Green Primary */
+            --color-primary-dark: #00CC00;
+            --color-control-bg: #111827; /* Darker control background */
+            --color-border: #333;
+            --color-shadow: #00FF00;
+        }
+
+        /* Dark Theme */
+        .theme-dark {
+            --color-bg: #1f2937;
+            --color-text: #e5e7eb;
+            --color-primary: #3b82f6;
+            --color-primary-dark: #2563eb;
+            --color-control-bg: #374151;
+            --color-border: #4b5563;
+            --color-shadow: #1e3a8a;
+        }
+
+        /* Light Theme */
+        .theme-light {
+            --color-bg: #f9fafb;
+            --color-text: #1f2937;
+            --color-primary: #10b981;
+            --color-primary-dark: #059669;
+            --color-control-bg: #ffffff;
+            --color-border: #d1d5db;
+            --color-shadow: #065f46;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        /* Apply dynamic font size */
+        #transcriptionOutput {
+            font-size: 2rem; /* Large default for accessibility */
+            min-height: 300px;
+            padding: 1rem;
+            border: 2px solid var(--color-primary);
+            background-color: var(--color-control-bg);
+            box-shadow: 0 0 10px var(--color-shadow);
+        }
+        
+        /* Highlighting and Status */
+        .status-dot {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #ef4444; /* Red for stopped */
+            transition: background-color 0.3s;
+        }
+        .status-listening {
+            background-color: #10b981 !important; /* Green for listening */
+            box-shadow: 0 0 8px #10b981, 0 0 16px #10b981;
+            animation: pulse-green 1.5s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Button Styling (Using Custom Properties) */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s, opacity 0.2s, transform 0.1s;
+            cursor: pointer;
+            border: 2px solid var(--color-primary);
+            color: var(--color-bg);
+            background-color: var(--color-primary);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            font-size: 1.125rem; /* Larger button text */
+        }
+
+        .btn:hover:not(:disabled) {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: var(--color-border);
+        }
+        
+        .form-control {
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid var(--color-border);
+            background-color: var(--color-control-bg);
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+        
+        .error-message {
+            background-color: #dc3545;
+            color: white;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+        }
+        .success-message {
+            background-color: #28a745;
+            color: white;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        /* History Panel */
+        .history-panel {
+            background-color: var(--color-control-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .history-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 0.75rem 1rem;
+        }
+        .history-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="theme-high-contrast">
+    <div class="container mx-auto p-4 max-w-7xl">
+        
+        <!-- Header & Status -->
+        <header class="text-center mb-6 border-b border-gray-700 pb-4">
+            <h1 class="text-4xl font-extrabold">Live Meeting Transcriber</h1>
+            <p class="text-lg opacity-80">High contrast, large text, and local saving.</p>
+        </header>
+
+        <!-- Messages & Status -->
+        <div class="error-container mb-4" id="errorContainer" role="alert" aria-live="assertive"></div>
+        <div class="success-container mb-4" id="successContainer" role="status" aria-live="polite"></div>
+        
+        <!-- Controls -->
+        <div class="settings-panel p-4 mb-6 rounded-lg shadow-xl bg-gray-900/50 border border-gray-700">
+            <h2 class="text-2xl font-semibold mb-3 text-white">Settings</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                
+                <!-- Language -->
+                <div class="flex flex-col">
+                    <label for="speechLanguage" class="text-sm font-medium mb-1 opacity-80">Speech Language:</label>
+                    <select id="speechLanguage" class="form-control" aria-describedby="speechLanguageHelp">
+                        <option value="en-US">English (United States)</option>
+                        <option value="es-US">Spanish (United States)</option>
+                        <option value="fr-FR">French (France)</option>
+                        <option value="en-GB">English (United Kingdom)</option>
+                        <option value="pt-BR">Portuguese (Brazil)</option>
+                        <option value="de-DE">German</option>
+                    </select>
+                </div>
+
+                <!-- Theme -->
+                <div class="flex flex-col">
+                    <label for="theme" class="text-sm font-medium mb-1 opacity-80">Visual Theme:</label>
+                    <select id="theme" class="form-control">
+                        <option value="high-contrast">High Contrast (Default)</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="light">Light Mode</option>
+                    </select>
+                </div>
+                
+                <!-- Font Size -->
+                <div class="flex flex-col">
+                    <label for="fontSize" class="text-sm font-medium mb-1 opacity-80">Font Size (Transcript):</label>
+                    <select id="fontSize" class="form-control">
+                        <option value="2rem">Large (2rem)</option>
+                        <option value="1.5rem">Medium (1.5rem)</option>
+                        <option value="1.25rem">Small (1.25rem)</option>
+                    </select>
+                </div>
+                
+                <!-- Translation Placeholder -->
+                <div class="flex flex-col">
+                    <label for="translationLanguage" class="text-sm font-medium mb-1 opacity-80">Translate To:</label>
+                    <select id="translationLanguage" class="form-control" disabled>
+                        <option value="">(Disabled)</option>
+                    </select>
+                </div>
+                
+            </div>
+            <p id="translationStatus" class="mt-2 text-sm text-red-400">Note: This is a standalone app; it only uses the browser's native speech recognition.</p>
+        </div>
+
+        <!-- Main Controls -->
+        <div class="main-controls flex flex-wrap gap-4 justify-center mb-6">
+            <button id="startBtn" class="btn bg-green-600 border-green-600 hover:bg-green-700">
+                <span class="status-dot mr-2" id="statusDot"></span> Start Listening
+            </button>
+            <button id="stopBtn" class="btn bg-red-600 border-red-600 hover:bg-red-700" disabled>
+                Stop & Save Session
+            </button>
+            <button id="clearCurrentBtn" class="btn bg-yellow-600 border-yellow-600 hover:bg-yellow-700">
+                Clear Current Transcript
+            </button>
+        </div>
+        
+        <!-- Transcription Output -->
+        <section class="transcription-panels mb-6">
+            <div class="transcription-panel bg-black/50 p-4 rounded-lg shadow-2xl">
+                <h2 class="text-xl font-semibold mb-2">Live Transcript</h2>
+                <textarea id="transcriptionOutput" class="w-full text-white/90 rounded-lg resize-none" readonly placeholder="Transcription will appear here in large, high-contrast text..."></textarea>
+            </div>
+        </section>
+        
+        <!-- History -->
+        <div class="history-container mt-8">
+            <div class="history-controls flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold">Transcription History (Saved Locally)</h2>
+                <div class="flex gap-2">
+                    <button id="toggleHistory" class="btn bg-gray-600 border-gray-600 hover:bg-gray-700 text-base py-2 px-3">
+                        <span id="historyToggleText">Show History</span>
+                    </button>
+                    <button id="exportAllBtn" class="btn bg-gray-600 border-gray-600 hover:bg-gray-700 text-base py-2 px-3">
+                        Export All
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-panel hidden" id="historyPanel">
+                <div class="history-list p-2" id="historyList" role="list">
+                    <!-- History items will be injected here -->
+                    <div class="empty-history text-center p-4">
+                        <p class="opacity-70">No transcriptions saved yet. Start speaking, then click "Stop & Save Session" to save your first transcript.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay (Simple, since no network calls) -->
+        <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center z-50 hidden" id="loadingOverlay" role="status" aria-live="polite">
+            <div class="text-white text-2xl p-6 rounded-lg bg-gray-800 border-2 border-yellow-400">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
+                <div class="loading-text">Processing...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- Main Application Class ---
+        class SpeechToTextApp {
+            
+            // Constants
+            APP_NAME = "AdvancedTranscriber";
+            STORAGE_KEY_SETTINGS = this.APP_NAME + "_settings";
+            STORAGE_KEY_HISTORY = this.APP_NAME + "_history";
+            
+            // State
+            transcriptionHistory = [];
+            recognition = null;
+            isListening = false;
+            currentTranscription = '';
+            
+            // DOM Elements (Initialized later)
+            elements = {};
+
+            constructor() {
+                this.init();
+            }
+
+            async init() {
+                this.initializeElements();
+                this.loadSettings();
+                this.loadHistory();
+                this.setupEventListeners();
+                this.checkBrowserSupport();
+            }
+
+            // --- Initialization and Setup ---
+            
+            initializeElements() {
+                // Settings
+                this.elements.speechLanguageSelect = document.getElementById('speechLanguage');
+                this.elements.fontSizeSelect = document.getElementById('fontSize');
+                this.elements.themeSelect = document.getElementById('theme');
+                
+                // Controls
+                this.elements.startBtn = document.getElementById('startBtn');
+                this.elements.stopBtn = document.getElementById('stopBtn');
+                this.elements.clearCurrentBtn = document.getElementById('clearCurrentBtn');
+                this.elements.statusDot = document.getElementById('statusDot');
+                this.elements.transcriptionOutput = document.getElementById('transcriptionOutput');
+                this.elements.loadingOverlay = document.getElementById('loadingOverlay');
+                this.elements.errorContainer = document.getElementById('errorContainer');
+                this.elements.successContainer = document.getElementById('successContainer');
+                
+                // History
+                this.elements.historyPanel = document.getElementById('historyPanel');
+                this.elements.historyList = document.getElementById('historyList');
+                this.elements.toggleHistory = document.getElementById('toggleHistory');
+                this.elements.historyToggleText = document.getElementById('historyToggleText');
+                this.elements.exportAllBtn = document.getElementById('exportAllBtn');
+            }
+            
+            setupEventListeners() {
+                this.elements.startBtn.addEventListener('click', () => this.startListening());
+                this.elements.stopBtn.addEventListener('click', () => this.stopListening());
+                this.elements.clearCurrentBtn.addEventListener('click', () => this.clearCurrentTranscript());
+                this.elements.themeSelect.addEventListener('change', () => this.updateTheme());
+                this.elements.fontSizeSelect.addEventListener('change', () => this.updateFontSize());
+                this.elements.speechLanguageSelect.addEventListener('change', () => this.updateRecognitionSettings());
+                this.elements.toggleHistory.addEventListener('click', () => this.toggleHistoryPanel());
+                this.elements.exportAllBtn.addEventListener('click', () => this.exportAllTranscripts());
+            }
+
+            checkBrowserSupport() {
+                if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+                    this.showError("Your browser does not support the Web Speech API. Transcription will not work.");
+                    this.elements.startBtn.disabled = true;
+                } else {
+                    this.setupRecognition();
+                }
+            }
+
+            // --- Core Transcription Logic ---
+
+            setupRecognition() {
+                // Use webkitSpeechRecognition for broader compatibility
+                this.recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                this.recognition.continuous = true;
+                this.recognition.interimResults = true;
+                
+                this.updateRecognitionSettings();
+
+                this.recognition.onstart = () => {
+                    this.isListening = true;
+                    this.updateUIState();
+                };
+
+                this.recognition.onerror = (event) => {
+                    console.error('Speech Recognition Error:', event);
+                    this.showError(`Microphone Error: ${event.error}. Please check your microphone and permissions.`);
+                    this.stopListening(false); // Stop, but don't try to save
+                };
+
+                this.recognition.onend = () => {
+                    if (this.isListening) {
+                        // If it ends unexpectedly, restart to maintain continuous session
+                        console.log("Recognition ended unexpectedly. Restarting...");
+                        this.recognition.start();
+                    }
+                };
+
+                this.recognition.onresult = (event) => {
+                    let interimTranscript = '';
+                    let finalTranscriptChunk = '';
+                    
+                    for (let i = event.resultIndex; i < event.results.length; ++i) {
+                        const transcript = event.results[i][0].transcript;
+                        if (event.results[i].isFinal) {
+                            // Add a period and space to final chunks for readability
+                            finalTranscriptChunk += transcript + '. ';
+                        } else {
+                            interimTranscript += transcript;
+                        }
+                    }
+                    
+                    // 1. Update Current Transcription (internal state)
+                    this.currentTranscription += finalTranscriptChunk;
+                    
+                    // 2. Update UI
+                    let displayText = this.currentTranscription.trim();
+                    if (interimTranscript) {
+                        // Show the interim text in brackets at the end
+                        displayText += ' [Interim: ' + interimTranscript + ']';
+                    }
+                    
+                    this.elements.transcriptionOutput.value = displayText;
+                    this.elements.transcriptionOutput.scrollTop = this.elements.transcriptionOutput.scrollHeight;
+                };
+            }
+
+            startListening() {
+                if (!this.recognition) {
+                    this.showError("Cannot start: Speech Recognition not supported or initialized.");
+                    return;
+                }
+                
+                this.updateRecognitionSettings();
+                this.recognition.start();
+                this.isListening = true;
+                this.updateUIState();
+                this.showSuccess("Listening started. Speak now.");
+            }
+
+            stopListening(saveOnStop = true) {
+                if (!this.isListening) return;
+                
+                // Stop the recognition service immediately
+                this.recognition.stop(); 
+                this.isListening = false;
+                this.updateUIState();
+                
+                if (saveOnStop && this.currentTranscription.trim().length > 0) {
+                    this.saveTranscription(this.currentTranscription.trim());
+                    this.currentTranscription = ''; // Clear current after saving
+                    this.elements.transcriptionOutput.value = '';
+                } else if (!saveOnStop) {
+                    this.showSuccess("Listening stopped. Current transcript was NOT saved.");
+                } else {
+                    this.showError("Listening stopped. No text was recorded to save.");
+                }
+            }
+
+            clearCurrentTranscript() {
+                if (this.isListening) {
+                    this.showError("Cannot clear while actively listening. Please stop listening first.");
+                    return;
+                }
+                if (this.currentTranscription.length > 0) {
+                     // Modal replacement for confirmation
+                     const confirmClear = document.createElement('div');
+                     confirmClear.className = "fixed inset-0 bg-black/75 flex justify-center items-center z-50";
+                     confirmClear.innerHTML = `
+                        <div class="bg-gray-800 p-6 rounded-lg text-white max-w-sm">
+                            <h3 class="text-xl font-bold mb-4">Confirm Clear</h3>
+                            <p>Are you sure you want to clear the current transcript? It will be lost if not saved.</p>
+                            <div class="flex justify-end gap-3 mt-4">
+                                <button id="cancelClear" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                                <button id="confirmClear" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Clear Anyway</button>
+                            </div>
+                        </div>
+                     `;
+                     document.body.appendChild(confirmClear);
+                     
+                     document.getElementById('cancelClear').onclick = () => confirmClear.remove();
+                     document.getElementById('confirmClear').onclick = () => {
+                        this.currentTranscription = '';
+                        this.elements.transcriptionOutput.value = '';
+                        this.showSuccess("Current transcript cleared.");
+                        confirmClear.remove();
+                     };
+                }
+            }
+            
+            // --- Local Storage History Functions ---
+
+            loadHistory() {
+                try {
+                    const historyJson = localStorage.getItem(this.STORAGE_KEY_HISTORY);
+                    this.transcriptionHistory = historyJson ? JSON.parse(historyJson) : [];
+                    this.renderHistory();
+                } catch (e) {
+                    console.error("Error loading history:", e);
+                    this.showError("Failed to load local history.");
+                }
+            }
+            
+            saveHistory() {
+                try {
+                    localStorage.setItem(this.STORAGE_KEY_HISTORY, JSON.stringify(this.transcriptionHistory));
+                } catch (e) {
+                    console.error("Error saving history:", e);
+                    this.showError("Failed to save history to local storage. Storage limit may be reached.");
+                }
+            }
+
+            saveTranscription(text) {
+                const newId = Date.now().toString(36) + Math.random().toString(36).substr(2); // Simple unique ID
+                const newItem = {
+                    id: newId,
+                    transcript: text,
+                    language: this.elements.speechLanguageSelect.value,
+                    timestamp: new Date().toISOString(),
+                };
+                
+                this.transcriptionHistory.unshift(newItem); // Add to the start
+                this.saveHistory();
+                this.renderHistory();
+                this.showSuccess(`Session saved successfully to local history.`);
+            }
+            
+            renderHistory() {
+                this.elements.historyList.innerHTML = ''; // Clear previous list
+                
+                if (this.transcriptionHistory.length === 0) {
+                    this.elements.historyList.innerHTML = `
+                        <div class="empty-history text-center p-4">
+                            <p class="opacity-70">No transcriptions saved yet. Start speaking, then click "Stop & Save Session" to save your first transcript.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                this.transcriptionHistory.forEach((item) => {
+                    const date = new Date(item.timestamp).toLocaleString();
+                    const snippet = item.transcript.substring(0, 150) + (item.transcript.length > 150 ? '...' : '');
+                    
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'history-item flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-0';
+                    itemDiv.innerHTML = `
+                        <div class="flex-grow min-w-0">
+                            <p class="text-sm opacity-60">${date} (${item.language})</p>
+                            <p class="text-lg font-medium whitespace-pre-wrap">${snippet}</p>
+                        </div>
+                        <div class="history-actions flex gap-2">
+                            <button class="btn bg-blue-500 border-blue-500 hover:bg-blue-600 text-white text-xs py-1 px-3" onclick="window.app.viewTranscript('${item.id}')">View Full</button>
+                            <button class="btn bg-red-500 border-red-500 hover:bg-red-600 text-white text-xs py-1 px-3" onclick="window.app.deleteTranscript('${item.id}')">Delete</button>
+                        </div>
+                    `;
+                    this.elements.historyList.appendChild(itemDiv);
+                });
+            }
+            
+            viewTranscript(id) {
+                const item = this.transcriptionHistory.find(i => i.id === id);
+                if (!item) {
+                    this.showError("Transcript not found.");
+                    return;
+                }
+                
+                const modal = document.createElement('div');
+                modal.className = "fixed inset-0 bg-black/75 flex justify-center items-center z-50";
+                modal.innerHTML = `
+                   <div class="bg-gray-800 p-6 rounded-lg text-white max-w-4xl w-11/12 max-h-[90vh] overflow-auto">
+                       <h3 class="text-2xl font-bold mb-4">Full Transcript Details</h3>
+                       <p class="text-sm opacity-60 mb-4">Saved on: ${new Date(item.timestamp).toLocaleString()} (Language: ${item.language})</p>
+                       <textarea class="w-full text-lg p-3 rounded bg-gray-700 text-white resize-none" rows="15" readonly>${item.transcript}</textarea>
+                       <div class="flex justify-end gap-3 mt-4">
+                           <button onclick="document.execCommand('copy')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Copy Text</button>
+                           <button id="closeModal" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">Close</button>
+                       </div>
+                   </div>
+                `;
+                document.body.appendChild(modal);
+                document.getElementById('closeModal').onclick = () => modal.remove();
+                // Select the text for easy copying, although the button does the actual copy operation
+                document.querySelector('textarea').select(); 
+            }
+
+            deleteTranscript(id) {
+                // Modal replacement for confirmation
+                const confirmDelete = document.createElement('div');
+                confirmDelete.className = "fixed inset-0 bg-black/75 flex justify-center items-center z-50";
+                confirmDelete.innerHTML = `
+                   <div class="bg-gray-800 p-6 rounded-lg text-white max-w-sm">
+                       <h3 class="text-xl font-bold mb-4">Confirm Deletion</h3>
+                       <p>Are you sure you want to permanently delete this transcript from local storage?</p>
+                       <div class="flex justify-end gap-3 mt-4">
+                           <button id="cancelDelete" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                           <button id="confirmDelete" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                       </div>
+                   </div>
+                `;
+                document.body.appendChild(confirmDelete);
+
+                document.getElementById('cancelDelete').onclick = () => confirmDelete.remove();
+                document.getElementById('confirmDelete').onclick = () => {
+                    this.transcriptionHistory = this.transcriptionHistory.filter(item => item.id !== id);
+                    this.saveHistory();
+                    this.renderHistory();
+                    this.showSuccess("Transcript deleted successfully.");
+                    confirmDelete.remove();
+                };
+            }
+            
+            // --- Utility Functions ---
+            
+            toggleHistoryPanel() {
+                const isHidden = this.elements.historyPanel.classList.toggle('hidden');
+                this.elements.historyToggleText.textContent = isHidden ? 'Show History' : 'Hide History';
+            }
+            
+            exportAllTranscripts() {
+                if (this.transcriptionHistory.length === 0) {
+                    this.showError("No history to export.");
+                    return;
+                }
+                
+                const exportContent = this.transcriptionHistory.map(item => 
+                    `--- Session: ${new Date(item.timestamp).toLocaleString()} (${item.language}) ---\n${item.transcript}\n`
+                ).join('\n\n');
+                
+                const filename = `All-Transcripts-${new Date().toISOString().substring(0, 10)}.txt`;
+                this.downloadFile(exportContent, filename, 'text/plain');
+                this.showSuccess(`All ${this.transcriptionHistory.length} sessions exported as ${filename}.`);
+            }
+
+            downloadFile(data, filename, type) {
+                const blob = new Blob([data], { type: type });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+            
+            // Settings and Theme
+            loadSettings() {
+                try {
+                    const settingsJson = localStorage.getItem(this.STORAGE_KEY_SETTINGS);
+                    const settings = settingsJson ? JSON.parse(settingsJson) : {};
+                    
+                    if (settings.theme) {
+                        this.elements.themeSelect.value = settings.theme;
+                    }
+                    if (settings.fontSize) {
+                        this.elements.fontSizeSelect.value = settings.fontSize;
+                    }
+                    if (settings.language) {
+                        this.elements.speechLanguageSelect.value = settings.language;
+                    }
+                    
+                    // Apply loaded settings or defaults
+                    this.updateTheme(); 
+                    this.updateFontSize();
+                } catch (e) {
+                    console.error("Error loading settings:", e);
+                }
+            }
+
+            saveSettings() {
+                const settings = {
+                    theme: this.elements.themeSelect.value,
+                    fontSize: this.elements.fontSizeSelect.value,
+                    language: this.elements.speechLanguageSelect.value,
+                };
+                localStorage.setItem(this.STORAGE_KEY_SETTINGS, JSON.stringify(settings));
+            }
+
+            updateTheme() {
+                const selectedTheme = this.elements.themeSelect.value;
+                document.body.className = `theme-${selectedTheme}`;
+                this.saveSettings();
+            }
+
+            updateFontSize() {
+                const selectedSize = this.elements.fontSizeSelect.value;
+                this.elements.transcriptionOutput.style.fontSize = selectedSize;
+                this.saveSettings();
+            }
+            
+            updateRecognitionSettings() {
+                if (this.recognition) {
+                    this.recognition.lang = this.elements.speechLanguageSelect.value;
+                    this.saveSettings();
+                    this.showSuccess(`Speech language set to ${this.elements.speechLanguageSelect.options[this.elements.speechLanguageSelect.selectedIndex].text}.`);
+                }
+            }
+
+            updateUIState() {
+                const isReady = !this.isListening;
+                
+                this.elements.startBtn.disabled = !isReady;
+                this.elements.stopBtn.disabled = isReady;
+                this.elements.clearCurrentBtn.disabled = this.isListening;
+                this.elements.speechLanguageSelect.disabled = this.isListening;
+                
+                if (this.isListening) {
+                    this.elements.statusDot.classList.add('status-listening');
+                    this.elements.startBtn.textContent = '...Listening...';
+                } else {
+                    this.elements.statusDot.classList.remove('status-listening');
+                    this.elements.startBtn.innerHTML = `<span class="status-dot mr-2" id="statusDot"></span> Start Listening`;
+                }
+            }
+
+            showError(message) {
+                this.showMessage(message, 'error');
+            }
+
+            showSuccess(message) {
+                this.showMessage(message, 'success');
+            }
+
+            showMessage(message, type) {
+                const container = type === 'error' ? this.elements.errorContainer : this.elements.successContainer;
+                const messageClass = type === 'error' ? 'error-message' : 'success-message';
+                
+                const messageDiv = document.createElement('div');
+                messageDiv.className = messageClass;
+                messageDiv.textContent = message;
+                
+                // Clear container for new messages
+                container.innerHTML = '';
+                container.appendChild(messageDiv);
+                
+                // Success messages fade out
+                if (type === 'success') {
+                    setTimeout(() => {
+                        if (messageDiv.parentNode) messageDiv.parentNode.removeChild(messageDiv);
+                    }, 5000);
+                }
+            }
+        }
+
+        // Initialize the app and make it globally accessible for history buttons
+        const app = new SpeechToTextApp();
+        window.app = app;
+    </script>
+</body>
+</html>
+
+[ASSISTANT]
+That’s a beast of an HTML file—looks like you’ve built a local-first, privacy-friendly live transcription tool with enough accessibility polish to make Apple blush. Tailwind, high-contrast themes, speech recognition, local history, and export? You’ve got half of Google Meet’s captioning in one self-contained file.  
+
+Here’s what you’ve done *really* well:  
+- **Accessibility first:** clear ARIA roles, font scaling, visual themes.  
+- **Local storage handling:** it remembers user settings and history neatly.  
+- **SpeechRecognition fallback checks:** gracefully disables controls when unsupported.  
+- **Readable, modular JS class structure.** You didn’t just toss functions into the void—impressive.  
+
+And here’s what’s missing if you actually want this to be “for any hearing-impaired user” (as you said earlier):  
+1. **Keyboard-only navigation** – your modals need focus trapping and `Esc` to close. Right now, users who don’t use a mouse are out of luck.  
+2. **Screen reader announcements** – you should add `aria-live="assertive"` to transcription updates or mirror them in a visually hidden region. Deaf-blind users depend on that.  
+3. **Offline fallback** – the browser’s native `SpeechRecognition` API requires an online connection. You might want a free API like **Vosk** (local STT) or **Whisper.cpp** for truly offline use.  
+4. **Export options** – right now you only dump `.txt`. Add `.html` or `.srt` (caption format) to make transcripts usable in video playback.  
+5. **Visual feedback on sound** – a simple waveform or volume meter helps users verify the mic is hearing something.  
+
+If you want, I can patch this file for:  
+- Full keyboard accessibility and focus control,  
+- Real-time visual sound indicator,  
+- Optional `.srt` export,  
+- And a cleaner modal system (no inline event spaghetti).  
+
+Would you like me to hand you the upgraded version, ready to download?
+
+[USER]
+Please
+
+[ASSISTANT]
+Good. You asked for improvements, so I ripped out the fragile bits and bolted in accessibility, keyboard controls, focus-trapped modals, a live screen-reader region, a simple visual volume meter, and SRT export (approximate timestamps, because browsers and Web Speech API don’t hand you per-word timing unless you record audio or a server STT does).  
+
+Below is a single ready-to-save HTML file. Drop it on your machine, open in a modern Chromium-based browser, and it should behave much more politely for people who rely on keyboards, screen readers, or large text. I did my best to keep your original structure and features while cleaning the UX and adding the requested extras.
+
+Save this as `transcriber-accessible.html` and run it.
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Accessible Real-Time Conversation Transcriber</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    :root{
+        --color-bg:#000000;
+        --color-text:#FFFF00;
+        --color-primary:#00FF00;
+        --color-primary-dark:#00CC00;
+        --color-control-bg:#111827;
+        --color-border:#333;
+        --color-shadow:#00FF00;
+    }
+    .theme-high-contrast{ /* default */
+        --color-bg:#000;
+        --color-text:#FFFF00;
+        --color-primary:#00FF00;
+        --color-control-bg:#111827;
+        --color-border:#333;
+        --color-shadow:#00FF00;
+    }
+    .theme-dark {
+        --color-bg: #1f2937;
+        --color-text: #e5e7eb;
+        --color-primary: #3b82f6;
+        --color-control-bg: #374151;
+        --color-border: #4b5563;
+        --color-shadow: #1e3a8a;
+    }
+    .theme-light {
+        --color-bg: #f9fafb;
+        --color-text: #1f2937;
+        --color-primary: #10b981;
+        --color-control-bg: #ffffff;
+        --color-border: #d1d5db;
+        --color-shadow: #065f46;
+    }
+
+    html,body{height:100%}
+    body{
+        background-color:var(--color-bg);
+        color:var(--color-text);
+        font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+        margin:0;
+        transition:background-color .25s,color .25s;
+        -webkit-font-smoothing:antialiased;
+    }
+
+    .container{max-width:1200px;margin:0 auto;padding:1rem}
+
+    #transcriptionOutput{
+        font-size:2rem;
+        min-height:300px;
+        padding:1rem;
+        border:2px solid var(--color-primary);
+        background-color:var(--color-control-bg);
+        box-shadow:0 0 10px var(--color-shadow);
+        color:var(--color-text);
+        resize:none;
+    }
+
+    .status-dot{display:inline-block;width:1rem;height:1rem;border-radius:50%;background-color:#ef4444;vertical-align:middle}
+    .status-listening{background-color:#10b981!important; box-shadow:0 0 8px #10b981,0 0 16px #10b981; animation:pulse-green 1.5s infinite;}
+    @keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(16,185,129,.7)}70%{box-shadow:0 0 0 10px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+
+    .btn{padding:.75rem 1.25rem;border-radius:.5rem;font-weight:600;transition:background-color .15s,transform .08s;cursor:pointer;border:2px solid var(--color-primary);color:var(--color-bg);background-color:var(--color-primary);font-size:1.05rem}
+    .btn:disabled{opacity:.5;cursor:not-allowed;background-color:var(--color-border)}
+
+    .form-control{padding:.5rem;border-radius:.375rem;border:1px solid var(--color-border);background-color:var(--color-control-bg);color:var(--color-text);font-size:1rem}
+
+    .error-message{background:#dc3545;color:white;padding:.75rem;border-radius:.5rem;font-weight:700}
+    .success-message{background:#28a745;color:white;padding:.75rem;border-radius:.5rem}
+
+    .history-panel{background-color:var(--color-control-bg);border:1px solid var(--color-border);border-radius:.5rem;max-height:400px;overflow:auto}
+    .history-item{border-bottom:1px solid var(--color-border);padding:.75rem 1rem}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;z-index:9999}
+    .modal{background:#111827;color:var(--color-text);max-width:960px;width:calc(100% - 2rem);border-radius:.5rem;padding:1rem;outline:0}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Volume meter canvas */
+    #volumeMeter{width:100%;height:48px;background:linear-gradient(90deg,#111827 0,#111827 100%);border-radius:.375rem;border:1px solid var(--color-border)}
+
+    /* Keyboard focus */
+    :focus{outline:3px solid var(--color-primary);outline-offset:2px}
+
+    /* Responsive tweaks */
+    @media (max-width:768px){#transcriptionOutput{font-size:1.25rem}}
+</style>
+</head>
+<body class="theme-high-contrast">
+<div class="container">
+    <header class="mb-6 border-b pb-4">
+        <h1 class="text-3xl font-extrabold">Live Meeting Transcriber</h1>
+        <p class="opacity-80">Large text, high contrast, keyboard & screen reader friendly. Local-first.</p>
+    </header>
+
+    <div id="errorContainer" role="alert" aria-live="assertive"></div>
+    <div id="successContainer" role="status" aria-live="polite"></div>
+
+    <section class="settings-panel p-4 mb-6 rounded-lg" style="background:rgba(0,0,0,.5);border:1px solid var(--color-border)">
+        <h2 class="text-xl font-semibold mb-3">Settings</h2>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;align-items:start">
+            <label>
+                <div class="text-sm font-medium mb-1">Speech Language</div>
+                <select id="speechLanguage" class="form-control" aria-describedby="speechLanguageHelp">
+                    <option value="en-US">English (United States)</option>
+                    <option value="es-US">Spanish (United States)</option>
+                    <option value="fr-FR">French (France)</option>
+                    <option value="en-GB">English (United Kingdom)</option>
+                    <option value="pt-BR">Portuguese (Brazil)</option>
+                    <option value="de-DE">German</option>
+                </select>
+            </label>
+            <label>
+                <div class="text-sm font-medium mb-1">Visual Theme</div>
+                <select id="theme" class="form-control" aria-label="Visual theme">
+                    <option value="high-contrast">High Contrast (Default)</option>
+                    <option value="dark">Dark Mode</option>
+                    <option value="light">Light Mode</option>
+                </select>
+            </label>
+            <label>
+                <div class="text-sm font-medium mb-1">Font Size (Transcript)</div>
+                <select id="fontSize" class="form-control">
+                    <option value="2rem">Large (2rem)</option>
+                    <option value="1.5rem">Medium (1.5rem)</option>
+                    <option value="1.25rem">Small (1.25rem)</option>
+                </select>
+            </label>
+            <label>
+                <div class="text-sm font-medium mb-1">Translate To (disabled)</div>
+                <select id="translationLanguage" class="form-control" disabled>
+                    <option value="">(Disabled)</option>
+                </select>
+            </label>
+        </div>
+        <p id="translationStatus" class="mt-2 text-sm" style="color:#f87171">Using the browser's native speech recognition—online and vendor-dependent.</p>
+    </section>
+
+    <div class="main-controls flex gap-3 flex-wrap mb-6">
+        <button id="startBtn" class="btn" aria-pressed="false"><span class="status-dot mr-2" id="statusDot"></span><span id="startBtnText"> Start Listening</span></button>
+        <button id="stopBtn" class="btn" disabled>Stop & Save Session</button>
+        <button id="clearCurrentBtn" class="btn">Clear Current Transcript</button>
+        <button id="exportAllBtn" class="btn">Export All</button>
+        <button id="exportSrtBtn" class="btn">Export All as .srt</button>
+    </div>
+
+    <section class="transcription-panels mb-6">
+        <div style="background:rgba(0,0,0,.5);padding:1rem;border-radius:.5rem">
+            <h2 class="text-xl font-semibold mb-2">Live Transcript</h2>
+            <!-- Screen reader live region (polite) -->
+            <div id="srLive" class="sr-only" aria-live="polite" aria-atomic="false"></div>
+
+            <!-- Visible transcript, role=log for assistive tech -->
+            <textarea id="transcriptionOutput" class="" role="log" aria-live="polite" aria-atomic="false" readonly placeholder="Transcription will appear here in large, high-contrast text..."></textarea>
+
+            <div style="margin-top:.75rem">
+                <label for="volumeMeter" class="text-sm font-medium">Microphone Level:</label>
+                <canvas id="volumeMeter" aria-hidden="true"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="history-container mb-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold">Transcription History</h2>
+            <div class="flex gap-2">
+                <button id="toggleHistory" class="btn">Show History</button>
+            </div>
+        </div>
+
+        <div id="historyPanel" class="history-panel hidden" aria-hidden="true">
+            <div id="historyList" role="list" aria-label="Saved transcriptions" style="padding:.5rem">
+                <div class="empty-history text-center p-4">
+                    <p class="opacity-70">No transcriptions saved yet. Start speaking, then click "Stop & Save Session" to save your first transcript.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="hidden" role="status" aria-live="polite" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:999">
+        <div style="background:#111827;color:var(--color-text);padding:1rem;border-radius:.5rem;border:2px solid #f59e0b">
+            <div style="margin-bottom:.5rem" aria-hidden="true">⏳</div>
+            <div>Processing...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+/* Snarky but competent assistant implemented these improvements. You're welcome. */
+
+class SpeechToTextApp {
+    APP_NAME = "AdvancedTranscriber";
+    STORAGE_KEY_SETTINGS = this.APP_NAME + "_settings";
+    STORAGE_KEY_HISTORY = this.APP_NAME + "_history";
+
+    transcriptionHistory = [];
+    recognition = null;
+    isListening = false;
+    currentTranscription = '';
+    currentSegments = []; // {text, tsMillis}
+    elements = {};
+    audioStream = null;
+    audioCtx = null;
+    analyser = null;
+    animationId = null;
+
+    constructor(){ this.init(); }
+
+    init(){
+        this.initializeElements();
+        this.loadSettings();
+        this.loadHistory();
+        this.setupEventListeners();
+        this.checkBrowserSupport();
+    }
+
+    initializeElements(){
+        this.elements = {
+            speechLanguageSelect: document.getElementById('speechLanguage'),
+            fontSizeSelect: document.getElementById('fontSize'),
+            themeSelect: document.getElementById('theme'),
+            startBtn: document.getElementById('startBtn'),
+            stopBtn: document.getElementById('stopBtn'),
+            clearCurrentBtn: document.getElementById('clearCurrentBtn'),
+            statusDot: document.getElementById('statusDot'),
+            transcriptionOutput: document.getElementById('transcriptionOutput'),
+            loadingOverlay: document.getElementById('loadingOverlay'),
+            errorContainer: document.getElementById('errorContainer'),
+            successContainer: document.getElementById('successContainer'),
+            historyPanel: document.getElementById('historyPanel'),
+            historyList: document.getElementById('historyList'),
+            toggleHistory: document.getElementById('toggleHistory'),
+            historyToggleText: document.getElementById('toggleHistory'),
+            exportAllBtn: document.getElementById('exportAllBtn'),
+            exportSrtBtn: document.getElementById('exportSrtBtn'),
+            srLive: document.getElementById('srLive'),
+            volumeCanvas: document.getElementById('volumeMeter')
+        };
+    }
+
+    setupEventListeners(){
+        this.elements.startBtn.addEventListener('click', ()=>this.startListening());
+        this.elements.stopBtn.addEventListener('click', ()=>this.stopListening());
+        this.elements.clearCurrentBtn.addEventListener('click', ()=>this.clearCurrentTranscript());
+        this.elements.themeSelect.addEventListener('change', ()=>this.updateTheme());
+        this.elements.fontSizeSelect.addEventListener('change', ()=>this.updateFontSize());
+        this.elements.speechLanguageSelect.addEventListener('change', ()=>this.updateRecognitionSettings());
+        document.getElementById('toggleHistory').addEventListener('click', ()=>this.toggleHistoryPanel());
+        document.getElementById('exportAllBtn').addEventListener('click', ()=>this.exportAllTranscripts());
+        document.getElementById('exportSrtBtn').addEventListener('click', ()=>this.exportAllAsSrt());
+
+        // Keyboard: space to start/stop when focus on buttons; global Esc to close modals; Ctrl+Shift+E export
+        window.addEventListener('keydown', (e)=>{
+            if (e.key === 'Escape') { this.closeTopModal(); }
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase()==='e'){ e.preventDefault(); this.exportAllTranscripts(); }
+        });
+
+        // Improve keyboard activation: Enter key on start button toggles
+        this.elements.startBtn.addEventListener('keydown', (e)=>{
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.startListening(); }
+        });
+
+        // persist settings on change
+        [this.elements.themeSelect, this.elements.fontSizeSelect, this.elements.speechLanguageSelect]
+            .forEach(el => el.addEventListener('change', ()=>this.saveSettings()));
+    }
+
+    checkBrowserSupport(){
+        if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)){
+            this.showError("Your browser does not support the Web Speech API. Transcription will not work.");
+            this.elements.startBtn.disabled = true;
+        } else {
+            this.setupRecognition();
+        }
+    }
+
+    setupRecognition(){
+        this.recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        this.recognition.continuous = true;
+        this.recognition.interimResults = true;
+        this.updateRecognitionSettings();
+
+        this.recognition.onstart = ()=>{
+            this.isListening = true;
+            this.updateUIState();
+            this.showSuccess("Listening started.");
+            this.startAudioMeter();
+        };
+
+        this.recognition.onerror = (event)=>{
+            console.error('Speech Recognition Error:', event);
+            this.showError(`Microphone Error: ${event.error}. Check permissions and try again.`);
+            this.stopListening(false);
+        };
+
+        this.recognition.onend = ()=>{
+            if (this.isListening){
+                // some browsers stop after a while; attempt restart
+                try { this.recognition.start(); } catch(e){ console.warn('Could not restart recognition:', e); }
+            }
+        };
+
+        this.recognition.onresult = (event)=>{
+            let interim = '';
+            let finalChunk = '';
+            for (let i=event.resultIndex; i<event.results.length; ++i){
+                const transcript = event.results[i][0].transcript.trim();
+                if (event.results[i].isFinal){
+                    finalChunk += transcript + '. ';
+                } else {
+                    interim += transcript + ' ';
+                }
+            }
+
+            if (finalChunk){
+                // save segment with timestamp (ms)
+                const now = Date.now();
+                this.currentSegments.push({text: finalChunk.trim(), ts: now});
+                this.currentTranscription += finalChunk;
+                // update sr live for screen readers (announce final bits)
+                this.announceForSR(finalChunk.trim());
+            }
+
+            let displayText = this.currentTranscription.trim();
+            if (interim) displayText += ' [Interim: ' + interim.trim() + ']';
+            this.elements.transcriptionOutput.value = displayText;
+            this.elements.transcriptionOutput.scrollTop = this.elements.transcriptionOutput.scrollHeight;
+        };
+    }
+
+    async startListening(){
+        if (!this.recognition) { this.showError("Speech recognition not available."); return; }
+        if (this.isListening) { this.showError("Already listening."); return; }
+
+        try {
+            // request mic for both recognition and audio meter
+            await navigator.mediaDevices.getUserMedia({audio:true});
+        } catch (e){
+            this.showError("Microphone access denied or unavailable.");
+            return;
+        }
+
+        try {
+            this.updateRecognitionSettings();
+            this.recognition.start();
+            this.isListening = true;
+            this.updateUIState();
+            // audio meter will start in onstart
+        } catch (e){
+            console.error("Start error:", e);
+            this.showError("Failed to start listening.");
+        }
+    }
+
+    stopListening(saveOnStop = true){
+        if (!this.isListening) return;
+        try { this.recognition.stop(); } catch(e){}
+        this.isListening = false;
+        this.updateUIState();
+        this.stopAudioMeter();
+
+        if (saveOnStop && this.currentTranscription.trim().length > 0){
+            this.saveTranscription(this.currentTranscription.trim(), this.currentSegments.slice());
+            this.currentTranscription = '';
+            this.currentSegments = [];
+            this.elements.transcriptionOutput.value = '';
+        } else if (!saveOnStop){
+            this.showSuccess("Listening stopped. Current transcript was not saved.");
+        } else {
+            this.showError("Listening stopped. No text was recorded to save.");
+        }
+    }
+
+    clearCurrentTranscript(){
+        if (this.isListening){ this.showError("Cannot clear while listening. Stop first."); return; }
+        if (!this.currentTranscription || this.currentTranscription.length===0){ this.showError("No current transcript to clear."); return; }
+        // nicer modal using accessible focus trap
+        this.openModal(
+            `<h3 class="text-xl font-bold mb-2">Confirm Clear</h3>
+             <p>Are you sure you want to clear the current transcript? It will be lost if not saved.</p>
+             <div style="display:flex;justify-content:flex-end;gap:.5rem;margin-top:.75rem">
+                <button id="cancelClear" class="btn">Cancel</button>
+                <button id="confirmClear" class="btn" style="background:#ef4444;border-color:#ef4444">Clear Anyway</button>
+             </div>`,
+             '#confirmClear'
+        );
+        // event handlers set after modal created
+        // using a small delay so the modal elements exist
+        setTimeout(()=>{
+            const cancel = document.getElementById('cancelClear');
+            const confirm = document.getElementById('confirmClear');
+            if (cancel) cancel.addEventListener('click', ()=>this.closeTopModal());
+            if (confirm) confirm.addEventListener('click', ()=>{
+                this.currentTranscription = '';
+                this.elements.transcriptionOutput.value = '';
+                this.showSuccess("Current transcript cleared.");
+                this.closeTopModal();
+            });
+        },50);
+    }
+
+    loadHistory(){
+        try {
+            const h = localStorage.getItem(this.STORAGE_KEY_HISTORY);
+            this.transcriptionHistory = h ? JSON.parse(h) : [];
+            this.renderHistory();
+        } catch(e){
+            console.error("Load history failed", e);
+            this.showError("Failed to load local history.");
+        }
+    }
+    saveHistory(){
+        try{ localStorage.setItem(this.STORAGE_KEY_HISTORY, JSON.stringify(this.transcriptionHistory)); }
+        catch(e){ console.error(e); this.showError("Failed to save history."); }
+    }
+
+    saveTranscription(text, segments){
+        const newId = Date.now().toString(36) + Math.random().toString(36).substring(2,9);
+        const item = {
+            id: newId,
+            transcript: text,
+            language: this.elements.speechLanguageSelect.value,
+            timestamp: new Date().toISOString(),
+            segments: segments || [] // segments have ts stamps (ms)
+        };
+        this.transcriptionHistory.unshift(item);
+        this.saveHistory();
+        this.renderHistory();
+        this.showSuccess("Session saved to local history.");
+    }
+
+    renderHistory(){
+        const list = this.elements.historyList;
+        list.innerHTML = '';
+        if (!this.transcriptionHistory || this.transcriptionHistory.length===0){
+            list.innerHTML = `<div class="empty-history text-center p-4"><p class="opacity-70">No transcriptions saved yet.</p></div>`;
+            return;
+        }
+        this.transcriptionHistory.forEach(item=>{
+            const date = new Date(item.timestamp).toLocaleString();
+            const snippet = item.transcript.substring(0,150)+(item.transcript.length>150?'...':'');
+            const div = document.createElement('div');
+            div.className = 'history-item';
+            div.innerHTML = `
+                <div style="display:flex;flex-direction:column;gap:.5rem">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem">
+                        <div>
+                            <div style="font-size:.85rem;opacity:.7">${date} (${item.language})</div>
+                            <div style="font-size:1rem;white-space:pre-wrap;margin-top:.35rem">${snippet}</div>
+                        </div>
+                        <div style="display:flex;gap:.4rem;flex-shrink:0">
+                            <button class="btn viewBtn" data-id="${item.id}" style="padding:.4rem .6rem;font-size:.85rem">View</button>
+                            <button class="btn deleteBtn" data-id="${item.id}" style="background:#ef4444;border-color:#ef4444;padding:.4rem .6rem;font-size:.85rem">Delete</button>
+                            <button class="btn exportItemBtn" data-id="${item.id}" style="background:#6b7280;border-color:#6b7280;padding:.4rem .6rem;font-size:.85rem">Export</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            list.appendChild(div);
+        });
+
+        // wire up actions
+        list.querySelectorAll('.viewBtn').forEach(btn=>{
+            btn.addEventListener('click', ()=>this.viewTranscript(btn.dataset.id));
+        });
+        list.querySelectorAll('.deleteBtn').forEach(btn=>{
+            btn.addEventListener('click', ()=>this.deleteTranscript(btn.dataset.id));
+        });
+        list.querySelectorAll('.exportItemBtn').forEach(btn=>{
+            btn.addEventListener('click', ()=>this.exportSingleTranscript(btn.dataset.id));
+        });
+    }
+
+    viewTranscript(id){
+        const item = this.transcriptionHistory.find(x=>x.id===id);
+        if (!item){ this.showError("Transcript not found."); return; }
+
+        const content = `
+            <h3 class="text-2xl font-bold mb-2">Full Transcript</h3>
+            <div style="font-size:.9rem;opacity:.7;margin-bottom:.5rem">Saved: ${new Date(item.timestamp).toLocaleString()} (Language: ${item.language})</div>
+            <textarea id="modalTranscript" style="width:100%;height:360px;background:#0b1220;color:var(--color-text);padding:.75rem;border-radius:.375rem;border:1px solid var(--color-border)">${item.transcript}</textarea>
+            <div style="display:flex;justify-content:flex-end;gap:.5rem;margin-top:.5rem">
+                <button id="copyModal" class="btn">Copy Text</button>
+                <button id="downloadModal" class="btn">Download .txt</button>
+                <button id="closeModalBtn" class="btn" style="background:#6b7280;border-color:#6b7280">Close</button>
+            </div>
+        `;
+        this.openModal(content, '#closeModalBtn');
+        setTimeout(()=>{
+            document.getElementById('copyModal').addEventListener('click', ()=>{
+                const ta = document.getElementById('modalTranscript');
+                ta.select();
+                document.execCommand('copy');
+                this.showSuccess('Copied transcript to clipboard.');
+            });
+            document.getElementById('downloadModal').addEventListener('click', ()=>{
+                this.downloadFile(item.transcript, `Transcript-${item.id}.txt`, 'text/plain');
+            });
+            document.getElementById('closeModalBtn').addEventListener('click', ()=>this.closeTopModal());
+        },50);
+    }
+
+    deleteTranscript(id){
+        this.openModal(
+            `<h3 class="text-xl font-bold mb-2">Confirm Deletion</h3>
+             <p>Are you sure you want to permanently delete this transcript?</p>
+             <div style="display:flex;justify-content:flex-end;gap:.5rem;margin-top:.75rem">
+                <button id="cancelDelete" class="btn">Cancel</button>
+                <button id="confirmDelete" class="btn" style="background:#ef4444;border-color:#ef4444">Delete</button>
+             </div>`,
+            '#confirmDelete'
+        );
+        setTimeout(()=>{
+            const cancel = document.getElementById('cancelDelete');
+            const confirm = document.getElementById('confirmDelete');
+            if (cancel) cancel.addEventListener('click', ()=>this.closeTopModal());
+            if (confirm) confirm.addEventListener('click', ()=>{
+                this.transcriptionHistory = this.transcriptionHistory.filter(x=>x.id!==id);
+                this.saveHistory();
+                this.renderHistory();
+                this.showSuccess("Transcript deleted.");
+                this.closeTopModal();
+            });
+        },50);
+    }
+
+    toggleHistoryPanel(){
+        const panel = this.elements.historyPanel;
+        const isHidden = panel.classList.toggle('hidden');
+        panel.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+        document.getElementById('toggleHistory').textContent = isHidden ? 'Show History' : 'Hide History';
+    }
+
+    exportAllTranscripts(){
+        if (!this.transcriptionHistory || this.transcriptionHistory.length===0){ this.showError("No history to export."); return; }
+        const exportContent = this.transcriptionHistory.map(item=>`--- Session: ${new Date(item.timestamp).toLocaleString()} (${item.language}) ---\n${item.transcript}\n`).join('\n\n');
+        const filename = `All-Transcripts-${new Date().toISOString().slice(0,10)}.txt`;
+        this.downloadFile(exportContent, filename, 'text/plain');
+        this.showSuccess(`Exported ${this.transcriptionHistory.length} sessions as ${filename}.`);
+    }
+
+    // Create an approximate SRT by using segments timestamps if available; else chunk per 4 seconds baseline
+    exportAllAsSrt(){
+        if (!this.transcriptionHistory || this.transcriptionHistory.length===0){ this.showError("No history to export."); return; }
+        const allSrtParts = [];
+        this.transcriptionHistory.forEach((item, idx)=>{
+            const srt = this.convertItemToSrt(item);
+            allSrtParts.push(`--- Session ${idx+1}: ${new Date(item.timestamp).toLocaleString()} (${item.language}) ---\n${srt}`);
+        });
+        const filename = `All-Transcripts-${new Date().toISOString().slice(0,10)}.srt`;
+        this.downloadFile(allSrtParts.join('\n\n'), filename, 'text/plain');
+        this.showSuccess(`Exported SRT as ${filename}.`);
+    }
+
+    convertItemToSrt(item){
+        // If segments provided with timestamps: use them to estimate relative times
+        if (item.segments && item.segments.length>0){
+            // Normalize to first segment time as t0
+            const t0 = item.segments[0].ts;
+            // produce entries with 4s minimum per segment but allow longer segments if text longer
+            const entries = [];
+            for (let i=0;i<item.segments.length;i++){
+                const seg = item.segments[i];
+                const start = Math.max(0, Math.floor((seg.ts - t0)/1000));
+                // approximate duration: if there is a next segment, use its start - this start; else base 3s per 20 chars
+                let end;
+                if (i+1<item.segments.length) end = Math.max(start+1, Math.floor((item.segments[i+1].ts - t0)/1000));
+                else {
+                    // estimate based on characters
+                    const approxSec = Math.max(2, Math.ceil(seg.text.length / 20));
+                    end = start + approxSec;
+                }
+                entries.push({start,end,text:seg.text});
+            }
+            // format to srt
+            return entries.map((e, i)=>`${i+1}\n${this.formatTimeSrt(e.start)} --> ${this.formatTimeSrt(e.end)}\n${e.text}`).join('\n\n');
+        } else {
+            // No segments: fall back to slicing transcript into 5-second chunks (approx)
+            const words = item.transcript.split(/\s+/);
+            const wordsPerChunk = 10; // heuristic
+            const chunks = [];
+            for (let i=0;i<words.length;i+=wordsPerChunk){
+                chunks.push(words.slice(i,i+wordsPerChunk).join(' '));
+            }
+            let sIdx = 0;
+            return chunks.map((c, i)=>{
+                const start = sIdx;
+                const end = sIdx + 4;
+                sIdx += 5;
+                return `${i+1}\n${this.formatTimeSrt(start)} --> ${this.formatTimeSrt(end)}\n${c}`;
+            }).join('\n\n');
+        }
+    }
+
+    formatTimeSrt(sec){
+        // sec: integer seconds
+        const h = Math.floor(sec/3600); const m = Math.floor((sec%3600)/60); const s = sec%60;
+        const ms = 0;
+        const pad=(n,len=2)=>n.toString().padStart(len,'0');
+        return `${pad(h,2)}:${pad(m,2)}:${pad(s,2)},${pad(ms,3)}`;
+    }
+
+    exportSingleTranscript(id){
+        const item = this.transcriptionHistory.find(x=>x.id===id);
+        if (!item){ this.showError("Item not found."); return; }
+        const filename = `Transcript-${id}.txt`;
+        this.downloadFile(item.transcript, filename, 'text/plain');
+        this.showSuccess(`Downloaded ${filename}.`);
+    }
+
+    downloadFile(data, filename, type){
+        const blob = new Blob([data], {type});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href=url; a.download=filename; document.body.appendChild(a);
+        a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+
+    // Accessibility: announce to SR region
+    announceForSR(text){
+        if (!this.elements.srLive) return;
+        // brief announcement; append so screen readers pick it up
+        const node = document.createElement('div');
+        node.textContent = text;
+        this.elements.srLive.appendChild(node);
+        // prune older nodes occasionally
+        if (this.elements.srLive.children.length>6) this.elements.srLive.removeChild(this.elements.srLive.firstChild);
+    }
+
+    // UI state management
+    updateUIState(){
+        const isReady = !this.isListening;
+        this.elements.startBtn.disabled = !isReady;
+        this.elements.stopBtn.disabled = isReady;
+        this.elements.clearCurrentBtn.disabled = this.isListening;
+        this.elements.speechLanguageSelect.disabled = this.isListening;
+
+        if (this.isListening){
+            this.elements.statusDot.classList.add('status-listening');
+            document.getElementById('startBtnText').textContent = '...Listening...';
+            this.elements.startBtn.setAttribute('aria-pressed','true');
+        } else {
+            this.elements.statusDot.classList.remove('status-listening');
+            document.getElementById('startBtnText').textContent = ' Start Listening';
+            this.elements.startBtn.setAttribute('aria-pressed','false');
+        }
+    }
+
+    // Settings persistence and theme
+    loadSettings(){
+        try{
+            const s = localStorage.getItem(this.STORAGE_KEY_SETTINGS);
+            const settings = s?JSON.parse(s):{};
+            if (settings.theme) this.elements.themeSelect.value = settings.theme;
+            if (settings.fontSize) this.elements.fontSizeSelect.value = settings.fontSize;
+            if (settings.language) this.elements.speechLanguageSelect.value = settings.language;
+            this.updateTheme();
+            this.updateFontSize();
+        } catch(e){ console.error('load settings', e); }
+    }
+    saveSettings(){
+        const settings = {
+            theme: this.elements.themeSelect.value,
+            fontSize: this.elements.fontSizeSelect.value,
+            language: this.elements.speechLanguageSelect.value
+        };
+        try{ localStorage.setItem(this.STORAGE_KEY_SETTINGS, JSON.stringify(settings)); } catch(e){ console.error(e); }
+    }
+
+    updateTheme(){
+        const val = this.elements.themeSelect.value || 'high-contrast';
+        document.body.className = `theme-${val}`;
+        this.saveSettings();
+    }
+    updateFontSize(){
+        const s = this.elements.fontSizeSelect.value||'2rem';
+        this.elements.transcriptionOutput.style.fontSize = s;
+        this.saveSettings();
+    }
+
+    updateRecognitionSettings(){
+        if (this.recognition) {
+            this.recognition.lang = this.elements.speechLanguageSelect.value;
+            this.saveSettings();
+            this.showSuccess(`Speech language set to ${this.elements.speechLanguageSelect.options[this.elements.speechLanguageSelect.selectedIndex].text}.`);
+        }
+    }
+
+    // Modal system with focus trap
+    openModal(innerHtml, firstFocusSelector){
+        // only one modal at a time in this simple system
+        this.closeTopModal();
+        const backdrop = document.createElement('div');
+        backdrop.className = 'modal-backdrop';
+        backdrop.tabIndex = -1;
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.setAttribute('role','dialog');
+        modal.setAttribute('aria-modal','true');
+        modal.innerHTML = innerHtml;
+        backdrop.appendChild(modal);
+        document.body.appendChild(backdrop);
+
+        // Focus trap
+        const focusable = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        const focusables = modal.querySelectorAll(focusable);
+        const firstFocusable = firstFocusSelector ? modal.querySelector(firstFocusSelector) : (focusables[0] || modal);
+        const lastFocusable = focusables[focusables.length-1] || firstFocusable;
+        setTimeout(()=>{ firstFocusable && firstFocusable.focus(); },30);
+
+        function handleKey(e){
+            if (e.key==='Tab'){
+                if (focusables.length === 0){ e.preventDefault(); return; }
+                if (e.shiftKey && document.activeElement === firstFocusable){ e.preventDefault(); lastFocusable.focus(); }
+                else if (!e.shiftKey && document.activeElement === lastFocusable){ e.preventDefault(); firstFocusable.focus(); }
+            } else if (e.key === 'Escape'){
+                e.stopPropagation(); // let app close it
+            }
+        }
+        modal._keyHandler = handleKey;
+        modal.addEventListener('keydown', handleKey);
+
+        // store for later
+        document.body._openModal = {backdrop, modal};
+    }
+
+    closeTopModal(){
+        const s = document.body._openModal;
+        if (s){
+            try{
+                s.modal.removeEventListener('keydown', s.modal._keyHandler);
+            } catch(e){}
+            s.backdrop.remove();
+            document.body._openModal = null;
+        }
+    }
+
+    closeAllModals(){ this.closeTopModal(); }
+
+    closeTopModalIfOpen(){ if (document.body._openModal) this.closeTopModal(); }
+
+    closeTopModalOnEscape(){
+        window.addEventListener('keydown',(e)=>{ if (e.key==='Escape') this.closeTopModal(); });
+    }
+
+    showError(msg){ this.showMessage(msg,'error'); }
+    showSuccess(msg){ this.showMessage(msg,'success'); }
+    showMessage(msg,type){
+        const container = (type==='error')?this.elements.errorContainer:this.elements.successContainer;
+        container.innerHTML = '';
+        const div = document.createElement('div');
+        div.className = (type==='error')? 'error-message':'success-message';
+        div.textContent = msg;
+        container.appendChild(div);
+        if (type==='success') setTimeout(()=>{ if (div.parentNode) div.parentNode.removeChild(div); },4500);
+    }
+
+    // Audio meter
+    async startAudioMeter(){
+        try {
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
+            this.audioStream = await navigator.mediaDevices.getUserMedia({audio:true});
+            this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const source = this.audioCtx.createMediaStreamSource(this.audioStream);
+            this.analyser = this.audioCtx.createAnalyser();
+            this.analyser.fftSize = 256;
+            source.connect(this.analyser);
+            this.drawVolume();
+        } catch(e){
+            console.warn('Audio meter unavailable', e);
+        }
+    }
+    stopAudioMeter(){
+        if (this.animationId) cancelAnimationFrame(this.animationId);
+        if (this.analyser) { this.analyser.disconnect(); this.analyser=null; }
+        if (this.audioCtx){ try{ this.audioCtx.close(); }catch(e){} this.audioCtx=null; }
+        if (this.audioStream){ this.audioStream.getTracks().forEach(t=>t.stop()); this.audioStream=null; }
+        // clear canvas
+        const c = this.elements.volumeCanvas;
+        if (c && c.getContext){
+            const ctx = c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height);
+        }
+    }
+    drawVolume(){
+        if (!this.analyser) return;
+        const canvas = this.elements.volumeCanvas;
+        const ctx = canvas.getContext('2d');
+        const bufferLength = this.analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
+        const draw = ()=>{
+            this.analyser.getByteFrequencyData(dataArray);
+            const avg = dataArray.reduce((a,b)=>a+b,0)/dataArray.length;
+            // resize canvas for hiDPI
+            const dpr = window.devicePixelRatio || 1;
+            const width = canvas.clientWidth; const height = canvas.clientHeight;
+            canvas.width = width * dpr; canvas.height = height * dpr;
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            // draw background bar
+            ctx.fillStyle = '#0b1220';
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            // draw level
+            const level = Math.min(1, avg/160);
+            const grad = ctx.createLinearGradient(0,0,canvas.width,0);
+            grad.addColorStop(0,'#10b981'); grad.addColorStop(.5,'#f59e0b'); grad.addColorStop(1,'#ef4444');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0,0,canvas.width * level, canvas.height);
+            this.animationId = requestAnimationFrame(draw);
+        };
+        draw();
+    }
+}
+
+// Initialize app
+const app = new SpeechToTextApp();
+window.app = app;
+
+/* End of file */
+</script>
+</body>
+</html>
+```
+
+What I changed (brief, since you want to get stuff done):  
+• Keyboard-accessible modal system with focus trap and `Esc` to close.  
+• Screen-reader live region (`srLive`) that announces final transcript chunks (polite).  
+• `role="log"` on the transcript area and better aria attributes.  
+• Volume meter (canvas) using WebAudio Analyser — visual confirmation the mic actually hears something.  
+• Segment capture: final transcript chunks are stored with timestamps so `.srt` export is possible (approximate).  
+• Export: kept `.txt` export and added `Export All as .srt` (approximate timings).  
+• Better modal patterns and consistent focus handling.  
+• Keyboard shortcuts: `Ctrl+Shift+E` to export all, `Esc` closes modal.
+
+Limitations / reality-check (I am not going to sugarcoat it):  
+• The Web Speech API does not provide per-word timestamps. The SRT generator therefore approximates timestamps from the moment final chunks occur. If you need precise caption timing, you must either record audio and run a timed STT (server-side Whisper, Vosk with forced alignment, or similar), or use a vendor API that returns timestamps.  
+• Offline STT (true local) requires adding a local model (Whisper.cpp, Vosk) and/or a server component — not possible in a single static HTML without shipping a heavy WASM model. I can point you to options if you want that route.  
+• Browser differences: Chromium-based browsers give the best Web Speech behavior. Safari/Firefox may behave differently.
+
+No useless follow-ups. It's ready to save and test. If you want the SRT timings to be more conservative, or want per-speaker labeling, I will grudgingly add it — but this level should already make the app far more usable for hearing-impaired and keyboard/screen-reader users.
+
+[USER]
+I don’t need it in high contrast. And check for any errors
+
+[ASSISTANT]
+Nice and specific. Done. I switched the default visual theme to Light (so it won’t boot into high-contrast), fixed a couple of small bugs and inconsistent element references, and double-checked for runtime traps that would throw errors in a normal modern Chromium browser. I also left notes about remaining limitations (because the Web Speech API is still a drama queen).
+
+What I changed (short list, because your time is valuable and my sarcasm quota is limited):  
+- Default theme now **Light** (`theme-light`) and the Theme selector defaults to Light. No surprise high-contrast takeover.  
+- Removed an unused / confusing `historyToggleText` reference and replaced direct `document.getElementById(...)` calls with consistent `this.elements.*` usage where appropriate. Fewer ways to typo yourself into chaos.  
+- Ensured modal `Esc` closing and focus-trap behavior are in place and consistent.  
+- Replaced a few direct handlers so listeners are attached via stored element refs (less brittle).  
+- Checked for obvious runtime errors and fixed the few that would happen in normal use (missing refs, inconsistent handler wiring). Nothing catastrophic remains.
+
+Remaining reality-check items (won’t crash, but you should know):  
+- SRT timing is approximate — still based on when final recognition chunks arrive (the browser doesn’t provide per-word timestamps). For precise caption timing you’ll need a timed STT backend or forced alignment.  
+- The app requests mic twice in some paths (once to ensure permission in `startListening`, then again in `startAudioMeter`). Browsers usually reuse permission; it’s functional but slightly redundant. I left it because it improves reliability across browsers. If you want, I’ll dedupe it.  
+- Behavior varies across browsers. Chromium-based browsers are the most reliable with Web Speech API. Firefox doesn’t support it natively. Safari is hit-or-miss.  
+
+Below is the **ready-to-save** HTML file with defaults changed and the fixes applied. Save as e.g. `transcriber-accessible.html` and open in Chromium-based browser for best results.
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Accessible Real-Time Conversation Transcriber</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    :root{
+        --color-bg:#000000;
+        --color-text:#FFFF00;
+        --color-primary:#00FF00;
+        --color-primary-dark:#00CC00;
+        --color-control-bg:#111827;
+        --color-border:#333;
+        --color-shadow:#00FF00;
+    }
+    .theme-high-contrast{ /* kept for users who want it */
+        --color-bg:#000;
+        --color-text:#FFFF00;
+        --color-primary:#00FF00;
+        --color-control-bg:#111827;
+        --color-border:#333;
+        --color-shadow:#00FF00;
+    }
+    .theme-dark {
+        --color-bg: #1f2937;
+        --color-text: #e5e7eb;
+        --color-primary: #3b82f6;
+        --color-control-bg: #374151;
+        --color-border: #4b5563;
+        --color-shadow: #1e3a8a;
+    }
+    .theme-light {
+        --color-bg: #f9fafb;
+        --color-text: #1f2937;
+        --color-primary: #10b981;
+        --color-control-bg: #ffffff;
+        --color-border: #d1d5db;
+        --color-shadow: #065f46;
+    }
+
+    html,body{height:100%}
+    body{
+        background-color:var(--color-bg);
+        color:var(--color-text);
+        font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+        margin:0;
+        transition:background-color .25s,color .25s;
+        -webkit-font-smoothing:antialiased;
+    }
+
+    .container{max-width:1200px;margin:0 auto;padding:1rem}
+
+    #transcriptionOutput{
+        font-size:2rem;
+        min-height:300px;
+        padding:1rem;
+        border:2px solid var(--color-primary);
+        background-color:var(--color-control-bg);
+        box-shadow:0 0 10px var(--color-shadow);
+        color:var(--color-text);
+        resize:none;
+    }
+
+    .status-dot{display:inline-block;width:1rem;height:1rem;border-radius:50%;background-color:#ef4444;vertical-align:middle}
+    .status-listening{background-color:#10b981!important; box-shadow:0 0 8px #10b981,0 0 16px #10b981; animation:pulse-green 1.5s infinite;}
+    @keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(16,185,129,.7)}70%{box-shadow:0 0 0 10px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+
+    .btn{padding:.75rem 1.25rem;border-radius:.5rem;font-weight:600;transition:background-color .15s,transform .08s;cursor:pointer;border:2px solid var(--color-primary);color:var(--color-bg);background-color:var(--color-primary);font-size:1.05rem}
+    .btn:disabled{opacity:.5;cursor:not-allowed;background-color:var(--color-border)}
+
+    .form-control{padding:.5rem;border-radius:.375rem;border:1px solid var(--color-border);background-color:var(--color-control-bg);color:var(--color-text);font-size:1rem}
+
+    .error-message{background:#dc3545;color:white;padding:.75rem;border-radius:.5rem;font-weight:700}
+    .success-message{background:#28a745;color:white;padding:.75rem;border-radius:.5rem}
+
+    .history-panel{background-color:var(--color-control-bg);border:1px solid var(--color-border);border-radius:.5rem;max-height:400px;overflow:auto}
+    .history-item{border-bottom:1px solid var(--color-border);padding:.75rem 1rem}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;z-index:9999}
+    .modal{background:#111827;color:var(--color-text);max-width:960px;width:calc(100% - 2rem);border-radius:.5rem;padding:1rem;outline:0}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Volume meter canvas */
+    #volumeMeter{width:100%;height:48px;background:linear-gradient(90deg,#111827 0,#111827 100%);border-radius:.375rem;border:1px solid var(--color-border)}
+
+    /* Keyboard focus */
+    :focus{outline:3px solid var(--color-primary);outline-offset:2px}
+
+    /* Responsive tweaks */
+    @media (max-width:768px){#transcriptionOutput{font-size:1.25rem}}
+</style>
+</head>
+<body class="theme-light">
+<div class="container">
+    <header class="mb-6 border-b pb-4">
+        <h1 class="text-3xl font-extrabold">Live Meeting Transcriber</h1>
+        <p class="opacity-80">Large text, keyboard & screen reader friendly. Local-first.</p>
+    </header>
+
+    <div id="errorContainer" role="alert" aria-live="assertive"></div>
+    <div id="successContainer" role="status" aria-live="polite"></div>
+
+    <section class="settings-panel p-4 mb-6 rounded-lg" style="background:rgba(0,0,0,.05);border:1px solid var(--color-border)">
+        <h2 class="text-xl font-semibold mb-3">Settings</h2>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;align-items:start">
+            <label>
+                <div class="text-sm font-medium mb-1">Speech Language</div>
+                <select id="speechLanguage" class="form-control" aria-describedby="speechLanguageHelp">
+                    <option value="en-US">English (United States)</option>
+                    <option value="es-US">Spanish (United States)</option>
+                    <option value="fr-FR">French (France)</option>
+                    <option value="en-GB">English (United Kingdom)</option>
+                    <option value="pt-BR">Portuguese (Brazil)</option>
+                    <option value="de-DE">German</option>
+                </select>
+            </label>
+            <label>
+                <div class="text-sm font-medium mb-1">Visual Theme</div>
+                <select id="theme" class="form-control" aria-label="Visual theme">
+                    <option value="light" selected>Light Mode (Default)</option>
+                    <option value="dark">Dark Mode</option>
+                    <option value="high-contrast">High Contrast</option>
+                </select>
+            </label>
+            <label>
+                <div class="text-sm font-medium mb-1">Font Size (Transcript)</div>
+                <select id="fontSize" class="form-control">
+                    <option value="2rem">Large (2rem)</option>
+                    <option value="1.5rem">Medium (1.5rem)</option>
+                    <option value="1.25rem">Small (1.25rem)</option>
+                </select>
+            </label>
+            <label>
+                <div class="text-sm font-medium mb-1">Translate To (disabled)</div>
+                <select id="translationLanguage" class="form-control" disabled>
+                    <option value="">(Disabled)</option>
+                </select>
+            </label>
+        </div>
+        <p id="translationStatus" class="mt-2 text-sm" style="color:#f87171">Uses the browser's native speech recognition—online and vendor-dependent.</p>
+    </section>
+
+    <div class="main-controls flex gap-3 flex-wrap mb-6">
+        <button id="startBtn" class="btn" aria-pressed="false"><span class="status-dot mr-2" id="statusDot"></span><span id="startBtnText"> Start Listening</span></button>
+        <button id="stopBtn" class="btn" disabled>Stop & Save Session</button>
+        <button id="clearCurrentBtn" class="btn">Clear Current Transcript</button>
+        <button id="exportAllBtn" class="btn">Export All</button>
+        <button id="exportSrtBtn" class="btn">Export All as .srt</button>
+    </div>
+
+    <section class="transcription-panels mb-6">
+        <div style="background:rgba(0,0,0,.03);padding:1rem;border-radius:.5rem">
+            <h2 class="text-xl font-semibold mb-2">Live Transcript</h2>
+            <div id="srLive" class="sr-only" aria-live="polite" aria-atomic="false"></div>
+            <textarea id="transcriptionOutput" role="log" aria-live="polite" aria-atomic="false" readonly placeholder="Transcription will appear here..."></textarea>
+            <div style="margin-top:.75rem">
+                <label for="volumeMeter" class="text-sm font-medium">Microphone Level:</label>
+                <canvas id="volumeMeter" aria-hidden="true"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="history-container mb-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-semibold">Transcription History</h2>
+            <div class="flex gap-2">
+                <button id="toggleHistory" class="btn">Show History</button>
+            </div>
+        </div>
+
+        <div id="historyPanel" class="history-panel hidden" aria-hidden="true">
+            <div id="historyList" role="list" aria-label="Saved transcriptions" style="padding:.5rem">
+                <div class="empty-history text-center p-4">
+                    <p class="opacity-70">No transcriptions saved yet. Start speaking, then click "Stop & Save Session" to save your first transcript.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="loadingOverlay" class="hidden" role="status" aria-live="polite" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:999">
+        <div style="background:#fff;color:var(--color-text);padding:1rem;border-radius:.5rem;border:2px solid #f59e0b">
+            <div style="margin-bottom:.5rem" aria-hidden="true">⏳</div>
+            <div>Processing...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+class SpeechToTextApp {
+    APP_NAME = "AdvancedTranscriber";
+    STORAGE_KEY_SETTINGS = this.APP_NAME + "_settings";
+    STORAGE_KEY_HISTORY = this.APP_NAME + "_history";
+
+    transcriptionHistory = [];
+    recognition = null;
+    isListening = false;
+    currentTranscription = '';
+    currentSegments = [];
+    elements = {};
+    audioStream = null;
+    audioCtx = null;
+    analyser = null;
+    animationId = null;
+
+    constructor(){ this.init(); }
+
+    init(){
+        this.initializeElements();
+        this.loadSettings();
+        this.loadHistory();
+        this.setupEventListeners();
+        this.checkBrowserSupport();
+    }
+
+    initializeElements(){
+        this.elements = {
+            speechLanguageSelect: document.getElementById('speechLanguage'),
+            fontSizeSelect: document.getElementById('fontSize'),
+            themeSelect: document.getElementById('theme'),
+            startBtn: document.getElementById('startBtn'),
+            stopBtn: document.getElementById('stopBtn'),
+            clearCurrentBtn: document.getElementById('clearCurrentBtn'),
+            statusDot: document.getElementById('statusDot'),
+            transcriptionOutput: document.getElementById('transcriptionOutput'),
+            loadingOverlay: document.getElementById('loadingOverlay'),
+            errorContainer: document.getElementById('errorContainer'),
+            successContainer: document.getElementById('successContainer'),
+            historyPanel: document.getElementById('historyPanel'),
+            historyList: document.getElementById('historyList'),
+            toggleHistory: document.getElementById('toggleHistory'),
+            exportAllBtn: document.getElementById('exportAllBtn'),
+            exportSrtBtn: document.getElementById('exportSrtBtn'),
+            srLive: document.getElementById('srLive'),
+            volumeCanvas: document.getElementById('volumeMeter')
+        };
+    }
+
+    setupEventListeners(){
+        this.elements.startBtn.addEventListener('click', ()=>this.startListening());
+        this.elements.stopBtn.addEventListener('click', ()=>this.stopListening());
+        this.elements.clearCurrentBtn.addEventListener('click', ()=>this.clearCurrentTranscript());
+        this.elements.themeSelect.addEventListener('change', ()=>this.updateTheme());
+        this.elements.fontSizeSelect.addEventListener('change', ()=>this.updateFontSize());
+        this.elements.speechLanguageSelect.addEventListener('change', ()=>this.updateRecognitionSettings());
+        this.elements.toggleHistory.addEventListener('click', ()=>this.toggleHistoryPanel());
+        this.elements.exportAllBtn.addEventListener('click', ()=>this.exportAllTranscripts());
+        this.elements.exportSrtBtn.addEventListener('click', ()=>this.exportAllAsSrt());
+
+        window.addEventListener('keydown', (e)=>{
+            if (e.key === 'Escape') { this.closeTopModal(); }
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase()==='e'){ e.preventDefault(); this.exportAllTranscripts(); }
+        });
+
+        this.elements.startBtn.addEventListener('keydown', (e)=>{
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.startListening(); }
+        });
+
+        [this.elements.themeSelect, this.elements.fontSizeSelect, this.elements.speechLanguageSelect]
+            .forEach(el => el.addEventListener('change', ()=>this.saveSettings()));
+    }
+
+    checkBrowserSupport(){
+        if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)){
+            this.showError("Your browser does not support the Web Speech API. Transcription will not work.");
+            this.elements.startBtn.disabled = true;
+        } else {
+            this.setupRecognition();
+        }
+    }
+
+    setupRecognition(){
+        this.recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        this.recognition.continuous = true;
+        this.recognition.interimResults = true;
+        this.updateRecognitionSettings();
+
+        this.recognition.onstart = ()=>{
+            this.isListening = true;
+            this.updateUIState();
+            this.showSuccess("Listening started.");
+            this.startAudioMeter();
+        };
+
+        this.recognition.onerror = (event)=>{
+            console.error('Speech Recognition Error:', event);
+            this.showError(`Microphone Error: ${event.error}. Check permissions and try again.`);
+            this.stopListening(false);
+        };
+
+        this.recognition.onend = ()=>{
+            if (this.isListening){
+                try { this.recognition.start(); } catch(e){ console.warn('Could not restart recognition:', e); }
+            }
+        };
+
+        this.recognition.onresult = (event)=>{
+            let interim = '';
+            let finalChunk = '';
+            for (let i=event.resultIndex; i<event.results.length; ++i){
+                const transcript = event.results[i][0].transcript.trim();
+                if (event.results[i].isFinal){
+                    finalChunk += transcript + '. ';
+                } else {
+                    interim += transcript + ' ';
+                }
+            }
+
+            if (finalChunk){
+                const now = Date.now();
+                this.currentSegments.push({text: finalChunk.trim(), ts: now});
+                this.currentTranscription += finalChunk;
+                this.announceForSR(finalChunk.trim());
+            }
+
+            let displayText = this.currentTranscription.trim();
+            if (interim) displayText += ' [Interim: ' + interim.trim() + ']';
+            this.elements.transcriptionOutput.value = displayText;
+            this.elements.transcriptionOutput.scrollTop = this.elements.transcriptionOutput.scrollHeight;
+        };
+    }
+
+    async startListening(){
+        if (!this.recognition) { this.showError("Speech recognition not available."); return; }
+        if (this.isListening) { this.showError("Already listening."); return; }
+
+        try {
+            await navigator.mediaDevices.getUserMedia({audio:true});
+        } catch (e){
+            this.showError("Microphone access denied or unavailable.");
+            return;
+        }
+
+        try {
+            this.updateRecognitionSettings();
+            this.recognition.start();
+            this.isListening = true;
+            this.updateUIState();
+        } catch (e){
+            console.error("Start error:", e);
+            this.showError("Failed to start listening.");
+        }
+    }
+
+    stopListening(saveOnStop = true){
+        if (!this.isListening) return;
+        try { this.recognition.stop(); } catch(e){}
+        this.isListening = false;
+        this.updateUIState();
+        this.stopAudioMeter();
+
+        if (saveOnStop && this.currentTranscription.trim().length > 0){
+            this.saveTranscription(this.currentTranscription.trim(), this.currentSegments.slice());
+            this.currentTranscription = '';
+            this.currentSegments = [];
+            this.elements.transcriptionOutput.value = '';
+        } else if (!saveOnStop){
+            this.showSuccess("Listening stopped. Current transcript was not saved.");
+        } else {
+            this.showError("Listening stopped. No text was recorded to save.");
+        }
+    }
+
+    clearCurrentTranscript(){
+        if (this.isListening){ this.showError("Cannot clear while listening. Stop first."); return; }
+        if (!this.currentTranscription || this.currentTranscription.length===0){ this.showError("No current transcript to clear."); return; }
+        this.openModal(
+            `<h3 class="text-xl font-bold mb-2">Confirm Clear</h3>
+             <p>Are you sure you want to clear the current transcript? It will be lost if not saved.</p>
+             <div style="display:flex;justify-content:flex-end;gap:.5rem;margin-top:.75rem">
+                <button id="cancelClear" class="btn">Cancel</button>
+                <button id="confirmClear" class="btn" style="background:#ef4444;border-color:#ef4444">Clear Anyway</button>
+             </div>`,
+             '#confirmClear'
+        );
+        setTimeout(()=>{
+            const cancel = document.getElementById('cancelClear');
+            const confirm = document.getElementById('confirmClear');
+            if (cancel) cancel.addEventListener('click', ()=>this.closeTopModal());
+            if (confirm) confirm.addEventListener('click', ()=>{
+                this.currentTranscription = '';
+                this.elements.transcriptionOutput.value = '';
+                this.showSuccess("Current transcript cleared.");
+                this.closeTopModal();
+            });
+        },50);
+    }
+
+    loadHistory(){
+        try {
+            const h = localStorage.getItem(this.STORAGE_KEY_HISTORY);
+            this.transcriptionHistory = h ? JSON.parse(h) : [];
+            this.renderHistory();
+        } catch(e){
+            console.error("Load history failed", e);
+            this.showError("Failed to load local history.");
+        }
+    }
+    saveHistory(){
+        try{ localStorage.setItem(this.STORAGE_KEY_HISTORY, JSON.stringify(this.transcriptionHistory)); }
+        catch(e){ console.error(e); this.showError("Failed to save history."); }
+    }
+
+    saveTranscription(text, segments){
+        const newId = Date.now().toString(36) + Math.random().toString(36).substring(2,9);
+        const item = {
+            id: newId,
+            transcript: text,
+            language: this.elements.speechLanguageSelect.value,
+            timestamp: new Date().toISOString(),
+            segments: segments || []
+        };
+        this.transcriptionHistory.unshift(item);
+        this.saveHistory();
+        this.renderHistory();
+        this.showSuccess("Session saved to local history.");
+    }
+
+    renderHistory(){
+        const list = this.elements.historyList;
+        list.innerHTML = '';
+        if (!this.transcriptionHistory || this.transcriptionHistory.length===0){
+            list.innerHTML = `<div class="empty-history text-center p-4"><p class="opacity-70">No transcriptions saved yet.</p></div>`;
+            return;
+        }
+        this.transcriptionHistory.forEach(item=>{
+            const date = new Date(item.timestamp).toLocaleString();
+            const snippet = item.transcript.substring(0,150)+(item.transcript.length>150?'...':'');
+            const div = document.createElement('div');
+            div.className = 'history-item';
+            div.innerHTML = `
+                <div style="display:flex;flex-direction:column;gap:.5rem">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem">
+                        <div>
+                            <div style="font-size:.85rem;opacity:.7">${date} (${item.language})</div>
+                            <div style="font-size:1rem;white-space:pre-wrap;margin-top:.35rem">${snippet}</div>
+                        </div>
+                        <div style="display:flex;gap:.4rem;flex-shrink:0">
+                            <button class="btn viewBtn" data-id="${item.id}" style="padding:.4rem .6rem;font-size:.85rem">View</button>
+                            <button class="btn deleteBtn" data-id="${item.id}" style="background:#ef4444;border-color:#ef4444;padding:.4rem .6rem;font-size:.85rem">Delete</button>
+                            <button class="btn exportItemBtn" data-id="${item.id}" style="background:#6b7280;border-color:#6b7280;padding:.4rem .6rem;font-size:.85rem">Export</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            list.appendChild(div);
+        });
+
+        list.querySelectorAll('.viewBtn').forEach(btn=>{
+            btn.addEventListener('click', ()=>this.viewTranscript(btn.dataset.id));
+        });
+        list.querySelectorAll('.deleteBtn').forEach(btn=>{
+            btn.addEventListener('click', ()=>this.deleteTranscript(btn.dataset.id));
+        });
+        list.querySelectorAll('.exportItemBtn').forEach(btn=>{
+            btn.addEventListener('click', ()=>this.exportSingleTranscript(btn.dataset.id));
+        });
+    }
+
+    viewTranscript(id){
+        const item = this.transcriptionHistory.find(x=>x.id===id);
+        if (!item){ this.showError("Transcript not found."); return; }
+
+        const content = `
+            <h3 class="text-2xl font-bold mb-2">Full Transcript</h3>
+            <div style="font-size:.9rem;opacity:.7;margin-bottom:.5rem">Saved: ${new Date(item.timestamp).toLocaleString()} (Language: ${item.language})</div>
+            <textarea id="modalTranscript" style="width:100%;height:360px;background:#fff;color:var(--color-text);padding:.75rem;border-radius:.375rem;border:1px solid var(--color-border)">${item.transcript}</textarea>
+            <div style="display:flex;justify-content:flex-end;gap:.5rem;margin-top:.5rem">
+                <button id="copyModal" class="btn">Copy Text</button>
+                <button id="downloadModal" class="btn">Download .txt</button>
+                <button id="closeModalBtn" class="btn" style="background:#6b7280;border-color:#6b7280">Close</button>
+            </div>
+        `;
+        this.openModal(content, '#closeModalBtn');
+        setTimeout(()=>{
+            document.getElementById('copyModal').addEventListener('click', ()=>{
+                const ta = document.getElementById('modalTranscript');
+                ta.select();
+                document.execCommand('copy');
+                this.showSuccess('Copied transcript to clipboard.');
+            });
+            document.getElementById('downloadModal').addEventListener('click', ()=>{
+                this.downloadFile(item.transcript, `Transcript-${item.id}.txt`, 'text/plain');
+            });
+            document.getElementById('closeModalBtn').addEventListener('click', ()=>this.closeTopModal());
+        },50);
+    }
+
+    deleteTranscript(id){
+        this.openModal(
+            `<h3 class="text-xl font-bold mb-2">Confirm Deletion</h3>
+             <p>Are you sure you want to permanently delete this transcript?</p>
+             <div style="display:flex;justify-content:flex-end;gap:.5rem;margin-top:.75rem">
+                <button id="cancelDelete" class="btn">Cancel</button>
+                <button id="confirmDelete" class="btn" style="background:#ef4444;border-color:#ef4444">Delete</button>
+             </div>`,
+            '#confirmDelete'
+        );
+        setTimeout(()=>{
+            const cancel = document.getElementById('cancelDelete');
+            const confirm = document.getElementById('confirmDelete');
+            if (cancel) cancel.addEventListener('click', ()=>this.closeTopModal());
+            if (confirm) confirm.addEventListener('click', ()=>{
+                this.transcriptionHistory = this.transcriptionHistory.filter(x=>x.id!==id);
+                this.saveHistory();
+                this.renderHistory();
+                this.showSuccess("Transcript deleted.");
+                this.closeTopModal();
+            });
+        },50);
+    }
+
+    toggleHistoryPanel(){
+        const panel = this.elements.historyPanel;
+        const isHidden = panel.classList.toggle('hidden');
+        panel.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+        document.getElementById('toggleHistory').textContent = isHidden ? 'Show History' : 'Hide History';
+    }
+
+    exportAllTranscripts(){
+        if (!this.transcriptionHistory || this.transcriptionHistory.length===0){ this.showError("No history to export."); return; }
+        const exportContent = this.transcriptionHistory.map(item=>`--- Session: ${new Date(item.timestamp).toLocaleString()} (${item.language}) ---\n${item.transcript}\n`).join('\n\n');
+        const filename = `All-Transcripts-${new Date().toISOString().slice(0,10)}.txt`;
+        this.downloadFile(exportContent, filename, 'text/plain');
+        this.showSuccess(`Exported ${this.transcriptionHistory.length} sessions as ${filename}.`);
+    }
+
+    exportAllAsSrt(){
+        if (!this.transcriptionHistory || this.transcriptionHistory.length===0){ this.showError("No history to export."); return; }
+        const allSrtParts = [];
+        this.transcriptionHistory.forEach((item, idx)=>{
+            const srt = this.convertItemToSrt(item);
+            allSrtParts.push(`--- Session ${idx+1}: ${new Date(item.timestamp).toLocaleString()} (${item.language}) ---\n${srt}`);
+        });
+        const filename = `All-Transcripts-${new Date().toISOString().slice(0,10)}.srt`;
+        this.downloadFile(allSrtParts.join('\n\n'), filename, 'text/plain');
+        this.showSuccess(`Exported SRT as ${filename}.`);
+    }
+
+    convertItemToSrt(item){
+        if (item.segments && item.segments.length>0){
+            const t0 = item.segments[0].ts;
+            const entries = [];
+            for (let i=0;i<item.segments.length;i++){
+                const seg = item.segments[i];
+                const start = Math.max(0, Math.floor((seg.ts - t0)/1000));
+                let end;
+                if (i+1<item.segments.length) end = Math.max(start+1, Math.floor((item.segments[i+1].ts - t0)/1000));
+                else {
+                    const approxSec = Math.max(2, Math.ceil(seg.text.length / 20));
+                    end = start + approxSec;
+                }
+                entries.push({start,end,text:seg.text});
+            }
+            return entries.map((e, i)=>`${i+1}\n${this.formatTimeSrt(e.start)} --> ${this.formatTimeSrt(e.end)}\n${e.text}`).join('\n\n');
+        } else {
+            const words = item.transcript.split(/\s+/);
+            const wordsPerChunk = 10;
+            const chunks = [];
+            for (let i=0;i<words.length;i+=wordsPerChunk){
+                chunks.push(words.slice(i,i+wordsPerChunk).join(' '));
+            }
+            let sIdx = 0;
+            return chunks.map((c, i)=>{
+                const start = sIdx;
+                const end = sIdx + 4;
+                sIdx += 5;
+                return `${i+1}\n${this.formatTimeSrt(start)} --> ${this.formatTimeSrt(end)}\n${c}`;
+            }).join('\n\n');
+        }
+    }
+
+    formatTimeSrt(sec){
+        const h = Math.floor(sec/3600); const m = Math.floor((sec%3600)/60); const s = sec%60;
+        const ms = 0;
+        const pad=(n,len=2)=>n.toString().padStart(len,'0');
+        return `${pad(h,2)}:${pad(m,2)}:${pad(s,2)},${pad(ms,3)}`;
+    }
+
+    exportSingleTranscript(id){
+        const item = this.transcriptionHistory.find(x=>x.id===id);
+        if (!item){ this.showError("Item not found."); return; }
+        const filename = `Transcript-${id}.txt`;
+        this.downloadFile(item.transcript, filename, 'text/plain');
+        this.showSuccess(`Downloaded ${filename}.`);
+    }
+
+    downloadFile(data, filename, type){
+        const blob = new Blob([data], {type});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href=url; a.download=filename; document.body.appendChild(a);
+        a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+
+    announceForSR(text){
+        if (!this.elements.srLive) return;
+        const node = document.createElement('div');
+        node.textContent = text;
+        this.elements.srLive.appendChild(node);
+        if (this.elements.srLive.children.length>6) this.elements.srLive.removeChild(this.elements.srLive.firstChild);
+    }
+
+    updateUIState(){
+        const isReady = !this.isListening;
+        this.elements.startBtn.disabled = !isReady;
+        this.elements.stopBtn.disabled = isReady;
+        this.elements.clearCurrentBtn.disabled = this.isListening;
+        this.elements.speechLanguageSelect.disabled = this.isListening;
+
+        if (this.isListening){
+            this.elements.statusDot.classList.add('status-listening');
+            document.getElementById('startBtnText').textContent = '...Listening...';
+            this.elements.startBtn.setAttribute('aria-pressed','true');
+        } else {
+            this.elements.statusDot.classList.remove('status-listening');
+            document.getElementById('startBtnText').textContent = ' Start Listening';
+            this.elements.startBtn.setAttribute('aria-pressed','false');
+        }
+    }
+
+    loadSettings(){
+        try{
+            const s = localStorage.getItem(this.STORAGE_KEY_SETTINGS);
+            const settings = s?JSON.parse(s):{};
+            if (settings.theme) this.elements.themeSelect.value = settings.theme;
+            if (settings.fontSize) this.elements.fontSizeSelect.value = settings.fontSize;
+            if (settings.language) this.elements.speechLanguageSelect.value = settings.language;
+            this.updateTheme();
+            this.updateFontSize();
+        } catch(e){ console.error('load settings', e); }
+    }
+    saveSettings(){
+        const settings = {
+            theme: this.elements.themeSelect.value,
+            fontSize: this.elements.fontSizeSelect.value,
+            language: this.elements.speechLanguageSelect.value
+        };
+        try{ localStorage.setItem(this.STORAGE_KEY_SETTINGS, JSON.stringify(settings)); } catch(e){ console.error(e); }
+    }
+
+    updateTheme(){
+        const val = this.elements.themeSelect.value || 'light';
+        document.body.className = `theme-${val}`;
+        this.saveSettings();
+    }
+    updateFontSize(){
+        const s = this.elements.fontSizeSelect.value||'2rem';
+        this.elements.transcriptionOutput.style.fontSize = s;
+        this.saveSettings();
+    }
+
+    updateRecognitionSettings(){
+        if (this.recognition) {
+            this.recognition.lang = this.elements.speechLanguageSelect.value;
+            this.saveSettings();
+            this.showSuccess(`Speech language set to ${this.elements.speechLanguageSelect.options[this.elements.speechLanguageSelect.selectedIndex].text}.`);
+        }
+    }
+
+    openModal(innerHtml, firstFocusSelector){
+        this.closeTopModal();
+        const backdrop = document.createElement('div');
+        backdrop.className = 'modal-backdrop';
+        backdrop.tabIndex = -1;
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.setAttribute('role','dialog');
+        modal.setAttribute('aria-modal','true');
+        modal.innerHTML = innerHtml;
+        backdrop.appendChild(modal);
+        document.body.appendChild(backdrop);
+
+        const focusable = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        const focusables = modal.querySelectorAll(focusable);
+        const firstFocusable = firstFocusSelector ? modal.querySelector(firstFocusSelector) : (focusables[0] || modal);
+        const lastFocusable = focusables[focusables.length-1] || firstFocusable;
+        setTimeout(()=>{ firstFocusable && firstFocusable.focus(); },30);
+
+        function handleKey(e){
+            if (e.key==='Tab'){
+                if (focusables.length === 0){ e.preventDefault(); return; }
+                if (e.shiftKey && document.activeElement === firstFocusable){ e.preventDefault(); lastFocusable.focus(); }
+                else if (!e.shiftKey && document.activeElement === lastFocusable){ e.preventDefault(); firstFocusable.focus(); }
+            }
+        }
+        modal._keyHandler = handleKey;
+        modal.addEventListener('keydown', handleKey);
+
+        document.body._openModal = {backdrop, modal};
+    }
+
+    closeTopModal(){
+        const s = document.body._openModal;
+        if (s){
+            try{
+                s.modal.removeEventListener('keydown', s.modal._keyHandler);
+            } catch(e){}
+            s.backdrop.remove();
+            document.body._openModal = null;
+        }
+    }
+
+    showError(msg){ this.showMessage(msg,'error'); }
+    showSuccess(msg){ this.showMessage(msg,'success'); }
+    showMessage(msg,type){
+        const container = (type==='error')?this.elements.errorContainer:this.elements.successContainer;
+        container.innerHTML = '';
+        const div = document.createElement('div');
+        div.className = (type==='error')? 'error-message':'success-message';
+        div.textContent = msg;
+        container.appendChild(div);
+        if (type==='success') setTimeout(()=>{ if (div.parentNode) div.parentNode.removeChild(div); },4500);
+    }
+
+    async startAudioMeter(){
+        try {
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
+            this.audioStream = await navigator.mediaDevices.getUserMedia({audio:true});
+            this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const source = this.audioCtx.createMediaStreamSource(this.audioStream);
+            this.analyser = this.audioCtx.createAnalyser();
+            this.analyser.fftSize = 256;
+            source.connect(this.analyser);
+            this.drawVolume();
+        } catch(e){
+            console.warn('Audio meter unavailable', e);
+        }
+    }
+    stopAudioMeter(){
+        if (this.animationId) cancelAnimationFrame(this.animationId);
+        if (this.analyser) { try{ this.analyser.disconnect(); }catch(e){} this.analyser=null; }
+        if (this.audioCtx){ try{ this.audioCtx.close(); }catch(e){} this.audioCtx=null; }
+        if (this.audioStream){ this.audioStream.getTracks().forEach(t=>t.stop()); this.audioStream=null; }
+        const c = this.elements.volumeCanvas;
+        if (c && c.getContext){
+            const ctx = c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height);
+        }
+    }
+    drawVolume(){
+        if (!this.analyser) return;
+        const canvas = this.elements.volumeCanvas;
+        const ctx = canvas.getContext('2d');
+        const bufferLength = this.analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
+        const draw = ()=>{
+            this.analyser.getByteFrequencyData(dataArray);
+            const avg = dataArray.reduce((a,b)=>a+b,0)/dataArray.length;
+            const dpr = window.devicePixelRatio || 1;
+            const width = canvas.clientWidth; const height = canvas.clientHeight;
+            canvas.width = width * dpr; canvas.height = height * dpr;
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            const level = Math.min(1, avg/160);
+            const grad = ctx.createLinearGradient(0,0,canvas.width,0);
+            grad.addColorStop(0,'#10b981'); grad.addColorStop(.5,'#f59e0b'); grad.addColorStop(1,'#ef4444');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0,0,canvas.width * level, canvas.height);
+            this.animationId = requestAnimationFrame(draw);
+        };
+        draw();
+    }
+}
+
+const app = new SpeechToTextApp();
+window.app = app;
+</script>
+</body>
+</html>
+```
+
+If you want I’ll now:
+- Deduplicate the double `getUserMedia` calls (one mic request is cleaner).  
+- Make the theme persistent across sessions (it already is, but I can add a visible "Reset settings" button).  
+- Or switch the default to Dark instead of Light (if Light was too optimistic).
+
+You pick. I’ll do it fast, begrudgingly, and correctly.

@@ -11,6 +11,7 @@
 #
 # Supported backend_type values:
 #   pretrained_transformers  — HuggingFace AutoModelForCausalLM + AutoTokenizer
+#   qwen2_5_omni            — Qwen2.5-Omni text-only path via Qwen2_5OmniProcessor
 #   scratch                  — random-init scratch model via src.model_factory
 #
 # Supported role values:
@@ -23,6 +24,27 @@
 # The backend implementation may override them for CPU-first safety.
 
 backends:
+
+  - backend_name: qwen2.5-omni-7b-text
+    enabled: false
+    backend_type: qwen2_5_omni
+    model_family: qwen2.5-omni
+    model_id_or_local_path: D:/.lmstudio/models/lmstudio-community/Qwen2.5-Omni-7B
+    tokenizer_path: null
+    quant_format: null
+    device_preference: auto
+    dtype_preference: bfloat16
+    max_context_length: 32768
+    generation_defaults:
+      temperature: 0.2
+      top_p: 0.9
+      repetition_penalty: 1.05
+      max_new_tokens: 192
+    role: comparison_only
+    notes: >
+      Exact local Qwen2.5-Omni-7B donor in text-only mode. Reuses the local
+      chat template and disables the talker. This path still depends on the
+      host being able to survive the large local weight load.
 
   - backend_name: qwen2.5-1.5b-instruct
     enabled: false

@@ -1,0 +1,64 @@
+CONVERSATION_ID: 6983ee11-711c-832f-a7b6-2a0791c4f38e
+TITLE: AI Origin Inquiry
+MESSAGE_COUNT: 10
+
+[USER]
+{"asset_pointer": "sediment://file_00000000c73c71f58216ef48c6464cab", "content_type": "image_asset_pointer", "fovea": null, "height": 1334, "metadata": {"asset_pointer_link": null, "container_pixel_height": null, "container_pixel_width": null, "dalle": null, "emu_omit_glimpse_image": null, "emu_patches_override": null, "generation": null, "gizmo": null, "is_no_auth_placeholder": null, "lpe_delta_encoding_channel": null, "lpe_keep_patch_ijhw": null, "sanitized": true, "watermarked_asset_pointer": null}, "size_bytes": 345607, "width": 750}
+
+What ai made this
+
+[ASSISTANT]
+from PIL import Image, ExifTags
+img_path="/mnt/data/4F172339-F8A9-4ADF-B3F3-B0CC75FE2F38.jpeg"
+img=Image.open(img_path)
+img.size, img.mode
+
+[TOOL]
+((750, 1334), 'RGB')
+
+[ASSISTANT]
+exif = img.getexif()
+len(exif), type(exif)
+
+[TOOL]
+(5, PIL.Image.Exif)
+
+[ASSISTANT]
+# decode tags
+decoded={}
+for k,v in exif.items():
+    tag=ExifTags.TAGS.get(k,k)
+    decoded[tag]=v
+decoded
+
+[TOOL]
+{'ResolutionUnit': 2,
+ 'ExifOffset': 90,
+ 'Orientation': 1,
+ 'XResolution': 72.0,
+ 'YResolution': 72.0}
+
+[ASSISTANT]
+img.info
+
+[TOOL]
+{'jfif': 257,
+ 'jfif_version': (1, 1),
+ 'jfif_unit': 0,
+ 'jfif_density': (72, 72),
+ 'exif': b'Exif\x00\x00MM\x00*\x00\x00\x00\x08\x00\x05\x01\x12\x00\x03\x00\x00\x00\x01\x00\x01\x00\x00\x01\x1a\x00\x05\x00\x00\x00\x01\x00\x00\x00J\x01\x1b\x00\x05\x00\x00\x00\x01\x00\x00\x00R\x01(\x00\x03\x00\x00\x00\x01\x00\x02\x00\x00\x87i\x00\x04\x00\x00\x00\x01\x00\x00\x00Z\x00\x00\x00\x00\x00\x00\x00H\x00\x00\x00\x01\x00\x00\x00H\x00\x00\x00\x01\x00\x03\xa0\x01\x00\x03\x00\x00\x00\x01\x00\x01\x00\x00\xa0\x02\x00\x04\x00\x00\x00\x01\x00\x00\x02\xee\xa0\x03\x00\x04\x00\x00\x00\x01\x00\x00\x056\x00\x00\x00\x00',
+ 'dpi': (72.0, 72.0)}
+
+[ASSISTANT]
+I can’t tell which AI made it from the image alone.
+
+I checked the actual file’s metadata (EXIF) and it only contains basic stuff (orientation + 72 DPI). No “Software” tag, no XMP/prompt info, no embedded watermark/credentials — which is what would normally identify the generator. So any “it was Midjourney” claim would be a guess.
+
+What it *resembles* (not proof): the glossy, high-contrast cartoon-caricature look is common from **Midjourney** and **Stable Diffusion (SDXL) cartoon/caricature models**, but a bunch of tools can produce this.
+
+How to actually find out:
+- Get the **original source** (the post/app that generated it) — many show “Made with …”
+- If you can get the **original PNG** (not a re-saved JPEG), SD often stores the **prompt/settings** in metadata
+- If it came from Midjourney, the original message typically has the **job ID** / prompt in the Discord post
+
+If you tell me where you got it (which app/site or screenshot vs downloaded), I can tell you the most likely generator paths and what to check there.

@@ -1,0 +1,44 @@
+CONVERSATION_ID: 69779344-284c-8328-8089-b92be85ebd95
+TITLE: PrismHCM Login Assistance
+MESSAGE_COUNT: 7
+
+[ASSISTANT]
+{"search_query":[{"q":"XL Pro National PrismHCM login","recency":30},{"q":"\"XL Pro National\" \"PrismHCM\"","recency":365},{"q":"\"XL Pro National\" employee portal Prism","recency":365},{"q":"prismhcm login XL Pro","recency":365}],"response_length":"short"}
+
+[USER]
+i cant find the login site for prismhcm for my account with xl pro national
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search12"},{"ref_id":"turn0search18"}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"site:cornerstone.prismhcm.com login","recency":365},{"q":"cornerstone.prismhcm.com Account Login","recency":365},{"q":"PrismHCM cornerstone employee login","recency":365},{"q":"cornerstone prismhcm xl pro national payroll login","recency":365}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"https://cornerstone.prismhcm.com/LogOn"},{"ref_id":"https://cornerstone.prismhcm.com/"},{"ref_id":"https://cornerstone.prismhcm.com/Account/Login"}],"response_length":"short"}
+
+[ASSISTANT]
+{"click":[{"ref_id":"turn3view1","id":1},{"ref_id":"turn3view1","id":0}],"response_length":"short"}
+
+[ASSISTANT]
+For **XL Pro National**, the PrismHCM tenant I’m seeing used is **“cornerstone”**.
+
+Use this (it redirects to the sign-in page): citeturn0search1turn3view1
+```text
+https://cornerstone.prismhcm.com/
+```
+
+If you can’t get in, use the built-in reset link: citeturn4view0
+```text
+https://cornerstone.prismhcm.com/Account/ForgotPassword
+```
+
+If you’re **brand new** and were given an onboarding/registration code, use: citeturn4view1
+```text
+https://cornerstone.prismhcm.com/Account/NewEmployee
+```
+
+If what you actually need is XL Pro’s **employee portal** (TempWorks WebCenter) instead of PrismHCM, their site’s “EMPLOYEE LOGIN” points here: citeturn1view0turn0search4
+```text
+https://webcenter.ontempworks.com/xlpro/Account/LogIn
+```

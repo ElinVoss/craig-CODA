@@ -1,0 +1,199 @@
+scopes:
+  handoff:
+    summary: "Root bring-up-to-speed route for natural onboarding phrases and ambiguous starts."
+    aliases:
+      - "look at what ive got going"
+      - "check out what ive got going"
+      - "bring yourself up to speed"
+      - "learn this directory"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - NEXT_STEPS.md
+      - ARTIFACTS.md
+      - LIVE_HANDOFF.md
+      - HANDOFF_PROMPT.md
+    work_from: HANDOFF_PROMPT.md
+  vault:
+    summary: "Method vault rules for corpus, tokenizer, and training behavior."
+    aliases:
+      - "method vault"
+      - "obsidian vault"
+      - "vault methods"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - exports/user_model_package/method_vault/AGENTS.md
+      - exports/user_model_package/method_vault/README.md
+      - exports/user_model_package/method_vault/_method.md
+      - src/vault_methods.py
+    work_from: exports/user_model_package/method_vault/README.md
+  tokenizer:
+    summary: "Prepared corpus, tokenizer training, inspection, and token statistics."
+    aliases:
+      - "tokenization"
+      - "tokens"
+      - "token stats"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - configs/AGENTS.md
+      - configs/README.md
+      - configs/tokenizer.yaml
+      - scripts/AGENTS.md
+      - scripts/README.md
+      - scripts/prepare_corpus.py
+      - scripts/train_tokenizer.py
+      - scripts/inspect_tokenizer.py
+    work_from: configs/README.md
+  weights:
+    summary: "Architecture, scratch training, SFT behavior, and parameter choices."
+    aliases:
+      - "parameters"
+      - "training behavior"
+      - "model shape"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - exports/user_model_package/method_vault/AGENTS.md
+      - exports/user_model_package/method_vault/README.md
+      - configs/AGENTS.md
+      - configs/README.md
+      - configs/model_architecture.yaml
+      - configs/training_scratch.yaml
+      - configs/training_sft.yaml
+      - src/model_factory.py
+      - src/train_scratch.py
+      - src/train_sft.py
+    work_from: exports/user_model_package/method_vault/README.md
+  memory:
+    summary: "Node extraction, schema, retrieval, fusion, and graph-native memory behavior."
+    aliases:
+      - "memory system"
+      - "graph memory"
+      - "retrieval"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - src/memory/AGENTS.md
+      - src/memory/README.md
+      - configs/node_schema.yaml
+      - configs/memory_retrieval.yaml
+      - src/memory/extract_nodes.py
+      - src/memory/index_semantic.py
+      - src/memory/score_fusion.py
+    work_from: src/memory/README.md
+  runtime:
+    summary: "Prompt classification, route selection, and runtime response planning."
+    aliases:
+      - "route engine"
+      - "runtime routing"
+      - "prompt enters graph"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - runtime/AGENTS.md
+      - runtime/README.md
+      - runtime/classify_prompt.py
+      - runtime/route_prompt.py
+      - src/runtime/AGENTS.md
+      - src/runtime/README.md
+      - src/runtime/front_matter_classifier.py
+      - src/runtime/response_plan_builder.py
+    work_from: runtime/README.md
+  coda:
+    summary: "CODA intermediate representation, adapter contract, and multi-backend routing."
+    aliases:
+      - "coda ir"
+      - "adapter contract"
+      - "backend adapters"
+      - "multi-backend"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - exports/user_model_package/method_vault/coda/_method.md
+      - src/coda_ir.py
+      - src/adapters/base.py
+      - src/adapters/registry.py
+      - src/runtime/coda.py
+    work_from: exports/user_model_package/method_vault/coda/_method.md
+  frontend:
+    summary: "Local browser surface for Craig-CODA."
+    aliases:
+      - "ui"
+      - "browser"
+      - "react frontend"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - frontend/AGENTS.md
+      - frontend/README.md
+      - frontend/src/App.tsx
+      - frontend/src/Chat.tsx
+    work_from: frontend/README.md
+  agent:
+    summary: "Local agent server and CLI surface."
+    aliases:
+      - "chat server"
+      - "cli"
+      - "agent surface"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - agent/AGENTS.md
+      - agent/README.md
+      - agent/src/server.ts
+      - agent/src/cli.ts
+    work_from: agent/README.md
+  configs:
+    summary: "Repo configuration contracts and method-adjacent YAML files."
+    aliases:
+      - "yaml"
+      - "configuration"
+      - "config files"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - DECISIONS.md
+      - configs/AGENTS.md
+      - configs/README.md
+      - configs/project.yaml
+      - configs/tokenizer.yaml
+      - configs/model_architecture.yaml
+      - configs/vault_translation.yaml
+    work_from: configs/README.md
+  artifacts:
+    summary: "Generated outputs, reports, tokenizers, checkpoints, and vault artifacts."
+    aliases:
+      - "outputs"
+      - "reports"
+      - "generated artifacts"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - ARTIFACTS.md
+      - artifacts/AGENTS.md
+      - artifacts/README.md
+    work_from: artifacts/README.md
+  data:
+    summary: "Raw, clean, pretrain, SFT, preference, and eval data layers."
+    aliases:
+      - "datasets"
+      - "corpus data"
+      - "conversation exports"
+    read_order:
+      - README.md
+      - CURRENT_STATE.md
+      - ARTIFACTS.md
+      - data/AGENTS.md
+      - data/README.md
+    work_from: data/README.md

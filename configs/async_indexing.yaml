@@ -1,0 +1,11 @@
+ollama:
+  base_url: "http://192.168.4.25:11434"
+  embed_model: "qwen3:8b"
+  timeout_seconds: 30
+  batch_size: 8
+
+indexer:
+  poll_interval_seconds: 60
+  nodes_path: "artifacts/vault/nodes.jsonl"
+  embeddings_path: "artifacts/vault/embeddings.jsonl"
+  state_path: "artifacts/vault/indexer_state.json"

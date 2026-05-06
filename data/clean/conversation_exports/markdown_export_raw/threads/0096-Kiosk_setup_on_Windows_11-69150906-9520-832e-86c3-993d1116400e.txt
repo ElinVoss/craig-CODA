@@ -1,0 +1,456 @@
+CONVERSATION_ID: 69150906-9520-832e-86c3-993d1116400e
+TITLE: Kiosk setup on Windows 11
+MESSAGE_COUNT: 6
+
+[USER]
+give me a rundown on how to set up a native kiask for windows 11 but dont have pro for the kiosk option. i create a user account, and in the regedit for that user i replace the explorer app with the source app executable of the program im trying to run as kiask, then it will only run that acting as a kiosk right? if i remember right
+
+[ASSISTANT]
+You’re basically right: swapping the user’s shell from `explorer.exe` to your app makes a poor-man’s kiosk on Windows 11 Home. It boots straight into that program and never shows the Start menu or taskbar. But you’ll want a few extra steps so it doesn’t fall apart the moment someone hits a hotkey or the app crashes.
+
+Here’s the no-BS, works-on-Home playbook.
+
+# 0) Reality check
+- This is **kiosk-ish**, not enterprise-grade lockdown. With physical access and enough stubbornness, people can still break out. If you need bulletproof, use Pro/Enterprise with Assigned Access + AppLocker.
+- Make a separate **local admin** account as your “break-glass” backdoor. Test everything on a throwaway VM or spare box before touching production.
+
+# 1) Create the kiosk account
+Create a **standard** local user, e.g. `kiosk`. Don’t make it admin.
+
+# 2) (Optional but nice) Auto-logon to the kiosk user
+Use Sysinternals **Autologon.exe** (encrypts the password) **OR** set these (stores password in plain text—only do this if you accept the risk):
+
+```reg
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"AutoAdminLogon"="1"
+"DefaultUserName"="kiosk"
+"DefaultPassword"="YOUR_PASSWORD"
+```
+
+Tip: **Hold Shift** during boot to bypass autologon once.
+
+# 3) Use a launcher script as the shell (so the app restarts if it dies)
+Make a folder, e.g. `C:\Kiosk\`.
+
+**Option A – Batch launcher (`C:\Kiosk\kiosk.bat`)**
+```bat
+@echo off
+:loop
+start "" /wait "C:\Path\To\YourApp.exe"
+timeout /t 2 /nobreak >nul
+goto loop
+```
+
+**Option B – PowerShell launcher (`C:\Kiosk\kiosk.ps1`)**
+```powershell
+$exe = "C:\Path\To\YourApp.exe"
+while ($true) {
+  Start-Process $exe -Wait
+  Start-Sleep -Seconds 2
+}
+```
+
+# 4) Replace Explorer with your launcher (per-user shell)
+**Log in as the kiosk user** (this is important so HKCU points at that account), then run one of these:
+
+**Batch shell:**
+```cmd
+reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" ^
+  /v Shell /t REG_SZ /d "cmd.exe /c \"C:\Kiosk\kiosk.bat\"" /f
+```
+
+**PowerShell shell:**
+```cmd
+reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" ^
+  /v Shell /t REG_SZ /d "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\Kiosk\kiosk.ps1\"" /f
+```
+
+After sign-out/sign-in, Explorer won’t load; your launcher will.
+
+# 5) Minimal lock-down for the kiosk user (Home-friendly)
+Still logged in as the **kiosk user**, run these to remove the easy escape hatches:
+
+```cmd
+:: Kill Task Manager
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableTaskMgr /t REG_DWORD /d 1 /f
+
+:: Kill Command Prompt for this user
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableCMD /t REG_DWORD /d 1 /f
+
+:: Remove common Ctrl+Alt+Del escape options
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableChangePassword /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableLockWorkstation /t REG_DWORD /d 1 /f
+
+:: Hide logoff/shutdown UI, block Run dialog & context menus (affects Explorer UI; still good hygiene)
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoClose /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoLogoff /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoRun /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoViewContextMenu /t REG_DWORD /d 1 /f
+
+:: Disable Windows logo key shortcuts (the Start menu won’t exist anyway, but this kills Win+R, etc.)
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoWinKeys /t REG_DWORD /d 1 /f
+```
+
+**Optional – nuke the Windows keys machine-wide** (both Win keys stop working for everyone):
+```reg
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:00,00,00,00,00,00,00,00,03,00,00,00,00,00,5b,e0,00,00,5c,e0,00,00,00,00
+```
+(Reboot required. Remove this later by deleting the `Scancode Map` value.)
+
+# 6) Power/updates: don’t let Windows sabotage your kiosk
+Run these (as kiosk or system-wide) to keep the screen alive:
+
+```cmd
+powercfg /change monitor-timeout-ac 0
+powercfg /change standby-timeout-ac 0
+powercfg /change hibernate-timeout-ac 0
+```
+
+Set Active Hours and pause updates manually, or schedule maintenance when the kiosk isn’t in use. Home can’t enforce update policies like Pro, so plan for reboots.
+
+# 7) Browser kiosk? Use app args
+If your kiosk app is a browser page, point the launcher at Edge with kiosk flags:
+
+```bat
+@echo off
+:loop
+start "" /wait "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" ^
+  --kiosk "https://your.url" --edge-kiosk-type=fullscreen --no-first-run --disable-features=Translate,msKillSwitch
+timeout /t 2 >nul
+goto loop
+```
+
+# 8) Getting back out (don’t lock yourself in)
+- Have that **admin** account ready.
+- **Shift+Restart** → Troubleshoot → Advanced options → Startup Settings → **Safe Mode**, log in as admin, then:
+  - Restore Explorer shell by deleting the per-user `Shell` value:
+    ```cmd
+    reg delete "HKEY_USERS\<KIOSK_SID>\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Shell /f
+    ```
+    (Or log in as the kiosk user and run the same path under HKCU.)
+  - Undo any optional scancode map or policy keys you set.
+
+---
+
+## TL;DR
+Yes—your memory’s solid. Set a **per-user Shell** to your app (ideally through a tiny “restart-on-exit” launcher), add a few **policy keys** to block easy escapes, tune **power/updates**, and keep a **break-glass admin** path. That gets you a functional kiosk on Windows 11 Home without the Pro “Assigned Access” feature.
+
+If you tell me the exact app and whether it’s fullscreen/cross-monitor, I’ll hand you the exact launcher and registry lines tailored to it.
+
+[USER]
+im not setting this up for the reason kiosk is normally used. im using this to have an increase in the amount of ram available to said appp
+
+[ASSISTANT]
+Short answer: swapping the shell to your app **does** free some RAM (you dodge Explorer, StartMenuExperienceHost, ShellExperienceHost, widgets, tray junk). It’s not magic, though. Expect a few hundred MB to maybe ~1 GB depending on what normally autostarts. If you want **real** headroom, pair the kiosk-ish shell with a clean boot and a couple of surgical kills.
+
+Here’s the practical, RAM-maximizing recipe for Windows 11 Home:
+
+# 1) Make sure your app can actually use more RAM
+- **Use the 64-bit build** of your app. A 32-bit build caps out hard.
+- If you’re stuck on **32-bit**, make it **Large Address Aware** so it can use up to 4 GB on 64-bit Windows (vendor-supported is best; DIY with `editbin /LARGEADDRESSAWARE` only if you know the risks).
+
+# 2) Replace Explorer with a “restart-on-exit” launcher (saves ~300–800 MB)
+Create `C:\Kiosk\kiosk.bat`:
+```bat
+@echo off
+:loop
+start "" /wait "C:\Path\To\YourApp.exe"
+timeout /t 2 >nul
+goto loop
+```
+Log in as the **kiosk user**, then:
+```cmd
+reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" ^
+  /v Shell /t REG_SZ /d "cmd.exe /c \"C:\Kiosk\kiosk.bat\"" /f
+```
+This skips Explorer entirely.
+
+# 3) Kill the biggest background memory hogs (Home-safe)
+Run these **as the kiosk user** to block the easy escape hatches and stop background junk:
+
+```cmd
+:: disable Task Manager & Win hotkeys for kiosk user (optional but typical)
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableTaskMgr /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoWinKeys /t REG_DWORD /d 1 /f
+
+:: nuke Widgets (WebView2 background stuff)
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarDa /t REG_DWORD /d 0 /f
+
+:: Edge: no background mode, no startup boost (system-wide)
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v BackgroundModeEnabled /t REG_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v StartupBoostEnabled /t REG_DWORD /d 0 /f
+
+:: stop Search indexer (saves RAM if you don't need instant file search)
+sc stop WSearch
+sc config WSearch start= disabled
+
+:: stop SysMain (Prefetch/Superfetch). Helps on some boxes; test both ways.
+sc stop SysMain
+sc config SysMain start= disabled
+
+:: optional: remove OneDrive per-user
+%SystemRoot%\System32\OneDriveSetup.exe /uninstall
+```
+
+Also empty startup entries so the kiosk profile stays lean:
+```cmd
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /va /f
+```
+
+# 4) Do a **clean boot** profile (bigger win than kiosk alone)
+On an admin account:
+- Run `msconfig` → **Services** tab → check “Hide all Microsoft services” → **Disable all** (then re-enable only what your app actually needs, e.g., GPU driver helper, vendor services).
+- Task Manager → **Startup** → disable everything not required by your app.
+
+This move alone can reclaim **0.5–2 GB** depending on how messy the box is.
+
+# 5) Raise the commit limit (pagefile) so the process won’t crash early
+If you see “Out of memory” while plenty of RAM looks “free,” your **commit limit** is too small. Make the pagefile large (system-managed is fine; otherwise pick big numbers):
+
+```cmd
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" ^
+  /v PagingFiles /t REG_MULTI_SZ /d "C:\pagefile.sys 4096 32768" /f
+```
+(Reboot. Adjust sizes if you’ve got tons of RAM; the point is: don’t be stingy.)
+
+# 6) Keep Windows from sabotaging you mid-run
+```cmd
+powercfg /change monitor-timeout-ac 0
+powercfg /change standby-timeout-ac 0
+powercfg /change hibernate-timeout-ac 0
+```
+Pause updates during demo windows and set Active Hours so it doesn’t reboot at noon like a gremlin.
+
+# 7) (Optional) Pin the process priority
+Don’t go crazy, but **High** can help keep working set from getting bullied:
+```cmd
+wmic process where "name='YourApp.exe'" CALL setpriority 128
+```
+Or launch it that way in your wrapper:
+```bat
+start "" /high "C:\Path\To\YourApp.exe"
+```
+
+# What this *won’t* do
+- It won’t bypass architectural limits (32-bit is 32-bit).
+- It won’t give you more than physical RAM + pagefile allows.
+- It won’t stop the OS from trimming your working set if the system is pressured. That’s normal.
+
+# What actually moves the needle
+1) 64-bit build (or 32-bit + LAA),  
+2) Big enough pagefile,  
+3) Clean boot (kill non-Microsoft services + startup apps),  
+4) Explorerless shell (your kiosk trick),  
+5) Optional targeted service cuts (Search, Widgets, OneDrive, Xbox stuff).
+
+Put together, you can claw back anywhere from **~0.8 GB to 3+ GB** versus a default Home install—depends on the junk installed. If you need more than that, you’re in “add RAM or run on a stripped image/IoT build” territory.
+
+If you want, I’ll give you a one-shot `.reg` + `.bat` kit that flips all of this for a dedicated kiosk user and a matching “undo” kit for when you’re done.
+
+[USER]
+give me the full script i can run in local terminal to do this seemlessly for me. i dont care of the account name or credentials. use a default of somesort.i dont care.. i also have wsl available. and git bash
+
+[ASSISTANT]
+Here you go — one **single, elevated PowerShell script** that:
+
+- creates a `kiosk` user with a default password,  
+- sets **autologon** to that user (plain-text in registry; you said you don’t care),  
+- drops a **restart-on-exit** launcher,  
+- disables a few **RAM hogs** (Search indexer, SysMain, Edge background),  
+- sets a **healthy pagefile**, **no sleep**, and  
+- uses a **first-logon scheduled task** to write all the **per-user** HKCU kiosk tweaks (shell swap, kill Win keys, etc.), then **logs off** so the kiosk shell takes over on the next autologon.
+
+> Edit `$AppPath` near the top if you don’t want Notepad as the kiosk app. Run this in an **elevated** PowerShell.
+
+```powershell
+# Kiosk-lite setup for Windows 11 Home
+# Run as Administrator. Reboots automatically into kiosk user.
+
+param(
+  [string]$KioskUser   = "kiosk",
+  [string]$KioskPass   = "K1osk!234",
+  # CHANGE THIS to your app path if you want: e.g. "C:\Program Files\MyApp\MyApp.exe"
+  [string]$AppPath     = "C:\Windows\System32\notepad.exe",
+  [string]$AppArgs     = ""
+)
+
+# --- guard: admin check
+$principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+if (-not $principal.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)) {
+  Write-Error "Run this PowerShell as Administrator."
+  exit 1
+}
+
+Write-Host "==> Creating/refreshing kiosk user '$KioskUser'..."
+
+# --- create/refresh local user
+try {
+  $sec = ConvertTo-SecureString $KioskPass -AsPlainText -Force
+  if (Get-LocalUser -Name $KioskUser -ErrorAction SilentlyContinue) {
+    Set-LocalUser -Name $KioskUser -Password $sec -PasswordNeverExpires $true -AccountNeverExpires $true -ErrorAction Stop
+  } else {
+    New-LocalUser -Name $KioskUser -Password $sec -PasswordNeverExpires $true -AccountNeverExpires $true -ErrorAction Stop | Out-Null
+  }
+} catch {
+  # Fallback to 'net user' if LocalAccounts module isn't available
+  cmd /c "net user $KioskUser $KioskPass /add /expires:never /y"
+  cmd /c "wmic useraccount where name='$KioskUser' set PasswordExpires=false" | Out-Null
+}
+# ensure not admin
+try { Remove-LocalGroupMember -Group "Administrators" -Member $KioskUser -ErrorAction SilentlyContinue } catch {}
+try { Add-LocalGroupMember -Group "Users" -Member $KioskUser -ErrorAction SilentlyContinue } catch {}
+
+# --- kiosk files
+$kioskRoot = "C:\Kiosk"
+New-Item -Path $kioskRoot -ItemType Directory -Force | Out-Null
+
+$launcherBat = Join-Path $kioskRoot "kiosk.bat"
+$launcher = @"
+@echo off
+:loop
+start "" /wait /high "$AppPath" $AppArgs
+timeout /t 2 >nul
+goto loop
+"@
+Set-Content -Path $launcherBat -Value $launcher -Encoding ASCII
+
+# First-logon script that writes HKCU tweaks for the kiosk user
+$firstLogonPS1 = Join-Path $kioskRoot "firstlogon.ps1"
+$firstLogon = @'
+# Runs under kiosk user at first logon
+$baseWinlogon = "HKCU:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
+New-Item -Path $baseWinlogon -Force | Out-Null
+Set-ItemProperty -Path $baseWinlogon -Name Shell -Value 'cmd.exe /c "C:\Kiosk\kiosk.bat"'
+
+# Disable Task Manager & Windows key combos for kiosk user
+$polSys = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\System"
+$polExp = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer"
+New-Item -Path $polSys -Force | Out-Null
+New-Item -Path $polExp -Force | Out-Null
+Set-ItemProperty -Path $polSys -Name DisableTaskMgr -Type DWord -Value 1
+Set-ItemProperty -Path $polSys -Name DisableLockWorkstation -Type DWord -Value 1
+Set-ItemProperty -Path $polExp -Name NoWinKeys -Type DWord -Value 1
+Set-ItemProperty -Path $polExp -Name NoRun -Type DWord -Value 1
+Set-ItemProperty -Path $polExp -Name NoViewContextMenu -Type DWord -Value 1
+
+# Kill Widgets (per-user)
+$adv = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
+New-Item -Path $adv -Force | Out-Null
+Set-ItemProperty -Path $adv -Name TaskbarDa -Type DWord -Value 0
+
+# Clean per-user startup entries
+$runKey = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+if (Test-Path $runKey) {
+  Remove-ItemProperty -Path $runKey -Name * -ErrorAction SilentlyContinue
+}
+
+# Delete this task and log off to apply the new shell
+try { Unregister-ScheduledTask -TaskName "Kiosk-FirstLogon-Setup" -Confirm:$false } catch {}
+Start-Process -FilePath "shutdown.exe" -ArgumentList "/l"
+'@
+Set-Content -Path $firstLogonPS1 -Value $firstLogon -Encoding UTF8
+
+# --- Scheduled task: run first-logon script for kiosk user
+Write-Host "==> Registering first-logon setup task..."
+$action  = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$firstLogonPS1`""
+$trigger = New-ScheduledTaskTrigger -AtLogOn -User $KioskUser
+$principal = New-ScheduledTaskPrincipal -UserId $KioskUser -LogonType Password -RunLevel Highest
+try {
+  Register-ScheduledTask -TaskName "Kiosk-FirstLogon-Setup" -Action $action -Trigger $trigger -Principal $principal -Password $KioskPass -Force | Out-Null
+} catch {
+  # Fallback: create under SYSTEM, but still trigger at kiosk logon
+  Register-ScheduledTask -TaskName "Kiosk-FirstLogon-Setup" -Action $action -Trigger $trigger -RunLevel Highest -Force | Out-Null
+}
+
+# --- System-wide trims (RAM savers)
+Write-Host "==> Disabling Search indexer and SysMain..."
+foreach ($svc in "WSearch","SysMain") {
+  try { Stop-Service -Name $svc -Force -ErrorAction SilentlyContinue } catch {}
+  try { Set-Service  -Name $svc -StartupType Disabled } catch {}
+}
+
+Write-Host "==> Disabling Edge background & startup boost..."
+$edgePol = "HKLM:\SOFTWARE\Policies\Microsoft\Edge"
+New-Item -Path $edgePol -Force | Out-Null
+New-ItemProperty -Path $edgePol -Name BackgroundModeEnabled -PropertyType DWord -Value 0 -Force | Out-Null
+New-ItemProperty -Path $edgePol -Name StartupBoostEnabled -PropertyType DWord -Value 0 -Force | Out-Null
+
+# Optional: remove OneDrive (quietly skip if not present)
+$oneDriveSetup = "$env:SystemRoot\System32\OneDriveSetup.exe"
+if (Test-Path $oneDriveSetup) {
+  Start-Process -FilePath $oneDriveSetup -ArgumentList "/uninstall" -WindowStyle Hidden -Wait
+}
+
+# --- Power & pagefile
+Write-Host "==> Setting no sleep/screen-off on AC..."
+cmd /c "powercfg /change monitor-timeout-ac 0" | Out-Null
+cmd /c "powercfg /change standby-timeout-ac 0" | Out-Null
+cmd /c "powercfg /change hibernate-timeout-ac 0" | Out-Null
+
+Write-Host "==> Ensuring a healthy pagefile (4–32 GB)..."
+$memKey = "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management"
+New-Item -Path $memKey -Force | Out-Null
+New-ItemProperty -Path $memKey -Name PagingFiles -PropertyType MultiString -Value @("C:\pagefile.sys 4096 32768") -Force | Out-Null
+# Turn off automatic management so the above sticks
+New-ItemProperty -Path $memKey -Name "ExistingPageFiles" -PropertyType MultiString -Value @("C:\pagefile.sys") -Force | Out-Null
+New-ItemProperty -Path $memKey -Name "ClearPageFileAtShutdown" -PropertyType DWord -Value 0 -Force | Out-Null
+
+# --- Autologon to kiosk user
+Write-Host "==> Enabling autologon to '$KioskUser'..."
+$wl = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
+$newVals = @{
+  "AutoAdminLogon"   = "1"
+  "ForceAutoLogon"   = "1"
+  "DefaultUserName"  = $KioskUser
+  "DefaultPassword"  = $KioskPass
+  "DefaultDomainName"= $env:COMPUTERNAME
+}
+foreach ($k in $newVals.Keys) {
+  New-ItemProperty -Path $wl -Name $k -Value $newVals[$k] -PropertyType String -Force | Out-Null
+}
+
+# --- Final info
+Write-Host ""
+Write-Host "Setup done. Rebooting in 10 seconds into the kiosk user..." -ForegroundColor Green
+Write-Host "Kiosk app: $AppPath $AppArgs"
+Write-Host "To exit later: hold SHIFT during boot (bypass autologon) and sign in as admin."
+Start-Process -FilePath "shutdown.exe" -ArgumentList "/r /t 10 /c `"Rebooting into kiosk autologon`""
+```
+
+### Undo (cleanup) script
+If you want a clean exit later, run this as admin. It disables autologon, stops the kiosk, and removes the user/files. It does **not** try to surgically revert every tiny tweak in the kiosk HKCU — deleting the user wipes those.
+
+```powershell
+# Undo kiosk-lite setup (run as Admin)
+param([string]$KioskUser="kiosk")
+
+$wl = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
+Write-Host "==> Disabling autologon..."
+Set-ItemProperty -Path $wl -Name AutoAdminLogon -Value "0"
+Remove-ItemProperty -Path $wl -Name DefaultPassword -ErrorAction SilentlyContinue
+Remove-ItemProperty -Path $wl -Name ForceAutoLogon -ErrorAction SilentlyContinue
+
+Write-Host "==> Restoring services..."
+foreach ($svc in "WSearch","SysMain") {
+  try { Set-Service -Name $svc -StartupType Automatic } catch {}
+  try { Start-Service -Name $svc -ErrorAction SilentlyContinue } catch {}
+}
+
+Write-Host "==> Removing scheduled task (if present)..."
+try { Unregister-ScheduledTask -TaskName "Kiosk-FirstLogon-Setup" -Confirm:$false } catch {}
+
+Write-Host "==> Deleting kiosk files..."
+Remove-Item -Path "C:\Kiosk" -Recurse -Force -ErrorAction SilentlyContinue
+
+Write-Host "==> Deleting user '$KioskUser'..."
+try { Remove-LocalUser -Name $KioskUser } catch { cmd /c "net user $KioskUser /delete" }
+
+Write-Host "Done. Reboot recommended."
+```
+
+Want me to swap Notepad for your actual app and bake in any special launch flags? Drop the path and I’ll wire it in.

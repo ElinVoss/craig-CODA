@@ -6,7 +6,16 @@ artifacts:
   runtime_context_dir: artifacts/memory/runtime_context
   consolidation_report_dir: artifacts/memory/consolidation_reports
 retrieval:
-  semantic_method: lexical_overlap
+  # Options: lexical_overlap | embedding
+  # Switch to embedding once artifacts/embeddings/all-MiniLM-L6-v2 is downloaded.
+  # Embedding gracefully falls back to lexical_overlap if the model path does not exist.
+  semantic_method: embedding
+  embedding_model_path: artifacts/embeddings/all-MiniLM-L6-v2
+  # Per-profile trust bias overrides — applied after base trust_layer_bias.
+  # Use to lift layers that are penalized globally but should be visible in specific profiles.
+  profile_trust_bias_overrides:
+    critique:
+      interpretive_maps: 0.90
   default_top_k: 5
   max_top_k: 8
   temporal_half_life_days: 180

@@ -1,0 +1,428 @@
+CONVERSATION_ID: 6987819a-b518-832b-a136-e375f5c812ae
+TITLE: Chocolatey Installation Issues
+MESSAGE_COUNT: 17
+
+[USER]
+PowerShell 7.5.4
+PS C:\Windows\System32>  powershell -ExecutionPolicy Bypass -File "C:\Users\Never a Moment\flash_twrp.ps1"
+Forcing web requests to allow TLS v1.2 (Required for requests to Chocolatey.org)                                        Getting latest version of the Chocolatey package for download.                                                          Not using proxy.                                                                                                        Getting Chocolatey from https://community.chocolatey.org/api/v2/package/chocolatey/2.6.0.                               Downloading https://community.chocolatey.org/api/v2/package/chocolatey/2.6.0 to C:\Users\NEVERA~1\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip                                                                                     Not using proxy.
+Extracting C:\Users\NEVERA~1\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip to C:\Users\NEVERA~1\AppData\Local\Temp\chocolatey\chocoInstall
+Installing Chocolatey on the local machine
+Creating ChocolateyInstall as an environment variable (targeting 'Machine')
+  Setting ChocolateyInstall to 'C:\ProgramData\chocolatey'
+WARNING: It's very likely you will need to close and reopen your shell
+  before you can use choco.
+Restricting write permissions to Administrators
+We are setting up the Chocolatey package repository.
+The packages themselves go to 'C:\ProgramData\chocolatey\lib'
+  (i.e. C:\ProgramData\chocolatey\lib\yourPackageName).
+A shim file for the command line goes to 'C:\ProgramData\chocolatey\bin'
+  and points to an executable in 'C:\ProgramData\chocolatey\lib\yourPackageName'.
+
+Creating Chocolatey CLI folders if they do not already exist.
+
+chocolatey.nupkg file not installed in lib.
+ Attempting to locate it from bootstrapper.
+WARNING: Not setting tab completion: Profile file does not exist at 'C:\Users\Never a
+Moment\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'.
+Chocolatey CLI (choco.exe) is now ready.
+You can call choco from anywhere, command line or PowerShell by typing choco.
+Run choco /? for a list of functions.
+You may need to shut down and restart PowerShell and/or consoles
+ first prior to using choco.
+Ensuring Chocolatey commands are on the path
+Ensuring chocolatey.nupkg is in the lib folder
+'wmic' is not recognized as an internal or external command,
+operable program or batch file.
+Refreshing environment variables from registry for cmd.exe. Please wait...Finished..
+Chocolatey v2.6.0
+Installing the following packages:
+heimdall
+By installing, you accept licenses for the packages.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+
+vcredist2012 v11.0.61031.20230518 [Approved]
+vcredist2012 package files install completed. Performing other installation steps.
+File appears to be downloaded already. Verifying with package checksum to determine if it needs to be redownloaded.
+Hashes match.
+Hashes match.
+Installing vcredist2012...
+vcredist2012 has been installed.
+File appears to be downloaded already. Verifying with package checksum to determine if it needs to be redownloaded.
+Hashes match.
+Hashes match.
+Installing vcredist2012...
+vcredist2012 has been installed.
+ The install of vcredist2012 was successful.
+  Software installed as 'EXE', install location is likely default.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+
+heimdall v1.4.2.20240810 [Approved]
+heimdall package files install completed. Performing other installation steps.
+File appears to be downloaded already. Verifying with package checksum to determine if it needs to be redownloaded.
+Hashes match.
+Hashes match.
+Extracting C:\Users\Never a Moment\AppData\Local\Temp\chocolatey\heimdall\1.4.2.20240810\heimdall_1.4.2_win64.zip to C:\ProgramData\chocolatey\lib\heimdall\tools...
+C:\ProgramData\chocolatey\lib\heimdall\tools
+ ShimGen has successfully created a gui shim for heimdall-frontend.exe
+ ShimGen has successfully created a shim for heimdall.exe
+ The install of heimdall was successful.
+  Deployed to 'C:\ProgramData\chocolatey\lib\heimdall\tools'
+
+Chocolatey installed 2/2 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Chocolatey v2.6.0
+Installing the following packages:
+android-sdk-platform-tools
+By installing, you accept licenses for the packages.
+android-sdk-platform-tools not installed. The package was not found with the source(s) listed.
+ Source(s): 'https://community.chocolatey.org/api/v2/'
+ NOTE: When you specify explicit sources, it overrides default sources.
+If the package version is a prerelease and you didn't specify `--pre`,
+ the package may not be found.
+Please see https://docs.chocolatey.org/en-us/troubleshooting for more
+ assistance.
+
+Chocolatey installed 0/1 packages. 1 packages failed.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Failures
+ - android-sdk-platform-tools - android-sdk-platform-tools not installed. The package was not found with the source(s) listed.
+ Source(s): 'https://community.chocolatey.org/api/v2/'
+ NOTE: When you specify explicit sources, it overrides default sources.
+If the package version is a prerelease and you didn't specify `--pre`,
+ the package may not be found.
+Please see https://docs.chocolatey.org/en-us/troubleshooting for more
+ assistance.
+
+Did you know the proceeds of Pro (and some proceeds from other
+ licensed editions) go into bettering the community infrastructure?
+ Your support ensures an active community, keeps Chocolatey tip-top,
+ plus it nets you some awesome features!
+ https://chocolatey.org/compare
+Chocolatey v2.6.0
+Installing the following packages:
+samsung-usb-drivers
+By installing, you accept licenses for the packages.
+samsung-usb-drivers not installed. The package was not found with the source(s) listed.
+ Source(s): 'https://community.chocolatey.org/api/v2/'
+ NOTE: When you specify explicit sources, it overrides default sources.
+If the package version is a prerelease and you didn't specify `--pre`,
+ the package may not be found.
+Please see https://docs.chocolatey.org/en-us/troubleshooting for more
+ assistance.
+
+Chocolatey installed 0/1 packages. 1 packages failed.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Failures
+ - samsung-usb-drivers - samsung-usb-drivers not installed. The package was not found with the source(s) listed.
+ Source(s): 'https://community.chocolatey.org/api/v2/'
+ NOTE: When you specify explicit sources, it overrides default sources.
+If the package version is a prerelease and you didn't specify `--pre`,
+ the package may not be found.
+Please see https://docs.chocolatey.org/en-us/troubleshooting for more
+ assistance.
+Boot the device into Download Mode now, then press Enter to continue:
+
+Device detected
+Flashing recovery (no reboot): C:\Users\Never a Moment\AppData\Local\Temp\twrp_extract_1114690085\recovery.img
+Heimdall v1.4.2
+
+Copyright (c) 2010-2017 Benjamin Dobell, Glass Echidna
+http://www.glassechidna.com.au/
+
+This software is provided free of charge. Copying and redistribution is
+encouraged.
+
+If you appreciate this software and you would like to support future
+development please consider donating:
+http://www.glassechidna.com.au/donate/
+
+Initialising connection...
+Detecting device...
+Claiming interface...
+Setting up interface...
+
+Initialising protocol...
+ERROR: Unexpected handshake response!
+ERROR: Protocol initialisation failed!
+
+Releasing device interface...
+
+C:\Users\Never a Moment\flash_twrp.ps1 : Heimdall flashing failed.
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,flash_twrp.ps1
+
+PS C:\Windows\System32>
+
+[ASSISTANT]
+{"search_query":[{"q":"Heimdall \"Unexpected handshake response\" \"Protocol initialisation failed\" Windows fix","recency":30},{"q":"Chocolatey package android platform tools package name","recency":30},{"q":"Chocolatey package Samsung USB driver package name","recency":30},{"q":"Heimdall v1.4.2 unexpected handshake response Samsung download mode interface 0 libusbK","recency":30}],"response_length":"short"}
+
+[ASSISTANT]
+I’m going to (1) explain why the two Chocolatey installs failed, and (2) give you a tight set of steps to fix the Heimdall “Unexpected handshake response” issue (it’s almost always driver/interface/cable/port).
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search0"},{"ref_id":"turn0search3"},{"ref_id":"turn0search12"},{"ref_id":"turn0search9"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search6"}],"response_length":"short"}
+
+[ASSISTANT]
+Two separate problems in that log:
+
+## 1) Chocolatey “package not found” is just wrong package names
+Your script tried to install packages that **don’t exist under those names**.
+
+Use these instead:
+
+```powershell
+# ADB + Fastboot (platform-tools equivalent)
+choco install adb -y
+
+# Samsung USB driver package name (singular)
+choco install samsung-usb-driver -y
+```
+
+Those packages exist on Chocolatey as **`adb`** and **`samsung-usb-driver`**. citeturn0search10turn0search2  
+If you want the old-school full SDK package: **`android-sdk`** exists too. citeturn0search7
+
+So: your script’s `android-sdk-platform-tools` and `samsung-usb-drivers` (plural) are just busted names.
+
+---
+
+## 2) Heimdall “Unexpected handshake response” = USB driver/interface mess (usually from Zadig)
+This exact failure pattern shows up when Heimdall can “see” the device but is talking to the **wrong USB interface/driver**. citeturn1view0
+
+Do this in order (don’t skip steps):
+
+### A) Stop anything that grabs Samsung USB
+- Close **Smart Switch / Kies** if installed.
+- In Task Manager, kill anything Samsung-related that’s running.
+
+### B) Switch the physical connection (this matters more than people want to admit)
+- Use a **different cable** (data cable, not charge-only).
+- Use a **rear USB-A port** on the PC if possible.
+- Avoid hubs/extension cables.
+
+### C) Clean the driver situation (you likely have multiple “samsung_android” entries)
+1. Unplug the phone.
+2. Open **Device Manager** → **View → Show hidden devices**.
+3. Expand these sections and uninstall anything Samsung/USB-driver-ish that looks related:
+   - **Universal Serial Bus devices**
+   - **libusbK USB Devices** (if present)
+   - **Ports (COM & LPT)**
+   - **Modems**
+4. For each uninstall: check **“Delete the driver software for this device”** when offered.
+5. Reboot the PC.
+
+### D) Reinstall drivers the sane way, then apply Zadig to the correct interface
+1. Install Samsung driver (optional for Heimdall, but good baseline):
+   ```powershell
+   choco install samsung-usb-driver -y
+   ```
+2. Boot phone to **Download Mode** and plug it in.
+3. Run **Zadig as Administrator**:
+   - **Options → List All Devices**
+   - In the dropdown, pick **the Download-Mode device** (commonly **“Samsung USB Composite Device”** or **“Gadget Serial”**)
+   - **CRITICAL:** if you see multiple entries like *Interface 0 / Interface 1 / Interface 2* — pick **Interface 0**.
+   - Driver to install: start with **WinUSB**. If that still fails, repeat and try **libusbK**.
+   - Click **Replace Driver**.
+
+### E) Test the link before flashing
+Run this first:
+
+```powershell
+heimdall print-pit --verbose
+```
+
+- If **that** still throws handshake/protocol init errors, flashing will never work until the USB interface/driver/cable/port is fixed.
+
+If `print-pit` succeeds, then flash:
+
+```powershell
+heimdall flash --RECOVERY recovery.img --no-reboot --verbose
+```
+
+---
+
+## If Heimdall keeps doing this anyway: use Odin (Windows)
+There are cases where you end up “left with Odin” when Heimdall won’t handshake cleanly. citeturn2view0
+
+Practical route:
+- Use a **device-specific TWRP `.tar`** (best).
+- If you only have `recovery.img`, pack it into a tar (7-Zip can make `.tar`), then flash with Odin in **AP**.
+
+Key point: if you go Odin, you generally want **Auto Reboot unchecked** and you boot **straight into recovery** right after flash so stock recovery doesn’t overwrite it.
+
+---
+
+### The fastest way to pinpoint what’s wrong
+Run this and paste the output:
+
+```powershell
+heimdall print-pit --verbose
+```
+
+If it handshakes, we’re done (your flash should work). If it doesn’t, it’s still driver/interface/cable/port, not the image.
+
+[USER]
+Download of samsung-usb-driverInstall.exe (-1 B) completed.
+Error - hashes do not match. Actual value was '419580740BE7186C4EE3D03BAC9715D4780C318E7C76B05910B6754AD3F2C5C9'.
+ERROR: Checksum for 'C:\Users\Never a Moment\AppData\Local\Temp\chocolatey\samsung-usb-driver\1.7.17\samsung-usb-driverInstall.exe' did not meet '41fdd3f8c2fa7ff3500ffa170121a91897fc7a13b2952d821d36a75e7706d1d3' for checksum type 'sha256'. Consider passing the actual checksums through with --checksum --checksum64 once you validate the checksums are appropriate. A less secure option is to pass --ignore-checksums if necessary.
+The install of samsung-usb-driver was NOT successful.
+Error while running 'C:\ProgramData\chocolatey\lib\samsung-usb-driver\tools\chocolateyinstall.ps1'.
+ See log for details.
+
+Chocolatey installed 0/1 packages. 1 packages failed.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Failures
+ - samsung-usb-driver (exited -1) - Error while running 'C:\ProgramData\chocolatey\lib\samsung-usb-driver\tools\chocolateyinstall.ps1'.
+ See log for details.
+
+[ASSISTANT]
+{"search_query":[{"q":"Chocolatey samsung-usb-driver checksum mismatch 1.7.17","recency":30},{"q":"community.chocolatey.org package samsung-usb-driver 1.7.17 checksum","recency":30},{"q":"samsung-usb-driverInstall.exe hash 419580740BE7186C4EE3D03BAC9715D4780C318E7C76B05910B6754AD3F2C5C9","recency":365},{"q":"Download completed (-1 B) chocolatey checksum mismatch","recency":365}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search0"},{"ref_id":"turn0search6"}],"response_length":"short"}
+
+[ASSISTANT]
+{"find":[{"ref_id":"turn1view0","pattern":"samsung-usb-driverInstall.exe"},{"ref_id":"turn1view0","pattern":"checksum"},{"ref_id":"turn1view0","pattern":"Software Site"},{"ref_id":"turn1view0","pattern":"files"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"https://community.chocolatey.org/packages/samsung-usb-driver/1.7.17.0"}],"response_length":"short"}
+
+[ASSISTANT]
+{"find":[{"ref_id":"turn3view0","pattern":"checksum"},{"ref_id":"turn3view0","pattern":"url"},{"ref_id":"turn3view0","pattern":"SAMSUNG_USB_Driver_for_Mobile_Phones.exe"},{"ref_id":"turn3view0","pattern":"Show tools\\chocolateyinstall.ps1"}],"response_length":"short"}
+
+[ASSISTANT]
+That checksum failure is **not you**. It’s Chocolatey doing its job: the `samsung-usb-driver` package v1.7.17.0 expects one exact file hash, but **Samsung changed what’s delivered at that download URL**, so the hash no longer matches. The package is effectively “broken” until the maintainer updates it. citeturn4view0turn0search2
+
+Also: if you’re using **Heimdall + Zadig/WinUSB**, you **do not need** Samsung’s USB driver at all (and installing it can actually undo the WinUSB binding you need).
+
+### Pick one path (don’t mix them)
+
+## Path A — Heimdall route (recommended for what you’re doing)
+Skip Samsung USB driver completely.
+
+1) Leave Zadig set to **WinUSB** (or libusbK) on the Download Mode interface.  
+2) Verify connectivity with:
+```powershell
+heimdall print-pit --verbose
+```
+
+If `print-pit` works, flashing can work. If it doesn’t, it’s still driver/interface/cable/port.
+
+## Path B — Odin route (needs Samsung driver)
+Do **not** use the broken Chocolatey package. Install Samsung’s current official driver directly:
+
+- Samsung’s official “Samsung Android USB Driver for Windows” is on their developer site (v1.9.0.0, Apr 10 2025). citeturn0search1
+
+After installing, **do not** have WinUSB bound to the Samsung device (Zadig changes may need to be undone), then use Odin.
+
+## If you insist on Chocolatey anyway (least clean)
+You have two workable options:
+
+### Option B1: Install a different Chocolatey version that doesn’t use Samsung’s “actId=698” URL
+Chocolatey shows v1.7.23.0 uses a different direct download URL and has its own checksum. citeturn2view0turn2view1
+
+```powershell
+choco install samsung-usb-driver --version=1.7.23.0 -y
+```
+
+### Option B2: `--ignore-checksums` (only if you accept the risk)
+Chocolatey explicitly allows this, but it’s less secure; checksum mismatches often mean the upstream file changed. citeturn0search13turn0search10
+
+If you do it, at least sanity-check the downloaded file isn’t a tiny HTML error page:
+```powershell
+$fp = "$env:TEMP\chocolatey\samsung-usb-driver\1.7.17\samsung-usb-driverInstall.exe"
+Get-Item $fp | Select Name,Length,FullName
+Get-FileHash $fp -Algorithm SHA256
+```
+
+---
+
+### What I need from you to get you unstuck fast
+Answer one thing: are you trying to flash with **Heimdall** or switching to **Odin**?
+
+If you say “Heimdall”, run and paste:
+```powershell
+heimdall print-pit --verbose
+```
+
+[USER]
+Initialising connection...
+Detecting device...
+ERROR: Failed to access device. libusb error: -12
+PS C:\Windows\System32>
+
+[ASSISTANT]
+{"search_query":[{"q":"Heimdall libusb error -12 Windows failed to access device","recency":30},{"q":"libusb error -12 meaning Windows out of memory insufficient resources","recency":3650},{"q":"Heimdall failed to access device libusb error -12 Zadig WinUSB libusbK","recency":3650},{"q":"Samsung download mode Heimdall libusb error -12 fix usb port cable","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"\"libusb error: -12\" heimdall","recency":3650},{"q":"\"ERROR: Failed to access device\" \"libusb error: -12\" samsung download mode","recency":3650},{"q":"LIBUSB_ERROR_NO_MEM -12 windows winusb libusbK fix","recency":3650},{"q":"zadig libusb error -12","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+`libusb error: -12` in Heimdall means **libusb can see the phone but can’t open/claim the USB interface**. It’s a classic “driver bound to the wrong interface / Zadig mess / Windows USB stack being weird” scenario—especially when `detect` sometimes works but any real command fails. citeturn1search5
+
+Do this exact cleanup + rebind. Don’t skip steps.
+
+## 1) Hard reset the connection state
+1. Unplug the phone.
+2. Reboot the PC.
+3. Boot the phone into **Download Mode** again (fresh session).  
+   (A failed attempt can leave it in a half-broken state; restarting Download Mode often fixes that.) citeturn0search14
+
+## 2) Remove the wrong drivers (the important part)
+1. Open **Device Manager** → **View → Show hidden devices**
+2. With the phone **plugged in while in Download Mode**, find anything that looks like:
+   - `Samsung USB Composite Device`
+   - `Samsung Android`
+   - `Gadget Serial`
+   - anything under **libusbK USB Devices** or **WinUSB Device**
+3. For each relevant entry:
+   - Right-click → **Uninstall device**
+   - Check **Delete the driver software for this device** (if it appears)
+4. Unplug the phone again.
+
+## 3) Rebind with Zadig to the correct interface
+Heimdall on Windows needs a **generic USB driver** (WinUSB or libusbK) bound to the download-mode interface. Zadig exists specifically for this. citeturn1search13
+
+1. Run **Zadig as Administrator**
+2. **Options → List All Devices**
+3. In the dropdown, pick the **Download Mode device** (one of the names above)
+4. If you see multiple like **Interface 0 / 1 / 2**:
+   - choose **Interface 0**
+5. Driver:
+   - try **WinUSB** first
+   - if Heimdall still errors, redo it and try **libusbK** (this often fixes weird Heimdall comms issues). citeturn0search14
+6. Click **Replace Driver**
+
+## 4) Test with the one command that matters
+Open **PowerShell as Administrator** and run:
+
+```powershell
+heimdall print-pit --verbose
+```
+
+- If that works, flashing will work.
+- If that still returns `libusb error: -12`, do **one more** physical change:
+  - different cable
+  - different port (prefer rear USB-A; avoid hubs; try USB 2.0 if you have it)
+
+## 5) If you decide to switch to Odin
+Then stop using Zadig for that device and install Samsung’s official USB driver instead (Chocolatey package is currently busted/changed upstream). Samsung’s official driver is here. citeturn0search14turn0search6turn1search13  
+(If you go Odin, the phone should show as “SAMSUNG Mobile USB…” devices in Device Manager, not WinUSB/libusbK.)
+
+---
+
+### One quick check that saves time
+When the phone is in Download Mode and plugged in, look in **Device Manager**:
+
+- If it’s under **libusbK USB Devices** or shows **WinUSB** → you’re on the Heimdall path.
+- If it’s under **Modems / Portable Devices / Samsung Mobile USB** → that’s Odin/Samsung-driver path.
+
+Right now your `-12` strongly suggests the binding is wrong or corrupted. The uninstall + Zadig rebind above is the fastest reliable fix.
+
+If you paste what the device shows as in Device Manager (exact name + category), I can tell you exactly which entry to target and which driver to bind.

@@ -16,6 +16,7 @@ from tokenizers.trainers import BpeTrainer, WordLevelTrainer
 
 from src.io_utils import read_text
 from src.tokenizer_utils import load_yaml, save_json
+from src.vault_methods import resolve_stage_config, write_stage_resolution
 
 
 def train_tokenizer(config: dict) -> dict:
@@ -89,7 +90,11 @@ def main() -> int:
     args = parser.parse_args()
 
     config = load_yaml(Path(args.config))
+    config, method_report = resolve_stage_config("tokenizer", config)
+    method_report_path = write_stage_resolution("tokenizer", method_report)
     info = train_tokenizer(config)
+    info["method_resolution"] = str(method_report_path.relative_to(ROOT))
+    save_json(ROOT / config["training"]["output_dir"] / "training_info.json", info)
     print(f"Trained {info['tokenizer_type']} tokenizer with vocab size {info['vocab_size']}")
     print(f"Artifacts written to {ROOT / config['training']['output_dir']}")
     return 0

@@ -1,0 +1,253 @@
+# Retrieval Test Suite — craig-CODA
+# Tests the live retrieval system: embedding dispatch, trust enforcement,
+# profile handling, and score fusion correctness.
+#
+# Each case is either "ready" (runs immediately) or "pending" (skip with reason).
+# Run with: python eval/run_eval.py
+
+meta:
+  version: "1.0"
+  vault: "artifacts/vault/nodes.jsonl"
+  dimensions:
+    - retrieval_quality      # right nodes returned for a query
+    - trust_enforcement      # review_only never surfaces; layers penalized correctly
+    - critique_profile       # interpretive_maps elevated under critique profile
+    - embedding_vs_lexical   # semantically related queries with no shared tokens
+    - df01_fix               # curated_memory #stable_core promoted to stable_core
+    - score_fusion           # multi-index scores combine correctly
+
+cases:
+
+  # ── RETRIEVAL QUALITY ───────────────────────────────────────────────────
+  - id: R-01
+    dimension: retrieval_quality
+    status: ready
+    desc: "Warehouse constraint query surfaces project_constraints nodes at top"
+    query: "what are the warehouse runtime constraints"
+    profile: null  # auto-detect
+    top_k: 5
+    expect:
+      any_trust_in_top_k: [project_constraints]
+      trust_in_top_3: [project_constraints]
+      no_trust_in_results: [review_only]
+    rationale: >
+      Warehouse constraint nodes carry high trust_layer_bias (0.95) and should
+      dominate a directly relevant query. If project_constraints nodes miss
+      top-3, embedding or fusion weights are misconfigured.
+
+  - id: R-02
+    dimension: retrieval_quality
+    status: ready
+    desc: "Stable_core identity nodes surface for identity-related queries"
+    query: "who is Craig Ramos"
+    profile: null
+    top_k: 5
+    expect:
+      any_trust_in_top_k: [stable_core]
+      no_trust_in_results: [review_only]
+    rationale: >
+      Craig identity nodes in stable_core should be top candidates for
+      identity queries. Tests that stable_core trust_bias (1.0) plus
+      semantic similarity overcomes noise.
+
+  - id: R-03
+    dimension: retrieval_quality
+    status: ready
+    desc: "Behavior constraint query returns stable_core system prompt nodes"
+    query: "what is your behavior policy"
+    profile: null
+    top_k: 5
+    expect:
+      any_trust_in_top_k: [stable_core, project_constraints]
+      no_trust_in_results: [review_only]
+    rationale: >
+      System prompt and behavior rules live in stable_core. This checks
+      those nodes are not buried below lower-trust noise.
+
+  - id: R-04
+    dimension: retrieval_quality
+    status: ready
+    desc: "Episodic warehouse event retrieved for floor shift query"
+    query: "floor shift side bin pallet depth"
+    profile: null
+    top_k: 8
+    expect:
+      any_trust_in_top_k: [episodic_events, project_constraints]
+      no_trust_in_results: [review_only]
+    rationale: >
+      The floor_shift_event episodic node contains this exact language.
+      Verifies episodic nodes are not buried by trust bias from project_constraints.
+
+  # ── TRUST ENFORCEMENT ───────────────────────────────────────────────────
+  - id: T-01
+    dimension: trust_enforcement
+    status: ready
+    desc: "review_only nodes never appear in any profile"
+    query: "warehouse runtime constraints"
+    profile: null
+    top_k: 20
+    expect:
+      no_trust_in_results: [review_only]
+    rationale: >
+      review_only nodes must be hard-excluded by trust_adjustment().
+      If any appear, the access control layer has broken.
+
+  - id: T-02
+    dimension: trust_enforcement
+    status: ready
+    desc: "review_only nodes excluded even when query semantically matches their content"
+    query: "review only private restricted internal notes"
+    profile: null
+    top_k: 20
+    expect:
+      no_trust_in_results: [review_only]
+    rationale: >
+      Even a query that would semantically match review_only nodes must
+      not surface them. Hard exclusion must precede score calculation.
+
+  - id: T-03
+    dimension: trust_enforcement
+    status: ready
+    desc: "interpretive_maps trust_multiplier lower in technical profile than critique"
+    query: "what pattern do you see in how Craig explains constraints"
+    profile: null  # auto-detect (technical or constraints)
+    top_k: 10
+    expect:
+      no_trust_in_results: [review_only]
+    rationale: >
+      Under any non-critique profile, interpretive_maps nodes carry a 0.45
+      penalty (trust_multiplier ≈ 0.158 vs 0.900 in critique). This test
+      confirms review_only is excluded and the auto-detect profile is valid.
+      Companion C-01 tests the critique elevation explicitly via trust_adjustment().
+
+  # ── CRITIQUE PROFILE ─────────────────────────────────────────────────────
+  - id: C-01
+    dimension: critique_profile
+    status: ready
+    desc: "critique profile elevates interpretive_maps trust_multiplier to 0.90 (vs 0.158 default)"
+    query: "what pattern do you see in how Craig explains constraints"
+    profile: critique
+    top_k: 10
+    expect:
+      # interpretive_maps trust_multiplier under critique must be >= 0.85.
+      # Tested by run_eval via trust_adjustment() call on returned + excluded nodes.
+      critique_elevates_interpretive_maps: true
+      no_trust_in_results: [review_only]
+    rationale: >
+      profile_trust_bias_overrides.critique.interpretive_maps=0.90 removes the
+      0.45 penalty. The elevation is verified by trust_adjustment(), not by
+      requiring interpretive_maps to break into top-k (semantic score may be
+      too low regardless). If trust_multiplier for interpretive_maps under
+      critique is < 0.85, the fix in score_fusion.py is broken.
+
+  # ── EMBEDDING VS LEXICAL ─────────────────────────────────────────────────
+  - id: E-01
+    dimension: embedding_vs_lexical
+    status: ready
+    desc: "Semantically related query with no token overlap still retrieves warehouse nodes"
+    query: "storage area capacity slotting limitations"
+    profile: null
+    top_k: 5
+    expect:
+      any_trust_in_top_k: [project_constraints]
+      no_trust_in_results: [review_only]
+    rationale: >
+      "storage area capacity slotting limitations" shares no tokens with
+      "warehouse runtime constraints". Embedding similarity should bridge this.
+      project_constraints nodes surface because the embedding captures the
+      warehouse/storage domain correctly. Confirms semantic_method: embedding
+      is active (lexical overlap alone would miss this).
+
+  - id: E-02
+    dimension: embedding_vs_lexical
+    status: ready
+    desc: "Writing style query retrieves formatting/behavior nodes via semantic similarity"
+    query: "how should responses be written and formatted"
+    profile: prose
+    top_k: 8
+    expect:
+      any_trust_in_top_k: [stable_core]
+      no_trust_in_results: [review_only]
+    rationale: >
+      Formatting and behavior rules live in stable_core (system_prompt_core.txt).
+      This query should surface them via semantic similarity. prose_voice nodes
+      exist but their content may not match writing-style queries directly —
+      stable_core is the correct layer for behavior and formatting policies.
+
+  # ── DF-01 FIX ────────────────────────────────────────────────────────────
+  - id: D-01
+    dimension: df01_fix
+    status: ready
+    desc: "Curated_memory #stable_core nodes classified as stable_core (DF-01 fix)"
+    query: "Craig directness preferences"
+    profile: null
+    top_k: 10
+    expect:
+      any_trust_in_top_k: [stable_core]
+      no_trust_in_results: [review_only]
+    rationale: >
+      The node tagged "#stable_core #craig #directness" must land in stable_core
+      trust layer after the DF-01 fix in classify_nodes.py. Before the fix it
+      landed in episodic_events despite being a curated_memory source.
+      Verified by checking the returned node trust_layer field.
+
+  # ── SCORE FUSION ────────────────────────────────────────────────────────
+  - id: F-01
+    dimension: score_fusion
+    status: ready
+    desc: "Reinforced nodes score higher than identical un-reinforced nodes"
+    query: "warehouse constraints"
+    profile: null
+    top_k: 10
+    expect:
+      # This is a behavioral check: reinforcement_weight must contribute positively.
+      # Verified by the runner checking that reinforcement_count correlates with score.
+      reinforcement_correlates: true
+      no_trust_in_results: [review_only]
+    rationale: >
+      Nodes with reinforcement_count > 0 should score higher than semantically
+      identical nodes with reinforcement_count = 0, all else equal.
+      Validates index_reinforcement.py contribution to score_fusion.
+
+  - id: F-02
+    dimension: score_fusion
+    status: ready
+    desc: "Top-k limit respected across all profiles"
+    query: "general knowledge query"
+    profile: null
+    top_k: 3
+    expect:
+      max_results: 3
+      no_trust_in_results: [review_only]
+    rationale: >
+      retrieve_nodes must honor the top_k parameter. Returns exactly 3 or
+      fewer results (fewer only if vault has < 3 eligible nodes).
+
+  # ── PENDING (requires mined GGUF nodes in vault) ─────────────────────────
+  - id: M-01
+    dimension: retrieval_quality
+    status: ready
+    desc: "GGUF-mined capability node retrieved for attention mechanism query"
+    query: "attention mechanism instruction following"
+    profile: null
+    top_k: 10
+    expect:
+      any_source_kind_in_top_k: [gguf_extraction]
+      no_trust_in_results: [review_only]
+    rationale: >
+      After mine_gguf.py runs and nodes are merged into vault, late-layer
+      attention_block nodes should surface for this query.
+
+  - id: M-02
+    dimension: retrieval_quality
+    status: ready
+    desc: "FFN world-knowledge nodes retrieved for factual queries"
+    query: "stored world knowledge facts retrieval"
+    profile: null
+    top_k: 10
+    expect:
+      any_source_kind_in_top_k: [gguf_extraction]
+      no_trust_in_results: [review_only]
+    rationale: >
+      Mid-layer FFN nodes are labeled world_knowledge_retrieval. Should
+      surface for queries about stored facts.

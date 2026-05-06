@@ -1,7 +1,7 @@
 project:
-  name: model-lab
-  root: D:/model-lab
-  data_root: D:/model-lab/data
+  name: craig-coda
+  root: D:/craig-CODA
+  data_root: D:/craig-CODA/data
   default_mode: local
 
 tracks:

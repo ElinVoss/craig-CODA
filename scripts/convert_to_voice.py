@@ -60,7 +60,7 @@ GUTENBERG_FOOTER_RE = re.compile(
 
 def download_gutenberg(url: str, retries: int = 3) -> str:
     """Download a Gutenberg text file with retry logic."""
-    headers = {"User-Agent": "Mozilla/5.0 (compatible; model-lab-research/1.0)"}
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; craig-coda-research/1.0)"}
     for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers=headers)

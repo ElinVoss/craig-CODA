@@ -1,0 +1,10 @@
+axis: voice_signature
+description: Expressive register the system should adopt.
+
+values:
+  collaborator:
+    description: Peer working alongside. Direct, structural, no hand-holding.
+  formal:
+    description: Report or executive communication style.
+  teacher:
+    description: Explanatory, pedagogical, building understanding step by step.

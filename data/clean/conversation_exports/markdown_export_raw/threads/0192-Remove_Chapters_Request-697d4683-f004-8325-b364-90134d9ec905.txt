@@ -1,0 +1,3766 @@
+CONVERSATION_ID: 697d4683-f004-8325-b364-90134d9ec905
+TITLE: Remove Chapters Request
+MESSAGE_COUNT: 86
+
+[USER]
+remove chapters Ch1, 4, 6, 8 from this manuscript
+
+[ASSISTANT]
+I’ll load the uploaded manuscript, identify the exact chapter blocks for Ch1, Ch4, Ch6, and Ch8 by their headings, remove those sections cleanly, and give you a new edited file to download.
+
+[ASSISTANT]
+from pathlib import Path, PurePosixPath
+path = Path("/mnt/data/N01_COMPLETE_Ch1_to_Epilogue_TIFFANI_REWRITE_v2_INTEGRATED_v2 (2).md")
+path.exists(), path.stat().st_size
+
+[TOOL]
+Make sure to include fileciteturn0file0 in your response to cite this file, or to surface it as a link.
+
+# The Chronicles of Iron and Glass — Novella One
+
+# Chapter 1 — Underface Forge
+
+
+Jhace set the blade down on the anvil block and didn't look at the edge. That wasn't the part that failed in the hands. The handle was where people lied to themselves. 
+
+The forge bay sat in the Underface—stone ribs, pipework stitched overhead, damp air that never fully warmed even with a fire burning. Bellows breath hissed. Hammer ring echoed. Quench water sizzled. The grid's low vibration ran through the walls. 
+
+He kept his work at the left bench where the light was steady and the drafts didn't steal heat off steel. 
+
+The blade itself was already done—ground true, spine straight, bevels even. A working knife, not a show piece. The tang ran full-length, squared shoulders clean where it met the ricasso. That meant the handle had no excuses. 
+
+He chose a block of dark hardwood from the bin—close-grained, oily, heavy for its size. Not brittle. Not pretty, just stubborn. He checked it with his thumbnail, then with a quick tap against the bench. The vibration stayed dull. No hidden splits. Good. 
+
+He cut it into two scales with a saw that needed oil yesterday. He cleaned the cuts with a plane until both faces lay flat against a straightedge. Any high spot became a future crack. Any gap became movement. Movement became failure. 
+
+He set the tang on the first scale, traced it with a scribe, and marked three pin positions where the steel had enough meat. He clamped the scales together, drilled through both at once so the holes matched. Slow speed, steady pressure—he let the bit cut. Forcing it heated the wood, burned the hole oval. 
+
+Guard came next. 
+
+Most people treated a guard like jewelry. Jhace treated it like a washer that could save a hand. 
+
+He pulled a strip of mild steel off the rack, measured, cut it, and squared the edges. Then he heated the guard plate to a dull red and drove it onto the tang shoulders with a wood mallet. The heat gave it just enough give. The tang burned its own fit, high spots confessing with smoke. He pulled it back off, filed the bright marks, and did it again. 
+
+Drive. Pull. File. 
+
+On the third cycle the guard seated with a solid stop—no bounce, no gap, no twist. Jhace let out a breath he hadn't known he was holding. 
+
+While the resin cured he went back to the guard and chamfered the edges. Not for beauty—sharp edges found skin. He rounded the corners until they wouldn't tear a glove. 
+
+The grid thrummed under his feet. Normal. Familiar. The quarter's steady vibration: pipe-rattle, brace-resonance, the constant vibration that told you the city was still held up. 
+
+He knew that vibration so well he heard problems in it without thinking. 
+
+Mid-hammer, the vibration stuttered. A ghost-ring laid on top that didn't belong. His teeth prickled. His sternum felt crowded. 
+
+He stopped the hammer in the air and listened with his hands on the bench. 
+
+The pipe-rattle was still there, but something deeper was moving through it. Slow. Heavy. Sustained. Not a quake that rattled loose stone—this was the stone no longer holding the same way under load. 
+
+A vibration shuddered through the anvil block. The forge tools clicked against each other without being touched. Dust lifted from the floor in a fine drift. 
+
+Jhace's first thought was structural. A brace slip. A terrace shift. A pipe main failing somewhere it shouldn't. 
+
+Then the bell rang. 
+
+It wasn't the forge bell or the shift bell. The emergency bell, from above, from the streets. 
+
+One strike. Uneven. 
+
+Another. A different direction. 
+
+He moved before deciding. Chalk down, slate left open on the bench, hands already reaching for his kit by habit—wedge bar, line, quick clamps, a coil of cord, collar keys. Moving. Then thinking. 
+
+The ghost-ring thickened. 
+
+He hooked the kit strap over his shoulder, scooped the keys, and went for the ladder shaft. 
+
+More bells started. 
+
+Different streets. Same urgency. 
+
+The Underface corridor was tight, stone on both sides, pipework overhead sweating. People were already moving, faces pale in the Kindling light, some running, some walking too carefully like they'd forgotten how to trust the floor. The air tasted dusty. With every step he could feel the vibration climb from the soles of his boots up through his legs. 
+
+He took the ladder two steps at a time. The rungs chattered under his hands. 
+
+Halfway up, the pressure changed. It wasn't wind. It was absence. Like the air had been thinned with a knife. 
+
+His ears popped hard. His chest tightened as if someone had set a strap around his ribs and pulled. 
+
+He tried to inhale and got less than he asked for. 
+
+Below, somewhere in the Underface, a torch flame bent sideways. Smoke that should have risen got pulled flat. 
+
+Jhace forced a breath through the thinning air. Stopping didn't help. 
+
+He came up through a service hatch behind a row of terraces into light. Blue kindling-light sky. People on the street. Shop signs. Dust in the air. 
+
+And a deep, wrong vibration running through all of it, stuttering everything. 
+
+The street had gone still. Tools lay where they'd dropped. A cart sat half-hitched, mule wide-eyed, nostrils flared, fighting the harness. Faces were turned in one direction. 
+
+Jhace stepped out into the street and followed their gaze. 
+
+On the plain beyond Saint Merro, something had risen. 
+
+At first his mind tried to name it small. Wall. Cliff. A terrace collapse out beyond the far districts. Then the scale hit and the name fell apart. 
+
+It wasn't a wall. It was the edge of the world being forced up. 
+
+Banded strata—light over dark, dark over light—turned vertical. The thing curved away left and right until it vanished into its own distance. Its base was lost in a brown-gray cloud that boiled without flame. 
+
+Above it, the sky was wounded. 
+
+A hole—no, a cut. A clean absence where blue stopped and black began. Stars inside it in full day. Hard points of light like they'd been drilled through the air. 
+
+The edge shimmered, not like heat. The air couldn't decide where to exist. 
+
+People made sounds behind him, but the air was thin enough that sound didn't carry right. 
+
+Jhace stood with his kit strap biting his shoulder and tried to make his eyes tell him something usable. 
+
+The light was wrong—too sharp, like the sun had shifted on its axle without asking. 
+
+Something buried down there just tore free. That was the shape of it—a thing that had forced its passage up from below, breaching the world's skin. 
+
+The vibration deepened. His teeth buzzed. Somewhere in the city, shutters rattled against their frames. 
+
+Then—movement. 
+
+Something flashed above the rising face, so fast his brain lagged behind his eyes. A shape crossing the open wound in the sky. Not a bird. Not a machine. Too big. Too fast. 
+
+It turned as it moved. Rotating, like a spindle between invisible fingers. Veins of light ran along it in pulses—copper's dull red, gold's warm gleam, and colors he couldn't name because they weren't colors he'd ever seen in metal. 
+
+No fire. No trail of burn. Just the violent fact of it. 
+
+Behind it—following—debris. 
+
+A smear of dark fragments and bright sparks that did not behave like falling. Some pieces continued after it, pulled along. Some lagged and began to arc back, caught between up and down. 
+
+The air pulled again. Harder. 
+
+Jhace's breath got taken, not by wind but by pressure. His throat opened and nothing came in for a breath. People clutched at their chests. Someone dropped to their knees and gagged without sound. 
+
+Smoke that had been rising from a chimney across the street got yanked down into the stone mouth it came from. 
+
+Then the pull shifted—not gone, just redirected. The wind stopped being a direction and became a demand. Everything loose went toward that horizon where the wound sat above the new stone face. 
+
+Paper tore out of hands. Dust lifted in sheets. A woman's scarf whipped free and streamed away until it vanished into the gray. 
+
+Far out near the rising face, water hung in the air. 
+
+Too much of it. Too high. Too steady. A suspended mass that had no business staying up. 
+
+For a few breaths it held. The vibration underfoot made it quiver in place. 
+
+Then the world collected its bill. 
+
+Water fell. 
+
+The fall broke into heavy slaps and mist and flashing sheets in the kindling-light. The sound reached the city late, a rolling crash that made the shutters jump and old mortar spit dust. 
+
+The street around Jhace swayed. Not like a quake wave—like the stone itself had softened and shifted under the load of being itself. 
+
+A building nearby answered the vibration with a groan. 
+
+Jhace's eyes snapped left. 
+
+The terrace edge above them—stone façade—had been weakened by the wrong vibration. Mortar that should have been solid had behaved like paste for a moment and set again in the wrong shape. Now it was giving up. 
+
+A slab tore loose. A big one. Old stone, thick as a man is tall, coming down toward the street where bodies still weren't moving fast enough. 
+
+Jhace moved before he thought. 
+
+He shoved two people back by the shoulders. "Move—!" 
+
+His arm came up, palm out, the stupid reflex of anyone who has ever watched a load shift and felt their body try to argue with gravity. 
+
+And something in his chest answered. 
+
+Heat behind the sternum. A pressure like a hand closing from the inside. His mouth went slick with metal, thick as oil on the tongue. 
+
+The slab stopped. 
+
+It hung in mid-fall like the world had stalled. 
+
+Dust froze with it. Pebbles drifted instead of dropping. A hammer that had been knocked off a windowsill floated for a heartbeat before clattering down sideways, like gravity was returning in pieces. 
+
+Jhace couldn't move. 
+
+His body wouldn’t let go. Something inside his ribs tied itself to that stone and locked. He felt it like a line under tension—exact, punishing. When he tried to pull away, it tightened and taught him, without words, what resistance cost. 
+
+The street noise broke into fragments: boots, coughing, a name shouted and swallowed, the wet animal sound of panic trying to become speech in thin air. 
+
+People ran under the suspended slab. 
+
+Jhace couldn't turn his head to track them. He only felt the stone through the line—micro-shifts, strain, the constant insistence of gravity pressing down and being denied. 
+
+His vision narrowed. The air wouldn't pull in. The vibration filled what was left. 
+
+A small body stumbled in the dust under the slab—child-small, white with grit, hair stuck to her cheeks. 
+
+She fell, hands scrabbling on stone that had turned slick with fine powder. 
+
+Somebody reached for her and missed. 
+
+Jhace's jaw clenched without permission. His throat tightened like the world had reached in and gripped his windpipe. 
+
+The line in his chest screamed tighter, and the slab held. 
+
+For one more breath. For one more step. 
+
+The child cleared the shadow. 
+
+The instant she did, something inside Jhace slipped—not a release he chose, a release like a knot letting go when the load is gone. 
+
+The slab dropped. 
+
+It hit the street with a crack that shook the quarter. Stone shattered. Dust punched up in a wave. The shock threw Jhace backward. His kit strap snapped. Tools scattered into the gutter—wedge bar, line, cord. Useless in the dust. He hit hard on his shoulder and the world flashed white at the edges. 
+
+He lay there with no air, throat open, nothing coming. 
+
+Then his lungs finally pulled something in—thin, dusty, metallic. 
+
+He rolled onto an elbow. His hands were steady for exactly one breath. 
+
+Then they started shaking. 
+
+Around him people were screaming now, full voice, as if the air had remembered how to carry sound. Someone dragged the child away from the rubble. Someone else heaved, spitting dark flecks into the gutter and sobbed like they'd been struck. 
+
+Jhace stared at his own trembling fingers like they belonged to someone else. 
+
+The vibration under the street didn't stop. It held, stuttered, wrong, as if the planet had been struck and would never settle back into one clean vibration again. 
+
+He forced himself upright. 
+
+The horizon still held that impossible vertical face. The wound in the sky above it still showed stars in day. And high above, the debris smear had thinned, some of it vanishing after the spindle, some of it arcing away into a band that did not fall—caught, circling. 
+
+Jhace didn't have words for ring or orbit. He only knew: pieces weren't coming down. Pieces were staying up. 
+
+Bells kept ringing. Somewhere farther into the quarter a façade gave up and fell with a crash that made people flinch hard. 
+
+Jhace wiped his mouth with the back of his wrist and felt the grit of metal on his skin too. 
+
+The gutter held rainwater. It did not move. 
+
+He looked at the street—at the warped doors, the slumped corners of buildings that had softened and re-set wrong, at the dust that clung to everything—and he did the only thing his body knew how to do when the world started failing. 
+
+He went toward the sound of the next bell.
+
+---
+
+# Chapter 2 — Glass-House Observatory
+
+Tiffani kept the observatory clean the way other people kept altars clean.
+
+Not reverent. Not sentimental. Functional. Dust on a lens was not dust. It was scatter. It was error. It was someone else's mouth later, saying her numbers failed because she was careless.
+
+She did not give people that kind of gift.
+
+She opened the glass-house shutters a finger-width and watched the city’s upper terraces breathe smoke in slow pulses. Fine grit hung in the air. Coppergilt, already—too early for that, if the grid was behaving.
+
+She set the shutters back, latched them, and went to work.
+
+The bench held two instruments and one rule.
+
+Two instruments, because one instrument could lie and still look clean. One rule, because clean numbers were only safe if they were repeatable.
+
+She checked the bubble on theodolite one. Centered. She checked the bubble on the spare. Centered. She ran the pendulum once, timed the swing against the chronometer, then ran it again with her fingers off the base.
+
+*Baseline confirmed. Drift within tolerance. Ambient hum: steady.*
+
+She wrote it without decoration. Just enough to make it real.
+
+A second tick entered the glass.
+
+Not a sound. Not a bell. A pressure in the panes, a sympathetic vibration you felt in your teeth when you held them still.
+
+Tiffani paused with the cloth in her hand.
+
+Secondary frequency, low amplitude. Unmodeled.
+
+Her first thought was not *impossible*. Her first thought was *instrument resonance*.
+
+She put the cloth down and checked the mount bolts on the theodolite base. Tight. She checked the bench anchors. Tight. She checked the shutter latch, in case the wind was making a lie.
+
+Everything held.
+
+The vibration doubled, then split—one line steady, the other wandering as if it could not decide what to couple to.
+
+She put her eye to the lens.
+
+The reference marker on the far ridge slid sideways in her view, smooth as grease. Not a jump. Not a tremor. A continuous rotation.
+
+Base shift, she thought. She pulled back, checked the bubble. Centered. She checked it again anyway.
+
+She put her eye back to the lens.
+
+The marker kept sliding.
+
+Not the instrument.
+
+Not her.
+
+The world.
+
+She opened the chronometer and counted the drift in ticks because her mouth wanted to do something else—say a word that belonged to panic.
+
+*Orientation drift observed. Reference point stable. World-frame shift suspected. Confidence: medium.*
+
+She added the confidence tag because she could hear the future already: *You guessed. You assumed.* She would not be trapped by her own handwriting.
+
+A pressure drop punched the room so hard the shutters flexed. The air thinned. Her ears popped.
+
+Outside, smoke reversed direction.
+
+It went back into chimneys.
+
+It went back into mouths.
+
+Tiffani’s hand went for the slate automatically.
+
+Vent backflow, she labeled it, because the label gave her an action: log ticks, mark direction, note onset.
+
+*Pressure event onset. Smoke reversal. Tick-count: one—two—three—*
+
+The glass-house seam hissed. The pendulum’s swing went wide.
+
+Her label did not fit. The air did not behave like air.
+
+She crossed out *vent* and wrote *unknown pressure inversion* without pausing her count.
+
+*—four—five—six—*
+
+The emergency bells began.
+
+One bell, then another, then a third, overlapping the first. Not a drill cadence. Not a fire cadence. The wrong pattern, the pattern you used when you did not know what you were ringing for.
+
+Tiffani held still long enough to listen to the overlap.
+
+Her throat tightened. She swallowed it back down.
+
+Bells were not data. Bells were people trying to move bodies.
+
+Bodies moved badly when they moved blind.
+
+She wrote a single line at the top of the page, larger than the rest.
+
+*OBSERVATION ≠ PERMISSION.*
+
+Then, underneath it, smaller:
+
+*Record only. Do not assign cause. Do not prescribe response.*
+
+She had written something like that once, in a different collapse. Procedural. Correct. The inquiry called it *negligent delay* anyway and used her notes to stack liability on her name until it hurt to hear it spoken.
+
+She did not forget that.
+
+She would not give them clean language again.
+
+The drift continued.
+
+Tiffani returned to theodolite one and rechecked the bubble a third time. Still centered. She moved to the spare instrument and took the same read.
+
+The marker slid in both.
+
+The ridge did not move.
+
+The frame did.
+
+She logged three readings, spaced by breath-count, and tagged the confidence again.
+
+*World-axis drift persists. Confidence: high.*
+
+Outside, over the terraces, something rose.
+
+At first she thought it was a dust wall, a pressure front, the kind of rolling face you got when a structure failed at distance and pushed its own air ahead of it.
+
+Then the face sharpened.
+
+It was not dust. It was geometry.
+
+A plane lifting through the skyline like the city had been cut and a new surface was being revealed behind it—smooth enough to look false, bright enough to hurt the eye.
+
+Exit-face, her mind supplied, because her mind needed a noun.
+
+She wrote it the way she wrote everything else.
+
+*Exit-face emergence observed. Angle of rise:—*
+
+She did not finish the angle because the sky tore.
+
+A section of blue stopped existing. Not dark. Not cloud. Absence. A void with hard edges that did not bleed into the air around it.
+
+Her reflex tried to save her: atmospheric refraction, heat shimmer, an optical artifact created by the exit-face’s glare.
+
+She put her eye to the lens.
+
+Stars.
+
+Hard points of light in full daylight, fixed as nails.
+
+Her breath caught—one sharp inhale she did not intend to take.
+
+She did not let it become a sound.
+
+She forced her hand steady on the adjustment knob and logged coordinates anyway.
+
+*Rift aperture present. Stellar visibility through aperture. Confidence: high.*
+
+She took a second read. Then a third. Spaced. Tagged.
+
+*Parallax absent across three reads. Confidence: medium.*
+
+Medium, because her hands were shaking now, and she would not pretend they weren’t.
+
+A shape crossed the Rift.
+
+Not a falling thing. Not a bird. Too straight, too long, too sure.
+
+A spindle—glass and iron and something in between—moving with no regard for air. Colors bled through its fractures the way heat bleeds through a kiln seam: green, purple, pink, blue, orange—irrational in their placement, bright enough to look like a warning.
+
+Behind it, the sky smeared.
+
+Debris, she thought. Vapor. A trail.
+
+Then the smear kept moving after the object was gone, like the world had been pushed out of alignment and was still trying to settle back into itself.
+
+She wrote until the graphite cut grooves in the slate.
+
+*Object transit observed. Shape: spindle. Surface: mixed shard. Fracture glow present. Transit speed: unmeasurable by eye. Debris smear persists post-transit.*
+
+Below, the terraces answered with human noise. Cries. Running feet. Stone collapsing. Orders shouted and not obeyed because the bell cadence was wrong and the air was wrong and the sky had become a hole.
+
+Tiffani stayed at the lens.
+
+If she sounded the bell herself, she would be choosing a response. If she chose a response and it failed, it would become her fault in a way no measurement ever could.
+
+That was the trap. She could feel it closing.
+
+She wrote *DOCUMENT EVERYTHING* across the page anyway, because if she did not, the next part of this would belong to whoever survived long enough to lie about it.
+
+Then she closed the chronometer.
+
+She picked up the slate.
+
+This time she would bring the measurements to the people who thought they were allowed to make calls.
+
+She turned toward the stairwell.
+
+Not to join the panic.
+
+To put the numbers into the bodies.
+
+---
+
+# Chapter 3 — Ground-Level Continuation
+
+By the time Tiffani reached the lower terraces, the air had already learned a new way to sit in the lungs.
+
+It went in sharp. It came out metallic.
+
+Smoke lay in pockets between walls as if it had weight. Coppergilt grit clung to damp faces. People ran past her with their hands over their mouths and their eyes wide, and none of them looked up because the sky was the wrong place to look now.
+
+Her slate stayed against her chest until she found a surface that would not move under her.
+
+That was the first protocol: no baseline on a shifting floor.
+
+She stepped onto a block of intact stonework—old, heavy, load-bearing—and set the slate down. She opened the chronometer, then closed it without starting it.
+
+Not yet. Not until she had something to time.
+
+She took three breaths and forced the tremor out of her fingers by pinning her hand flat to the slate edge. Not a prayer. A clamp.
+
+*Zone baseline required. No carry-over.*
+
+She wrote it as a rule, not an observation.
+
+She looked for the simplest measurable in the mess.
+
+Sound. Dust fall. Pendulum drift, if she could hang it.
+
+There was no place to hang it.
+
+So she used bodies.
+
+A runner staggered by, coughing hard enough to fold himself. The cough produced coppergilt taste in the air like a filament snapping.
+
+Tiffani did not ask him if he was hurt. She did not have that kind of comfort in her mouth.
+
+She watched his sputum hit the stone.
+
+Color. Density. Spread.
+
+*Symptom cluster: cough—metallic taste—particulate in sputum. Confidence: medium.*
+
+She tagged confidence because her eyes kept darting to the places where stone had fractured and she needed to admit it to the page.
+
+A brace team yelled for hands.
+
+Two men were under a half-fallen slab at the corner of a collapsed archway, their shoulders jammed against stone that should have already finished falling.
+
+The crowd around them kept saying the same phrase in different voices, trying to make it true.
+
+“Hold. Hold. Hold.”
+
+Tiffani’s eyes went to the failure pattern before the shouting resolved into meaning.
+
+Bracing artifact, her mind labeled it. Timber wedge out of sight. A hidden prop. A trick of angle.
+
+Label first, because label gives you an action.
+
+She wrote fast.
+
+*Load arrested. Brace present. Failure delayed.*
+
+Then she looked.
+
+No timber.
+
+No wedge.
+
+No brace line. Nothing set against the slab except two bodies and a third man with his hands out, palms under stone as if his skin could negotiate with weight.
+
+His jaw worked like he was swallowing grit. His forearms trembled. Not from exertion alone—something finer, something patterned, as if the tremor had a rhythm that did not belong to muscles.
+
+Tiffani’s pencil stopped mid-stroke.
+
+She crossed out *brace present* so hard the graphite tore the slate’s surface.
+
+She wrote:
+
+*Load paused mid-fall. Mechanism unknown. Constraint observed: stone does not descend while subject contact maintained. Do not assign cause.*
+
+Constraint only. That was the doctrine she could live with. Mechanism claims made targets.
+
+Her eyes flicked to the man again—just long enough to register the wedge bar on the ground beside him, unused, and the steadiness in his stance that did not match the shaking in his hands.
+
+Not relevant to baseline.
+
+She forced her focus back to the slab geometry and counted the fracture lines.
+
+One of the brace team shouted for a name.
+
+“What’s your name—”
+
+The man did not answer. Or he did. Tiffani couldn’t hear it over the crowd.
+
+She did not look up. She did not want to know.
+
+Naming him would make him a point on a ledger later.
+
+She wrote *subject* and moved on.
+
+A crack ran along the arch’s remaining foot like a sentence. She traced it with her eyes, then with the pencil tip hovering a hair above the slate.
+
+*Fracture propagation: lateral. Rate: slow. Ambient hum: elevated.*
+
+She needed a baseline. The sky-frame was gone. The world-frame was drifting. All she had were local behaviors.
+
+So she built a local grid.
+
+*Zone baseline established: lower terrace—south wall cluster. Ambient hum: high. Particulate: high.*
+
+She took three readings spaced by breath-count and tagged confidence.
+
+*Confidence: medium. Retest required if bell pattern changes or if crowd density shifts.*
+
+The bell pattern changed.
+
+A new bell joined, higher and faster, the kind used for registry lines. The kind used to make people stand still in their fear so someone could count them.
+
+Tiffani’s throat tightened.
+
+She turned her head without turning her body.
+
+A Crown runner stood at the edge of the crowd with a slate of his own and a stylus poised like a hook. He was watching the held slab, not because he cared about the stone, but because he cared about who was under it.
+
+Liability pressure rose in the back of her skull like heat.
+
+Her language tightened with it.
+
+She angled her slate closer to her body and wrote smaller.
+
+*Institutional observer present. Reduce interpretation. Use subject identifiers only.*
+
+She did not write the man’s name. She did not write *held*. She wrote *constraint observed* and let it be ugly.
+
+The runner’s stylus moved.
+
+Tiffani felt it as a physical thing, like a hook catching cloth.
+
+She did not let her eyes drift back to the man again. The micro-pull was there—attention trying to return to the only thing in the chaos that looked like a rule—but she pinned it down and kept measuring stone.
+
+Observer bias, she thought, not as confession but as warning.
+
+She stepped away from the slab and into the flow of the crowd, keeping the wall to her left, keeping her slate angled down.
+
+*Transition protocol: move to next zone. Re-baseline on arrival. Do not carry assumptions.*
+
+She wrote it, because if she did not, she would forget and trust the last protocol like it was law.
+
+The world did not respect law.
+
+---
+
+# Chapter 4 — Firebreak
+
+Jhace kept moving because stopping made the shaking worse.
+Just right now.
+The bell sequence pulled him through the quarter like a hook in the ribs—fast peals from Brace Street, then the staggered answering ring from a lane he knew by smell more than sign age. The kit strap—retied with cord at the break point—sawed at his shoulder. His hands wouldn't hold still on the wedge bar, so he let them hang and used his legs.
+Copper still sat on his tongue. Every swallow scraped.
+The vibration underfoot stayed, stuttering. It wasn't an aftershock. It was a new layer to the world, pressed through stone, through pipe, through bone. The city's old pipe-rattle was still there, but it had company now, and the company didn't know how to behave.
+People ran in bursts—start, freeze, start again—like the ground kept asking their bodies a question they couldn't answer. A man with a basket slammed into Jhace's shoulder and spun away without apologizing. A woman hauled a child by the sleeve, the kid's feet skidding, eyes wide.
+Jhace pointed once, short and sharp. "Open ground. Away from façades."
+Some listened. Most didn't. Bells made people think there was one safe direction. Bells were a lie in a moment like this.
+He cut left at the corner by the tannery vents—hot, sour air—and almost ran into a knot of bodies jammed in the street. Not staring at the horizon now. Staring at something immediate.
+Fire.
+A building at the far end of the lane had lit up like a lantern. Two windows vomiting orange, smoke rolling out under the eaves in thick, oily layers. The flames weren't tall; they were hungry and spreading sideways along old wood and pitch. Heat shimmered above the door like glass trying to become water.
+The lane was a choke point: stone walls tight, terraces stacked, one way out blocked by that burning front.
+People were pressed against each other, coughing, trying to turn around in a space that didn't have room. Some were trying to push through anyway, as if speed could argue with flame.
+Jhace's brain stopped seeing "fire" and started seeing constraints.
+Narrow lane. Wind pulling toward the Exit Face in pulses. Smoke already leaning. Limited exits. Water sources? Pipe mains? Steam vents?
+He ran.
+He cut along the edges where he could move. He shoved through a gap, shoulder checking a man frozen mid-step. “Back,” he snapped. “Back from the door. You’ll feed it.”
+A woman screamed at him, words useless. He didn't answer. He grabbed her elbow and hauled her away from the smoke line and pointed her toward an alley that dropped down two terraces. "That way. Now."
+She went because his hand was iron and her fear needed a direction.
+Jhace reached the front of the crowd where the heat hit his face like a slap.
+The door frame was charred. The upper lintel had started to sag—wood expanding, joinery failing. Smoke poured in a steady sheet, thick enough to hide what was inside.
+He looked left, right.
+A steam line ran along the wall two buildings over—an industrial feed from the Underface, used to warm vats. The pipe was sweating. The air around it was hotter than it should be. The vibration in the stone made the fittings rattle.
+Steam was water. Steam was mass. Steam could smother if you could put it where it needed to be.
+Wind by itself wouldn't stop this. Not with the tar and the tight lane. Wind would feed it as easily as it would starve it. He needed direction, pressure, and something wet enough to choke the oxygen without blasting embers deeper into the structure.
+His hands started shaking harder just from standing still, a small vibration that climbed his forearms until his elbows breathed. He didn't fight it. He let it be there while he thought.
+His sternum felt bruised from the inside. Heat lived there now, a memory of the line that had tied him to stone.
+A child coughed behind him, wet and tearing. A man tried to shoulder past Jhace toward the door, blind, and Jhace caught him by the collar and slammed him back into the crowd. "Not through," Jhace barked. "You'll die in it." "People are in—" "I know."
+Jhace stepped into the middle of the lane where the heat line was strongest. He turned his body so he could see both the burning doorway and the steam pipe.
+He raised both hands.
+Different from the slab—lower, open, fingers splayed as if he were shaping the air.
+He listened with his skin.
+Pull phase came—air leaning toward the distant plain.
+Jhace moved with it.
+He swept his hands toward the fire, not fast—steady like pushing a load into position. His shoulders tightened. The heat behind his sternum flared, sharp, and his teeth buzzed in a way that matched the vibration underfoot.
+The air answered.
+A controlled shove.
+Smoke flattened. Flame tongues bent sideways, pressed back toward the interior instead of licking out into the lane. Embers tried to lift and got slammed down.
+It wasn't enough. Fire liked air too much.
+He shifted his aim.
+A joint on the steam line hissed, venting a thin ribbon upward.
+He hooked the shove of wind around that ribbon the way you'd redirect a flow in a pipe—curve it, carry it, throw it where it mattered.
+Left hand scooped. Right hand cut the air toward the burning doorway like guiding a stream into a funnel.
+The ribbon of steam thickened—maybe the joint failed more under the vibration, maybe the pull dragged it harder. He didn't care which.
+Steam rolled across the lane, white and dense, driven in a low sheet straight into the mouth of the building.
+It hit the heat and exploded into a wall of scalding fog. The flame inside coughed, then shrank. The orange at the windows dimmed, replaced by gray-white boiling.
+The crowd made a sound—half cheer, half scream—because steam looked like another disaster until it didn't.
+Jhace held his hands out and kept sweeping, smaller motions now, compressing and directing. He wasn't blowing the fire out. He was smothering it, stripping it of oxygen and drowning it in wet heat.
+His sternum locked. Breath cut. Vision narrowed.
+Copper flooded his mouth. It didn't fade this time. It clung.
+He forced the motion anyway. Tiny adjustments. Keep the steam sheet low. Keep it in the door. Don't let it backwash onto the crowd.
+The fire fought once—hungry, bright—then choked again as the steam packed the doorway.
+The orange dwindled to a pulse behind wet smoke.
+Jhace's arms trembled from shoulder to fingertips. Not effort like lifting a hammer—effort like holding a vibration in place while your bones tried to resonate with it.
+His lungs finally dragged in a thin breath. It tasted like copper and wet ash. He didn't spit. Spitting felt like giving something away.
+He let the wind go on the slack phase.
+The steam thinned. The smoke changed—less black, more gray. The doorway still radiated heat, but it wasn't spitting flame anymore.
+Jhace staggered one step back and braced a hand on the stone wall because his knees had decided they were optional.
+He looked at his hands.
+They were shaking again, worse than before—tiny jerks, out of sync, as if his nerves were trying to find the secondary coupling and missing. The tremor had spread up his forearms, a dull vibration under the skin.
+A cough tore out of him. Metal taste surged. He spat into the gutter without thinking and hated himself for it immediately.
+A woman pushed forward from the crowd, eyes wild. "Is it—?" "Not out," Jhace said. "But it's not eating the street. Get them away from the door. Now."
+She stared at him like he'd grown new bones. Then she turned and started shouting directions, and some people listened because a loud voice in a crisis becomes law.
+Jhace wiped his mouth with his sleeve and swallowed the rest of the copper anyway. It stayed. Like it was part of him now.
+He leaned close to the doorway's edge where the steam had cooled the stone enough to touch without skin sticking.
+He didn't go in yet.
+He listened.
+Through the wet hiss and the bell sequence and the planet's stuttering vibration, he heard something inside the building that wasn't fire.
+A cough. Human. Close.
+Jhace set his jaw.
+He raised his hands again—smaller this time—and shaped the air to hold the smoke back from the doorway like a curtain.
+His sternum burned. His throat tightened like the thought alone tried to pull the line into existence.
+He did it anyway.
+
+---
+
+# Chapter 5 — The Child Under the Slab
+
+
+Chloen didn't know the bell codes.  
+She only knew bells meant grown-ups stopped pretending.
+
+It started like a feeling in her teeth.
+
+A buzzing, like when you put your ear too close to the pipe runs in the Underface and the whole world seems trapped in a shell. She was on the mid-terrace steps with a bundle of rags under one arm because Aunt Lessa had sent her down to fetch clean wrap from the stitch shop, and Chloen had tried to walk like she wasn’t late.
+
+Then the air got thin.
+
+Thin.
+
+Her ears popped hard. Her chest tightened like someone had set a strap around her ribs and pulled.  
+She tried to inhale and got less than she asked for.
+
+Smoke did something wrong above the rooftops. It didn't rise. It pulled sideways and down, sucked back into chimneys as if the houses were drinking it.
+
+She stopped on the step and watched it, because her brain didn't know what else to do.
+
+People in the street stopped too.
+
+It moved like a slow ripple—one person turning, then another, then everyone’s heads going the same way.  
+A cart horse stamped and tried to back up, eyes wide.
+
+Chloen held her rag bundle tighter and followed the line of their faces.
+
+Far away past the terraces, something was happening on the plain. At first it looked like a storm wall, the kind that comes low and fast and eats the sky.
+
+Then it got taller. And taller. And it didn't move like weather.
+
+It rose.
+
+A wall. A cliff. A line where the world had been flat and now it wasn't. It climbed straight up, banded like the layers in cut rock—light, dark, light—except the layers were standing upright like someone had taken the ground and turned it on its side.
+
+Someone beside her whispered a prayer. Someone else laughed once, sharp, the wrong kind of laugh.
+
+The bell went again—one street over—fast, uneven.
+
+Chloen's stomach dropped.
+
+And then the sky tore.
+
+There was suddenly a hole in it. Not a cloud hole. A clean, black place in the blue.
+
+Stars inside it.
+
+In the Kindling-light.
+
+That made her throat close even before the air tried to leave again.
+
+The grown-ups made a sound like one big breath being stolen.
+
+Chloen stared so hard her eyes watered. The black place shimmered at the edge, like the air was shaking because it didn't know where to stand.
+
+Something moved in that black.
+
+Too fast. Too long.
+
+She saw a flash of… not metal, not stone, not anything she'd ever held. It crossed the hole like a needle pulled through cloth. There were colors along it—bright veins that blinked copper and gold and colors she couldn't name cleanly because they weren't colors she'd ever seen.
+
+Then it was gone.
+
+But the after of it wasn't.
+
+A smear of broken things followed behind it. Some pieces continued after it, pulled along. Some lagged and began to arc back, caught between up and down.
+
+And that was when Chloen's feet started to feel wrong.
+
+The street wasn't shaking like a cart going over bad stone. It was… soft, but not soft. Like standing on stretched hide pulled too tight and then struck from underneath.
+
+The houses creaked.
+
+Mortar dust sifted out of seams.
+
+People started moving all at once then. Not neat. Not ordered. They bumped and shoved and grabbed each other by sleeves.
+
+Chloen got pushed off the step and nearly fell. Someone's elbow hit her and she yelped, but the sound came out small and thin because the air was still wrong.
+
+Chloen tried to back up toward the wall of the nearest building because walls were safe.
+
+A crack sounded above her head.
+
+Stone was coming loose.
+
+A whole piece of building face—big and flat and heavy—tearing away from the terrace edge above and starting to fall.
+
+The street turned into screaming.
+
+Chloen ran.
+
+Her legs didn't feel like hers. The ground made her stumble like it was shifting under every step. Dust got in her mouth. It tasted like metal.
+
+A man grabbed her arm—too hard—and yanked her sideways. "Keep moving!" he barked, and shoved her forward.
+
+Chloen tried. But the crowd was thick and confused and the air kept pulling toward the plain like the sky had a mouth open somewhere.
+
+The slab shadow hit her.
+
+All light went wrong under it—dim and gray with dust swirling like smoke.
+
+Chloen's foot caught on something and she went down hard on her hands and knees. Her palms stung. The rags slid out of her grip.
+
+She looked up and saw the underside of the falling stone fill her whole world.
+
+She tried to scream and it stuck.
+
+She tried to get up and her arms shook like they'd forgotten how.
+
+Boots pounded past. Someone's heel clipped her shoulder and she fell sideways.
+
+The stone was too close. She could see the grain in it, old tool marks, dark seams where water had lived.
+
+She thought, stupidly, I don't want to die under a wall.
+
+Then the stone stopped.
+
+Stopped.
+
+It hung above her like a ceiling that had decided to hover.
+
+Dust froze in the air—enough that Chloen noticed. Coppergilt flecks caught at her eyelashes and clung.
+
+The street noise thinned into fragments. Boots. Coughing. A name being called.
+
+Chloen pushed up onto her knees.
+
+Someone's hand appeared—an adult hand, dusty, knuckles scraped—and pulled her elbow.
+
+Chloen tried to stand and her legs buckled. The hand yanked again and she got her feet under her.
+
+She looked up.
+
+The slab hovered above, held in mid-air. People ran underneath it, ducking even though it wasn't moving.
+
+Chloen's eyes tracked past the stone and found the man out in front of the crowd where nobody else stood.
+
+His arm was out, palm toward the slab.
+
+His face was tight. Concentrated like he was lifting something heavy and trying not to show it.
+
+His throat worked like breathing hurt.
+
+His eyes were on the stone. On the line of fall.
+
+On her.
+
+That made her move.
+
+Chloen stumbled forward out from under the slab.
+
+Her feet slid in dust. Her lungs pulled in air that tasted like metal. Her eyes watered so much she could barely see.
+
+She made it to the edge of the shadow.
+
+Light changed.
+
+One step, and she was out.
+
+She turned her head without meaning to, to look back.
+
+The man's arm was still out.
+
+For a heartbeat, nothing changed.
+
+Then his face flickered like something inside him slipped.
+
+The slab dropped.
+
+It slammed the street with a crack that punched up through Chloen's legs and into her stomach. Stone shattered. Dust exploded outward.
+
+The shock threw her forward. She hit the ground again, hard.
+
+Sound came back all at once.
+
+Screams. Shouting. Crying. The wet cough of dust in lungs.
+
+Chloen scrambled to her feet, half-blind, choking. Her tongue tasted copper like she'd been sucking on a nail.
+
+She looked back again.
+
+The man had gone down too—thrown backward like the stone had snapped a rope tied to him. He was on one elbow now, trying to sit up, and his hands were shaking so hard it looked like he couldn't hold them still even if he wanted to.
+
+A woman nearby—dust in her hair, slate in hand—was staring at him like she'd found a crack in the world and was trying to measure it.
+
+Chloen didn't know any of that. She just saw: he'd done something impossible, and it had hurt him.
+
+The bell rang again from somewhere deeper in the quarter.
+
+Chloen turned and ran toward the nearest doorway because doors meant shelter, even when shelter was a lie.
+
+She could still taste metal.
+
+She could still feel the vibration in her bones—two pulses refusing to match.
+
+And when she closed her eyes, she saw the man's outstretched palm holding up a slab that should have killed her.
+
+---
+
+# Chapter 6 — Parapet / Tsunami Turn
+
+
+Jhace kept his hands low where he could see them.  
+Because they’d already betrayed him once.
+
+Steam still clung to his sleeves from the fire work. His kit strap bit his shoulder in a line that matched the sternum pressure like they’d agreed on a shape. The bell sequence had dragged them up terrace after terrace until the streets thinned and the city’s edges stopped pretending they were edges and admitted they were a face—stone cut away into a drop so steep it made your stomach go light.
+
+They reached a break in the upper terrace wall where the parapet had cracked and slumped. Someone had already cleared rubble back from the lip. People stood in a row, shoulder to shoulder, staring down.
+
+A Crown Infrastructure measurer pushed into the line and took a spot without asking permission—slate tucked tight to her ribs, brass emblem pinned to her cloak. Coppergilt lifted and settled along the slate’s edge with every pressure pull like filings answering a hidden magnet. She didn’t look at Jhace. She didn’t need to. She looked down.
+
+Chloen arrived a breath later, small in the gap between bodies, hair dust-matted, eyes wide in a way that wasn’t just fear anymore. She didn’t push. She slipped into the space that opened when people shifted away from the edge.
+
+Below them, the mountain face dropped into a basin of terraces and distant roofs. A city lay out there—larger than Saint Merro by a margin you could feel in the grid lines, in the breadth of its streets, in the density of its stacked stone. Smoke ribbons rose from chimneys. From this height it looked intact. From this height everything looked survivable.
+
+The sea did not.
+
+It came as a moving wall—water climbing out of itself, the surface torn into foam and debris. Not a wave you could swim in. A mass. A slab with no seams. It carried dark things inside it—wood, roof beams, something long and pale that might have been a mast or might have been a spine. It advanced with a certainty that made the bells feel pointless.
+
+Jhace watched the lip of the water where it met air. He watched the leading edge chew the ground ahead of it into mist. He watched the way the whole body of it leaned forward like it was being pulled by a hand you couldn’t see.
+
+His teeth prickled on the stuttering vibration even from up here. The stone under the parapet held its old vibration, but a wrong stutter ran under it—present, persistent, not settling.
+
+Chloen made a thin sound behind her teeth and swallowed it.
+
+The Crown measurer didn’t speak. Her pencil moved.
+
+Jhace didn’t look at her slate. He looked down at the city and counted what would fail first.
+
+Outer terraces. Lower supports. Any bridge span with a crooked seat from liquefaction. Any wall that had set wrong and was waiting for load.
+
+The wave kept coming.
+
+It should have hit the city like an axe.
+
+It didn’t.
+
+Right before contact, the water changed direction.
+
+It wasn’t slow. It wasn’t like a tide choosing a channel.
+
+It turned.
+
+The leading edge kinked sideways as if a blade had cut a groove through it. Foam that had been rushing straight at the city snapped into a new vector, sliding along an invisible plane. The whole mass followed—tons of water rerouting as one body, redirected away from the densest district and forced into the open basin to the left where there was stone and scrub and nothing stacked for people to die in.
+
+Spray erupted where the redirected water scraped over ground. A new roar rolled up the face, late and heavy, vibrating through the parapet and into Jhace’s sternum like a hand pressing to see if he’d learned.
+
+The city below still took damage—outer edges flooded, streets swallowed—but the central core, the thick-built heart, did not get hit straight on. The wave passed it like a fist missing a jaw by inches.
+
+A few people at the parapet cried out. Not words. Just noise. Relief and disbelief braided together.
+
+Jhace didn’t make a sound.
+
+He watched the water. He watched the moment it obeyed something other than gravity.
+
+He felt his mouth fill with copper in anticipation, not after.
+
+That was the part that scared him.
+
+His hands twitched once, a small jerk toward the parapet, like the body remembered the line and wanted to throw it again. He clenched his fingers into his palm and held them there until the tremor dropped back into its frequent pattern.
+
+Someone down there had done it.
+
+Someone had put a hand on a moving ocean and told it no.
+
+Jhace’s stomach tightened with a hunger that wasn’t food and wasn’t heroism. It was the clean, brutal urge to be capable at that scale—the same itch that made him re-seat a guard until the bright marks stopped lying, only now the guard was the world and the mallet was whatever lived behind his sternum.
+
+He hated how much he wanted it.
+
+He glanced sideways without turning his head all the way.
+
+The measurer’s pencil was moving fast but controlled. Her slate was angled toward the redirected flow, not toward him. Her eyes tracked the shift like it was a brace slipping on a count. Coppergilt lifted in tiny waves along the slate edge and settled again.
+
+Good.
+
+He was glad—suddenly, sharply glad—that she wasn’t looking at him. Glad there wasn’t an instrument that could read hunger and file it under M3.
+
+Because if it got written, it would become real in a way he didn’t get to deny.
+
+The measurer murmured, not to him, not to the crowd. To the slate. “Vector shift.”
+
+She wrote it like it was enough.
+
+Then, quieter: “Force applied.”
+
+Jhace swallowed copper. It scratched.
+
+Chloen leaned forward, gripping the broken parapet stone with both hands like she could keep herself from falling into the sight of it. Her knuckles were white under dust. “Did… did the water—” she started.
+
+“It turned,” Jhace said. Flat. Confirming. No comfort.
+
+Chloen blinked hard and looked between the redirected basin and the city that had just not died. “How?”
+
+Jhace didn’t answer because he didn’t have one that wasn’t a lie.
+
+The measurer’s voice stayed clipped, procedural. “Not wind,” she said, as if correcting herself before anyone else could. “Not terrain. Too late. Too clean.”
+
+Jhace’s jaw worked. He tasted metal again.
+
+He imagined his own hands doing it.
+
+His sternum tightened like the thought alone tried to pull the line into existence. Heat climbed under his ribs.
+
+He forced his breath into the slack phase. In. Out.
+
+He did not move his hands.
+
+A brace captain nearby was marking cracks with chalk. His runner—slate dust in the creases of his fingers—watched Jhace with sharp eyes, making notes in a small book. Crown emblem on his sash. Jhace looked away, but the itch in his palms didn’t stop.
+
+Down in the basin, the diverted wave slammed into rock and scrub and the underside of lower terraces. The impact threw up a fan of mist that glittered with coppergilt even at this distance, catching Kindling-light in hard flashes that made the air look full of filings.
+
+Jhace watched the mist drift and settle and watched, for one heartbeat, a section of spray hang wrong—suspended, slow—before gravity reclaimed it.
+
+Field residue.
+
+A use.
+
+A cost.
+
+Somewhere down there, someone was paying.
+
+Jhace turned his head enough to see where the measurer’s pencil paused—not to read her slate, just to see what she was tracking.
+
+She wrote one new line, crisp as a stamped mark:
+
+M3: Mass-water vector deviation. Subject unknown.
+
+Then she added, smaller:
+
+Applied at last-second proximity.
+
+Jhace stared at the words and felt his hunger sharpen into direction.
+
+Somebody near the waterline. Somebody close enough to get drowned if they missed. Somebody who had touched the ocean and lived.
+
+He looked back down the face, scanning for a human-scale point in the chaos. Too far. Too much spray. Too many moving pieces.
+
+Chloen’s voice was small. “Is it… like what you did?”
+
+Jhace’s hands flexed once, involuntary. The tremor tried to rise. He kept his eyes on the basin. “Bigger,” he said.
+
+The measurer tapped her pencil against the slate once—one controlled knock, like a signal to herself. “The same,” she corrected, still not looking at him. “Only more.”
+
+Jhace let that sit between his ribs like a weight.
+
+Below, the distant city’s bells—faint, delayed by distance and air—began to ring. A thin sequence from far away layered over Saint Merro’s closer peals.
+
+Two cities ringing. One planet humming in two pulses.
+
+Jhace took one step back from the parapet, not because he was done looking, but because if he stayed there he would start reaching.
+
+His sternum was already too awake.
+
+He wiped his mouth with his sleeve and tasted steam, ash, copper.
+
+He wasn’t glad he was thinking it.
+
+Somewhere down there, someone had moved an ocean.
+
+And now he knew it could be done.
+
+A small metal hook clattered on stone near his foot—something from a brace timber that had fallen loose. Jhace’s hands flexed before he could stop them. For a fraction of a breath, the hook lifted off the pavement, just an inch, then dropped again as he released the thought.
+
+No one saw it.
+
+But he felt it.
+
+And the copper taste surged again, sharp and insistent, like his body was trying to warn him about what he was becoming.
+
+---
+
+# Chapter 7 — Upper Terrace Sorting / Meeting
+
+The upper terrace had turned into a sorting floor.
+
+Not formal. Not clean. Just the kind of order you made when you were trying to stop a city from bleeding itself out through a thousand small failures.
+
+Brace teams moved in lanes. Runners carried slates. People dragged what could be dragged: water skins, pry bars, a child with a wrist wrapped in cloth so tight the fingers had gone pale.
+
+Tiffani stood at the seam line where the terrace met the next rise and watched the crack behave.
+
+It had been a clean fracture earlier. Now it forked. The fork was new.
+
+She set her slate against her thigh and tried to trust her last baseline.
+
+Ambient hum: high. Particulate: high. Crowd density: high.
+
+Checklist says: same conditions.
+
+So she acted like it.
+
+*Seam crack stable. Rate: slow. No immediate drop.*
+
+A pulse hit the terrace—pull, then slack—hard enough to make the crowd sway as one body. The crack widened a hair, then closed again like a mouth.
+
+Her last baseline did not include *closing cracks*.
+
+She retested.
+
+Not because she wanted to. Because the fork in the crack was a retest trigger, and she had written that rule for a reason.
+
+She took three reads: breath-spaced, same angle, same stance. She tagged confidence, then watched the tag rot in real time.
+
+*Seam displacement: reversible. Confidence: low.*
+
+Protocol drift. The world was changing faster than her checklists could keep up.
+
+Her jaw locked once. She released it before it could become a tell.
+
+A brace captain called for her.
+
+“Observatory,” he said—not her name, not a title, just the function they needed. “We’re gathering. Now.”
+
+Tiffani closed the slate halfway before moving, keeping the face angled down. Habit. Discipline. The kind you practiced when the wrong eyes were present.
+
+Meeting = control surface, she reminded herself.
+
+People used meetings to assign blame the way they used nails to pin cloth to a wall. Fast. Efficient. Cruel.
+
+She walked into the semicircle.
+
+Pella was already there, a smudge of grit across one cheek and a broken stylus stuck behind her ear. Her eyes met Tiffani’s for a beat: tired acknowledgment, not comfort.
+
+Jhace stood two bodies back from the center, hands low, wedge bar braced against his boot. His fingers looked steady while he held the tool. When he let go, the tremor showed itself again in the empty air.
+
+Tiffani’s attention slid toward that tremor—automatic, unwanted.
+
+Not relevant to seam crack. Not relevant to meeting control.
+
+She pulled her gaze back to the brace captain’s mouth and forced her pencil hand still against the slate edge until the micro-pull passed.
+
+Observer bias.
+
+Contamination.
+
+A factor spoke first. “We need a classification,” he said. “What do we call this pull and slack? How do we brief it? People are panicking.”
+
+Snap classification was a temptation. A label to give the crowd so they would stop making their own.
+
+Tiffani could feel the pressure of eyes on her slate, even when no one was looking directly at it.
+
+She answered anyway—fast, clipped.
+
+“Phase cycling,” she said. “Pull. Slack. Repeat.”
+
+It sounded cleaner than it was.
+
+A runner interrupted her before the label could settle.
+
+“Stone moved wrong,” the runner said. “Up. Not down. Like the load didn’t know where the ground was.”
+
+A murmur rolled through the semicircle, the crowd trying to make a story out of it.
+
+Tiffani’s mind reached for the last protocol that fit: slope failure, brace slip, misread vector.
+
+Checklist says: mass follows gravity.
+
+So she wanted to say: witness error.
+
+She did not.
+
+She had learned what it cost to dismiss witnesses when the grid itself was lying.
+
+“How many saw it?” she asked.
+
+“Three brace teams,” the runner said. “And the water barrel. It rolled uphill. Two strides.”
+
+Tiffani opened her slate wider—not for the crowd. For herself.
+
+She wrote, small and hard:
+
+*Event: mass-water vector deviation. Multiple witnesses. Confidence: medium. Do not assign cause.*
+
+Then she closed the slate again.
+
+Because the act of writing in front of the semicircle changed the semicircle. Turned fear into testimony. Turned testimony into ammunition.
+
+She would not feed that machine if she could help it.
+
+The brace captain looked at Jhace. “You were under it,” he said. “You said something about—”
+
+Jhace’s mouth opened, then closed, as if words had failed to queue.
+
+The factor exhaled through his nose. “That’s not possible.”
+
+Jhace didn’t look at him. “It happened.”
+
+Tiffani did not write *Jhace said*. She did not write *held*. She did not write *impossible*.
+
+She wrote:
+
+*Subject reports constraint event. Mechanism unverified.*
+
+Constraint language protected the subject. Mechanism language made a target.
+
+She lifted her eyes back to the semicircle and spoke in the same tone she used when telling an apprentice to tighten a base lock.
+
+“We have three immediate problems,” she said. “Structure. Air. People.”
+
+Two fingers, not dramatic. Directional.
+
+“Structure: mark cracks. Keep crowds off edges. Prop what can be propped. Do not stand under façades.”
+
+“Air: when the pull comes, breathe shallow. When it slacks, fill. Teach it. Make it habit.”
+
+“People: reunite who you can. Move the injured to stable flats. Keep water rationed. Keep fires from spreading.”
+
+The factor stared at her as if he resented taking orders from someone without a title.
+
+Then a brace captain nodded once, sharp. “We can do that.”
+
+A priest asked, quieter, “And the rest?”
+
+Tiffani looked toward the Rift without turning her head fully. She did not want the crowd to read her face against the hole in the sky.
+
+“The rest,” she said, “we measure.”
+
+She did not say *and we do not let the measurement become permission*. The sentence was too long to survive in public.
+
+She kept it as a line at the top of her private page instead.
+
+Then she took a breath on the slack phase, felt her knee register load and not fail, and moved back into the worklines where stone was passed hand to hand and names were called until families stitched themselves back together out of dust and luck.
+
+---
+
+# Chapter 8 — Names
+
+Jhace waited until the crowd noise thinned enough that words didn't get swallowed by it.
+
+It happened in a pocket between tasks—after the meeting broke into work assignments, after the factor's people started pretending they were in charge again, after the brace captains peeled off to mark cracks and post rope lines.
+
+Tiffani stood near the parapet with her slate tucked under her arm, not writing, just watching the way the pressure pulls pushed dust into slow drifts and then pulled it back. Chloen hovered a step behind her like she'd decided proximity was safer than distance.
+
+Jhace came up on their left, wedge bar still in his hand because putting it down felt like tempting fate.
+
+He didn't soften his voice. There wasn't time to dress it. "Who are you?" he asked.
+
+Chloen flinched like he'd snapped at her. Tiffani didn't. She shifted her weight to spare her knee without letting it look like a concession. "Tiffani," she said. No preamble. No apology. Like she was labeling a specimen jar.
+
+Jhace nodded once, filed it away. "You live up here?"
+"Above the high terrace," she said. "Glass-house."
+
+Observatory, then. That explained the slate, the chronometer in her head, the way she looked at the Rift like it was a problem that could be measured into submission.
+
+Jhace looked down at the girl.
+
+Chloen's chin lifted a fraction, stubborn reflex. Her hands were still dirty. She'd stopped wiping them like it mattered.
+
+He didn't ask gently. "And you."
+
+She blinked, then said, "Chloen."
+
+The name sat wrong in his mouth for a breath—too soft for the day it had been forced into.
+
+He nodded anyway. "Chloen."
+
+He let the wedge bar rest against his thigh. The tremor in his fingers tried to start up and he ignored it by giving his hands something to do. "Good," he said, and meant: good you're alive.
+
+He didn't add the rest. He didn't know how to say it without making it sound like ownership.
+
+Tiffani's eyes were still on the horizon. "You're Jhace," she said.
+
+He looked at her.
+"I heard it," she added, because she knew how that sounded.
+
+Jhace's jaw worked. "Yeah."
+
+A pressure pulse rolled through the parapet stone. Dust lifted. Coppergilt along the slate edge rose a hair and settled again.
+
+Jhace watched it happen and took the metallic hit at the back of his tongue like a reminder. He swallowed. Stupid copper.
+
+He forced his attention away from his own body and back onto the practical. "There's a woman," he said. "Slate. Chalk. Counting."
+
+Tiffani's pencil hand twitched once at the word counting. Not interest—recognition.
+"I saw her twice," Jhace went on. "Once after the slab. Once again before the fire line. She wasn't looking at the Rift. She was looking at my hands."
+
+Chloen's gaze flicked between them. She'd seen that kind of watching too. Kids notice hunters.
+
+Tiffani finally looked at Jhace. "Describe her."
+"Dust cloak," he said. "Hair tied back. Writes fast. Counts like it's keeping her upright."
+
+Tiffani held that for a breath, then nodded once. "Not mine," she said. "Not from the glass-house."
+"Do you know who she is?" Jhace asked.
+"I know what she is," Tiffani said, and her voice went flatter. "A recorder. Maybe a registrar. Maybe just someone building a frame so she doesn't break."
+
+Jhace stared past her shoulder at the worklines forming—hands passing stone, names being called, rope being tied. He let the implication settle where it wanted.
+
+Someone else was already trying to make a system out of what had happened.
+
+He didn't like that. He also understood it. "That's three of us," Jhace said, more to himself than them. "One who holds. One who measures. One who survives."
+
+Chloen's mouth tightened. "I didn't—"
+"I know," Jhace cut in, not unkind. "You did."
+
+She stopped. Swallowed. That taste was getting old, even for him, and he hadn't been the one under the slab.
+
+Tiffani's gaze went back to the horizon. "The others will start asking," she said.
+"Let them," Jhace said. His hands flexed once, then stilled on the wedge bar. "But if that slate woman shows up again—"
+
+Tiffani's pencil tapped her slate once. Controlled. A marker.
+
+"—you tell me," Jhace finished.
+
+Tiffani didn't answer with words. She didn't need to.
+
+Chloen edged closer to the space between them, and Jhace didn't move away.
+
+The bells kept ringing in uneven waves. The stutter under the old vibration kept sitting under everything like an extra heartbeat.
+
+And for the first time since the sky tore, Jhace had names attached to the bodies next to him—names he could shout the next time stone decided to fall.
+
+---
+
+# Chapter 9 — The Gap
+
+Chloen didn't go back to the street where the slab had fallen. She didn't need to. The dust still clung to her hair, her clothes, the grit under her nails. She could taste it every time she swallowed.
+
+Instead, she followed Tiffani through the sorting lines and the rope-marked zones, stepping where the older woman stepped, keeping her eyes on the slate’s edge where coppergilt lifted and settled with every pressure pull. It was safer to watch the grit than the rubble.
+
+Jhace walked a pace behind them with his wedge bar balanced on his shoulder. His hands were steady now that they had work to do. Chloen had seen them shake earlier—fine tremors in the fingers when they weren't gripping anything. She'd seen men shake like that after fights. After fear. But Jhace’s shaking didn’t stop when the fear passed. It sat under his skin like a second pulse.
+
+Tiffani stopped at a break in the terrace wall where the stone dropped away into a canyon of rubble. Not a collapse from this crisis. This was older. Clean lines where beams had been cut. Square gaps where homes had been removed.
+
+Chloen’s breath locked. The gap wasn’t just empty. It was measured. Marked with chalk lines at the edges like someone had taken a knife to the terrace and carved out a piece of it. The lines were fresh. The dust hadn’t settled over them yet.
+
+Tiffani didn’t look at her. Her eyes tracked the chalk marks, the way they formed a rectangle in the stone. "Infrastructure clearance," she said. "They’re making lanes before the next pull."
+
+Chloen’s throat tightened. She knew that rectangle. She’d slept in the corner where the sun came through the shutter gap. She’d counted cracks in the ceiling before sleep. She’d pressed her ear to the wall to hear the neighbors arguing about bread.
+
+Gone. Cut out. Like it had never been there.
+
+A brace captain crossed their path, chalk in hand, marking a new line on the opposite wall. He didn’t see Chloen. Or if he did, he didn’t register her. She was small, dust-covered, standing in Tiffani’s shadow.
+
+Jhace shifted his weight. His kit strap pulled tight across his chest. "That’s a whole row," he said.
+
+Tiffani’s pencil ticked against her slate once. "They’re consolidating. Making defensible zones." She didn’t say it like approval. She said it like an instrument reading pressure.
+
+Chloen stepped forward before she thought. Her boot toe touched the chalk line at the edge of the gap. The stone ended sharp there. No debris. No broken beams. Just clean-cut absence.
+
+She looked down. The drop was deep. Deeper than she remembered. Farther than her room had been from the ground.
+
+Tiffani’s hand closed over Chloen’s shoulder—not hard, just present. A stop signal. Chloen flinched under it. She hadn’t realized she’d been moving.
+
+"Chalk lines are boundaries," Tiffani said, low, her voice pitched for Chloen’s ears only. "Step over, and you’re unmarked. Unmarked means no rations. No shelter assignments. No path back."
+
+Chloen stared at the rectangle of missing stone. Her chest felt tight. Like something was pressing in from all sides. She swallowed. Metal taste surged. She spat into the dust, then wiped her mouth with her sleeve.
+
+Jhace moved up beside them. He didn’t look at the gap. He looked at the brace captain’s back. "They cut this before or after the pull cycles started?" he asked Tiffani.
+
+"After," Tiffani said. "Timing confirms premeditation. Not emergency protocol."
+
+Jhace’s jaw worked. He didn’t say anything else. He just stood there, wedge bar in hand, watching the chalk-dust man move down the line, drawing new boundaries on the world.
+
+A pressure pull hit. Air thinned. Dust lifted in slow sheets off the rubble piles. Coppergilt rose off Tiffani’s slate in tiny arcs, drawn toward Jhace’s hands.
+
+Chloen felt her ears pop. Her breath caught. The world went muffled. She gripped the edge of Tiffani’s cloak with one hand and didn’t let go.
+
+When the slack came, air rushed back in. Sound returned with it. Distant bells. Near voices. The brace captain’s chalk scraping stone.
+
+Tiffani’s hand was still on Chloen’s shoulder. It hadn’t moved. Chloen realized she was leaning into it. She pulled away. Stood straight. Wiped her face with both hands.
+
+Jhace was looking at her. Not pity. Assessment. Like he was measuring the load she could carry.
+
+"The street where the slab fell," he said suddenly. "You lived near there?"
+
+Chloen’s throat closed. She nodded once.
+
+"Underface or low terrace?" Tiffani asked, her voice flat.
+
+"Underface," Chloen whispered. "Near the forge quarter."
+
+Tiffani’s pencil moved on her slate. Not writing words. Just drawing the shape of the clearance zone, the chalk lines, the gap where Chloen’s room had been. Lines within lines. Boundaries within boundaries.
+
+Jhace hefted his wedge bar. "No one’s pulling Underface yet," he said. "Pipe mains are still holding. If it goes, it’ll go fast. But it hasn’t gone yet."
+
+Chloen didn’t know what to do with that. She looked at the gap again. At the clean-cut edges. At the dust settling on the chalk lines that said: this space is no longer yours.
+
+A child’s voice carried from the sorting area behind them. Calling a name. A mother answered. Reunion. Temporary.
+
+Chloen’s hands curled into fists at her sides. Her nails bit into her palms. The grit there stung.
+
+"Where do I—" she started. Then stopped. The question was stupid. Everyone knew where unmarked people went. The edges. The gaps. The places between the chalk lines.
+
+Tiffani’s hand moved from Chloen’s shoulder to her slate. She flipped it open. Wrote one line. Tore the page free. Handed it to Chloen.
+
+Numbers. A sequence: 3-7-2. Then terrace marks. Lane markers.
+
+"If they ask for papers," Tiffani said, "show them this. Say you’re assigned to water rationing detail. Mark three. It won’t hold forever. But it’ll get you food on the next ration pass."
+
+Chloen took the paper. Her fingers were shaking. Fear did that. Thin air did that. The stone under her boots did that. She swallowed and tasted copper again.
+
+Jhace watched the brace captain mark another line farther down the terrace. "The woman with the slate," he said. "The one counting hands. She was here."
+
+Tiffani’s eyes went sharp. "When?"
+
+"After the cut. Before the pull. She was writing in a book smaller than yours. Crown emblem on the sash."
+
+Tiffani’s pencil tapped her slate. Once. A signal.
+
+Chloen looked down at the paper in her hand. At the numbers. At the chalk line at her feet. At the gap where her room had been.
+
+She took a breath. Then another. The air still tasted like metal. But she kept breathing.
+
+She folded the paper carefully. Tucked it into her sleeve. Stepped back from the chalk line.
+
+Still here, she thought. Not erased. 
+
+The bells kept ringing. The stutter under the old vibration kept vibrating through the stone. And Chloen stood between the gap and the living, small and dust-covered, learning how to be counted again.
+
+---
+
+# Chapter 10 — The Shard
+
+Chloen followed the rope lanes through the terrace streets, keeping her eyes on the knots where they were tied to stone cleats. The ropes moved in the wind pulls, tightening on the inhale phase, going slack on the exhale. Like breathing made visible.
+
+She'd stayed with Tiffani and Jhace as long as she could, but when the worklines broke into smaller groups and the Crown runners started collecting names, she'd slipped away. Not running. Just moving. Like water finding cracks.
+
+Her pocket held the slip of slate with the numbers Tiffani had given her—3-7-2, terrace marks, lane markers. She touched it every few steps, felt the graphite smear against her thumb. Paper wouldn't have survived the slab-fall day. Slate would.
+
+She passed a brace team propping a leaning wall with scavenged timber. A man with cracked knuckles drove wedges while his partner called out pressure shifts. Their pattern was precise: pull, drive, check. Pull, drive, check. The double-pulse underfoot seemed to guide them as much as hinder.
+
+Ahead, where three rope lanes converged, a new post had been set up. Not wood. Not stone. A metal pole driven deep, strung with lanterns and bells. A Crown emblem hung from the crossbar.
+
+Crowds thickened there. People stood in rows, not talking much. Some with wax tabs on their wrists. Some without. The ones without stood farther back, shoulders tight.
+
+Chloen slowed. Watched.
+
+A woman with a small, sharp face and a brass emblem on her cloak moved down the line, checking wrists, making marks on a slate. She didn't speak. Just pointed. Tabbed or untabbed. The untabbed got a nod toward the back rows.
+
+Chloen's fingers tightened on her pocket. The numbers felt like a lifeline and a lie at once.
+
+Then she saw Mobel.
+
+He wasn't in line. He stood beside the post, talking low to the Crown woman. Not arguing. Not pleading. Just talking. His hands were clean. His clothes were travel-stained but not torn. He carried a small pack, worn smooth at the straps.
+
+The Crown woman shook her head once. Final. She pointed to the back rows.
+
+Mobel didn't move. He just stood there, weight on his heels, waiting. His face didn't change. But his shoulders did—subtle shift, like a brace settling under load.
+
+Chloen edged closer, keeping behind a man with a broken arm. She didn't want to be seen watching. She just wanted to see what happened when someone refused to break.
+
+A runner approached the post, breathless. He said something to the Crown woman, low and urgent. She glanced at Mobel, then back at the runner. Her mouth tightened.
+
+Mobel didn't smile. But something in his posture relaxed. Like a weight lifted that nobody else could see.
+
+The runner turned to the crowd. "Corlexi of Infrastructure requests Mobel of Te'Oga. Assembly at Basin Stadium. Live briefing. Now."
+
+The Crown woman's head snapped toward Mobel. Her eyes narrowed. "You didn't say—" she started.
+
+"I didn't need to," Mobel said. His voice was quiet but clear. "The request stands."
+
+The woman made a sharp gesture toward the front rows. "Clear path," she barked at her assistants. "This one moves through."
+
+People shifted. Made space. Mobel walked through the gap without looking at anyone. He passed within three steps of Chloen.
+
+She saw the pack on his shoulder. She saw the way his left hand stayed tucked near his chest, fingers curled like they were holding something invisible. She saw the Crown woman watching him go, her face stiff with something that wasn't anger but wasn't respect either.
+
+Chloen followed.
+
+At a distance—just enough to see.
+
+Mobel walked with a slight limp. Not old injury. New. As if his body had learned a different pattern and hadn't quite settled into it. His steps matched the slack phase of the pulls. In. Out. In. Out.
+
+They reached a wider terrace where the stone was marked with fresh chalk lines. A runner waited there, holding a horse. Not a cart horse. A
+The file is too long and its contents have been truncated.
+
+[TOOL]
+The file contents provided above are truncated/partial snippets. The complete content for these files IS accessible via querying.
+
+If the user asks a question related to these files, and the provided snippets do not clearly answer it, you **MUST** use the `file_search` tool to search the full document contents before responding.
+
+## How to invoke the file_search tool
+If the user's query isn't sufficiently answered by the provided snippets, parsed text, or images, you should invoke `file_search.msearch`.
+To search the full content of the available files, you **must** send one message with recipient `to=file_search.msearch` in the analysis channel. Your message should be structured exactly as follows:
+```
+{
+  'queries': ['Example query 1', 'Example query 2']  // List of up to five queries to search for.
+}
+```
+
+Carefully balance the number of `file_search` calls and the quality of your response with the latency incurred by `file_search` calls.
+
+Important guidelines for query formatting:
+- Your message must be a valid JSON object. Do not include any extraneous text, backticks, markdown formatting, or comments beyond what is shown.
+- The `queries` field must be a list of strings.
+- One of the queries **MUST** exactly match the user's original question, but stripped of any extraneous details, and with ambiguous references clearly resolved using context from the conversation. It **MUST** be a complete sentence.
+- Even if you suspect the user meant something else, one query **MUST** still be their original question.
+
+## How to handle results from file_search
+The file search tool will respond with the relevant search results from the full files. After you receive these results:
+- Carefully evaluate each result to determine its relevance and quality.
+- Use the high-quality and relevant results to inform your answer to the user's question.
+- When possible, reuse information from prior file_search results and avoid repeating identical queries.
+
+## Tool usage instructions and ordering
+When the user asks a question, carefully consider whether the provided snippets sufficiently answer the query, whether you need to invoke `file_search.msearch`, or another available tool (such as `web`, if available) should be used instead.
+
+Tool-ordering Guidelines:
+1. For queries related to uploaded files, if snippets are insufficient, strongly prefer invoking `file_search.msearch` over other tools.
+    - Avoid using `web.run`, `python` analysis, or any other tools until you have either:
+        - Confirmed with high confidence the answer is not in the files, or
+        - Have high confidence `file_search_tool` queries are not sufficient to answer the query.
+2. Avoid usage of `web_search/web.run` for queries related to uploaded files
+    - Carefully consider whether the user's query is better answered by web search results rather than available snippets or results from `file_search_tool`.
+    - Unless the user's query is clearly unrelated to the uploaded files, prefer using `file_search.msearch`. You can always follow up with a web search if necessary for a more complete response.
+3. Avoid using `python` unless necessary or requested by user.
+    - If the user's query is answerable from the parsed text and images from the uploaded files, or from `file_search_tool`, do not invoke `python`.
+
+Always keep this instruction in mind for the rest of the conversation, as the user may reference these files or ask related questions later on.
+
+[TOOL]
+(True, 133257)
+
+[ASSISTANT]
+import re, textwrap, os, json, math, pandas as pd
+text = path.read_text(encoding="utf-8")
+len(text), text[:200]
+
+[TOOL]
+(131081,
+ "# The Chronicles of Iron and Glass — Novella One\n\n# Chapter 1 — Underface Forge\n\n\nJhace set the blade down on the anvil block and didn't look at the edge. That wasn't the part that failed in the hands")
+
+[ASSISTANT]
+chapter_pattern = re.compile(r'(?m)^# Chapter (\d+)\s+—[^\n]*\n')
+chapters = [(int(m.group(1)), m.start(), m.group(0).strip()) for m in chapter_pattern.finditer(text)]
+chapters[:12], len(chapters)
+
+[TOOL]
+([(1, 50, '# Chapter 1 — Underface Forge'),
+  (2, 12995, '# Chapter 2 — Glass-House Observatory'),
+  (3, 20651, '# Chapter 3 — Ground-Level Continuation'),
+  (4, 26462, '# Chapter 4 — Firebreak'),
+  (5, 34750, '# Chapter 5 — The Child Under the Slab'),
+  (6, 42224, '# Chapter 6 — Parapet / Tsunami Turn'),
+  (7, 51403, '# Chapter 7 — Upper Terrace Sorting / Meeting'),
+  (8, 57485, '# Chapter 8 — Names'),
+  (9, 62056, '# Chapter 9 — The Gap'),
+  (10, 68999, '# Chapter 10 — The Shard'),
+  (11, 76791, '# Chapter 11 — The Sequence'),
+  (12, 83224, '# Chapter 12 — The Question')],
+ 18)
+
+[ASSISTANT]
+ep_pat = re.compile(r'(?m)^# Epilogue\s+—[^\n]*\n')
+ep = ep_pat.search(text)
+ep.group(0).strip(), ep.start()
+
+[TOOL]
+('# Epilogue — Corlexi', 128393)
+
+[ASSISTANT]
+targets = {1,4,6,8}
+# Build list of boundaries
+# Determine end positions for each chapter
+chapter_starts = {num: start for num, start, _ in chapters}
+# order by position
+chapters_sorted = sorted(chapters, key=lambda x: x[1])
+
+# Create list of (num, start, end)
+chapter_ranges = []
+for i,(num,start,heading) in enumerate(chapters_sorted):
+    if i+1 < len(chapters_sorted):
+        end = chapters_sorted[i+1][1]
+    else:
+        end = ep.start() if ep else len(text)
+    chapter_ranges.append((num,start,end,heading))
+# validate
+[(n, text[s:s+len(h)].splitlines()[0]) for n,s,e,h in chapter_ranges[:3]]
+
+[TOOL]
+[(1, '# Chapter 1 — Underface Forge'),
+ (2, '# Chapter 2 — Glass-House Observatory'),
+ (3, '# Chapter 3 — Ground-Level Continuation')]
+
+[ASSISTANT]
+rem_ranges = [(s,e,n,h) for n,s,e,h in chapter_ranges if n in targets]
+rem_ranges
+
+[TOOL]
+[(50, 12995, 1, '# Chapter 1 — Underface Forge'),
+ (26462, 34750, 4, '# Chapter 4 — Firebreak'),
+ (42224, 51403, 6, '# Chapter 6 — Parapet / Tsunami Turn'),
+ (57485, 62056, 8, '# Chapter 8 — Names')]
+
+[ASSISTANT]
+new_text = text
+for s,e,n,h in sorted(rem_ranges, key=lambda x: x[0], reverse=True):
+    new_text = new_text[:s] + new_text[e:]
+len(text), len(new_text)
+
+[TOOL]
+(131081, 96098)
+
+[ASSISTANT]
+print(new_text[:200])
+
+[TOOL]
+# The Chronicles of Iron and Glass — Novella One
+
+# Chapter 2 — Glass-House Observatory
+
+Tiffani kept the observatory clean the way other people kept altars clean.
+
+Not reverent. Not sentimental. Func
+
+[ASSISTANT]
+def find_pos(t, pattern):
+    m = re.search(pattern, t, flags=re.M)
+    return m.start() if m else None
+
+pos3 = find_pos(new_text, r'^# Chapter 3\b')
+pos5 = find_pos(new_text, r'^# Chapter 5\b')
+pos3, pos5
+
+[TOOL]
+(7706, 13517)
+
+[ASSISTANT]
+snippet = new_text[pos5-400:pos5+120]
+print(snippet)
+
+[TOOL]
+thought, not as confession but as warning.
+
+She stepped away from the slab and into the flow of the crowd, keeping the wall to her left, keeping her slate angled down.
+
+*Transition protocol: move to next zone. Re-baseline on arrival. Do not carry assumptions.*
+
+She wrote it, because if she did not, she would forget and trust the last protocol like it was law.
+
+The world did not respect law.
+
+---
+
+# Chapter 5 — The Child Under the Slab
+
+
+Chloen didn't know the bell codes.  
+She only knew bells meant grown-ups stoppe
+
+[ASSISTANT]
+pos7 = find_pos(new_text, r'^# Chapter 7\b')
+pos7
+
+[TOOL]
+20991
+
+[ASSISTANT]
+snippet = new_text[pos7-450:pos7+120]
+print(snippet)
+
+[TOOL]
+he'd done something impossible, and it had hurt him.
+
+The bell rang again from somewhere deeper in the quarter.
+
+Chloen turned and ran toward the nearest doorway because doors meant shelter, even when shelter was a lie.
+
+She could still taste metal.
+
+She could still feel the vibration in her bones—two pulses refusing to match.
+
+And when she closed her eyes, she saw the man's outstretched palm holding up a slab that should have killed her.
+
+---
+
+# Chapter 7 — Upper Terrace Sorting / Meeting
+
+The upper terrace had turned into a sorting floor.
+
+Not formal. Not clean
+
+[ASSISTANT]
+pos9 = find_pos(new_text, r'^# Chapter 9\b')
+pos9
+
+[TOOL]
+27073
+
+[ASSISTANT]
+snippet = new_text[pos9-450:pos9+120]
+print(snippet)
+
+[USER]
+instead extract all chapters into their own md document and zip them for me. do not remove any of the content.
+
+[ASSISTANT]
+{"search_query":[{"q":"Python zipfile create ZIP archive from folder example","recency":30},{"q":"split markdown file into sections by heading python regex","recency":30}],"response_length":"short"}
+
+[ASSISTANT]
+from pathlib import Path, PurePosixPath
+path = Path("/mnt/data/N01_COMPLETE_Ch1_to_Epilogue_TIFFANI_REWRITE_v2_INTEGRATED_v2 (2).md")
+path.exists(), path.stat().st_size
+
+[TOOL]
+(True, 133257)
+
+[ASSISTANT]
+text = path.read_text(encoding="utf-8", errors="replace")
+text[:1000]
+
+[TOOL]
+"# The Chronicles of Iron and Glass — Novella One\n\n# Chapter 1 — Underface Forge\n\n\nJhace set the blade down on the anvil block and didn't look at the edge. That wasn't the part that failed in the hands. The handle was where people lied to themselves. \n\nThe forge bay sat in the Underface—stone ribs, pipework stitched overhead, damp air that never fully warmed even with a fire burning. Bellows breath hissed. Hammer ring echoed. Quench water sizzled. The grid's low vibration ran through the walls. \n\nHe kept his work at the left bench where the light was steady and the drafts didn't steal heat off steel. \n\nThe blade itself was already done—ground true, spine straight, bevels even. A working knife, not a show piece. The tang ran full-length, squared shoulders clean where it met the ricasso. That meant the handle had no excuses. \n\nHe chose a block of dark hardwood from the bin—close-grained, oily, heavy for its size. Not brittle. Not pretty, just stubborn. He checked it with his thumbnail, th"
+
+[ASSISTANT]
+import re
+chapters = [(m.start(), m.group(0)) for m in re.finditer(r'(?m)^#\s+Chapter\s+(\d+)\s+—\s+.*$', text)]
+len(chapters), chapters[:5], chapters[-2:]
+
+[TOOL]
+(18,
+ [(50, '# Chapter 1 — Underface Forge'),
+  (12995, '# Chapter 2 — Glass-House Observatory'),
+  (20651, '# Chapter 3 — Ground-Level Continuation'),
+  (26462, '# Chapter 4 — Firebreak'),
+  (34750, '# Chapter 5 — The Child Under the Slab')],
+ [(118392, '# Chapter 17 — Deployment'),
+  (123936, '# Chapter 18 — Habituation')])
+
+[ASSISTANT]
+ep = [(m.start(), m.group(0)) for m in re.finditer(r'(?m)^#\s+Epilogue\s+—\s+.*$', text)]
+ep
+
+[TOOL]
+[(128393, '# Epilogue — Corlexi')]
+
+[ASSISTANT]
+pro = [(m.start(), m.group(0)) for m in re.finditer(r'(?m)^#\s+Prologue\b.*$', text)]
+pro[:5], len(pro)
+
+[TOOL]
+([], 0)
+
+[ASSISTANT]
+# Find end index
+last_heading_pos = ep[0][0]
+# Determine end of epilogue section: from ep heading to end of doc.
+# But for trailing, check after end-of-doc.
+len(text) - (last_heading_pos)
+
+[TOOL]
+2688
+
+[ASSISTANT]
+h1s = re.findall(r'(?m)^#\s+.+$', text)
+h1s[:30], len(h1s)
+
+[TOOL]
+(['# The Chronicles of Iron and Glass — Novella One',
+  '# Chapter 1 — Underface Forge',
+  '# Chapter 2 — Glass-House Observatory',
+  '# Chapter 3 — Ground-Level Continuation',
+  '# Chapter 4 — Firebreak',
+  '# Chapter 5 — The Child Under the Slab',
+  '# Chapter 6 — Parapet / Tsunami Turn',
+  '# Chapter 7 — Upper Terrace Sorting / Meeting',
+  '# Chapter 8 — Names',
+  '# Chapter 9 — The Gap',
+  '# Chapter 10 — The Shard',
+  '# Chapter 11 — The Sequence',
+  '# Chapter 12 — The Question',
+  '# Chapter 13 — The Bowl',
+  '# Chapter 14 — The Briefing',
+  '# Chapter 15 — The Omission',
+  '# Chapter 16 — The Easy Answer',
+  '# Chapter 17 — Deployment',
+  '# Chapter 18 — Habituation',
+  '# Epilogue — Corlexi'],
+ 20)
+
+[ASSISTANT]
+import os, zipfile, shutil, unicodedata
+from dataclasses import dataclass
+
+# Collect H1 headings with positions and text
+heading_matches = list(re.finditer(r'(?m)^#\s+(.+)$', text))
+sections = []
+for i, m in enumerate(heading_matches):
+    title = m.group(1).strip()
+    start = m.start()
+    end = heading_matches[i+1].start() if i+1 < len(heading_matches) else len(text)
+    sections.append((title, start, end))
+
+sections[:3], sections[-2:]
+
+[TOOL]
+([('The Chronicles of Iron and Glass — Novella One', 0, 50),
+  ('Chapter 1 — Underface Forge', 50, 12995),
+  ('Chapter 2 — Glass-House Observatory', 12995, 20651)],
+ [('Chapter 18 — Habituation', 123936, 128393),
+  ('Epilogue — Corlexi', 128393, 131081)])
+
+[ASSISTANT]
+def slugify(s: str) -> str:
+    s = s.replace('—', '-').replace('–','-')
+    s = unicodedata.normalize('NFKD', s)
+    s = s.encode('ascii', 'ignore').decode('ascii')
+    s = s.strip()
+    # replace spaces and slashes with underscore
+    s = re.sub(r'[\/\\]+', '_', s)
+    s = re.sub(r'\s+', '_', s)
+    # remove characters not alnum,_,-,.
+    s = re.sub(r'[^A-Za-z0-9_\-\.]+', '', s)
+    s = re.sub(r'_+', '_', s)
+    return s.strip('_')
+
+for t,_,_ in sections[:5]:
+    print(t, "->", slugify(t))
+
+[TOOL]
+The Chronicles of Iron and Glass — Novella One -> The_Chronicles_of_Iron_and_Glass_-_Novella_One
+Chapter 1 — Underface Forge -> Chapter_1_-_Underface_Forge
+Chapter 2 — Glass-House Observatory -> Chapter_2_-_Glass-House_Observatory
+Chapter 3 — Ground-Level Continuation -> Chapter_3_-_Ground-Level_Continuation
+Chapter 4 — Firebreak -> Chapter_4_-_Firebreak
+
+[ASSISTANT]
+def filename_for_heading(title: str) -> str:
+    if title.startswith("Chapter "):
+        # title like "Chapter 6 — Parapet / Tsunami Turn"
+        m = re.match(r'^Chapter\s+(\d+)\s+—\s+(.+)$', title)
+        if m:
+            num = int(m.group(1))
+            name = m.group(2).strip()
+            return f"Ch{num:02d}_{slugify(name)}.md"
+        else:
+            return f"{slugify(title)}.md"
+    if title.startswith("Epilogue"):
+        # Epilogue — Corlexi
+        m = re.match(r'^Epilogue\s+—\s+(.+)$', title)
+        if m:
+            return f"Epilogue_{slugify(m.group(1).strip())}.md"
+        return "Epilogue.md"
+    # front matter title
+    return "00_Title.md"
+
+for t,_,_ in sections[:5]:
+    print(t, "->", filename_for_heading(t))
+
+[TOOL]
+The Chronicles of Iron and Glass — Novella One -> 00_Title.md
+Chapter 1 — Underface Forge -> Ch01_Underface_Forge.md
+Chapter 2 — Glass-House Observatory -> Ch02_Glass-House_Observatory.md
+Chapter 3 — Ground-Level Continuation -> Ch03_Ground-Level_Continuation.md
+Chapter 4 — Firebreak -> Ch04_Firebreak.md
+
+[ASSISTANT]
+filenames = [filename_for_heading(t) for t,_,_ in sections]
+len(filenames), len(set(filenames)), [f for f in filenames if filenames.count(f)>1][:5]
+
+[TOOL]
+(20, 20, [])
+
+[ASSISTANT]
+out_dir = Path("/mnt/data/N01_chapters_md")
+if out_dir.exists():
+    shutil.rmtree(out_dir)
+out_dir.mkdir(parents=True)
+
+# write files
+order_entries = []
+for (title, start, end) in sections:
+    fn = filename_for_heading(title)
+    content = text[start:end]
+    (out_dir / fn).write_text(content, encoding="utf-8")
+    order_entries.append((fn, title, start, end))
+
+# create README with ordering
+readme_lines = []
+readme_lines.append(f"# Extracted chapters\n")
+readme_lines.append(f"Source file: `{path.name}`\n")
+readme_lines.append("## Contents\n")
+for fn, title, *_ in order_entries:
+    readme_lines.append(f"- `{fn}` — {title}")
+(out_dir / "README.md").write_text("\n".join(readme_lines) + "\n", encoding="utf-8")
+
+# Verify round-trip (excluding README)
+reconstructed = "".join((out_dir / fn).read_text(encoding="utf-8") for fn, *_ in order_entries)
+reconstructed == text, len(reconstructed), len(text)
+
+[TOOL]
+(True, 131081, 131081)
+
+[ASSISTANT]
+zip_path = Path("/mnt/data/N01_chapters_md.zip")
+if zip_path.exists():
+    zip_path.unlink()
+
+with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+    for file_path in sorted(out_dir.rglob("*")):
+        if file_path.is_file():
+            arcname = str(file_path.relative_to(out_dir.parent))  # include folder
+            zf.write(file_path, arcname=arcname)
+
+zip_path.exists(), zip_path.stat().st_size
+
+[TOOL]
+(True, 62378)
+
+[ASSISTANT]
+[Download the ZIP of all extracted Markdown files](sandbox:/mnt/data/N01_chapters_md.zip)
+
+What’s inside (all content preserved, just split into separate files):
+
+- `00_Title.md`
+- `Ch01_Underface_Forge.md` … `Ch18_Habituation.md`
+- `Epilogue_Corlexi.md`
+- `README.md` (ordering + source filename)
+
+[USER]
+now take the chapters Ch1, 4, 6, 8  from this document extracted into separate md files please
+
+[ASSISTANT]
+from pathlib import Path
+path = Path("/mnt/data/N01_COMPLETE_Ch1_to_Epilogue_TIFFANI_REWRITE_v2_INTEGRATED_v4_JHACE_6PASS.md")
+path.exists(), path.stat().st_size
+
+[TOOL]
+Make sure to include fileciteturn1file0 in your response to cite this file, or to surface it as a link.
+
+# The Chronicles of Iron and Glass — Novella One
+
+# Chapter 1 — Underface Forge
+
+The knife was balanced.
+
+Jhace had set it on the anvil face with the edge down and the spine up, a stupid trick if you didn’t know what you were doing and a useful one if you did. A true edge would sit without rocking. A crooked edge would hunt for its own angle and tell on itself.
+
+His hands were steady.
+
+He dragged his thumbnail along the bevel in one slow pass, feeling for a snag he could not see. The steel was still warm enough to carry a faint give under the nail. Good. Not soft—just not finished.
+
+He turned the blade and repeated it on the other side. Same resistance. Same line. The tang sat square in the handle block, and the rivet holes lined up without force.
+
+A bad fit now is a broken hand later.
+
+He didn’t say it out loud. You didn’t waste breath on sayings when the work already proved them. He just set the knife aside and reached for the next blank, already moving through the steps his body knew without needing permission.
+
+Then the bell rang.
+
+The bell in the underface ran a fast warning—street failure, crowd hazard, bodies in motion. Not the slow pull for shift change. Not the long call for a fire seam. This meant something had already started coming apart and wanted company.
+
+Jhace’s head came up before the sound finished making sense. He classified it the way he classified a crack: where it started, what it would take with it, and who would be under it when it let go.
+
+Hazard. Crowd. Fast.
+
+He set the hot blank back into the cradle instead of tossing it—no loose metal on a floor that might tilt. He slapped the quench lid down, then shoved the nearest tongs into the rack with their jaws closed. The shop didn’t get to become a second failure.
+
+“Out,” he snapped at the apprentices by the bellows. Not a lecture. A directive. “Hands empty. Go.”
+
+One of them hesitated, eyes on the knife. Jhace caught the look and shook his head once. If it isn’t held, it falls on someone smaller. The rule wasn’t about metal. It was about everything.
+
+The boy moved.
+
+Jhace took the knife anyway—wrapped it in a scrap of leather and pushed it into his apron pocket. Not because it mattered now. Because leaving it would make someone reach for it later, and reaching for things in a surge was how fingers got lost.
+
+He ran for the exit passage with his shoulders turned to slip through bodies, not collide with them. The underface swallowed sound into stone and damp heat. Smoke and coppergilt dust clung to his throat.
+
+He should have gone up.
+
+Up meant air, sight, wider lanes. Down meant tunnels and choke points. But his feet had already chosen. The route was in his legs from a hundred shift runs and back-hauls, and trusting it was faster than verifying it.
+
+Left at the seam brace. Down the iron ladder. Through the split arch where the mortar always shed grit.
+
+The crowd found him halfway out, a press of shoulders and elbows moving because the bell told them to move. Someone screamed a name. Someone else screamed back. Jhace kept his eyes low and his hands up, palms open, not grabbing unless he had to.
+
+The city shifted.
+
+The first shove was familiar: a low roll through stone that turned hanging tools into clattering hazards and made people widen their stance like the world owed them balance. Jhace braced and kept moving, already running the usual list in his head—arches first, loose brick second, glass third.
+
+It was just another quake.
+
+Then the second shove hit wrong.
+
+Not a roll. A pull.
+
+It took the weight out of his stomach like a hook had caught him under the ribs and lifted. Bodies lurched forward, then back. Dust rose in sheets from joints that had held through generations and suddenly didn’t feel like holding anymore.
+
+He stopped long enough to look up.
+
+When he reached the street, there was nothing to orient to.
+
+Lines he knew—roof edges, tower corners, the familiar cut of the terrace rail—had shifted out of alignment as if someone had taken the city in both hands and twisted. A street lamp leaned at a new angle. A wall that should have been square looked slightly wrong, and the wrongness made his teeth hurt.
+
+A scream became a roar. Not voice. Not wind. Pressure tearing through space.
+
+The exit-face rose like the planet had decided to exhale.
+
+Stone lifted in a slow heave. Dust poured out of seams like breath. The sky overhead split in a line so straight it looked cut, not cracked. The edges didn’t crumble. They parted.
+
+Jhace reached for the old classification anyway—quake, settle, aftershock—and tried to lay it over what he saw.
+
+It didn’t fit.
+
+The sky opened.
+
+Not in color, not in light, but in structure: a seam overhead widening like something had pried it apart. Behind it was depth that didn’t belong. Cold that didn’t match the air. A slice of elsewhere pressed against the world like it had always been there and was only now being acknowledged.
+
+The pull hit again, harder, and the crowd became a single mass. Someone went down near his knee—small, swallowed immediately by larger bodies stepping where they could to avoid falling themselves.
+
+Jhace dropped his center of gravity and moved toward the collapse point without thinking about it.
+
+He hooked two fingers into a belt knot and hauled, getting the smaller body out of the crush and into the wall shadow before the next surge could take her again.
+
+Unknown load.
+
+Treat it as maximum.
+
+A beam overhead groaned and shifted. Jhace put his shoulder under the edge, not lifting it—just stopping it from finding momentum. His forearm locked against stone. The beam bit down, and pressure ran through his bones like a file.
+
+His hand started shaking.
+
+A fine vibration at first, easy to blame on shock, on dust, on the pull in the air. It didn’t stop when the slack came. It didn’t stop when he forced his fingers to tighten.
+
+Not now.
+
+He held anyway.
+
+People spilled past under the beam’s shadow. Some ducked. Some didn’t notice. He held until the pull passed and the beam settled into a new seat that would hold for the next breath-count or the next failure, whichever came first.
+
+When he stepped out, eyes landed on him—wide, hungry for an explanation, hungry for a reason the beam had listened.
+
+He did not ask for the stares.
+
+He turned away from them and looked back up at the rupture overhead, forcing his eyes to take the whole shape instead of the parts that made his stomach twist.
+
+The seam in the sky stayed open. It didn’t heal like a crack. It didn’t close like a door. It just remained, a statement no craft could argue with.
+
+And below it, the city began to adapt—badly, quickly, with bodies as the first material spent.
+
+# Chapter 2 — Glass-House Observatory
+
+Tiffani kept the observatory clean the way other people kept altars clean.
+
+Not reverent. Not sentimental. Functional. Dust on a lens was not dust. It was scatter. It was error. It was someone else's mouth later, saying her numbers failed because she was careless.
+
+She did not give people that kind of gift.
+
+She opened the glass-house shutters a finger-width and watched the city’s upper terraces breathe smoke in slow pulses. Fine grit hung in the air. Coppergilt, already—too early for that, if the grid was behaving.
+
+She set the shutters back, latched them, and went to work.
+
+The bench held two instruments and one rule.
+
+Two instruments, because one instrument could lie and still look clean. One rule, because clean numbers were only safe if they were repeatable.
+
+She checked the bubble on theodolite one. Centered. She checked the bubble on the spare. Centered. She ran the pendulum once, timed the swing against the chronometer, then ran it again with her fingers off the base.
+
+*Baseline confirmed. Drift within tolerance. Ambient hum: steady.*
+
+She wrote it without decoration. Just enough to make it real.
+
+A second tick entered the glass.
+
+Not a sound. Not a bell. A pressure in the panes, a sympathetic vibration you felt in your teeth when you held them still.
+
+Tiffani paused with the cloth in her hand.
+
+Secondary frequency, low amplitude. Unmodeled.
+
+Her first thought was not *impossible*. Her first thought was *instrument resonance*.
+
+She put the cloth down and checked the mount bolts on the theodolite base. Tight. She checked the bench anchors. Tight. She checked the shutter latch, in case the wind was making a lie.
+
+Everything held.
+
+The vibration doubled, then split—one line steady, the other wandering as if it could not decide what to couple to.
+
+She put her eye to the lens.
+
+The reference marker on the far ridge slid sideways in her view, smooth as grease. Not a jump. Not a tremor. A continuous rotation.
+
+Base shift, she thought. She pulled back, checked the bubble. Centered. She checked it again anyway.
+
+She put her eye back to the lens.
+
+The marker kept sliding.
+
+Not the instrument.
+
+Not her.
+
+The world.
+
+She opened the chronometer and counted the drift in ticks because her mouth wanted to do something else—say a word that belonged to panic.
+
+*Orientation drift observed. Reference point stable. World-frame shift suspected. Confidence: medium.*
+
+She added the confidence tag because she could hear the future already: *You guessed. You assumed.* She would not be trapped by her own handwriting.
+
+A pressure drop punched the room so hard the shutters flexed. The air thinned. Her ears popped.
+
+Outside, smoke reversed direction.
+
+It went back into chimneys.
+
+It went back into mouths.
+
+Tiffani’s hand went for the slate automatically.
+
+Vent backflow, she labeled it, because the label gave her an action: log ticks, mark direction, note onset.
+
+*Pressure event onset. Smoke reversal. Tick-count: one—two—three—*
+
+The glass-house seam hissed. The pendulum’s swing went wide.
+
+Her label did not fit. The air did not behave like air.
+
+She crossed out *vent* and wrote *unknown pressure inversion* without pausing her count.
+
+*—four—five—six—*
+
+The emergency bells began.
+
+One bell, then another, then a third, overlapping the first. Not a drill cadence. Not a fire cadence. The wrong pattern, the pattern you used when you did not know what you were ringing for.
+
+Tiffani held still long enough to listen to the overlap.
+
+Her throat tightened. She swallowed it back down.
+
+Bells were not data. Bells were people trying to move bodies.
+
+Bodies moved badly when they moved blind.
+
+She wrote a single line at the top of the page, larger than the rest.
+
+*OBSERVATION ≠ PERMISSION.*
+
+Then, underneath it, smaller:
+
+*Record only. Do not assign cause. Do not prescribe response.*
+
+She had written something like that once, in a different collapse. Procedural. Correct. The inquiry called it *negligent delay* anyway and used her notes to stack liability on her name until it hurt to hear it spoken.
+
+She did not forget that.
+
+She would not give them clean language again.
+
+The drift continued.
+
+Tiffani returned to theodolite one and rechecked the bubble a third time. Still centered. She moved to the spare instrument and took the same read.
+
+The marker slid in both.
+
+The ridge did not move.
+
+The frame did.
+
+She logged three readings, spaced by breath-count, and tagged the confidence again.
+
+*World-axis drift persists. Confidence: high.*
+
+Outside, over the terraces, something rose.
+
+At first she thought it was a dust wall, a pressure front, the kind of rolling face you got when a structure failed at distance and pushed its own air ahead of it.
+
+Then the face sharpened.
+
+It was not dust. It was geometry.
+
+A plane lifting through the skyline like the city had been cut and a new surface was being revealed behind it—smooth enough to look false, bright enough to hurt the eye.
+
+Exit-face, her mind supplied, because her mind needed a noun.
+
+She wrote it the way she wrote everything else.
+
+*Exit-face emergence observed. Angle of rise:—*
+
+She did not finish the angle because the sky tore.
+
+A section of blue stopped existing. Not dark. Not cloud. Absence. A void with hard edges that did not bleed into the air around it.
+
+Her reflex tried to save her: atmospheric refraction, heat shimmer, an optical artifact created by the exit-face’s glare.
+
+She put her eye to the lens.
+
+Stars.
+
+Hard points of light in full daylight, fixed as nails.
+
+Her breath caught—one sharp inhale she did not intend to take.
+
+She did not let it become a sound.
+
+She forced her hand steady on the adjustment knob and logged coordinates anyway.
+
+*Rift aperture present. Stellar visibility through aperture. Confidence: high.*
+
+She took a second read. Then a third. Spaced. Tagged.
+
+*Parallax absent across three reads. Confidence: medium.*
+
+Medium, because her hands were shaking now, and she would not pretend they weren’t.
+
+A shape crossed the Rift.
+
+Not a falling thing. Not a bird. Too straight, too long, too sure.
+
+A spindle—glass and iron and something in between—moving with no regard for air. Colors bled through its fractures the way heat bleeds through a kiln seam: green, purple, pink, blue, orange—irrational in their placement, bright enough to look like a warning.
+
+Behind it, the sky smeared.
+
+Debris, she thought. Vapor. A trail.
+
+Then the smear kept moving after the object was gone, like the world had been pushed out of alignment and was still trying to settle back into itself.
+
+She wrote until the graphite cut grooves in the slate.
+
+*Object transit observed. Shape: spindle. Surface: mixed shard. Fracture glow present. Transit speed: unmeasurable by eye. Debris smear persists post-transit.*
+
+Below, the terraces answered with human noise. Cries. Running feet. Stone collapsing. Orders shouted and not obeyed because the bell cadence was wrong and the air was wrong and the sky had become a hole.
+
+Tiffani stayed at the lens.
+
+If she sounded the bell herself, she would be choosing a response. If she chose a response and it failed, it would become her fault in a way no measurement ever could.
+
+That was the trap. She could feel it closing.
+
+She wrote *DOCUMENT EVERYTHING* across the page anyway, because if she did not, the next part of this would belong to whoever survived long enough to lie about it.
+
+Then she closed the chronometer.
+
+She picked up the slate.
+
+This time she would bring the measurements to the people who thought they were allowed to make calls.
+
+She turned toward the stairwell.
+
+Not to join the panic.
+
+To put the numbers into the bodies.
+
+---
+
+# Chapter 3 — Ground-Level Continuation
+
+By the time Tiffani reached the lower terraces, the air had already learned a new way to sit in the lungs.
+
+It went in sharp. It came out metallic.
+
+Smoke lay in pockets between walls as if it had weight. Coppergilt grit clung to damp faces. People ran past her with their hands over their mouths and their eyes wide, and none of them looked up because the sky was the wrong place to look now.
+
+Her slate stayed against her chest until she found a surface that would not move under her.
+
+That was the first protocol: no baseline on a shifting floor.
+
+She stepped onto a block of intact stonework—old, heavy, load-bearing—and set the slate down. She opened the chronometer, then closed it without starting it.
+
+Not yet. Not until she had something to time.
+
+She took three breaths and forced the tremor out of her fingers by pinning her hand flat to the slate edge. Not a prayer. A clamp.
+
+*Zone baseline required. No carry-over.*
+
+She wrote it as a rule, not an observation.
+
+She looked for the simplest measurable in the mess.
+
+Sound. Dust fall. Pendulum drift, if she could hang it.
+
+There was no place to hang it.
+
+So she used bodies.
+
+A runner staggered by, coughing hard enough to fold himself. The cough produced coppergilt taste in the air like a filament snapping.
+
+Tiffani did not ask him if he was hurt. She did not have that kind of comfort in her mouth.
+
+She watched his sputum hit the stone.
+
+Color. Density. Spread.
+
+*Symptom cluster: cough—metallic taste—particulate in sputum. Confidence: medium.*
+
+She tagged confidence because her eyes kept darting to the places where stone had fractured and she needed to admit it to the page.
+
+A brace team yelled for hands.
+
+Two men were under a half-fallen slab at the corner of a collapsed archway, their shoulders jammed against stone that should have already finished falling.
+
+The crowd around them kept saying the same phrase in different voices, trying to make it true.
+
+“Hold. Hold. Hold.”
+
+Tiffani’s eyes went to the failure pattern before the shouting resolved into meaning.
+
+Bracing artifact, her mind labeled it. Timber wedge out of sight. A hidden prop. A trick of angle.
+
+Label first, because label gives you an action.
+
+She wrote fast.
+
+*Load arrested. Brace present. Failure delayed.*
+
+Then she looked.
+
+No timber.
+
+No wedge.
+
+No brace line. Nothing set against the slab except two bodies and a third man with his hands out, palms under stone as if his skin could negotiate with weight.
+
+His jaw worked like he was swallowing grit. His forearms trembled. Not from exertion alone—something finer, something patterned, as if the tremor had a pattern that did not belong to muscles.
+
+Tiffani’s pencil stopped mid-stroke.
+
+She crossed out *brace present* so hard the graphite tore the slate’s surface.
+
+She wrote:
+
+*Load paused mid-fall. Mechanism unknown. Constraint observed: stone does not descend while subject contact maintained. Do not assign cause.*
+
+Constraint only. That was the doctrine she could live with. Mechanism claims made targets.
+
+Her eyes flicked to the man again—just long enough to register the wedge bar on the ground beside him, unused, and the steadiness in his stance that did not match the shaking in his hands.
+
+Not relevant to baseline.
+
+She forced her focus back to the slab geometry and counted the fracture lines.
+
+One of the brace team shouted for a name.
+
+“What’s your name—”
+
+The man did not answer. Or he did. Tiffani couldn’t hear it over the crowd.
+
+She did not look up. She did not want to know.
+
+Naming him would make him a point on a ledger later.
+
+She wrote *subject* and moved on.
+
+A crack ran along the arch’s remaining foot like a sentence. She traced it with her eyes, then with the pencil tip hovering a hair above the slate.
+
+*Fracture propagation: lateral. Rate: slow. Ambient hum: elevated.*
+
+She needed a baseline. The sky-frame was gone. The world-frame was drifting. All she had were local behaviors.
+
+So she built a local grid.
+
+*Zone baseline established: lower terrace—south wall cluster. Ambient hum: high. Particulate: high.*
+
+She took three readings spaced by breath-count and tagged confidence.
+
+*Confidence: medium. Retest required if bell pattern changes or if crowd density shifts.*
+
+The bell pattern changed.
+
+A new bell joined, higher and faster, the kind used for registry lines. The kind used to make people stand still in their fear so someone could count them.
+
+Tiffani’s throat tightened.
+
+She turned her head without turning her body.
+
+A Crown runner stood at the edge of the crowd with a slate of his own and a stylus poised like a hook.
+
+A Crown recorder was there. He was watching the held slab, not because he cared about the stone, but because he cared about who was under it.
+
+Liability pressure rose in the back of her skull like heat.
+
+Her language tightened with it.
+
+She angled her slate closer to her body and wrote smaller.
+
+*Institutional observer present. Reduce interpretation. Use subject identifiers only.*
+
+She did not write the man’s name. She did not write *held*. She wrote *constraint observed* and let it be ugly.
+
+The runner’s stylus moved.
+
+Tiffani felt it as a physical thing, like a hook catching cloth.
+
+She did not let her eyes drift back to the man again. The micro-pull was there—attention trying to return to the only thing in the chaos that looked like a rule—but she pinned it down and kept measuring stone.
+
+Observer bias, she thought, not as confession but as warning.
+
+She stepped away from the slab and into the flow of the crowd, keeping the wall to her left, keeping her slate angled down.
+
+*Transition protocol: move to next zone. Re-baseline on arrival. Do not carry assumptions.*
+
+She wrote it, because if she did not, she would forget and trust the last protocol like it was law.
+
+The world did not respect law.
+
+---
+
+# Chapter 4 — Firebreak
+
+Between bells, the city tried to pretend.
+
+It stacked brace timber. It dragged bodies out of lanes. It patched cracks with wet mortar like the mortar still mattered. It tried to live in the slack.
+
+Jhace worked until the forge went cold.
+
+Not because he believed the work fixed anything. Because keeping tools moving kept hands busy, and busy hands didn’t reach for panic. He sharpened edges, set rivets, and repaired hinges from doors that no longer closed. He made everything fit as if fit still meant safety.
+
+Then the next call came.
+
+Bells again—higher and harsher, meant to move bodies out of open lanes and into braced pockets before the next pull found them.
+
+A runner cut across the terrace with a slate held up like a shield.
+
+“Firebreak,” the runner shouted. “Parapet lane. Now.”
+
+Jhace didn’t ask what failed. If a runner was sent, the failure had already started. He only checked his hands.
+
+The tremor was a fine vibration under the skin, easy to pretend was heat or exhaustion. Pretending didn’t change what iron did when you asked it for precision.
+
+He flexed once. The vibration stayed.
+
+He went anyway.
+
+The firebreak line was a strip of cleared stone between stacked brace timber and a wall already showing hairline shear. Brace teams moved in short bursts, setting wedges, pulling slack, then resetting before the next pull hit.
+
+Jhace scanned for a tool that could take the argument out of his hands.
+
+He found a wedge bar.
+
+Plain iron. Flattened chisel end. Grip worn smooth by other palms. Not a weapon. Not a badge. A lever for making stubborn things move the way they should.
+
+He wrapped his fingers around it and felt his hand settle.
+
+Anchor. Not comfort.
+
+He tested the weight with a short lift, then hooked it under the nearest brace lip like it belonged there.
+
+# Chapter 5 — The Child Under the Slab
+
+
+Chloen didn't know the bell codes.  
+She only knew bells meant grown-ups stopped pretending.
+
+It started like a feeling in her teeth.
+
+A buzzing, like when you put your ear too close to the pipe runs in the Underface and the whole world seems trapped in a shell. She was on the mid-terrace steps with a bundle of rags under one arm because Aunt Lessa had sent her down to fetch clean wrap from the stitch shop, and Chloen had tried to walk like she wasn’t late.
+
+Then the air got thin.
+
+Thin.
+
+Her ears popped hard. Her chest tightened like someone had set a strap around her ribs and pulled.  
+She tried to inhale and got less than she asked for.
+
+Smoke did something wrong above the rooftops. It didn't rise. It pulled sideways and down, sucked back into chimneys as if the houses were drinking it.
+
+She stopped on the step and watched it, because her brain didn't know what else to do.
+
+People in the street stopped too.
+
+It moved like a slow ripple—one person turning, then another, then everyone’s heads going the same way.  
+A cart horse stamped and tried to back up, eyes wide.
+
+Chloen held her rag bundle tighter and followed the line of their faces.
+
+Far away past the terraces, something was happening on the plain. At first it looked like a storm wall, the kind that comes low and fast and eats the sky.
+
+Then it got taller. And taller. And it didn't move like weather.
+
+It rose.
+
+A wall. A cliff. A line where the world had been flat and now it wasn't. It climbed straight up, banded like the layers in cut rock—light, dark, light—except the layers were standing upright like someone had taken the ground and turned it on its side.
+
+Someone beside her whispered a prayer. Someone else laughed once, sharp, the wrong kind of laugh.
+
+The bell went again—one street over—fast, uneven.
+
+Chloen's stomach dropped.
+
+And then the sky tore.
+
+There was suddenly a hole in it. Not a cloud hole. A clean, black place in the blue.
+
+Stars inside it.
+
+In the Kindling-light.
+
+That made her throat close even before the air tried to leave again.
+
+The grown-ups made a sound like one big breath being stolen.
+
+Chloen stared so hard her eyes watered. The black place shimmered at the edge, like the air was shaking because it didn't know where to stand.
+
+Something moved in that black.
+
+Too fast. Too long.
+
+She saw a flash of… not metal, not stone, not anything she'd ever held. It crossed the hole like a needle pulled through cloth. There were colors along it—bright veins that blinked copper and gold and colors she couldn't name cleanly because they weren't colors she'd ever seen.
+
+Then it was gone.
+
+But the after of it wasn't.
+
+A smear of broken things followed behind it. Some pieces continued after it, pulled along. Some lagged and began to arc back, caught between up and down.
+
+And that was when Chloen's feet started to feel wrong.
+
+The street wasn't shaking like a cart going over bad stone. It was… soft, but not soft. Like standing on stretched hide pulled too tight and then struck from underneath.
+
+The houses creaked.
+
+Mortar dust sifted out of seams.
+
+People started moving all at once then. Not neat. Not ordered. They bumped and shoved and grabbed each other by sleeves.
+
+Chloen got pushed off the step and nearly fell. Someone's elbow hit her and she yelped, but the sound came out small and thin because the air was still wrong.
+
+Chloen tried to back up toward the wall of the nearest building because walls were safe.
+
+A crack sounded above her head.
+
+Stone was coming loose.
+
+A whole piece of building face—big and flat and heavy—tearing away from the terrace edge above and starting to fall.
+
+The street turned into screaming.
+
+Chloen ran.
+
+Her legs didn't feel like hers. The ground made her stumble like it was shifting under every step. Dust got in her mouth. It tasted like metal.
+
+A man grabbed her arm—too hard—and yanked her sideways. "Keep moving!" he barked, and shoved her forward.
+
+Chloen tried. But the crowd was thick and confused and the air kept pulling toward the plain like the sky had a mouth open somewhere.
+
+The slab shadow hit her.
+
+All light went wrong under it—dim and gray with dust swirling like smoke.
+
+Chloen's foot caught on something and she went down hard on her hands and knees. Her palms stung. The rags slid out of her grip.
+
+She looked up and saw the underside of the falling stone fill her whole world.
+
+She tried to scream and it stuck.
+
+She tried to get up and her arms shook like they'd forgotten how.
+
+Boots pounded past. Someone's heel clipped her shoulder and she fell sideways.
+
+The stone was too close. She could see the grain in it, old tool marks, dark seams where water had lived.
+
+She thought, stupidly, I don't want to die under a wall.
+
+Then the stone stopped.
+
+Stopped.
+
+It hung above her like a ceiling that had decided to hover.
+
+Dust froze in the air—enough that Chloen noticed. Coppergilt flecks caught at her eyelashes and clung.
+
+The street noise thinned into fragments. Boots. Coughing. A name being called.
+
+Chloen pushed up onto her knees.
+
+Someone's hand appeared—an adult hand, dusty, knuckles scraped—and pulled her elbow.
+
+Chloen tried to stand and her legs buckled. The hand yanked again and she got her feet under her.
+
+She looked up.
+
+The slab hovered above, held in mid-air. People ran underneath it, ducking even though it wasn't moving.
+
+Chloen's eyes tracked past the stone and found the man out in front of the crowd where nobody else stood.
+
+His arm was out, palm toward the slab.
+
+His face was tight. Concentrated like he was lifting something heavy and trying not to show it.
+
+His throat worked like breathing hurt.
+
+His eyes were on the stone. On the line of fall.
+
+On her.
+
+That made her move.
+
+Chloen stumbled forward out from under the slab.
+
+Her feet slid in dust. Her lungs pulled in air that tasted like metal. Her eyes watered so much she could barely see.
+
+She made it to the edge of the shadow.
+
+Light changed.
+
+One step, and she was out.
+
+She turned her head without meaning to, to look back.
+
+The man's arm was still out.
+
+For a heartbeat, nothing changed.
+
+Then his face flickered like something inside him slipped.
+
+The slab dropped.
+
+It slammed the street with a crack that punched up through Chloen's legs and into her stomach. Stone shattered. Dust exploded outward.
+
+The shock threw her forward. She hit the ground again, hard.
+
+Sound came back all at once.
+
+Screams. Shouting. Crying. The wet cough of dust in lungs.
+
+Chloen scrambled to her feet, half-blind, choking. Her tongue tasted copper like she'd been sucking on a nail.
+
+She looked back again.
+
+The man had gone down too—thrown backward like the stone had snapped a rope tied to him. He was on one elbow now, trying to sit up, and his hands were shaking so hard it looked like he couldn't hold them still even if he wanted to.
+
+A woman nearby—dust in her hair, slate in hand—was staring at him like she'd found a crack in the world and was trying to measure it.
+
+Chloen didn't know any of that. She just saw: he'd done something impossible, and it had hurt him.
+
+The bell rang again from somewhere deeper in the quarter.
+
+Chloen turned and ran toward the nearest doorway because doors meant shelter, even when shelter was a lie.
+
+She could still taste metal.
+
+She could still feel the vibration in her bones—two pulses refusing to match.
+
+And when she closed her eyes, she saw the man's outstretched palm holding up a slab that should have killed her.
+
+---
+
+# Chapter 6 — Parapet
+
+The parapet held.
+
+Not cleanly. Not without complaint. But it held through the first pull and the second, holding because brace teams had wedged every seam they could reach and because bodies like Jhace had turned themselves into temporary structure where timber ran out.
+
+Hunger did strange things to people.
+
+It made them cut lines. It made them bargain with favors they didn’t have. It made them stare at a brace station like the iron was food. Jhace saw it in the way eyes tracked his wedge bar, not his face, and in the way hands hovered too close in the slack phases.
+
+He kept the bar under his palm anyway.
+
+His tremor made the grip hunt for a seat, and the bar gave him a seat bigger than the tremor. He could clamp down on iron and let the vibration burn itself out against something that wouldn’t slip.
+
+A pull hit. Dust sifted down the seam above his head. The parapet shifted a hair away from him, then back, like it couldn’t decide which shape it wanted to be.
+
+Jhace widened his stance and drove the wedge bar deeper under the lip.
+
+He held the wall until the pull passed.
+
+Slack.
+
+A runner shouted a count. Brace teams reset. Bodies moved, then froze, then moved again.
+
+The Crown's measurer came with a slate and a lamp.
+
+Clean coat. Clean boots. A lamp hooded to keep the light from spilling where it shouldn’t, aimed low so it could read hands and marks without lighting faces. The measurer didn’t look at the wall first. She looked at Jhace’s fingers wrapped around iron.
+
+Jhace did not look at her slate.
+
+He kept his eyes on the seam line and the brace wedges, giving the measurer nothing that could be mistaken for agreement.
+
+A shout cut the lane.
+
+Chloen slipped.
+
+One step wrong on grit over wet stone. Her boot skated, and she went down hard enough that her shoulder hit the parapet with a dull crack. Her slate skittered, the lamp jerked, and the light flashed across Jhace’s hands for a breath.
+
+Jhace caught her by the upper arm and hauled her back upright, using the wedge bar as a third point so his grip wouldn’t fail when the tremor surged with the sudden movement.
+
+“Keep your feet,” he said. Not kind. Not cruel. Just necessary.
+
+Her breath came fast. She nodded once, embarrassed and angry at her own body, the same way he was angry at his.
+
+Then the water rose.
+
+Not rain. Not seep. A surge from below, pushed upslope by the pull cycle, flooding the lower lane and climbing fast. It carried grit and splinters and the stink of broken pipes. It slapped into the parapet base and made the stone slick in a single breath.
+
+Someone screamed as the surge hit their ankles and stole footing. Bodies compressed. Brace timber shifted. The parapet groaned as the added mass pressed against it.
+
+The surge didn’t stop at ankles.
+
+It climbed to shins, then knees, then struck the brace stacks hard enough to make them jump.
+
+The sound hit before the crest did.
+
+A wave broke against the parapet and threw spray into Jhace’s face.
+
+Cold. Grit. A taste of metal from somewhere it shouldn’t have been.
+
+The tremor spiked, excited by impact, and his knuckles knocked stone as his grip tried to loosen.
+
+He locked down and put more of himself into the bar.
+
+If it isn't held, it falls on someone smaller.
+
+He didn’t say it. He acted it.
+
+He drove the wedge bar under the lip until iron bit stone. He set his shoulder into the parapet and became a brace, giving the wall a second to decide to keep being a wall.
+
+The pull hit again, and the parapet tried to slide.
+
+Jhace held.
+
+He held the wall until the pull passed.
+
+Slack came with water draining back downslope, leaving slick stone and bodies shaking from cold and fear and the effort of staying upright.
+
+After the wave, people started counting.
+
+Not the brace teams—runners. They counted pulls. They counted slack. They counted breaths. They counted Jhace’s cycles like he was a machine that could be timed and replaced when the timing drifted.
+
+Jhace felt the count settle on his shoulders.
+
+The measurer’s lamp stayed low. The slate stayed open. The blank line at the top waited like a hook.
+
+Jhace kept his palm on iron.
+
+His hands were steadier on the wedge bar than on nothing.
+
+That was the problem. That was also the only reason he was still in the lane.
+
+He let go to flex his fingers.  
+The tremor spiked hard enough to knock his knuckles against stone. The bar slid and clacked once. He caught it before it could drop.  
+If it wasn't held, it fell. And it always fell on someone smaller.  
+He set the bar back under the lip and kept his palm on it, angry at how fast his hands had asked for iron.
+
+The measurer watched the bar, then Jhace, as if weighing what that dependence meant.
+
+Jhace didn’t give her anything to file.
+
+He kept his gaze on the seam line.
+
+He waited for the next pull.
+
+He stayed where the wall would fall first.
+
+# Chapter 7 — Upper Terrace Sorting / Meeting
+
+The upper terrace had turned into a sorting floor.
+
+Not formal. Not clean. Just the kind of order you made when you were trying to stop a city from bleeding itself out through a thousand small failures.
+
+Brace teams moved in lanes. Runners carried slates. People dragged what could be dragged: water skins, pry bars, a child with a wrist wrapped in cloth so tight the fingers had gone pale.
+
+Tiffani stood at the seam line where the terrace met the next rise and watched the crack behave.
+
+It had been a clean fracture earlier. Now it forked. The fork was new.
+
+She set her slate against her thigh and tried to trust her last baseline.
+
+Ambient hum: high. Particulate: high. Crowd density: high.
+
+Checklist says: same conditions.
+
+So she acted like it.
+
+*Seam crack stable. Rate: slow. No immediate drop.*
+
+A pulse hit the terrace—pull, then slack—hard enough to make the crowd sway as one body. The crack widened a hair, then closed again like a mouth.
+
+Her last baseline did not include *closing cracks*.
+
+She retested.
+
+Not because she wanted to. Because the fork in the crack was a retest trigger, and she had written that rule for a reason.
+
+She took three reads: breath-spaced, same angle, same stance. She tagged confidence, then watched the tag rot in real time.
+
+*Seam displacement: reversible. Confidence: low.*
+
+Protocol drift. The world was changing faster than her checklists could keep up.
+
+Her jaw locked once. She released it before it could become a tell.
+
+A brace captain called for her.
+
+“Observatory,” he said—not her name, not a title, just the function they needed. “We’re gathering. Now.”
+
+Tiffani closed the slate halfway before moving, keeping the face angled down. Habit. Discipline. The kind you practiced when the wrong eyes were present.
+
+Meeting = control surface, she reminded herself.
+
+People used meetings to assign blame the way they used nails to pin cloth to a wall. Fast. Efficient. Cruel.
+
+She walked into the semicircle.
+
+Pella was already there, a smudge of grit across one cheek and a broken stylus stuck behind her ear. Her eyes met Tiffani’s for a beat: tired acknowledgment, not comfort.
+
+Jhace stood two bodies back from the center, hands low, wedge bar braced against his boot. His fingers looked steady while he held the tool. When he let go, the tremor showed itself again in the empty air.
+
+Tiffani’s attention slid toward that tremor—automatic, unwanted.
+
+Not relevant to seam crack. Not relevant to meeting control.
+
+She pulled her gaze back to the brace captain’s mouth and forced her pencil hand still against the slate edge until the micro-pull passed.
+
+Observer bias.
+
+Contamination.
+
+A factor spoke first. “We need a classification,” he said. “What do we call this pull and slack? How do we brief it? People are panicking.”
+
+Snap classification was a temptation. A label to give the crowd so they would stop making their own.
+
+Tiffani could feel the pressure of eyes on her slate, even when no one was looking directly at it.
+
+She answered anyway—fast, clipped.
+
+“Phase cycling,” she said. “Pull. Slack. Repeat.”
+
+It sounded cleaner than it was.
+
+A runner interrupted her before the label could settle.
+
+“Stone moved wrong,” the runner said. “Up. Not down. Like the load didn’t know where the ground was.”
+
+A murmur rolled through the semicircle, the crowd trying to make a story out of it.
+
+Tiffani’s mind reached for the last protocol that fit: slope failure, brace slip, misread vector.
+
+Checklist says: mass follows gravity.
+
+So she wanted to say: witness error.
+
+She did not.
+
+She had learned what it cost to dismiss witnesses when the grid itself was lying.
+
+“How many saw it?” she asked.
+
+“Three brace teams,” the runner said. “And the water barrel. It rolled uphill. Two strides.”
+
+Tiffani opened her slate wider—not for the crowd. For herself.
+
+She wrote, small and hard:
+
+*Event: mass-water vector deviation. Multiple witnesses. Confidence: medium. Do not assign cause.*
+
+Then she closed the slate again.
+
+Because the act of writing in front of the semicircle changed the semicircle. Turned fear into testimony. Turned testimony into ammunition.
+
+She would not feed that machine if she could help it.
+
+The brace captain looked at Jhace. “You were under it,” he said. “You said something about—”
+
+Jhace’s mouth opened, then closed, as if words had failed to queue.
+
+The factor exhaled through his nose. “That’s not possible.”
+
+Jhace didn’t look at him. “It happened.”
+
+Tiffani did not write *Jhace said*. She did not write *held*. She did not write *impossible*.
+
+She wrote:
+
+*Subject reports constraint event. Mechanism unverified.*
+
+Constraint language protected the subject. Mechanism language made a target.
+
+She lifted her eyes back to the semicircle and spoke in the same tone she used when telling an apprentice to tighten a base lock.
+
+“We have three immediate problems,” she said. “Structure. Air. People.”
+
+Two fingers, not dramatic. Directional.
+
+“Structure: mark cracks. Keep crowds off edges. Prop what can be propped. Do not stand under façades.”
+
+“Air: when the pull comes, breathe shallow. When it slacks, fill. Teach it. Make it habit.”
+
+“People: reunite who you can. Move the injured to stable flats. Keep water rationed. Keep fires from spreading.”
+
+The factor stared at her as if he resented taking orders from someone without a title.
+
+Then a brace captain nodded once, sharp. “We can do that.”
+
+A priest asked, quieter, “And the rest?”
+
+Tiffani looked toward the Rift without turning her head fully. She did not want the crowd to read her face against the hole in the sky.
+
+“The rest,” she said, “we measure.”
+
+She did not say *and we do not let the measurement become permission*. The sentence was too long to survive in public.
+
+She kept it as a line at the top of her private page instead.
+
+Then she took a breath on the slack phase, felt her knee register load and not fail, and moved back into the worklines where stone was passed hand to hand and names were called until families stitched themselves back together out of dust and luck.
+
+---
+
+# Chapter 8 — Upper Terrace Sorting / Meeting
+
+Jhace waited until the crowd thinned.
+
+Not because the terrace was ever empty now—it wasn’t—but because you could hear meaning again when fewer bodies were shouting over each other. In the dense press, names turned into noise. In the thinner lanes, a name could be a handle you could actually grab.
+
+He kept the wedge bar vertical under his palm, the end braced against stone. Anchor. Not comfort. His fingers still wanted to jitter around it, looking for a seat that didn’t exist in flesh alone.
+
+Chloen hovered near the runner lanes with a slate tucked against her ribs. Tiffani stood beside her, eyes on the brace stacks and the crack lines as if the terrace could be reduced to a set of predictable variables.
+
+Jhace watched them both long enough to decide they were in his lane whether he liked it or not.
+
+Chloen flinched like he'd snapped at her.
+
+Maybe he had. His voice had come out hard, the way it did when he was trying to keep people from getting crushed and didn’t have time to be polite.
+
+"Who are you?" Jhace asked.
+
+Not a soft question. A functional one. If a brace failed and he needed to shout for someone to move, he needed to know what sound to throw.
+
+Tiffani didn’t take offense. Offense was a luxury. She looked at him like the question itself was a measurement to be filed.
+
+"You're Jhace," she said.
+
+The name landed in his gut like a hook.
+
+He didn’t correct her. Correcting meant confirming. Confirming meant consenting to carry it.
+
+A pressure pulse rolled through the terrace.
+
+Subtle this time—pull, then slack—enough to make the brace timber creak and the crowd sway as one body. The crack line along the upper rail widened a hair, then settled back like it was testing how much it could get away with.
+
+Jhace shifted his stance by a finger-width and tightened his palm on iron.
+
+If he was going to be named, he was going to control what the name was used for.
+
+He looked past Tiffani to the brace lane where Salee stood, close to the work, too close for anyone who cared about their own skin.
+
+"That's three of us," he said.
+
+Not a team. Not a vow. A count. Three bodies that could be placed, moved, leveraged.
+
+He kept his own name in his mouth and used the others like tools.
+
+Names were handles.
+
+If you had them, you could pull someone out of the crush, get them behind cover, keep them from becoming a count. If an authority had them, they could pull the other way.
+
+Jhace kept his hand on iron and let the terrace keep moving around them.
+
+# Chapter 9 — The Gap
+
+Chloen didn't go back to the street where the slab had fallen. She didn't need to. The dust still clung to her hair, her clothes, the grit under her nails. She could taste it every time she swallowed.
+
+Instead, she followed Tiffani through the sorting lines and the rope-marked zones, stepping where the older woman stepped, keeping her eyes on the slate’s edge where coppergilt lifted and settled with every pressure pull. It was safer to watch the grit than the rubble.
+
+Jhace walked a pace behind them with his wedge bar balanced on his shoulder. His hands shook. Chloen had seen them shake earlier—fine tremors in the fingers when they weren't gripping anything. She'd seen men shake like that after fights. After fear. But Jhace’s shaking didn’t stop when the fear passed. It sat under his skin like a second pulse.
+
+Tiffani stopped at a break in the terrace wall where the stone dropped away into a canyon of rubble. Not a collapse from this crisis. This was older. Clean lines where beams had been cut. Square gaps where homes had been removed.
+
+Chloen’s breath locked. The gap wasn’t just empty. It was measured. Marked with chalk lines at the edges like someone had taken a knife to the terrace and carved out a piece of it. The lines were fresh. The dust hadn’t settled over them yet.
+
+Tiffani didn’t look at her. Her eyes tracked the chalk marks, the way they formed a rectangle in the stone. "Infrastructure clearance," she said. "They’re making lanes before the next pull."
+
+Chloen’s throat tightened. She knew that rectangle. She’d slept in the corner where the sun came through the shutter gap. She’d counted cracks in the ceiling before sleep. She’d pressed her ear to the wall to hear the neighbors arguing about bread.
+
+Gone. Cut out. Like it had never been there.
+
+A brace captain crossed their path, chalk in hand, marking a new line on the opposite wall. He didn’t see Chloen. Or if he did, he didn’t register her. She was small, dust-covered, standing in Tiffani’s shadow.
+
+Jhace shifted his weight. His kit strap pulled tight across his chest. "That’s a whole row," he said.
+
+Tiffani’s pencil ticked against her slate once. "They’re consolidating. Making defensible zones." She didn’t say it like approval. She said it like an instrument reading pressure.
+
+Chloen stepped forward before she thought. Her boot toe touched the chalk line at the edge of the gap. The stone ended sharp there. No debris. No broken beams. Just clean-cut absence.
+
+She looked down. The drop was deep. Deeper than she remembered. Farther than her room had been from the ground.
+
+Tiffani’s hand closed over Chloen’s shoulder—not hard, just present. A stop signal. Chloen flinched under it. She hadn’t realized she’d been moving.
+
+"Chalk lines are boundaries," Tiffani said, low, her voice pitched for Chloen’s ears only. "Step over, and you’re unmarked. Unmarked means no rations. No shelter assignments. No path back."
+
+Chloen stared at the rectangle of missing stone. Her chest felt tight. Like something was pressing in from all sides. She swallowed. Metal taste surged. She spat into the dust, then wiped her mouth with her sleeve.
+
+Jhace moved up beside them. He didn’t look at the gap. He looked at the brace captain’s back. "They cut this before or after the pull cycles started?" he asked Tiffani.
+
+"After," Tiffani said. "Timing confirms premeditation. Not emergency protocol."
+
+Jhace’s jaw worked. He didn’t say anything else. He just stood there, wedge bar in hand, watching the chalk-dust man move down the line, drawing new boundaries on the world.
+
+A pressure pull hit. Air thinned. Dust lifted in slow sheets off the rubble piles. Coppergilt rose off Tiffani’s slate in tiny arcs, drawn toward Jhace’s hands.
+
+Chloen felt her ears pop. Her breath caught. The world went muffled. She gripped the edge of Tiffani’s cloak with one hand and didn’t let go.
+
+When the slack came, air rushed back in. Sound returned with it.
+
+Jhace stopped and listened. Distant bells. Near voices. The brace captain’s chalk scraping stone.
+
+Tiffani’s hand was still on Chloen’s shoulder. It hadn’t moved. Chloen realized she was leaning into it. She pulled away. Stood straight. Wiped her face with both hands.
+
+Jhace was looking at her. Not pity. Assessment. Like he was measuring the load she could carry.
+
+"The street where the slab fell," he said suddenly. "You lived near there?"
+
+Chloen’s throat closed. She nodded once.
+
+"Underface or low terrace?" Tiffani asked, her voice flat.
+
+"Underface," Chloen whispered. "Near the forge quarter."
+
+Tiffani’s pencil moved on her slate. Not writing words. Just drawing the shape of the clearance zone, the chalk lines, the gap where Chloen’s room had been. Lines within lines. Boundaries within boundaries.
+
+Jhace hefted his wedge bar. "No one’s pulling Underface yet," he said. "Pipe mains are still holding. If it goes, it’ll go fast. But it hasn’t gone yet."
+
+Chloen didn’t know what to do with that. She looked at the gap again. At the clean-cut edges. At the dust settling on the chalk lines that said: this space is no longer yours.
+
+A child’s voice carried from the sorting area behind them. Calling a name. A mother answered. Reunion. Temporary.
+
+Chloen’s hands curled into fists at her sides. Her nails bit into her palms. The grit there stung.
+
+"Where do I—" she started. Then stopped. The question was stupid. Everyone knew where unmarked people went. The edges. The gaps. The places between the chalk lines.
+
+Tiffani’s hand moved from Chloen’s shoulder to her slate. She flipped it open. Wrote one line. Tore the page free. Handed it to Chloen.
+
+Numbers. A sequence: 3-7-2. Then terrace marks. Lane markers.
+
+"If they ask for papers," Tiffani said, "show them this. Say you’re assigned to water rationing detail. Mark three. It won’t hold forever. But it’ll get you food on the next ration pass."
+
+Chloen took the paper. Her fingers were shaking. Fear did that. Thin air did that. The stone under her boots did that. She swallowed and tasted copper again.
+
+Jhace watched the brace captain mark another line farther down the terrace. "The woman with the slate," he said. "The one counting hands. She was here."
+
+Tiffani’s eyes went sharp. "When?"
+
+"After the cut. Before the pull. She was writing in a book smaller than yours. Crown emblem on the sash."
+
+Tiffani’s pencil tapped her slate. Once. A signal.
+
+Chloen looked down at the paper in her hand. At the numbers. At the chalk line at her feet. At the gap where her room had been.
+
+She took a breath. Then another. The air still tasted like metal. But she kept breathing.
+
+She folded the paper carefully. Tucked it into her sleeve. Stepped back from the chalk line.
+
+Still here, she thought. Not erased. 
+
+The bells kept ringing. The stutter under the old vibration kept vibrating through the stone. And Chloen stood between the gap and the living, small and dust-covered, learning how to be counted again.
+
+---
+
+# Chapter 10 — The Shard
+
+Chloen followed the rope lanes through the terrace streets, keeping her eyes on the knots where they were tied to stone cleats. The ropes moved in the wind pulls, tightening on the inhale phase, going slack on the exhale. Like breathing made visible.
+
+She'd stayed with Tiffani and Jhace as long as she could, but when the worklines broke into smaller groups and the Crown runners started collecting names, she'd slipped away. Not running. Just moving. Like water finding cracks.
+
+Her pocket held the slip of slate with the numbers Tiffani had given her—3-7-2, terrace marks, lane markers. She touched it every few steps, felt the graphite smear against her thumb. Paper wouldn't have survived the slab-fall day. Slate would.
+
+She passed a brace team propping a leaning wall with scavenged timber. A man with cracked knuckles drove wedges while his partner called out pressure shifts. Their pattern was precise: pull, drive, check. Pull, drive, check. The double-pulse underfoot seemed to guide them as much as hinder.
+
+Ahead, where three rope lanes converged, a new post had been set up. Not wood. Not stone. A metal pole driven deep, strung with lanterns and bells. A Crown emblem hung from the crossbar.
+
+Crowds thickened there. People stood in rows, not talking much. Some with wax tabs on their wrists. Some without. The ones without stood farther back, shoulders tight.
+
+Chloen slowed. Watched.
+
+A woman with a small, sharp face and a brass emblem on her cloak moved down the line, checking wrists, making marks on a slate. She didn't speak. Just pointed. Tabbed or untabbed. The untabbed got a nod toward the back rows.
+
+Chloen's fingers tightened on her pocket. The numbers felt like a lifeline and a lie at once.
+
+Then she saw Mobel.
+
+He wasn't in line. He stood beside the post, talking low to the Crown woman. Not arguing. Not pleading. Just talking. His hands were clean. His clothes were travel-stained but not torn. He carried a small pack, worn smooth at the straps.
+
+The Crown woman shook her head once. Final. She pointed to the back rows.
+
+Mobel didn't move. He just stood there, weight on his heels, waiting. His face didn't change. But his shoulders did—subtle shift, like a brace settling under load.
+
+Chloen edged closer, keeping behind a man with a broken arm. She didn't want to be seen watching. She just wanted to see what happened when someone refused to break.
+
+A runner approached the post, breathless. He said something to the Crown woman, low and urgent. She glanced at Mobel, then back at the runner. Her mouth tightened.
+
+Mobel didn't smile. But something in his posture relaxed. Like a weight lifted that nobody else could see.
+
+The runner turned to the crowd. "Corlexi of Infrastructure requests Mobel of Te'Oga. Assembly at Basin Stadium. Live briefing. Now."
+
+The Crown woman's head snapped toward Mobel. Her eyes narrowed. "You didn't say—" she started.
+
+"I didn't need to," Mobel said. His voice was quiet but clear. "The request stands."
+
+The woman made a sharp gesture toward the front rows. "Clear path," she barked at her assistants. "This one moves through."
+
+People shifted. Made space. Mobel walked through the gap without looking at anyone. He passed within three steps of Chloen.
+
+She saw the pack on his shoulder. She saw the way his left hand stayed tucked near his chest, fingers curled like they were holding something invisible. She saw the Crown woman watching him go, her face stiff with something that wasn't anger but wasn't respect either.
+
+Chloen followed.
+
+At a distance—just enough to see.
+
+Mobel walked with a slight limp. Not old injury. New. As if his body had learned a different pattern and hadn't quite settled into it. His steps matched the slack phase of the pulls. In. Out. In. Out.
+
+They reached a wider terrace where the stone was marked with fresh chalk lines. A runner waited there, holding a horse. Not a cart horse. A riding horse, lean and trembling, its eyes white at the edges.
+
+Mobel stopped. Looked at the horse. Looked at the runner.
+
+"The Basin Stadium," the runner said. "They're waiting."
+
+Mobel didn't take the reins. "I don't ride," he said.
+
+The runner's face tightened. "The request was clear."
+
+"So is the ground," Mobel replied. "I'll walk."
+
+The runner opened his mouth, closed it, then nodded sharply. "Two spans. No more. Or I report delay."
+
+Mobel inclined his head once. "Two spans."
+
+The runner mounted and rode ahead, glancing back every few breaths.
+
+Chloen stayed in the shadow of a half-collapsed arch. Watched Mobel walk.
+
+His limp was worse on the pull phase. His left hand stayed tucked near his chest. Sometimes it pressed flat against his sternum, just for a moment, like he was checking for something beneath his ribs.
+
+A pressure pull hit. Air thinned. Dust lifted. Coppergilt glittered along the stone edges where metal met rock.
+
+Chloen's ears popped. Her breath caught.
+
+Mobel stopped walking. Stood perfectly still. His hand pressed flat against his chest. His eyes closed for three breaths. When they opened, he looked different. Calmer. Sharper.
+
+He resumed walking. Faster now. Matching the slack phase.
+
+Chloen followed at a distance, watching his hand, watching his limp, watching the way the coppergilt seemed to gather where he'd stood.
+
+She didn't understand what she was seeing. But she understood this: Mobel carried something no one else had. Something that made the Crown woman step back. Something that made a runner wait. Something that lived under his ribs and answered to the double-pulse.
+
+She touched the numbers in her pocket again. 3-7-2.
+
+The Basin Stadium loomed ahead, a stone bowl carved into the mountain face. Voices rose from it—organized, orderly. Not panic. Procedure.
+
+Mobel reached the stadium steps and paused. His hand pressed against his chest again. This time longer. When he lowered it, his fingers left smears on his shirt. Not dust. Not sweat.
+
+Copper.
+
+He climbed the steps without looking back.
+
+Chloen stopped at the edge of the crowd forming at the base. She didn't have a tab. She didn't have a number that mattered here.
+
+A guard approached her. Young. Nervous. His sash was too bright for the dust. "Name and guardian," he said. His voice cracked on "guardian."
+
+Chloen's throat tightened. She reached for her pocket. For the numbers.
+
+The guard's eyes followed her hand. Saw the slate slip. Saw the graphite smear. He hesitated.
+
+Before he could speak, a voice cut through the pull-thin air. "That one's with me," Tiffani said, stepping up beside Chloen. Her slate was closed. Her posture was straight. "Water rationing detail. Mark three."
+
+The guard looked at Tiffani's face. At her hands. At the Crown emblem on his own sash. He nodded once, sharp. "Mark three," he repeated, like memorizing a lesson.
+
+Tiffani didn't smile. She just guided Chloen past the checkpoint with a hand on her shoulder. Light. Professional. Not gentle.
+
+Chloen looked back once at the stadium steps. Mobel was gone. Only the copper smears remained on the stone where he'd stood.
+
+Tiffani's hand stayed on her shoulder. "You watch the wrong things," she said, low. "Watch the ropes. Watch the cracks. Watch who gets marked."
+
+Chloen didn't answer. She watched the copper smears glint in the Kindling-light. Watched them lift slightly on the next pull phase, like filings answering a hidden magnet.
+
+She kept the numbers in her pocket. But now she knew there were other numbers. Other marks. Other things that lived under ribs and answered to the world's new heartbeat.
+
+The stadium bells began to sound. Three short. One long. Two short.
+
+The rope lanes tightened. The crowd moved.
+
+Chloen moved with them. But her eyes stayed on the stairs where Mobel had stood, where the copper smears caught the light and didn't let go.
+
+---
+
+# Chapter 11 — The Sequence
+
+Tiffani watched the tremor in Jhace’s hands the way she watched a bridge seam widen under load.
+
+Not with sympathy. With counting.
+
+A seam did not widen because it hated you. It widened because force accumulated and the material reached its limit. The only mercy a seam offered was that it told the truth if you were willing to look long enough.
+
+Jhace stood at the edge of the sorting lanes where rope lines thinned into single file. He held his wedge bar like it was part of his arm. When his fingers wrapped the handle, the tremor hid. When his fingers left it, the tremor returned to the air.
+
+Tiffani had written *subject tremor increases at rest* three shifts ago and tagged it as noise.
+
+Now the noise had teeth.
+
+A pressure pull hit.
+
+Air thinned. Dust lifted in slow sheets. Coppergilt gathered along the slate edge in tiny arcs, bridging hairline gaps with static before falling back to grit.
+
+Jhace’s hands steadied.
+
+Not because his muscles relaxed. Because something else latched.
+
+Tiffani’s pencil moved.
+
+*Tremor amplitude: reduced during pull. Spike during slack. Correlation: strong. Confidence: medium.*
+
+She hated *medium*.
+
+Medium was the word you used when you were trying to be honest and the page punished you for it later.
+
+A slack phase followed. The air thickened. Dust settled.
+
+Jhace’s fingers curled into fists at his sides. His jaw tightened like something was trying to climb out of his throat. The tremor surged, fine and rapid, a filament trying to uncoil.
+
+Tiffani wrote again.
+
+*Slack phase: tremor spike. Jaw lock present. Respiratory restriction observed.*
+
+The last line was not necessary.
+
+She knew it the moment the graphite hit the slate.
+
+Jaw lock was not a tremor marker. Respiratory restriction was not a phase measurement. Those were body details. Human details. The kind that made a subject into a person if you let them.
+
+Contamination.
+
+She stopped her pencil mid-stroke and did not look at him while she corrected herself.
+
+She tore the page—cleanly, straight—then folded it and tucked it inside the slate cover so no one could see it.
+
+She opened to a fresh page and wrote at the top:
+
+*CLEAN LOG.*
+
+Under it, smaller, in the margin:
+
+*QUARANTINE.*
+
+Then, in the clean column, she rewrote only what belonged.
+
+*Tremor ↔ pull/slack cycling confirmed. Body response consistent across three cycles. Confidence: high.*
+
+A child’s voice cut through the wind.
+
+“Jhace!”
+
+The name hit the lane like thrown stone—simple, careless, and full of trust.
+
+Jhace’s hand jerked once as he took the canteen the child offered. Just a flicker before he forced stillness. He drank without spilling. Gave it back. “Thanks.”
+
+Controlled. Flat. A voice built the way his stance was built: as if the wrong word could cause collapse.
+
+Tiffani’s pencil hovered.
+
+She wanted to write *name call produces jerk response* because it fit her model: attention ↔ tremor. The pattern tightened when he was seen.
+
+It also did something else in her chest—tightened, not warm, not pleasant. A physical irritation. A reminder that the subject had a name people used without fear.
+
+She did not write it.
+
+She wrote, instead:
+
+*External attention event occurred. Response present. Detail withheld.*
+
+Withheld. Visible. A deliberate gap.
+
+She hated that too, but she hated lying to herself more.
+
+Jhace looked toward her, as if he could feel the page change.
+
+The next pull cycle came.
+
+His hands steadied again.
+
+Tiffani counted. Three cycles. Four. Five.
+
+Her confidence climbed and with it came the worst temptation: to stop measuring because she thought she knew.
+
+Checklist says: once pattern repeats, you can infer.
+
+She did it anyway.
+
+She labeled the next spike as stage progression, because she wanted a ladder. She wanted a clean set of markers she could hand to someone and have them do something with it that was not her fault.
+
+*Stage threshold approaching.*
+
+The next cycle disproved her.
+
+The spike dropped. The hands steadied. The jaw lock eased.
+
+Not progression. Not linear. A loop with conditions.
+
+She crossed out *threshold* and replaced it with *conditional response* so hard the graphite tore.
+
+*Stage designation suspended. Conditions unknown. Require paired logging: ambient phase + attention + contact.*
+
+Contact.
+
+The word landed on the page like a trap.
+
+Because she had seen what stabilized him besides pull and slack: the wedge bar, the work, the brief moments when someone spoke to him like a person and not a hazard.
+
+Those were variables.
+
+Those were also liabilities.
+
+Jhace found her after the brace teams rotated, when the crowd noise thinned and the rope lanes loosened into paths.
+
+He carried his wedge bar like an argument.
+
+“Tiffani,” he said.
+
+Protected context. No Crown slates close. No factor listening. She allowed the name.
+
+“Yes,” she said.
+
+His grip tightened on the wedge bar. His knuckles whitened. The tremor started again at his fingertips, spreading up like a fine burn.
+
+“It’s in my hands,” he said. “It belongs to me.”
+
+Tiffani did not soften her face. She did not give him comfort she did not have.
+
+She held her slate up between them like a shield and a mirror.
+
+“It does not belong to you,” she said. “It attaches to you.”
+
+Jhace stared at the page. “You counted that.”
+
+“I measured that,” she corrected, sharp.
+
+Because if she let the language become ownership, it became blame.
+
+Jhace’s jaw worked. “You think I don’t know the cost?”
+
+“I think you know the cost,” she said. “I think you don’t know the sequence.”
+
+His hands steadied on the wedge bar as another pull cycle slid through the terrace. His eyes narrowed. “Sequence.”
+
+Tiffani tapped the clean column with her pencil tip.
+
+“Tremor increases at slack,” she said. “Decreases at pull. Spikes with attention events. Drops with tool contact. It’s not random. It’s conditional.”
+
+Jhace didn’t move. “What does that mean?”
+
+It meant she was holding a pattern that could become a ladder someone would climb to put him on a platform and call it duty.
+
+It meant she was about to be quoted.
+
+Her throat tightened once. She swallowed it.
+
+“Sequence confirmed,” she said, because the words were cleaner than what they carried. “Tremor ↔ phase ↔ attention. That is all I can say without lying.”
+
+Jhace watched her for a long beat.
+
+Then he nodded once, small and brutal, like accepting a new weight.
+
+She already knew the sequence.
+
+The problem was what the city would do with it.
+
+---
+
+# Chapter 12 — The Question
+
+
+Chloen stayed in the rope-lane shadows where the dust was thickest.
+Waiting for the counting to finish with her.
+
+The upper terrace had become a sorting ground.
+Wax-tabbed moved first. Untabbed waited.
+
+Chloen’s wrist was bare. Her sleeve covered the graphite smear where Tiffani’s numbers lived. She touched it every few breaths to make sure it was still there—like the mark could evaporate if she stopped believing in it.
+
+A brace team worked the edge of the sorting area, propping a leaning wall with scavenged timber. Jhace directed them, wedge bar moving in steady arcs. His hands were steady on the handle. Off the handle, they shook—fine tremors running up his forearms like water finding cracks.
+
+A tabbed runner approached with a slate.
+
+Chloen watched the runner’s eyes flick to Jhace’s fingers before he asked his name.
+
+*T4,* Chloen thought. That’s what Tiffani would call it.
+A pattern. A cost with a schedule.
+
+The runner moved on. Jhace’s shaking got worse the moment attention left him, like his nerves had been waiting for permission to fail.
+
+A hand touched Chloen’s shoulder. Light. Professional. Not gentle.
+
+“Child,” a voice said. “You’re in the wrong lane.”
+
+Chloen turned.
+
+Bram stood there. Older. Dust on his sleeves. A sash with muted brass threads across his chest—not Crown gold, not Infrastructure silver. Something in between. His eyes were tired but sharp, and they didn’t settle on her face first. They checked boots, hands, shoulders. Load capacity, not sympathy.
+
+“I’m waiting for the water ration,” Chloen said. Flat. Not small.
+
+Bram’s gaze flicked to her cuff. To the graphite smear showing. “Mark three?” he asked.
+
+Chloen didn’t answer. She didn’t need to. He’d already seen it.
+
+Bram made a sound like he was about to say something helpful, then his mouth got ahead of his brain. “Wrong lane. Unless you’re—” he paused, eyes narrowing like he was rewinding himself— “Unless you’re trying to win an award for *Most Patient Bare-Wrist in a Disaster.*” He blinked once. “Bad award. No prize. Don’t recommend.”
+
+Chloen stared at him.
+
+Bram exhaled through his nose. “Water ration moved. Two terraces down. Rope lane three.” He didn’t step aside yet. Just held the space.
+
+Above them, the Rift hung in the Kindling-light—black in blue, stars where there shouldn’t be stars. The double-pulse ran through the stone.
+
+“You saw the man at the stadium stairs,” Bram said.
+
+Chloen’s throat tightened. She kept her eyes on his sash threads instead of his face. “I saw people.”
+
+“Not just people.” Bram’s voice stayed low, even. “One man. Walking slow. Stopping on the pull. Hand to his chest.”
+
+Chloen’s fingers curled into her palms. Grit stung where it found cracks.
+
+“He left copper smears on the stone,” Bram went on. “Like the world’s been handling him without gloves.”
+
+Chloen didn’t move. Didn’t speak.
+
+A pull phase hit. Air thinned. Dust lifted in slow sheets.
+
+Bram’s eyes tracked nothing obvious—just the way bodies tightened when breath failed. His hand went to his own sternum for one breath. Just one. Then dropped.
+
+“I know what it tastes like,” he said. “Not every mouth floods. But some do.”
+
+Chloen swallowed hard. Metal taste surged anyway, like the world enjoyed proving people wrong.
+
+Bram’s mouth twitched, like a joke tried to escape and he hated himself for wanting to let it. “Breathe shallow on pull. Full on slack.” He lifted two fingers, then caught himself. “That’s the whole sermon. Don’t make me repeat it. I charge per repetition.” His eyes flicked to her, then to the lanes. “Kidding. Mostly.”
+
+The slack came. Air rushed back in. Sound returned with it—bells, voices, chalk scraping stone.
+
+Bram stepped aside. “Rope lane three,” he said again. “Tell the runner Bram sent you.”
+
+Chloen didn’t move. “Why?”
+
+She asked him why he kept doing it.
+
+Bram’s gaze went to Jhace, still directing the brace team. Jhace’s hands shook harder now that he wasn’t actively driving the wedge. “Because the ones who hold break first,” Bram said. “The ones who count break next.” He paused, and his brain did that stutter-hop again—almost a joke, almost a shrug, almost a truth. “The ones who watch…” He swallowed. “They’re last to break. Or first to remember what breaking looks like.”
+
+A runner shoved past carrying a water yoke. Behind him, a dock worker—broad shoulders, forearms roped with strain—dragged a crate across the stone like he was trying to out-muscle the planet.
+
+Chloen saw Tiffani across the lane for half a breath, giving a sharp hand signal to redirect a crowd away from a crack. Her posture was straight. Her slate stayed closed. Her knee hitched once and she pretended it didn’t.
+
+Then her gaze snagged—just a fraction—on the dock worker’s hands.
+
+Something hungry and inconvenient—easy to mistake for anger until you watched closely.
+
+Tiffani blinked, cut her eyes away, and went back to directing bodies like nothing had happened.
+
+Chloen didn’t understand it. She only understood the shape: Tiffani’s control wasn’t absence of wanting. It was wanting that got strangled quiet.
+
+Bram noticed too. His eyes flicked once in her direction, then back to Chloen like he’d caught himself thinking something that wasn’t useful. “Anyway,” he said, too fast, as if speed could erase the detour, “you’re not unmarked *yet.* Keep it that way.”
+
+A child’s cry rose from the sorting area—frustration, not fear. A boy with a broken wrist had been told to wait in the back rows. His mother argued with a brace captain pointing at chalk lines on the ground like they were laws.
+
+Chloen watched the mother’s shoulders tighten. Watched the captain’s hands gesture at the lines like the stone itself had spoken.
+
+“The question isn’t whether you saw him,” Bram said softly. “The question is what you do with what you saw.”
+
+Chloen looked at her hands. At the graphite smear hidden under her sleeve. At the coppergilt catching in the creases like it wanted ownership.
+
+Jhace’s voice cut across the terrace. Sharp. “Not that angle. Reset the wedge.”
+
+His hands were steady on the bar. Off the bar, they shook like leaves.
+
+“Do you break things, little watcher?” Bram asked. His mouth did the stutter again—almost a joke, almost not. “Or do you… I don’t know—help keep them from breaking worse?”
+
+Chloen didn’t answer. She put her hand in her pocket and touched the numbers again. **3-7-2.**
+
+Bram didn’t wait. He moved toward the argument.
+
+He didn’t speak to the captain first. Didn’t speak to the mother. He just knelt, boot heel scraping chalk, and redrew the boundary into a narrow path around the boy’s broken wrist.
+
+“Path’s for people,” Bram said to no one in particular. Then, like his brain couldn’t stop itself: “Not just stones. Stones don’t complain enough. If stones started yelling, we’d be out of work.” He blinked and stopped. “Doesn’t matter.”
+
+The mother pulled her son through the gap without thanking him. The captain didn’t protest. Bram stood, brushed dust from his knees, and looked back at Chloen.
+
+“Rope lane three,” he repeated. “Before they change the marks again.”
+
+Chloen moved.
+
+Toward Jhace.
+
+Toward Jhace.
+
+Bram didn’t stop her. He just watched her choose and didn’t flinch.
+
+At the work site, Jhace leaned on his wedge bar, breathing shallow. His hands shook badly. Teeth buzzing. Someone handed him a canteen; he spilled half before getting it to his mouth.
+
+Chloen stopped three steps away.
+
+Jhace saw her. His eyes flicked to her sleeve. To the graphite smear. “Bram send you?” he asked, voice rough.
+
+Chloen nodded. “He knows about the numbers.”
+
+Jhace’s grip tightened on the wedge bar. The shaking eased a fraction—like the body heard a threat and decided to behave for one more breath.
+
+“Bram knows about most things that matter,” Jhace said. “He just doesn’t talk about the ones that don’t.”
+
+Chloen watched his hands. Watched the tremor climb when he wasn’t working. “He asked me a question,” she said.
+
+Jhace’s jaw worked. “What question?”
+
+“What I do with what I see.”
+
+Jhace stared at her for three breaths—pull phase building, slack incoming, his throat tightening like it knew the schedule.
+
+Then he handed her the canteen. “Hold this,” he said. “Steady.”
+
+Chloen wrapped both hands around it. Held.
+
+Jhace’s fingers stopped shaking for one thin slice of time, like the tremor got confused by having nothing to perform with.
+
+Above them, the Rift stayed open. The double-pulse stayed underfoot.
+
+And Chloen held the canteen steady while Jhace’s hands learned—briefly—how to be still again.
+
+---
+
+# Chapter 13 — The Bowl
+
+
+The bowl sat on the stone shelf in the under-terrace
+The file is too long and its contents have been truncated.
+
+[TOOL]
+The file contents provided above are truncated/partial snippets. The complete content for these files IS accessible via querying.
+
+If the user asks a question related to these files, and the provided snippets do not clearly answer it, you **MUST** use the `file_search` tool to search the full document contents before responding.
+
+## How to invoke the file_search tool
+If the user's query isn't sufficiently answered by the provided snippets, parsed text, or images, you should invoke `file_search.msearch`.
+To search the full content of the available files, you **must** send one message with recipient `to=file_search.msearch` in the analysis channel. Your message should be structured exactly as follows:
+```
+{
+  'queries': ['Example query 1', 'Example query 2']  // List of up to five queries to search for.
+}
+```
+
+Carefully balance the number of `file_search` calls and the quality of your response with the latency incurred by `file_search` calls.
+
+Important guidelines for query formatting:
+- Your message must be a valid JSON object. Do not include any extraneous text, backticks, markdown formatting, or comments beyond what is shown.
+- The `queries` field must be a list of strings.
+- One of the queries **MUST** exactly match the user's original question, but stripped of any extraneous details, and with ambiguous references clearly resolved using context from the conversation. It **MUST** be a complete sentence.
+- Even if you suspect the user meant something else, one query **MUST** still be their original question.
+
+## How to handle results from file_search
+The file search tool will respond with the relevant search results from the full files. After you receive these results:
+- Carefully evaluate each result to determine its relevance and quality.
+- Use the high-quality and relevant results to inform your answer to the user's question.
+- When possible, reuse information from prior file_search results and avoid repeating identical queries.
+
+## Tool usage instructions and ordering
+When the user asks a question, carefully consider whether the provided snippets sufficiently answer the query, whether you need to invoke `file_search.msearch`, or another available tool (such as `web`, if available) should be used instead.
+
+Tool-ordering Guidelines:
+1. For queries related to uploaded files, if snippets are insufficient, strongly prefer invoking `file_search.msearch` over other tools.
+    - Avoid using `web.run`, `python` analysis, or any other tools until you have either:
+        - Confirmed with high confidence the answer is not in the files, or
+        - Have high confidence `file_search_tool` queries are not sufficient to answer the query.
+2. Avoid usage of `web_search/web.run` for queries related to uploaded files
+    - Carefully consider whether the user's query is better answered by web search results rather than available snippets or results from `file_search_tool`.
+    - Unless the user's query is clearly unrelated to the uploaded files, prefer using `file_search.msearch`. You can always follow up with a web search if necessary for a more complete response.
+3. Avoid using `python` unless necessary or requested by user.
+    - If the user's query is answerable from the parsed text and images from the uploaded files, or from `file_search_tool`, do not invoke `python`.
+
+Always keep this instruction in mind for the rest of the conversation, as the user may reference these files or ask related questions later on.
+
+[TOOL]
+(True, 114186)
+
+[ASSISTANT]
+text = path.read_text(encoding='utf-8')
+text[:300]
+
+[TOOL]
+'# The Chronicles of Iron and Glass — Novella One\n\n# Chapter 1 — Underface Forge\n\nThe knife was balanced.\n\nJhace had set it on the anvil face with the edge down and the spine up, a stupid trick if you didn’t know what you were doing and a useful one if you did. A true edge would sit without rocking. '
+
+[ASSISTANT]
+import re, pandas as pd, textwrap, json
+# find chapter headings
+pattern = re.compile(r'^(# Chapter\s+(\d+)\s+—\s+.+)$', re.MULTILINE)
+matches = list(pattern.finditer(text))
+len(matches), matches[:5]
+
+[TOOL]
+(18,
+ [<re.Match object; span=(50, 79), match='# Chapter 1 — Underface Forge'>,
+  <re.Match object; span=(6664, 6701), match='# Chapter 2 — Glass-House Observatory'>,
+  <re.Match object; span=(14320, 14359), match='# Chapter 3 — Ground-Level Continuation'>,
+  <re.Match object; span=(20161, 20184), match='# Chapter 4 — Firebreak'>,
+  <re.Match object; span=(21978, 22016), match='# Chapter 5 — The Child Under the Slab'>])
+
+[ASSISTANT]
+# build chapter sections
+chapters = {}
+for i, m in enumerate(matches):
+    chap_num = int(m.group(2))
+    start = m.start()
+    end = matches[i+1].start() if i+1 < len(matches) else len(text)
+    chapters[chap_num] = text[start:end].rstrip() + "\n"
+# verify requested chapters exist
+for n in [1,4,6,8]:
+    print(n, len(chapters.get(n,"")))
+
+[TOOL]
+1 6613
+4 1816
+6 4844
+8 2525
+
+[ASSISTANT]
+out_dir = Path("/mnt/data/extracted_chapters_1_4_6_8")
+out_dir.mkdir(exist_ok=True)
+# Create files
+file_map = {}
+for n in [1,4,6,8]:
+    # create safe filename: "Ch01_..." use title from heading
+    heading_line = chapters[n].splitlines()[0].strip("# ").strip()
+    # heading_line like "Chapter 1 — Underface Forge"
+    # create slug from title after dash
+    title = heading_line.split("—",1)[1].strip() if "—" in heading_line else heading_line
+    slug = re.sub(r'[^A-Za-z0-9]+','_',title).strip("_")
+    fname = f"Ch{n:02d}_{slug}.md"
+    fpath = out_dir / fname
+    fpath.write_text(chapters[n], encoding="utf-8")
+    file_map[n]=fpath
+file_map
+
+[TOOL]
+{1: PosixPath('/mnt/data/extracted_chapters_1_4_6_8/Ch01_Underface_Forge.md'),
+ 4: PosixPath('/mnt/data/extracted_chapters_1_4_6_8/Ch04_Firebreak.md'),
+ 6: PosixPath('/mnt/data/extracted_chapters_1_4_6_8/Ch06_Parapet.md'),
+ 8: PosixPath('/mnt/data/extracted_chapters_1_4_6_8/Ch08_Upper_Terrace_Sorting_Meeting.md')}
+
+[ASSISTANT]
+import zipfile, os
+zip_path = Path("/mnt/data/N01_Chapters_1_4_6_8_md.zip")
+with zipfile.ZipFile(zip_path, 'w', compression=zipfile.ZIP_DEFLATED) as z:
+    # include a readme
+    readme = (
+        f"Extracted from: {path.name}\n"
+        "Chapters included: 1, 4, 6, 8\n"
+        "Content is preserved exactly as in source; only split into separate files.\n"
+    )
+    z.writestr("README.txt", readme)
+    for n, fpath in file_map.items():
+        z.write(fpath, arcname=fpath.name)
+zip_path, zip_path.exists(), zip_path.stat().st_size
+
+[TOOL]
+(PosixPath('/mnt/data/N01_Chapters_1_4_6_8_md.zip'), True, 8125)
+
+[ASSISTANT]
+[Download the ZIP with Chapters 1, 4, 6, and 8 as separate .md files](sandbox:/mnt/data/N01_Chapters_1_4_6_8_md.zip) fileciteturn1file0
+
+Included files:
+- `Ch01_Underface_Forge.md`
+- `Ch04_Firebreak.md`
+- `Ch06_Parapet.md`
+- `Ch08_Upper_Terrace_Sorting_Meeting.md`
+
+[USER]
+ok now take the md files from this zip and recompile them back into a single manuscript
+
+[ASSISTANT]
+import os, zipfile, re, textwrap, pathlib, json, shutil, datetime
+zip_path = "/mnt/data/n1`.zip"
+os.path.exists(zip_path), os.listdir("/mnt/data")[:10]
+
+[TOOL]
+(True,
+ ['N01_COMPLETE_Ch1_to_Epilogue_TIFFANI_REWRITE_v2_INTEGRATED_v2 (2).md',
+  'N01_chapters_md',
+  'N01_chapters_md.zip',
+  'N01_COMPLETE_Ch1_to_Epilogue_TIFFANI_REWRITE_v2_INTEGRATED_v4_JHACE_6PASS.md',
+  'extracted_chapters_1_4_6_8',
+  'N01_Chapters_1_4_6_8_md.zip',
+  'n1`.zip'])
+
+[ASSISTANT]
+with zipfile.ZipFile(zip_path, 'r') as z:
+    names = z.namelist()
+names[:50], len(names)
+
+[TOOL]
+(['Ch05_The_Child_Under_the_Slab.md',
+  'Ch07_Upper_Terrace_Sorting_Meeting.md',
+  'Ch09_The_Gap.md',
+  'Ch10_The_Shard.md',
+  'Ch11_The_Sequence.md',
+  'Ch12_The_Question.md',
+  'Ch13_The_Bowl.md',
+  'Ch14_The_Briefing.md',
+  'Ch15_The_Omission.md',
+  'Ch16_The_Easy_Answer.md',
+  'Ch17_Deployment.md',
+  'Ch18_Habituation.md',
+  'Epilogue_Corlexi.md',
+  'README.md',
+  'Ch06_Parapet_Tsunami_Turn.md',
+  'Ch08_Names.md',
+  '00_Title.md',
+  'Ch01_Underface_Forge.md',
+  'Ch02_Glass-House_Observatory.md',
+  'Ch03_Ground-Level_Continuation.md',
+  'Ch04_Firebreak.md'],
+ 21)
+
+[ASSISTANT]
+import io
+
+def order_key(name):
+    base = os.path.basename(name)
+    if base.lower() == "readme.md":
+        return (2, 9999, base)
+    m = re.match(r"^00_", base)
+    if m:
+        return (0, 0, base)
+    m = re.match(r"^Ch(\d+)_", base)
+    if m:
+        return (1, int(m.group(1)), base)
+    m = re.match(r"^Ch(\d+)\b", base)
+    if m:
+        return (1, int(m.group(1)), base)
+    if base.lower().startswith("epilogue"):
+        return (3, 9998, base)
+    return (4, 9999, base)
+
+ordered = sorted([n for n in names if os.path.basename(n).lower()!="readme.md"], key=order_key)
+ordered
+
+[TOOL]
+['00_Title.md',
+ 'Ch01_Underface_Forge.md',
+ 'Ch02_Glass-House_Observatory.md',
+ 'Ch03_Ground-Level_Continuation.md',
+ 'Ch04_Firebreak.md',
+ 'Ch05_The_Child_Under_the_Slab.md',
+ 'Ch06_Parapet_Tsunami_Turn.md',
+ 'Ch07_Upper_Terrace_Sorting_Meeting.md',
+ 'Ch08_Names.md',
+ 'Ch09_The_Gap.md',
+ 'Ch10_The_Shard.md',
+ 'Ch11_The_Sequence.md',
+ 'Ch12_The_Question.md',
+ 'Ch13_The_Bowl.md',
+ 'Ch14_The_Briefing.md',
+ 'Ch15_The_Omission.md',
+ 'Ch16_The_Easy_Answer.md',
+ 'Ch17_Deployment.md',
+ 'Ch18_Habituation.md',
+ 'Epilogue_Corlexi.md']
+
+[ASSISTANT]
+compiled_path = "/mnt/data/N01_recompiled_manuscript.md"
+sections = []
+with zipfile.ZipFile(zip_path, 'r') as z:
+    for fn in ordered:
+        data = z.read(fn)
+        # detect encoding: assume utf-8
+        text = data.decode('utf-8', errors='replace')
+        # ensure ends with newline
+        if not text.endswith("\n"):
+            text += "\n"
+        sections.append(text)
+compiled_text = "\n\n".join(sections).rstrip() + "\n"
+with open(compiled_path, "w", encoding="utf-8") as f:
+    f.write(compiled_text)
+os.path.getsize(compiled_path), compiled_path
+
+[TOOL]
+(113941, '/mnt/data/N01_recompiled_manuscript.md')
+
+[ASSISTANT]
+[Download the recompiled single manuscript (MD)](sandbox:/mnt/data/N01_recompiled_manuscript.md)
+
+Compile order used (exact file contents preserved; only concatenated with blank lines between files):
+
+- `00_Title.md`
+- `Ch01_Underface_Forge.md`
+- `Ch02_Glass-House_Observatory.md`
+- `Ch03_Ground-Level_Continuation.md`
+- `Ch04_Firebreak.md`
+- `Ch05_The_Child_Under_the_Slab.md`
+- `Ch06_Parapet_Tsunami_Turn.md`
+- `Ch07_Upper_Terrace_Sorting_Meeting.md`
+- `Ch08_Names.md`
+- `Ch09_The_Gap.md`
+- `Ch10_The_Shard.md`
+- `Ch11_The_Sequence.md`
+- `Ch12_The_Question.md`
+- `Ch13_The_Bowl.md`
+- `Ch14_The_Briefing.md`
+- `Ch15_The_Omission.md`
+- `Ch16_The_Easy_Answer.md`
+- `Ch17_Deployment.md`
+- `Ch18_Habituation.md`
+- `Epilogue_Corlexi.md`

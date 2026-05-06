@@ -1,11 +1,11 @@
 """
 Craig CODA — core runtime.
 
-Wraps a local Ollama model with episodic memory retrieval.
+Wraps a backend adapter (via DEFAULT_ADAPTER_REGISTRY) with episodic memory retrieval.
 Flow per turn:
   1. Retrieve top-k episodic nodes relevant to the user message
   2. Inject them as context into the system prompt
-  3. Call the model (streaming)
+  3. Build a CodaRequest and route generation through the adapter registry
   4. Log retrieval + update resonance bonds
 """
 from __future__ import annotations
@@ -14,6 +14,8 @@ import uuid
 import yaml
 from pathlib import Path
 from typing import Generator
+
+from src.coda_ir import CodaMessage, CodaRequest
 
 ROOT = Path(__file__).parents[2]
 
@@ -42,6 +44,17 @@ class CodaRuntime:
         self._store = None
         self._session_id = str(uuid.uuid4())
         self._history: list[dict] = []
+
+        # Ensure an adapter is registered for this model.
+        self._bootstrap_adapter()
+
+    def _bootstrap_adapter(self) -> None:
+        """Register an OllamaAdapter for self.model if not already in the registry."""
+        from src.adapters.ollama_adapter import OllamaAdapter
+        from src.adapters.registry import DEFAULT_ADAPTER_REGISTRY
+        backend_id = f"ollama:{self.model}"
+        if backend_id not in DEFAULT_ADAPTER_REGISTRY.list_backends():
+            DEFAULT_ADAPTER_REGISTRY.register(OllamaAdapter(self.model))
 
     # ------------------------------------------------------------------
 
@@ -101,7 +114,7 @@ class CodaRuntime:
             allowed_frames: restrict episodic retrieval to specific frames
             show_context: if True, print retrieved node summaries before streaming
         """
-        from src.runtime.ollama_client import chat as ollama_chat
+        from src.adapters.registry import DEFAULT_ADAPTER_REGISTRY
 
         # Retrieve
         nodes = self._retrieve(message, allowed_frames=allowed_frames)
@@ -114,21 +127,31 @@ class CodaRuntime:
                 print(f"  {n.id[:8]}  {snippet}")
             print()
 
-        # Build messages
+        # Build system prompt (vault identity + episodic memory context)
         context_block = self._build_context_block(nodes)
         system_prompt = self._build_system_prompt(context_block)
 
-        messages = [{"role": "system", "content": system_prompt}]
-        messages.extend(self._history)
-        messages.append({"role": "user", "content": message})
+        # Build CodaRequest — vault-compiled system_prompt travels with the request
+        history = [CodaMessage(role=m["role"], content=m["content"]) for m in self._history]
+        request = CodaRequest(
+            message=message,
+            system_prompt=system_prompt,
+            history=history,
+            memory_nodes=[
+                {"id": n.id, "domain": n.domain, "content": n.content[:400]}
+                for n in nodes
+            ],
+            target_backend=f"ollama:{self.model}",
+        )
 
-        # Stream response
+        # Route through adapter registry (streaming)
+        adapter = DEFAULT_ADAPTER_REGISTRY.get(request.target_backend)
         full_response = []
-        for chunk in ollama_chat(self.model, messages):
+        for chunk in adapter.stream(request):
             full_response.append(chunk)
             yield chunk
 
-        # Update history
+        # Update conversation history
         self._history.append({"role": "user", "content": message})
         self._history.append({"role": "assistant", "content": "".join(full_response)})
 

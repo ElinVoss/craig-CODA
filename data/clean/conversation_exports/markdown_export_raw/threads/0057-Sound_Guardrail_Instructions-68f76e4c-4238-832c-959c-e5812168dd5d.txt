@@ -1,0 +1,516 @@
+CONVERSATION_ID: 68f76e4c-4238-832c-959c-e5812168dd5d
+TITLE: Sound Guardrail Instructions
+MESSAGE_COUNT: 39
+
+[USER]
+TITLE: The Line That Holds
+
+SOUND GUARDRAIL:
+- BAN near Veinwork: sing, hum, hymn, chorus, choir, tune, melody, music.
+- ALLOW mechanical/material sounds (whine, chatter, scrape, rattle, ring, hiss, creak, groan, thud, pulse, pressure, even, level, quiet). 
+- “Thrum” allowed only in the sense of pressure/rope/line; never as a musical simile.
+
+AUTO-SCRUB (revise until clean):
+- Replace any banned word with an allowed mechanical cue.
+- If a replacement becomes an aphorism (“the sound of trust”), cut it and show cause→effect (clip card → carts ease).
+
+[ASSISTANT]
+{}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","ls -l /home/oai/share && sed -n '1,200p' /home/oai/share/The\\ Line\\ That\\ Sings.txt"]}
+
+[TOOL]
+total 140
+-rw-r--r--   1 oai oai_shared 81894 Oct 21 11:28 The Line That Sings.txt
+-rwxrwsr-x   1 oai oai_shared  5715 Oct  4 08:04 answer.js
+-rwxrwsr-x   1 oai oai_shared  2321 Oct  4 08:04 create_montage.py
+drwxrwsr-x 108 oai oai_shared  4096 Oct  4 08:06 node_modules
+lrwxrwxrwx   1 oai oai_shared    38 Oct  4 08:06 package-lock.json -> /usr/local/slides_js/package-lock.json
+lrwxrwxrwx   1 oai oai_shared    33 Oct  4 08:06 package.json -> /usr/local/slides_js/package.json
+-rwxrwsr-x   1 oai oai_shared  3954 Oct  4 08:04 placeholder_light_gray_block.png
+-rwxrwsr-x   1 oai oai_shared  8534 Oct  4 08:04 pptx_to_img.py
+-rwxrwsr-x   1 oai oai_shared 24612 Oct  4 08:04 slides_template.js
+﻿Prologue — The Year the World Took a Breath
+The world ended once and decided it was too much trouble to stay dead. It didn’t break apart; it flexed, like a lung taking air after being punched. A pull went through the crust—straight, fast, absolute—and stopped just short of tearing clean through. What it left was a tunnel with no opposite mouth. People called it the Bore, because naming the wound makes it sound finished.
+From the Upper Crown, it looks like an even circle of shadow on maps. From the Underface, it’s a black horizon that presses in your teeth when the air gets heavy. Nobody pretends it’s a mystery anymore. We live around it, not above it. Every crack, every bridge, every load-bearing inch answers to what the Bore changed.
+It began with water taking new routes. Rivers turned, cliffs sagged, docks listed without warning. For a year the wind came up from the ground instead of the sky, and you could smell iron on your skin no matter how often you washed. People called it divine; the rest of us called it gravity. When the air stopped shaking, a handful of us were still standing, and we started measuring before we started praying.
+We found the veins by accident. They ran under the ground like nerves under skin, thin lines where force preferred to travel. When the veins slipped out of their old paths, they bled heat and pressure and made Harrow—the kind of rupture that doesn’t care if you’re watching. A few people, tired of being erased, learned to touch the veins and guide them. Those hands became Veinwrights. Their work became the city’s language: Trace. Set. Bridge. Veil. Slake. Tempermark.
+The Bore taught one rule that never stopped mattering: everything carries stress, and stress remembers. You can’t erase a fault; you can only give it a safer way to move. That’s what the craft is—negotiation between material and will. Every building stands because someone convinced it not to fall.
+Six months after the pull, the first bridges started breathing. At night you could see vapor lifting from the joints like ghost breath. No one remembers laying the mains that kept them warm, but the warmth stayed. It rose through basements and clinics, through pipes that had no valves, through the Conclave halls where the Veinwrights kept their ledgers. The city learned to live with the heat as a fact, not a gift. It kept people alive in winter, and it kept them honest—because if a line failed, everyone nearby heard it.
+When the air cooled, the Bells came. Not temple chimes—work signals. Long clear rings for reopen, two short for brace, fast beats for Harrow risk. Each Bell came with a board stamped in copper and sealed in glass. You could tell a city’s health by how clean its Tempermarks were.
+The first posted rule was ugly and perfect: One hand on the home ring. Hold something that won’t move while you touch what might. It was less philosophy, more survival.
+Then came the rest, written by people who’d already bled once for the knowledge: — Trace wet. Dry lines please eyes and lie to Veins. — Wedge before Veil. Cool the draft, then the glass. — Half-beat Slake. — Countermark cooler than birth. Pride bends things wrong. — No White. — Brace taps only in Bells Two and Three. You are not special in Four. — If it isn’t on the board, it didn’t happen.
+They’re not prayers. They’re methods. Watch a street when a blue HALT goes up and every hammer stops midair. Watch the crowd hold breath until the setter witness signs the clear. That’s how cities stay alive—by honoring pause more than noise.
+We forbid Overbind, because a clean disaster still kills you. We forbid Whitequench, because a lie in glass cuts deeper than heat. We measure by what doesn’t fail, not by what shines.
+After the Bore, Bells multiplied. Every trade learned its rhythm. The Couriers’ Bell marked motion; the Conclave’s marked repair. You could walk a full day and never be out of hearing range. It was noise that meant survival—call, answer, repeat.
+Six hundred and twelve rounds later, Te’Oga still leans a fraction toward the Bore. Maps mark the tilt with a single diagonal line through the city’s name. Children in the Underface draw circles in ash to guess the next drift. Crown engineers add decimal places to comfort themselves. Neither side is wrong.
+The Bore doesn’t threaten anymore. It just exists. We’ve made a kind of peace with the wound: keep it measured, keep it known, keep it held.
+Work here isn’t sacred. It’s necessary. The Conclave says “Trace wet.” The Couriers answer, “One hand on home.” Together, they make the city stay where it is.
+If you need a prayer, you use your hands: Trace wet. Wedge before Veil. Slake on the half-beat. Tempermark what you promise. Post it. The world isn’t healed. It’s held. That’s enough.
+________________
+
+
+Chapter 1: Wet Trace at Blackgate
+Bell Two rang short across the Underface. Jhace climbed the ladder out of the low heat, hand closing on rung, the metal sweating under his palm. He came up into Blackgate’s choke where the carts were backed nose to nose, and the Posting board glared white with its Tempermark pin and droplet icon.
+Tiffani had already chalked a half-circle behind them so the crowd couldn’t press too close. She stood in the ring’s gap, one hand on her Veil case, the other tracing light against the stone seam. “Hold your tongue out of the way,” she said without looking. “It’s a quick one.”
+Jhace set his pack down, rolled his sleeves, and touched the home ring bolted to the post. “One hand on home.”
+She nodded, voice gone flat with routine. “One hand on home.”
+Brighlee arrived from the Conclave, still breathing through paper. “Work order nine-three-two. Wet Trace, Blackgate span. Setter Jhace brast, glass Tiffani veld, no hold.” She Tempermarked the droplet card, clipped it to the board, and stepped back. Tiffani’s eyes lingered on the ink longer than Brighlee’s hand—counting strokes, weighing silence. Names posted, Bell recorded. The carts quieted.
+The note from the Chain said quick Vein under the gate plate—heat moving wrong, a shallow slip that could cut the cart path clean through the Underface if ignored. Persuasion before force. Always persuasion first.
+Jhace unpacked what he needed: two wedges, seven-degree cut; copper-nib trace stick; bladder of wet. Nothing else. He checked his fray bands and the dull brass ring on his left wrist for crack. Sound.
+Tiffani tilted the Lume rod, spreading its beam along the seam. The light came back too bright—bad depth. She adjusted the Shade one mark darker until the glare steadied. “Fault’s running shallow,” she said. “Quick vein wants the short path.”
+“Short path’s under their wheels,” he answered. “We give it a long one.”
+He took his wedges, set the first two spans north of the gate mouth. A low angle, shallow drive. The second he planted at the shoulder where the seam ducked under the bridge stone. Two measured taps. Wood met resistance, then held.
+“Half-beat Slake,” Tiffani said.
+He thumbed the bladder cap, wet the copper nib, flicked the bead clear. He placed it to the face and drew the line from north to shoulder, pressure through the shoulder, not the wrist. Wet Trace moved slow, steam rising in thin threads that curled before dying in the air. The smell was clean—mineral, no burn.
+Tiffani adjusted her light. “Shade three to four. Keep it honest.”
+“No white,” he said. He traced through the curve, kept the bead unbroken. A cart axle squealed behind them, then stopped when the driver saw the droplet card. A brake eased. The lane held.
+The copper scratched across grit. Jhace froze, steadied, smoothed on the second pass. The bead almost broke. He held his breath until it rejoined. Tiffani’s knuckles brushed his sleeve, steadied his wrist like truing a wheel.
+“Stay,” she said.
+He did. Her hand rested against his wrist, steadying the tremor. His muscles quieted.
+At the gate mouth, the Vein flicked toward the wheel groove. Veins liked edges; they remembered where stone met air. Jhace flattened the nib, widened the wet into a shallow bow across the lip. The Vein answered—a tight pulse running north. “Turning,” he said.
+“Counter it,” she said.
+He drew a narrow correction line upstream, heat balancing through stone. The trace shimmered, found the longer route, settled. The vein stopped tugging. Pressure equalized. Even breathing again.
+“Veil small,” she said. She warmed a palm-wide Shade skin, stretched it over the new trace, and tapped the edges in sevens, each strike exact. “Annealshift?”
+“Zero. Let the wall hold its own heat.”
+She nodded. “Veil in. Trace held.”
+Brighlee wrote the line as it cooled. “Wedge set, trace complete, Veil sealed. Bell two and three.”
+“Sign it,” Jhace said.
+She passed him the stamp. He pressed the setter mark into the metal plate beside the droplet symbol. The ring’s bite echoed down the stone.
+Tiffani leaned back, listening. “Gate’s steady. Field calm.”
+He touched the plate with his bare hand. Warm, not burning. “Field even,” he said. The heat moved out and down like a slow breath. “Cost: fray band worn, thirst.”
+She passed the bottle. Veld water always tasted faintly of glass. He drank and gave it back.
+“Policy,” she said. “Clinic if the ring hums past four.”
+He grunted agreement. Brighlee clipped the finished wo[... ELLIPSIZATION ...]etween plates looked born that way, not repaired. That was the goal: leave no sign of having been needed.
+Continuity: Artifact — STRATHMOOR SPAN THREAD DRAW — Bell 4 North-thread drift corrected; coupler reseated; twin rods set; Shade 1 Veil applied; load test passed. Witness: Mel Quarr. Costs: palm burn, fray band notch. Image — The coupler mouth sealed under thin Veil while fog slides past in sheets and the river carries broken light below.
+________________
+
+
+Chapter 3: Counterbend at Lowcourt Arch
+Bell Six came sharp and bright through the Upper shafts, ringing against every pipe that held the morning fog. Lowcourt’s Arch never liked daylight—it showed what the night had hidden. A hairline split ran between the arch stones where the third rib met the walkway bracket, a clean crack widening by breath.
+Jhace was halfway up the scaffold before Brighlee finished reading the notice. “Work order eight-eight-one. Counterbend, Lowcourt Arch. Setter Jhace brast, Glass Tiffani veld. Local hold on half-lane until witness clear.” The last word echoed in the hollow under the span.
+Tiffani was already on the inner run, hand to the seam. “It’s new,” she said. “Two fingers deep. Warm on one edge.”
+Jhace crouched, running his glove along the joint. The air pushed out, steady pulse. “Thermal vein undercut the rib. We bend it back or lose the bracket by Bell Nine.”
+She tapped her chalk against the stone, marking the stress lines. “We’ll go double wedge, five-degree counter, and Slake at the midpoint. No Veil until it cools.”
+He unpacked two metal wedges, dull-edged from the last job, and a trace stick cut short for tight space. The arch smelled of lime dust and wet iron—old labor and new problem.
+“Clamp the east strut,” Tiffani said.
+He hooked his belt to the ring set in the beam. “One hand on home,” he said, not ceremony, just habit.
+She smiled with half her mouth. “One hand on home.”
+They moved like practiced hinge—she setting the chalk arc, he setting the wedges, rhythm falling into the old count. “First at angle, second at base,” she said.
+He slid the first wedge into the gap, shoulder against stone. Tap, tap. The wedge slipped.
+Tiffani’s eyes sharpened. “Angle?”
+“Too proud,” he said, pulling it free. He cut the angle flatter with his knife, tried again. This time it bit. The crack hissed. He set the second wedge opposite, tapping in counter rhythm. The arch groaned low.
+“Hold there,” she said. “Trace wet.”
+He thumbed the bladder, wetting the copper tip until the bead grew heavy. He ran the line between the wedges, two hands wide, guiding water into heat. Steam came off sharp and white; he worked through it.
+“Half-beat Slake.”
+He matched her voice to the work. Two fingers on the plate, slow breath, pulse steady. “It’s listening,” he said.
+“Let it answer,” she said. She lowered the Lume, blue light cutting the mist. The trace glowed dull red, not bright—a good sign.
+He traced the counterline across the top of the split, met the first run clean. The gap closed by half, a dark seam going gray as it cooled.
+“Drop wedges a count,” she said.
+He lifted his hammer, gave each head one measured strike. The arch gave back a sound like teeth setting. The air around them steadied.
+“Vein’s settled,” he said.
+“Still wants a leash,” she said, drawing a small loop with chalk over the join. “We’ll set a band.”
+He unwound a thin steel fray band, wrapped it once around the rib, drew it tight, and pinned it with the small rivet she handed him. The band clicked into place. “Hold?”
+“Hold,” she confirmed. “Shade it.”
+She warmed a small strip of Shade 2 skin between her palms and laid it over the scar, tapping in sets of seven. The smell of curing resin drifted up.
+Brighlee wrote from the scaffold base, voice low but steady. “Counterbend executed, Slake at midpoint, band set, Veil applied.”
+Tiffani looked down. “Bell six confirmed?”
+“Confirmed,” Brighlee said. “Witness on route.”
+The air shifted before Mel Quarr arrived—everyone knew her step, the way the Bells seemed to pause a fraction when she was near. She climbed the last rung without taking the offered hand. “You bent it clean?”
+“Quarter-gap closed to eighth, heat discharged through counterline,” Tiffani said.
+Mel touched the Veil with the back of her knuckle, then with the flat of her palm. She frowned.
+“Problem?” Tiffani asked.
+Mel pressed harder. “Just wanted to be sure.” She listened a count longer. “Witness. Post it.”
+Brighlee Tempermarked the slip, ink catching the light. “Counterbend, Lowcourt Arch, local hold cleared. Bell six.”
+Jhace exhaled, rolling his shoulder. “Cost: heat bite on right palm, one fray band spent.”
+Tiffani brushed her thumb across his wrist once. “Clinic if it blisters.”
+“Policy met.”
+Mel nodded toward the city. “You’ve got another seam at West Court before dusk. This one holds.”
+“Thanks,” Tiffani said.
+The crew packed down. Jhace wiped the wedges clean, brushed stone dust off the lip, checked the band for tightness. The arch held still.
+Below, the carts started again. A teamster looked up once, tipped his chin, and moved on. The bridge carried weight like it meant to.
+They left the scaffold, walking down into the tunnel of cooled air beneath the arch. The smell of stone after steam clung to them both.
+Continuity: Artifact — LOWCOURT ARCH COUNTERBEND — Bell 6 Double-wedge counter applied; wet trace and midpoint Slake; fray band set; Shade 2 strip laid; local hold cleared. Witness: Mel Quarr. Costs: heat bite, one band. Image — Water beads lined along the band’s lower edge at equal intervals while carts roll overhead without a squeal.
+________________
+
+
+Chapter 4: Heat Splice under Alderline
+Bell Eight hit in dull echoes under Alderline’s underbelly, the sound rolling slow through stone and steam. It was late afternoon, gray and thick, the kind of day that made metal taste of air instead of earth. The lower conduits had been running hot for two Bells past limit—enough to burn shade off a wall skin. By the time Jhace reached the site, sweat had already stripped the chalk from his collar.
+Tiffani stood by the south vent where the duct wall buckled. Her veil cloth was half soaked, but her voice stayed level. “Thermal vein tore through the splice. You feel the air?”
+He crouched, palm to conduit. The heat bit through the glove fast. “Alive and angry. Vein’s running blind.”
+“Blind means fast,” she said. “And if it finds the main, we’ll have a blow under the market.”
+“Field direction?”
+“East to west, downhill. No counter. Just run.”
+Brighlee appeared, collar up against the heat. “Work order one-one-five-four. Heat Splice under Alderline. Setter Jhace brast, Glass Tiffani veld. Local hold to foot traffic until clear.” She Tempermarked the droplet board with shaking fingers; the wax nearly ran before it set.
+“Chain it,” Tiffani said.
+Jhace fastened his tether to the wall ring, one hand gripping it. “One hand on home.” The metal burned even through his sleeve. “We wedge the run first.”
+“Use the short wedges,” she said. “The long ones will swell.”
+He pulled two half-lengths from his pouch, jammed the first at the upper seam of the duct mouth, the second two spans below. He hammered them in until the pitch rose high and sharp.
+The duct noise shifted—deep to shallow, like breath caught in the chest.
+“Trace wet,” she said.
+He thumbed the bladder cap, drew water into the copper nib, and began the run. The first line hissed as it met the heat; vapor curled into ribbons. He kept the nib steady, shoulder over hand, driving water into the split vein until the color under the metal dulled from white to gray.
+Tiffani moved her Lume rod closer. “Shade four to six,” she said. “Keep the bead thick.”
+He adjusted his wrist, laying the second line parallel, two fingers apart. Heat surged under his hand—vein testing him—but the wet held. Steam rolled off the metal in heavy breaths.
+“Half-beat Slake,” she said.
+He let the wet rest, pressure through shoulder, breath slow. The line steadied. The vein’s pulse dropped.
+“Still wants a mouth,” she said.
+“I’ll give it one.”
+He ran a short feeder line from the end of his first trace to a small vent slit above the duct. The air drew through it, hissing once, then falling quiet.
+The heat at his glove softened; the metal under his palm stopped twitching. Tiffani’s hand brushed his wrist once, not comfort but calibration, steadying his wrist until his pulse matched the duct.
+“Slake complete,” she said. “Now Veil.”
+He stepped aside. She drew a Shade 2 skin from her case, warmed it between her hands, and pressed it over the splice. Steam rose and hung there. Her fingers moved quick—tap tap tap in sets of seven. The seam went dark, settled.
+Brighlee’s pen scratched. “Heat Splice contained, Veil applied, local hold remains until witness.”
+“Tell them we’ll have it cleared by Bell Nine,” Tiffani said.
+Brighlee nodded and climbed back up the tunnel steps to keep the onlookers from drifting too close.
+Jhace checked his gloves. The leather had gone glossy, almost translucent. “Burn through,” he muttered.
+“Palm?” she asked.
+“Blister later. Not yet.”
+“Clinic if it lifts,” she said, without looking away from the seam.
+He grunted.
+The air shifted again—cooler this time. Steam thinned. The duct gave a single deep crack, then went still.
+“Field even,” Tiffani said.
+He leaned close, listening with his teeth. “Pressure five-finger drop. The vein found its line.”
+They waited half a count, because silence after a heat job lies half the time. When nothing moved, she nodded. “Test run.”
+He signaled up the tunnel. The vent valves opened. Air rushed through, caught in the new splice, turned direction like it had never meant to fight them. The response that came back was mechanical peace: even pulse, measurable.
+“Set,” he said.
+Mel Quarr came down through the vent shaft, wiping condensation from her glasses. “Alderline again,” she said, and crouched without ceremony. “Let me hear it.”
+
+[ASSISTANT]
+{"cmd":["bash","-lc","sed -n '201,400p' /home/oai/share/The\\ Line\\ That\\ Sings.txt"]}
+
+[TOOL]
+Jhace shifted aside. She put one ear to the Veil and stayed still long enough to make them both hold breath. Then she nodded. “Stable. Hot vein cooled, no echo. You cleared it before the breach.”
+“Witness?” Tiffani asked.
+“Witness,” Mel said. “Post it.”
+Brighlee reappeared, ink already drying at the pen’s edge. “Heat Splice contained under Alderline. Local hold cleared. Bell Nine mark.” She clipped the slip, pressed the blue seal, held until it took.
+“Cost?” Tiffani asked.
+“Palm blister, glove dead. Fray band edge singed.”
+“Policy?”
+“Clinic if it lifts,” he said again.
+She handed him a new pair from her bag. “Use these next time.”
+He took them, thick leather still cool. “You planning another heat job?”
+“This city’s always planning another heat job,” she said.
+They gathered tools while the fog from the duct mixed with the cooler tunnel air. It smelled of burnt dust and new rain. The metal face they’d fixed stayed matte, clean.
+Brighlee finished her last mark and snapped the ledger shut. “Filed.”
+They climbed back to the street. The air above Alderline carried no heat shimmer now, only slow gray light.
+Tiffani looked down the length of the duct run, eyes tracing where the line bent invisible under stone. “If it holds through melt, we buy ourselves a season.”
+Jhace slung the dead gloves over his shoulder. “One more day of a world that works.”
+“Don’t get poetic,” she said.
+He didn’t.
+Continuity: Artifact — ALDERLINE HEAT SPLICE — Bell 8–9 Hot vein contained; short wedges; twin wet traces; feeder to vent; Shade 2 Veil; hold cleared. Witness: Mel Quarr. Costs: palm blister, glove ruined, singed band. Image — A matte, cooled splice with a thin drift of steam fading while the tunnel air turns clean.
+________________
+
+
+Chapter 5: Lockfall at Greymantle Cut
+Jhace hit the pavement running, Bell Ten already shuddering through the pipes. The street pitched like a breathing lung. A lock had failed in the Cut, lower east face, the kind that took carts whole if left arguing.
+Tiffani was kneeling in runoff halfway down the slope, gloves black with silt, hair damp with steam. “Second lock’s sheared,” she said. “First’s holding by prayer. Get down here.”
+He slid in beside her. The air stank of boiled metal and canal gas. Water climbed over the curb in gray fingers. “How deep?”
+“Too deep.” She shoved a wrench into his hand. “Counterbrace’s stuck. I can’t see the pin.”
+He put his shoulder into it, turned once, twice. Nothing. The wrench teeth jumped, bit air.
+“Strip it and we’re drowned,” she said.
+“Already halfway.” He jammed the tip again, braced one knee against stone, and pulled. The wrench gave a sound like bone cracking. The pin twitched free—then stuck again.
+“Angle’s wrong,” Tiffani said.
+“No time for right.”
+He leaned harder. Metal shrieked. The lock gate shifted, not enough. Water surged up his chest, warm, rising fast.
+“Cut the feed line!” she shouted.
+Brighlee’s voice echoed from the walkway above. “Valve’s jammed!”
+“Then bleed it!” Tiffani snapped.
+Jhace drew his hammer and drove it into the pin head. The gate lurched an inch. Water punched him in the throat. He couldn’t breathe. He struck again, blind. The pin jumped. The lock slid another inch.
+Tiffani grabbed his collar and hauled him back. The water line dropped half a hand.
+“Hold!” she shouted.
+The gate creaked, uncertain. He pressed both palms to the metal, felt it trembling. “Vein’s live under it!”
+“Trace wet!”
+He fumbled the bladder, hands shaking, found the copper nib, scrawled a crooked line across the seam. The water hissed, turned steam, hissed again. The vibration smoothed. The gate took weight.
+She lowered her Lume, breath cutting short. “Pulse?”
+“Even. For now.”
+“Brace it anyway.”
+He reached for the short wedges. The first slipped from his hand, vanished in the runoff. The second stuck, skewed.
+“Wrong cut,” she said.
+“I know.” He sliced the edge flat with his knife, jammed it again. This time it bit.
+The low vibration dropped into the stone. The water stopped climbing.
+Brighlee clattered down the stair, half-drenched, ledger bag thumping. “Bell Ten and a half! Setter Jhace brast, Glass Tiffani veld—Lockfall emergency!”
+“Post later!” Tiffani said. “Witness first!”
+Mel Quarr stumbled in from the north end, coat dripping. “You’re lucky I was on the bridge,” she said.
+“Get down here,” Jhace said. “We need your ear.”
+Mel crouched, pressed her head to the lock seam. Her jaw tightened. “Still movement.”
+“We bled it!”
+“Not enough.” She moved her hand lower, searching. “There’s another line.”
+Tiffani cursed. “The feeder vein.”
+Jhace turned, searching the wall through steam. “Where?”
+“Under you.”
+He knelt, groped through the flood, found the hairline crack near his boot. Warm water bubbled through. He shoved the copper nib into it, let the bladder feed until the hiss died.
+“Now?” he said.
+Mel stayed still for a long count. Then she looked up, doubtful. “Maybe.”
+“Maybe doesn’t clear it,” Tiffani said.
+Mel pressed her ear again, eyes shut. Silence. “Now.”
+Jhace slumped against the wall. The water around his knees had gone still, the kind of stillness that made sound travel.
+Brighlee wiped water from her ledger with the side of her sleeve. “Lockfall at Greymantle Cut contained. Local hold to remain partial until tomorrow inspection.”
+“Post it,” Tiffani said.
+Brighlee clipped the slip to the drenched board. The ink ran but stayed legible.
+Jhace peeled his glove. His palm was split across the web between thumb and forefinger, blood mixing with gray water.
+“Cost?” she asked.
+He flexed the hand; skin pulled. “Grip’s gone for a day.”
+“Clinic,” she said.
+“I said a day, not a week.”
+“Policy doesn’t care what you said.”
+He laughed once.
+The lock groaned, then quieted. Mel stood, brushing grit from her coat. “You held it,” she said. “Don’t expect thanks.”
+“Wouldn’t know what to do with it,” Jhace said.
+She almost smiled. “Good. You’ll get another call before dawn.”
+She left up the wet stairs, boots leaving perfect prints.
+Tiffani leaned on the gate, breathing hard. “You almost drowned.”
+He nodded. “Almost fixed it, too.”
+Her hand found his wrist, still wet. “Stay,” she said.
+He did.
+They stood until the canal calmed and the sound of the Bells faded under the water’s slow rise.
+Continuity: Artifact — GREYMANTLE CUT LOCKFALL — Bell 10–11 Lock failure arrested; counterbrace freed; wet trace calmed live vein; wedges set; partial hold remains pending inspection. Witness: Mel Quarr. Costs: split palm, one wedge lost. Image — A red handprint drying against stone beside the home ring while runoff loses its color and carts wait without complaint.
+
+
+Chapter 6: Corlexi’s Fire (Interlude)
+Bell Twelve rolled flat over the roofs, muffled by mist and smoke. Corlexi stood in the market square with both hands in the ash bin, pulling placards out one by one. Each card bore the old single‑brace symbol: two wedges facing inward, out of date by one Bell. Every lock failure that week had carried that mark. Policy changed this morning. Someone had to burn the proof.
+He held the first card by its corner. The wax Tempermark bled blue when the heat touched it, curling into itself like muscle recoiling. The stamp read Greymantle Cut—Work Order 2043. He remembered the red handprint rumor before he saw the stain burned into the ink edge. “Lucky he didn’t drown,” he muttered, and dropped it into the flame.
+A group of apprentices watched from the steps, carrying fresh boards. They whispered to each other, eyes on the burn box. “Double brace rule?” one asked.
+Corlexi didn’t look up. “Double brace rule. Within ten rounds.”
+The fire spat once. Wax smell thickened. The second placard carried a name he knew—Maren hilt, a good setter who’d cracked a knee when a brace failed two months ago. He held it longer before letting it fall.
+On the far side of the square, the Couriers’ Bell office was already laying out the new boards. Ink crews worked off a folding table, stamping wedge glyphs two‑by‑two, copper heads hot enough to hiss when they touched wood. The pattern had changed overnight: old inward braces replaced by paired diagonals, more metal, more safety.
+“Quicker this way?” an apprentice asked.
+“No,” Corlexi said. “Slower, safer.”
+He fed the third placard into the bin. The crowd near the food stalls had gone quiet, watching the smoke. It wasn’t ceremony; it was relief disguised as boredom.
+A Conclave clerk crossed the square with a basket of new seals. “Posting priority corners first,” he said, voice careful. “The Conclave wants public compliance before dusk.”
+Corlexi wiped sweat from his cheek with the back of his arm. “They always do.”
+The clerk hesitated, holding a placard halfway. “You were there for Lowcourt, right?”
+“Doesn’t matter where I was.” He took the placard and set it into the fire. “Now I’m here.”
+The last of the old signs turned to smoke. He raked the ashes with a long iron rod until the glyphs broke apart. Behind him, the apprentices lifted the new boards, carried them toward the market posts, the stairwells, the corners by the canal. Every new mark would show two wedges instead of one.
+A teamster paused his cart to watch. “Another rule already?”
+Corlexi turned, voice even. “One that keeps your wheels on the ground.”
+The man tipped his cap and moved on.
+Corlexi knelt by the ashes, scooped a handful into a small cloth bag, tied it tight. He labeled the bag in careful script: Witness residue — old policy burned clean.
+By the time the Bell rang half, the square had changed color. The old blue of single braces had gone gray in the soot, replaced by fresh copper and paint that hadn’t yet dulled. Children traced the new glyphs with their fingers as they passed.
+From the east alley came a gust of steam—pipe vent clearing from Alderline’s repair. Corlexi looked up through it, saw the faint shadow of the Conclave tower against the fog. The world was always patching itself faster than people could keep up.
+An apprentice returned from the posting run, breath quick. “Every corner’s marked. Last one’s drying by the pump road.”
+Corlexi nodded. “Good. When it rains, the wax will tell us which ones hold.”
+“What if one doesn’t?”
+“Then we bury someone,” he said. “And trace it again.”
+The clerk from the Conclave sealed the record page with the last of his ink. “Policy change filed: all Cut locks to carry double brace before Bell Twenty‑two. Witness Corlexi, Market Station.”
+He signed his name small, a single curl at the end. “Filed,” he said.
+The clerk hesitated. “You burn them clean.”
+“Everything burns clean if you give it enough air.”
+The clerk left with the ledger. The apprentices lingered, unsure if they were dismissed. Corlexi pointed at the fresh boards stacked by the rail. “Post two more at the bridge ends before Bell Thirteen. People forget fast.”
+They moved, boots thudding.
+When the square cleared, Corlexi sat on the edge of the ash bin. The fire had gone to coals, orange and low. He held one unburned corner of an old placard, tracing the single‑wedge mark with his thumb. It wasn’t wrong when they made it; it was just small. The city had outgrown small.
+He tossed it into the coals and waited for the wax to hiss.
+Continuity: Artifact — CONCLAVE POLICY UPDATE — Bell 12 Effective immediately: all lock braces within Te’Oga to be doubled, twin‑wedge configuration mandatory. Previous single‑brace seals void. Compliance verification by Couriers’ Bell inspectors within ten rounds. Image — A square gone gray with ash, new copper placards catching steam‑light, and the faint smell of burned wax rising into the fog while the city pretends it was always built this way.
+________________
+
+
+Chapter 7: Double Fault at Rindle Yard
+The Thread was already broken when they got there, hanging like split rope from the upper seam. Bell Two had barely cleared; the air smelled of burnt iron and shame.
+Jhace dropped to one knee beside the fault. The brace plates were wrong—the old single set, bent inward, paint flaked. Someone had patched over the crack with tar and hope.
+“Double rule went out last Bell,” Tiffani said, standing over him. “This is still single.”
+“Work Order’s dated yesterday.” He peeled a tag from the post. The Tempermark was smudged. “Filed before the change.”
+“Doesn’t make it safe.”
+He ran a finger along the line. “Who set it?”
+“Rindle yard foreman signed it. Kesh Hurn.”
+“Figures.” He tapped the seam; dull echo. “He braced shallow, didn’t backfill the groove.”
+She knelt beside him, Lume low. “You want to condemn it?”
+He looked at the carts queued behind them—grain wagons, two Bells late already. “Condemn and they riot.”
+“Leave it and it collapses.”
+He didn’t answer. Instead he unpacked a wet bladder and copper nib. “We do what we can.”
+Tiffani hissed through her teeth. “Against policy.”
+He met her eyes. “Against dying, too.”
+The first wedge refused the slot. He turned it, shaved it down with his knife, pressed again. The metal gave half a sound, neither yes nor no.
+“Angle’s off,” she said.
+“Off by one degree, maybe.”
+“Enough.”
+He pulled it free, cut it flatter. This time it bit. The seam breathed once.
+“Trace it,” she said.
+He set the wet line, slow and deliberate. The copper hissed. Steam lifted, thin and bright. Half‑beat Slake. His hand trembled.
+“You’re bleeding through the wrap,” she said.
+“Not enough to matter.”
+“You always say that.”
+The Thread shuddered under the deck. A deep vibration rolled through the plates—heavy. Jhace froze.
+“Too hot,” she said. “You’re feeding it too fast.”
+He lifted the nib. The vibration eased but didn’t stop. “Backflow from the lower vein.”
+She angled the Lume light along the seam, found a hairline split running off left. “That’s not ours. That’s old metal.”
+“Then we’re chasing ghosts.”
+“Ghosts kill slower, but they still kill.”
+Behind them, Brighlee jogged down the path, hair damp with fog, ledger in hand. “Double‑brace inspection,” she said. She saw the fault, opened the book, and wrote without comment.
+Mel Quarr arrived half‑running, coat half‑buttoned. “What’s wrong?”
+“Old work,” Tiffani said. “Single brace, cracked thread, wrong feed.”
+Mel crouched, laid her palm to the plate. The vibration pulsed through her arm. “That’s unstable.”
+Jhace didn’t look up. “We know.”
+“Then step back.”
+“No time.”
+She reached for the trace line. “You’ll burn it.”
+He caught her wrist. “Then I’ll burn it steady.”
+Mel held his stare a beat too long, then pulled free. “You think you can fix this?”
+“I think it needs a witness.”
+She almost smiled. “You’ll either save it or make it worse.”
+“That’s most of my work.”
+He adjusted the line, traced again, slower. The wet beaded along the crack, steam rising. The vibration dropped half a tone.
+Tiffani exhaled. “That’s better.”
+“Not done.” He pressed a second wedge. The first shifted. “Damn it—”
+The seam snapped open a hair. Water hissed.
+Mel shouted, “Step back!”
+He didn’t. He shoved his shoulder against the plate, jammed the wedge deeper. The hiss stopped. The Thread steadied, faint and even.
+“Now?” Tiffani asked.
+Mel pressed her hand to the seam again. “Still live, but not rising.”
+“Enough to clear?”
+“Maybe.” She waited one more heartbeat. “Now.”
+He pulled back, soaked through. Tiffani moved fast, laying two Shade 1 skins across the seam, sealing the new double brace. The water cooled; the air turned metallic and sweet.
+Brighlee recorded, clipped the interim slip, and stepped aside.
+Mel stood, brushing grit off her knees. “You saved it,” she said.
+“Temporarily.”
+“Nothing’s permanent.” She looked toward the queue. “Tell the carts they can pass, slow.”
+Tiffani lifted her Lume toward the post. “Witness?”
+Mel hesitated, hand above the ledger. “The policy’s new. This fix breaks it.”
+“Then mark it as precedent,” Jhace said.
+Mel studied the line another long moment, then nodded. “Witness.” She signed, slow and deliberate.
+The carts started rolling again, wheels creaking, drivers staring down at the fresh seal as they passed. Nobody spoke.
+Jhace cleaned his tools, blood streaking the wet cloth. His glove was torn; skin raw at the palm.
+“Cost?” Tiffani asked.
+“Grip’s gone again.”
+“Clinic.”
+“Policy.”
+Mel turned away, already writing. “Habit saves cities,” she said over her shoulder.
+They packed up. Fog lifted just enough to show the new double‑brace gleaming dull under water sheen.
+Continuity: Artifact — RINDLE YARD—DOUBLE FAULT — Bell 2–3 Emergency double‑wedge applied under superseded single‑brace install; Slaked; thread stabilized under witness; temporary variance logged pending Conclave review. Witness: Mel Quarr. Costs: torn palm, one wedge lost. Precedent: immediate correction permitted when delay risks collapse. Image — Steam thins to reveal the new brace shining wet, two wedges crossing like a scar that chose to hold.
+________________
+
+
+Chapter 8: The HALT at Narrowvale Rise
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -niE '\\b(sing|hum|hymn|chorus|choir|tune|melody|music)\\b' -n /home/oai/share/The\\ Line\\ That\\ Sings.txt | head"],"timeout": 100000}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -niE '\\b(sings|sing|hum|hymn|chorus|choir|tune|melody|music|melodies|tunes)\\b' -i /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"],"timeout": 100000}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -ni 'sing' /home/oai/share/The\\ Line\\ That\\ Sings.txt | head"],"timeout": 100000}
+
+[TOOL]
+14:Six hundred and twelve rounds later, Te’Oga still leans a fraction toward the Bore. Maps mark the tilt with a single diagonal line through the city’s name. Children in the Underface draw circles in ash to guess the next drift. Crown engineers add decimal places to comfort themselves. Neither side is wrong.
+22:Bell Two rang short across the Underface. Jhace climbed the ladder out of the low heat, hand closing on rung, the metal sweating under his palm. He came up into Blackgate’s choke where the carts were backed nose to nose, and the Posting board glared white with its Tempermark pin and droplet icon.
+33:He thumbed the bladder cap, wet the copper nib, flicked the bead clear. He placed it to the face and drew the line from north to shoulder, pressure through the shoulder, not the wrist. Wet Trace moved slow, steam rising in thin threads that curled before dying in the air. The smell was clean—mineral, no burn.
+55:They packed in silence. Tools wiped, copper cooled, wedges tapped free. Brighlee closed her ledger with a single snap. The sound meant done.
+56:The first cart eased forward, front wheel passing the seam. The rim rolled the shallow bow and stayed silent. The driver glanced down, then up, gave the small nod that meant you did the thing; I saw you.
+57:They stayed until the third cart cleared, then unhooked from the home ring. Tiffani closed her case. Brighlee walked off, already writing the next line of work that would prove they’d lived this day correctly. Jhace lingered, eyes on the wet mark as it cooled. The steam had gone to thin breath, rising straight and vanishing against the stone.
+75:He drew the first line of wet from the north coupler down into the seam. The water hissed where metal met stress. The thread—a slender vein of heat beneath the plate—shifted once and hesitated. He guided it slow, not pushing, not chasing, just offering a cleaner route.
+102:The carts began to move again, a single wheel squealing, then catching rhythm. Jhace watched the strain lines across the span ease back into place—steel carrying itself again, the bridge alive but content.
+182:He ran a short feeder line from the end of his first trace to a small vent slit above the duct. The air drew through it, hissing once, then falling quiet.
+194:The air shifted again—cooler this time. Steam thinned. The duct gave a single deep crack, then went still.
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -ni 'thrum' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -ni -E 'chorus|choir|tune|melody|music|hymn|hum' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[TOOL]
+33:He thumbed the bladder cap, wet the copper nib, flicked the bead clear. He placed it to the face and drew the line from north to shoulder, pressure through the shoulder, not the wrist. Wet Trace moved slow, steam rising in thin threads that curled before dying in the air. The smell was clean—mineral, no burn.
+51:“Policy,” she said. “Clinic if the ring hums past four.”
+88:Jhace gave the signal. The chain crew took the leaf one finger up. The line ran even through the plates. He pressed his thumb to the coupler. Warm, no chatter. “Set.”
+128:He thumbed the bladder, wetting the copper tip until the bead grew heavy. He ran the line between the wedges, two hands wide, guiding water into heat. Steam came off sharp and white; he worked through it.
+150:Tiffani brushed her thumb across his wrist once. “Clinic if it blisters.”
+175:He thumbed the bladder cap, drew water into the copper nib, and began the run. The first line hissed as it met the heat; vapor curled into ribbons. He kept the nib steady, shoulder over hand, driving water into the split vein until the color under the metal dulled from white to gray.
+250:Brighlee clattered down the stair, half-drenched, ledger bag thumping. “Bell Ten and a half! Setter Jhace brast, Glass Tiffani veld—Lockfall emergency!”
+269:Jhace peeled his glove. His palm was split across the web between thumb and forefinger, blood mixing with gray water.
+319:When the square cleared, Corlexi sat on the edge of the ash bin. The fire had gone to coals, orange and low. He held one unburned corner of an old placard, tracing the single‑wedge mark with his thumb. It wasn’t wrong when they made it; it was just small. The city had outgrown small.
+513:He steadied her wrist. Her pulse jumped under his thumb.
+553:He placed one suspect weight on the pan, thumbed the notch along its rim. “Filed too deep,” he said to his clerk. “Half‑grain shave.”
+594:She ran a thumbnail under the lifted lip. The skin flexed, then tore clean along its own weave. “Veil delam.”
+601:He set a wedge midline to quiet any wander, then thumbed the bladder and drew a short wet along the seam where the Veil had lifted. Half-beat Slake. Steam rose and vanished. The line took at once. No fault in the plate.
+
+[ASSISTANT]
+{"cmd":["bash","-lc","sed -n '45,55p' /home/oai/share/The\\ Line\\ That\\ Sings.txt"]}
+
+[TOOL]
+Brighlee wrote the line as it cooled. “Wedge set, trace complete, Veil sealed. Bell two and three.”
+“Sign it,” Jhace said.
+She passed him the stamp. He pressed the setter mark into the metal plate beside the droplet symbol. The ring’s bite echoed down the stone.
+Tiffani leaned back, listening. “Gate’s steady. Field calm.”
+He touched the plate with his bare hand. Warm, not burning. “Field even,” he said. The heat moved out and down like a slow breath. “Cost: fray band worn, thirst.”
+She passed the bottle. Veld water always tasted faintly of glass. He drank and gave it back.
+“Policy,” she said. “Clinic if the ring hums past four.”
+He grunted agreement. Brighlee clipped the finished work order under the droplet icon, lifted her ledger so the crowd could see the names. Tiffani’s chalk mark still hung half‑erased on the stone, a line left unfinished. The carts shifted. Law to motion again.
+Jhace crouched once more, checking the seam. Wet line dull and even. No bubbles under the veil, wedges seated clean. The air above the trace no longer shimmered. “Blackgate’s quiet.”
+Tiffani smiled without teeth, the kind of smile that left the ledger unbalanced. “It remembers when we make it look good.”
+They packed in silence. Tools wiped, copper cooled, wedges tapped free. Brighlee closed her ledger with a single snap. The sound meant done.
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -ni ' hum ' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -i -n 'choir' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -i -n 'chorus' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -i -n 'melody' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -i -n 'music' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -i -n 'hymn' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -i -n '\\btune\\b' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -i -n 'sound of' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[TOOL]
+284:They stood until the canal calmed and the sound of the Bells faded under the water’s slow rise.
+752:“Small one,” she said, warming a palm-wide Shade 1 and laying it so the friend line couldn’t go wandering again. Tap, tap, tap, in sevens. The sound of it matched the stairs’ shallow shift as someone passed above them carrying a bucket.
+
+[ASSISTANT]
+{"cmd":["bash","-lc","python - <<'PY'\nimport re, os\ntext=open('/home/oai/share/The Line That Sings.txt').read().lower()\nfor w in ['sing',' hum','hymn','chorus','choir','tune','melody','music','thrum']:\n    if w in text:\n        print(w)\nPY"]}
+
+[TOOL]
+sing
+ hum
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -o -E '.{0,20} hum[^a-zA-Z]' -n /home/oai/share/The\\ Line\\ That\\ Sings.txt | head"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -ni 'hums' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[TOOL]
+51:“Policy,” she said. “Clinic if the ring hums past four.”
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -niE '\\bsing\\b' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","grep -niE '\\bsings\\b' /home/oai/share/The\\ Line\\ That\\ Sings.txt || true"]}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","apply_patch <<'EOF'\n*** Begin Patch\n*** Update File: The Line That Sings.txt\n@@\n-“Policy,” she said. “Clinic if the ring hums past four.”\n+“Policy,” she said. “Clinic if the ring hisses past four.”\n*** End Patch\nEOF"]}
+
+[TOOL]
+Done!
+
+[ASSISTANT]
+{"filepath":"/home/oai/share/The Line That Sings.txt"}
+
+[TOOL]
+{"file_id":"file-5UBsSWMVhXa3uf7BrWUwvP"}
+
+[ASSISTANT]
+{"cmd":["bash","-lc","cp -f /home/oai/share/The\\ Line\\ That\\ Sings.txt /home/oai/share/The\\ Line\\ That\\ Holds.txt"]}
+
+[ASSISTANT]
+{"filepath":"/home/oai/share/The Line That Holds.txt"}
+
+[TOOL]
+{"file_id":"file-4FjpeBUoCsQyKK9HnmweqW"}
+
+[ASSISTANT]
+Here’s the scrubbed version of your story. I replaced the only problematic instance (“ring hums past four”) with the approved mechanical cue, so it now reads “ring hisses past four.” The text otherwise didn’t include any of the banned words, so everything else remains untouched.
+
+You can download the updated file here: {{file:file-4FjpeBUoCsQyKK9HnmweqW}}.

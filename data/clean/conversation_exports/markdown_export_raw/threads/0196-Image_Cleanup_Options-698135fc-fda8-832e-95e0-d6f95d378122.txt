@@ -1,0 +1,435 @@
+CONVERSATION_ID: 698135fc-fda8-832e-95e0-d6f95d378122
+TITLE: Image Cleanup Options
+MESSAGE_COUNT: 37
+
+[USER]
+{"asset_pointer": "sediment://file_00000000c014722f902c4250caa01c3c", "content_type": "image_asset_pointer", "fovea": null, "height": 1334, "metadata": {"asset_pointer_link": null, "container_pixel_height": null, "container_pixel_width": null, "dalle": null, "emu_omit_glimpse_image": null, "emu_patches_override": null, "generation": null, "gizmo": null, "is_no_auth_placeholder": null, "lpe_delta_encoding_channel": null, "lpe_keep_patch_ijhw": null, "sanitized": true, "watermarked_asset_pointer": null}, "size_bytes": 181631, "width": 750}
+
+Clear this image up for me
+
+[ASSISTANT]
+I’ll enhance your photo by reducing haze, boosting contrast, correcting color/white balance, and adding gentle sharpening while keeping it natural. I’ll export a cleaned-up version you can download.
+
+[ASSISTANT]
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
+import numpy as np, os, math, cv2, matplotlib.pyplot as plt, PIL
+img_path="/mnt/data/IMG_0418.JPG"
+img=Image.open(img_path)
+img.size, img.mode
+
+[TOOL]
+Matplotlib is building the font cache; this may take a moment.
+((750, 1334), 'RGB')
+
+[ASSISTANT]
+import numpy as np, cv2, PIL.Image as Image
+im = cv2.imread(img_path)  # BGR
+im.shape, im.dtype
+
+[TOOL]
+((1334, 750, 3), dtype('uint8'))
+
+[ASSISTANT]
+import cv2, numpy as np, sys, pkgutil, importlib, math, os
+has_ximg = hasattr(cv2, "ximgproc")
+has_ximg
+
+[TOOL]
+False
+
+[ASSISTANT]
+im_rgb = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
+# compute brightness distribution
+gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+np.percentile(gray, [1,5,50,95,99])
+
+[TOOL]
+array([ 27.,  35., 104., 199., 255.])
+
+[ASSISTANT]
+hasattr(cv2, "createTonemapReinhard"), hasattr(cv2, "createTonemapDurand"), hasattr(cv2, "createTonemapMantiuk")
+
+[TOOL]
+(True, False, True)
+
+[ASSISTANT]
+import numpy as np, cv2, os, math
+
+def dark_channel(im, size=15):
+    # im float [0,1], rgb
+    minch = np.min(im, axis=2)
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(size,size))
+    dark = cv2.erode(minch, kernel)
+    return dark
+
+def estimate_atmospheric_light(im, dark, top_percent=0.001):
+    # im float [0,1], rgb
+    h,w = dark.shape
+    num = int(max(1, h*w*top_percent))
+    flat = dark.reshape(-1)
+    idx = np.argpartition(flat, -num)[-num:]
+    # pick the pixel with highest intensity in im among these
+    im_flat = im.reshape(-1,3)
+    # brightness as sum
+    brightest = idx[np.argmax(np.sum(im_flat[idx], axis=1))]
+    A = im_flat[brightest]
+    return A
+
+def estimate_transmission(im, A, omega=0.95, size=15):
+    im_norm = im / (A.reshape(1,1,3) + 1e-6)
+    dark = dark_channel(im_norm, size)
+    t = 1 - omega*dark
+    return t
+
+def recover_radiance(im, A, t, t0=0.1):
+    t_clip = np.maximum(t, t0)
+    J = (im - A.reshape(1,1,3)) / t_clip[:,:,None] + A.reshape(1,1,3)
+    return np.clip(J, 0, 1)
+
+def gray_world_wb(im):
+    # im float [0,1], rgb
+    mean = np.mean(im.reshape(-1,3), axis=0)
+    gray = np.mean(mean)
+    scale = gray/(mean+1e-6)
+    out = im*scale.reshape(1,1,3)
+    return np.clip(out,0,1)
+
+def apply_clahe_lab(im_uint8, clip=2.0, tile=(8,8)):
+    lab = cv2.cvtColor(im_uint8, cv2.COLOR_RGB2LAB)
+    L,a,b = cv2.split(lab)
+    clahe = cv2.createCLAHE(clipLimit=clip, tileGridSize=tile)
+    L2 = clahe.apply(L)
+    lab2 = cv2.merge([L2,a,b])
+    return cv2.cvtColor(lab2, cv2.COLOR_LAB2RGB)
+
+def highlight_compress_lab(im_uint8, knee_start=200, strength=1.0):
+    lab = cv2.cvtColor(im_uint8, cv2.COLOR_RGB2LAB)
+    L,a,b = cv2.split(lab)
+    Lf = L.astype(np.float32)
+    ks = knee_start
+    above = np.maximum(Lf-ks,0)
+    # soft knee compression
+    kr = 255-ks
+    # strength affects compression aggressiveness
+    denom = (kr/(strength+1e-6)) + above
+    compressed = ks + above*(kr/denom)
+    L2 = np.clip(compressed,0,255).astype(np.uint8)
+    lab2 = cv2.merge([L2,a,b])
+    return cv2.cvtColor(lab2, cv2.COLOR_LAB2RGB)
+
+def unsharp_mask(im_uint8, amount=1.0, radius=1.2, threshold=0):
+    imf = im_uint8.astype(np.float32)
+    blurred = cv2.GaussianBlur(imf, (0,0), radius)
+    sharp = imf + amount*(imf-blurred)
+    sharp = np.clip(sharp,0,255).astype(np.uint8)
+    return sharp
+
+def denoise(im_uint8, h=6):
+    # fastNlMeansDenoisingColored expects BGR
+    bgr = cv2.cvtColor(im_uint8, cv2.COLOR_RGB2BGR)
+    out = cv2.fastNlMeansDenoisingColored(bgr, None, h, h, 7, 21)
+    return cv2.cvtColor(out, cv2.COLOR_BGR2RGB)
+
+# Load and process
+im_bgr = cv2.imread(img_path)
+im_rgb = cv2.cvtColor(im_bgr, cv2.COLOR_BGR2RGB)
+I = im_rgb.astype(np.float32)/255.0
+
+dark = dark_channel(I, size=15)
+A = estimate_atmospheric_light(I, dark, top_percent=0.001)
+t = estimate_transmission(I, A, omega=0.92, size=15)
+# refine t via bilateral filter
+t_ref = cv2.bilateralFilter(t.astype(np.float32), d=9, sigmaColor=0.1, sigmaSpace=15)
+J = recover_radiance(I, A, t_ref, t0=0.12)
+
+# White balance
+J_wb = gray_world_wb(J)
+
+# Convert to uint8
+J8 = (J_wb*255).astype(np.uint8)
+
+# Highlight compression
+J8_hc = highlight_compress_lab(J8, knee_start=205, strength=1.2)
+
+# CLAHE moderate
+J8_clahe = apply_clahe_lab(J8_hc, clip=1.8, tile=(8,8))
+
+# Slight saturation boost in HSV
+hsv = cv2.cvtColor(J8_clahe, cv2.COLOR_RGB2HSV).astype(np.float32)
+hsv[:,:,1] *= 1.08
+hsv[:,:,1] = np.clip(hsv[:,:,1], 0, 255)
+J8_sat = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+
+# Denoise mild
+J8_dn = denoise(J8_sat, h=5)
+
+# Sharpen
+J8_sharp = unsharp_mask(J8_dn, amount=1.15, radius=1.1)
+
+out_path="/mnt/data/IMG_0418_cleared.jpg"
+cv2.imwrite(out_path, cv2.cvtColor(J8_sharp, cv2.COLOR_RGB2BGR), [int(cv2.IMWRITE_JPEG_QUALITY), 95])
+out_path
+
+[TOOL]
+'/mnt/data/IMG_0418_cleared.jpg'
+
+[ASSISTANT]
+# stronger version
+t = estimate_transmission(I, A, omega=0.95, size=17)
+t_ref = cv2.bilateralFilter(t.astype(np.float32), d=9, sigmaColor=0.12, sigmaSpace=25)
+J = recover_radiance(I, A, t_ref, t0=0.10)
+J_wb = gray_world_wb(J)
+J8 = (J_wb*255).astype(np.uint8)
+J8_hc = highlight_compress_lab(J8, knee_start=200, strength=1.6)
+J8_clahe = apply_clahe_lab(J8_hc, clip=2.2, tile=(8,8))
+hsv = cv2.cvtColor(J8_clahe, cv2.COLOR_RGB2HSV).astype(np.float32)
+hsv[:,:,1] *= 1.15
+hsv[:,:,1] = np.clip(hsv[:,:,1],0,255)
+hsv[:,:,2] *= 1.03
+hsv[:,:,2] = np.clip(hsv[:,:,2],0,255)
+J8_sat = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+J8_dn = denoise(J8_sat, h=6)
+J8_sharp = unsharp_mask(J8_dn, amount=1.35, radius=1.2)
+out_path2="/mnt/data/IMG_0418_cleared_stronger.jpg"
+cv2.imwrite(out_path2, cv2.cvtColor(J8_sharp, cv2.COLOR_RGB2BGR), [int(cv2.IMWRITE_JPEG_QUALITY), 95])
+out_path2
+
+[TOOL]
+'/mnt/data/IMG_0418_cleared_stronger.jpg'
+
+[TOOL]
+<<ImageDisplayed>>
+
+[ASSISTANT]
+import numpy as np, cv2, os, math
+
+def percentile_wb(img_rgb, low=1, high=99):
+    # img_rgb uint8
+    out = img_rgb.astype(np.float32)
+    for c in range(3):
+        lo = np.percentile(out[:,:,c], low)
+        hi = np.percentile(out[:,:,c], high)
+        if hi - lo < 1:
+            continue
+        out[:,:,c] = (out[:,:,c] - lo) * (255.0/(hi - lo))
+    return np.clip(out,0,255).astype(np.uint8)
+
+def s_curve(x, strength=0.6):
+    # x in [0,1]
+    # logistic-ish contrast curve with controllable strength
+    # strength 0 = identity
+    k = 6*strength + 1e-6
+    # centered at 0.5
+    y = 1/(1+np.exp(-k*(x-0.5)))
+    # normalize so 0->0 and 1->1
+    y0 = 1/(1+np.exp(k*0.5))
+    y1 = 1/(1+np.exp(-k*0.5))
+    y = (y - y0)/(y1 - y0)
+    return y
+
+def process_clarity(im_rgb):
+    # 1) white balance & stretch
+    wb = percentile_wb(im_rgb, low=0.5, high=99.2)
+    
+    # 2) LAB operations
+    lab = cv2.cvtColor(wb, cv2.COLOR_RGB2LAB).astype(np.float32)
+    L,a,b = cv2.split(lab)
+    L_norm = L/255.0
+    
+    # highlight compression via soft knee on L
+    knee = 0.80  # start compress around 80% 
+    above = np.maximum(L_norm - knee, 0)
+    L_comp = L_norm.copy()
+    # compress above knee
+    L_comp = np.where(L_norm > knee, knee + above/(1 + 3*above), L_norm)
+    
+    # shadow lift a bit (gamma)
+    gamma = 0.92
+    L_lift = np.power(L_comp, gamma)
+    
+    # apply mild S-curve to add contrast but not blow
+    L_sc = (1-0.25)*L_lift + 0.25*s_curve(L_lift, strength=0.55)
+    
+    # local contrast (clarity) on L
+    L_blur = cv2.GaussianBlur(L_sc, (0,0), 12)
+    clarity = L_sc + 0.35*(L_sc - L_blur)
+    clarity = np.clip(clarity, 0, 1)
+    
+    L_new = (clarity*255.0)
+    lab_new = cv2.merge([L_new, a, b]).astype(np.uint8)
+    rgb = cv2.cvtColor(lab_new, cv2.COLOR_LAB2RGB)
+    
+    # vibrance: boost saturation more on low-sat pixels
+    hsv = cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV).astype(np.float32)
+    s = hsv[:,:,1]/255.0
+    boost = 0.10*(1 - s) + 0.02  # little boost
+    hsv[:,:,1] = np.clip((s*(1+boost))*255.0, 0, 255)
+    rgb2 = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+    
+    # denoise mild
+    rgb_dn = denoise(rgb2, h=4)
+    # sharpen mild
+    rgb_sh = unsharp_mask(rgb_dn, amount=0.9, radius=1.0)
+    return rgb_sh
+
+im_rgb = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB)
+out = process_clarity(im_rgb)
+out_path3="/mnt/data/IMG_0418_cleared_v2.jpg"
+cv2.imwrite(out_path3, cv2.cvtColor(out, cv2.COLOR_RGB2BGR), [int(cv2.IMWRITE_JPEG_QUALITY), 95])
+out_path3
+
+[TOOL]
+<<ImageDisplayed>>
+
+[TOOL]
+'/mnt/data/IMG_0418_cleared_v2.jpg'
+
+[ASSISTANT]
+hasattr(cv2, "detailEnhance"), hasattr(cv2, "edgePreservingFilter"), hasattr(cv2, "stylization")
+
+[TOOL]
+<<ImageDisplayed>>
+
+[TOOL]
+(True, True, True)
+
+[ASSISTANT]
+def process_clarity_v3(im_rgb):
+    wb = percentile_wb(im_rgb, low=0.5, high=99.3)
+    lab = cv2.cvtColor(wb, cv2.COLOR_RGB2LAB).astype(np.float32)
+    L,a,b = cv2.split(lab)
+    L_norm = L/255.0
+    
+    knee=0.82
+    above=np.maximum(L_norm-knee,0)
+    L_comp=np.where(L_norm>knee, knee + above/(1+4*above), L_norm)
+    # slight shadow lift
+    gamma=0.94
+    L_lift=np.power(L_comp,gamma)
+    # S curve mild
+    L_sc=(1-0.18)*L_lift + 0.18*s_curve(L_lift, strength=0.55)
+    # clarity
+    sigma=9
+    L_blur=cv2.GaussianBlur(L_sc,(0,0),sigma)
+    clarity=L_sc + 0.25*(L_sc-L_blur)
+    clarity=np.clip(clarity,0,1)
+    L_new=(clarity*255.0)
+    lab_new=cv2.merge([L_new,a,b]).astype(np.uint8)
+    rgb=cv2.cvtColor(lab_new, cv2.COLOR_LAB2RGB)
+    # vibrance mild
+    hsv=cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV).astype(np.float32)
+    s=hsv[:,:,1]/255.0
+    boost=0.07*(1-s)+0.01
+    hsv[:,:,1]=np.clip((s*(1+boost))*255.0,0,255)
+    rgb2=cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+    # denoise a bit more
+    rgb_dn=denoise(rgb2,h=5)
+    # detail enhance
+    bgr=cv2.cvtColor(rgb_dn, cv2.COLOR_RGB2BGR)
+    bgr_de=cv2.detailEnhance(bgr, sigma_s=10, sigma_r=0.15)
+    rgb_de=cv2.cvtColor(bgr_de, cv2.COLOR_BGR2RGB)
+    # sharpen mild
+    rgb_sh=unsharp_mask(rgb_de, amount=0.85, radius=0.9)
+    return rgb_sh
+
+out3=process_clarity_v3(im_rgb)
+out_path4="/mnt/data/IMG_0418_cleared_v3.jpg"
+cv2.imwrite(out_path4, cv2.cvtColor(out3, cv2.COLOR_RGB2BGR), [int(cv2.IMWRITE_JPEG_QUALITY), 95])
+out_path4
+
+[TOOL]
+'/mnt/data/IMG_0418_cleared_v3.jpg'
+
+[ASSISTANT]
+import cv2, numpy as np, os, math
+
+# Load v2 output
+v2 = cv2.cvtColor(cv2.imread(out_path3), cv2.COLOR_BGR2RGB)
+gray = cv2.cvtColor(v2, cv2.COLOR_RGB2GRAY)
+
+# face detect
+cascade_path = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+face_cascade = cv2.CascadeClassifier(cascade_path)
+faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(80,80))
+faces
+
+[TOOL]
+<<ImageDisplayed>>
+
+[TOOL]
+()
+
+[ASSISTANT]
+profile_path = cv2.data.haarcascades + "haarcascade_profileface.xml"
+profile_cascade = cv2.CascadeClassifier(profile_path)
+faces_p = profile_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4, minSize=(80,80))
+faces_p
+
+[TOOL]
+()
+
+[ASSISTANT]
+def luma_unsharp(rgb, amount=1.1, radius=1.0):
+    lab = cv2.cvtColor(rgb, cv2.COLOR_RGB2LAB).astype(np.float32)
+    L,a,b = cv2.split(lab)
+    blur = cv2.GaussianBlur(L, (0,0), radius)
+    L2 = L + amount*(L - blur)
+    L2 = np.clip(L2, 0, 255)
+    lab2 = cv2.merge([L2, a, b]).astype(np.uint8)
+    return cv2.cvtColor(lab2, cv2.COLOR_LAB2RGB)
+
+v2b = luma_unsharp(v2, amount=1.2, radius=0.9)
+# mild denoise after sharpen? usually before
+v2b = denoise(v2b, h=3)
+out_path5="/mnt/data/IMG_0418_cleared_v2b.jpg"
+cv2.imwrite(out_path5, cv2.cvtColor(v2b, cv2.COLOR_RGB2BGR), [int(cv2.IMWRITE_JPEG_QUALITY), 95])
+out_path5
+
+[TOOL]
+'/mnt/data/IMG_0418_cleared_v2b.jpg'
+
+[ASSISTANT]
+def process_natural(im_rgb):
+    wb = percentile_wb(im_rgb, low=0.5, high=99.2)
+    lab = cv2.cvtColor(wb, cv2.COLOR_RGB2LAB).astype(np.float32)
+    L,a,b = cv2.split(lab)
+    L_norm = L/255.0
+    
+    knee=0.82
+    above=np.maximum(L_norm-knee,0)
+    L_comp=np.where(L_norm>knee, knee + above/(1+5*above), L_norm)
+    gamma=0.95
+    L_lift=np.power(L_comp,gamma)
+    sigma=10
+    L_blur=cv2.GaussianBlur(L_lift,(0,0),sigma)
+    clarity=np.clip(L_lift + 0.20*(L_lift-L_blur),0,1)
+    L_new=(clarity*255.0)
+    lab_new=cv2.merge([L_new,a,b]).astype(np.uint8)
+    rgb=cv2.cvtColor(lab_new, cv2.COLOR_LAB2RGB)
+    # tiny saturation
+    hsv=cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV).astype(np.float32)
+    hsv[:,:,1]=np.clip(hsv[:,:,1]*1.05,0,255)
+    rgb2=cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+    # mild sharpen (luma)
+    rgb3 = luma_unsharp(rgb2, amount=0.9, radius=1.0)
+    return rgb3
+
+out_nat=process_natural(im_rgb)
+out_path6="/mnt/data/IMG_0418_cleared_natural.jpg"
+cv2.imwrite(out_path6, cv2.cvtColor(out_nat, cv2.COLOR_RGB2BGR), [int(cv2.IMWRITE_JPEG_QUALITY), 95])
+out_path6
+
+[TOOL]
+<<ImageDisplayed>>
+
+[TOOL]
+'/mnt/data/IMG_0418_cleared_natural.jpg'
+
+[ASSISTANT]
+Here are two cleaned-up versions (pick whichever you like):
+
+- **Natural cleanup (recommended):** [Download](sandbox:/mnt/data/IMG_0418_cleared_natural.jpg)  
+- **Stronger contrast/clarity:** [Download](sandbox:/mnt/data/IMG_0418_cleared_v2.jpg)
+
+[TOOL]
+<<ImageDisplayed>>

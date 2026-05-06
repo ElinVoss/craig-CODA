@@ -33,11 +33,15 @@ def collect_source_documents(config_path: str | Path | None = None) -> list[Sour
         if not base.exists():
             continue
         include_extensions = {suffix.lower() for suffix in root.get("include_extensions", [])}
+        exclude_globs = [str(pattern) for pattern in root.get("exclude_globs", [])]
         pattern = "**/*" if root.get("recursive", True) else "*"
         for path in sorted(base.glob(pattern)):
             if not path.is_file():
                 continue
             if include_extensions and path.suffix.lower() not in include_extensions:
+                continue
+            relative = path.relative_to(base)
+            if any(relative.match(glob) or path.name == glob for glob in exclude_globs):
                 continue
             documents.append(
                 SourceDocument(

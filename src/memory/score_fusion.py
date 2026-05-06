@@ -19,13 +19,16 @@ def load_query_profiles(config_path: str | Path | None = None) -> dict:
 
 def trust_adjustment(node: VaultNode, retrieval_profile: str, config_path: str | Path | None = None) -> tuple[bool, float]:
     config = load_memory_config(config_path)
-    bias = float(config["retrieval"]["trust_layer_bias"].get(node.trust_layer, 0.5))
+    retrieval = config["retrieval"]
+    base_bias = retrieval["trust_layer_bias"]
+    overrides = retrieval.get("profile_trust_bias_overrides", {}).get(retrieval_profile, {})
+    bias = float(overrides.get(node.trust_layer, base_bias.get(node.trust_layer, 0.5)))
     if node.trust_layer == "review_only":
         return False, 0.0
-    if node.trust_layer == "interpretive_maps" and retrieval_profile != "critique":
-        bias *= float(config["retrieval"]["interpretive_penalty"])
+    if node.trust_layer == "interpretive_maps" and retrieval_profile != "critique" and node.trust_layer not in overrides:
+        bias *= float(retrieval["interpretive_penalty"])
     if node.trust_layer == "prose_voice" and retrieval_profile not in {"prose", "cross_domain"}:
-        bias *= float(config["retrieval"]["prose_runtime_cap"])
+        bias *= float(retrieval["prose_runtime_cap"])
     return True, round(min(1.0, bias), 6)
 
 

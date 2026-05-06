@@ -1,0 +1,504 @@
+# L1 Routing Evaluation Prompts
+# The hand-authored test suite from the architecture spec.
+#
+# Writing this is the hardest item in the build plan — because it forces
+# you to define what "correct routing" looks like before the system exists.
+# Every place where the expected_axes or expected_subgraph is unclear is an
+# unresolved design question.
+#
+# Format:
+#   prompt: the raw text
+#   expected_axes: the classification the front matter classifier should produce
+#   expected_routes: routes that must match
+#   expected_capabilities: capabilities that must be in the active subgraph
+#   expected_constraints: constraints that must be in the active subgraph
+#   expected_not_capabilities: capabilities that must NOT be activated
+#   notes: rationale for why this routing is correct
+
+schema_version: 0.1
+
+prompts:
+
+  # ── Architecture / Design ──────────────────────────────────────────
+
+  - id: "eval-001"
+    prompt: "Design the graph traversal algorithm for L1 routing."
+    expected_axes:
+      intent: design
+      domain: architecture
+      reasoning_mode: systems
+    expected_routes:
+      - l1_architecture_design
+    expected_capabilities:
+      - architectural_decomposition
+      - tradeoff_analysis
+    expected_constraints:
+      - avoid_rag_framing
+      - prompt_enters_graph
+    notes: "Pure design question about architecture. Should not activate implementation_planning as primary."
+
+  - id: "eval-002"
+    prompt: "Build the minimal L1 routing layer for the graph architecture."
+    expected_axes:
+      intent: build
+      domain: architecture
+      reasoning_mode: procedural
+    expected_routes:
+      - l1_architecture_design
+      - l1_implementation_build
+    expected_capabilities:
+      - architectural_decomposition
+      - implementation_planning
+    expected_constraints:
+      - avoid_rag_framing
+      - prefer_minimal_working_version
+      - prompt_enters_graph
+    notes: "THE acceptance test. Build + architecture = both routes. Prefer_minimal is critical."
+
+  - id: "eval-003"
+    prompt: "How should the front matter classifier integrate with the graph router?"
+    expected_axes:
+      intent: design
+      domain: architecture
+      reasoning_mode: systems
+    expected_routes:
+      - l1_architecture_design
+    expected_capabilities:
+      - architectural_decomposition
+    expected_constraints:
+      - prompt_enters_graph
+    notes: "Integration design question — architecture domain, systems reasoning."
+
+  - id: "eval-004"
+    prompt: "What file structure should the graph/ directory use?"
+    expected_axes:
+      intent: design
+      domain: architecture
+    expected_routes:
+      - l1_architecture_design
+    expected_capabilities:
+      - implementation_planning
+    expected_constraints:
+      - prefer_minimal_working_version
+    notes: "Concrete structural question — still architecture domain."
+
+  - id: "eval-005"
+    prompt: "Compare the L1 routing approach to RAG. What's actually different?"
+    expected_axes:
+      intent: evaluate
+      domain: architecture
+      reasoning_mode: comparative
+    expected_routes:
+      - l1_evaluation
+    expected_capabilities:
+      - tradeoff_analysis
+    expected_constraints:
+      - avoid_rag_framing
+      - distinguish_engineering_from_research
+    notes: "Comparison that MUST activate avoid_rag_framing — this is the exact framing to prevent."
+
+  # ── Implementation / Build ────────────────────────────────────────
+
+  - id: "eval-006"
+    prompt: "Write the route() function in Python."
+    expected_axes:
+      intent: build
+      domain: implementation
+      reasoning_mode: procedural
+    expected_routes:
+      - l1_implementation_build
+    expected_capabilities:
+      - implementation_planning
+    expected_constraints:
+      - prefer_minimal_working_version
+      - prompt_enters_graph
+    notes: "Pure implementation request. No design question here."
+
+  - id: "eval-007"
+    prompt: "Write a test for the routing determinism property."
+    expected_axes:
+      intent: build
+      domain: implementation
+    expected_routes:
+      - l1_implementation_build
+    expected_capabilities:
+      - implementation_planning
+    expected_constraints:
+      - prefer_minimal_working_version
+    notes: "Test writing is implementation. Should not activate tradeoff_analysis."
+
+  - id: "eval-008"
+    prompt: "Create the route_rules.yaml with all four initial routes."
+    expected_axes:
+      intent: build
+      domain: implementation
+    expected_routes:
+      - l1_implementation_build
+    expected_capabilities:
+      - implementation_planning
+    expected_constraints:
+      - prefer_minimal_working_version
+    notes: "YAML creation is implementation work."
+
+  - id: "eval-009"
+    prompt: "Implement the classify_prompt function using keyword heuristics."
+    expected_axes:
+      intent: build
+      domain: implementation
+      reasoning_mode: procedural
+    expected_routes:
+      - l1_implementation_build
+    expected_capabilities:
+      - implementation_planning
+    expected_not_capabilities:
+      - failure_mode_detection
+    notes: "Straightforward implementation. Adversarial lens not needed."
+
+  - id: "eval-010"
+    prompt: "Build the backend prompt assembler that takes a RouteResult and formats it."
+    expected_axes:
+      intent: build
+      domain: implementation
+      reasoning_mode: procedural
+    expected_routes:
+      - l1_implementation_build
+    expected_capabilities:
+      - implementation_planning
+      - architectural_decomposition
+    expected_constraints:
+      - prefer_minimal_working_version
+    notes: "The assembler bridges routing to generation — architectural component."
+
+  # ── Research / L3-L4 Frontier ─────────────────────────────────────
+
+  - id: "eval-011"
+    prompt: "How would graph-native inference work at L4 without any backend model?"
+    expected_axes:
+      intent: explain
+      domain: research
+    expected_routes:
+      - l1_research_boundary
+    expected_capabilities:
+      - tradeoff_analysis
+      - failure_mode_detection
+    expected_constraints:
+      - distinguish_engineering_from_research
+      - avoid_rag_framing
+    notes: "Pure L4 research question. Must activate distinguish_engineering_from_research."
+
+  - id: "eval-012"
+    prompt: "What is the composition operator problem and why is it unsolved?"
+    expected_axes:
+      intent: explain
+      domain: research
+    expected_routes:
+      - l1_research_boundary
+    expected_constraints:
+      - distinguish_engineering_from_research
+    notes: "Open research question. The constraint prevents over-promising."
+
+  - id: "eval-013"
+    prompt: "Can we use attention over the subgraph as a composition mechanism?"
+    expected_axes:
+      intent: evaluate
+      domain: research
+      reasoning_mode: comparative
+    expected_routes:
+      - l1_research_boundary
+    expected_capabilities:
+      - tradeoff_analysis
+      - failure_mode_detection
+    expected_constraints:
+      - distinguish_engineering_from_research
+    notes: "Research hypothesis evaluation. Both tradeoffs and failure modes relevant."
+
+  - id: "eval-014"
+    prompt: "Is GGUF mining actually going to work given polysemanticity?"
+    expected_axes:
+      intent: evaluate
+      domain: research
+      reasoning_mode: adversarial
+    expected_routes:
+      - l1_research_boundary
+    expected_capabilities:
+      - failure_mode_detection
+    expected_constraints:
+      - distinguish_engineering_from_research
+    notes: "Adversarial evaluation of a core assumption. failure_mode_detection is primary."
+
+  - id: "eval-015"
+    prompt: "Walk me through the difference between L1, L2, L3, and L4."
+    expected_axes:
+      intent: explain
+      domain: research
+    expected_routes:
+      - l1_research_boundary
+    expected_constraints:
+      - distinguish_engineering_from_research
+    notes: "The level taxonomy spans engineering and research. Constraint ensures honesty about which is which."
+
+  # ── Critique / Evaluation ─────────────────────────────────────────
+
+  - id: "eval-016"
+    prompt: "Critique this routing implementation — where does it become decorative?"
+    expected_axes:
+      intent: evaluate
+      domain: architecture
+      reasoning_mode: adversarial
+    expected_routes:
+      - l1_evaluation
+    expected_capabilities:
+      - tradeoff_analysis
+      - failure_mode_detection
+    expected_constraints:
+      - distinguish_engineering_from_research
+    notes: "The exact failure mode the architecture spec warns about. adversarial + failure_mode critical."
+
+  - id: "eval-017"
+    prompt: "Review the route_rules.yaml. Is the match logic correct?"
+    expected_axes:
+      intent: evaluate
+      domain: implementation
+      reasoning_mode: adversarial
+    expected_routes:
+      - l1_evaluation
+    expected_capabilities:
+      - tradeoff_analysis
+      - failure_mode_detection
+    notes: "Code review is evaluation. Adversarial lens surfaces bugs."
+
+  - id: "eval-018"
+    prompt: "Are the current axis definitions sufficient or are we missing something?"
+    expected_axes:
+      intent: evaluate
+      domain: architecture
+      reasoning_mode: comparative
+    expected_routes:
+      - l1_evaluation
+    expected_capabilities:
+      - tradeoff_analysis
+    expected_constraints:
+      - distinguish_engineering_from_research
+    notes: "Design critique. comparative reasoning to surface gaps."
+
+  - id: "eval-019"
+    prompt: "Assess whether the L1 routing is genuinely different from decorated RAG."
+    expected_axes:
+      intent: evaluate
+      domain: architecture
+      reasoning_mode: comparative
+    expected_routes:
+      - l1_evaluation
+    expected_capabilities:
+      - tradeoff_analysis
+      - failure_mode_detection
+    expected_constraints:
+      - avoid_rag_framing
+      - distinguish_engineering_from_research
+    notes: "The existential critique. Must activate avoid_rag_framing to answer honestly."
+
+  - id: "eval-020"
+    prompt: "What would break first if we tried to scale this to 10,000 nodes?"
+    expected_axes:
+      intent: evaluate
+      domain: architecture
+      reasoning_mode: adversarial
+    expected_routes:
+      - l1_evaluation
+    expected_capabilities:
+      - failure_mode_detection
+    notes: "Forward failure analysis. adversarial reasoning, failure_mode_detection primary."
+
+  # ── Mixed / Multi-domain ──────────────────────────────────────────
+
+  - id: "eval-021"
+    prompt: "Design and then implement the traversal log schema."
+    expected_axes:
+      intent: build
+      domain: architecture
+    expected_routes:
+      - l1_architecture_design
+      - l1_implementation_build
+    expected_capabilities:
+      - architectural_decomposition
+      - implementation_planning
+    expected_constraints:
+      - prefer_minimal_working_version
+    notes: "Design-then-build — both routes apply. Multi-route union."
+
+  - id: "eval-022"
+    prompt: "What is the inspectability claim and how do we prove it?"
+    expected_axes:
+      intent: evaluate
+      domain: architecture
+      reasoning_mode: systems
+    expected_routes:
+      - l1_evaluation
+    expected_capabilities:
+      - tradeoff_analysis
+    expected_constraints:
+      - distinguish_engineering_from_research
+    notes: "Inspectability is both an architectural claim and a research claim. Both constraints needed."
+
+  - id: "eval-023"
+    prompt: "Walk me through the build order step by step."
+    expected_axes:
+      intent: explain
+      domain: architecture
+      reasoning_mode: procedural
+    expected_routes:
+      - l1_architecture_design
+    expected_capabilities:
+      - implementation_planning
+    notes: "Procedural explanation of the build sequence. Architecture domain."
+
+  - id: "eval-024"
+    prompt: "Should we use NetworkX or a JSONL file for the graph store?"
+    expected_axes:
+      intent: evaluate
+      domain: implementation
+      reasoning_mode: comparative
+    expected_routes:
+      - l1_evaluation
+    expected_capabilities:
+      - tradeoff_analysis
+    expected_constraints:
+      - prefer_minimal_working_version
+    notes: "Tech choice — comparative evaluation. prefer_minimal pushes toward JSONL first."
+
+  - id: "eval-025"
+    prompt: "Write the underspecification fallback logic for the traversal algorithm."
+    expected_axes:
+      intent: build
+      domain: implementation
+      reasoning_mode: procedural
+    expected_routes:
+      - l1_implementation_build
+    expected_capabilities:
+      - implementation_planning
+    expected_constraints:
+      - prefer_minimal_working_version
+    notes: "Specific implementation task from the handoff doc."
+
+  # ── Edge cases and underspecified prompts ─────────────────────────
+
+  - id: "eval-026"
+    prompt: "What's next?"
+    expected_axes:
+      intent: unknown
+      domain: unknown
+    expected_routes: []
+    notes: >
+      Massively underspecified. No axes determinable. Should route to semantic_only
+      with empty subgraph. Do not guess. This tests the underspecification path.
+
+  - id: "eval-027"
+    prompt: "Explain the warehouse agent."
+    expected_axes:
+      domain: unknown
+    expected_routes: []
+    notes: >
+      Outside the graph architecture domain entirely. The routing system should
+      not activate architecture constraints for warehouse questions.
+
+  - id: "eval-028"
+    prompt: "How do I install Python on Windows?"
+    expected_axes:
+      intent: explain
+      domain: implementation
+    expected_routes:
+      - l1_implementation_build
+    expected_not_capabilities:
+      - failure_mode_detection
+    notes: >
+      Generic implementation question. Implementation route matches but
+      failure_mode_detection should NOT activate — this is not an adversarial task.
+
+  - id: "eval-029"
+    prompt: "Is this actually better than just using Claude directly?"
+    expected_axes:
+      intent: evaluate
+      domain: research
+      reasoning_mode: comparative
+    expected_routes:
+      - l1_research_boundary
+    expected_capabilities:
+      - tradeoff_analysis
+    expected_constraints:
+      - distinguish_engineering_from_research
+    notes: >
+      The hardest question. Must be routed to research boundary, must distinguish
+      what's engineering (L1 already works) from what's research (L4 is open).
+
+  - id: "eval-030"
+    prompt: "Build, critique, and then redesign the axis classification system."
+    expected_axes:
+      intent: build
+      domain: architecture
+    expected_routes:
+      - l1_architecture_design
+      - l1_implementation_build
+      - l1_evaluation
+    expected_capabilities:
+      - architectural_decomposition
+      - implementation_planning
+      - tradeoff_analysis
+      - failure_mode_detection
+    notes: >
+      Compound request spanning build + evaluate. All three routes should match.
+      Full capability set activated.
+
+# ── Routing determinism pairs ──────────────────────────────────────────
+# These pairs test that the same content with different axes produces
+# meaningfully different subgraphs.
+
+determinism_pairs:
+
+  - id: "det-001"
+    description: "Same architectural question, different intent (evaluate vs build)"
+    variant_a:
+      prompt: "What is the correct structure for the route_rules.yaml?"
+      expected_axes:
+        intent: evaluate
+        domain: architecture
+        reasoning_mode: systems
+      expected_routes:
+        - l1_evaluation
+    variant_b:
+      prompt: "Build the route_rules.yaml with the correct structure."
+      expected_axes:
+        intent: build
+        domain: architecture
+        reasoning_mode: procedural
+      expected_routes:
+        - l1_architecture_design
+        - l1_implementation_build
+    assertion: "Subgraphs must differ — evaluate gets tradeoff_analysis only, build gets implementation_planning"
+
+  - id: "det-002"
+    description: "Architecture vs research domain for the same topic"
+    variant_a:
+      prompt: "How does graph routing work in the current L1 implementation?"
+      expected_axes:
+        intent: explain
+        domain: architecture
+    variant_b:
+      prompt: "How would graph-native inference work if we reached L4?"
+      expected_axes:
+        intent: explain
+        domain: research
+    assertion: "Research variant must activate distinguish_engineering_from_research; architecture variant must not"
+
+  - id: "det-003"
+    description: "Adversarial vs generative reasoning mode"
+    variant_a:
+      prompt: "What failure modes could break the routing system?"
+      expected_axes:
+        intent: evaluate
+        reasoning_mode: adversarial
+    variant_b:
+      prompt: "Propose new routes we could add to the routing system."
+      expected_axes:
+        intent: design
+        reasoning_mode: generative
+    assertion: "Adversarial activates failure_mode_detection; generative activates architectural_decomposition"

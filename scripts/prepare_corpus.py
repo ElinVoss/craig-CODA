@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src.io_utils import read_text, write_text
+from src.vault_methods import resolve_stage_config, write_stage_resolution
 
 
 def load_config(path: Path) -> dict:
@@ -24,6 +25,7 @@ def collect_sources(config: dict) -> list[Path]:
     include_markdown = bool(input_cfg.get("include_markdown", False))
 
     sources: list[Path] = []
+    seen: set[Path] = set()
     for root in roots:
         if not root.exists():
             continue
@@ -39,6 +41,10 @@ def collect_sources(config: dict) -> list[Path]:
                 continue
             if "_ingested" in path.parts:
                 continue
+            resolved = path.resolve()
+            if resolved in seen:
+                continue
+            seen.add(resolved)
             sources.append(path)
     return sources
 
@@ -100,6 +106,8 @@ def main() -> int:
     args = parser.parse_args()
 
     config = load_config(Path(args.config))
+    config, method_report = resolve_stage_config("corpus", config)
+    method_report_path = write_stage_resolution("corpus", method_report)
     corpus, manifest = build_corpus(config)
     output_cfg = config["output"]
 
@@ -115,6 +123,8 @@ def main() -> int:
         f"Prepared corpus: {corpus_path.relative_to(ROOT)}",
         f"Sources included: {len(manifest)}",
         f"Characters: {len(corpus)}",
+        f"Method prompts applied: {len(method_report['applied_prompts'])}",
+        f"Method resolution: {method_report_path.relative_to(ROOT)}",
     ]
     if len(manifest) < 2:
         report_lines.append("Warning: corpus is very small; tokenizer quality will be limited by input size.")

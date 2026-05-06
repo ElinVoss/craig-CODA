@@ -7,13 +7,22 @@ from transformers import AutoModelForCausalLM, Qwen3Config
 
 from .io_utils import write_json
 from .tokenizer_loader import load_tokenizer
+from .vault_methods import resolve_architecture_config, write_architecture_resolution
 
 ROOT = Path(__file__).resolve().parents[1]
+_LEGACY_ARCH_CONFIG = ROOT / "configs" / "model_architecture.yaml"
+
+
+def load_architecture_from_vault(profile: str) -> dict:
+    resolved, report = resolve_architecture_config(profile)
+    write_architecture_resolution(profile, report)
+    return resolved
 
 
 def load_model_architecture_config(config_path: str | Path | None = None) -> dict:
+    """Legacy loader — reads directly from a YAML file. Prefer load_architecture_from_vault()."""
     if config_path is None:
-        config_path = ROOT / "configs" / "model_architecture.yaml"
+        config_path = _LEGACY_ARCH_CONFIG
     path = Path(config_path)
     if not path.is_absolute():
         path = ROOT / path
@@ -62,8 +71,19 @@ def count_parameters(model) -> int:
     return sum(param.numel() for param in model.parameters())
 
 
-def build_model(config_path: str | Path | None = None):
-    architecture_cfg = load_model_architecture_config(config_path)
+def build_model(profile: str = "craig_target", config_path: str | Path | None = None):
+    """Build a randomly-initialised model from the vault-authored architecture profile.
+
+    profile: name of the architecture profile under weights/architecture/ in the method vault.
+             Defaults to 'craig_target'. Pass 'tiny_scratch' for the small trained model shape.
+    config_path: if provided, bypasses vault resolution and reads directly from this YAML file.
+                 Use only for legacy runs or testing. The vault is the authority.
+    """
+    if config_path is not None:
+        architecture_cfg = load_model_architecture_config(config_path)
+    else:
+        architecture_cfg = load_architecture_from_vault(profile)
+
     vocab_size, tokenizer_metadata = resolve_vocab_size(architecture_cfg)
     hf_config = build_qwen3_config(architecture_cfg, vocab_size, tokenizer_metadata)
     model = AutoModelForCausalLM.from_config(hf_config)
@@ -71,6 +91,8 @@ def build_model(config_path: str | Path | None = None):
     summary = {
         "model_name": architecture_cfg["model_name"],
         "architecture_family": architecture_cfg["architecture_family"],
+        "architecture_profile": architecture_cfg.get("profile", profile),
+        "vault_authored": config_path is None,
         "vocab_size": vocab_size,
         "hidden_size": architecture_cfg["hidden_size"],
         "intermediate_size": architecture_cfg["intermediate_size"],
@@ -82,7 +104,7 @@ def build_model(config_path: str | Path | None = None):
         "parameter_count": parameter_count,
         "tokenizer_dir": tokenizer_metadata["tokenizer_dir"],
     }
-    print(f"Built model '{summary['model_name']}' from random weights")
+    print(f"Built model '{summary['model_name']}' (profile={summary['architecture_profile']}) from random weights")
     print(f"Parameter count: {parameter_count:,}")
     return model, hf_config, summary
 

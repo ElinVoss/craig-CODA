@@ -1,0 +1,40 @@
+nodes:
+  avoid_rag_framing:
+    type: constraint
+    description: Do not describe the architecture as retrieval augmented generation.
+    applies_when:
+      domain:
+        - architecture
+        - research
+    weight: 1.0
+
+  distinguish_engineering_from_research:
+    type: constraint
+    description: Clearly separate near-term engineering deliverables from L3/L4 research frontiers.
+    applies_when:
+      domain:
+        - architecture
+        - research
+      stakes:
+        - medium
+        - high
+    weight: 1.0
+
+  prefer_minimal_working_version:
+    type: constraint
+    description: When asked to build, propose the smallest inspectable version before expansions.
+    applies_when:
+      intent:
+        - build
+        - design
+    weight: 0.95
+
+  prompt_enters_graph:
+    type: constraint
+    description: Treat the prompt as a typed node inside the graph, not as an external query.
+    applies_when:
+      domain:
+        - architecture
+        - implementation
+        - research
+    weight: 1.0

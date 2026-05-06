@@ -1,0 +1,45 @@
+nodes:
+  architectural_decomposition:
+    type: capability
+    description: Break the system into inspectable components and interfaces.
+    applies_when:
+      intent:
+        - design
+        - build
+      domain:
+        - architecture
+        - implementation
+    weight: 0.95
+
+  implementation_planning:
+    type: capability
+    description: Convert architecture into file structure, schemas, and runtime steps.
+    applies_when:
+      intent:
+        - build
+      domain:
+        - implementation
+        - architecture
+    weight: 0.9
+
+  tradeoff_analysis:
+    type: capability
+    description: Compare choices and identify consequences.
+    applies_when:
+      intent:
+        - evaluate
+        - decide
+        - design
+    weight: 0.85
+
+  failure_mode_detection:
+    type: capability
+    description: Identify places where the graph becomes decorative rather than computational.
+    applies_when:
+      reasoning_mode:
+        - adversarial
+        - systems
+      domain:
+        - architecture
+        - research
+    weight: 0.9

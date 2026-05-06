@@ -42,6 +42,10 @@ def classify_nodes(nodes: list[VaultNode], config_path: str | Path | None = None
             marker in lowered_content for marker in content_rules.get("interpretive_markers", [])
         ):
             trust_layer = "interpretive_maps"
+        # DF-01: curated_memory nodes tagged #stable_core are identity/preference facts,
+        # not episodic events — promote regardless of folder path.
+        if node.source_kind == "curated_memory" and "#stable_core" in node.content:
+            trust_layer = "stable_core"
         node.trust_layer = trust_layer
         node.node_type = node_type
         node.privacy_level = privacy_level

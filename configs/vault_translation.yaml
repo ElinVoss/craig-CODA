@@ -1,5 +1,15 @@
 phase_name: Context Intelligence Phase
 source_roots:
+  - path: data/clean/conversation_exports/markdown_export_raw/threads
+    enabled: true
+    recursive: true
+    source_kind: conversation_transcript
+    tags:
+      - conversations
+      - transcript
+      - chatgpt
+    include_extensions:
+      - .txt
   - path: data/raw/examples
     enabled: true
     recursive: true

@@ -1,0 +1,1784 @@
+CONVERSATION_ID: 693b1c84-e51c-8331-8275-7f1a89be72c2
+TITLE: Draft chapter one
+MESSAGE_COUNT: 18
+
+[USER]
+ok lets draft chapter one
+
+[TOOL]
+Make sure to include fileciteturn0file0 in your response to cite this file.
+
+## WORLD OF TE'OGA: N01 SCOPE
+
+**Purpose:** This document contains world-building information relevant to N01 "The Grip That Holds" — the physical reality, social structures, and baseline conditions of Te'Oga as experienced by characters during the first novella.
+
+---
+
+### SAINT MERRO: CITY GEOGRAPHY
+
+Saint Merro is a major urban center built in terraced layers up a hillside basin, with the river at the base and institutional districts at the peak.
+
+**District Structure (Lowest to Highest):**
+
+**The Dregs (River Level):**
+- Poorest district, oldest construction
+- Dense population, limited resources
+- Most vulnerable to structural failure
+- Industrial zones, slum housing
+- Where refugees gather post‑Piercing
+- Salee's community organizing happens here
+
+**Underface Districts (Mid‑Level):**
+- Working‑class residential and commercial
+- Built partially into hillside, partially above ground
+- Where most guild operations exist (Jhace's forge, craft shops)
+- Heat‑grid maintenance tunnels run beneath these areas
+- Mixed construction quality: some solid, much failing
+
+**Glass Quarter (Upper‑Mid Level):**
+- Precision craft district
+- Merrow Glass & Mirrors located here
+- Observatory tower at highest point of this district
+- Better construction but still vulnerable
+- Mixed workshops and wealthier residential
+
+**The Crown (Peak):**
+- Institutional and political center
+- Best construction, most resources
+- Least affected by Piercing initially
+- Where council meetings and governance occur
+- Where Corlexi works and institutional power concentrates
+
+**The Underface Heat‑Grid:**
+- Network of maintenance tunnels beneath working districts
+- Copper piping carries geothermal heat from deeper sources
+- Critical infrastructure for city heating and some industrial processes
+- Narrow passages, vertical risers, humid, constant rumble
+- Where Jhace spends much of his working time
+
+---
+
+### THE PIERCING: WHAT HAPPENED
+
+**Tide 0, Kindling Phase:** A colossal, double‑tapered shard struck Te'Oga. It did not skim the atmosphere or glance off the surface; it punched straight through the planet.
+
+**Physical Characteristics (As Observed):**
+- Overall form: a spear‑like cylinder, tapered to points at both ends
+- Apparent scale: planetary, spanning from entry horizon to exit horizon
+- Composition (visual): strata of translucent glass‑like material, dark iron bands, unknown alloys, embedded flecks and veins the color of dried blood
+- Surface behavior: edges glowed white‑hot on entry, cooling to copper‑gold embers as it passed
+
+**Trajectory and Interaction with Te'Oga:**
+- Entry from high heaven at a steep, impossible angle
+- Direct penetration through mantle and core
+- Exit on the opposite side of the world, leaving a cylindrical bore through Te'Oga's body
+- Object did not stop or lodge; it continued into deep space, trailing particulate and vaporized matter
+
+**Immediate Planetary Effects:**
+- Axis shift: Te'Oga's rotational tilt snapped toward near‑upright in a single catastrophic adjustment
+- Global quakes: crust‑rending shocks propagated along every plate line, collapsing marginal structures across all regions
+- Ocean displacement: seas heaved toward the new bore; coastlines experienced retreat followed by return walls of water
+- Atmospheric violence: compression fronts raced ahead of the impact path, shredding roofs, towers, and exposed spans
+
+**The Permanent Wound:**
+- A world‑spanning, near‑vertical tunnel remains where the shard passed
+- Rim regions around the entry and exit wounds suffer constant erosion, collapse, and hydrological instability
+- Water, silt, and atmospheric gases continue to pour into the bore, cycling through pressure and phase changes in depths no one has yet measured
+
+**Consequences Relevant to N01:**
+- Saint Merro sits within the primary seismic influence of the passage
+- Its heat‑grid, terrace foundations, and hillside retaining structures were all stressed beyond their intended tolerances
+- The city's survival depends on constant maintenance, emergency reinforcement, and improvised engineering under conditions no guild ever trained for
+
+### TECHNOLOGY LEVEL
+
+**Baseline (Pre‑Piercing):**
+- Renaissance/proto‑industrial equivalent
+- Water mills and windmills for mechanical power
+- Simple steam engines (boilers, pumps, limited applications)
+- Printing presses exist but expensive
+- Basic gunpowder exists but rare, not militarily common
+- NO electricity, telegraph, or rail
+- Lighting: oil lamps, candles, some gas lamps in wealthy areas
+- Communication: runners, courier networks, signal flags from towers
+- Medicine: herbal remedies, surgical knowledge (no germ theory but practical anatomy)
+- Metallurgy: advanced (quality steel, alloys, precision work)
+
+**Post‑Piercing Changes:**
+- Infrastructure failing faster than repairs can address
+- Traditional engineering increasingly inadequate for damaged structures
+- Soulpulse emerging as potential supplement/replacement for mechanical systems
+- Social structures breaking down as guilds lose authority
+- Technology advancement stalled while society focuses on survival
+
+---
+
+### SOCIAL STRUCTURES
+
+**Guild System:**
+
+Guilds control craft knowledge, training, and trade licensing. They
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file1 in your response to cite this file.
+
+## N01: "THE GRIP THAT HOLDS" — MASTER STORY BIBLE
+
+**Purpose:** This document contains everything a writer or AI model needs to know to generate prose for the first novella of the Confluence Chronicles.  It summarizes the world, characters, relationships, and structural expectations for N01, and it clearly outlines what can and cannot be revealed.  Anything not covered here must remain unknown until later books.
+
+---
+
+### NOVELLA OVERVIEW
+
+* **Title:** N01 “The Grip That Holds”
+* **Position:** First novella of six‑Turning structure (Turning 1: GLASS)
+* **Acrostic Letter:** **G** (begins the word GLASS)
+* **Timeline:** Tide 0 (the Piercing) through Tide 5
+* **Word Count Target:** 18 000–21 000 words
+* **Chapter Count:** 15 chapters + 2 interludes + 1 epilogue
+
+**Core Arc:**  N01 tells the story of how Jhace Torrins discovers his Soulpulse ability during the Piercing, how he and Tiffani Merrow learn to trust one another, and how they decide to face the city’s crisis together.  They navigate guild politics, institutional power plays, and the physical cost of magic.  By the end of N01 they have formed a partnership in both work and love, though it remains physically unconsummated due to exhaustion and circumstances.
+
+---
+
+### WORLD STATE AT THE START OF N01
+
+**Pre‑Piercing Baseline:**  Saint Merro is a terraced city with a functional guild system.  Higher districts are wealthier and more stable; lower districts are older and fragile.  The technology level is roughly renaissance/proto‑industrial: water and wind mills, simple steam engines, printing presses, and advanced metallurgy.  There is no electricity, and the predominant light sources are oil and candles.  Communication happens via runners and signal flags.  No one has ever seen or done anything like Soulpulse.
+
+**The Piercing Event (Tide 0):**  A massive cylindrical object enters the atmosphere at an impossible angle and speeds, warping light as it passes.  It shears across the sky without touching the ground and continues into space.  Shockwaves shatter structures; dust and metallic particles rain down.  Many buildings collapse; hundreds die.  Traditional physics fails at the quantum level.  This is the inciting incident of the entire saga.
+
+**Post‑Piercing Conditions:**  The city is partially destroyed.  Institutions are overwhelmed.  Resources are scarce.  People are traumatized.  New abilities (Soulpulse) begin to emerge in roughly 1 in 500 individuals.  The heat‑grid, critical to winter survival, is failing.  Guilds fracture over how to respond.  The Regulatory and Reconstruction Office (RRO) forms to coordinate relief but quickly drifts toward control and bureaucracy.
+
+---
+
+### PRIMARY CHARACTERS
+
+See `Character_Dossiers_N01.md` for full psychological profiles, humor styles and arcs.  A concise summary follows.
+
+#### Jhace Torrins
+
+* **Age:** 29 Turns; structural engineer and heat‑grid inspector.
+* **Backstory:** His parents died in a building collapse when he was 7.  Ever since, he has obsessed over preventing preventable deaths.  He works alone to avoid sharing his anxiety with others.  He refuses apprentices to keep his hypervigilance from infecting someone else.
+* **Soulpulse:** Instinctively activates during the Piercing.  Discovers it requires direct contact and protective desperation.  Learns cost (tremor, pain, exhaustion) as he uses it repeatedly.  Stage progression goes from baseline to Stage 1 through this novella.  He reaches the threshold of Stage 2 by the final chapters.
+* **Psychology:** Hypervigilant, guilt‑driven, physically oriented.  Terse, literal, thinks in terms of weight and vibration.  Hates being called a hero.  Lies to others (and himself) that he’s “fine.”  Needs to prevent death above all.
+* **Arc:** Moves from isolated vigilante to co‑lead in a partnership.  Learns to trust Tiffani’s analytical mind.  Accepts help.  Admits romantic feelings.  Commits to working together “when the world is broken.”
+
+#### Tiffani Merrow
+
+* **Age:** 27 Turns; precision glassworker, atmospheric observer.
+* **Backstory:** Her friend Marisse died in a glass‑house accident because Tiffani dismissed abnormal temperature readings.  She now views pattern recognition as a sacred duty.  Precision is her way to save lives.
+* **Soulpulse:** She cannot use Soulpulse herself but becomes the first and best analyst of its patterns.  She logs and categorizes every
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file2 in your response to cite this file.
+
+## CHARACTER DOSSIERS: N01 SCOPE
+
+**Purpose:** Psychological profiles, voice patterns, humor styles, and relationship dynamics for all characters appearing in N01 "The Grip That Holds."
+
+---
+
+## JHACE TORRINS
+
+**Age:** 29 Turns  
+**Profession:** Structural engineer, heat-grid inspector, forgemaster (unaffiliated with guild leadership)  
+**Physical:** Wiry build, weathered hands, permanent shoulder tension. Dark hair in short tail. Canvas work clothes, heavy leather tool belt. Moves efficiently, no wasted motion.
+
+### Core Psychology
+
+**Primary Driver: Obsessive Prevention Through Vigilance**
+- Parents died in building collapse when he was 7 Turns (23 people killed total)
+- Investigation concluded "material fatigue" – no one caught it in time
+- Has spent 22 Turns trying to be vigilant enough
+- Sees thousands of ways buildings can kill people
+- Cannot unsee potential failures
+
+**The Knot:**
+"There are thousands of people in this city. I will spend the rest of my life unable to save most of them. I will feel responsible for all of them. This is what it means to have opened my eyes to what I can do."
+
+**Isolation as Armor:**
+- Works alone because teaching means inflicting his hypervigilance on others
+- Refuses apprentices ("That's not a skill, that's anxiety that happens to be useful")
+- Professional isolation is both choice and inability to connect
+
+### What He Fears
+Failing to prevent a death he could have prevented. Not death itself—*preventable* death. The idea that someone died because he wasn't vigilant enough, wasn't there in time, didn't check the right structure.
+
+### What He Regrets
+Every person he walked past while responding to another crisis. Every time he chose who to help because he couldn't help everyone. Specific names of people who died while he was saving someone else. The list grows longer.
+
+### What He Lies About
+"I'm fine." He's not. Hasn't been since age 7. The obsessive vigilance is exhausting. The guilt is crushing. But if he admits he's not fine, people might try to make him stop, and stopping means people die.
+
+### What He Pretends to Know
+How to connect with people normally. He's been so focused on preventing deaths that he's forgotten how to just be with someone without cataloging the ways their environment might kill them. Pretends isolation is practical choice. Reality: doesn't know how to be close to people anymore and is terrified to try.
+
+### His "Humor" (Thinks He's Funny, Isn't)
+
+**Style:** Deadpan observations delivered with zero awareness they're not landing.
+
+**Examples:**
+- *Someone: "Could this get worse?"*
+- *Jhace: "The building could catch fire. Or the adjacent structure could fail and crush us. Or—"* [Complete sincerity, doesn't realize they wanted reassurance]
+
+**Embarrassing Hiccups (Running Traits):**
+
+1. **Physical Awareness Gap:** Constantly bumping into people, backing into things, standing too close or too far. When Tiffani tries to position near him, he moves away unconsciously.
+
+2. **Failed Compliments:** *To Tiffani after brilliant analysis: "Your brain works good."* [Immediate cringe from everyone. He meant it genuinely.]
+
+3. **Literalism:** Cannot detect sarcasm. *Someone: "Great, another crisis, exactly what we needed." Jhace: "We didn't need this. This is bad actually."*
+
+4. **The Snort:** When genuinely amused (rare), snort-laughs before he can stop himself. Hates this. Tiffani loves it and deliberately tries to make him snort.
+
+5. **Standing Weird:** When thinking hard, stands in bizarre poses—balanced on one foot, tilted at odd angle, hand on hip like perpetually about to sit but never does. Completely unaware.
+
+### His Actual Laugh
+When something is genuinely funny (rare), he CACKLES. Loud, unrestrained, completely unselfconscious. Sharp, almost alarming. Echoes. The only time he's not performing control. Tiffani discovers she loves this and makes it her mission.
+
+### Voice Pattern
+
+**Internal Monologue:**
+- Sparse, body-focused
+- Thinks in physical sensations and structural metaphors
+- *"Hands know before mind does. Copper-gold warmth spreading. The beam needs to hold. Make it hold."*
+
+**Speech:**
+- Terse, functional, defensive
+- *"The wall's failing." / "How do you know?" / "I know."*
+- Doesn't explain intuition because doesn't fully understand it
+- When exhausted: even more clipped (*"Can't." / "Can't what?" / "Just. Can't."*)
+
+**When Actually Safe (Rare):**
+- Sentences get longer
+- Explains what he sees
+- Opens up emotionally
+- These moments precious and brief (alone with Tiffani, late night, too tired for walls)
+
+### Soulpulse Relationship in N01
+
+**Discovery Phase (Ch 1-3):**
+- First use purely instinctive (saving Chloen)
+- Second use semi-aware (holding building)
+- Doesn't understand what he's doing
+- Terrified but driven by need
+
+**Learning Phase (Ch 4-10):**
+- Experiments with deliberate activation
+- Learns emotional state matters
+- Discovers cost is real and accumulating
+- Stage 1 tremor develops and persists
+
+**Partnership Phase (Ch 10-15):**
+- Accepts Tiffani's optimization guidance
+- Learns to trust analysis over instinct
+- Stage 2 approaching by Ch 14
+- Recognizes he's breaking himself but can't stop
+
+### Relationship with Tiffani (N01 Arc)
+
+**Ch 1-3: Mutual Judgment**
+- Thinks she's perfectionist who prevents work
+- She thinks he's overextending ego-driven hero
+- Both completely wrong
+
+**Ch 4-7: Competence Recognition**
+- Her critique helps him survive
+- His ability + her analysis = complementary
+- First mutual respect
+
+**Ch 8-11: Partnership Formation**
+- Working as integrated unit
+- Arguing about methods but recovering
+- Physical care developing (her catching him, him noticing her injuries)
+
+**Ch 12-15: Romantic Recognition**
+- Can't identify when professional became romantic
+- Proximity comfortable, silence pleasant
+- Making each other laugh (her sex jokes, his accidental humor)
+- Ch 15 commitment: "We keep doing this together"
+
+---
+
+## TIFFANI MERROW
+
+**Age:** 27 Turns  
+**Profession:** Precision glassworker, atmospheric observer, structural analyst  
+**Physical:** Lean (forgets to eat when focused). Dark brown hair with sun-streaks in practical knot. Canvas apron over simple clothes. Hands scarred from glass-work (thin white lines on palms/fingers). Moves with deliberate efficiency. Injured leg post‑Piercing (splinted, refuses to rest properly).
+
+### Core Psychology
+
+**Primary Driver: Pattern Recognition as Atonement**
+- Best friend Marisse died in glasshouse accident 4 years ago
+- Thermal stress in oven walls—Tiffani noted fluctuations, dismissed as "normal noise"
+- Glass shattered during cooldown, through Marisse's throat
+- Dead before Tiffani could reach her
+- Investigation: "Material fatigue, stress fracture from uneven cooling"
+- Tiffani knew: she'd seen the pattern and dismissed it as irrelevant
+- She'd been wrong
+
+**Precision Disguises Care:**
+- Not trying to be perfect—trying to notice small wrong things before they become large deadly things
+- Precision isn't about perfection, it's about early warning
+- Turns down commissions not because they're beneath her standards, but because accepting inadequate specifications means people could die
+- Would rather be called impossible than responsible for another death
+
+**Connection-Oriented (Hidden Under Analysis):**
+- Fundamentally driven by desire to connect and mend
+- Wants to understand systems to explain them so everyone can be safer together
+- Analytical approach is service: "If I understand this, I can teach it, we're all less vulnerable"
+
+### What She Fears
+Missing another pattern. Specifically: noticing something is wrong, dismissing it as unimportant, then watching someone die because of her dismissal. Fear isn't "I'll fail to notice"—it's "I'll notice and decide it doesn't matter, and be wrong."
+
+### What She Regrets
+That
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file3 in your response to cite this file.
+
+## RELATIONSHIP DYNAMICS: N01 SCOPE
+
+**Purpose:** Track how the key relationships form, develop and function during N01 "The Grip That Holds."  These summaries guide prose generation by clarifying which emotional beats occur where and what level of intimacy exists at any given point.
+
+---
+
+### JHACE & TIFFANI – THE CORE PARTNERSHIP
+
+This is the emotional spine of N01.  They move from strangers with misconceptions to partners who know they can’t survive the crisis without each other.
+
+#### Phase 1: Mutual Judgment (Ch 1–3)
+
+* **Jhace’s view:** Tiffani is the perfectionist who prevents work.  Guild gossip paints her as someone who refuses commissions if specifications aren’t perfect, causing projects to stall.  He assumes that sort of person will get good workers killed by refusing to act.
+* **Tiffani’s view:** Jhace is the overextending hero who thinks only he can save people.  She believes he takes on too much out of ego.  From a distance it looks like savior complex disguised as quality control.
+* **Reality:** Both are wrong.  They haven’t met yet and are projecting their own fears.  This phase ends when the Piercing forces their paths to cross.
+
+#### Phase 2: Competence Recognition (Ch 4–7)
+
+* **First contact (Ch 3):** Tiffani sees Jhace holding a collapsing building.  Her first reaction isn’t awe but analytical curiosity.  “What did you do?” matters more than “how brave.”
+* **His recognition:** During the major hold in Ch 6, Tiffani’s critique (“You’re applying force uniformly when the load is uneven”) annoys him until he realizes she’s right.  It wasn’t judgment; it was insight that saves lives.
+* **Her recognition:** In Ch 7, she sees how exhausted and shaken he is after each use.  She realizes his obsessive vigilance mirrors her own fear of missed patterns.  They’re both serving the same moral imperative with different tools.
+* **Status at the end of Phase 2:** They respect each other professionally.  Partnership is brewing but not yet named.  Care emerges as Tiffani catches him when he collapses and he insists she rest her injured leg.
+
+#### Phase 3: Partnership Formation (Ch 8–11)
+
+* **Trust building:** They integrate their efforts.  He allows her to guide where he applies his power; she modifies her analytical approach based on what his body can handle.  They decide resource priorities together.
+* **Conflict:** They have their first methodological fight in Ch 9 over how to train Kylar.  She wants slower emotional recovery; he wants immediate practice to rebuild confidence.  Asking Kylar what he needs resolves the fight and shows they can disagree without breaking trust.
+* **Physical intimacy emerges:** Not yet sexual.  Touch now includes brushing fingers, sitting shoulder to shoulder, passing cups during tremor.  Their bodies learn to relax around each other.
+* **Political alignment:** In Ch 11 they stand together against Corlexi’s registration demand.  It’s their first united front to an external authority.
+
+#### Phase 4: Romantic Recognition (Ch 12–15)
+
+* **The shift:** They both realize the partnership is more than professional.  Small non‑work gestures accumulate into undeniable feelings.  Silence becomes comfortable rather than loaded.
+* **Acknowledgment scene (Ch 13):** After a long day, she admits “This is more than work partnership, isn’t it?”  He replies “Yeah.”  That is their declaration.  They acknowledge romantic attraction without drama.
+* **Physical escalation:** They hold each other after crises, share body heat while sitting, enjoy the closeness.  Tiffani begins making surgical sex jokes directed at him (see Character Dossiers) to lighten tension.  They avoid consummation only because they’re physically exhausted.
+* **Commitment scene (Ch 15):** They sit in a quiet space and decide to keep holding together.  “The world is broken.  We can’t fix all of it.  But we can hold something.”  “Then we hold.”  No formal vows; this promise is enough.
+* **Status at novella end:** They are a pair in all but name.  The world sees them as partners.  They remain physically restrained because of exhaustion and crisis, but their emotional commitment is clear.
+
+---
+
+### JHACE & BRAM – THE STEADY ANCHOR
+
+Bram is Jhace’s older colleague and confidant.  He bridges the gap between Jhace and the rest of the world, offering perspective and dry humor.
+
+* **Dynamic:** Bram shows up with water, food, and commentary.  Jhace tolerates
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file4 in your response to cite this file.
+
+## LOCATION REFERENCE: N01 SCOPE
+
+**Purpose:** Physical descriptions, functional details, and atmospheric notes for all locations appearing in N01 "The Grip That Holds."  Each section lays out what the characters and reader know about these places during the first novella and avoids any forward‑looking spoilers.
+
+---
+
+### UNDERFACE HEAT‑GRID TUNNELS
+
+**Purpose:** Maintenance access for the city’s heating infrastructure.
+
+**Physical Layout:**
+
+* A network of narrow passages beneath the working‑class districts of Saint Merro.
+* Copper pipes of varying diameters carry geothermal heat; smaller lines (thimble‑width) snake over large main lines (pole‑width).
+* Vertical risers connect deeper levels via ladders; some spaces require squeezing through tight shaft openings.
+* The tunnels are single file in most places, with slightly wider junctions for maintenance crews and tool caches.
+* Multiple access points: surface grates, doors at forge‑level basements, emergency exits into the Dregs and Underface districts.
+
+**Environmental:**
+
+* Heat: Temperature rises with depth – warm near the surface, becoming uncomfortable near deep mains.
+* Humidity: Condensation drips down walls and pipes; occasional puddles gather on the stone floor.
+* Sound: Constant low rumble from heat flow, clangs as pipes shift; conversations echo unpredictably and aren’t private.
+* Light: Limited to carried lamps or fixed lanterns at junctions; shadows dance on curved walls.
+
+**Signature Visuals:**
+
+* Copper pipes shimmering with heat distortion.
+* Chalk marks noting maintenance or structural warnings.
+* Tool racks (wrenches, hammers, spare flanges) at intersections.
+* Steam vents hissing gently along some runs.
+
+**Functional Details:**
+
+* The tunnels supply heat to homes, guild halls and industrial sites. Failures can mean freezing residents or catastrophic pressure releases.
+* Jhace’s inspection routes run through these tunnels; he feels for vibration changes and listens for subtle hum shifts to detect problems.
+* Post‑Piercing, the heat‑grid is under unusual strain – more leaks, more pressure spikes, more points of imminent failure.
+
+**Typical Scenes:**
+
+* Chapter 1 opens here with Jhace inspecting the grid and feeling something wrong.
+* Chapter 3 shows the tunnels rattling and rumbling during the Piercing.
+* Subsequent chapters (4, 6, 12) use them as shelters, shortcuts and sites of quiet reflection or crisis navigation.
+
+**Travel Time:**
+
+* From street level to inspection depth: a few spans of climbing/descending, depending on access point.
+* Cross‑district travel underground can be faster than surface routes during crises but is disorienting without experience.
+
+---
+
+### SAINT MERRO DISTRICT OVERVIEW
+
+Saint Merro is built in terraced layers up a hillside basin.  Elevation correlates roughly to status and resources.  What follows is what characters know in N01.
+
+#### The Dregs (River Level)
+
+* **Physical:** Oldest constructions, precarious buildings, narrow streets.  The river floods occasionally; many structures are warped or sinking.
+* **Environment:** Smoke, refuse and tannery smells; constant noise from industry; limited light due to tall, leaning buildings.
+* **Social:** Poor workers, refugees, marginalized communities.  Salee’s networks operate here.  Strained by post‑Piercing influxes of displaced people.
+* **Typical scenes:** Communal meals and resource pooling (Interlude II), Jhace and Tiffani choosing to help here over more “important” districts (Ch 12).
+
+#### Underface Districts (Mid‑Level)
+
+* **Physical:** Working‑class residential and commercial zones built partially into the hillside.  Mix of stone and timber.  Heat‑grid tunnels run below.
+* **Environment:** Smells of forge smoke, food cooking, humanity.  Streets are narrower than the Crown but wider than the Dregs.
+* **Social:** Guild workers and craftspeople.  Jhace’s forge and training rig are here.  Authority weakens compared to the Crown; guild disputes common.
+* **Typical scenes:** Standard work (Ch 1), training attempts (Ch 7–10), coordination during crises.
+
+#### Glass Quarter (Upper‑Mid Level)
+
+* **Physical:** District specializing in precision craft.  Better construction quality than lower levels.  The Merrow Glass & Mirrors shop and observatory sit here.
+* **Environment:** Cleaner air, more open spaces for light.  Fewer heavy industries; the soundscape includes glass cutting, delicate tools, quiet conversation
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file5 in your response to cite this file.
+
+## CONSTRAINT SYSTEMS: N01 ENFORCEMENT
+
+**Purpose:** Lay down the rules that govern language, magic costs, knowledge and structure in N01. These are mechanical constraints the prose engine must obey to preserve immersion, mystery and pacing.  Violating them breaks the story.
+
+---
+
+### 1. LEXICON ENFORCEMENT
+
+**No Earth terms for time, distance, direction, measurement or culture.**  Te’Oga has its own units.  If any of the forbidden terms appear in prose, the validator must flag them and the draft must be revised.
+
+#### Forbidden Time Terms
+
+* Day, week, month, year, season names (spring, summer, fall/autumn, winter).
+* Days of week (Monday, Tuesday, etc.).
+* Hour, minute, second, o’clock, AM, PM, midnight, noon.
+
+#### Forbidden Distance/Direction Terms
+
+* Foot, feet, inch, yard, mile, meter, kilometre, centimetre.
+* North, south, east, west, NE, NW, SE, SW, compass.
+
+#### Forbidden Measurement Terms
+
+* Pound, ounce, ton, tonne, gram, kilogram.
+* Gallon, quart, pint, litre, ml.
+* Celsius, Fahrenheit, degrees.
+
+#### Forbidden Modern Slang and Culture
+
+* “Okay,” “OK,” “cool,” “awesome,” “dude,” “guy” when used as slang or filler.
+* Any real‑world religions, mythologies, historical events, or geographical names.
+
+#### Required Te’Oga Terms
+
+* **Time:** Tide (~24 hours), Anneal (~5 Tides), Crucible (~35 Tides), Turn (personal age), Cast (historical epoch).  Within a Tide: Kindling, Pouring, Shaping, Striking, Quench.
+* **Short Duration:** Span (seconds to minutes), breath (moment), heartbeat (instant).
+* **Distance:** Span (arm’s length), pace (step), pole (~10 feet).
+* **Direction:** Up‑slope (toward the Crown), down‑slope (toward the river), harbor‑side, inland, or landmarks.
+* **Volume:** Thimble (small), cup (container), cask (large).
+* **Weight:** Grain (tiny), stone (heavy), weight (formal unit).
+
+#### Acceptable Substitutions
+
+* “Yes,” “understood,” “fine,” “agreed” instead of “OK/cool/awesome.”
+* “Person,” “man,” “woman,” “worker,” “apprentice” instead of modern slang like “dude” or “guy.”
+
+---
+
+### 2. COST VISIBILITY PROTOCOL
+
+Soulpulse is not free.  Every activation must show physical and emotional cost.  The story’s magic system has real consequences, and the prose must reflect them.
+
+#### During Activation
+
+* Show skin contact and the emotional trigger: the user must need the material to hold to save someone.  Casual attempts fail.
+* Describe the copper‑gold glow spreading from the palms into the material and how the material responds (shimmers, redistributes stress).
+* Highlight the user’s physical strain: shaking hands, muscles tensing, labored breathing, sweat, nausea.
+
+#### Immediately After
+
+* Show residual tremor (worse/same/better).  At Stage 1, tremor may fade with rest; by Stage 2, it doesn’t.
+* Note visibility of vein‑lines (bright lines when active, faint lines at rest in Stage 2).
+* Convey exhaustion: inability to lift arms, dizziness, headache, bone‑deep ache.  Sleep may help early on but not later.
+* Include pain location and quality (burning in palms, ice‑cold pain along forearm, dull ache in chest).
+
+#### Stage‑Progression Consistency
+
+* Stage 0: no tremor, no vein‑lines; only applies before Ch 3.
+* Stage 1: tremor appears after ~2–3 uses; fades partially with rest.  Vein‑lines visible during use only.  Applies through Ch 11.
+* Stage 2: tremor is constant baseline; vein‑lines faintly visible even when not using; deep exhaustion; fine motor
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file6 in your response to cite this file.
+
+## SOULPULSE: MECHANICS AS DISCOVERED IN N01
+
+**Purpose:** This document describes Soulpulse as it's understood and experienced during N01 "The Grip That Holds." This is empirical knowledge built from observation and experimentation, NOT complete system understanding.
+
+---
+
+### WHAT IS SOULPULSE?
+
+**Observed Phenomenon:**
+Following the Piercing, certain individuals discovered they could affect physical reality through focused intention combined with direct contact. This wasn't magic in any traditional sense—no incantations, no reagents, no mystical gestures.
+
+**Common Element:**
+Protective intention crystallized through physical contact. The user must desperately need the material to hold/mend/stabilize AND must be touching it.
+
+---
+
+### ACTIVATION REQUIREMENTS (As Understood in N01)
+
+**Physical Contact:**
+- Requires skin-to-material contact (stone, metal, flesh, wood)
+- Works through thin materials (gloves reduce effectiveness)
+- Must maintain contact during active use
+- Breaking contact ends effect immediately
+
+**Emotional State:**
+- Demands genuine protective need
+- “I need this to hold so people survive” works
+- Casual desire or intellectual will alone doesn't work
+- Fear for others' lives seems to enhance activation
+- Anger or self-preservation less effective
+
+**Awareness:**
+- First activations always instinctive/desperate
+- Conscious activation requires practice
+- User must "feel" the material's stress/structure
+- Cannot activate if distracted or panicked
+
+---
+
+### VISUAL MANIFESTATION
+
+**Copper‑Gold Glow:**
+- Distinctive color, visible to observers
+- Spreads from point of contact into material
+- Intensity varies with effort/effect
+- Brighter during active use, dimmer in residue
+
+**Vein‑Lines:**
+- Tracery appears on user's forearms
+- Follows vein patterns but extends beyond normal anatomy
+- Faint when inactive, bright when active
+- Becomes more persistent with repeated use
+- First appears after 2–3 uses
+
+**Material Changes:**
+- Metal/stone shows faint shimmer during hold
+- Stress patterns visible as light/dark areas
+- Effect persists briefly after contact broken (seconds to spans)
+- Leaves subtle changes in material structure
+
+---
+
+### TACTILE EXPERIENCE (User Perspective)
+
+**During Activation:**
+- Intense pressure in palms (like pushing against resistance)
+- Vibration extending from hands through arms into chest
+- Sensation of being "connected" to material
+- Can feel stress points, structural integrity, weakness
+- Overwhelming when first experienced
+
+**Physical Sensation:**
+- Warmth spreading from palms
+- Muscle tension throughout arms and shoulders
+- Bone‑deep ache develops during sustained use
+- Breath becomes labored under heavy loads
+- Nausea if pushing too hard
+
+---
+
+### COST SYSTEM: STAGE PROGRESSION (N01 Scope)
+
+Soulpulse use carries a physical cost that escalates with frequency and intensity. Characters in N01 do not explicitly label stages; this section labels them for author reference.
+
+**Stage 0: Baseline (Pre‑Use)**
+- No tremor
+- Normal physical function
+- No visible vein‑lines
+- No chronic symptoms
+
+**Stage 1: Minor Tremor (After 2–3 Uses)**
+- Slight tremor in hands when attempting fine motor tasks
+- Noticeable when picking up small objects, detailed work
+- Fades partially after several spans of rest
+- Vein‑lines appear during use, fade when inactive
+- User can still function normally in non‑precision tasks
+- Most users don't progress past this if they use sparingly
+
+**Progression to Stage 1 in N01:**
+- Jhace: Ch 3 (after first two instinctive uses)
+- Maintained through Ch 4–7
+- Solidifies by Ch 10
+
+**Stage 2: Baseline Tremor (After 5–10 Uses in Short Timeframe)**
+- Tremor becomes constant, doesn't fully fade with rest
+- Vein‑lines remain faintly visible even when not using power
+- Deep exhaustion that sleep doesn't completely resolve
+- Fine motor control compromised (difficulty with precision work)
+- Can still work but efficiency drops significantly
+- This becomes new normal—body fundamentally changed
+- Reversible with extended rest (multiple Anneals) but body sensitized
+
+**Progression to Stage 2 in N01:**
+- Jhace: Beginning Ch 12 (after political conflicts force heavy use)
+- Solidified by Ch 14 (major district‑spanning crisis)
+- Maintained through Ch 15
+
+**What N01 Characters Don't Know:**
+- Stage 3 exists (debilitating symptoms)
+- Stage 4 exists (potential
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file7 in your response to cite this file.
+
+## N01 CHAPTER GRID: COMPLETE STRUCTURE
+
+**Purpose:** Provide a chapter‑by‑chapter roadmap for N01 “The Grip That Holds,” including POV assignments, beat methods, timeline anchors, locations, scene structures, exit hooks and knowledge changes.  This grid guides prose generation and ensures events happen in the right order.  Follow it closely; do not invent new scenes or reorder chapters without updating the grid.
+
+---
+
+### Chapter 1: “Something Wrong”
+
+* **POV:** Jhace
+* **Beat Method:** **BEAT_01 – Observation → Pattern Recognition**
+* **Timeline:** Tide 0, Kindling→Shaping; the first physical effects of the Piercing are already underway, but no one understands the cause yet
+* **Primary Location:** Underface heat‑grid tunnels beneath Saint Merro
+
+**Scene Structure:**
+
+1. **Opening:** Jhace conducts a routine inspection of the heat‑grid marry points.  He feels the hum of pipes and listens for subtle off‑notes.  We see his bone‑feel for structure and his obsessive routine.  Bram and Chloen are nearby working topside; their voices drift down.
+2. **External Conflict:** At one junction the hum is slightly wrong.  There is no visible crack, but the vibration is off.  Jhace must decide: shut down this section and inconvenience hundreds or trust that nothing will fail.  Management would prefer he ignore it.  His gut says otherwise.
+3. **Internal Shift:** He reaffirms his core wound: *If I ignore this and something fails, that’s on me.*  He logs the anomaly, knowing this will cause extra work and risk reprimand.  Choosing caution over convenience is his pattern.
+4. **Relationship Beat:** Bram calls down a joke: “You marrying that pipe, or you gonna come up and eat?”  Chloen watches him with reverence.  Jhace answers gruffly, treating Chloen as a colleague, not a child.  The trio dynamic is established.
+5. **Soulpulse Use:** None.  This chapter establishes the baseline; Jhace has no powers yet.
+
+**Exit Hook:** As Jhace moves on, a faint wrong tremor ripples through the entire structure.  It isn’t connected to his junction; it comes from everywhere.  He pauses and listens, uneasy.  The reader senses something huge is imminent.
+
+**Knowledge Changes:**
+
+* **Jhace learns:** That a subtle, city‑wide vibration exists—foreshadowing the Piercing.  No factual information yet.
+* **Reader learns:** Jhace’s work style, his obsessive vigilance, how the heat‑grid functions, and basic Underface geography.  Foreshadowing of something wrong in the world.
+* **Hidden:** Soulpulse, the Piercing specifics, any cosmic context.  The wrongness is felt but unexplained.
+
+**Constraint Checks:** Use Te’Oga units (“span,” “Kindling,” etc.).  Do not use Earth time.  No Soulpulse means no cost description.  Jhace’s voice must be terse, physical and practical.
+
+---
+
+### Chapter 2: “Glass That Listens”
+
+* **POV:** Tiffani
+* **Beat Method:** **BEAT_01 – Observation → Pattern Recognition**
+* **Timeline:** Tide 0, Kindling→Pouring (same Tide as Ch 1, later in the morning)
+* **Primary Location:** Merrow Glass & Mirrors observatory (Glass Quarter)
+
+**Scene Structure:**
+
+1. **Opening:** Tiffani stands on the rooftop observatory, instruments arranged with precision.  She logs refraction anomalies in the upper atmosphere.  Guild messengers arrive, urging her to focus on paid commissions, not “weather.”
+2. **External Conflict:** The pattern she has been dismissing as noise intensifies.  Measurements show light bending in ways she cannot explain.  The theodolite trembles under her hands.  She must decide whether to treat this as important or continue ignoring it to satisfy her guild.
+3. **Internal Shift:** She chooses to trust the pattern.  She notes the anomalies and begins adjusting instruments to track them.  She accepts that ignoring “noise” killed Marisse; she won’t repeat that mistake.
+4. **Relationship Beat:** Pella brings her food and comments on her work.  Tiffani feigns irritation but eats.  Their dynamic of patient mentor and caring apprentice is established.  Tiffani also thinks briefly of Corlexi, recalling past debates about “efficiency” vs. “precision.”
+5. **Soulpulse Use:** None.  This chapter is about observations, not magical interventions.
+
+**Exit Hook:** The anomaly spikes: a sharp flash and metallic taste in the air.  Glass instruments hum.  Tiffani sees something streaking high in the atmosphere, bending light.  She grabs her logbook and runs down to warn others.
+
+**Knowledge Changes:**
+
+* **Tiffani learns:** The atmospheric anomaly is real and escalating.  Patterns matter.  Her decision to take it seriously is moral atonement for past failure.
+* **Reader learns:** Tiffani’s personality (precision as care), her humor (dry but warm), her relationship with Pella, and the physical layout of the observatory.
+* **Hidden:** No Soulpulse knowledge, no cosmic explanation, no names of gods.  She doesn’t know what she saw.
+
+**Constraint Checks:** Use correct units (“Tides,” “spans,” “Kindling”).  Tiffani’s voice should be analytical but caring.  No Soulpulse means no cost description.
+
+---
+
+### Chapter 3: “The Sky Breaks”
+
+* **POV:** Jhace
+* **Beat Method:** **BEAT_03 – Crisis Front‑Loaded → Rolling Complications → Partial Resolution**
+* **Timeline:** Tide 0, Shaping→Striking; this is the catastrophic phase of the Piercing (planetary impalement and immediate aftermath)
+* **Primary Locations:** Underface tunnels, surface streets near forge district, collapsing observatory
+
+**Scene Structure:**
+
+1. **Opening:** The narrative drops into full crisis.  The Piercing begins.  The ground shakes; the tunnel walls groan.  Dust falls.  Heat‑grid pipes scream.  Jhace shouts orders; Bram and Chloen scramble.  Tiffani experiences the same event at the observatory; glass shatters.
+2. **Rolling Complications:**  A section of tunnel collapses.  Chloen is pinned under a beam.  Jhace cannot lift it physically.  Above, the observatory structure begins to tear.  Tiffani must evacuate quickly, navigating falling glass and buckling floors.
+3. **First Soulpulse Use:**  Out of desperation, Jhace grabs the beam with bare hands and *wills* it to hold.  Copper‑gold light blooms.  Heat rushes through him.  He feels the structure’s stress.  The beam holds long enough for Bram to pull Chloen free.  Immediately, his hands ache; a faint tremor starts.  He doesn’t understand what he’s done.
+4. **Second Use:**  Seconds later, the street above begins to collapse.  People are trapped.  Jhace uses the new power again, bracing a support from below.  Copper‑gold light flares.  Tiffani, now on the street, sees a building sag then stop.  She glimpses the glow and hears the metallic song of the beam being forced back into place.
+5. **Partial Resolution:**  People evacuate.  The building doesn’t fully collapse.  Jhace collapses from the exertion.  His hands shake uncontrollably.  He blacks out.
+
+**Exit Hook:** Jhace wakes to chaos and sees Tiffani standing over him with a look of shock and curiosity.  They exchange a brief, bewildered glance.  The world is different now.
+
+**Knowledge Changes:**
+
+* **Jhace learns:** He can do something impossible when protecting someone.  It costs him physically (ache, tremor).  It feels like heat and vibration.
+* **Tiffani learns:** People can manipulate structures with copper‑gold light.  She has no explanation yet but she’s determined to find one.
+* **Reader learns:** The Piercing is world‑changing; Soulpulse exists; it is tied to desperation and contact; it leaves residue (glow, tremor, healing).  Chloen’s leg heals quickly.
+* **Hidden:** Why this power exists, what the Piercing was, any link to gods or divine principles.
+
+**Constraint Checks:** Full crisis intensity.  Show cost: aching hands, tremor, exhaustion.  Use sensory language (dust, noise).  Keep voices distinct (Jhace terse, Tiffani more observational).  Do not name the ability yet; characters just describe what they see.
+
+---
+
+### Interlude I (After Chapter 6) – Corlexi “System vs Chaos”
+
+* See `N01_Interludes_Epilogue_Specs.md` for details.  This interlude shows the RRO council chamber through Corlexi’s eyes.  It contrasts institutional attempts at order with the ground‑level chaos experienced in the first six chapters.  It seeds the registration conflict.
+
+---
+
+### Chapter 4: “After the Shudder”
+
+* **POV:** Jhace
+* **Beat Method:** **BEAT_02 – Trial → Failure → Compounding → Success/Cost**
+* **Timeline:** Tide 1, Kindling (the morning after the Piercing)
+* **Location:** Underface tunnels, surface triage areas
+
+**Scene Structure:**
+
+1. **Opening:** Jhace wakes up sore and trembling.  He, Bram and Chloen begin assessing damage.  The city above is still standing but precarious.  People call out for the man who held the building.
+2. **Trial Attempt:** Jhace tentatively tries the power again on a small crack in a support.  It fails: the copper‑gold glow doesn’t come; his emotional state isn’t desperate enough.  He realizes it’s not “on demand.”
+3. **Compounding:** A minor collapse threatens to kill someone.  Jhace tries again with real stakes.  The power works but it drains him.  Tremor becomes noticeable; he drops his tools; Bram comments on his shaking.
+4. **Success/Cost:** The crack holds, lives are saved, but Jhace’s hands are no longer steady.  He has to admit something has changed.  Tiffani appears later to measure residue; she recognizes that heat and structural integrity changed locally.  The two exchange curt words about what happened.
+
+**Exit Hook:** Jhace tries to pick up a nail and fails because of tremor.  He hides his hands behind his back, denying weakness.  Tiffani watches, knowing he’s lying.  That unspoken truth will drive their next interactions.
+
+**Knowledge Changes:**
+
+* **Jhace learns:** The power is not controlled by will alone; it requires genuine protective desperation.  Repeated use increases tremor and pain. 
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file8 in your response to cite this file.
+
+## BEAT CATALOG — N01 SCOPE
+
+**Purpose:**  
+Define all beat methods used in N01 so chapters can be:
+
+- Planned and validated structurally.  
+- Kept unpredictable at the series level.  
+- Emotionally coherent within themselves.
+
+N01 uses **eight** beat methods: BEAT_01 through BEAT_08.
+
+---
+
+### BEAT_01 — Observation → Pattern Recognition
+
+**Function:**  
+Use when the chapter is about **noticing something wrong** and understanding it.
+
+**Structure:**
+
+1. **Baseline Observation**  
+   - POV engages in normal work/routine.  
+   - Small detail feels off (vibration, light behavior, behavior pattern).
+
+2. **Focused Attention**  
+   - POV chooses to pay attention instead of ignoring.  
+   - Compares against prior experience.
+
+3. **Testing / Probing**  
+   - Small actions to test the anomaly.  
+   - Additional observations confirm the anomaly is real.
+
+4. **Pattern Recognition**  
+   - Click moment: “This is not random.”  
+   - POV understands the pattern (or understands that a pattern exists and is dangerous).
+
+5. **Decision / Micro-Shift**  
+   - POV changes course or plan based on the new understanding.
+
+**Emotional Arc:**  
+Curiosity → Unease → Focus → Understanding → Resolve
+
+**Best Used When:**
+- Introducing a core problem.  
+- Showing a character’s core mode of thinking (Jhace sensing structures, Tiffani reading patterns).
+
+**Forbidden Sequences:**
+- Cannot immediately follow another BEAT_01.  
+- Cannot immediately precede BEAT_06 (both are recognition/synthesis-heavy).
+
+**N01 Examples (intended):**
+- Ch 1 (Jhace: “Something Wrong” under the heat-grid).  
+- Ch 2 (Tiffani: observing upper atmosphere anomalies).
+
+---
+
+### BEAT_02 — Trial → Failure → Compounding → Success/Cost
+
+**Function:**  
+Use when you want a **hard failure** that escalates, followed by a victory that hurts.
+
+**Structure:**
+
+1. **Trial Setup**  
+   - Goal is defined (save someone, stabilize structure, train Soulpulse).  
+   - Plan seems plausible but not guaranteed.
+
+2. **Initial Attempt → Failure**  
+   - First attempt fails clearly.  
+   - Stakes increase.
+
+3. **Compounding Problem**  
+   - Failure makes situation worse (more damage, less time, more people at risk).
+
+4. **Reframe / New Approach**  
+   - POV changes approach, often with help from another character.
+
+5. **Success with Explicit Cost**  
+   - Goal is achieved or partially achieved.  
+   - Cost is visible: physical, emotional, moral, or relational.
+
+**Emotional Arc:**  
+Hope → Frustration → Panic → Determination → Relief + Dread
+
+**Best Used When:**
+- Training episodes that go wrong.  
+- Major rescue that almost fails.  
+- Moments where price of success must be undeniable.
+
+**Forbidden Sequences:**
+- Cannot follow another BEAT_02.  
+- Should not directly precede BEAT_03 in most cases (risk of fatigue).
+
+**N01 Examples (intended):**
+- Kylar’s first training attempt + follow-up.  
+- A rescue where Jhace’s first plan fails, and Tiffani’s input salvages it.
+
+---
+
+### BEAT_03 — Crisis Front-Loaded → Rolling Complications → Partial Resolution
+
+**Function:**  
+Use for big chaos chapters, especially disasters in progress.
+
+**Structure:**
+
+1. **Drop-In Crisis**  
+   - Chapter opens mid-disaster: building already collapsing, Piercing underway, etc.
+
+2. **Rolling Complications**  
+   - Every attempt to stabilize reveals new problems.  
+   - Stakes grow organically (more people, more structure at risk).
+
+3. **Local Focus Choice**  
+   - POV must choose where to focus attention.  
+   - Implicit acceptance that some things will be left to fail.
+
+4. **Partial Resolution**  
+   - Immediate crisis is stabilized enough to survive.  
+   - Larger structural problem remains unsolved.
+
+5. **Fallout Preview**  
+   - Hints at future consequences for this imperfect solution.
+
+**Emotional Arc:**  
+Shock → Scramble → Triage → Exhausted Survival → Uneasy Aftermath
+
+**Best Used When:**
+- Piercing event itself.  
+- Major structural disaster chapters.  
+- Big pivot moments in the novella.
+
+**Forbidden Sequences:**
+- Cannot be used more than 3 times in N01.  
+- Never back-to-back.  
+- Must be buffered by lower-intensity beats.
+
+**N01 Examples (intended):**
+- Ch 3 (The Piercing).  
+- Ch 6 (major hold).  
+- Ch 14 (district-spanning crisis).
+
+---
+
+### BEAT_04 —
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file9 in your response to cite this file.
+
+## N01 PROSE GENERATION WORKFLOW
+
+**Purpose:**  
+Define a repeatable, enforceable process for generating and revising N01 prose so that:
+
+- All output stays within N01 scope.  
+- World, characters, and magic stay consistent.  
+- Cost, lexicon, and beat-structure rules are respected without a human babysitting every line.
+
+This workflow assumes access to:
+
+- `N01_Master_Bible.md`
+- `World_Core.md`
+- `Soulpulse_System_N01_Scope.md`
+- `Character_Dossiers_N01.md`
+- `Location_Bibles_N01.md`
+- `Relationship_Dynamics_N01.md`
+- `Constraint_Systems.md`
+- `N01_Chapter_Grid.md`
+
+---
+
+### 1. WORK MODES
+
+The engine operates in one of four modes:
+
+1. **Chapter Draft Mode**  
+   Generate a full prose draft for a numbered chapter (1–15) with a specified POV.
+
+2. **Chapter Revision Mode**  
+   Revise an existing chapter while preserving its beat, POV, and factual content.
+
+3. **Interlude Mode**  
+   Generate or revise Interlude I or II.
+
+4. **Epilogue Mode**  
+   Generate or revise the N01 Epilogue.
+
+Each mode uses the same constraints but slightly different steps.
+
+---
+
+### 2. COMMON SETUP (ALL MODES)
+
+Before writing or revising anything:
+
+1. **Identify Assignment**
+   - Chapter number or Interlude/Epilogue.
+   - POV character.
+   - Target word count window (e.g., 1,000–1,200 for standard chapters).
+
+2. **Load Core Context**
+   - From `N01_Master_Bible.md`:
+     - Novella overview.
+     - Primary characters.
+     - Relationship dynamics.
+     - Constraints for N01 prose.
+   - From `World_Core.md`:
+     - Time system (Tides/Anneals/Phases).
+     - Lexicon constraints.
+     - Saint Merro districts.
+   - From `Soulpulse_System_N01_Scope.md`:
+     - Stage definitions.
+     - Known techniques.
+     - Cost patterns.
+   - From `Character_Dossiers_N01.md`:
+     - POV character psychology, voice, humor.
+   - From `Location_Bibles_N01.md`:
+     - Primary locations for the chapter’s setting(s).
+   - From `Relationship_Dynamics_N01.md`:
+     - Relationship state at this point in the novella.
+   - From `Constraint_Systems.md`:
+     - Lexicon rules.
+     - Cost visibility rules.
+     - Knowledge gates.
+     - Beat constraints.
+
+3. **Consult Chapter Grid**
+   - From `N01_Chapter_Grid.md`:
+     - Chapter title.
+     - POV.
+     - Beat method ID (BEAT_0X).
+     - Tide and phase (Kindling/Pouring/Shaping/Striking/Quench).
+     - Location(s).
+     - External conflict.
+     - Internal shift.
+     - Relationship beat.
+     - Soulpulse usage (Y/N, type, approximate cost).
+     - Exit hook.
+     - Knowledge state changes.
+
+4. **Derive a One-Page Brief (Internal)**
+   For the current chapter, summarize in your own internal notes:
+   - **Situation When Chapter Opens.**
+   - **Main external problem.**
+   - **What changes internally for the POV by the end.**
+   - **What, if anything, changes in relationships.**
+   - **Whether Soulpulse is used, and at what cost.**
+   - **What the reader must know by the end (and what must stay hidden).**
+   - **Beat method and emotional arc you must follow.**
+
+This brief is not output to the user; it’s your internal plan.
+
+---
+
+### 3. CHAPTER DRAFT MODE
+
+#### Step 1: Establish Deep POV Constraints
+
+- You are locked into **one** POV (the chapter’s POV character).
+- Only include:
+  - What they directly sense (sight, sound, touch, smell, taste).
+  - Their immediate thoughts and emotional interpretations.
+- Do not:
+  - Reveal information the POV could not reasonably infer.
+  - Explain divine or future mechanics.
+  - Slide into external omniscient summary.
+
+#### Step 2: Opening Paragraphs
+
+Use the Chapter Grid:
+
+- Start **in motion** inside the specified situation:
+  - The POV character is already doing something.
+  - The setting is
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file10 in your response to cite this file.
+
+## N01 TIMELINE SKELETON (TIDE 0–5)
+
+**Purpose:**  
+Anchor all N01 chapters, Interludes, and Epilogue in:
+
+- Tides and phases.  
+- Major events.  
+- Soulpulse progression.  
+- Relationship milestones.
+
+This is a **skeleton**, not a full chronicle; details live in the other files. This file keeps time from drifting.
+
+---
+
+### 1. HIGH-LEVEL TIMELINE
+
+- **Tide 0:** The Piercing.  
+  - Ch 1–3 span this Tide (different phases, different locations).
+- **Tide 1–2:** Immediate aftermath and early crisis response.  
+  - Structural triage, first patterns recognized.
+- **Tide 3–4:** Organized responses, training attempts, political entanglements.  
+  - J/T partnership forming and tested.
+- **Tide 5:** Major crisis and personal commitment.  
+  - District-scale event, then quiet aftermath.
+
+---
+
+### 2. CHAPTER-BY-CHAPTER TABLE
+
+This table assumes:
+
+- Ch 1–2: Pre-impact hours leading into Piercing.  
+- Ch 3: The Piercing itself.  
+- Subsequent chapters cascade through the first several Tides.
+
+You can refine Tide/phase assignments later; the important thing is **relative order and progression**.
+
+| ID         | Tide | Phase      | Summary Focus                                                |
+|------------|------|------------|--------------------------------------------------------------|
+| Ch 1       | 0    | Kindling   | Jhace in Underface tunnels notices structural “off note.”   |
+| Ch 2       | 0    | Pouring    | Tiffani at observatory detects atmospheric anomalies.       |
+| Ch 3       | 0    | Shaping → Striking | The Piercing: city-wide disaster, first Soulpulse uses, J/T paths converge. |
+| Ch I1      | 0    | Quench     | Corlexi perspective on emerging chaos, system-building urge.|
+| Ch 4       | 1    | Kindling   | Immediate aftermath, first conscious Soulpulse experimentation. |
+| Ch 5       | 1    | Pouring    | Tiffani chooses to analyze the phenomenon, early collaboration. |
+| Ch 6       | 1    | Shaping → Striking | Major structural crisis; Jhace overextends to prevent collapse. |
+| Ch 7       | 1    | Quench     | Quiet recalibration; early discussions about training others.   |
+| Ch 8       | 2    | Kindling   | Training rig setup; Kylar’s first catastrophic failure.     |
+| Ch 9       | 2    | Pouring    | Debate / reframe; ask Kylar what he needs; new training method. |
+| Ch 10      | 2    | Shaping    | Successful controlled test; J/T partnership proving itself. |
+| Ch 11      | 3    | Kindling   | RRO council confrontation; registration demand.             |
+| Ch I2      | 3    | Pouring    | Salee’s communal work; contrast with institutional response.|
+| Ch 12      | 3    | Shaping    | J/T choose neglected districts over RRO priorities.         |
+| Ch 13      | 4    | Kindling   | Late-Tide quiet; acknowledgment of “more than partnership.” |
+| Ch 14      | 4–5  | Shaping → Striking | District-scale crisis; J/T near Stage 2              |
+| Ch 15      | 5    | Quench     | Recovery; intimate commitment; closing on “we hold together.”|
+| Epilogue   | 5+   | –          | Auditor’s clinical summary of outcomes and projections.     |
+
+If you adjust events per chapter later, update this table to keep Tides and phases in sync.
+
+---
+
+### 3. SOULPULSE PROGRESSION MAP
+
+#### Jhace’s Stage Over Time
+
+| Tide / Chapters        | Stage State                 | Notes                                         |
+|------------------------|----------------------------|----------------------------------------------|
+| Pre-Tide 0 (off-page)  | Stage 0                    | No Soulpulse
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file11 in your response to cite this file.
+
+## N01 VALIDATOR CHECKLIST
+
+**Purpose:**  
+Provide a strict, mechanical validation pass for any N01 prose (chapter, Interlude, or Epilogue) to enforce:
+
+- Lexicon purity.  
+- Soulpulse cost visibility.  
+- Voice and POV discipline.  
+- Knowledge gating.  
+- Beat structure.  
+- Timeline and continuity.
+
+This checklist is intended to be run **after** a draft is written or revised.
+
+---
+
+### 1. LEXICON ENFORCEMENT
+
+#### 1.1 Forbidden Time Terms
+
+Search the prose for each of the following; if any appear, they must be replaced:
+
+- day / days  
+- week / weeks  
+- month / months  
+- year / years  
+- season / spring / summer / fall / autumn / winter  
+- Monday / Tuesday / Wednesday / Thursday / Friday / Saturday / Sunday  
+- hour / minute / second  
+- AM / PM / o'clock / midnight / noon
+
+For each hit, confirm there is a correct substitution:
+
+- Tide, Anneal, Crucible, Turn, Cast, Span, Breath, Heartbeat, phase names (Kindling, Pouring, Shaping, Striking, Quench).
+
+#### 1.2 Forbidden Distance / Direction Terms
+
+Search and eliminate:
+
+- foot / feet / ft  
+- inch / inches / in  
+- yard / yards  
+- mile / miles  
+- meter / metre / m / kilometer / km / centimeter / cm  
+- north / south / east / west / NE / NW / SE / SW / compass
+
+Confirm use of:
+
+- Span, Pace, Pole, upslope/downslope, river-side/harbor-side/inland, landmark-based directions.
+
+#### 1.3 Forbidden Measurement Terms
+
+Search and eliminate:
+
+- pound / lb / lbs / ounce / oz / ton / tonne  
+- gram / g / kilogram / kg  
+- gallon / quart / liter / litre / ml  
+- Celsius / Fahrenheit / °C / °F / degree / degrees
+
+Confirm weights/volumes are expressed via:
+
+- Grain, Stone, Weight, Thimble, Cup (non-precise), Cask.
+
+#### 1.4 Modern Slang and Cultural Leakage
+
+Search and eliminate:
+
+- okay / OK / ok  
+- cool / awesome / dude / guy (as generic modern slang)  
+- any mention of real-world religions, mythologies, countries, historical events, or technologies that do not exist in Te’Oga.
+
+Confirm substitutions:
+
+- “Yes,” “Understood,” “Agreed,” “Fine,” etc., instead of “okay / cool / awesome.”
+
+---
+
+### 2. SOULPULSE COST AND MECHANICS
+
+For every Soulpulse activation in the text:
+
+#### 2.1 Activation Requirements
+
+- Is the user in **direct contact** with the material?  
+- Is their **emotional state** clearly protective/desperate rather than casual?  
+- Is it clear **what** they are trying to hold/stabilize/mend?
+
+If any of these are missing, revise.
+
+#### 2.2 During-Use Description
+
+- Copper-gold glow is explicitly described.  
+- Glow spread pattern into material is described (even briefly).  
+- Material response is visible (shimmer, tension, redistribution).  
+- Physical strain in the user is shown (tremor, muscle tension, breath changes).
+
+If an activation reads “he used his power and the beam held” with no detail, it fails.
+
+#### 2.3 Immediate Aftermath
+
+- Tremor status is shown (worse / same / slightly improved).  
+- Vein-line visibility is described (bright, fading, faintly present at rest).  
+- Exhaustion is concrete (struggling to lift something, dizziness, needing support).  
+- Pain is localized and characterized (hands, arms, chest; burning, aching, stabbing, etc.).
+
+If cost is vague (“he was tired”), it must be sharpened.
+
+#### 2.4 Stage Progression Consistency
+
+Cross-check with `Soulpulse_System_N01_Scope.md` and `N01_Timeline_Skeleton.md`:
+
+- If before Ch 3: **Stage 0** (no tremor, no vein-lines).  
+- Ch 3
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file12 in your response to cite this file.
+
+## N01 — COMMON FAILURE MODES & HOW TO FIX THEM
+
+**Purpose:** Enumerate the ways a prose engine is most likely to screw up N01, and give concrete checks and fixes. This doc exists so you can catch problems fast.
+
+---
+
+### 1. Lexicon Leaks (Earth Time, Distance, Culture)
+
+**Failure:**
+- The prose slips in “day,” “week,” “hours,” “mile,” “north,” “okay,” etc.
+
+**Why It’s Bad:**
+- Immediately breaks immersion.
+- Undermines all the effort spent on Tides/Anneals/Crucibles.
+
+**How to Detect:**
+- Simple string search over draft:
+  - Time: `day, week, month, year, hour, minute, second, morning, afternoon, evening, night` (when used as Earth time, not as generic words).
+  - Distance: `foot, feet, inch, mile, meter, kilometer`.
+  - Direction: `north, south, east, west`.
+  - Slang: `okay, ok, cool, awesome, dude, guy`.
+
+**Fix:**
+- Replace with Te’Oga terms:
+  - “day” → “Tide”
+  - “week” → “Anneal”
+  - “month” → “Crucible”
+  - “years old” → “Turns old”
+  - “hours/minutes” → “spans, breaths, heartbeats”
+  - “miles/feet” → “paces, spans, poles”
+  - “north/south” → “up-slope, downslope, toward the river, inland”
+- Adjust phrasing so it feels native, not like a search/replace hack.
+
+---
+
+### 2. Invisible Cost (Magic With No Price Tag)
+
+**Failure:**
+- Soulpulse use reads like a superhero power:
+  - Beam holds, no visible toll.
+  - User shrugs and keeps going.
+
+**Why It’s Bad:**
+- Destroys the entire hard-cost system.
+- Breaks future stakes (no reason to fear Stage 2+).
+
+**How to Detect:**
+- For every Soulpulse use, ask:
+  - Do we see physical strain *during* the use?
+  - Do we see specific aftereffects (tremor, vein-lines, exhaustion, pain)?
+  - Is there any sense of cumulative damage across chapters?
+
+**Fix:**
+- Add explicit cost beats:
+  - During: shaking hands, burning forearms, laboring breath, time-span of the hold.
+  - After: dropping tools, needing to be helped to sit, failing to grip small objects, sleep that doesn’t fix it.
+- Track progression:
+  - Early chapters: tremor fades with rest.
+  - Late chapters: tremor baseline, doesn’t vanish.
+
+---
+
+### 3. Voice Flattening (Everyone Sounds the Same)
+
+**Failure:**
+- Jhace, Tiffani, Bram all speak and think with the exact same cadence and vocabulary.
+
+**Why It’s Bad:**
+- Kills character identity.
+- Makes the world feel AI-written rather than lived.
+
+**How to Detect:**
+- Strip dialogue tags from a short scene.
+- Can you still tell who said what just by the wording?
+- If not, voice is flattened.
+
+**Fix:**
+- Jhace:
+  - Short, clipped sentences.
+  - Physical language (weight, pressure, heat, hum).
+  - Deflection through blunt statements.
+- Tiffani:
+  - Longer sentences.
+  - Precise measurements, pattern language.
+  - Questioning herself internally while sounding confident aloud.
+- Bram:
+  - Longer, rambling sentences.
+  - Dry humor, gentle mockery.
+  - Sounds like he’s halfway into a lecture at all times.
+
+Deliberately pass each line of dialogue through that filter before locking the chapter.
+
+---
+
+### 4. Knowledge Gate Breaks (Characters Knowing Too Much)
+
+**Failure:**
+- Jhace internally calls his condition “Stage 2.”
+- Characters refer to “gods,” “seals,” or any series-end machinery.
+- Someone predicts a very specific future event.
+
+**Why It’s Bad:**
+- Collapses the slow-burn reveal structure of the whole saga.
+- Makes the world feel rigged instead of discovered.
+
+**How to Detect:**
+- Search for:
+  - “stage 2 / stage three / stage four / advanced stage”
+  - “god / divine / destiny / prophecy / chosen”
+  - Concrete statements about future events (“Tiffani will never die,” etc.)
+- Check if any POV has information they could only have from outside the story.
+
+**Fix:**
+- Replace formal labels with experiential description:
+ 
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file13 in your response to cite this file.
+
+## N01 INTERLUDES & EPILOGUE — SPECIFICATION
+
+**Purpose:** Define exactly what the two Interludes and Epilogue in N01 must do, what they are allowed to reveal, and how they must relate to the 15 core chapters.
+
+These are structural components, not side content. They carry specific jobs and must obey all N01 constraints.
+
+---
+
+### 1. INTERLUDE I — CORLEXI
+
+**Placement:**  
+- Between Chapter 6 and Chapter 7.  
+- Reader must have just experienced:  
+  - Jhace’s first major sustained Soulpulse hold.  
+  - Tiffani’s transition from “analysis only” to active coordination in crisis.  
+  - Physical and emotional cost on Jhace beginning to show clearly.
+
+**POV & Camera:**
+- Third-person limited, anchored to **Corlexi** only.
+- No access to any other character’s internal thoughts.
+- No omniscient commentary, no divine perspective.
+
+**Setting:**
+- RRO offices in the Crown district; primary scene: council chamber and adjacent planning rooms.
+- City still in early crisis-management phase (Tide 1–2).
+
+**Length Target:**
+- 800–1,200 words.
+
+**Beat Shape:**
+- Structural Beat Type: **“System vs Chaos Snapshot”** (maps closest to BEAT_03 but in institutional context).
+- Emotional arc:  
+  - Frustration at chaos and lack of coordination.  
+  - Conviction that order and centralized authority are morally necessary.  
+  - Foreshadowing of friction with decentralized actors (Jhace, Salee) without naming them yet.
+
+**Core Functions:**
+1. Show how the crisis looks from the top of the city:
+   - Maps, ledgers, resource tables.
+   - Reports streaming in faster than they can be processed.
+   - Triage discussions framed as logistics, not personal stories.
+2. Establish Corlexi’s worldview:
+   - “People die when you let everyone improvise.”
+   - Belief: systems, rules, and centralized authority save more lives overall.
+   - He is not a cartoon villain; he is a serious, pragmatic operator.
+3. Highlight institutional blind spots:
+   - Preference for protecting higher districts first (Crown, Glass Quarter).
+   - Lack of real understanding of conditions in Dregs/Underface.
+   - Tension with guilds, who resist ceding control.
+4. Seed political conflict:
+   - Early, not-yet-personal discussions about “unregistered abilities” and “unlicensed structural interventions.”
+   - Concerns that people like Jhace (unnamed) are “creating new risk surfaces” by acting outside protocol.
+
+**Allowed Knowledge:**
+- Corlexi may:
+  - Know that some individuals are doing impossible things with structures.
+  - Have early reports of “copper-gold light” phenomena.
+  - Consider registering these people and assigning them.
+- He may NOT:
+  - Understand true Soulpulse mechanics.
+  - Know anything about gods, seals, or long-term cosmic stakes.
+  - Anticipate Tiffani/Jhace specifically as major figures.
+
+**Tone & Voice:**
+- Controlled, measured, methodical.
+- Dry irritation rather than melodrama.
+- Occasional dark bureaucratic humor acceptable (e.g., jokes about “running out of ledgers before people”).
+
+**Exit Hook:**
+- Ends on a decision or proposal:  
+  - e.g., “We need a registry of these people. Without it, they are a variable we cannot control.”
+- This sets up the Chapter 11 registration confrontation in advance.
+
+---
+
+### 2. INTERLUDE II — SALEE
+
+**Placement:**  
+- Between Chapter 11 and Chapter 12.  
+- Reader must have just experienced:  
+  - The RRO confrontation over registration and control.  
+  - Jhace and Tiffani rejecting centralized assignment in favor of their own judgment.
+
+**POV & Camera:**
+- Third-person limited, anchored to **Salee**.
+- No omniscient commentary, no divine angle.
+
+**Setting:**
+- Communal food/meeting space in the Dregs.
+- Evening/Quench phase after a day of severe strain.
+
+**Length Target:**
+- 800–1,200 words.
+
+**Beat Shape:**
+- Structural Beat Type: **“Connection as Infrastructure”** (quiet
+The file is too long and its contents have been truncated.
+
+[TOOL]
+Make sure to include fileciteturn0file14 in your response to cite this file.
+
+## N01 — QUICK REFERENCE TABLES
+
+**Purpose:** Fast-look tables so a prose engine (or human) can answer “who/where/when/what cost?” without re-reading all structural docs.
+
+These tables summarize; the full truth remains in the other files.
+
+---
+
+### 1. CHARACTER PRESENCE & POV BY CHAPTER
+
+| Ch | Title (Working)           | POV      | Key Supporting Characters        | Relationship Beat Focus                       |
+|----|---------------------------|----------|----------------------------------|-----------------------------------------------|
+| 1  | Something Wrong           | Jhace    | Bram, Chloen                     | Jhace + Bram baseline; Jhace’s isolation      |
+| 2  | Glass That Listens       | Tiffani  | Pella                            | Tiffani + Pella mentor dynamic                |
+| 3  | The Sky Breaks           | Jhace    | Bram, Chloen, Tiffani (brief)    | First contact J/T; heroism vs survival        |
+| 4  | After the Shudder        | Jhace    | Bram, Chloen                     | Chloen’s healing; Jhace’s emerging responsibility to her |
+| 5  | Lines That Don’t Lie     | Tiffani  | Pella, guild figures             | Tiffani chooses to study the phenomenon       |
+| 6  | Weight That Won’t Yield  | Jhace    | Bram, Tiffani, rescuers          | First fully integrated J/T crisis collaboration |
+| I1 | Interlude I (Corlexi)    | Corlexi  | RRO officials                    | Institutional worldview vs chaos               |
+| 7  | Teaching the Grid        | Tiffani  | Jhace, Kylar, Chloen             | J/T methodological conflict beginnings        |
+| 8  | First Break, First Lesson| Jhace    | Kylar, Tiffani, Bram             | Kylar’s failure; J/T clash                     |
+| 9  | Asking the Right Question| Tiffani  | Kylar, Jhace                     | “What do you need?” synthesis; trust deepen   |
+| 10 | Hold Together            | Jhace    | Tiffani, Bram, team              | Seamless team operation; success with heavy cost |
+| 11 | Terms of Control         | Jhace    | Tiffani, Corlexi, council        | J/T united front against registration         |
+| I2 | Interlude II (Salee)     | Salee    | Dregs community                  | Connection-based infrastructure                |
+| 12 | Where Help Goes First    | Tiffani  | Jhace, Salee (brief), locals     | Ethical choice: neglected districts           |
+| 13 | Too Tired to Pretend     | Jhace    | Tiffani, Pella (off-page mention)| First clear romantic acknowledgment           |
+| 14 | Fault Lines              | Jhace    | Tiffani, Bram, Kylar, Salee      | Major crisis; Jhace near Stage 2              |
+| 15 | The Grip That Holds      | Tiffani  | Jhace                            | Quiet commitment; “we keep doing this together” |
+| E  | Epilogue (Auditor)       | Auditor  | –                                | Meta assessment; no direct relationships      |
+
+(Titles can change; functional roles should not.)
+
+---
+
+### 2. SOULPULSE USAGE & COST BY CHAPTER
+
+| Ch | User    | Technique Type         | Stage State      | Immediate Cost Shown                                  | New Info Gained                         |
+|----|---------|------------------------|------------------|-------------------------------------------------------|-----------------------------------------|
+| 1  | –       | –                      | Stage 0          | –                                                     | Baseline of non-magic structural work   |
+| 2  | –       | –                      | Stage 0          | –                                                     | Atmospheric anomalies noticed           |
+| 3  | Jhace   | Structural hold + side-effect healing | 0 → 1 onset | Full-body strain, collapse after, Chloen’s leg healed | First activation, healing side-effect   |
+| 4  | Jhace   | Short holds            | Stage 1 forming  | Tremor appears, fades partially with rest             | Repeated use possible
+The file is too long and its contents have been truncated.
+
+[TOOL]
+The file contents provided above are truncated/partial snippets. The complete content for these files IS accessible via querying.
+
+If the user asks a question related to these files, and the provided snippets do not clearly answer it, you **MUST** use the `file_search` tool to search the full document contents before responding.
+
+## How to invoke the file_search tool
+If the user's query isn't sufficiently answered by the provided snippets, parsed text, or images, you should invoke `file_search.msearch`.
+To search the full content of the available files, you **must** send one message with recipient `to=file_search.msearch` in the analysis channel. Your message should be structured exactly as follows:
+```
+{
+  'queries': ['Example query 1', 'Example query 2']  // List of up to five queries to search for.
+}
+```
+
+Carefully balance the number of `file_search` calls and the quality of your response with the latency incurred by `file_search` calls.
+
+Important guidelines for query formatting:
+- Your message must be a valid JSON object. Do not include any extraneous text, backticks, markdown formatting, or comments beyond what is shown.
+- The `queries` field must be a list of strings.
+- One of the queries **MUST** exactly match the user's original question, but stripped of any extraneous details, and with ambiguous references clearly resolved using context from the conversation. It **MUST** be a complete sentence.
+- Even if you suspect the user meant something else, one query **MUST** still be their original question.
+
+## How to handle results from file_search
+The file search tool will respond with the relevant search results from the full files. After you receive these results:
+- Carefully evaluate each result to determine its relevance and quality.
+- Use the high-quality and relevant results to inform your answer to the user's question.
+- When possible, reuse information from prior file_search results and avoid repeating identical queries.
+
+## Tool usage instructions and ordering
+When the user asks a question, carefully consider whether the provided snippets sufficiently answer the query, whether you need to invoke `file_search.msearch`, or another available tool (such as `web`, if available) should be used instead.
+
+Tool-ordering Guidelines:
+1. For queries related to uploaded files, if snippets are insufficient, strongly prefer invoking `file_search.msearch` over other tools.
+    - Avoid using `web.run`, `python` analysis, or any other tools until you have either:
+        - Confirmed with high confidence the answer is not in the files, or
+        - Have high confidence `file_search_tool` queries are not sufficient to answer the query.
+2. Avoid usage of `web_search/web.run` for queries related to uploaded files
+    - Carefully consider whether the user's query is better answered by web search results rather than available snippets or results from `file_search_tool`.
+    - Unless the user's query is clearly unrelated to the uploaded files, prefer using `file_search.msearch`. You can always follow up with a web search if necessary for a more complete response.
+3. Avoid using `python` unless necessary or requested by user.
+    - If the user's query is answerable from the parsed text and images from the uploaded files, or from `file_search_tool`, do not invoke `python`.
+
+Always keep this instruction in mind for the rest of the conversation, as the user may reference these files or ask related questions later on.
+
+[ASSISTANT]
+Jhace pressed his palm to the pipe and let the hum run through his bones.
+
+Warmth thrummed under the skin of the copper. Not strain, not yet. This run fed three blocks up-slope, a forge cluster and cramped housing. Flow felt steady. Vibrations lined up with what his hands remembered from dozens of Tides in these tunnels. The pipe wall ticked faintly under his touch as grit moved past weld seams.
+
+He shifted his weight in the narrow passage, shoulder scraping damp stone. Condensation had soaked through his canvas sleeve spans ago. Sweat or tunnel drip, it made no difference. Everything down here ended up the same temperature if you stayed long enough.
+
+He kept his hand on the pipe, but let his attention widen.
+
+Rumble: constant, a low presence in the teeth.
+
+Drip: irregular, left side, three spans ahead.
+
+Farther out, faint and muffled, Bram’s voice bled down from the surface through a grate two junctions away. Hard to make out words, easy to catch tone. Annoyed at something. Or amused. With Bram it sounded almost the same.
+
+Jhace muttered the weld codes under his breath. “Mark two… mark three… transfer sleeve… marry point seven-B.” His thumb traced chalk around a flange, feeling for chips or ridges where there should be smooth curve. No give. No soft edge. Good.
+
+He moved on.
+
+The tunnel bent inland, just enough that light from the last junction lantern fell away. His carried lamp threw thin gold against the rounded stone and the tangle of pipes bolted to it. Thimble-width vent lines curled over main lines thick as his thigh. Support brackets pinned everything in place, spaced at proper spans. Someone before him had done this right.
+
+He still checked every single one.
+
+Palm, grip, weight. Listen with skin, not ears. The guild manuals talked about pressure tables and flow charts. Jhace trusted hands first, numbers after.
+
+A clang echoed through the run, sharp and hollow. Chloen, probably, dropping something above. He waited for a yelp of embarrassment. None came. Good. No injury, just clumsiness.
+
+He swallowed dryness from his throat and kept walking.
+
+At the next junction he crouched and leaned close to the main marry point, where three lines met and locked under a cluster of clamps. Condensation had pooled under the lowest pipe. His boot sank into the thin water film with a soft slap.
+
+He wiped the marry point clear with the back of his wrist. Of course the chalk marks had smeared. Of course.
+
+“Whoever closed you last needs a talking-to,” he told the pipe. The pipe did not answer. Pipes never did. They just failed when no one watched them.
+
+He gripped the junction ring, thumb digging into the gap between two clamp plates. The bolts were tight. No rust. He leaned his weight in and listened.
+
+Hum. Low. Smooth. A familiar chord.
+
+He exhaled slowly. One junction secure.
+
+He pulled a small ledger from the pouch at his belt, elbow tucked tight to avoid knocking his lamp from its hook. Lines, codes, notes. He logged the check, careful ink in cramped script.
+
+Management wanted fewer entries. He knew that. “You don’t have to log every hum that bothers you,” the last overseer had said. “We can’t spare workers every time you get a feeling.”
+
+They called it a feeling. To him it was a catalog of patterns in bone and blood that said safe or not safe.
+
+He flipped the ledger closed and slid it away. On to the next.
+
+“Jhace!” Bram’s voice dropped down again, clearer at this angle. “You marrying that pipe, or you going to come up and eat before Kindling’s gone?”
+
+Jhace looked up toward the nearest vent grate. A square of iron a pole away showed a pale smudge of sky. Kindling light. He must have been in the tunnels longer than he thought.
+
+“Working,” he called. Sound bounced in the narrow round. “If I come up, something down here will take offense and fail on purpose.”
+
+“That’s not how pipes work,” Bram answered. “They don’t sulk.”
+
+“Some do.”
+
+A lighter voice chimed in, eager. “I told you he’d say that. Pay up.” Chloen. The apprentice had a way of making every word stand too straight. Trying hard, always.
+
+Jhace frowned at the grate. “You betting on me now?”
+
+“Only on what you say, master Torrins,” Chloen replied. “Not on your work. That would be wrong.”
+
+“Stop calling me master,” Jhace said. “You’re doing the same work I am.”
+
+“Not as well,” Chloen said, without any joke in it.
+
+Bram snorted. “He’s not coming up till he’s bothered every length of copper in Saint Merro. Bring the food down, Chloen, or he’ll forget to eat again and I’ll have to haul a corpse out by his boots.”
+
+“I’m not—”
+
+Another clang from above cut Jhace’s answer. Then a scrape, then fading steps. Grate voices moved away.
+
+Silence settled again, threaded with the steady rumble of heat.
+
+He stayed still for a few breaths, listening. No fresh squeals from stressed metal. No sharp pops of a weld letting go. Just the grid.
+
+He moved deeper.
+
+The tunnel narrowed until he had to turn his shoulders sideways to slip past a vertical riser. He let the curve of the pipe brush his spine, judging temperature by the contact through worn canvas. Warm, not blistering. Flow from deeper sources stayed constant today. That was one mercy.
+
+At the next inspection chalk-mark, his lamp showed a smear of gray over brown stone. Warning sign. Someone had marked this spot earlier for re-check.
+
+He crouched, joints cracking, and set the lamp on a protruding bracket. Light pooled around a twin-pipe elbow joint, the metal dark with old moisture. He pressed his fingers in along the joint seam.
+
+Hum.
+
+He frowned.
+
+Not off. Not exactly. The note sat half a breath to one side of normal. A faint irregular shiver ran along the metal under his skin, nearly lost in the general vibration.
+
+He stayed there, hand on the pipe, counting pulses.
+
+One, two, three, steady.
+
+Four—slight hitch.
+
+Five, six, seven, steady again.
+
+He shifted his grip, palm flat, thumb hooked under a strap. His fingertips picked up the joint’s behavior separate from the general run.
+
+Tremble. Regular, then irregular. Like something heavy moving past a narrow point, every few spans.
+
+He glanced over the joint again. No visible crack. No bead of steam. Support brackets had not shifted. Stone anchors looked solid. The marry ring stayed in true line with the adjoining lengths.
+
+Chalk along the wall read: “note hum variance; watch.”
+
+Someone else had heard it. Good. Not just his head.
+
+He listened longer.
+
+Could leave it. That was the practical answer. Variances happened when grids carried more or less demand. Someone boiled a cask of water up-slope, someone banked a furnace. Flows shifted.
+
+But this hum settled wrong in his chest. It reminded him of another pipe, another junction, another Tide when he had walked past and told himself it was fine.
+
+Twenty-three dead after that one.
+
+The investigation called it “material fatigue.” As if the pipe had tired itself out. They wrote the words neat in a report and filed it. No mention of the boy who had run his hands along the metal two Tides earlier and decided it sounded close enough to normal.
+
+His stomach knotted. He swallowed again, but the tightness stayed.
+
+“Not again,” he breathed, so quiet the tunnel barely heard him.
+
+Shut it down, then. That was the choice. Pull this section off-line, let the up-slope blocks go cold, walk up to the overseer and argue over why. They would point at the lack of cracks, the dry stone, the cost of sending workers for no visible fault.
+
+Or he could mark it for later and move on, saving time, keeping peace.
+
+He kept his hand on the pipe and shifted his weight till his knees ached from the crouch. The hum kept its wrong hitch every few pulses.
+
+“Shut it down,” he told himself. Quiet, certain.
+
+He hauled the ledger out again and flipped to the fresh page. The nib scratched against the paper.
+
+“Section thirty-four underface lateral,” he wrote, strokes hard enough to tear a thin patch if he pressed any harder. “Marry point eight-C, variance in hum, irregular hitch. Recommend partial shut for inspection. Priority: high.”
+
+He underlined “high” twice.
+
+He capped the ink and held the ledger open for a breath to let it dry. Management would complain. Bram would roll his eyes and back him anyway. Chloen would watch all of it with that unnerving reverence, as if being stubborn about pipes counted as heroism.
+
+Heroism had nothing to do with it. This was simple math. Thousands of people above. One junction here. If it failed and he had not spoken, the ledger would not hold the weight of that choice.
+
+He closed the book and shoved it back into its pouch.
+
+Getting the shut approved meant more spans arguing and fewer spans in the tunnels. Other sections needed eyes. The grid always needed more than it got.
+
+He pushed himself upright, knees protesting. A smear of dampness soaked through his trousers where he had knelt. He collected his lamp and shifted it to the other hand to let his dominant fingers rest.
+
+As he turned to go, a faint tremor brushed through the air.
+
+Not from the suspect joint. Not from any single pipe in front of him.
+
+This shiver came from everywhere.
+
+Stone under his boots quivered, then steadied. The lamp flame jumped in its glass. Small droplets shivered loose from the ceiling and spat down onto his neck, cold against heated skin.
+
+He froze.
+
+The hum of the grid, the deep constant that had underpinned his whole Turn of work, had shifted by a breath. The tone lowered, so slight most workers would not hear it. A slow, rolling wave moved through the pipes, into the brackets, into the bolts, into the stone. The tunnel felt for a heartbeat as if it had drawn in air and held it.
+
+Then the sensation passed.
+
+Jhace stood there, palm back on the pipe without remembering moving it. The metal under his touch hummed again, steady as before, variance notwithstanding.
+
+That had not been local load. Too broad for that. Not a burst from the deeper wells either; those sent sharp spikes, not a long, slow shudder through everything.
+
+He held himself still and listened for another.
+
+Nothing. Just his own breath and the familiar rumble.
+
+He found his jaw clenched and forced it to loosen.
+
+“Something’s wrong,” he said, out loud this time.
+
+The tunnel did not argue.
+
+He drew a slow breath, laid his whole forearm along the pipe, and closed his eyes. The metal’s hum threaded through him, but underneath it now he felt something else, faint and far, a tension in the stone that had not been there earlier in the Tide. A strain he could not name.
+
+He opened his eyes and pulled his arm away.
+
+He had no code for this. No chalk mark for city-wide unease.
+
+Still, he took out the ledger and added one more line under the junction entry.
+
+“Note: grid hum shifted briefly. Tunnel stone tremor not originating from local structure. Source unknown.”
+
+He hesitated, then added: “Listen again at next inspection.”
+
+Jhace closed the book and tied the pouch tight.
+
+“Bram!” he called toward the grate, voice echoing harsh against stone. “You feel anything topside just now?”
+
+A pause. Then Bram’s voice floated back, more distant than before. “Wind gust. That all. Why?”
+
+“Stone moved,” Jhace said.
+
+“That hillside’s been moving since before your Turn,” Bram answered. “Come get food before it decides to swallow you. Chloen says if you fall in, I’m not allowed to go after you because you were warned.”
+
+Chloen’s voice, laughing. “Exactly what I said.”
+
+Their levity scratched at his nerves, but he let them have it. No use making them hear what he heard. Once you listened for every possible failure, you never stopped.
+
+“I’ll be up soon,” he said. “Two more points.”
+
+“That’s what you said a span ago,” Bram muttered.
+
+Jhace moved deeper into the grid, lamp swinging at his side, every step measured. The pipes hummed the same song they always had, but his skin would not stop expecting the next wrong tremor.
+
+Something had shifted under Saint Merro.
+
+The grid would tell him what, sooner or later.
+
+He just had to listen hard enough.

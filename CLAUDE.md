@@ -1,6 +1,6 @@
 # Claude Guidance
 
-`model-lab` is a local-first Windows repo for a CPU-first AI lab with two tracks:
+`craig-CODA` is a local-first Windows repo for a CPU-first AI lab with two tracks:
 
 - Teach-a-model for examples, corrections, preferences, and evals
 - Originate-a-model for tiny from-scratch experiments later

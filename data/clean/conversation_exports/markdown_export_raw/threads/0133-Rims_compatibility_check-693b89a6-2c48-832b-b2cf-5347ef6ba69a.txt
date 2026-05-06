@@ -1,0 +1,66 @@
+CONVERSATION_ID: 693b89a6-2c48-832b-b2cf-5347ef6ba69a
+TITLE: Rims compatibility check
+MESSAGE_COUNT: 13
+
+[USER]
+Will the rims from a 2016 Hyundai Sonata fit on a 2012 Malibu?
+
+[ASSISTANT]
+{"search_query":[{"q":"2016 Hyundai Sonata bolt pattern center bore offset","recency":30},{"q":"2012 Chevrolet Malibu bolt pattern center bore offset","recency":30},{"q":"2016 Hyundai Sonata lug nut thread size 12x1.5","recency":30},{"q":"2012 Chevrolet Malibu wheel bolt pattern 5x110 65.1","recency":30}],"response_length":"short"}
+
+[ASSISTANT]
+No—not **bolt-on**.
+
+- **2016 Hyundai Sonata** wheels are typically **5×114.3** bolt pattern with **67.1 mm** center bore. citeturn0search6turn0search12  
+- **2012 Chevy Malibu** wheels are **5×110** bolt pattern with **65.1 mm** hub bore. citeturn1view2  
+
+Because **5×114.3 ≠ 5×110**, the Sonata rims won’t fit the Malibu without **bolt-pattern adapters**. Adapters add thickness (changing offset) and can create clearance/rubbing issues—so if you go that route, use quality **hub-centric** adapters and verify fender + suspension clearance.
+
+If you want “fits like factory,” get wheels that are **5×110** for the 2012 Malibu.
+
+[USER]
+Will that ram fit on a 2006 Mustang
+
+[ASSISTANT]
+{"search_query":[{"q":"2006 Ford Mustang bolt pattern center bore wheel size offset lug nut thread","recency":30},{"q":"2016 Hyundai Sonata bolt pattern center bore lug nut thread", "recency":30},{"q":"2012 Chevrolet Malibu bolt pattern center bore lug nut thread", "recency":30}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search0"},{"ref_id":"turn0search1"},{"ref_id":"turn0search2"}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"2006 Mustang center bore 70.5 mm", "recency":3650},{"q":"2005-2009 Mustang S197 hub bore 70.5", "recency":3650},{"q":"2016 Hyundai Sonata center bore 67.1 bolt pattern 5x114.3", "recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"2006 Ford Mustang lug nut thread size 1/2-20", "recency":3650},{"q":"2006 Mustang wheel stud thread pitch", "recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+Assuming you meant the **same rims from before**:
+
+### If you mean the **2016 Hyundai Sonata rims**
+- **Bolt pattern:** good — Sonata is **5×114.3** and a 2006 Mustang (S197) is also **5×114.3**. citeturn0search16turn0search6  
+- **Center bore (hub hole):** problem — Sonata is **67.1 mm**, Mustang hub is **70.5 mm**. Since the wheel’s hole is **smaller** than the car’s hub, it **won’t physically slide on**. citeturn2search15turn2search0  
+  - Fixes: **machine the wheel bore** to 70.5, or run a **hub-centric bolt-on spacer/adapter** that fits **70.5 hub** and has a **67.1 centering lip**.
+- **Lug nuts/studs:** don’t mix them — Mustang studs are **1/2-20**, Sonata lug nuts are **M12×1.5**. citeturn3search1turn0search13  
+
+So: **not a direct fit**; it’s a “can be made to fit” situation.
+
+### If you mean the **2012 Malibu rims**
+Those are **5×110**, so they **won’t fit** a 2006 Mustang without adapters. citeturn0search8
+
+[USER]
+Will the Mustang rims fit on the Sonata?
+
+[ASSISTANT]
+{"search_query":[{"q":"2016 Hyundai Sonata bolt pattern 5x114.3 center bore 67.1","recency":30},{"q":"2006 Ford Mustang wheel bolt pattern 5x114.3 center bore 70.5","recency":30},{"q":"2016 Hyundai Sonata lug nut thread size M12x1.5","recency":30},{"q":"2006 Mustang lug nut thread size 1/2-20","recency":30}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"wheel-size.com 2016 Hyundai Sonata center bore 67.1 bolt pattern","recency":3650},{"q":"wheel-size.com 2006 Ford Mustang center bore 70.5 bolt pattern","recency":3650},{"q":"LMR 2005-2009 Mustang center bore 70.5 bolt pattern 5x114.3","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+Mostly **yes**, with two caveats.
+
+- **Bolt pattern:** 2006 Mustang wheels are **5×114.3**, and a 2016 Sonata is also **5×114.3** → they’ll bolt up. citeturn1search21turn1search17  
+- **Center bore (hub hole):** Mustang wheels are commonly **70.5 mm**, Sonata hub is **67.1 mm**. That means the Mustang wheel’s hole is **bigger**, so it will physically go on, but it won’t be hub-centric unless you use **hub-centric rings (70.5 → 67.1)**. citeturn1search15turn1search17  
+- **Lug nuts:** Mustang lug nuts are **1/2"-20**, Sonata studs/lug nuts are **M12×1.5**. You must use **Sonata-thread** lug nuts (and the seat style must match the wheel). citeturn0search9turn0search8  
+
+Also check **offset/wheel width** and brake/suspension clearance before you commit—“bolts on” doesn’t always mean “doesn’t rub.”

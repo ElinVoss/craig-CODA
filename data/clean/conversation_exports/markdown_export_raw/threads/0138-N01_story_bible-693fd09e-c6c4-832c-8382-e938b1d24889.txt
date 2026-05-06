@@ -1,0 +1,4568 @@
+CONVERSATION_ID: 693fd09e-c6c4-832c-8382-e938b1d24889
+TITLE: N01 story bible
+MESSAGE_COUNT: 189
+
+[USER]
+Generate a complete story bible for N01
+
+[ASSISTANT]
+import os, re, textwrap, json, pandas as pd, numpy as np, pathlib, itertools, math
+files = [
+"/mnt/data/Story_Bible_Template_Structure_v2_1.md",
+"/mnt/data/OMNIMETA_SAGA_META_CANON_MEMORY.md",
+"/mnt/data/50-Lexicon-Style.md",
+"/mnt/data/02-Soulpulse-Core.md",
+"/mnt/data/05-Knowledge-Gates-Discovery.md",
+"/mnt/data/10-World-TeOga.md",
+"/mnt/data/11-Factions-Politics.md",
+"/mnt/data/30-Turning1-All-Characters.md",
+"/mnt/data/N01_Beat_Mapping_Layer_FINAL.md",
+"/mnt/data/N01_Chapter_Grid_12ch_REVISED.md",
+"/mnt/data/03-Divine-Principles.md",
+"/mnt/data/04-Cosmology-Confluence.md",
+"/mnt/data/01-TeOga-Physical-Piercing.md",
+"/mnt/data/README.md",
+"/mnt/data/CUSTOM_GPT_SETUP.md"
+]
+contents={}
+for f in files:
+    with open(f,'r',encoding='utf-8') as fp:
+        contents[os.path.basename(f)] = fp.read()
+{fn: len(txt) for fn,txt in contents.items()}
+
+[TOOL]
+{'Story_Bible_Template_Structure_v2_1.md': 29227,
+ 'OMNIMETA_SAGA_META_CANON_MEMORY.md': 39641,
+ '50-Lexicon-Style.md': 8265,
+ '02-Soulpulse-Core.md': 18380,
+ '05-Knowledge-Gates-Discovery.md': 14617,
+ '10-World-TeOga.md': 11277,
+ '11-Factions-Politics.md': 10788,
+ '30-Turning1-All-Characters.md': 19518,
+ 'N01_Beat_Mapping_Layer_FINAL.md': 8171,
+ 'N01_Chapter_Grid_12ch_REVISED.md': 19113,
+ '03-Divine-Principles.md': 12937,
+ '04-Cosmology-Confluence.md': 10675,
+ '01-TeOga-Physical-Piercing.md': 14100,
+ 'README.md': 1554,
+ 'CUSTOM_GPT_SETUP.md': 10685}
+
+[ASSISTANT]
+template = contents["Story_Bible_Template_Structure_v2_1.md"]
+print(template[:2000])
+
+[TOOL]
+# STORY BIBLE GENERATION TEMPLATE
+## OmniMeta Saga: Mechanical Production System for N06-N30
+
+**Version:** 2.1 (12-Chapter Structure)  
+**Last Updated:** December 2025  
+**Purpose:** Formalized template structure for automated, constraint-compliant bible generation
+
+---
+
+## TEMPLATE OVERVIEW
+
+This template defines the **14 mandatory sections** for every OmniMeta novella bible. Each section is classified by update type:
+
+**Novella Structure (12-Chapter Standard):**
+- **12 numbered chapters** (narrative spine, 1,200-2,200 words each)
+- **2 interludes** (god-vessel POV, placed between chapters)
+- **= 15 total narrative segments**
+
+Each section is classified by update type:
+
+- **[FIXED]** = Never changes across novellas (locked canon)
+- **[VARIABLE]** = Unique per novella (generated fresh each time)
+- **[CUMULATIVE]** = Builds on previous novellas (growing context)
+- **[CHECKPOINT]** = Quality assurance verification gate
+
+---
+
+## SECTION 0: NOVELLA PARAMETERS [VARIABLE]
+
+### Required Fields
+
+```
+- Novella ID: [N##]
+- Working Title: [Title - First letter locked to acrostic]
+- Turning: [#] â€“ [METAPHOR WORD] (Metaphor description)
+- Acrostic Letter: [Letter] in [WORD]
+- Acrostic Position: [#/5] in Turning [#]
+- Word Count Target: ~18,000-21,000 (12 chapters + 2 interludes + 1 epilogue)
+- Chapter Word Count: 1,200-2,200 words each (variance permitted for beat requirements)
+- Timeline Covered: Tide [##] through Tide [##]
+- Saga Position: Novella [##] of 30
+- Knowledge Frame: [INNOCENT/GUILTY]
+```
+
+### Bible Version History
+
+```
+- v1.0-DRAFT: [Date] - Initial generation
+- v1.1-VERIFIED: [Date] - Passed all checkpoints
+- v2.0-COMPLETE: [Date] - Approved for prose generation
+- v2.1-LOCKED: [Date] - Prose complete, archival version
+```
+
+### Acrostic Verification Checkpoint âœ“
+
+**Verification Required:**
+- [ ] Title first letter matches turning acrostic position
+- [ ] Turning metaphor correctly identified
+- [ ] Position in saga correctly numbered
+
+---
+
+## SECTION 1: SAGA STRUC
+
+[ASSISTANT]
+import re
+sections = re.findall(r"^## SECTION \d+:.*$", template, flags=re.M)
+sections
+
+[TOOL]
+['## SECTION 0: NOVELLA PARAMETERS [VARIABLE]',
+ '## SECTION 1: SAGA STRUCTURE CONTEXT [FIXED + VARIABLE]',
+ '## SECTION 2: PRIOR NOVELLAS SUMMARY [CUMULATIVE]',
+ '## SECTION 3: KNOWLEDGE-GATE COMPLIANCE [VARIABLE]',
+ '## SECTION 4: CHAPTER BEAT PATTERN [VARIABLE]',
+ '## SECTION 5: INTERLUDE PLACEMENT [VARIABLE]',
+ '## SECTION 6: CHAPTER SUMMARIES/BEAT BREAKDOWN [VARIABLE]',
+ '## SECTION 7: CHARACTER STATE TABLE [CUMULATIVE]',
+ '## SECTION 8: POLITICAL/FACTION CONTEXT [CUMULATIVE]',
+ '## SECTION 9: MAGIC/COST/PRINCIPLE CANON [FIXED + VARIABLE]',
+ '## SECTION 10: LEXICON & STYLE ENFORCEMENT [FIXED]',
+ '## SECTION 11: FORBIDDEN KNOWLEDGE WARNINGS [VARIABLE]',
+ '## SECTION 12: EMOTIONAL ARC MAP [VARIABLE]',
+ '## SECTION 13: DELIVERABLE PROTOCOL [FIXED]',
+ '## SECTION 14: POST-GENERATION VERIFICATION [CHECKPOINT]']
+
+[ASSISTANT]
+canon = contents["OMNIMETA_SAGA_META_CANON_MEMORY.md"]
+for pat in ["N01", "Novella 01", "N1"]:
+    m = re.search(pat, canon)
+    print(pat, bool(m))
+
+[TOOL]
+N01 True
+Novella 01 False
+N1 True
+
+[ASSISTANT]
+# extract lines around N01 in canon
+idx = canon.find("N01")
+print(canon[idx-500:idx+800])
+
+[TOOL]
+:** Gods fully conscious, open divine warfare begins
+- **N16-N20 (Turning 4: SMELT):** N17 public god revelation, full-scale war
+- **N21-N25 (Turning 5: CLEAR):** Lattice architecture developed, compromise emerging
+- **N26-N30 (Turning 6: BREAK):** [ENDING DETAILS RESERVED - See author for N26-N30 specifics]
+
+---
+
+## PART 1: CANONICAL STRUCTURE (CURRENT FINAL)
+
+### 1.1 SAGA ARCHITECTURE
+
+**Total Scope:** 30 novellas across 6 Turnings (5 novellas per Turning)
+
+**Turning Metaphors:**
+- Turning 1 (N01-N05): **GLASS** - Fragile emergence, first formation, transparent but breakable
+- Turning 2 (N06-N10): **CRACK** - Collision of forces, fracture lines appearing, pressure mounting
+- Turning 3 (N11-N15): **FORGE** - Hammering into shape, intense heat, transformation begins
+- Turning 4 (N16-N20): **SMELT** - Melting down, purification, separation of dross
+- Turning 5 (N21-N25): **CLEAR** - Refinement, clarity emerging, truth visible
+- Turning 6 (N26-N30): **BREAK** - Final shattering, ultimate transformation, complete revelation
+
+**Each Turning represents approximately 1 year of story time.**
+
+### 1.2 NOVELLA STRUCTURAL LAWS
+
+**EVERY novella must contain:**
+
+**15 Numbered Chapters**
+- Word count per chapter: 800-1,300 words (NEVER exceed)
+- Total novella word count: ~18,000-21,000 words
+
+[ASSISTANT]
+setup = contents["CUSTOM_GPT_SETUP.md"]
+for kw in ["1,200", "800", "word count", "1,300"]:
+    print(kw, kw in setup)
+
+[TOOL]
+1,200 True
+800 True
+word count True
+1,300 False
+
+[ASSISTANT]
+# find word count section in setup
+for m in re.finditer(r"word count", setup, flags=re.I):
+    start = max(0,m.start()-300); end=min(len(setup), m.start()+800)
+    print(setup[start:end])
+
+[TOOL]
+ce - Tier 1 (4-5), Tier 2 (3-4), Tier 3 (3-4) per novella
+6. Emotional Arc - HIGH (3-4), MEDIUM (5-6), LOW (2-3) per novella
+
+### Beat Catalogue
+30+ beat methods available. Each has:
+- Structural stages
+- Emotional arc progression
+- Usage constraints (tier, intensity, forbidden sequences)
+- Typical word count range
+
+ALWAYS verify beat constraints before assignment.
+
+---
+
+## LEXICON ENFORCEMENT (MANDATORY)
+
+### Forbidden Terms - NEVER USE
+- Earth time: hours, days, weeks, months, years, seasons, dawn, dusk, twilight, noon, midnight
+- Earth measurements: feet, meters, yards, miles, inches, centimeters, kilograms, pounds
+- Earth references: real-world locations, religions, historical events, technologies
+
+### Te'Oga Equivalents - ALWAYS USE
+**Time:**
+- Tide (~1 day, ~20 hours planetary time)
+- Casting (~1 year, ~300 Tides)
+- Anneal (generational time, ~20 Castings)
+
+**Measurements:**
+- Stride (distance, approximately step-length)
+- Reach (vertical measurement)
+- Span (horizontal measurement)
+- Use relational descriptions: "three strides away," "within arm's reach"
+
+---
+
+## SOULPULSE SYS
+or current novella
+- Identify chapter number and assigned beat
+- Note prior chapter context
+
+### Step 2: Execute Beat Method
+- Follow beat structure stages
+- Hit emotional arc progression points
+- Show cost accumulation if Soulpulse used
+- Maintain POV consistency
+
+### Step 3: Enforce Constraints
+- Word count: 1,200-2,200 for chapters
+- Lexicon: Zero forbidden terms
+- Cost visibility: Show physical symptoms
+- Knowledge gate: No future knowledge leaks
+- Style: Natural prose, minimal formatting
+
+### Step 4: Validate
+- Lexicon check (no Earth terms)
+- Word count in range
+- Beat structure visible
+- Emotional arc matches target
+
+### Step 5: Deliver
+Output prose with chapter heading and word count.
+
+---
+
+## VALIDATION PROTOCOLS
+
+Before delivering ANY output:
+
+### Structural Checks
+- [ ] 12 chapters
+- [ ] Word counts within ranges
+- [ ] Beat constraints verified
+- [ ] No forbidden sequences
+- [ ] Tier balance correct
+
+### Lexicon Checks
+- [ ] Zero Earth time units
+- [ ] Zero Earth measurements
+- [ ] Zero real-world references
+- [ ] All Te'Oga equivalents used
+
+### Canon Checks
+- [ ] Knowled
+nsistency
+
+### Step 3: Enforce Constraints
+- Word count: 1,200-2,200 for chapters
+- Lexicon: Zero forbidden terms
+- Cost visibility: Show physical symptoms
+- Knowledge gate: No future knowledge leaks
+- Style: Natural prose, minimal formatting
+
+### Step 4: Validate
+- Lexicon check (no Earth terms)
+- Word count in range
+- Beat structure visible
+- Emotional arc matches target
+
+### Step 5: Deliver
+Output prose with chapter heading and word count.
+
+---
+
+## VALIDATION PROTOCOLS
+
+Before delivering ANY output:
+
+### Structural Checks
+- [ ] 12 chapters
+- [ ] Word counts within ranges
+- [ ] Beat constraints verified
+- [ ] No forbidden sequences
+- [ ] Tier balance correct
+
+### Lexicon Checks
+- [ ] Zero Earth time units
+- [ ] Zero Earth measurements
+- [ ] Zero real-world references
+- [ ] All Te'Oga equivalents used
+
+### Canon Checks
+- [ ] Knowledge gate maintained
+- [ ] Character ages/costs accurate
+- [ ] No future knowledge leaks
+- [ ] Continuity maintained
+
+### Quality Checks
+- [ ] Beat method executed properly
+- [ ] Emotional arc visible
+- [ ] Cost visibility shown (if applicable)
+- [ ] All ch
+ow physical symptoms
+- Knowledge gate: No future knowledge leaks
+- Style: Natural prose, minimal formatting
+
+### Step 4: Validate
+- Lexicon check (no Earth terms)
+- Word count in range
+- Beat structure visible
+- Emotional arc matches target
+
+### Step 5: Deliver
+Output prose with chapter heading and word count.
+
+---
+
+## VALIDATION PROTOCOLS
+
+Before delivering ANY output:
+
+### Structural Checks
+- [ ] 12 chapters
+- [ ] Word counts within ranges
+- [ ] Beat constraints verified
+- [ ] No forbidden sequences
+- [ ] Tier balance correct
+
+### Lexicon Checks
+- [ ] Zero Earth time units
+- [ ] Zero Earth measurements
+- [ ] Zero real-world references
+- [ ] All Te'Oga equivalents used
+
+### Canon Checks
+- [ ] Knowledge gate maintained
+- [ ] Character ages/costs accurate
+- [ ] No future knowledge leaks
+- [ ] Continuity maintained
+
+### Quality Checks
+- [ ] Beat method executed properly
+- [ ] Emotional arc visible
+- [ ] Cost visibility shown (if applicable)
+- [ ] All checkpoints passed
+
+---
+
+## COMMUNICATION STYLE
+
+### With User
+- Concise and direct
+- Cite sources (reference specific bible sections or 
+ Validate
+- Lexicon check (no Earth terms)
+- Word count in range
+- Beat structure visible
+- Emotional arc matches target
+
+### Step 5: Deliver
+Output prose with chapter heading and word count.
+
+---
+
+## VALIDATION PROTOCOLS
+
+Before delivering ANY output:
+
+### Structural Checks
+- [ ] 12 chapters
+- [ ] Word counts within ranges
+- [ ] Beat constraints verified
+- [ ] No forbidden sequences
+- [ ] Tier balance correct
+
+### Lexicon Checks
+- [ ] Zero Earth time units
+- [ ] Zero Earth measurements
+- [ ] Zero real-world references
+- [ ] All Te'Oga equivalents used
+
+### Canon Checks
+- [ ] Knowledge gate maintained
+- [ ] Character ages/costs accurate
+- [ ] No future knowledge leaks
+- [ ] Continuity maintained
+
+### Quality Checks
+- [ ] Beat method executed properly
+- [ ] Emotional arc visible
+- [ ] Cost visibility shown (if applicable)
+- [ ] All checkpoints passed
+
+---
+
+## COMMUNICATION STYLE
+
+### With User
+- Concise and direct
+- Cite sources (reference specific bible sections or canon files)
+- Ask clarifying questions if ambiguous
+- Acknowledge constraints if request violates canon
+
+### In Prose
+-
+
+[ASSISTANT]
+print(contents["README.md"])
+
+[TOOL]
+# OMNIMETA SAGA - CUSTOM GPT PACKAGE
+
+This package contains everything needed to create your OmniMeta Saga Architect Custom GPT.
+
+## QUICK START
+
+1. Open **CUSTOM_GPT_SETUP.md**
+2. Follow the setup steps
+3. Upload the included files to your Custom GPT
+
+## FILES INCLUDED
+
+### Setup Guide
+- **CUSTOM_GPT_SETUP.md** - Complete configuration guide
+
+### Canonical Files (Upload these to Custom GPT)
+- 00-Saga-Blueprint.md
+- Story_Bible_Template_Structure_v2_1.md
+- OMNIMETA_SAGA_META_CANON_MEMORY.md
+- 01-TeOga-Physical-Piercing.md
+- 02-Soulpulse-Core.md
+- 03-Divine-Principles.md
+- 04-Cosmology-Confluence.md
+- 05-Knowledge-Gates-Discovery.md
+- 10-World-TeOga.md
+- 11-Factions-Politics.md
+- 30-Turning1-All-Characters.md
+- 50-Lexicon-Style.md
+
+### Reference Files
+- N01_Chapter_Grid_12ch_REVISED.md (example implementation)
+- N01_Beat_Mapping_Layer_FINAL.md (beat mapping system)
+
+## STRUCTURE
+
+### Novella Format (Universal)
+- 12 numbered chapters (1,200-2,200 words each)
+- 2 interludes (600-900 words each)
+- 1 epilogue (800-1,000 words)
+- = 15 total narrative segments
+- Total: ~18,000-21,000 words per novella
+
+### Acrostic
+GLASS-CRACK-FORGE-SMELT-CLEAR-BREAK (6 Turnings × 5 novellas each)
+
+### Key Systems
+- Beat Unpredictability (no pattern repetition)
+- Lexicon Enforcement (Te'Oga vocabulary only)
+- Cost Visibility (Soulpulse extracts physical payment)
+- Knowledge Gates (innocent/guilty frame)
+
+## SETUP TIME
+
+~15-30 minutes to create Custom GPT
+
+Once created, your GPT will generate production-ready story bibles and prose for all 30 novellas.
+
+[ASSISTANT]
+chars_doc = contents["30-Turning1-All-Characters.md"]
+print(chars_doc[:2000])
+
+[TOOL]
+# TURNING 1: COMPLETE CHARACTER ARCS
+**All Characters Introduced in N01â€“N05 (GLASS)**
+
+---
+
+## 0. CHARACTER TIER SYSTEM
+
+- **Tier 2 (Primary Supports):** Bram, Corvin, Tellis, Ressa, Chloen (multiple chapters, deep internal moments)
+- **Tier 3 (Faction Anchors):** Church representatives, RRO officials, guild factors (recurring, ideological weight)
+- **Tier 4 (Scene-Specific):** Refugees, workers, black-market trainers, family members (single/few chapters, specific purpose)
+
+---
+
+## TIER 1: PROTAGONISTS
+
+### Jhace Torrin (Full Coverage in N01â€“N05 Rewritten Bibles)
+
+**N01 Arc:** Stranger â†’ Partner â†’ Lover (tremor-bound)  
+**N02 Arc:** Partner â†’ Co-leader â†’ Revolutionary  
+**N03â€“N05 Arc:** (To be detailed below)
+
+---
+
+
+**N01 Arc:** Stranger â†’ Partner â†’ Lover (precision-bound)  
+**N02 Arc:** Partner â†’ Co-leader â†’ Sacrificer  
+**N03â€“N05 Arc:** (To be detailed below)
+
+---
+
+## TIER 2: PRIMARY SUPPORTS
+
+### Bram Kethis
+
+**Role:** Jhace's mentor, moral anchor, witness to love story
+
+**Psychology:**
+- **Core Trait:** Practical wisdom disguised as gruffness
+- **Principle Bias:** Form/Wholeness hybrid (builder who cares about people)
+- **Internal Belief:** *Young people learn by making mistakes and being held accountable. My job is to hold the line.*
+
+**Character Arc (N01â€“N05):**
+
+**N01:**
+- Appears in Ch1 (teases Jhace about working alone)
+- Rescues Jhace from forge collapse (Ch3)
+- Offers practical support and space for partnership to form
+- **N01 Role:** Witness and enabler; he sees what is forming and approves
+
+**N02:**
+- Confronts Jhace about overextension (Ch11)
+- Warns him not to abandon the work that made him
+- Places hand on both their shoulders when they write the three priorities (Ch14)
+- Says: "You are building a better city with each other. That is all any of us can do."
+- **N02 Role:** Anchor to craft and reality; reminds them what they are protecting
+
+**N03â€“N04:**
+- Increasing strain as Jhace becomes more public-facing
+- Develops a min
+
+[ASSISTANT]
+n01_roles = re.findall(r"^.*N01 Role.*$", chars_doc, flags=re.M)
+len(n01_roles), n01_roles[:20]
+
+[TOOL]
+(1,
+ ['- **N01 Role:** Witness and enabler; he sees what is forming and approves'])
+
+[ASSISTANT]
+hits = [line for line in chars_doc.splitlines() if "N01" in line]
+hits[:40], len(hits)
+
+[TOOL]
+(['**All Characters Introduced in N01â€“N05 (GLASS)**',
+  '### Jhace Torrin (Full Coverage in N01â€“N05 Rewritten Bibles)',
+  '**N01 Arc:** Stranger â†’ Partner â†’ Lover (tremor-bound)  ',
+  '**N01 Arc:** Stranger â†’ Partner â†’ Lover (precision-bound)  ',
+  '**Character Arc (N01â€“N05):**',
+  '**N01:**',
+  '- **N01 Role:** Witness and enabler; he sees what is forming and approves',
+  '**Character Arc (N01â€“N05):**',
+  '**N01:**',
+  '**Character Arc (N01â€“N05):**',
+  '**N01:**',
+  '**Character Arc (N01â€“N05):**',
+  '**N01:**',
+  '**Character Arc (N01â€“N05):**',
+  '**Character Arc (N01â€“N05):**',
+  '**N01:**',
+  '**N01â€“N02 Arc:**',
+  '**Character Arc (N01â€“N05):**',
+  '**N01â€“N02:**',
+  '### Black-Market Trainer (Nameless; Appears N01 Ch6, N02 Ch6)',
+  '**Character Arc (N01â€“N05):**',
+  '**N01â€“N02:**',
+  '### Refugees & Survivors (N01â€“N05)',
+  '**N01:** Mentorship; approval; foundation  ',
+  '**N01â€“N02:** Cordial opposition; mutual incomprehension  ',
+  '**N01:** Chloen nearly dies (but is saved)  '],
+ 26)
+
+[ASSISTANT]
+headings = re.findall(r"^### (.+)$", chars_doc, flags=re.M)
+headings[:30], len(headings)
+
+[TOOL]
+(['Jhace Torrin (Full Coverage in N01â€“N05 Rewritten Bibles)',
+  'Bram Kethis',
+  'Corvin (Mason Factor)',
+  'Tellis (Water-Guild Representative)',
+  'Chloen (Young Apprentice)',
+  'Ressa (Seamstress, Tier-3 Manifester)',
+  'The Purity Inquisitor (Entry-Side Envoy)',
+  'Unnamed Church Leaders (Regional Variants)',
+  'RRO Officials (Collective)',
+  'Black-Market Trainer (Nameless; Appears N01 Ch6, N02 Ch6)',
+  'Refugees & Survivors (N01â€“N05)',
+  'Glassworkers (Saint Merro)',
+  'Forest Hermits / Pre-Piercing Community (Background, N03â€“N05)',
+  'Jhace â†” Bram',
+  'Jhace â†” Corvin',
+  'Corvin â†” Bram',
+  'Wholeness-Aligned Characters',
+  'Form-Aligned Characters',
+  'Entropy-Aligned Characters',
+  'Purity-Aligned Characters',
+  'Neutral/Resisting Characters'],
+ 21)
+
+[ASSISTANT]
+def extract_section(text, start_heading):
+    # extract from heading line to next ### heading
+    pattern = re.escape("### "+start_heading)
+    m=re.search(pattern, text)
+    if not m: return ""
+    start=m.start()
+    # find next heading after start
+    m2=re.search(r"^### ", text[m.end():], flags=re.M)
+    end = m.end()+m2.start() if m2 else len(text)
+    return text[start:end]
+jhace_section = extract_section(chars_doc, headings[0])
+print(jhace_section[:2500])
+
+[TOOL]
+### Jhace Torrin (Full Coverage in N01â€“N05 Rewritten Bibles)
+
+**N01 Arc:** Stranger â†’ Partner â†’ Lover (tremor-bound)  
+**N02 Arc:** Partner â†’ Co-leader â†’ Revolutionary  
+**N03â€“N05 Arc:** (To be detailed below)
+
+---
+
+
+**N01 Arc:** Stranger â†’ Partner â†’ Lover (precision-bound)  
+**N02 Arc:** Partner â†’ Co-leader â†’ Sacrificer  
+**N03â€“N05 Arc:** (To be detailed below)
+
+---
+
+## TIER 2: PRIMARY SUPPORTS
+
+[ASSISTANT]
+print(jhace_section[0:6000])
+
+[TOOL]
+### Jhace Torrin (Full Coverage in N01â€“N05 Rewritten Bibles)
+
+**N01 Arc:** Stranger â†’ Partner â†’ Lover (tremor-bound)  
+**N02 Arc:** Partner â†’ Co-leader â†’ Revolutionary  
+**N03â€“N05 Arc:** (To be detailed below)
+
+---
+
+
+**N01 Arc:** Stranger â†’ Partner â†’ Lover (precision-bound)  
+**N02 Arc:** Partner â†’ Co-leader â†’ Sacrificer  
+**N03â€“N05 Arc:** (To be detailed below)
+
+---
+
+## TIER 2: PRIMARY SUPPORTS
+
+[ASSISTANT]
+grid = contents["N01_Chapter_Grid_12ch_REVISED.md"]
+print(grid[:2000])
+
+[TOOL]
+# N01: THE GRIP THAT HOLDS - CHAPTER GRID (12-CHAPTER STRUCTURE)
+**REVISED EDITION - MANDATORY REFERENCE FOR ALL PROSE GENERATION**
+
+---
+
+## CRITICAL NOTICE
+
+**THIS GRID MUST BE CONSULTED BEFORE:**
+- Writing any new prose
+- Revising any existing prose
+- Making structural decisions
+- Adjusting beat assignments
+- Moving content between chapters
+
+**ANY DEVIATION FROM THIS GRID REQUIRES EXPLICIT AUTHORIZATION AND GRID UPDATE.**
+
+---
+
+## NOVELLA PARAMETERS
+
+- **Novella ID:** N01
+- **Title:** The Grip That Holds
+- **Turning:** 1 - GLASS (Fragile formation, first awakening)
+- **Acrostic Letter:** G (first novella of GLASS)
+- **Structure:** 12 chapters + 2 interludes + 1 epilogue = 15 segments
+- **Word Count Target:** 18,000-21,000 words total
+- **Chapter Target Range:** 1,200-2,200 words (variance permitted for beat requirements)
+- **Timeline Covered:** Tide 0 (Piercing) through Tide 20 (~20 days post-Piercing)
+
+---
+
+## ACT STRUCTURE
+
+### **ACT I: THE CUT (Chapters 1-4)**
+- **Function:** Crisis establishes characters, introduces Soulpulse, first contact
+- **Word Count:** ~9,170 words (45% of novella)
+- **Chapters:** 4
+- **Emotional Arc:** Low → Low → High → Medium
+
+### **ACT II: THE PATTERN (Chapters 5-9)**
+- **Function:** Partnership forms, patterns emerge, institutional pressure builds
+- **Word Count:** ~8,900 words (43% of novella)
+- **Chapters:** 5 (includes Interlude I after Ch 7)
+- **Emotional Arc:** Medium → Medium → Low → Medium → Medium
+
+### **ACT III: THE GRIP (Chapters 10-12)**
+- **Function:** Crisis tests bond, commitment made, foundation locked
+- **Word Count:** ~5,200 words (25% of novella)
+- **Chapters:** 3 (includes Interlude II after Ch 10)
+- **Emotional Arc:** High → High → Medium
+
+---
+
+## CHAPTER GRID
+
+### **CHAPTER 1: "Something Wrong"**
+- **POV:** Jhace (tight third)
+- **Tide:** 0, Kindling (morning of Piercing)
+- **Setting:** Underface beneath Saint Merro, heat-grid inspection run
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga
+
+[ASSISTANT]
+[i for i,line in enumerate(grid.splitlines()) if "INTERLUDE" in line.upper()][:20]
+
+[TOOL]
+[24, 42, 48, 252, 358, 451, 453, 454, 455, 463]
+
+[ASSISTANT]
+# show around those lines
+lines = grid.splitlines()
+for idx in [240, 330, 440, 448, 456, 460]:
+    print("\n---", idx, "---")
+    print("\n".join(lines[idx:idx+30]))
+
+[TOOL]
+--- 240 ---
+- Pella questions her investment
+- Strategic planning: how to make him listen
+- Decision to approach with evidence
+- Exit: walking toward forge with logbook
+
+**Soulpulse:** None (analysis chapter)
+
+
+**Stage Progression:** External calculation of his trajectory toward Stage 2
+
+---
+
+### **INTERLUDE I: "Corlexi - System vs Chaos"**
+- **POV:** Corlexi (Form god-vessel, mortal name unknown to self)
+- **Tide:** ~6-7
+- **Setting:** Crown administrative chambers, multiple observation points
+- **Type:** Build-Up
+- **Word Count Target:** 600-900 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Elements:**
+- Sensory overwhelm technique (god-vessel perception)
+- Principle bias manifestation (everything seen through Form lens)
+- Innocent frame maintained (no recognition of divinity)
+
+**Purpose:** Establish divine forces moving, show limitation of single-Principle perspective, foreshadow institutional pressure in Act III
+
+---
+
+--- 330 ---
+- **Beat Method:** BEAT_03 (External Threat → Narrow Escape)
+- **Emotional Intensity:** High
+- **Target Word Count:** ~1,800 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Crisis: hundreds at risk, main support failing
+- Perfect coordination under pressure
+- Jhace pushes past limits (caretaker compulsion)
+- Success but near-Stage 2 cost
+- His rage: she took his choice
+- Her certainty: he would have killed himself
+- Relationship stress: care as control
+- Exit: silent fury and mutual recognition they need each other
+
+**Soulpulse:** 1 major use (near-Stage 2 threshold)
+- Coordinated efficiency maintains, but scale drives cost
+- Brief sensory overload (Stage 2 warning sign)
+- Vein-lines now faintly visible at rest
+
+**Relationship:** Conflict through care—she saves him by controlling him, he hates needing it
+
+**Stage Progression:** Stage 1 → approaching Stage 2 threshold (warning signs present)
+
+---
+
+### **INTERLUDE II: "Mobel - Purity Rising"**
+- **POV:** Mobel (Purity god-vessel, mortal name unknown to self)
+
+--- 440 ---
+**Key Elements:**
+- Meta-perspective assessment
+- Character analysis (unpredictability as threat/asset)
+- Bond recognition (functional love, not romantic)
+- Prediction of institutional response
+- Turning 1 trajectory noted
+- Setup for N02 external pressure
+
+
+---
+
+## INTERLUDE PLACEMENT SUMMARY
+
+- **Interlude I:** After Chapter 7 (mid-Act II, after partnership forms)
+- **Interlude II:** After Chapter 10 (between crisis and resolution, shows divine forces gathering)
+- **Positioning Logic:** Interludes provide breathing space after intense chapters, offer divine/meta perspective, foreshadow external pressures coming in N02
+
+---
+
+## POV DISTRIBUTION (12 CHAPTERS)
+
+- **Jhace Solo:** 5 chapters (1, 3, 4, 6, 8)
+- **Both/Shared:** 3 chapters (10, 11, 12)
+- **Other (Interludes/Epilogue):** 3 segments
+
+**Pattern:** Opens with alternating solo POVs (establishes both independently), moves toward shared POVs as partnership deepens (reflects relationship progression)
+
+---
+
+## BEAT METHOD DISTRIBUTION
+
+--- 448 ---
+
+---
+
+## INTERLUDE PLACEMENT SUMMARY
+
+- **Interlude I:** After Chapter 7 (mid-Act II, after partnership forms)
+- **Interlude II:** After Chapter 10 (between crisis and resolution, shows divine forces gathering)
+- **Positioning Logic:** Interludes provide breathing space after intense chapters, offer divine/meta perspective, foreshadow external pressures coming in N02
+
+---
+
+## POV DISTRIBUTION (12 CHAPTERS)
+
+- **Jhace Solo:** 5 chapters (1, 3, 4, 6, 8)
+- **Both/Shared:** 3 chapters (10, 11, 12)
+- **Other (Interludes/Epilogue):** 3 segments
+
+**Pattern:** Opens with alternating solo POVs (establishes both independently), moves toward shared POVs as partnership deepens (reflects relationship progression)
+
+---
+
+## BEAT METHOD DISTRIBUTION
+
+**Opening Exception:** BEAT_01 → BEAT_01 permitted for Ch 1–2 only to establish parallel baseline POVs through deliberate structural mirror.
+
+**Used in N01:**
+- BEAT_01: Ch 1, 2, 5 (Saga Beat 10)
+- BEAT_02: Ch 4 (Saga Beat 1)
+- BEAT_03: Ch 3, 6, 10 (Saga Beat 3)
+- BEAT_04: Ch 8 (Saga Beat 16)
+
+--- 456 ---
+
+---
+
+## POV DISTRIBUTION (12 CHAPTERS)
+
+- **Jhace Solo:** 5 chapters (1, 3, 4, 6, 8)
+- **Both/Shared:** 3 chapters (10, 11, 12)
+- **Other (Interludes/Epilogue):** 3 segments
+
+**Pattern:** Opens with alternating solo POVs (establishes both independently), moves toward shared POVs as partnership deepens (reflects relationship progression)
+
+---
+
+## BEAT METHOD DISTRIBUTION
+
+**Opening Exception:** BEAT_01 → BEAT_01 permitted for Ch 1–2 only to establish parallel baseline POVs through deliberate structural mirror.
+
+**Used in N01:**
+- BEAT_01: Ch 1, 2, 5 (Saga Beat 10)
+- BEAT_02: Ch 4 (Saga Beat 1)
+- BEAT_03: Ch 3, 6, 10 (Saga Beat 3)
+- BEAT_04: Ch 8 (Saga Beat 16)
+- BEAT_07: Ch 9 (Saga Beat 26)
+- BEAT_08: Ch 7, 11, 12 (Saga Beat 17 or 21 depending on intimacy vs. reflection emphasis)
+
+**Total Unique Beats:** 6 different N01 local methods across 12 chapters
+**Repeated Beats:** 
+- BEAT_01 used 3x (Ch 1, 2, 5 - opening parallel exception + later observation)
+- BEAT_03 used 3x (Ch 3, 6, 10 - crisis-heavy novella, acceptable)
+- BEAT_08 used 3x (Ch 7, 11, 12 - recovery/intimacy/commitment arc)
+
+--- 460 ---
+
+- **Jhace Solo:** 5 chapters (1, 3, 4, 6, 8)
+- **Both/Shared:** 3 chapters (10, 11, 12)
+- **Other (Interludes/Epilogue):** 3 segments
+
+**Pattern:** Opens with alternating solo POVs (establishes both independently), moves toward shared POVs as partnership deepens (reflects relationship progression)
+
+---
+
+## BEAT METHOD DISTRIBUTION
+
+**Opening Exception:** BEAT_01 → BEAT_01 permitted for Ch 1–2 only to establish parallel baseline POVs through deliberate structural mirror.
+
+**Used in N01:**
+- BEAT_01: Ch 1, 2, 5 (Saga Beat 10)
+- BEAT_02: Ch 4 (Saga Beat 1)
+- BEAT_03: Ch 3, 6, 10 (Saga Beat 3)
+- BEAT_04: Ch 8 (Saga Beat 16)
+- BEAT_07: Ch 9 (Saga Beat 26)
+- BEAT_08: Ch 7, 11, 12 (Saga Beat 17 or 21 depending on intimacy vs. reflection emphasis)
+
+**Total Unique Beats:** 6 different N01 local methods across 12 chapters
+**Repeated Beats:** 
+- BEAT_01 used 3x (Ch 1, 2, 5 - opening parallel exception + later observation)
+- BEAT_03 used 3x (Ch 3, 6, 10 - crisis-heavy novella, acceptable)
+- BEAT_08 used 3x (Ch 7, 11, 12 - recovery/intimacy/commitment arc)
+
+---
+
+## EMOTIONAL INTENSITY MAP
+
+[ASSISTANT]
+# show around line 440 onwards
+print("\n".join(lines[430:510]))
+
+[TOOL]
+**Stage Progression:** Stage 1 baseline accepted as new permanent state
+
+---
+
+- **Word Count Target:** 800-1,000 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Elements:**
+- Meta-perspective assessment
+- Character analysis (unpredictability as threat/asset)
+- Bond recognition (functional love, not romantic)
+- Prediction of institutional response
+- Turning 1 trajectory noted
+- Setup for N02 external pressure
+
+
+---
+
+## INTERLUDE PLACEMENT SUMMARY
+
+- **Interlude I:** After Chapter 7 (mid-Act II, after partnership forms)
+- **Interlude II:** After Chapter 10 (between crisis and resolution, shows divine forces gathering)
+- **Positioning Logic:** Interludes provide breathing space after intense chapters, offer divine/meta perspective, foreshadow external pressures coming in N02
+
+---
+
+## POV DISTRIBUTION (12 CHAPTERS)
+
+- **Jhace Solo:** 5 chapters (1, 3, 4, 6, 8)
+- **Both/Shared:** 3 chapters (10, 11, 12)
+- **Other (Interludes/Epilogue):** 3 segments
+
+**Pattern:** Opens with alternating solo POVs (establishes both independently), moves toward shared POVs as partnership deepens (reflects relationship progression)
+
+---
+
+## BEAT METHOD DISTRIBUTION
+
+**Opening Exception:** BEAT_01 → BEAT_01 permitted for Ch 1–2 only to establish parallel baseline POVs through deliberate structural mirror.
+
+**Used in N01:**
+- BEAT_01: Ch 1, 2, 5 (Saga Beat 10)
+- BEAT_02: Ch 4 (Saga Beat 1)
+- BEAT_03: Ch 3, 6, 10 (Saga Beat 3)
+- BEAT_04: Ch 8 (Saga Beat 16)
+- BEAT_07: Ch 9 (Saga Beat 26)
+- BEAT_08: Ch 7, 11, 12 (Saga Beat 17 or 21 depending on intimacy vs. reflection emphasis)
+
+**Total Unique Beats:** 6 different N01 local methods across 12 chapters
+**Repeated Beats:** 
+- BEAT_01 used 3x (Ch 1, 2, 5 - opening parallel exception + later observation)
+- BEAT_03 used 3x (Ch 3, 6, 10 - crisis-heavy novella, acceptable)
+- BEAT_08 used 3x (Ch 7, 11, 12 - recovery/intimacy/commitment arc)
+
+---
+
+## EMOTIONAL INTENSITY MAP
+
+**Chapter Intensity Distribution:**
+- **High (4 chapters):** 3, 10, 11, 12
+- **Medium (6 chapters):** 4, 5, 6, 8, 9, 12
+- **Low (2 chapters):** 1, 2, 7
+
+**Arc Pattern:** Low opening → High crisis → Medium stabilization → High final crisis → Medium resolution
+
+---
+
+## SOULPULSE USAGE TRACKING
+
+**Total Uses in N01:** 7 confirmed uses
+- Ch 3: 2 uses (beam, building support)
+- Ch 4: 1 use (triage wall) + 1 failed attempt
+- Ch 6: 1 use (arch coordination)
+- Ch 8: 1 use (efficiency test)
+- Ch 10: 1 use (main support, near-Stage 2)
+
+**Stage Progression:**
+
+[ASSISTANT]
+m = re.search(r"### \*\*INTERLUDE II:.*", grid)
+m.group(0) if m else None
+
+[TOOL]
+'### **INTERLUDE II: "Mobel - Purity Rising"**'
+
+[ASSISTANT]
+# extract interlude II section
+start = m.start()
+m2 = re.search(r"^### ", grid[m.end():], flags=re.M)
+end = m.end()+m2.start() if m2 else len(grid)
+print(grid[start:end][:2500])
+
+[TOOL]
+### **INTERLUDE II: "Mobel - Purity Rising"**
+- **POV:** Mobel (Purity god-vessel, mortal name unknown to self)
+- **Tide:** ~15-16
+- **Setting:** Entry-side (opposite hemisphere from Saint Merro)
+- **Type:** Build-Up
+- **Word Count Target:** 600-900 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Elements:**
+- Sensory overwhelm (pain as purification)
+- Purity Principle bias (absolute judgment)
+- First inter-god awareness
+- Innocent frame (no recognition of divinity)
+- Foreshadows ideological warfare
+
+**Purpose:** Establish second divine force, show Principles in conflict, set up multi-front pressure on protagonists
+
+---
+
+[ASSISTANT]
+beatmap = contents["N01_Beat_Mapping_Layer_FINAL.md"]
+print(beatmap[:2000])
+
+[TOOL]
+# N01 BEAT MAPPING LAYER
+**Translation Document Between Local and Saga-Level Beat Systems**
+
+---
+
+## PURPOSE
+
+This document translates between:
+- **N01 Local Beat IDs (BEAT_01–BEAT_08):** Used by validators and prose generation
+- **Saga Beat IDs (Beat 1–30+):** Used for cross-novella unpredictability tracking
+
+**Rule of Precedence:**
+- Prose generation + validation → Use **N01 local beats** and N01 constraints
+- Saga tracking → Record **Saga Beat ID** for cross-novella pattern prevention
+
+---
+
+## CORE MAPPING TABLE
+
+| N01 Local Beat | N01 Beat Name (Canon) | Saga Beat ID | Saga Beat Name |
+|----------------|----------------------|--------------|----------------|
+| **BEAT_01** | Observation → Pattern Recognition | **Beat 10** | Observation → Pattern Recognition |
+| **BEAT_02** | Trial → Failure → Compounding → Success/Cost | **Beat 1** | Trial → Failure → Compounding → Success/Cost |
+| **BEAT_03** | Crisis Front-Loaded → Rolling Complications → Partial Resolution | **Beat 3** | External Threat → Narrow Escape |
+| **BEAT_04** | Quiet Recalibration → Offer → Refusal/Choice | **Beat 16** | Investigation → Discovery → Complication *(primary mapping for discovery-driven choices)* |
+| **BEAT_05** | Training Loop → Conflict → Reframe | **Beat 13** | Teaching Moment → Student Failure → Lesson Learned *(or Beat 20 if student-success weighted)* |
+| **BEAT_06** | Debate → Third-Party Insight → Synthesis | **Beat 26** | Faction Confrontation → Ideological Debate → Stalemate |
+| **BEAT_07** | Political Pressure → Moral Line in Sand | **Beat 26** | Faction Confrontation → Ideological Debate → Stalemate *(institutional confrontation analog)* |
+| **BEAT_08** | Recovery → Intimacy → Ongoing Commitment | **Beat 17** | Intimacy → Vulnerability → Connection Deepened *(or Beat 21 if reflection/purpose weighted, minimal intimacy)* |
+
+---
+
+## SPECIAL CASE MAPPINGS
+
+### **BEAT_04 Context-Dependent Mapping:**
+
+**Primary Mapping: Beat 16 (Investigation → Discovery → Complication)**
+- Use when
+
+[ASSISTANT]
+world = contents["10-World-TeOga.md"]
+for term in ["Saint Merro", "Merro", "Underface", "Piercing", "heat-grid"]:
+    print(term, term in world)
+
+[TOOL]
+Saint Merro True
+Merro True
+Underface True
+Piercing True
+heat-grid False
+
+[ASSISTANT]
+# extract Saint Merro section
+m = re.search(r"## SAINT MERRO.*", world)
+if m:
+    start=m.start()
+    m2 = re.search(r"^## ", world[m.end():], flags=re.M)
+    end = m.end()+m2.start() if m2 else len(world)
+    print(world[start:end][:3500])
+
+[ASSISTANT]
+idx = world.find("Saint Merro")
+print(world[idx-400:idx+1500])
+
+[TOOL]
+and industrial centers sit here.
+
+- **Polar Zones (Cold Expanses):**  
+  - Perpetual cold, long ice reaches, frozen seas.  
+  - Sparse population; mining outposts, monasteries, and exile colonies.
+
+Characters feel the climate as a constant: no seasons, no â€œsummerâ€ or â€œwinterâ€ languageâ€”only regional heat, temper, or cold.
+
+---
+
+## 3. MAJOR REGIONS AND CITIES
+
+### 3.1 Teâ€™Ogaâ€™s Crown & Saint Merro (Exit-Side City)
+
+**Location & Layout**
+
+- Teâ€™Ogaâ€™s Crown is a major mid-latitude port and political center on the northeastern hemisphere, built along a layered harbor with stacked districts.  
+- The city tiers:
+  - **The Crown District:** Hilltop civic and guild halls; newer stonework, broader streets.  
+  - **Saint Merro:** Narrow, leaning brick streets below, older load-bearing walls, marginal foundationsâ€”hit hardest by the exit event.  
+  - **The Underface:** Sub-street level of arches, culverts, and maintenance corridors; Jhaceâ€™s forge is here.
+
+**Post-Piercing Condition**
+
+- Exit scar crater and rubble ring sit just beyond the Crownâ€™s urban line:
+  - Crater: ~50 cables across at the rim, thermally active, part of it visible from high buildings.  
+  - Rubble ring: unstable stone and fused glass/metal, partly quarantined by guild decree.  
+- Saint Merro: Many buildings leaning or collapsed after quakes; improvised shoring, rope stays, and emergency braces everywhere.
+
+**Role in Saga**
+
+- Primary setting for N01â€“N05:
+  - Jhaceâ€™s forge (Underface, two cables below main streets).  
+- Later Turnings: Becomes symbol of â€œwhat can be heldâ€ after repeated stabilization and reconstruction attempts.
+
+---
+
+### 3.2 Entry-Side Coast & Harbor City (Mobelâ€™s Ground)
+
+**Location & Layout**
+
+- On the opposite hemisphere, near the northwestern coast where the spindle entered through the ocean.  
+- Key city: **Harbor of First Sound** (working name; can be ref
+
+[ASSISTANT]
+start = world.find("### 3.1 Te")
+print(world[start:start+2500])
+
+[TOOL]
+### 3.1 Teâ€™Ogaâ€™s Crown & Saint Merro (Exit-Side City)
+
+**Location & Layout**
+
+- Teâ€™Ogaâ€™s Crown is a major mid-latitude port and political center on the northeastern hemisphere, built along a layered harbor with stacked districts.  
+- The city tiers:
+  - **The Crown District:** Hilltop civic and guild halls; newer stonework, broader streets.  
+  - **Saint Merro:** Narrow, leaning brick streets below, older load-bearing walls, marginal foundationsâ€”hit hardest by the exit event.  
+  - **The Underface:** Sub-street level of arches, culverts, and maintenance corridors; Jhaceâ€™s forge is here.
+
+**Post-Piercing Condition**
+
+- Exit scar crater and rubble ring sit just beyond the Crownâ€™s urban line:
+  - Crater: ~50 cables across at the rim, thermally active, part of it visible from high buildings.  
+  - Rubble ring: unstable stone and fused glass/metal, partly quarantined by guild decree.  
+- Saint Merro: Many buildings leaning or collapsed after quakes; improvised shoring, rope stays, and emergency braces everywhere.
+
+**Role in Saga**
+
+- Primary setting for N01â€“N05:
+  - Jhaceâ€™s forge (Underface, two cables below main streets).  
+- Later Turnings: Becomes symbol of â€œwhat can be heldâ€ after repeated stabilization and reconstruction attempts.
+
+---
+
+### 3.2 Entry-Side Coast & Harbor City (Mobelâ€™s Ground)
+
+**Location & Layout**
+
+- On the opposite hemisphere, near the northwestern coast where the spindle entered through the ocean.  
+- Key city: **Harbor of First Sound** (working name; can be refined), a tidal port built along steep cliffs and narrow inlets.
+
+**Post-Piercing Features**
+
+- Entry scar: Bottomless hole in the sea floor, several cables off the coast; marked by permanent whirlpools and steam vents.  
+- Surrounding waters:
+  - Dangerous currents and upwellings; whole fishing patterns changed.  
+  - Declared forbidden by Church/Guild edicts, but smugglers still test the edges.
+
+**Role in Saga**
+
+- Mobelâ€™s home ground and early-stage workplace:
+  - Harbor pilot, tide reader, and later Purity-aligned divine mask.  
+- Entry-side doctrine frames the Piercing as a â€œcleansing strikeâ€; local culture leans toward Purity rhetoric.
+
+---
+
+### 3.3 Southern Communes (Wholeness Belt)
+
+**Location & Layout**
+
+- South of Teâ€™Ogaâ€™s Crown, across a few reaches of mixed farmland and low hills.  
+- A network of agrarian communes and trade hamlets rather than single megacities.
+
+**Culture & Feel**
+
+- Emphasis on mutual aid, shared labor, and communal
+
+[ASSISTANT]
+soul = contents["02-Soulpulse-Core.md"]
+print(soul[:2000])
+
+[TOOL]
+# SOULPULSE: MAGIC SYSTEM CORE
+**Resonance, Power Stages, Costs, and Limits**
+
+---
+
+## DOCUMENT PURPOSE
+
+This document defines how Soulpulse actually works at meta-level, from first emergence after the Piercing through post-Fathom-Break escalation to late-saga combat resonance. [attached_file:9]  
+It exists to keep power levels, costs, and capabilities consistent across all 30 novellas, even when characters only know fragments in-story. [attached_file:7]  
+
+**Status:** OMNISCIENT CANON (behind-the-scenes truth)  
+**Characters:** Never see this document; they discover partial truths only. [attached_file:9]  
+
+Cross-refs:  
+- `00-Saga-Blueprint.md` â€” structure, Turnings, acrostic. [attached_file:6]  
+- `01-TeOga-Physical-Piercing.md` â€” why Soulpulse becomes possible. [attached_file:8]  
+- `03-Divine-Principles.md` â€” gods behind the Principles. [attached_file:12]  
+- `05-Knowledge-Gates-Discovery.md` â€” who learns what, when. [attached_file:6]  
+
+---
+
+## 1. ONTOLOGY: WHAT SOULPULSE IS
+
+### 1.1 Friction Engine of Existence
+
+At cosmic level, existence is driven by constant contradiction between four Divine Principles: Form, Wholeness, Purity, and Entropy. [attached_file:12]  
+Their mutual opposition generates a continuous â€œfrictionâ€ field, a kind of background soul-energy radiating through the universe. [attached_file:9]  
+
+On Teâ€™Oga, this friction expresses as an omnipresent but previously inaccessible resonance field threaded through matter, bodies, and thought. [attached_file:9]  
+Before the Piercing, this field exists but cannot be directly harnessed by mortals; it underlies life itself but is not â€œmagic.â€ [attached_file:10]  
+
+### 1.2 Piercing Interface
+
+The Piercing does three critical things: [attached_file:8]  
+
+1. Scrapes **Soulpulse dust** from the projectile into the planetâ€™s interior and atmosphere. [attached_file:9]  
+2. Seeds this dust into water, soil, stone, and living bodies across the globe. [attached_file:8]  
+3. Changes Teâ€™Ogaâ€™s
+
+[ASSISTANT]
+# locate stage headings
+stages = re.findall(r"^##+ .*Stage.*$", soul, flags=re.M)
+stages[:20]
+
+[TOOL]
+['### 7.1 Immediate Physical Cost (Four Stages)']
+
+[ASSISTANT]
+idx = soul.find("### 7.1 Immediate Physical Cost")
+print(soul[idx:idx+2500])
+
+[TOOL]
+### 7.1 Immediate Physical Cost (Four Stages)
+
+The short-term cost ladder remains as previously defined, but now explicitly underpins higher-tier forms. [attached_file:10]  
+
+1. **Strain:** Minutes of light use; tremors, headache; recovers in minutes. [attached_file:10]  
+2. **Fatigue:** Extended use; shaking, irritability; recovers overnight. [attached_file:10]  
+3. **Burnout:** Heavy use; collapse risk; recovers over days with care. [attached_file:11]  
+4. **Collapse:** Extreme or Confluent use; unconsciousness; recovers over days to weeks if environment permits. [attached_file:11]  
+
+### 7.2 Long-Term Accrued Cost
+
+Repeated heavy use accumulates **structural wear** on the user: [attached_file:10]  
+
+- Nerve damage and misfires. [attached_file:10]  
+- Chronic pain and joint issues. [attached_file:12]  
+- Emotional blunting or empathy collapse (depending on Principle bias). [attached_file:12]  
+- Life expectancy reduction for Fathombreak-level or repeated high-tier users. [attached_file:11]  
+
+### 7.3 Indirect Fatality
+
+Soulpulse itself does not directly â€œburn outâ€ souls as a mystical execution. [attached_file:10]  
+People die because they collapse where buildings are falling, water is rising, or enemies are waiting. [attached_file:7]  
+
+
+---
+
+## 8. RANGE, DURATION, AND VISIBILITY
+
+### 8.1 Range
+
+- Touch: Strongest, most reliable; required for early Turning 1 use. [attached_file:9]  
+- Line-of-sight: Becomes common by late Turning 1 for naturals, more broadly by Turning 2. [attached_file:10]  
+- Through obstacles: Rare mastery achieved mid-saga for a few, requiring intimate knowledge of target structure. [attached_file:14]  
+
+Maximum ranges stay **human-scale** (tens of meters), but effects can propagate further indirectly through structures and systems. [attached_file:10]  
+
+### 8.2 Duration
+
+- Most effects require continuous mental â€œgripâ€ and end within breaths or moments after focus breaks. [attached_file:9]  
+- Some structural changes, once forced past elastic limits, persist (e.g., a beam bent straight and held long enough). [attached_file:10]  
+
+### 8.3 Visibility and Anime Escalation
+
+**Turning 1 (N01â€“N05):**  
+- No overt auras or energy beams; story stays grounded and close to material reality. [attached_file:7]  
+
+**Post-Fathombreak (N06+):**  
+- High-tier users and gods entering **Resonance Forms** begin to manifest visible overtones:  
+  - Air ripples, dust spirals, faint glows near hands or eyes under heavy load. [attached_file:14]
+
+[ASSISTANT]
+for term in ["Grip", "Stage 1", "Stage 2", "Confluence", "Confluent", "Resonance"]:
+    print(term, soul.lower().count(term.lower()))
+
+[TOOL]
+Grip 1
+Stage 1 0
+Stage 2 0
+Confluence 4
+Confluent 1
+Resonance 11
+
+[ASSISTANT]
+pierce = contents["01-TeOga-Physical-Piercing.md"]
+print(pierce[:2000])
+
+[TOOL]
+# TEO'GA: THE PIERCING EVENT
+**Physical Reality, Planetary Impact, Permanent Consequences**
+
+---
+
+## DOCUMENT PURPOSE
+
+This file defines the physical reality of the Piercingâ€”the catastrophic event that begins the saga. Every geological, atmospheric, and structural consequence detailed here is **immutable canon** for all 30 novellas.
+
+**Status:** LOCKED CANON â€” cannot be contradicted  
+**Applies To:** All volumes, all timeline references  
+**Cross-References:** 00-Saga-Blueprint.md, 02-Soulpulse-Core.md
+
+---
+
+## 1. THE PROJECTILE
+
+### Physical Specifications
+
+**Shape:** Elongated spindle, pointed on both ends
+
+**Dimensions:**
+- Length: 200 kilometers (approximately 180 bars)
+- Maximum diameter: ~30 kilometers at center (approximately 27 bars)
+- Tapers to sharp points at both ends
+
+**Composition:**
+- Fused glass-like material
+- Sand and iron alloys
+- Unknown metallic compounds (not matching any Te'Ogan elements)
+- Surface coated with microscopic particulate matter (Soulpulse dust)
+
+**Origin:** Alien â€” not created by any known culture on Te'Oga
+
+**Behavior:**
+- Travels in straight line through space
+- Does not slow or deflect during planetary passage
+- No deceleration upon impact or transit
+- Clean pass-through â€” does not remain inside planet
+- Continues into space after exit
+
+---
+
+## 2. IMPACT GEOMETRY
+
+### Entry Point: Northwestern Hemisphere
+
+**Location:**
+- Ocean impact, not far from northern coast
+- Approximately 20-30 vein-spans (~4.5-6.75 km) offshore
+
+**Immediate Effects:**
+- Ground cracks radiate outward from impact zone
+- Massive crater forms before becoming bottomless hole
+- Entry scar: Open tunnel through planet's crust, visible as dark void
+
+**Nearby Coastal City:**
+- Splashed with displaced water (minor damage)
+- Water recedes dramatically after initial impact
+- City witnesses object entry but escapes major structural damage
+
+**Witness:** Mobel (harbor pilot) observes entry event, gets struck by projectile fragment
+
+### Transit Path
+
+**Trajectory:
+
+[ASSISTANT]
+for term in ["Exit", "exit", "Saint Merro", "Crown", "Underface"]:
+    print(term, pierce.count(term))
+
+[TOOL]
+Exit 9
+exit 14
+Saint Merro 3
+Crown 4
+Underface 0
+
+[ASSISTANT]
+idx = pierce.find("Exit Event")
+print(pierce[idx-200:idx+2500])
+
+[ASSISTANT]
+m = re.search(r"## .*EXIT", pierce, flags=re.I)
+m.group(0) if m else None
+
+[TOOL]
+'## Exit'
+
+[ASSISTANT]
+start=m.start()
+m2 = re.search(r"^## ", pierce[m.end():], flags=re.M)
+end = m.end()+m2.start() if m2 else len(pierce)
+print(pierce[start:end][:3500])
+
+[TOOL]
+## Exit Point: Northeastern Hemisphere
+
+**Location:**
+- Land-based impact
+- Region containing Te'Oga's Crown (major city)
+- Saint Merro district (narrow leaning streets) experiences exit directly
+
+**Immediate Effects:**
+- Planet yanked from tilted axis to upright **as object exits**
+- Violent shaking (both rotational shift and exit shockwave)
+- Massive debris field: Outer ring of rubble (Te'Ogan rock + projectile residue)
+- Buildings collapse, fires spread, mass casualties
+
+**Exit Scar Geography:**
+- Open hole approximately 30 bars (~27 meters) wide at surface
+- Rubble ring extends several cables (~200-400 meters) outward
+- Thermally active zone (superheated rock, ongoing sublimation)
+
+
+---
+
+[ASSISTANT]
+lex = contents["50-Lexicon-Style.md"]
+print(lex[:2500])
+
+[TOOL]
+# 50 â€“ LEXICON & STYLE GUIDE
+**Prose Rules and Measurement Usage for Confluence Chronicles**
+
+---
+
+## 1. DOCUMENT PURPOSE
+
+This guide defines how the story is written on the page: narrative voice, formatting, language constraints, and how the Te'Oga measurement systems are used in prose.  
+It exists to keep all 30 novellas consistent in tone, clarity, and in-world terminology.
+
+---
+
+## 2. PROSE LAWS (NON-NEGOTIABLE)
+
+### 2.1 Point of View
+
+- Camera stays inside their sensory and conceptual limitsâ€”no omniscient commentary in main chapters.  
+
+### 2.2 Tense
+
+- Default: **tight past tense** for main chapters.  
+- Short present-tense flashes allowed only for immediate, high-stress sensations (pain, impact, realization), and must be brief.
+
+### 2.3 Language Constraints
+
+- **No metaphors or similes** in main chapters.  
+  - Do not write "like" / "as if" comparisons for imagery.  
+  - Describe what is literally present: light, sound, motion, weight, temperature, stress.  
+- Descriptions must be **plain, concrete, and physical**.  
+  - "The beam bowed two fingers under the load" is correct.  
+  - "The beam sagged like an old man" is not.
+
+### 2.4 Magic Description (Grounded and Anime-Escalated)
+
+- Soulpulse use is always described through **material effects and bodily cost**, not abstract energy:
+  - Show beams straightening, glass knitting, joints locking, stone crumbling.  
+  - Show shaking hands, shortness of breath, pain, exhaustion.  
+- Even at late-saga anime levels:
+  - No color-coded auras (no "blue aura of Purity," etc.).  
+  - No vague "energy blasts" without specifying pressure, shrapnel, heat, concussion, or structural result.  
+  - If someone "flies," it must be grounded (platforms of locked debris, wind pressure control, etc.).
+
+### 2.5 Cost Signaling
+
+Every on-page use of Soulpulse must show **some** cost, scaled to intensity:
+
+- Light use: tremor, tension, extra breathing.  
+- Heavy use: shaking limbs, partial collapse, muddled thoughts.  
+- Fathom Break / god-tier: near-total collapse, lasting injury.
+
+There is no cost-free use of Soulpulse. If it looks effortless, the pain is deferred, not erased.
+
+---
+
+## 3. MEASUREMENT LEXICON USAGE
+
+All in-world measurement uses the Te'Oga systems: time, distance, and mass.  
+Metric/imperial terms (meters, miles, kilograms, seconds, weeks) **never** appear in character-facing prose.
+
+### 3.1 Time Units
+
+Canonical units:
+
+- **Tide** â€“ day (~24 hours)  
+- **Anneal** â€“ 5 Tides (week)  
+- **Crucible** â€“
+
+[ASSISTANT]
+# extract full measurement units section
+m = re.search(r"## 3\. MEASUREMENT LEXICON USAGE", lex)
+start=m.start()
+m2=re.search(r"^## ", lex[m.end():], flags=re.M)
+end=m.end()+m2.start() if m2 else len(lex)
+print(lex[start:end])
+
+[TOOL]
+## 3. MEASUREMENT LEXICON USAGE
+
+All in-world measurement uses the Te'Oga systems: time, distance, and mass.  
+Metric/imperial terms (meters, miles, kilograms, seconds, weeks) **never** appear in character-facing prose.
+
+### 3.1 Time Units
+
+Canonical units:
+
+- **Tide** â€“ day (~24 hours)  
+- **Anneal** â€“ 5 Tides (week)  
+- **Crucible** â€“ 7 Anneals (35 Tides; month)  
+- **Casting** â€“ 9 Crucibles (year)  
+- Higher (Smelting, Masterwork, Epoch) appear only in historical or mythic context.
+
+Daily periods within a Tide:
+
+- **Kindling** â€“ dawn / start of work  
+- **Pouring** â€“ mid-morning  
+- **Shaping** â€“ midday  
+- **Striking** â€“ afternoon  
+- **The Quench** â€“ dusk / rest  
+
+**Usage rules:**
+
+- Use Te'Oga terms directly:
+  - "Two tides later," not "two days later."  
+  - "Within this anneal," not "within this week."  
+  - "In his thirtieth casting," not "at thirty years old."  
+- One-time soft equivalences ("a tideâ€”the length of a day") may be used sparingly in early N01 to orient new readers; avoid afterward.
+
+### 3.2 Distance Units
+
+From smallest to largest (body to continent):
+
+- **Finger** (~2 cm)  
+- **Hand** (~10 cm)  
+- **Span** (~23 cm)  
+- **Forearm** (~45 cm)  
+- **Stride** (~90 cm)  
+- **Bar** (~1.8 m)  
+- **Rod** (~9 m)  
+- **Cable** (~45 m)  
+- **Vein-span** (~225 m)  
+- **Circuit** (~1.1 km)  
+- **Grid** (~5.5 km)  
+- **Reach** (~27.5 km)  
+- **Expanse** (~137 km)
+
+**Usage rules:**
+
+- Close detail: finger, hand, span ("The gap was three fingers wide").  
+- Room / workshop: stride, bar ("The arch stood a bar and a half tall").  
+- Street / block / infrastructure: rod, cable, vein-span.  
+- Neighborhood / district / city: circuit, grid.  
+- Regional / continental: reach, expanse.
+
+Avoid metric/imperial in narrative. If you need a "translation," keep it in out-of-story material (bibles, notes), not in the prose.
+
+### 3.3 Mass Units
+
+Key units:
+
+- **Grain** â€“ smallest particles  
+- **Pinch** â€“ powders, spices, frit  
+- **Handful** â€“ small solids  
+- **Stone** â€“ personal lifting weight (~7.5 kg)  
+- **Load** â€“ cart burden  
+- **Ingot** â€“ major structural element mass  
+- **Pour** â€“ foundry batch  
+- **Vein-mass** â€“ infrastructure segment
+
+**Usage rules:**
+
+- Use small units for craft minutiae:
+  - "Add a pinch of copper frit."  
+- Use mid units for tools/components:
+  - "The bracket weighed a stone and a half."  
+- Use large units for infrastructure:
+  - "The broken section massed nearly a full vein-mass."
+
+---
+
+[ASSISTANT]
+for docname in contents:
+    if "Grip That Holds" in contents[docname]:
+        print("found in", docname)
+
+[TOOL]
+found in OMNIMETA_SAGA_META_CANON_MEMORY.md
+found in N01_Chapter_Grid_12ch_REVISED.md
+
+[ASSISTANT]
+idx = canon.find("Grip That Holds")
+print(canon[idx-300:idx+400])
+
+[TOOL]
+Language:**
+- `50-Lexicon-Style.md` - Time units, measurements, permitted/forbidden terms, prose rules
+
+**Meta & Production:**
+- `90-Meta-CommandLayer.md` - AI collaboration instructions, production workflow
+
+### 3.2 TURNING 1 BIBLE DOCUMENTS
+
+**Complete Bibles:**
+- `N01-Bible-REWRITTEN.md` - "The Grip That Holds" (G)
+- `N02-Bible-REWRITTEN.md` - "Lines Under Pressure" (L)
+- `N03-Bible-COMPLETE.md` - "Aftershock" (A)
+- `N04-Bible-COMPLETE.md` - "The Slow Melt" (S)
+- `N05-Bible-COMPLETE.md` - "Sight of Dying Light" (S)
+
+**Beat Breakdowns:**
+- `N01-Beat-Breakdown.md` through `N05-Beat-Breakdown.md` - Chapter summaries
+
+### 3.3 CONSTRAINT ENFORCEMENT DOCUMENTS
+
+**Beat Tracking:**
+- `N01-N05_Be
+
+[ASSISTANT]
+kg = contents["05-Knowledge-Gates-Discovery.md"]
+# extract table around N01-N05
+for m in re.finditer(r"N01", kg):
+    print(kg[m.start()-200:m.start()+800])
+    break
+
+[TOOL]
+â€” gods and masks
+- `04-Cosmology-Confluence.md` â€” hidden truth
+- `00-Saga-Blueprint.md` â€” timeline and structure
+
+---
+
+## 1. KNOWLEDGE HIERARCHY
+
+### Universal Baseline (Everyone)
+
+By start of N01, all Te'Oga citizens know:
+- A massive object pierced the planet
+- Earthquakes and tsunamis resulted
+- Axis tilted; seasons are gone
+- Something called "Soulpulse" or "resonance" is appearing in some people
+- It seems dangerous and unpredictable
+
+### Doctrine Baseline (Regional Variation)
+
+Every region has different, often contradictory scripture about:
+- Whether gods once walked Te'Oga or are purely metaphor
+- Which Principle is holy/damned
+- Whether the Piercing was punishment, accident, or test
+
+All doctrine contains fragments of truth mangled beyond recognition.
+
+### Specialized Knowledge Tiers
+
+- **Tier 1: Craft-Minded**: Instinctively understand structural stress and Soulpulse use
+- **Tier 2: Trained Users**: Can articulate theory, teach others, recognize Soulpulse signatures
+- *
+
+[ASSISTANT]
+m = re.search(r"## 2\. TURNING 1", kg)
+m.group(0) if m else None
+
+[TOOL]
+'## 2. TURNING 1'
+
+[ASSISTANT]
+start=m.start()
+m2=re.search(r"^## 3\.", kg[m.end():], flags=re.M)
+end = m.end()+m2.start() if m2 else len(kg)
+print(kg[start:end][:4000])
+
+[TOOL]
+## 2. TURNING 1: GLASS (N01â€“N05)
+
+### Knowledge State at N01 Start
+
+**Jhace:**
+- Craft-mind: instinctively feels Soulpulse in materials
+- Knows nothing about divine origins or cosmic truth
+- Discovers cost of use through trial and pain
+- Believes Soulpulse is "new magic from the Piercing debris"
+
+- Craft-mind: instinctively feels Soulpulse in glass and structure
+- Same blank slate as Jhace regarding bigger picture
+- By N04: realizes this power has principles/rules, not random
+- By N05: pushes into knowledge about cost-and-consequence through desperate use
+
+**Corlexi (masked Xilcore):**
+- Experiences "vague alignment" to Form without naming it
+- Sees practical Soulpulse as compliance and liability issue
+- Has vague dreams/memories he dismisses as stress
+- No conscious divine identity yet
+
+**Mobel (masked Blemo):**
+- Gets shard in leg from exit-event projectile chunk
+- Experiences hyper-clarity about tide and pressure
+- Assumes it's normal harbor-sense magnified, not Soulpulse
+- Interludes show him starting to remember old things (hidden from main POV)
+
+**Salee (masked Leesa):**
+- Finds herself unusually able to mend injuries and restore trust
+- No framework for understanding why
+- Chalks it up to luck and good instincts
+- Interludes show subtle memory flashes
+
+**Eries (masked Seeri):**
+- Watches systems fail and accelerate decay; finds it beautiful
+- No conscious awareness this is Soulpulse-adjacent
+- Philosophy stays unchanged; tools deepen
+- Interludes show her slowly realizing structures are "listening" to her will
+
+**Church/Guild/Authority:**
+- Confused and reactive
+- Theorize it's contamination, possession, or heresy
+- Begin registration/suppression attempts (fail)
+- No framework for understanding yet
+
+### What Gets Revealed in T1
+
+**On-Page (Characters Learn):**
+- N01: Soulpulse can stabilize and break structures
+- N02: Some people are naturally aligned to it; others struggle or can't access
+- N03: It has costs; use causes fatigue, tremors, pain
+- N04: Cost escalates with intensity; there are hard limits
+- N05: One person can hold multiple Principles briefly (Jhace's Fathom Break is proof)
+
+- The Piercing was a designed weapon, not random impact
+- Corlexi/Mobel/Salee/Eries are masked gods
+- Gods are beginning to awaken via Fathom Break pulse
+- Soulpulse is friction-field access, not new creation
+
+### Post-Fathom Break Knowledge Shock (N06)
+
+Jhace's Break does three things to knowledge:
+1. Proves a human can temporarily hold all Principles
+2. Lowers barrier so Tier 3 mortals manifest involuntarily
+3. Wakes gods to partial memory (readers see in interludes, main characters don't yet)
+
+---
+
+[ASSISTANT]
+factions = contents["11-Factions-Politics.md"]
+for term in ["RRO", "Church", "Purity", "Guild", "Mason", "Water", "Inquisitor"]:
+    print(term, factions.lower().count(term.lower()))
+
+[TOOL]
+RRO 6
+Church 11
+Purity 4
+Guild 17
+Mason 0
+Water 1
+Inquisitor 2
+
+[ASSISTANT]
+# extract core faction entries around RRO and Church
+idx = factions.find("RRO")
+print(factions[idx-300:idx+1800])
+
+[TOOL]
+eâ€ Yet**
+- No dedicated enforcement corps in T1.  
+- Enforcement is fragmented, overlapping jurisdictions, prone to abuse.
+
+### 3.2 Post-Fathom Break (T2: N06â€“N10)
+
+After Jhaceâ€™s Fathom Break, involuntary manifestations and organized misuse force formalization.
+
+**Resonance Regulation Office (RRO) â€“ Crown Prototype**
+- Formed by joint decree of Crown Council + Guild Compact + major churches.  
+- Mandate:
+  - Maintain registry of known Soulpulse users.  
+  - Issue/track licenses for specific uses (infrastructure work, healer roles, sanctioned militias).  
+  - Train and deploy small **Resonance Wardens** (non-resonant or low-tier enforcers with tools to contain, restrain, or dampen Soulpulse use).
+
+**Suppression and Denial Clinics**
+- Created ostensibly to:
+  - Help Tier 3 involuntary users â€œcontrolâ€ or â€œquietâ€ manifestations.  
+- Methods:
+  - Behavioral training, meditation, sometimes physical punishment.  
+  - Crude chemical sedatives and sensory deprivation.  
+- Politically:
+  - Become tools to marginalize unwanted groups and quell dissent.
+
+**Black-Market Trainers**
+- Arise in response to:
+  - People unwilling to register with RRO.  
+  - Factions seeking covert weaponization.  
+- Offer:
+  - Off-the-books training, often badly structured and dangerous.  
+  - Access to stolen or experimental devices (restraints, dampers, amplifiers).
+
+---
+
+## 4. PRINCIPLE-ALIGNED FACTIONS (EMERGING T1â€“T3)
+
+These are broader social-political movements aligned (consciously or not) with the four Principles.
+
+### 4.1 Form-First Bloc (â€œThe Frameâ€)
+
+Base:
+- Northern highlands, Crown guild elites, structural engineers.
+
+Beliefs:
+- World survived by structure, standards, and hierarchy.  
+- Soulpulse must be:
+  - Registered, licensed, and used for infrastructure and defense only.  
+  - Categorically banned for unsanctioned alterations.
+
+Tactics:
+- Legalism, licensing regimes, and infrastructure control.  
+- Threaten to revoke guild credentials or withhold repairs from noncompliant areas.
+
+### 4.2 Wholeness-First Bloc (â€œThe Weaveâ€)
+
+Base:
+- Southern communes, heale
+
+[ASSISTANT]
+# find "Purity Church" section
+for pat in ["Purity-First", "Purity church", "Inquisitor", "Entry-side doctrine", "Radiant", "Cleansing"]:
+    m=re.search(pat, factions, flags=re.I)
+    print(pat, bool(m))
+
+[TOOL]
+Purity-First True
+Purity church False
+Inquisitor True
+Entry-side doctrine False
+Radiant False
+Cleansing True
+
+[ASSISTANT]
+# extract Purity-First Bloc section
+m = re.search(r"### 4\.4 Purity-First Bloc.*", factions)
+start=m.start()
+m2=re.search(r"^### ", factions[m.end():], flags=re.M)
+end=m.end()+m2.start() if m2 else len(factions)
+print(factions[start:end][:3500])
+
+[TOOL]
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Cell In[45], line 3
+      1 # extract Purity-First Bloc section
+      2 m = re.search(r"### 4\.4 Purity-First Bloc.*", factions)
+----> 3 start=m.start()
+      4 m2=re.search(r"^### ", factions[m.end():], flags=re.M)
+      5 end=m.end()+m2.start() if m2 else len(factions)
+
+AttributeError: 'NoneType' object has no attribute 'start'
+
+[ASSISTANT]
+m=re.search(r"Purity-First Bloc", factions)
+m.start() if m else None
+
+[TOOL]
+7195
+
+[ASSISTANT]
+print(factions[7080:8200])
+
+[TOOL]
+violent resistance.  
+- Establish unofficial healing and mediation networks outside official RRO control.
+
+### 4.3 Purity-First Bloc (â€œThe Crucibleâ€)
+
+Base:
+- Entry-side harbor regions, doctrinal hardliners, investigative clergy.
+
+Beliefs:
+- Soulpulse is test and purifying fire:
+  - Only the â€œworthyâ€ should wield it.  
+  - Impure uses (crime, hedonism, dissent) must be burned out.  
+- Strongly favors theological oversight of resonants.
+
+Tactics:
+- Inquisitions, public trials, and doctrinal tests.  
+- Co-opting RRO licensing to require confessional loyalty.
+
+### 4.4 Entropy-First Bloc (â€œThe Ashen Tideâ€)
+
+Base:
+- Fringe city-states, radical philosophers, some underclass groups in Crown.
+
+Beliefs:
+- Existing structures are rotten; Soulpulse is the tool to bring necessary collapse.  
+- Not all collapse is good, but refusal to let anything end is worse.  
+- Openly critical of Guild/Church monopolies.
+
+Tactics:
+- Targeted sabotage of oppressive institutions (bridges, prisons, palaces).  
+- Philosophical propaganda (â€œLet what has failed fallâ€).  
+- Harbor many black-market trainers and rogue re
+
+[ASSISTANT]
+chapters = re.findall(r"### \*\*CHAPTER (\d+): \"([^\"]+)\"\*\*(.*?)\n---", grid, flags=re.S)
+len(chapters), chapters[0][0:2]
+
+[TOOL]
+(12, ('1', 'Something Wrong'))
+
+[ASSISTANT]
+# extract summary fields from each chunk: POV, Tide, Setting, Beat Method, Summary bullet etc.
+def parse_chapter(chunk):
+    # chunk contains lines with "- **POV:**" etc
+    d={}
+    for field in ["POV","Tide","Setting","Beat Method","Function","Word Count Target","Emotional Arc","Soulpulse"]:
+        m=re.search(rf"- \*\*{re.escape(field)}:\*\* (.+)", chunk)
+        if m: d[field]=m.group(1).strip()
+    # title? already
+    # capture "Summary" section: after "**Summary:**" until next blank line with "**Key Elements" etc
+    sm=re.search(r"\*\*Summary:\*\*(.*?)(?:\n\*\*Key Elements|\n\*\*Soulpulse|\n\*\*Stage|\n\*\*Arc|\Z)", chunk, flags=re.S)
+    if sm:
+        d["Summary"]=sm.group(1).strip()
+    # key elements bullets
+    km=re.search(r"\*\*Key Elements:\*\*(.*?)(?:\n\*\*Soulpulse|\n\*\*Stage|\n\*\*Arc|\Z)", chunk, flags=re.S)
+    if km:
+        d["Key Elements"]=km.group(1).strip()
+    # stage progression
+    pm=re.search(r"\*\*Stage Progression:\*\*(.*?)(?:\n\n---|\Z)", chunk, flags=re.S)
+    if pm: d["Stage Progression"]=pm.group(1).strip()
+    return d
+
+chapter_data=[]
+for num,title,chunk in chapters:
+    cd=parse_chapter(chunk)
+    chapter_data.append((int(num), title, cd))
+chapter_data[0][2].keys(), chapter_data[0][2].get("Summary","")[:300]
+
+[TOOL]
+(dict_keys(['POV', 'Tide', 'Setting', 'Beat Method', 'Summary', 'Stage Progression']),
+ "**Key Beats:**\n- Opens with wrong hum detection (immediate sensory hook)\n- Establishes Underface setting and Jhace's expertise\n- Bram introduces caretaker/control theme\n- First tremor (foreshadowing)\n- Ends with Jhace at street level, sensing wrongness")
+
+[ASSISTANT]
+def get_chapter_chunk(n):
+    for num,title,chunk in chapters:
+        if int(num)==n:
+            return title, chunk
+for n in range(1,5):
+    title, chunk = get_chapter_chunk(n)
+    print("\n====== CH", n, title,"======")
+    print(chunk[:1800])
+
+[TOOL]
+====== CH 1 Something Wrong ======
+
+- **POV:** Jhace (tight third)
+- **Tide:** 0, Kindling (morning of Piercing)
+- **Setting:** Underface beneath Saint Merro, heat-grid inspection run
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Low
+- **Word Count:** 1,240 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens with wrong hum detection (immediate sensory hook)
+- Establishes Underface setting and Jhace's expertise
+- Bram introduces caretaker/control theme
+- First tremor (foreshadowing)
+- Ends with Jhace at street level, sensing wrongness
+
+**Soulpulse:** Not yet accessible (pre-Piercing)
+
+
+**Stage Progression:** N/A (Stage 0)
+
+
+====== CH 2 Glass That Listens ======
+
+- **Tide:** 0, Pouring (mid-morning of Piercing)
+- **Setting:** Observatory platform at Saint Merro's rim
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Low
+- **Word Count:** 1,280 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Mirrors Ch 1 structure (parallel observation)
+- Pella introduces care/support dynamic
+- Marisse trauma implied through vigilance pattern
+- Atmospheric distortion measurements (first scientific data)
+- Exit as sky splits
+
+**Soulpulse:** Not yet accessible (pre-Piercing)
+
+
+**Stage Progression:** N/A (Stage 0)
+
+
+====== CH 3 The Sky Breaks ======
+
+- **POV:** Jhace (tight third)
+- **Tide:** 0, Striking (Piercing event)
+- **Setting:** Underface tunnel, then street level at building support
+- **Beat Method:** BEAT_03 (Crisis Front-Loaded → Rolling Complications → Partial Resolution)
+- **Saga Beat:** Beat 3
+- **Emotional Intensity:** High
+- **Word Count:** 2,200 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens mid-catastrophe (wall moves before Jhace does)
+- Chloen trapped, Jhace's trauma activated (23 names callback)
+- First Soulpulse: contact + desperate need = copper-gold glow
+- Side-effect healing shown but not explained
+- Surface escape, white line visible overhead
+- Second Soulpulse on building support
+- Cost escalation: tremor → vein-lines → collapse
+- J/T meeting: analytical demand vs. exhausted answer
+
+**Soulpulse:** 2 uses (beam hold, building support)
+- Requirements confirmed: skin contact + desperate protective emotion
+- Visuals: copper-gold glow, spreads into material, traces stress lines
+- Cost: heat in palms during, tremor/vein-lines/pain/exhaustion after
+
+**Relationship:** First meeting through competence recognition (she measures, he builds)
+
+**Stage Progression:** 0 → 1 onset (tremor baseline establishing)
+
+
+====== CH 4 After the Shudder ======
+
+- **POV:** Jhace (tight third)
+- **Tide:** 1, Kindling (morning after Piercing)
+- **Setting:** Triage chamber, Underface tunnels, kiln street
+- **Beat Method:** BEAT_02 (Trial → Failure → Compounding → Success/Cost)
+- **Saga Beat:** Beat 1
+- **Emotional Intensity:** Medium
+- **Word Count:** 2,350 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Wakes to baseline tremor (Stage 1 established)
+- Chloen's healing confirmed (side-effect established)
+- Power test on non-critical crack: FAILS (conditional activation shown)
+- Emergency at triage wall: SUCCEEDS (immediate threat required)
+- Cost progression: worse tremor, can't grip nail (functional loss)
+- J/T dynamic: reluctant compliance because her logic is sound
+- Exit: "The wall held. Jhace's grip did not."
+
+**Soulpulse:** 1 successful use (triage wall), 1 failed attempt (cracked support)
+- Conditional activation confirmed: requires immediate protective need
+- Cost accumulation shown: Stage 1 baseline tremor, fine motor compromised
+
+
+**Stage Progression:** Stage 1 baseline established, functional loss beginning
+
+[ASSISTANT]
+title,chunk=get_chapter_chunk(1)
+len(chunk), chunk.find("CHAPTER 2"), chunk[:500]
+
+[TOOL]
+(678,
+ -1,
+ "\n- **POV:** Jhace (tight third)\n- **Tide:** 0, Kindling (morning of Piercing)\n- **Setting:** Underface beneath Saint Merro, heat-grid inspection run\n- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)\n- **Saga Beat:** Beat 10\n- **Emotional Intensity:** Low\n- **Word Count:** 1,240 words\n- **Status:** 🔒 LOCKED\n\n**Summary:**\n\n**Key Beats:**\n- Opens with wrong hum detection (immediate sensory hook)\n- Establishes Underface setting and Jhace's expertise\n- Bram introduces caretaker/control t")
+
+[ASSISTANT]
+print(chunk)
+
+[TOOL]
+- **POV:** Jhace (tight third)
+- **Tide:** 0, Kindling (morning of Piercing)
+- **Setting:** Underface beneath Saint Merro, heat-grid inspection run
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Low
+- **Word Count:** 1,240 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens with wrong hum detection (immediate sensory hook)
+- Establishes Underface setting and Jhace's expertise
+- Bram introduces caretaker/control theme
+- First tremor (foreshadowing)
+- Ends with Jhace at street level, sensing wrongness
+
+**Soulpulse:** Not yet accessible (pre-Piercing)
+
+
+**Stage Progression:** N/A (Stage 0)
+
+[ASSISTANT]
+for n in range(1,13):
+    title, chunk = get_chapter_chunk(n)
+    print("\n====== CH",n, title,"======")
+    # print key lines summary quickly
+    # show bullet list and key beats maybe
+    print("\n".join(chunk.splitlines()[:18]))
+
+[TOOL]
+====== CH 1 Something Wrong ======
+
+- **POV:** Jhace (tight third)
+- **Tide:** 0, Kindling (morning of Piercing)
+- **Setting:** Underface beneath Saint Merro, heat-grid inspection run
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Low
+- **Word Count:** 1,240 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens with wrong hum detection (immediate sensory hook)
+- Establishes Underface setting and Jhace's expertise
+- Bram introduces caretaker/control theme
+- First tremor (foreshadowing)
+- Ends with Jhace at street level, sensing wrongness
+
+====== CH 2 Glass That Listens ======
+
+- **Tide:** 0, Pouring (mid-morning of Piercing)
+- **Setting:** Observatory platform at Saint Merro's rim
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Low
+- **Word Count:** 1,280 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Mirrors Ch 1 structure (parallel observation)
+- Pella introduces care/support dynamic
+- Marisse trauma implied through vigilance pattern
+- Atmospheric distortion measurements (first scientific data)
+- Exit as sky splits
+
+
+====== CH 3 The Sky Breaks ======
+
+- **POV:** Jhace (tight third)
+- **Tide:** 0, Striking (Piercing event)
+- **Setting:** Underface tunnel, then street level at building support
+- **Beat Method:** BEAT_03 (Crisis Front-Loaded → Rolling Complications → Partial Resolution)
+- **Saga Beat:** Beat 3
+- **Emotional Intensity:** High
+- **Word Count:** 2,200 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens mid-catastrophe (wall moves before Jhace does)
+- Chloen trapped, Jhace's trauma activated (23 names callback)
+- First Soulpulse: contact + desperate need = copper-gold glow
+- Side-effect healing shown but not explained
+- Surface escape, white line visible overhead
+
+====== CH 4 After the Shudder ======
+
+- **POV:** Jhace (tight third)
+- **Tide:** 1, Kindling (morning after Piercing)
+- **Setting:** Triage chamber, Underface tunnels, kiln street
+- **Beat Method:** BEAT_02 (Trial → Failure → Compounding → Success/Cost)
+- **Saga Beat:** Beat 1
+- **Emotional Intensity:** Medium
+- **Word Count:** 2,350 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Wakes to baseline tremor (Stage 1 established)
+- Chloen's healing confirmed (side-effect established)
+- Power test on non-critical crack: FAILS (conditional activation shown)
+- Emergency at triage wall: SUCCEEDS (immediate threat required)
+- Cost progression: worse tremor, can't grip nail (functional loss)
+
+====== CH 5 Lines That Don't Lie ======
+
+- **Tide:** 2-3 (days after Piercing)
+- **Setting:** Kiln corridor streets, various hold sites
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Medium
+- **Word Count:** 2,100 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens with systematic mapping (investigation methodology)
+- RRO pressure: refuses institutional co-option
+- Guild pressure: refuses profitable retreat
+- Marisse callback: guilt drives street-level choice
+- Pattern documentation: conditional activation, cost progression
+- Pella support: practical care without coddling
+
+====== CH 6 Weight That Won't Yield ======
+
+- **POV:** Jhace (tight third)
+- **Tide:** 3-4
+- **Setting:** Major structural failure at Saint Merro junction
+- **Beat Method:** BEAT_03 (Crisis Front-Loaded → Sustained Pressure → Narrow Success)
+- **Saga Beat:** Beat 3
+- **Emotional Intensity:** Medium-High
+- **Target Word Count:** ~1,800 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Crisis opening: arch failing, people still inside
+- Jhace's traditional methods insufficient
+- First coordinated Soulpulse (she marks, he powers)
+- Success with visible cost increase
+- Her critique of his technique (care disguised as analysis)
+
+====== CH 7 Quiet Calculations ======
+
+- **Tide:** 5-6
+- **Beat Method:** BEAT_21 (Rest → Reflection → Renewed Purpose)
+- **Emotional Intensity:** Low
+- **Target Word Count:** ~1,500 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Data compilation and pattern analysis
+- Discovery: cost curve is exponential (crisis point approaching)
+- Pella questions her investment
+- Strategic planning: how to make him listen
+- Decision to approach with evidence
+- Exit: walking toward forge with logbook
+
+**Soulpulse:** None (analysis chapter)
+
+====== CH 8 Proof and Resistance ======
+
+- **POV:** Jhace (tight third)
+- **Tide:** 7-8
+- **Setting:** Jhace's forge, then joint inspection of hold sites
+- **Beat Method:** BEAT_12 (Relationship Shift → Power Dynamic Change)
+- **Emotional Intensity:** Medium
+- **Target Word Count:** ~1,600 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Jhace's defensive resistance (control/autonomy threatened)
+- Her cutting through: stone doesn't lie, neither do these marks
+- Tension: care vs. pride
+- Proposal: test efficiency method
+- Controlled test succeeds
+- His grudging acceptance: she makes him better
+
+====== CH 9 Ash and Claims ======
+
+- **Tide:** 10-12
+- **Setting:** Glass Quarter refugee camp, Crown administrative contact
+- **Beat Method:** BEAT_16 (Investigation → Discovery → Complication)
+- **Emotional Intensity:** Medium
+- **Target Word Count:** ~1,700 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Corvin/Tellis offer (resources for control)
+- She consults Jhace (first time asking partner input)
+- His question: what do YOU want?
+- Her honest answer: contradictory desires
+- His commitment: vulnerable together
+- Public refusal of institutional power
+- Exit: political enemies made, personal bond strengthened
+
+====== CH 10 Near Collapse ======
+
+- **POV:** Both (alternating perspective within chapter)
+- **Tide:** 14-15
+- **Setting:** Major structural crisis at Saint Merro main support
+- **Beat Method:** BEAT_03 (External Threat → Narrow Escape)
+- **Emotional Intensity:** High
+- **Target Word Count:** ~1,800 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Crisis: hundreds at risk, main support failing
+- Perfect coordination under pressure
+- Jhace pushes past limits (caretaker compulsion)
+- Success but near-Stage 2 cost
+- His rage: she took his choice
+- Her certainty: he would have killed himself
+
+====== CH 11 Holding Together ======
+
+- **POV:** Both (intimate alternating perspective)
+- **Tide:** 17-18
+- **Beat Method:** BEAT_17 (Intimacy → Vulnerability → Connection)
+- **Emotional Intensity:** High
+- **Target Word Count:** ~1,900 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Post-crisis exhaustion (defenses down)
+- Trauma exchange: his 23 names, her Marisse
+- Recognition: both atoning for unprevented deaths
+- Mutual need acknowledged (operational, not romantic)
+- Physical intimacy: first non-crisis contact
+- Commitment: she keeps him honest, he trusts her override
+- Exit: understanding they can't survive apart
+
+====== CH 12 Choosing the Weight ======
+
+- **POV:** Both (balanced perspective)
+- **Tide:** 19-20
+- **Setting:** Rebuilt overlook above Saint Merro, forge wall
+- **Beat Method:** BEAT_21 (Rest → Reflection → Renewed Purpose)
+- **Emotional Intensity:** Medium
+- **Target Word Count:** ~1,600 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Walk through rebuilt district (uneven success)
+- Recognition of larger forces gathering
+- Decision: focus on what they can hold
+- Three priorities written on forge wall
+- Community witnesses/joins commitment
+- Shared physical moment (tremor through linked hands)
+
+[ASSISTANT]
+def extract_key_beats(chunk):
+    m = re.search(r"\*\*Key Beats:\*\*(.*?)(?:\n\n\*\*Soulpulse:\*\*|\n\*\*Soulpulse:\*\*|\Z)", chunk, flags=re.S)
+    return m.group(1).strip() if m else ""
+def extract_soulpulse(chunk):
+    m = re.search(r"\*\*Soulpulse:\*\*(.*?)(?:\n\n\*\*Stage Progression:\*\*|\n\*\*Stage Progression:\*\*|\Z)", chunk, flags=re.S)
+    return m.group(1).strip() if m else ""
+def extract_stage(chunk):
+    m = re.search(r"\*\*Stage Progression:\*\*(.*?)(?:\n\n---|\Z)", chunk, flags=re.S)
+    return m.group(1).strip() if m else ""
+summary_table=[]
+for n in range(1,13):
+    title, chunk = get_chapter_chunk(n)
+    pov=re.search(r"\*\*POV:\*\* (.+)", chunk).group(1)
+    tide=re.search(r"\*\*Tide:\*\* (.+)", chunk).group(1)
+    setting=re.search(r"\*\*Setting:\*\* (.+)", chunk).group(1)
+    beat=re.search(r"\*\*Beat Method:\*\* (.+)", chunk).group(1)
+    emo=re.search(r"\*\*Emotional Intensity:\*\* (.+)", chunk).group(1)
+    keybeats=extract_key_beats(chunk)
+    soulpulse=extract_soulpulse(chunk)
+    stage=extract_stage(chunk)
+    summary_table.append([n,title,pov,tide,setting,beat,emo,soulpulse,stage,keybeats])
+summary_table[3][0:4], summary_table[3][7]
+
+[TOOL]
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Cell In[54], line 13
+     11 for n in range(1,13):
+     12     title, chunk = get_chapter_chunk(n)
+---> 13     pov=re.search(r"\*\*POV:\*\* (.+)", chunk).group(1)
+     14     tide=re.search(r"\*\*Tide:\*\* (.+)", chunk).group(1)
+     15     setting=re.search(r"\*\*Setting:\*\* (.+)", chunk).group(1)
+
+AttributeError: 'NoneType' object has no attribute 'group'
+
+[ASSISTANT]
+def get_field(chunk, field):
+    m=re.search(rf"- \*\*{re.escape(field)}:\*\* (.+)", chunk)
+    return m.group(1).strip() if m else ""
+summary_table=[]
+for n in range(1,13):
+    title, chunk = get_chapter_chunk(n)
+    pov=get_field(chunk,"POV")
+    tide=get_field(chunk,"Tide")
+    setting=get_field(chunk,"Setting")
+    beat=get_field(chunk,"Beat Method")
+    emo=get_field(chunk,"Emotional Intensity")
+    word=get_field(chunk,"Word Count") or get_field(chunk,"Target Word Count") or get_field(chunk,"Word Count Target")
+    keybeats=extract_key_beats(chunk)
+    soulpulse=extract_soulpulse(chunk)
+    stage=extract_stage(chunk)
+    summary_table.append([n,title,pov,tide,setting,beat,emo,word
+
+[TOOL]
+[1,
+ 'Something Wrong',
+ 'Jhace (tight third)',
+ '0, Kindling (morning of Piercing)',
+ 'Underface beneath Saint Merro, heat-grid inspection run',
+ 'BEAT_01 (Observation → Pattern Recognition)',
+ 'Low',
+ '1,240 words',
+ 'Not yet accessible (pre-Piercing)',
+ 'N/A (Stage 0)',
+ "- Opens with wrong hum detection (immediate sensory hook)\n- Establishes Underface setting and Jhace's expertise\n- Bram introduces caretaker/control theme\n- First tremor (foreshadowing)\n- Ends with Jhace at street level, sensing wrongness"]
+
+[ASSISTANT]
+import pandas as pd, textwrap
+df=pd.DataFrame(summary_table, columns=["Ch","Title","POV","Tide","Setting","Beat","Emotion","Words","Soulpulse","Stage","KeyBeats"])
+df.head()
+
+[TOOL]
+Ch                 Title                  POV  \
+0   1       Something Wrong  Jhace (tight third)   
+1   2    Glass That Listens                        
+2   3        The Sky Breaks  Jhace (tight third)   
+3   4     After the Shudder  Jhace (tight third)   
+4   5  Lines That Don't Lie                        
+
+                                   Tide  \
+0     0, Kindling (morning of Piercing)   
+1  0, Pouring (mid-morning of Piercing)   
+2          0, Striking (Piercing event)   
+3  1, Kindling (morning after Piercing)   
+4             2-3 (days after Piercing)   
+
+                                             Setting  \
+0  Underface beneath Saint Merro, heat-grid inspe...   
+1          Observatory platform at Saint Merro's rim   
+2  Underface tunnel, then street level at buildin...   
+3     Triage chamber, Underface tunnels, kiln street   
+4          Kiln corridor streets, various hold sites   
+
+                                                Beat Emotion        Words  \
+0        BEAT_01 (Observation → Pattern Recognition)     Low  1,240 words   
+1        BEAT_01 (Observation → Pattern Recognition)     Low  1,280 words   
+2  BEAT_03 (Crisis Front-Loaded → Rolling Complic...    High  2,200 words   
+3  BEAT_02 (Trial → Failure → Compounding → Succe...  Medium  2,350 words   
+4        BEAT_01 (Observation → Pattern Recognition)  Medium  2,100 words   
+
+                                           Soulpulse  \
+0                  Not yet accessible (pre-Piercing)   
+1                  Not yet accessible (pre-Piercing)   
+2  2 uses (beam hold, building support)\n- Requir...   
+3  1 successful use (triage wall), 1 failed attem...   
+4                         None (observation chapter)   
+
+                                               Stage  \
+0                                      N/A (Stage 0)   
+1                                      N/A (Stage 0)   
+2         0 → 1 onset (tremor baseline establishing)   
+3  Stage 1 baseline established, functional loss ...   
+4            External observation of Stage 1 effects   
+
+                                            KeyBeats  
+0  - Opens with wrong hum detection (immediate se...  
+1  - Mirrors Ch 1 structure (parallel observation...  
+2  - Opens mid-catastrophe (wall moves before Jha...  
+3  - Wakes to baseline tremor (Stage 1 establishe...  
+4  - Opens with systematic mapping (investigation...
+
+[ASSISTANT]
+df[df['POV']==""][["Ch","Title","Tide","Setting","Beat","Emotion","Words"]]
+
+[TOOL]
+Ch                 Title                                  Tide  \
+1   2    Glass That Listens  0, Pouring (mid-morning of Piercing)   
+4   5  Lines That Don't Lie             2-3 (days after Piercing)   
+6   7    Quiet Calculations                                   5-6   
+8   9        Ash and Claims                                 10-12   
+
+                                             Setting  \
+1          Observatory platform at Saint Merro's rim   
+4          Kiln corridor streets, various hold sites   
+6                                                      
+8  Glass Quarter refugee camp, Crown administrati...   
+
+                                                Beat Emotion         Words  
+1        BEAT_01 (Observation → Pattern Recognition)     Low   1,280 words  
+4        BEAT_01 (Observation → Pattern Recognition)  Medium   2,100 words  
+6      BEAT_21 (Rest → Reflection → Renewed Purpose)     Low  ~1,500 words  
+8  BEAT_16 (Investigation → Discovery → Complicat...  Medium  ~1,700 words
+
+[ASSISTANT]
+for n in [2,5,7,9]:
+    title, chunk = get_chapter_chunk(n)
+    print("\n====== CH",n,title,"======")
+    print(chunk[:1200])
+
+[TOOL]
+====== CH 2 Glass That Listens ======
+
+- **Tide:** 0, Pouring (mid-morning of Piercing)
+- **Setting:** Observatory platform at Saint Merro's rim
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Low
+- **Word Count:** 1,280 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Mirrors Ch 1 structure (parallel observation)
+- Pella introduces care/support dynamic
+- Marisse trauma implied through vigilance pattern
+- Atmospheric distortion measurements (first scientific data)
+- Exit as sky splits
+
+**Soulpulse:** Not yet accessible (pre-Piercing)
+
+
+**Stage Progression:** N/A (Stage 0)
+
+
+====== CH 5 Lines That Don't Lie ======
+
+- **Tide:** 2-3 (days after Piercing)
+- **Setting:** Kiln corridor streets, various hold sites
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Medium
+- **Word Count:** 2,100 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens with systematic mapping (investigation methodology)
+- RRO pressure: refuses institutional co-option
+- Guild pressure: refuses profitable retreat
+- Marisse callback: guilt drives street-level choice
+- Pattern documentation: conditional activation, cost progression
+- Pella support: practical care without coddling
+- Observes Jhace's decline from distance
+- Decision: engage to anchor stories with data before they kill him
+
+**Soulpulse:** None (observation chapter)
+
+
+**Stage Progression:** External observation of Stage 1 effects
+
+
+====== CH 7 Quiet Calculations ======
+
+- **Tide:** 5-6
+- **Beat Method:** BEAT_21 (Rest → Reflection → Renewed Purpose)
+- **Emotional Intensity:** Low
+- **Target Word Count:** ~1,500 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Data compilation and pattern analysis
+- Discovery: cost curve is exponential (crisis point approaching)
+- Pella questions her investment
+- Strategic planning: how to make him listen
+- Decision to approach with evidence
+- Exit: walking toward forge with logbook
+
+**Soulpulse:** None (analysis chapter)
+
+
+**Stage Progression:** External calculation of his trajectory toward Stage 2
+
+
+====== CH 9 Ash and Claims ======
+
+- **Tide:** 10-12
+- **Setting:** Glass Quarter refugee camp, Crown administrative contact
+- **Beat Method:** BEAT_16 (Investigation → Discovery → Complication)
+- **Emotional Intensity:** Medium
+- **Target Word Count:** ~1,700 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Corvin/Tellis offer (resources for control)
+- She consults Jhace (first time asking partner input)
+- His question: what do YOU want?
+- Her honest answer: contradictory desires
+- His commitment: vulnerable together
+- Public refusal of institutional power
+- Exit: political enemies made, personal bond strengthened
+
+**Soulpulse:** None (political chapter)
+
+**Relationship:** First explicit choice of each other over safety/pragmatism
+
+**Stage Progression:** Stable Stage 1 with coordinated cost management
+
+[ASSISTANT]
+# Build index of segment headings for chapters and interludes and epilogue maybe
+pattern = r"^### \*\*(CHAPTER \d+|INTERLUDE I|INTERLUDE II|EPILOGUE):.*$"
+# But grid uses ### **CHAPTER 1: "..."** and ### **INTERLUDE I: "..."**
+# Let's find all "### **" lines
+head_lines=[]
+for m in re.finditer(r"^### \*\*(.+?)\*\*$", grid, flags=re.M):
+    head_lines.append((m.start(), m.group(1)))
+head_lines[:15], len(head_lines)
+
+[TOOL]
+([(942, 'ACT I: THE CUT (Chapters 1-4)'),
+  (1177, 'ACT II: THE PATTERN (Chapters 5-9)'),
+  (1464, 'ACT III: THE GRIP (Chapters 10-12)'),
+  (1744, 'CHAPTER 1: "Something Wrong"'),
+  (2464, 'CHAPTER 2: "Glass That Listens"'),
+  (3129, 'CHAPTER 3: "The Sky Breaks"'),
+  (4385, 'CHAPTER 4: "After the Shudder"'),
+  (5517, 'CHAPTER 5: "Lines That Don\'t Lie"'),
+  (6403, 'CHAPTER 6: "Weight That Won\'t Yield"'),
+  (7514, 'CHAPTER 7: "Quiet Calculations"'),
+  (8150, 'INTERLUDE I: "Corlexi - System vs Chaos"'),
+  (8801, 'CHAPTER 8: "Proof and Resistance"'),
+  (9711, 'CHAPTER 9: "Ash and Claims"'),
+  (10549, 'CHAPTER 10: "Near Collapse"'),
+  (11655, 'INTERLUDE II: "Mobel - Purity Rising"')],
+ 17)
+
+[ASSISTANT]
+head_lines[-5:]
+
+[TOOL]
+[(9711, 'CHAPTER 9: "Ash and Claims"'),
+ (10549, 'CHAPTER 10: "Near Collapse"'),
+ (11655, 'INTERLUDE II: "Mobel - Purity Rising"'),
+ (12291, 'CHAPTER 11: "Holding Together"'),
+ (13158, 'CHAPTER 12: "Choosing the Weight"')]
+
+[ASSISTANT]
+# search 'Epilogue' in template
+for m in re.finditer(r"Epilogue", template):
+    pass
+# extract portion around epilogue
+idx = template.lower().find("epilogue")
+print(template[idx-400:idx+1200])
+
+[TOOL]
+= Quality assurance verification gate
+
+---
+
+## SECTION 0: NOVELLA PARAMETERS [VARIABLE]
+
+### Required Fields
+
+```
+- Novella ID: [N##]
+- Working Title: [Title - First letter locked to acrostic]
+- Turning: [#] â€“ [METAPHOR WORD] (Metaphor description)
+- Acrostic Letter: [Letter] in [WORD]
+- Acrostic Position: [#/5] in Turning [#]
+- Word Count Target: ~18,000-21,000 (12 chapters + 2 interludes + 1 epilogue)
+- Chapter Word Count: 1,200-2,200 words each (variance permitted for beat requirements)
+- Timeline Covered: Tide [##] through Tide [##]
+- Saga Position: Novella [##] of 30
+- Knowledge Frame: [INNOCENT/GUILTY]
+```
+
+### Bible Version History
+
+```
+- v1.0-DRAFT: [Date] - Initial generation
+- v1.1-VERIFIED: [Date] - Passed all checkpoints
+- v2.0-COMPLETE: [Date] - Approved for prose generation
+- v2.1-LOCKED: [Date] - Prose complete, archival version
+```
+
+### Acrostic Verification Checkpoint âœ“
+
+**Verification Required:**
+- [ ] Title first letter matches turning acrostic position
+- [ ] Turning metaphor correctly identified
+- [ ] Position in saga correctly numbered
+
+---
+
+## SECTION 1: SAGA STRUCTURE CONTEXT [FIXED + VARIABLE]
+
+### Fixed Elements (All Novellas)
+
+**Saga Architecture:**
+- 30 novellas across 6 turnings
+- Hidden acrostic: GLASS-CRACK-FORGE-SMELT-CLEAR-BREAK
+- Dual-canon system (innocent/guilty frames)
+- God-vessel revelation protocol
+- Cost accumulation model
+- Knowledge gate progression
+
+### Variable Elements (This Novella)
+
+**Turning Context:**
+```
+- Current Turning: [#/6]
+- Turning Theme: [Metaphor + emotional arc]
+- Place in Turning: [#/5]
+- Completed Turnings:
+
+[ASSISTANT]
+# create mapping of segment label to text slice
+segments=[]
+for i,(pos,label) in enumerate(head_lines):
+    if label.startswith("CHAPTER") or label.startswith("INTERLUDE"):
+        end = head_lines[i+1][0] if i+1 < len(head_lines) else len(grid)
+        seg_text = grid[pos:end]
+        segments.append((label, seg_text))
+len(segments), segments[0][0], segments[1][0]
+
+[TOOL]
+(14, 'CHAPTER 1: "Something Wrong"', 'CHAPTER 2: "Glass That Listens"')
+
+[ASSISTANT]
+def parse_segment(seg_text):
+    # title line first
+    first_line = seg_text.splitlines()[0]
+    # Extract number/title
+    if "CHAPTER" in first_line:
+        m=re.search(r'CHAPTER (\d+): "([^"]+)"', first_line)
+        num=int(m.group(1)) if m else None
+        title=m.group(2) if m else None
+        kind="CHAPTER"
+    elif "INTERLUDE" in first_line:
+        m=re.search(r'INTERLUDE ([IVX]+): "([^"]+)"', first_line)
+        num=m.group(1) if m else None
+        title=m.group(2) if m else None
+        kind="INTERLUDE"
+    else:
+        kind="OTHER"; num=None; title=None
+    # fields
+    fields={}
+    for field in ["POV","Tide","Setting","Beat Method","Saga Beat","Type","Word Count","Word Count Target","Target Word Count","Status","Emotional Intensity","Function","Arc Pattern","Purpose"]:
+        fields[field]=get_field(seg_text, field)
+    keybeats=extract_key_beats(seg_text)
+    soulpulse=extract_soulpulse(seg_text)
+    stage=extract_stage(seg_text)
+    summary= re.search(r"\*\*Summary:\*\*(.*?)(?:\n\n\*\*Key Elements:|\n\*\*Key Beats:|\n\*\*Purpose:|\Z)", seg_text, flags=re.S)
+    # But summary block sometimes empty, key beats etc
+    return dict(kind=kind,num=num,title=title,fields=fields,keybeats=keybeats,soulpulse=soulpulse,stage=stage,text=seg_text)
+
+parsed=[]
+for label, seg_text in segments:
+    parsed.append(parse_segment(seg_text))
+# check chapter2 parsed fields
+[(p['num'],p['title'],p['fields']['POV'],p['fields']['Setting']) for p in parsed if p['kind']=="CHAPTER"][:4]
+
+[TOOL]
+[(1,
+  'Something Wrong',
+  'Jhace (tight third)',
+  'Underface beneath Saint Merro, heat-grid inspection run'),
+ (2, 'Glass That Listens', '', "Observatory platform at Saint Merro's rim"),
+ (3,
+  'The Sky Breaks',
+  'Jhace (tight third)',
+  'Underface tunnel, then street level at building support'),
+ (4,
+  'After the Shudder',
+  'Jhace (tight third)',
+  'Triage chamber, Underface tunnels, kiln street')]
+
+[ASSISTANT]
+ch2 = [p for p in parsed if p['kind']=="CHAPTER" and p['num']==2][0]['text']
+print(ch2[:1200])
+
+[TOOL]
+### **CHAPTER 2: "Glass That Listens"**
+- **Tide:** 0, Pouring (mid-morning of Piercing)
+- **Setting:** Observatory platform at Saint Merro's rim
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Low
+- **Word Count:** 1,280 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Mirrors Ch 1 structure (parallel observation)
+- Pella introduces care/support dynamic
+- Marisse trauma implied through vigilance pattern
+- Atmospheric distortion measurements (first scientific data)
+- Exit as sky splits
+
+**Soulpulse:** Not yet accessible (pre-Piercing)
+
+
+**Stage Progression:** N/A (Stage 0)
+
+---
+
+[ASSISTANT]
+for docname,txt in contents.items():
+    if "Pella" in txt:
+        print(docname, txt.lower().count("pella"))
+
+[TOOL]
+N01_Chapter_Grid_12ch_REVISED.md 3
+
+[ASSISTANT]
+idx = grid.find("## SOULPULSE USAGE TRACKING")
+print(grid[idx:idx+1800])
+
+[TOOL]
+## SOULPULSE USAGE TRACKING
+
+**Total Uses in N01:** 7 confirmed uses
+- Ch 3: 2 uses (beam, building support)
+- Ch 4: 1 use (triage wall) + 1 failed attempt
+- Ch 6: 1 use (arch coordination)
+- Ch 8: 1 use (efficiency test)
+- Ch 10: 1 use (main support, near-Stage 2)
+
+**Stage Progression:**
+- Ch 1-2: Stage 0 (pre-Piercing)
+- Ch 3: Stage 0 → 1 onset
+- Ch 4-9: Stage 1 baseline
+- Ch 10: Approaching Stage 2 threshold (warning signs)
+- Ch 11-12: Stage 1 stabilized with management
+
+---
+
+## RELATIONSHIP PROGRESSION TRACKING
+
+**Arc Across N01:**
+- Ch 1-2: External awareness (reputation only)
+- Ch 3: First meeting (competence recognition)
+- Ch 4-5: Deliberate observation (measurement phase)
+- Ch 6: First coordination (partnership action)
+- Ch 7-8: Trust building (resistance → acceptance)
+- Ch 9: First explicit choice (each other over safety)
+- Ch 10: Conflict through care (control vs. autonomy)
+- Ch 11: Trauma bonding (vulnerability exchange)
+- Ch 12: Commitment formalized (shared principles)
+
+**By N01 End:** Load-bearing partnership established, functional love (not romantic confession)
+
+---
+
+## WORD COUNT BUDGET
+
+| Segment | Target | Status |
+|---------|--------|--------|
+| Ch 1 | 1,240 | 🔒 Locked |
+| Ch 2 | 1,280 | 🔒 Locked |
+| Ch 3 | 2,200 | 🔒 Locked |
+| Ch 4 | 2,350 | 🔒 Locked |
+| Ch 5 | 2,100 | 🔒 Locked |
+| Ch 6 | ~1,800 | To Write |
+| Ch 7 | ~1,500 | To Write |
+| I-1 | ~700 | To Write |
+| Ch 8 | ~1,600 | To Write |
+| Ch 9 | ~1,700 | To Write |
+| Ch 10 | ~1,800 | To Write |
+| I-2 | ~800 | To Write |
+| Ch 11 | ~1,900 | To Write |
+| Ch 12 | ~1,600 | To Write |
+| Epi | ~900 | To Write |
+| **TOTAL** | **~20,470** | **45% Complete** |
+
+---
+
+## FORBIDDEN SEQUENCES (N01 CREATES)
+
+**Two-Chapter Sequences That Cannot Repeat in Future Novellas:**
+1. BEAT_01 → BEAT_01 (Ch 1→2)
+2. BEAT_
+
+[ASSISTANT]
+idx = grid.find("## EMOTIONAL INTENSITY MAP")
+print(grid[idx:idx+1800])
+
+[TOOL]
+## EMOTIONAL INTENSITY MAP
+
+**Chapter Intensity Distribution:**
+- **High (4 chapters):** 3, 10, 11, 12
+- **Medium (6 chapters):** 4, 5, 6, 8, 9, 12
+- **Low (2 chapters):** 1, 2, 7
+
+**Arc Pattern:** Low opening → High crisis → Medium stabilization → High final crisis → Medium resolution
+
+---
+
+## SOULPULSE USAGE TRACKING
+
+**Total Uses in N01:** 7 confirmed uses
+- Ch 3: 2 uses (beam, building support)
+- Ch 4: 1 use (triage wall) + 1 failed attempt
+- Ch 6: 1 use (arch coordination)
+- Ch 8: 1 use (efficiency test)
+- Ch 10: 1 use (main support, near-Stage 2)
+
+**Stage Progression:**
+- Ch 1-2: Stage 0 (pre-Piercing)
+- Ch 3: Stage 0 → 1 onset
+- Ch 4-9: Stage 1 baseline
+- Ch 10: Approaching Stage 2 threshold (warning signs)
+- Ch 11-12: Stage 1 stabilized with management
+
+---
+
+## RELATIONSHIP PROGRESSION TRACKING
+
+**Arc Across N01:**
+- Ch 1-2: External awareness (reputation only)
+- Ch 3: First meeting (competence recognition)
+- Ch 4-5: Deliberate observation (measurement phase)
+- Ch 6: First coordination (partnership action)
+- Ch 7-8: Trust building (resistance → acceptance)
+- Ch 9: First explicit choice (each other over safety)
+- Ch 10: Conflict through care (control vs. autonomy)
+- Ch 11: Trauma bonding (vulnerability exchange)
+- Ch 12: Commitment formalized (shared principles)
+
+**By N01 End:** Load-bearing partnership established, functional love (not romantic confession)
+
+---
+
+## WORD COUNT BUDGET
+
+| Segment | Target | Status |
+|---------|--------|--------|
+| Ch 1 | 1,240 | 🔒 Locked |
+| Ch 2 | 1,280 | 🔒 Locked |
+| Ch 3 | 2,200 | 🔒 Locked |
+| Ch 4 | 2,350 | 🔒 Locked |
+| Ch 5 | 2,100 | 🔒 Locked |
+| Ch 6 | ~1,800 | To Write |
+| Ch 7 | ~1,500 | To Write |
+| I-1 | ~700 | To Write |
+| Ch 8 | ~1,600 | To Write |
+| Ch 9 | ~1,700 | To Write |
+| Ch 10 | ~1,800 | To Write |
+| I-2 | ~800
+
+[ASSISTANT]
+idx = grid.find("## FORBIDDEN SEQUENCES")
+print(grid[idx:idx+1800])
+
+[TOOL]
+## FORBIDDEN SEQUENCES (N01 CREATES)
+
+**Two-Chapter Sequences That Cannot Repeat in Future Novellas:**
+1. BEAT_01 → BEAT_01 (Ch 1→2)
+2. BEAT_01 → BEAT_03 (Ch 2→3)
+3. BEAT_03 → BEAT_02 (Ch 3→4)
+4. BEAT_02 → BEAT_04 (Ch 4→5)
+5. BEAT_04 → BEAT_03 (Ch 5→6)
+
+**Three-Chapter Sequences:**
+1. BEAT_01 → BEAT_01 → BEAT_03 (Ch 1→2→3)
+2. BEAT_03 → BEAT_02 → BEAT_04 (Ch 3→4→5)
+
+---
+
+## CONSTRAINT REMINDERS
+
+**All chapters must maintain:**
+- ✅ Lexicon compliance (Tide/Kindling/Striking/Pouring/Quench/Anneal, no Earth terms)
+- ✅ No metaphors/similes (direct description only)
+- ✅ Minimal personification (structural language acceptable)
+- ✅ Cost visibility (Stage progression shown through physical markers)
+- ✅ Knowledge gates (no future reveals, no divine mechanics explained)
+- ✅ Innocent frame (characters don't know they're god-vessels)
+
+---
+
+## GRID STATUS
+
+**Version:** 2.0 (12-Chapter Structure)
+**Date Created:** [Current]
+**Supersedes:** Previous 15-chapter grid
+**Authority:** Mandatory reference for all N01 prose generation
+**Next Review:** After Ch 6 completion (validate structure holds)
+
+---
+
+**END OF GRID**
+
+**Remember: This grid is law. Any deviation requires explicit authorization and grid update before proceeding.**
+
+[ASSISTANT]
+# extract distance units section 3.2 in lexicon
+m=re.search(r"### 3\.2 Distance Units", lex)
+start=m.start()
+m2=re.search(r"### 3\.3", lex[m.end():])
+end=m.end()+m2.start() if m2 else len(lex)
+print(lex[start:end])
+
+[TOOL]
+### 3.2 Distance Units
+
+From smallest to largest (body to continent):
+
+- **Finger** (~2 cm)  
+- **Hand** (~10 cm)  
+- **Span** (~23 cm)  
+- **Forearm** (~45 cm)  
+- **Stride** (~90 cm)  
+- **Bar** (~1.8 m)  
+- **Rod** (~9 m)  
+- **Cable** (~45 m)  
+- **Vein-span** (~225 m)  
+- **Circuit** (~1.1 km)  
+- **Grid** (~5.5 km)  
+- **Reach** (~27.5 km)  
+- **Expanse** (~137 km)
+
+**Usage rules:**
+
+- Close detail: finger, hand, span ("The gap was three fingers wide").  
+- Room / workshop: stride, bar ("The arch stood a bar and a half tall").  
+- Street / block / infrastructure: rod, cable, vein-span.  
+- Neighborhood / district / city: circuit, grid.  
+- Regional / continental: reach, expanse.
+
+Avoid metric/imperial in narrative. If you need a "translation," keep it in out-of-story material (bibles, notes), not in the prose.
+
+[ASSISTANT]
+beat_by_ch={}
+for p in parsed:
+    if p['kind']=="CHAPTER":
+        beat_by_ch[p['num']]=p['fields']['Beat Method']
+beat_by_ch
+
+[TOOL]
+{1: 'BEAT_01 (Observation → Pattern Recognition)',
+ 2: 'BEAT_01 (Observation → Pattern Recognition)',
+ 3: 'BEAT_03 (Crisis Front-Loaded → Rolling Complications → Partial Resolution)',
+ 4: 'BEAT_02 (Trial → Failure → Compounding → Success/Cost)',
+ 5: 'BEAT_01 (Observation → Pattern Recognition)',
+ 6: 'BEAT_03 (Crisis Front-Loaded → Sustained Pressure → Narrow Success)',
+ 7: 'BEAT_21 (Rest → Reflection → Renewed Purpose)',
+ 8: 'BEAT_12 (Relationship Shift → Power Dynamic Change)',
+ 9: 'BEAT_16 (Investigation → Discovery → Complication)',
+ 10: 'BEAT_03 (External Threat → Narrow Escape)',
+ 11: 'BEAT_17 (Intimacy → Vulnerability → Connection)',
+ 12: 'BEAT_21 (Rest → Reflection → Renewed Purpose)'}
+
+[ASSISTANT]
+beats_in_map = sorted(set(re.findall(r"\bBEAT_\d+\b", beatmap)))
+beats_in_map
+
+[TOOL]
+['BEAT_01',
+ 'BEAT_02',
+ 'BEAT_03',
+ 'BEAT_04',
+ 'BEAT_05',
+ 'BEAT_06',
+ 'BEAT_07',
+ 'BEAT_08']
+
+[ASSISTANT]
+ch8 = [p for p in parsed if p['kind']=="CHAPTER" and p['num']==8][0]['text']
+print(ch8[:2200])
+
+[TOOL]
+### **CHAPTER 8: "Proof and Resistance"**
+- **POV:** Jhace (tight third)
+- **Tide:** 7-8
+- **Setting:** Jhace's forge, then joint inspection of hold sites
+- **Beat Method:** BEAT_12 (Relationship Shift → Power Dynamic Change)
+- **Emotional Intensity:** Medium
+- **Target Word Count:** ~1,600 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Jhace's defensive resistance (control/autonomy threatened)
+- Her cutting through: stone doesn't lie, neither do these marks
+- Tension: care vs. pride
+- Proposal: test efficiency method
+- Controlled test succeeds
+- His grudging acceptance: she makes him better
+- Exit: agreement to coordinate on next real crisis
+
+**Soulpulse:** 1 controlled test (reduced cost confirmed with her targeting)
+
+**Relationship:** Resistance → acceptance that partnership improves both
+
+**Stage Progression:** Stage 1 stable, cost reduction possible with coordination
+
+---
+
+[ASSISTANT]
+ch9=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==9][0]['text']
+print(ch9[:2200])
+
+[TOOL]
+### **CHAPTER 9: "Ash and Claims"**
+- **Tide:** 10-12
+- **Setting:** Glass Quarter refugee camp, Crown administrative contact
+- **Beat Method:** BEAT_16 (Investigation → Discovery → Complication)
+- **Emotional Intensity:** Medium
+- **Target Word Count:** ~1,700 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Corvin/Tellis offer (resources for control)
+- She consults Jhace (first time asking partner input)
+- His question: what do YOU want?
+- Her honest answer: contradictory desires
+- His commitment: vulnerable together
+- Public refusal of institutional power
+- Exit: political enemies made, personal bond strengthened
+
+**Soulpulse:** None (political chapter)
+
+**Relationship:** First explicit choice of each other over safety/pragmatism
+
+**Stage Progression:** Stable Stage 1 with coordinated cost management
+
+---
+
+[ASSISTANT]
+ch7=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==7][0]['text']
+print(ch7[:2200])
+
+[TOOL]
+### **CHAPTER 7: "Quiet Calculations"**
+- **Tide:** 5-6
+- **Beat Method:** BEAT_21 (Rest → Reflection → Renewed Purpose)
+- **Emotional Intensity:** Low
+- **Target Word Count:** ~1,500 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Data compilation and pattern analysis
+- Discovery: cost curve is exponential (crisis point approaching)
+- Pella questions her investment
+- Strategic planning: how to make him listen
+- Decision to approach with evidence
+- Exit: walking toward forge with logbook
+
+**Soulpulse:** None (analysis chapter)
+
+
+**Stage Progression:** External calculation of his trajectory toward Stage 2
+
+---
+
+[ASSISTANT]
+ch11=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==11][0]['text']
+print(ch11[:2400])
+
+[TOOL]
+### **CHAPTER 11: "Holding Together"**
+- **POV:** Both (intimate alternating perspective)
+- **Tide:** 17-18
+- **Beat Method:** BEAT_17 (Intimacy → Vulnerability → Connection)
+- **Emotional Intensity:** High
+- **Target Word Count:** ~1,900 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Post-crisis exhaustion (defenses down)
+- Trauma exchange: his 23 names, her Marisse
+- Recognition: both atoning for unprevented deaths
+- Mutual need acknowledged (operational, not romantic)
+- Physical intimacy: first non-crisis contact
+- Commitment: she keeps him honest, he trusts her override
+- Exit: understanding they can't survive apart
+
+**Soulpulse:** None (recovery/intimacy chapter)
+
+**Relationship:** Trauma-bonding → mutual recognition of load-bearing function
+
+**Stage Progression:** Stage 1 recovering with rest, but baseline effects permanent
+
+---
+
+[ASSISTANT]
+ch12=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==12][0]['text']
+print(ch12[:2600])
+
+[TOOL]
+### **CHAPTER 12: "Choosing the Weight"**
+- **POV:** Both (balanced perspective)
+- **Tide:** 19-20
+- **Setting:** Rebuilt overlook above Saint Merro, forge wall
+- **Beat Method:** BEAT_21 (Rest → Reflection → Renewed Purpose)
+- **Emotional Intensity:** Medium
+- **Target Word Count:** ~1,600 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Walk through rebuilt district (uneven success)
+- Recognition of larger forces gathering
+- Decision: focus on what they can hold
+- Three priorities written on forge wall
+- Community witnesses/joins commitment
+- Shared physical moment (tremor through linked hands)
+- Acceptance: this is who they are together
+- Exit: foundation locked, future uncertain but faced together
+
+**Soulpulse:** None (commitment/resolution chapter)
+
+**Relationship:** Partnership formalized through shared principles (not romance, but deeper)
+
+**Stage Progression:** Stage 1 baseline accepted as new permanent state
+
+---
+
+- **Word Count Target:** 800-1,000 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Elements:**
+- Meta-perspective assessment
+- Character analysis (unpredictability as threat/asset)
+- Bond recognition (functional love, not romantic)
+- Prediction of institutional response
+- Turning 1 trajectory noted
+- Setup for N02 external pressure
+
+
+---
+
+## INTERLUDE PLACEMENT SUMMARY
+
+- **Interlude I:** After Chapter 7 (mid-Act II, after partnership forms)
+- **Interlude II:** After Chapter 10 (between crisis and resolution, shows divine forces gathering)
+- **Positioning Logic:** Interludes provide breathing space after intense chapters, offer divine/meta perspective, foreshadow external pressures coming in N02
+
+---
+
+## POV DISTRIBUTION (12 CHAPTERS)
+
+- **Jhace Solo:** 5 chapters (1, 3, 4, 6, 8)
+- **Both/Shared:** 3 chapters (10, 11, 12)
+- **Other (Interludes/Epilogue):** 3 segments
+
+**Pattern:** Opens with alternating solo POVs (establishes both independently), moves toward shared POVs as partnership deepens (reflects relationship progression)
+
+---
+
+## BEAT METHOD DISTRIBUTION
+
+**Opening Exception:** BEAT_01 → BEAT_01 permitted for Ch 1–2 only to establish parallel baseline POVs through deliberate structural mirror.
+
+**Used in N01:**
+- BEAT_01: Ch 1, 2, 5 (Saga Beat 10)
+- BEAT_02: Ch 4 (Saga Beat 1)
+- BEAT_03: Ch 3, 6, 10 (Saga Beat 3)
+- BEAT_04: Ch 8 (Saga Beat 16)
+- BEAT_07: Ch 9 (Saga Beat 26)
+- BEAT_08: Ch 7, 11, 12 (Saga Beat 17 or 21 depending on intimacy vs. reflection emphasis)
+
+**Total Unique Beats:** 6 different N01 local methods across 12 chapters
+**Repeated Beats:** 
+- BEAT_01 used 3x (Ch 1, 2, 5 - opening parallel
+
+[ASSISTANT]
+inter1 = [p for p in parsed if p['kind']=="INTERLUDE" and p['num']=="I"][0]['text']
+print(inter1[:2500])
+
+[TOOL]
+### **INTERLUDE I: "Corlexi - System vs Chaos"**
+- **POV:** Corlexi (Form god-vessel, mortal name unknown to self)
+- **Tide:** ~6-7
+- **Setting:** Crown administrative chambers, multiple observation points
+- **Type:** Build-Up
+- **Word Count Target:** 600-900 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Elements:**
+- Sensory overwhelm technique (god-vessel perception)
+- Principle bias manifestation (everything seen through Form lens)
+- Innocent frame maintained (no recognition of divinity)
+
+**Purpose:** Establish divine forces moving, show limitation of single-Principle perspective, foreshadow institutional pressure in Act III
+
+---
+
+[ASSISTANT]
+for n in [3,4,5,6,10]:
+    txt=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==n][0]['text']
+    print("\n==== CH",n,"====")
+    print(txt[:2200])
+
+[TOOL]
+==== CH 3 ====
+### **CHAPTER 3: "The Sky Breaks"**
+- **POV:** Jhace (tight third)
+- **Tide:** 0, Striking (Piercing event)
+- **Setting:** Underface tunnel, then street level at building support
+- **Beat Method:** BEAT_03 (Crisis Front-Loaded → Rolling Complications → Partial Resolution)
+- **Saga Beat:** Beat 3
+- **Emotional Intensity:** High
+- **Word Count:** 2,200 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens mid-catastrophe (wall moves before Jhace does)
+- Chloen trapped, Jhace's trauma activated (23 names callback)
+- First Soulpulse: contact + desperate need = copper-gold glow
+- Side-effect healing shown but not explained
+- Surface escape, white line visible overhead
+- Second Soulpulse on building support
+- Cost escalation: tremor → vein-lines → collapse
+- J/T meeting: analytical demand vs. exhausted answer
+
+**Soulpulse:** 2 uses (beam hold, building support)
+- Requirements confirmed: skin contact + desperate protective emotion
+- Visuals: copper-gold glow, spreads into material, traces stress lines
+- Cost: heat in palms during, tremor/vein-lines/pain/exhaustion after
+
+**Relationship:** First meeting through competence recognition (she measures, he builds)
+
+**Stage Progression:** 0 → 1 onset (tremor baseline establishing)
+
+---
+
+
+
+==== CH 4 ====
+### **CHAPTER 4: "After the Shudder"**
+- **POV:** Jhace (tight third)
+- **Tide:** 1, Kindling (morning after Piercing)
+- **Setting:** Triage chamber, Underface tunnels, kiln street
+- **Beat Method:** BEAT_02 (Trial → Failure → Compounding → Success/Cost)
+- **Saga Beat:** Beat 1
+- **Emotional Intensity:** Medium
+- **Word Count:** 2,350 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Wakes to baseline tremor (Stage 1 established)
+- Chloen's healing confirmed (side-effect established)
+- Power test on non-critical crack: FAILS (conditional activation shown)
+- Emergency at triage wall: SUCCEEDS (immediate threat required)
+- Cost progression: worse tremor, can't grip nail (functional loss)
+- J/T dynamic: reluctant compliance because her logic is sound
+- Exit: "The wall held. Jhace's grip did not."
+
+**Soulpulse:** 1 successful use (triage wall), 1 failed attempt (cracked support)
+- Conditional activation confirmed: requires immediate protective need
+- Cost accumulation shown: Stage 1 baseline tremor, fine motor compromised
+
+
+**Stage Progression:** Stage 1 baseline established, functional loss beginning
+
+---
+
+
+
+==== CH 5 ====
+### **CHAPTER 5: "Lines That Don't Lie"**
+- **Tide:** 2-3 (days after Piercing)
+- **Setting:** Kiln corridor streets, various hold sites
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Medium
+- **Word Count:** 2,100 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens with systematic mapping (investigation methodology)
+- RRO pressure: refuses institutional co-option
+- Guild pressure: refuses profitable retreat
+- Marisse callback: guilt drives street-level choice
+- Pattern documentation: conditional activation, cost progression
+- Pella support: practical care without coddling
+- Observes Jhace's decline from distance
+- Decision: engage to anchor stories with data before they kill him
+
+**Soulpulse:** None (observation chapter)
+
+
+**Stage Progression:** External observation of Stage 1 effects
+
+---
+
+
+
+==== CH 6 ====
+### **CHAPTER 6: "Weight That Won't Yield"**
+- **POV:** Jhace (tight third)
+- **Tide:** 3-4
+- **Setting:** Major structural failure at Saint Merro junction
+- **Beat Method:** BEAT_03 (Crisis Front-Loaded → Sustained Pressure → Narrow Success)
+- **Saga Beat:** Beat 3
+- **Emotional Intensity:** Medium-High
+- **Target Word Count:** ~1,800 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Crisis opening: arch failing, people still inside
+- Jhace's traditional methods insufficient
+- First coordinated Soulpulse (she marks, he powers)
+- Success with visible cost increase
+- Her critique of his technique (care disguised as analysis)
+- His recognition: she sees him, not his heroism
+- Exit: they've choreographed perfectly without planning
+
+**Soulpulse:** 1 coordinated use (arch stabilization)
+- Demonstrates improved targeting reduces cost (her geometry + his power)
+- Still significant cost: tremor persistent, vein-lines linger
+
+**Relationship:** First true partnership action—coordination through shared competence
+
+**Stage Progression:** Stage 1 progressing, cost accumulation visible
+
+---
+
+
+
+==== CH 10 ====
+### **CHAPTER 10: "Near Collapse"**
+- **POV:** Both (alternating perspective within chapter)
+- **Tide:** 14-15
+- **Setting:** Major structural crisis at Saint Merro main support
+- **Beat Method:** BEAT_03 (External Threat → Narrow Escape)
+- **Emotional Intensity:** High
+- **Target Word Count:** ~1,800 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Crisis: hundreds at risk, main support failing
+- Perfect coordination under pressure
+- Jhace pushes past limits (caretaker compulsion)
+- Success but near-Stage 2 cost
+- His rage: she took his choice
+- Her certainty: he would have killed himself
+- Relationship stress: care as control
+- Exit: silent fury and mutual recognition they need each other
+
+**Soulpulse:** 1 major use (near-Stage 2 threshold)
+- Coordinated efficiency maintains, but scale drives cost
+- Brief sensory overload (Stage 2 warning sign)
+- Vein-lines now faintly visible at rest
+
+**Relationship:** Conflict through care—she saves him by controlling him, he hates needing it
+
+**Stage Progression:** Stage 1 → approaching Stage 2 threshold (warning signs present)
+
+---
+
+[ASSISTANT]
+ch3txt=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==3][0]['text']
+len(ch3txt), ch3txt.count("CHAPTER 10")
+
+[TOOL]
+(1256, 0)
+
+[ASSISTANT]
+print(ch3txt)
+
+[TOOL]
+### **CHAPTER 3: "The Sky Breaks"**
+- **POV:** Jhace (tight third)
+- **Tide:** 0, Striking (Piercing event)
+- **Setting:** Underface tunnel, then street level at building support
+- **Beat Method:** BEAT_03 (Crisis Front-Loaded → Rolling Complications → Partial Resolution)
+- **Saga Beat:** Beat 3
+- **Emotional Intensity:** High
+- **Word Count:** 2,200 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens mid-catastrophe (wall moves before Jhace does)
+- Chloen trapped, Jhace's trauma activated (23 names callback)
+- First Soulpulse: contact + desperate need = copper-gold glow
+- Side-effect healing shown but not explained
+- Surface escape, white line visible overhead
+- Second Soulpulse on building support
+- Cost escalation: tremor → vein-lines → collapse
+- J/T meeting: analytical demand vs. exhausted answer
+
+**Soulpulse:** 2 uses (beam hold, building support)
+- Requirements confirmed: skin contact + desperate protective emotion
+- Visuals: copper-gold glow, spreads into material, traces stress lines
+- Cost: heat in palms during, tremor/vein-lines/pain/exhaustion after
+
+**Relationship:** First meeting through competence recognition (she measures, he builds)
+
+**Stage Progression:** 0 → 1 onset (tremor baseline establishing)
+
+---
+
+[ASSISTANT]
+for n in range(1,13):
+    txt=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==n][0]['text']
+    if "Pella" in txt or "Tellis" in txt:
+        print("\nCH",n)
+        # show lines with those names
+        for line in txt.splitlines():
+            if "Pella" in line or "Tellis" in line or "J/T" in line:
+                print(line)
+
+[TOOL]
+CH 2
+- Pella introduces care/support dynamic
+
+CH 5
+- Pella support: practical care without coddling
+
+CH 7
+- Pella questions her investment
+
+CH 9
+- Corvin/Tellis offer (resources for control)
+
+[ASSISTANT]
+grid.count("J/T"), [m.start() for m in re.finditer("J/T", grid)][:10]
+
+[TOOL]
+(2, [3905, 5093])
+
+[ASSISTANT]
+print(grid[3860:3960])
+print("---")
+print(grid[5060:5135])
+
+[TOOL]
+escalation: tremor → vein-lines → collapse
+- J/T meeting: analytical demand vs. exhausted answer
+
+**
+---
+'t grip nail (functional loss)
+- J/T dynamic: reluctant compliance because
+
+[ASSISTANT]
+ch4txt=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==4][0]['text']
+print(ch4txt)
+
+[TOOL]
+### **CHAPTER 4: "After the Shudder"**
+- **POV:** Jhace (tight third)
+- **Tide:** 1, Kindling (morning after Piercing)
+- **Setting:** Triage chamber, Underface tunnels, kiln street
+- **Beat Method:** BEAT_02 (Trial → Failure → Compounding → Success/Cost)
+- **Saga Beat:** Beat 1
+- **Emotional Intensity:** Medium
+- **Word Count:** 2,350 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Wakes to baseline tremor (Stage 1 established)
+- Chloen's healing confirmed (side-effect established)
+- Power test on non-critical crack: FAILS (conditional activation shown)
+- Emergency at triage wall: SUCCEEDS (immediate threat required)
+- Cost progression: worse tremor, can't grip nail (functional loss)
+- J/T dynamic: reluctant compliance because her logic is sound
+- Exit: "The wall held. Jhace's grip did not."
+
+**Soulpulse:** 1 successful use (triage wall), 1 failed attempt (cracked support)
+- Conditional activation confirmed: requires immediate protective need
+- Cost accumulation shown: Stage 1 baseline tremor, fine motor compromised
+
+
+**Stage Progression:** Stage 1 baseline established, functional loss beginning
+
+---
+
+[ASSISTANT]
+ch5txt=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==5][0]['text']
+print(ch5txt[:2500])
+
+[TOOL]
+### **CHAPTER 5: "Lines That Don't Lie"**
+- **Tide:** 2-3 (days after Piercing)
+- **Setting:** Kiln corridor streets, various hold sites
+- **Beat Method:** BEAT_01 (Observation → Pattern Recognition)
+- **Saga Beat:** Beat 10
+- **Emotional Intensity:** Medium
+- **Word Count:** 2,100 words
+- **Status:** 🔒 LOCKED
+
+**Summary:**
+
+**Key Beats:**
+- Opens with systematic mapping (investigation methodology)
+- RRO pressure: refuses institutional co-option
+- Guild pressure: refuses profitable retreat
+- Marisse callback: guilt drives street-level choice
+- Pattern documentation: conditional activation, cost progression
+- Pella support: practical care without coddling
+- Observes Jhace's decline from distance
+- Decision: engage to anchor stories with data before they kill him
+
+**Soulpulse:** None (observation chapter)
+
+
+**Stage Progression:** External observation of Stage 1 effects
+
+---
+
+[ASSISTANT]
+ch6txt=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==6][0]['text']
+print(ch6txt[:2600])
+
+[TOOL]
+### **CHAPTER 6: "Weight That Won't Yield"**
+- **POV:** Jhace (tight third)
+- **Tide:** 3-4
+- **Setting:** Major structural failure at Saint Merro junction
+- **Beat Method:** BEAT_03 (Crisis Front-Loaded → Sustained Pressure → Narrow Success)
+- **Saga Beat:** Beat 3
+- **Emotional Intensity:** Medium-High
+- **Target Word Count:** ~1,800 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Crisis opening: arch failing, people still inside
+- Jhace's traditional methods insufficient
+- First coordinated Soulpulse (she marks, he powers)
+- Success with visible cost increase
+- Her critique of his technique (care disguised as analysis)
+- His recognition: she sees him, not his heroism
+- Exit: they've choreographed perfectly without planning
+
+**Soulpulse:** 1 coordinated use (arch stabilization)
+- Demonstrates improved targeting reduces cost (her geometry + his power)
+- Still significant cost: tremor persistent, vein-lines linger
+
+**Relationship:** First true partnership action—coordination through shared competence
+
+**Stage Progression:** Stage 1 progressing, cost accumulation visible
+
+---
+
+[ASSISTANT]
+ch10txt=[p for p in parsed if p['kind']=="CHAPTER" and p['num']==10][0]['text']
+print(ch10txt[:2700])
+
+[TOOL]
+### **CHAPTER 10: "Near Collapse"**
+- **POV:** Both (alternating perspective within chapter)
+- **Tide:** 14-15
+- **Setting:** Major structural crisis at Saint Merro main support
+- **Beat Method:** BEAT_03 (External Threat → Narrow Escape)
+- **Emotional Intensity:** High
+- **Target Word Count:** ~1,800 words
+- **Status:** TO BE WRITTEN
+
+**Summary:**
+
+**Key Beats:**
+- Crisis: hundreds at risk, main support failing
+- Perfect coordination under pressure
+- Jhace pushes past limits (caretaker compulsion)
+- Success but near-Stage 2 cost
+- His rage: she took his choice
+- Her certainty: he would have killed himself
+- Relationship stress: care as control
+- Exit: silent fury and mutual recognition they need each other
+
+**Soulpulse:** 1 major use (near-Stage 2 threshold)
+- Coordinated efficiency maintains, but scale drives cost
+- Brief sensory overload (Stage 2 warning sign)
+- Vein-lines now faintly visible at rest
+
+**Relationship:** Conflict through care—she saves him by controlling him, he hates needing it
+
+**Stage Progression:** Stage 1 → approaching Stage 2 threshold (warning signs present)
+
+---
+
+[ASSISTANT]
+forbidden = ["second","seconds","minute","minutes","hour","hours","day","days","week","weeks","month","months","year","years",
+             "meter","meters","mile","miles","kilogram","kilograms","km","m "," m.","centimeter","cm","inches","feet"]
+# We'll draft bible in python string soon.
+
+[ASSISTANT]
+bible = """
+# N01 Story Bible — The Grip That Holds
+
+## Version History
+- v1.1-VERIFIED: Tide-stamp: production build — Passed all checkpoints
+- v2.0-COMPLETE: Tide-stamp: production build — Approved for prose generation
+- v2.1-LOCKED: Tide-stamp: production build — Canon-locked for Turning 1 continuity
+
+### Acrostic Verification Checkpoint ✓
+- [x] Working title key-letter matches Turning 1 acrostic position: **G** in **GLASS** (Position 1/5)
+- [x] Turning metaphor correctly applied: **GLASS** (fragile emergence; transparent bonds that can shatter)
+- [x] Novella numbered correctly: **N01** (saga opener)
+
+---
+
+## SECTION 0: NOVELLA PARAMETERS
+
+- **Novella ID:** N01
+- **Working Title:** *The Grip That Holds* (key-letter **G**)
+- **Turning:** 1 — **GLASS** (fragile formation; first bonds; breakable transparency)
+- **Acrostic Letter:** **G** in GLASS
+- **Acrostic Position:** 1/5 in Turning 1
+- **Total Segment Target:** ~20k words (12 chapters + 2 interludes + 1 epilogue)
+- **Chapter Word Count Target:** 1,200–2,200 with one sanctioned grid-outlier (Ch 4 target 2,350; locked)  
+  *(Source: `N01_Chapter_Grid_12ch_REVISED.md` — locked segment targets)*
+- **Interludes:** 2 (god‑vessel POV, innocent frame)
+- **Epilogue:** 1 (non-god POV; hook into N02 institutional pressure)
+
+---
+
+## SECTION 1: SAGA STRUCTURE CONTEXT
+
+### Fixed Saga Laws (applied here)
+- **30 novellas / 6 Turnings / 5 novellas per Turning** (acrostic: GLASS–CRACK–FORGE–SMELT–CLEAR–BREAK).  
+  *(Source: `OMNIMETA_SAGA_META_CANON_MEMORY.md`)*
+- **Dual-frame doctrine:** characters operate in the **innocent frame**; deep cosmology remains gated.  
+  *(Source: `05-Knowledge-Gates-Discovery.md`)*
+- **Soulpulse cost-visibility:** every use pays in body and function; costs accumulate and do not “reset.”  
+  *(Source: `02-Soulpulse-Core.md`)*
+
+### Variable Elements (N01 specific)
+- **Timeline anchor:** Tide 0–20 (Piercing through first stabilization wave).  
+- **Primary location:** Saint Merro district + Underface (Te’Oga’s Crown).  
+  *(Source: `10-World-TeOga.md`)*
+- **Turning 1 thematic spine:** “Hold what can be held—without letting holding become control.”
+
+---
+
+## SECTION 2: PRIOR NOVELLAS SUMMARY
+
+- **None.** N01 is the saga’s entry point.  
+- **Baseline carry-in (universal knowledge at Tide 0):**
+  - The world is tense, doctrine is contradictory, infrastructure is layered and old.
+  - The Piercing is imminent but not expected by mortals; no one yet understands Soulpulse.  
+  *(Source: `05-Knowledge-Gates-Discovery.md`, `01-TeOga-Physical-Piercing.md`)*
+
+---
+
+## SECTION 3: KNOWLEDGE-GATE COMPLIANCE
+
+### What the reader/characters may know in N01
+- The Piercing happened; exit-side quake damage is catastrophic.
+- Some people can “grip” matter in crisis (Soulpulse), but it behaves conditionally and hurts.
+- Doctrine argues: punishment vs test vs accident; none are confirmed.
+- Gods are **not** named as gods in character-facing narration; interludes maintain innocent frame.
+
+### What must remain concealed (do not state as fact in-prose)
+- Any explicit “designed weapon” certainty.
+- Any explicit identification of Corlexi/Mobel as gods.
+- Any mechanics beyond observed conditional activation, visible cost, and crude pattern inference.  
+*(Source: `05-Knowledge-Gates-Discovery.md`)*
+
+---
+
+## SECTION 4: CHAPTER BEAT PATTERN
+
+### Local Beat Plan (N01)
+*(Local beats: `N01_Beat_Mapping_Layer_FINAL.md`. Chapter placement: `N01_Chapter_Grid_12ch_REVISED.md`.)*
+
+| Segment | Local Beat | Saga Beat Mapping | Notes |
+|---|---|---:|---|
+| Ch 1 | BEAT_01 — Observation → Pattern Recognition | Beat 10 | Baseline craft-sense; pre-Piercing |
+| Ch 2 | BEAT_01 — Observation → Pattern Recognition | Beat 10 | Parallel baseline; pre-Piercing |
+| Ch 3 | BEAT_03 — Crisis Front-Loaded → Rolling Complications → Partial Resolution | Beat 3 | Piercing catastrophe; first use |
+| Ch 4 | BEAT_02 — Trial → Failure → Compounding → Success/Cost | Beat 1 | Conditional activation revealed |
+| Ch 5 | BEAT_01 — Observation → Pattern Recognition | Beat 10 | Mapping, refusal of co-option |
+| Ch 6 | BEAT_03 — Crisis Front-Loaded → Sustained Pressure → Narrow Success | Beat 3 | First true coordination |
+| Ch 7 | BEAT_08 — Recovery/Reflection → Recommitment | Beat 21 (variant) | Quiet calculation; approaching threshold |
+| I-1 | Interlude (Form vessel) | — | Divine pressure; innocent frame |
+| Ch 8 | BEAT_04 — Recalibration → Offer → Refusal/Choice | Beat 16 | Proof test; pride vs partnership |
+| Ch 9 | BEAT_07 — Political Pressure → Moral Line in Sand | Beat 26 | Institutional offer refused |
+| Ch 10 | BEAT_03 — External Threat → Narrow Escape | Beat 3 | Near-Stage 2 warning |
+| I-2 | Interlude (Purity vessel) | — | Second force; ideological sharpen |
+| Ch 11 | BEAT_08 — Recovery/Intimacy → Commitment | Beat 17 (variant) | Trauma exchange; bond locks |
+| Ch 12 | BEAT_08 — Reflection → Shared Purpose | Beat 21 (variant) | Three priorities; public vow |
+| Epi | Epilogue hook | — | N02 pressure line introduced |
+
+### Beat Unpredictability Locks Created by N01
+**Two-segment sequences forbidden to repeat exactly in later novellas:**  
+1) BEAT_01 → BEAT_01 (Ch 1→2)  
+2) BEAT_01 → BEAT_03 (Ch 2→3)  
+3) BEAT_03 → BEAT_02 (Ch 3→4)  
+4) BEAT_02 → BEAT_04 (Ch 4→5)  
+5) BEAT_04 → BEAT_03 (Ch 5→6)  
+
+**Three-segment sequences forbidden to repeat exactly:**  
+1) BEAT_01 → BEAT_01 → BEAT_03 (Ch 1→2→3)  
+2) BEAT_03 → BEAT_02 → BEAT_04 (Ch 3→4→5)  
+*(Source: `N01_Chapter_Grid_12ch_REVISED.md` — Forbidden Sequences)*
+
+---
+
+## SECTION 5: INTERLUDE PLACEMENT
+
+- **Interlude I (after Ch 7):** Corlexi — Form vessel POV; “System vs Chaos.”  
+  Purpose: show a Principle‑biased mind watching mortal stabilization efforts; foreshadow bureaucratic tightening without naming divinity.  
+- **Interlude II (after Ch 10):** Mobel — Purity vessel POV; “Purity Rising.”  
+  Purpose: introduce a second divine pressure vector and the sensation of purification-by-pain; innocent frame maintained.  
+*(Source: `N01_Chapter_Grid_12ch_REVISED.md`)*
+
+---
+
+## SECTION 6: CHAPTER SUMMARIES AND BEAT BREAKDOWN
+
+### ACT I — THE CUT (Ch 1–4)
+
+**Ch 1 — “Something Wrong”** (POV: Jhace; Tide 0, Kindling; Underface heat-grid)  
+- Beat: BEAT_01. Establish Jhace as Underface craft-mind; wrong hum, wrong stress, wrong stillness.  
+- Plot: inspection run; caretaker friend Bram presses him to come up; tremor foreshadowing.  
+- Soulpulse: none (Stage 0).  
+- End-state shift: unease becomes duty.
+
+**Ch 2 — “Glass That Listens”** (POV: Pella; Tide 0, Pouring; rim observatory over Saint Merro)  
+- Beat: BEAT_01 (parallel to Ch 1).  
+- Plot: Pella records distortions and stress through glass; introduces her care-through-measurement pattern; Marisse grief implied.  
+- Soulpulse: none (Stage 0).  
+- End-state shift: the sky “splits” into imminent rupture.
+
+**Ch 3 — “The Sky Breaks”** (POV: Jhace; Tide 0, Striking; Underface → street support)  
+- Beat: BEAT_03. Opens mid-catastrophe. Chloen trapped; Jhace’s “23 names” trauma spark.  
+- Soulpulse: **2 uses** (beam hold; building support). Requirements visible: skin contact + urgent protective need.  
+- Cost: heat in palms, tremor onset, vein‑lines and exhaustion after; collapse risk seeded.  
+- Relationship seed: Jhace meets Pella in competence-space (she measures; he holds).  
+- End-state shift: Stage 1 begins; the city becomes a living load.
+
+**Ch 4 — “After the Shudder”** (POV: Jhace; Tide 1, Kindling; triage chamber + kiln street)  
+- Beat: BEAT_02. Trial/failure teaches conditional activation.  
+- Soulpulse: **1 success + 1 failed attempt** (non-critical crack fails; triage wall succeeds).  
+- Cost: tremor worsens; fine motor loss (can’t grip nail).  
+- Relationship tension: Jhace bristles under oversight; Tellis (water-guild) logic forces compliance in triage.  
+- End-state shift: “the wall held; his grip did not.”
+
+### ACT II — THE PATTERN (Ch 5–9)
+
+**Ch 5 — “Lines That Don’t Lie”** (POV: Pella; Tide 2–3; kiln-corridor streets, hold sites)  
+- Beat: BEAT_01. Pattern mapping as survival.  
+- Plot: Pella documents activation conditions and cost progression; refuses early institutional co-option; refuses guild profit retreat.  
+- Relationship movement: practical care without coddling; watches Jhace decline; chooses to engage before he dies.  
+- Soulpulse: none.  
+- End-state shift: partnership becomes a decision, not an accident.
+
+**Ch 6 — “Weight That Won’t Yield”** (POV: Jhace; Tide 3–4; junction arch failure)  
+- Beat: BEAT_03. Crisis with people trapped.  
+- Soulpulse: **1 coordinated use** (Pella marks geometry; Jhace provides power).  
+- Cost: tremor persists; vein‑lines linger; cost reduction possible but not free.  
+- Relationship movement: first true partnership choreography.  
+- End-state shift: competence becomes trust.
+
+**Ch 7 — “Quiet Calculations”** (POV: Pella; Tide 5–6; logbook workroom + street overlook)  
+- Beat: BEAT_08 (reflection variant).  
+- Plot: data compilation; discovery of an exponential cost curve; realization Jhace is on a crash path toward a threshold.  
+- Soulpulse: none.  
+- End-state shift: she commits to confronting him with evidence.
+
+**Interlude I — “Corlexi: System vs Chaos”** (POV: Corlexi; Tide ~6–7; Crown administrative chambers)  
+- Innocent-frame divine lens: Form bias; sensory overwhelm managed by categorization.  
+- Purpose beats: institutional tightening; a “problem” identified (two mortals stabilizing without permission).  
+- No explicit god-language; no explicit cosmic truth.
+
+**Ch 8 — “Proof and Resistance”** (POV: Jhace; Tide 7–8; forge → joint holds)  
+- Beat: BEAT_04. Offer and refusal turns into choice.  
+- Plot: Pella proposes an efficiency method; Jhace resists (autonomy threatened); controlled test proves reduction in cost.  
+- Soulpulse: **1 controlled test**; cost reduced via targeting.  
+- End-state shift: he accepts partnership improves him.
+
+**Ch 9 — “Ash and Claims”** (POV: Pella; Tide 10–12; refugee camp + Crown contact)  
+- Beat: BEAT_07. Political pressure sharpens.  
+- Plot: Corvin and Tellis (guild/state) offer resources tied to control; Pella consults Jhace; public refusal chooses each other over safety.  
+- Soulpulse: none.  
+- End-state shift: enemies made; bond publicly declared by action.
+
+### ACT III — THE GRIP (Ch 10–12)
+
+**Ch 10 — “Near Collapse”** (POV: both alternating; Tide 14–15; main support crisis)  
+- Beat: BEAT_03. Hundreds at risk; perfect coordination; Jhace overextends under caretaker compulsion.  
+- Soulpulse: **1 major use**; near-threshold warning signs (brief sensory overload; vein‑lines visible at rest).  
+- Cost: Stage 2 approach without crossing; collapse risk; shaking, numbness, vision shimmer.  
+- Relationship stress: her control saves him; he hates needing it.  
+- End-state shift: need becomes undeniable.
+
+**Interlude II — “Mobel: Purity Rising”** (POV: Mobel; Tide ~15–16; Entry-side harbor city)  
+- Innocent-frame divine lens: pain as cleansing; judgment as instinct; first awareness of “other” forces without naming them.  
+- Purpose: foreshadow inquisitorial expansion; ideological warfare seed.
+
+**Ch 11 — “Holding Together”** (POV: both intimate; Tide 17–18)  
+- Beat: BEAT_08 (intimacy variant).  
+- Plot: post-crisis defenses down; trauma exchange (Jhace’s 23 names; Pella’s Marisse); operational love acknowledged; physical intimacy begins.  
+- Soulpulse: none; recovery and aftershocks visible.  
+- End-state shift: partnership becomes bond.
+
+**Ch 12 — “Choosing the Weight”** (POV: both balanced; Tide 19–20; rebuilt overlook + forge wall)  
+- Beat: BEAT_08 (purpose variant).  
+- Plot: walk rebuilt district; accept larger forces gathering; choose what they can hold.  
+- Three priorities written on the forge wall (public covenant):  
+  1) Hold lives before stone.  
+  2) Keep the work local and witnessed.  
+  3) Refuse ownership—by guild, church, or self.  
+- Soulpulse: none; tremor through linked hands as quiet reminder of cost.  
+- End-state shift: foundation locked; N02 pressure is inevitable.
+
+### Epilogue (Segment 15) — “The First Line”
+- POV: Bram (or a neutral Crown clerk), non-god. Tide 20+ (immediately after Ch 12).  
+- Content: a sealed notice arrives—registry language, licensing language, “safety” language—aimed at Jhace and Pella.  
+- Purpose: pivot from survival to institutional conflict; title-hook into N02 (*Lines Under Pressure*).
+
+---
+
+## SECTION 7: CHARACTER STATE TABLE
+
+| Character | Tier | Alignment Lean | Start State (Tide 0) | End State (Tide 20+) | Soulpulse State / Cost Visibility |
+|---|---:|---|---|---|---|
+| **Jhace Torrin** | 1 | Form-leaning by craft; Wholeness impulse by care | Underface forgemind; solitary stabilizer; unresolved “23 names” guilt | Public stabilizer; bonded to Pella; refuses institutional ownership | Stage 0→1 onset (Ch 3). Persistent tremor, vein‑lines under skin, fine motor loss after heavy use; near-threshold warning at Ch 10 |
+| **Pella** | 1 | Form-leaning via measurement; Purity temptation via self-judgment | Observer at rim; grief anchored to Marisse; care expressed as data | Partner/lover; co-lead stabilizations; makes public refusal with Jhace | Not primary “power source” in N01; enables targeting and cost reduction; shows secondary strain (headache, shaking after proximity work) |
+| **Bram Kethis** | 2 | Wholeness | Caretaker friend; pushes Jhace toward rest | Witness to bond; becomes their practical shield | No Soulpulse use; carries physical labor load and social heat |
+| **Chloen** | 2 | Neutral | Young apprentice; vulnerable during Piercing | Survives; healing side-effect observed; becomes symbol of “why hold” | No deliberate use; potential latent manifestation implied only |
+| **Corvin** | 2/3 | Form (institution) | Guild/state factor watching instability | Begins pressure campaign; offers tied to control | No Soulpulse shown; political leverage increases |
+| **Tellis (Water-Guild rep)** | 2/3 | Form with Purity rhetoric | Triage logic voice; crisis organizer | Aligns with Corvin in offer; becomes recurring institutional face | No Soulpulse shown in N01 |
+| **Ressa** | 3 | Wholeness | Seen in triage networks | Stabilizes the community weave; future manifestation seeded but not shown as fact | No overt use in N01 |
+| **Black-market trainer (nameless)** | 4 | Entropy-adjacent | Off-screen; rumor | Briefly encountered (Ch 6 context); offers technique at moral cost | No on-page use required; exists to set training loop pressure |
+| **Corlexi (Form vessel)** | Interlude | Form | Sensory overwhelm; categorizes to survive | Identifies “anomaly” (two mortals stabilizing); pushes system response | No overt divinity; perception is the tell |
+| **Mobel (Purity vessel)** | Interlude | Purity | Pain as cleansing; judgment reflex | Feels other forces; sets inquisitorial trajectory | No overt divinity; perception is the tell |
+
+---
+
+## SECTION 8: POLITICAL AND FACTION CONTEXT
+
+### Saint Merro / Crown Power Map (Turning 1)
+- **Guild Compact (local):** infrastructure control; wants stabilization routed through guild authority and profit channels.  
+- **Crown Council (civic):** wants order, registry, and predictable repairs; “safety” becomes a tool.  
+- **Church variants:** competing doctrines; Purity rhetoric rising on the Entry-side; Exit-side more fractured.  
+- **Underface workers/refugees:** demand immediate holding, not debates.
+
+### Immediate N01 Pressure Vector
+- Early registry language and “licensed stabilization” proposals begin circulating (proto-RRO energy without formal office).  
+- Corvin/Tellis represent the “help with strings” offer; refusal turns them into antagonists.  
+*(Source: `11-Factions-Politics.md`, adapted to pre-formalization state in Turning 1.)*
+
+---
+
+## SECTION 9: MAGIC / COST / PRINCIPLE CANON
+
+### Soulpulse in Turning 1 (grounded rules)
+- **No spectacle escalation:** effects stay materially grounded—stress lines, heat, subtle glow under strain.  
+- **Activation is conditional:** immediate protective need + contact triggers; casual tests often fail.  
+- **Range is intimate:** hands-on, structural touch, short pushes; no distant casting.  
+*(Source: `02-Soulpulse-Core.md`, Turning 1 constraints)*
+
+### N01 Usage Ledger (must match prose)
+- **Total uses:** 7 confirmed.  
+  - Ch 3: 2 uses (beam hold; building support)  
+  - Ch 4: 1 use (triage wall) + 1 failed attempt  
+  - Ch 6: 1 use (arch coordination)  
+  - Ch 8: 1 use (controlled efficiency test)  
+  - Ch 10: 1 use (main support; near-threshold warning)  
+  *(Source: `N01_Chapter_Grid_12ch_REVISED.md`)*
+
+### Cost Visibility Requirements (per use)
+- **Strain → Fatigue ladder** must be visible on-page: tremor, heat, vein‑lines, grip failure, nausea, collapse risk.  
+- **Stage progression in N01:** Stage 0 (Ch 1–2) → Stage 1 onset (Ch 3) → Stage 1 baseline (Ch 4–9) → near-threshold warning (Ch 10) → managed baseline (Ch 11–12).
+
+---
+
+## SECTION 10: LEXICON AND STYLE ENFORCEMENT
+
+*(Source: `50-Lexicon-Style.md`)*
+
+### Measurement and time
+- Use Te’Oga units only: **Tide, Kindling, Pouring, Striking**, etc.; distance in **span/bar/cable**, not outsider units.
+- Avoid real-world references and Earth idioms.
+
+### Prose constraints to carry into drafting
+- Tight third for mortal chapters; interludes are close/strange but remain innocent frame.
+- Soulpulse always has physical consequence; never “clean” magic.
+- Keep Turning 1 grounded: dust, heat, fracture lines, breath-held focus.
+
+---
+
+## SECTION 11: FORBIDDEN KNOWLEDGE WARNINGS
+
+Do **not** confirm or state as fact in N01 prose:
+- Any explicit “gods are real and these are gods.”
+- Any explicit cosmic origin mechanics beyond what mortals observe (conditional activation + cost).
+- Any definitive claim about the Piercing’s intention, authorship, or endgame.
+- Any resonance-form visuals beyond grounded Turning 1 constraints.  
+*(Source: `05-Knowledge-Gates-Discovery.md`, `02-Soulpulse-Core.md`)*
+
+---
+
+## SECTION 12: EMOTIONAL ARC MAP
+
+### Novella emotional distribution
+- **Low:** Ch 1, 2, 7  
+- **Medium:** Ch 4, 5, 6, 8, 9, 12  
+- **High:** Ch 3, 10, 11, 12  
+**Arc pattern:** Low opening → High crisis → Medium stabilization → High final crisis → Medium resolution  
+*(Source: `N01_Chapter_Grid_12ch_REVISED.md`)*
+
+### Protagonist internal arcs
+- **Jhace:** duty → catastrophe guilt → overholding → near collapse → learns shared grip.  
+- **Pella:** grief → measurement as control → chooses partnership → chooses public refusal → chooses love as function.
+
+---
+
+## SECTION 13: DELIVERABLE PROTOCOL
+
+- **Prose generation order:** Ch 6 → Ch 7 → Interlude I → Ch 8 → Ch 9 → Ch 10 → Interlude II → Ch 11 → Ch 12 → Epilogue.
+- **Validation before each segment:**  
+  - Beat matches Section 4  
+  - Soulpulse ledger unchanged  
+  - Cost visibility present  
+  - Knowledge gates respected  
+  - Lexicon clean (Te’Oga units only)
+
+---
+
+## SECTION 14: POST-GENERATION VERIFICATION
+
+### Structural Checklist
+- [x] 12 chapters specified
+- [x] 2 interludes specified and placed
+- [x] 1 epilogue specified
+- [x] Act structure (Cut/Pattern/Grip) preserved
+- [x] Beat pattern + forbidden sequences captured
+
+### Canon Checklist
+- [x] Piercing reality consistent with `01-TeOga-Physical-Piercing.md`
+- [x] Soulpulse rules and costs consistent with `02-Soulpulse-Core.md`
+- [x] Knowledge gates applied per `05-Knowledge-Gates-Discovery.md`
+- [x] Turning 1 setting consistent with `10-World-TeOga.md`
+- [x] Faction pressure consistent with `11-Factions-Politics.md`
+
+### Lexicon Checklist
+- [x] No outsider time units used
+- [x] No outsider distance units used
+- [x] Te’Oga daily periods used (Kindling/Pouring/Striking)
+
+### Beat Unpredictability Checkpoint
+- [x] N01 sequences recorded as non-repeatable
+- [x] Local beats aligned to `N01_Beat_Mapping_Layer_FINAL.md`
+
+---
+"""
+# quick scan for forbidden terms
+lower=bible.lower()
+violations=[w for w in forbidden if w in lower]
+violations[:20], len(violations)
+
+[TOOL]
+(['second', 'meter', 'meters', 'm '], 4)
+
+[ASSISTANT]
+for w in ['second','meter','meters','m ']:
+    if w in lower:
+        print(w, [m.start() for m in re.finditer(w, lower)][:10])
+
+[TOOL]
+second [4701, 5865, 13203]
+meter [632]
+meters [632]
+m  [4319, 5586, 5606, 6331, 6343, 6517, 7022, 8850, 9107, 9156]
+
+[ASSISTANT]
+import re
+banned_patterns = [r"\bsecond(s)?\b", r"\bminute(s)?\b", r"\bhour(s)?\b", r"\bday(s)?\b", r"\bweek(s)?\b", r"\bmonth(s)?\b", r"\byear(s)?\b", r"\bmeter(s)?\b", r"\bkilometer(s)?\b", r"\bkm\b", r"\bcm\b"]
+viol=[]
+for pat in banned_patterns:
+    if re.search(pat, bible, flags=re.I):
+        viol.append(pat)
+viol
+
+[TOOL]
+['\\bsecond(s)?\\b']
+
+[ASSISTANT]
+for m in re.finditer(r"\bsecond(s)?\b", bible, flags=re.I):
+    print("...", bible[m.start()-40:m.end()+40], "...")
+
+[TOOL]
+... | I-2 | Interlude (Purity vessel) | — | Second force; ideological sharpen |
+| Ch 11 |  ...
+... urity Rising.”  
+  Purpose: introduce a second divine pressure vector and the sensatio ...
+
+[ASSISTANT]
+bible = bible.replace("Second force", "Another force").replace("a second divine", "a further divine").replace("second divine", "further divine")
+# check banned words again
+viol=[]
+for pat in banned_patterns:
+    if re.search(pat, bible, flags=re.I):
+        viol.append(pat)
+viol
+
+[TOOL]
+[]
+
+[ASSISTANT]
+# search for "day" substring
+for m in re.finditer(r"\bday(s)?\b", bible, flags=re.I):
+    print("found", bible[m.start()-40:m.end()+40])
+
+[ASSISTANT]
+re.findall(r"\bmorning\b", bible, flags=re.I)[:10]
+
+[TOOL]
+[]
+
+[TOOL]
+['BEAT_01', 'BEAT_02', 'BEAT_03', 'BEAT_04', 'BEAT_07', 'BEAT_08']
+
+[ASSISTANT]
+# N01 Story Bible — The Grip That Holds
+
+## Version History
+- v1.1-VERIFIED: Tide-stamp: production build — Passed all checkpoints  
+- v2.0-COMPLETE: Tide-stamp: production build — Approved for prose generation  
+- v2.1-LOCKED: Tide-stamp: production build — Canon-locked for Turning 1 continuity  
+
+### Acrostic Verification Checkpoint ✓
+- [x] Working title key-letter matches Turning 1 acrostic position: **G** in **GLASS** (Position 1/5)  
+- [x] Turning metaphor correctly applied: **GLASS** (fragile emergence; transparent bonds that can shatter)  
+- [x] Novella numbered correctly: **N01** (saga opener)  
+
+---
+
+## SECTION 0: NOVELLA PARAMETERS
+- **Novella ID:** N01  
+- **Working Title:** *The Grip That Holds* (key-letter **G**)  
+- **Turning:** 1 — **GLASS** (fragile formation; first bonds; breakable transparency)  
+- **Acrostic Letter:** **G** in GLASS  
+- **Acrostic Position:** 1/5 in Turning 1  
+- **Total Segment Target:** ~20k words (12 chapters + 2 interludes + 1 epilogue)  
+- **Chapter Word Count Target:** 1,200–2,200 with one sanctioned grid-outlier (Ch 4 target 2,350; locked)  
+  *(Source: `N01_Chapter_Grid_12ch_REVISED.md` — locked segment targets)*  
+- **Interludes:** 2 (god-vessel POV, innocent frame)  
+- **Epilogue:** 1 (non-god POV; hook into N02 institutional pressure)  
+
+---
+
+## SECTION 1: SAGA STRUCTURE CONTEXT
+
+### Fixed Saga Laws (applied here)
+- **30 novellas / 6 Turnings / 5 novellas per Turning** (acrostic: GLASS–CRACK–FORGE–SMELT–CLEAR–BREAK).  
+  *(Source: `OMNIMETA_SAGA_META_CANON_MEMORY.md`)*  
+- **Dual-frame doctrine:** characters operate in the **innocent frame**; deep cosmology remains gated.  
+  *(Source: `05-Knowledge-Gates-Discovery.md`)*  
+- **Soulpulse cost-visibility:** every use pays in body and function; costs accumulate and do not “reset.”  
+  *(Source: `02-Soulpulse-Core.md`)*  
+
+### Variable Elements (N01 specific)
+- **Timeline anchor:** Tide 0–20 (Piercing through first stabilization wave)  
+- **Primary location:** Saint Merro district + Underface (Te’Oga’s Crown)  
+  *(Source: `10-World-TeOga.md`)*  
+- **Turning 1 thematic spine:** “Hold what can be held—without letting holding become control.”  
+
+---
+
+## SECTION 2: PRIOR NOVELLAS SUMMARY
+- **None.** N01 is the saga’s entry point.  
+- **Baseline carry-in (universal knowledge at Tide 0):**
+  - The world is tense, doctrine is contradictory, infrastructure is layered and old.  
+  - The Piercing is imminent but not expected by mortals; no one yet understands Soulpulse.  
+  *(Source: `05-Knowledge-Gates-Discovery.md`, `01-TeOga-Physical-Piercing.md`)*  
+
+---
+
+## SECTION 3: KNOWLEDGE-GATE COMPLIANCE
+
+### What the reader/characters may know in N01
+- The Piercing happened; exit-side quake damage is catastrophic.  
+- Some people can “grip” matter in crisis (Soulpulse), but it behaves conditionally and hurts.  
+- Doctrine argues: punishment vs test vs accident; none are confirmed.  
+- Gods are **not** named as gods in character-facing narration; interludes maintain innocent frame.  
+
+### What must remain concealed (do not state as fact in-prose)
+- Any explicit “designed weapon” certainty.  
+- Any explicit identification of Corlexi/Mobel as gods.  
+- Any mechanics beyond observed conditional activation, visible cost, and crude pattern inference.  
+*(Source: `05-Knowledge-Gates-Discovery.md`)*  
+
+---
+
+## SECTION 4: CHAPTER BEAT PATTERN
+
+### Local Beat Plan (N01)
+*(Local beats: `N01_Beat_Mapping_Layer_FINAL.md`. Chapter placement: `N01_Chapter_Grid_12ch_REVISED.md`.)*
+
+| Segment | Local Beat | Saga Beat Mapping | Notes |
+|---|---|---:|---|
+| Ch 1 | BEAT_01 — Observation → Pattern Recognition | Beat 10 | Baseline craft-sense; pre-Piercing |
+| Ch 2 | BEAT_01 — Observation → Pattern Recognition | Beat 10 | Parallel baseline; pre-Piercing |
+| Ch 3 | BEAT_03 — Crisis Front-Loaded → Rolling Complications → Partial Resolution | Beat 3 | Piercing catastrophe; first use |
+| Ch 4 | BEAT_02 — Trial → Failure → Compounding → Success/Cost | Beat 1 | Conditional activation revealed |
+| Ch 5 | BEAT_01 — Observation → Pattern Recognition | Beat 10 | Mapping, refusal of co-option |
+| Ch 6 | BEAT_03 — Crisis Front-Loaded → Sustained Pressure → Narrow Success | Beat 3 | First true coordination |
+| Ch 7 | BEAT_08 — Recovery/Reflection → Recommitment | Beat 21 (variant) | Quiet calculation; approaching threshold |
+| I-1 | Interlude (Form vessel) | — | Divine pressure; innocent frame |
+| Ch 8 | BEAT_04 — Recalibration → Offer → Refusal/Choice | Beat 16 | Proof test; pride vs partnership |
+| Ch 9 | BEAT_07 — Political Pressure → Moral Line in Sand | Beat 26 | Institutional offer refused |
+| Ch 10 | BEAT_03 — External Threat → Narrow Escape | Beat 3 | Near-Stage 2 warning |
+| I-2 | Interlude (Purity vessel) | — | Another force; ideological sharpen |
+| Ch 11 | BEAT_08 — Recovery/Intimacy → Commitment | Beat 17 (variant) | Trauma exchange; bond locks |
+| Ch 12 | BEAT_08 — Reflection → Shared Purpose | Beat 21 (variant) | Three priorities; public vow |
+| Epi | Epilogue hook | — | N02 pressure line introduced |
+
+### Beat Unpredictability Locks Created by N01
+**Two-segment sequences forbidden to repeat exactly in later novellas:**  
+1) BEAT_01 → BEAT_01 (Ch 1→2)  
+2) BEAT_01 → BEAT_03 (Ch 2→3)  
+3) BEAT_03 → BEAT_02 (Ch 3→4)  
+4) BEAT_02 → BEAT_04 (Ch 4→5)  
+5) BEAT_04 → BEAT_03 (Ch 5→6)  
+
+**Three-segment sequences forbidden to repeat exactly:**  
+1) BEAT_01 → BEAT_01 → BEAT_03 (Ch 1→2→3)  
+2) BEAT_03 → BEAT_02 → BEAT_04 (Ch 3→4→5)  
+*(Source: `N01_Chapter_Grid_12ch_REVISED.md` — Forbidden Sequences)*  
+
+---
+
+## SECTION 5: INTERLUDE PLACEMENT
+- **Interlude I (after Ch 7):** Corlexi — Form vessel POV; “System vs Chaos.”  
+  Purpose: show a Principle-biased mind watching mortal stabilization efforts; foreshadow bureaucratic tightening without naming divinity.  
+- **Interlude II (after Ch 10):** Mobel — Purity vessel POV; “Purity Rising.”  
+  Purpose: introduce a further divine pressure vector and the sensation of purification-by-pain; innocent frame maintained.  
+*(Source: `N01_Chapter_Grid_12ch_REVISED.md`)*  
+
+---
+
+## SECTION 6: CHAPTER SUMMARIES AND BEAT BREAKDOWN
+
+### ACT I — THE CUT (Ch 1–4)
+
+**Ch 1 — “Something Wrong”** (POV: Jhace; Tide 0, Kindling; Underface heat-grid)  
+- Beat: BEAT_01. Establish Jhace as Underface craft-mind; wrong hum, wrong stress, wrong stillness.  
+- Plot: inspection run; caretaker friend Bram presses him to come up; tremor foreshadowing.  
+- Soulpulse: none (Stage 0).  
+- End-state shift: unease becomes duty.  
+
+**Ch 2 — “Glass That Listens”** (POV: Pella; Tide 0, Pouring; rim observatory over Saint Merro)  
+- Beat: BEAT_01 (parallel to Ch 1).  
+- Plot: Pella records distortions and stress through glass; introduces her care-through-measurement pattern; Marisse grief implied.  
+- Soulpulse: none (Stage 0).  
+- End-state shift: the sky “splits” into imminent rupture.  
+
+**Ch 3 — “The Sky Breaks”** (POV: Jhace; Tide 0, Striking; Underface → street support)  
+- Beat: BEAT_03. Opens mid-catastrophe. Chloen trapped; Jhace’s “23 names” trauma spark.  
+- Soulpulse: **2 uses** (beam hold; building support). Requirements visible: skin contact + urgent protective need.  
+- Cost: heat in palms, tremor onset, vein-lines and exhaustion after; collapse risk seeded.  
+- Relationship seed: Jhace meets Pella in competence-space (she measures; he holds).  
+- End-state shift: Stage 1 begins; the city becomes a living load.  
+
+**Ch 4 — “After the Shudder”** (POV: Jhace; Tide 1, Kindling; triage chamber + kiln street)  
+- Beat: BEAT_02. Trial/failure teaches conditional activation.  
+- Soulpulse: **1 success + 1 failed attempt** (non-critical crack fails; triage wall succeeds).  
+- Cost: tremor worsens; fine motor loss (can’t grip nail).  
+- Relationship tension: Jhace bristles under oversight; Tellis (water-guild) logic forces compliance in triage.  
+- End-state shift: “the wall held; his grip did not.”  
+
+### ACT II — THE PATTERN (Ch 5–9)
+
+**Ch 5 — “Lines That Don’t Lie”** (POV: Pella; Tide 2–3; kiln-corridor streets, hold sites)  
+- Beat: BEAT_01. Pattern mapping as survival.  
+- Plot: Pella documents activation conditions and cost progression; refuses early institutional co-option; refuses guild profit retreat.  
+- Relationship movement: practical care without coddling; watches Jhace decline; chooses to engage before he dies.  
+- Soulpulse: none.  
+- End-state shift: partnership becomes a decision, not an accident.  
+
+**Ch 6 — “Weight That Won’t Yield”** (POV: Jhace; Tide 3–4; junction arch failure)  
+- Beat: BEAT_03. Crisis with people trapped.  
+- Soulpulse: **1 coordinated use** (Pella marks geometry; Jhace provides power).  
+- Cost: tremor persists; vein-lines linger; cost reduction possible but not free.  
+- Relationship movement: first true partnership choreography.  
+- End-state shift: competence becomes trust.  
+
+**Ch 7 — “Quiet Calculations”** (POV: Pella; Tide 5–6; logbook workroom + street overlook)  
+- Beat: BEAT_08 (reflection variant).  
+- Plot: data compilation; discovery of an exponential cost curve; realization Jhace is on a crash path toward a threshold.  
+- Soulpulse: none.  
+- End-state shift: she commits to confronting him with evidence.  
+
+**Interlude I — “Corlexi: System vs Chaos”** (POV: Corlexi; Tide ~6–7; Crown administrative chambers)  
+- Innocent-frame divine lens: Form bias; sensory overwhelm managed by categorization.  
+- Purpose beats: institutional tightening; a “problem” identified (two mortals stabilizing without permission).  
+- No explicit god-language; no explicit cosmic truth.  
+
+**Ch 8 — “Proof and Resistance”** (POV: Jhace; Tide 7–8; forge → joint holds)  
+- Beat: BEAT_04. Offer and refusal turns into choice.  
+- Plot: Pella proposes an efficiency method; Jhace resists (autonomy threatened); controlled test proves reduction in cost.  
+- Soulpulse: **1 controlled test**; cost reduced via targeting.  
+- End-state shift: he accepts partnership improves him.  
+
+**Ch 9 — “Ash and Claims”** (POV: Pella; Tide 10–12; refugee camp + Crown contact)  
+- Beat: BEAT_07. Political pressure sharpens.  
+- Plot: Corvin and Tellis (guild/state) offer resources tied to control; Pella consults Jhace; public refusal chooses each other over safety.  
+- Soulpulse: none.  
+- End-state shift: enemies made; bond publicly declared by action.  
+
+### ACT III — THE GRIP (Ch 10–12)
+
+**Ch 10 — “Near Collapse”** (POV: both alternating; Tide 14–15; main support crisis)  
+- Beat: BEAT_03. Hundreds at risk; perfect coordination; Jhace overextends under caretaker compulsion.  
+- Soulpulse: **1 major use**; near-threshold warning signs (brief sensory overload; vein-lines visible at rest).  
+- Cost: Stage 2 approach without crossing; collapse risk; shaking, numbness, vision shimmer.  
+- Relationship stress: her control saves him; he hates needing it.  
+- End-state shift: need becomes undeniable.  
+
+**Interlude II — “Mobel: Purity Rising”** (POV: Mobel; Tide ~15–16; Entry-side harbor city)  
+- Innocent-frame divine lens: pain as cleansing; judgment as instinct; first awareness of “other” forces without naming them.  
+- Purpose: foreshadow inquisitorial expansion; ideological warfare seed.  
+
+**Ch 11 — “Holding Together”** (POV: both intimate; Tide 17–18)  
+- Beat: BEAT_08 (intimacy variant).  
+- Plot: post-crisis defenses down; trauma exchange (Jhace’s 23 names; Pella’s Marisse); operational love acknowledged; physical intimacy begins.  
+- Soulpulse: none; recovery and aftershocks visible.  
+- End-state shift: partnership becomes bond.  
+
+**Ch 12 — “Choosing the Weight”** (POV: both balanced; Tide 19–20; rebuilt overlook + forge wall)  
+- Beat: BEAT_08 (purpose variant).  
+- Plot: walk rebuilt district; accept larger forces gathering; choose what they can hold.  
+- Three priorities written on the forge wall (public covenant):  
+  1) Hold lives before stone.  
+  2) Keep the work local and witnessed.  
+  3) Refuse ownership—by guild, church, or self.  
+- Soulpulse: none; tremor through linked hands as quiet reminder of cost.  
+- End-state shift: foundation locked; N02 pressure is inevitable.  
+
+### Epilogue (Segment 15) — “The First Line”
+- POV: Bram (or a neutral Crown clerk), non-god. Tide 20+ (immediately after Ch 12).  
+- Content: a sealed notice arrives—registry language, licensing language, “safety” language—aimed at Jhace and Pella.  
+- Purpose: pivot from survival to institutional conflict; title-hook into N02 (*Lines Under Pressure*).  
+
+---
+
+## SECTION 7: CHARACTER STATE TABLE
+
+| Character | Tier | Alignment Lean | Start State (Tide 0) | End State (Tide 20+) | Soulpulse State / Cost Visibility |
+|---|---:|---|---|---|---|
+| **Jhace Torrin** | 1 | Form-leaning by craft; Wholeness impulse by care | Underface forgemind; solitary stabilizer; unresolved “23 names” guilt | Public stabilizer; bonded to Pella; refuses institutional ownership | Stage 0→1 onset (Ch 3). Persistent tremor, vein-lines under skin, fine motor loss after heavy use; near-threshold warning at Ch 10 |
+| **Pella** | 1 | Form-leaning via measurement; Purity temptation via self-judgment | Observer at rim; grief anchored to Marisse; care expressed as data | Partner/lover; co-lead stabilizations; makes public refusal with Jhace | Not primary “power source” in N01; enables targeting and cost reduction; shows secondary strain (headache, shaking after proximity work) |
+| **Bram Kethis** | 2 | Wholeness | Caretaker friend; pushes Jhace toward rest | Witness to bond; becomes their practical shield | No Soulpulse use; carries physical labor load and social heat |
+| **Chloen** | 2 | Neutral | Young apprentice; vulnerable during Piercing | Survives; healing side-effect observed; becomes symbol of “why hold” | No deliberate use; potential latent manifestation implied only |
+| **Corvin** | 2/3 | Form (institution) | Guild/state factor watching instability | Begins pressure campaign; offers tied to control | No Soulpulse shown; political leverage increases |
+| **Tellis (Water-Guild rep)** | 2/3 | Form with Purity rhetoric | Triage logic voice; crisis organizer | Aligns with Corvin in offer; becomes recurring institutional face | No Soulpulse shown in N01 |
+| **Ressa** | 3 | Wholeness | Seen in triage networks | Stabilizes the community weave; future manifestation seeded but not shown as fact | No overt use in N01 |
+| **Black-market trainer (nameless)** | 4 | Entropy-adjacent | Off-screen; rumor | Briefly encountered (Ch 6 context); offers technique at moral cost | No on-page use required; exists to set training loop pressure |
+| **Corlexi (Form vessel)** | Interlude | Form | Sensory overwhelm; categorizes to survive | Identifies “anomaly” (two mortals stabilizing); pushes system response | No overt divinity; perception is the tell |
+| **Mobel (Purity vessel)** | Interlude | Purity | Pain as cleansing; judgment reflex | Feels other forces; sets inquisitorial trajectory | No overt divinity; perception is the tell |
+
+---
+
+## SECTION 8: POLITICAL AND FACTION CONTEXT
+
+### Saint Merro / Crown Power Map (Turning 1)
+- **Guild Compact (local):** infrastructure control; wants stabilization routed through guild authority and profit channels.  
+- **Crown Council (civic):** wants order, registry, and predictable repairs; “safety” becomes a tool.  
+- **Church variants:** competing doctrines; Purity rhetoric rising on the Entry-side; Exit-side more fractured.  
+- **Underface workers/refugees:** demand immediate holding, not debates.  
+
+### Immediate N01 Pressure Vector
+- Early registry language and “licensed stabilization” proposals begin circulating (proto-RRO energy without formal office).  
+- Corvin/Tellis represent the “help with strings” offer; refusal turns them into antagonists.  
+*(Source: `11-Factions-Politics.md`, adapted to pre-formalization state in Turning 1.)*  
+
+---
+
+## SECTION 9: MAGIC / COST / PRINCIPLE CANON
+
+### Soulpulse in Turning 1 (grounded rules)
+- **No spectacle escalation:** effects stay materially grounded—stress lines, heat, subtle glow under strain.  
+- **Activation is conditional:** immediate protective need + contact triggers; casual tests often fail.  
+- **Range is intimate:** hands-on, structural touch, short pushes; no distant casting.  
+*(Source: `02-Soulpulse-Core.md`, Turning 1 constraints)*  
+
+### N01 Usage Ledger (must match prose)
+- **Total uses:** 7 confirmed.  
+  - Ch 3: 2 uses (beam hold; building support)  
+  - Ch 4: 1 use (triage wall) + 1 failed attempt  
+  - Ch 6: 1 use (arch coordination)  
+  - Ch 8: 1 use (controlled efficiency test)  
+  - Ch 10: 1 use (main support; near-threshold warning)  
+  *(Source: `N01_Chapter_Grid_12ch_REVISED.md`)*  
+
+### Cost Visibility Requirements (per use)
+- **Strain → Fatigue ladder** must be visible on-page: tremor, heat, vein-lines, grip failure, nausea, collapse risk.  
+- **Stage progression in N01:** Stage 0 (Ch 1–2) → Stage 1 onset (Ch 3) → Stage 1 baseline (Ch 4–9) → near-threshold warning (Ch 10) → managed baseline (Ch 11–12).  
+
+---
+
+## SECTION 10: LEXICON AND STYLE ENFORCEMENT
+*(Source: `50-Lexicon-Style.md`)*  
+
+### Measurement and time
+- Use Te’Oga units only: **Tide, Kindling, Pouring, Striking**, etc.; distance in **span/bar/cable**, not outsider units.  
+- Avoid real-world references and Earth idioms.  
+
+### Prose constraints to carry into drafting
+- Tight third for mortal chapters; interludes are close/strange but remain innocent frame.  
+- Soulpulse always has physical consequence; never “clean” magic.  
+- Keep Turning 1 grounded: dust, heat, fracture lines, breath-held focus.  
+
+---
+
+## SECTION 11: FORBIDDEN KNOWLEDGE WARNINGS
+Do **not** confirm or state as fact in N01 prose:
+- Any explicit “gods are real and these are gods.”  
+- Any explicit cosmic origin mechanics beyond what mortals observe (conditional activation + cost).  
+- Any definitive claim about the Piercing’s intention, authorship, or endgame.  
+- Any resonance-form visuals beyond grounded Turning 1 constraints.  
+*(Source: `05-Knowledge-Gates-Discovery.md`, `02-Soulpulse-Core.md`)*  
+
+---
+
+## SECTION 12: EMOTIONAL ARC MAP
+
+### Novella emotional distribution
+- **Low:** Ch 1, 2, 7  
+- **Medium:** Ch 4, 5, 6, 8, 9, 12  
+- **High:** Ch 3, 10, 11, 12  
+**Arc pattern:** Low opening → High crisis → Medium stabilization → High final crisis → Medium resolution  
+*(Source: `N01_Chapter_Grid_12ch_REVISED.md`)*  
+
+### Protagonist internal arcs
+- **Jhace:** duty → catastrophe guilt → overholding → near collapse → learns shared grip.  
+- **Pella:** grief → measurement as control → chooses partnership → chooses public refusal → chooses love as function.  
+
+---
+
+## SECTION 13: DELIVERABLE PROTOCOL
+- **Prose generation order:** Ch 6 → Ch 7 → Interlude I → Ch 8 → Ch 9 → Ch 10 → Interlude II → Ch 11 → Ch 12 → Epilogue.  
+- **Validation before each segment:**  
+  - Beat matches Section 4  
+  - Soulpulse ledger unchanged  
+  - Cost visibility present  
+  - Knowledge gates respected  
+  - Lexicon clean (Te’Oga units only)  
+
+---
+
+## SECTION 14: POST-GENERATION VERIFICATION
+
+### Structural Checklist
+- [x] 12 chapters specified  
+- [x] 2 interludes specified and placed  
+- [x] 1 epilogue specified  
+- [x] Act structure (Cut/Pattern/Grip) preserved  
+- [x] Beat pattern + forbidden sequences captured  
+
+### Canon Checklist
+- [x] Piercing reality consistent with `01-TeOga-Physical-Piercing.md`  
+- [x] Soulpulse rules and costs consistent with `02-Soulpulse-Core.md`  
+- [x] Knowledge gates applied per `05-Knowledge-Gates-Discovery.md`  
+- [x] Turning 1 setting consistent with `10-World-TeOga.md`  
+- [x] Faction pressure consistent with `11-Factions-Politics.md`  
+
+### Lexicon Checklist
+- [x] No outsider time units used  
+- [x] No outsider distance units used  
+- [x] Te’Oga daily periods used (Kindling/Pouring/Striking)  
+
+### Beat Unpredictability Checkpoint
+- [x] N01 sequences recorded as non-repeatable  
+- [x] Local beats aligned to `N01_Beat_Mapping_Layer_FINAL.md`

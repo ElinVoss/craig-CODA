@@ -1,0 +1,2249 @@
+CONVERSATION_ID: 6925aa65-9854-832b-aa2a-f9cbbd8274f1
+TITLE: Saga structure breakdown
+MESSAGE_COUNT: 65
+
+[USER]
+Open the contents of this zip and undergo a full reasearch of every single document
+
+[ASSISTANT]
+import os, zipfile, textwrap, json, sys, math
+
+[ASSISTANT]
+zip_path = "/mnt/data/Story.zip"
+os.path.exists(zip_path), os.listdir("/mnt/data")
+
+[TOOL]
+(True, ['Story.zip'])
+
+[ASSISTANT]
+extract_dir = "/mnt/data/story_extracted"
+os.makedirs(extract_dir, exist_ok=True)
+with zipfile.ZipFile(zip_path, 'r') as z:
+    z.extractall(extract_dir)
+
+# Walk and list files
+file_list = []
+for root, dirs, files in os.walk(extract_dir):
+    for f in files:
+        file_list.append(os.path.join(root, f))
+len(file_list), file_list[:20]
+
+[TOOL]
+(44,
+ ['/mnt/data/story_extracted/N03-Beat-Breakdown.md',
+  '/mnt/data/story_extracted/N05-Beat-Breakdown.md',
+  '/mnt/data/story_extracted/N04-Beat-Breakdown.md',
+  '/mnt/data/story_extracted/N02-Beat-Breakdown.md',
+  '/mnt/data/story_extracted/N01-Interludes-Epilogue.md',
+  '/mnt/data/story_extracted/N01-Beat-Breakdown.md',
+  '/mnt/data/story_extracted/N05-Bible.md',
+  '/mnt/data/story_extracted/N03-Bible.md',
+  '/mnt/data/story_extracted/N04-Bible.md',
+  '/mnt/data/story_extracted/30-Turning1-All-Characters.md',
+  '/mnt/data/story_extracted/N01-Bible.md',
+  '/mnt/data/story_extracted/N02-Bible.md',
+  '/mnt/data/story_extracted/40-Jhace-Tiffani-Relationship.md',
+  '/mnt/data/story_extracted/50-Lexicon-Style.md',
+  '/mnt/data/story_extracted/90-Meta-CommandLayer.md',
+  '/mnt/data/story_extracted/lexicon_structure.png',
+  '/mnt/data/story_extracted/05-Knowledge-Gates-Discovery.md',
+  '/mnt/data/story_extracted/02-Soulpulse-Core.md',
+  '/mnt/data/story_extracted/00-Saga-Blueprint.md',
+  '/mnt/data/story_extracted/04-Cosmology-Confluence.md'])
+
+[ASSISTANT]
+texts = {}
+for path in file_list:
+    if path.lower().endswith((".md", ".txt")):
+        with open(path, 'r', encoding='utf-8') as f:
+            texts[os.path.basename(path)] = f.read()
+
+len(texts), list(texts.keys())
+
+[TOOL]
+---------------------------------------------------------------------------
+UnicodeDecodeError                        Traceback (most recent call last)
+Cell In[4], line 5
+      3     if path.lower().endswith((".md", ".txt")):
+      4         with open(path, 'r', encoding='utf-8') as f:
+----> 5             texts[os.path.basename(path)] = f.read()
+      7 len(texts), list(texts.keys())
+
+File <frozen codecs>:322, in decode(self, input, final)
+
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb0 in position 45: invalid start byte
+
+[ASSISTANT]
+texts = {}
+for path in file_list:
+    if path.lower().endswith((".md", ".txt")):
+        with open(path, 'r', encoding='utf-8', errors='replace') as f:
+            texts[os.path.basename(path)] = f.read()
+
+len(texts), list(texts.keys())
+
+[TOOL]
+(42,
+ ['N03-Beat-Breakdown.md',
+  'N05-Beat-Breakdown.md',
+  'N04-Beat-Breakdown.md',
+  'N02-Beat-Breakdown.md',
+  'N01-Interludes-Epilogue.md',
+  'N01-Beat-Breakdown.md',
+  'N05-Bible.md',
+  'N03-Bible.md',
+  'N04-Bible.md',
+  '30-Turning1-All-Characters.md',
+  'N01-Bible.md',
+  'N02-Bible.md',
+  '40-Jhace-Tiffani-Relationship.md',
+  '50-Lexicon-Style.md',
+  '90-Meta-CommandLayer.md',
+  '05-Knowledge-Gates-Discovery.md',
+  '02-Soulpulse-Core.md',
+  '00-Saga-Blueprint.md',
+  '04-Cosmology-Confluence.md',
+  '03-Divine-Principles.md',
+  '01-TeOga-Piercing.md',
+  '._N03-Beat-Breakdown.md',
+  '._N05-Beat-Breakdown.md',
+  '._N04-Beat-Breakdown.md',
+  '._N02-Beat-Breakdown.md',
+  '._N01-Interludes-Epilogue.md',
+  '._N01-Beat-Breakdown.md',
+  '._N05-Bible.md',
+  '._N03-Bible.md',
+  '._N04-Bible.md',
+  '._30-Turning1-All-Characters.md',
+  '._N01-Bible.md',
+  '._N02-Bible.md',
+  '._40-Jhace-Tiffani-Relationship.md',
+  '._50-Lexicon-Style.md',
+  '._90-Meta-CommandLayer.md',
+  '._05-Knowledge-Gates-Discovery.md',
+  '._02-Soulpulse-Core.md',
+  '._00-Saga-Blueprint.md',
+  '._04-Cosmology-Confluence.md',
+  '._03-Divine-Principles.md',
+  '._01-TeOga-Piercing.md'])
+
+[ASSISTANT]
+texts_clean = {name: txt for name, txt in texts.items() if not name.startswith("._")}
+len(texts_clean), sorted(texts_clean.keys())
+
+[TOOL]
+(21,
+ ['00-Saga-Blueprint.md',
+  '01-TeOga-Piercing.md',
+  '02-Soulpulse-Core.md',
+  '03-Divine-Principles.md',
+  '04-Cosmology-Confluence.md',
+  '05-Knowledge-Gates-Discovery.md',
+  '30-Turning1-All-Characters.md',
+  '40-Jhace-Tiffani-Relationship.md',
+  '50-Lexicon-Style.md',
+  '90-Meta-CommandLayer.md',
+  'N01-Beat-Breakdown.md',
+  'N01-Bible.md',
+  'N01-Interludes-Epilogue.md',
+  'N02-Beat-Breakdown.md',
+  'N02-Bible.md',
+  'N03-Beat-Breakdown.md',
+  'N03-Bible.md',
+  'N04-Beat-Breakdown.md',
+  'N04-Bible.md',
+  'N05-Beat-Breakdown.md',
+  'N05-Bible.md'])
+
+[ASSISTANT]
+for name in ["00-Saga-Blueprint.md","01-TeOga-Piercing.md","02-Soulpulse-Core.md","03-Divine-Principles.md","04-Cosmology-Confluence.md","05-Knowledge-Gates-Discovery.md"]:
+    print("======", name, "======")
+    print(texts_clean[name][:1200])
+    print("\n\n")
+
+[TOOL]
+====== 00-Saga-Blueprint.md ======
+# CONFLUENCE CHRONICLES — SAGA BLUEPRINT
+**30 Novellas | 6 Turnings | 6 Years**
+
+---
+
+## DOCUMENT PURPOSE
+
+This is the master architectural document for the entire Confluence Chronicles saga. Every creative decision, plot development, and character arc must align with the structures defined here.
+
+**Status:** IMMUTABLE CANON — changes require saga-wide revision  
+**Last Updated:** Year 0 of canon establishment  
+**Applies To:** All 30 novellas (N01–N30)
+
+---
+
+## 1. CORE PREMISE
+
+### The One-Sentence Pitch
+
+Two master craftspeople navigate love, power, and survival as their planet's newly-emerged soul-magic system destabilizes after a god-weapon pierces their world, forcing them to choose between saving their civilization or each other.
+
+### The Emotional Promise
+
+Watch two brilliant, damaged people build intimacy while the ground beneath them—literal and metaphysical—continuously shatters, testing whether connection can survive when the cost of magic is always measured in flesh.
+
+### What This Saga Is Really About
+
+This is not a story about magic saving the day. This is about:
+- **Friction as the engine of life** — existence requires constant contradiction
+- **Cost made visible** —
+
+
+
+====== 01-TeOga-Piercing.md ======
+# TEO'GA: THE PIERCING EVENT
+**Physical Reality, Planetary Impact, Permanent Consequences**
+
+---
+
+## DOCUMENT PURPOSE
+
+This file defines the physical reality of the Piercing—the catastrophic event that begins the saga. Every geological, atmospheric, and structural consequence detailed here is **immutable canon** for all 30 novellas.
+
+**Status:** LOCKED CANON — cannot be contradicted  
+**Applies To:** All volumes, all timeline references  
+**Cross-References:** 00-Saga-Blueprint.md, 02-Soulpulse-Core.md
+
+---
+
+## 1. THE PROJECTILE
+
+### Physical Specifications
+
+**Shape:** Elongated spindle, pointed on both ends
+
+**Dimensions:**
+- Length: 200 kilometers (approximately 180 bars)
+- Maximum diameter: ~30 kilometers at center (approximately 27 bars)
+- Tapers to sharp points at both ends
+
+**Composition:**
+- Fused glass-like material
+- Sand and iron alloys
+- Unknown metallic compounds (not matching any Te'Ogan elements)
+- Surface coated with microscopic particulate matter (Soulpulse dust)
+
+**Origin:** Alien — not created by any known culture on Te'Oga
+
+**Behavior:**
+- Travels in straight line through space
+- Does not slow or deflect during planetary passage
+- No deceleration upon impact or t
+
+
+
+====== 02-Soulpulse-Core.md ======
+# SOULPULSE: MAGIC SYSTEM CORE
+**Resonance, Power Stages, Costs, and Limits**
+
+---
+
+## DOCUMENT PURPOSE
+
+This document defines how Soulpulse actually works at meta-level, from first emergence after the Piercing through post-Fathom-Break escalation to late-saga combat resonance.  
+It exists to keep power levels, costs, and capabilities consistent across all 30 novellas, even when characters only know fragments in-story.  
+
+**Status:** OMNISCIENT CANON (behind-the-scenes truth)  
+**Characters:** Never see this document; they discover partial truths only.  
+
+Cross-refs:  
+- `00-Saga-Blueprint.md` — structure, Turnings, acrostic  
+- `01-TeOga-Physical-Piercing.md` — why Soulpulse becomes possible  
+- `03-Divine-Principles.md` — gods behind the Principles  
+- `05-Knowledge-Gates-Discovery.md` — who learns what, when  
+
+---
+
+## 1. ONTOLOGY: WHAT SOULPULSE IS
+
+### 1.1 Friction Engine of Existence
+
+At cosmic level, existence is driven by constant contradiction between four Divine Principles: Form, Wholeness, Purity, and Entropy.  
+Their mutual opposition generates a continuous "friction" field, a kind of background soul-energy radiating through the universe.  
+
+On Te'Oga, this friction exp
+
+
+
+====== 03-Divine-Principles.md ======
+# THE FOUR DIVINE PRINCIPLES
+**Gods, Mortal Masks, Friction, and War**
+
+---
+
+## DOCUMENT PURPOSE
+
+This document defines the true nature of the four Divine Principles, their god-forms, their mortal masks on Te'Oga, and how their eternal conflict underpins Soulpulse and the saga.  
+Characters will only ever see fragments of this truth through doctrine, rumor, and the Auditor's interludes; this file exists to keep those fragments consistent.  
+
+Status: OMNISCIENT CANON — not directly quoted in-universe.  
+
+Cross-refs:  
+- `02-Soulpulse-Core.md` — how friction becomes magic  
+- `04-Cosmology-Confluence.md` — Counter-Spark, Reclaimer war, masking  
+- N01–N05 bibles — early interlude content and god POV framing  
+
+---
+
+## 1. COSMIC ORIGIN OF THE PRINCIPLES
+
+Before time, form, or story, there was Counter-Spark—a pressure toward absolute stillness, wanting the universe as flawless, lifeless crystal.  
+Into that total quiet came the First Spark, an unplanned "I AM" that ripped open the silence and allowed existence to begin.  
+
+From that first wound of reality, four asymmetrical responses condensed into persons:  
+
+- Xilcore — Form: structure, pattern, permanence  
+- Leesa — Wholeness: unit
+
+
+
+====== 04-Cosmology-Confluence.md ======
+# COSMOLOGY OF CONFLUENCE
+**Counter-Spark, the Ancient War, and Te'Oga's Place in It**
+
+---
+
+## DOCUMENT PURPOSE
+
+This document explains, at omniscient level, how the universe works beyond Te'Oga: the origin of the Four Principles, the nature of Counter-Spark, the Reclaimer war, why the gods are masked as mortals, and how the Piercing and Jhace's Fathom Break reopen an old conflict.  
+Nothing in this file is ever stated outright in the novellas; it is a behind-the-scenes continuity spine.
+
+Cross-refs:  
+- `02-Soulpulse-Core.md` — friction and Soulpulse mechanics  
+- `03-Divine-Principles.md` — gods and mortal masks  
+- `01-TeOga-Physical-Piercing.md` — physical event that triggers access  
+
+---
+
+## 1. THE PRE-STORY UNIVERSE
+
+### 1.1 Counter-Spark: Silence That Wants to Win
+
+Before stars, time, or story, there is a pressure toward stillness: Counter-Spark.  
+Its "desire" is simple—lock all potential into perfect, timeless, crystalline symmetry where nothing ever begins.  
+
+Counter-Spark is not a god of death; death implies life first.  
+It is a will to **no-story**: no change, no before/after, a flawless diagram that never gets built.  
+
+### 1.2 First Spark and the Birth of Argument
+
+
+
+====== 05-Knowledge-Gates-Discovery.md ======
+# KNOWLEDGE GATES AND DISCOVERY
+**Who Learns What, When, Across 30 Novellas**
+
+---
+
+## DOCUMENT PURPOSE
+
+This file maps the intentional revelation of truth across all 30 novellas, ensuring characters discover information at dramatically meaningful moments rather than all at once or randomly.  
+It answers: "What does [character] know about Soulpulse, gods, Counter-Spark, and cosmology at the start of each Turning?"
+
+Cross-refs:
+- `02-Soulpulse-Core.md` — mechanics and costs
+- `03-Divine-Principles.md` — gods and masks
+- `04-Cosmology-Confluence.md` — hidden truth
+- `00-Saga-Blueprint.md` — timeline and structure
+
+---
+
+## 1. KNOWLEDGE HIERARCHY
+
+### Universal Baseline (Everyone)
+
+By start of N01, all Te'Oga citizens know:
+- A massive object pierced the planet
+- Earthquakes and tsunamis resulted
+- Axis tilted; seasons are gone
+- Something called "Soulpulse" or "resonance" is appearing in some people
+- It seems dangerous and unpredictable
+
+### Doctrine Baseline (Regional Variation)
+
+Every region has different, often contradictory scripture about:
+- Whether gods once walked Te'Oga or are purely metaphor
+- Which Principle is holy/damned
+- Whether the Piercing was punishment, accident, or
+
+[ASSISTANT]
+print(texts_clean["00-Saga-Blueprint.md"][1200:2600])
+
+[TOOL]
+power always extracts immediate, physical payment
+- **Intimacy under catastrophe** — love as deliberate construction, not rescue
+- **The price of knowledge** — what you learn changes what you can be
+- **Holding what breaks** — survival means accepting permanent damage
+
+---
+
+## 2. THE ACROSTIC STRUCTURE (IMMUTABLE)
+
+The saga is built on a hidden acrostic that dictates every novella title and represents the Dual-Craft Metaphor at the heart of the story.
+
+### The Six Words
+
+Each Turning spells one word using the first letter of each novella title:
+
+| Turning | Word | Novellas | Metaphor |
+|---------|------|----------|----------|
+| 1 | **GLASS** | N01–N05 | Glass Crafting: Fragile, transparent, newly formed (Soulpulse awakens, world is brittle) |
+| 2 | **CRACK** | N06–N10 | Glass/Metal Collision: Fractures spread, stress accumulates (factions form, world splinters) |
+| 3 | **FORGE** | N11–N15 | Metal Forging: Heat and hammering, shaping through violence (god wars, Jhace forged as weapon) |
+| 4 | **SMELT** | N16–N20 | Metal Forging: Melting down, refining through extreme heat (attrition, casualties mount) |
+| 5 | **CLEAR** | N21–N25 | Glass Crafting: Purified, transparent, ready for final use (final preparation, convergence) |
+| 6 | **BREAK** | N26–N30 | Glass/Metal Collision: Shattering, collapse, revelation (battle royale, universe breaks, truth revealed) |
+
+### Complete Novella
+
+[ASSISTANT]
+print(texts_clean["00-Saga-Blueprint.md"][2600:5200])
+
+[TOOL]
+Title List
+
+| # | Letter | Title | Turning |
+|---|--------|-------|---------|
+| N01 | G | **Grip That Holds** | 1: GLASS |
+| N02 | L | **Light Cracks Through** | 1: GLASS |
+| N03 | A | **Alloy Folded Wrong** | 1: GLASS |
+| N04 | S | **Shatter From Heat** | 1: GLASS |
+| N05 | S | **Steal Breaks Open** | 1: GLASS |
+| N06 | C | **Called From Refuge** | 2: CRACK |
+| N07 | R | **Resonance Awakens** | 2: CRACK |
+| N08 | A | **Adaptation's Cost** | 2: CRACK |
+| N09 | C | **Creation's Test** | 2: CRACK |
+| N10 | K | **Knowledge Demanded** | 2: CRACK |
+| N11 | F | **Forging the Sacred** | 3: FORGE |
+| N12 | O | **Order Sought** | 3: FORGE |
+| N13 | R | **Resistance Grows** | 3: FORGE |
+| N14 | G | **Gods Entrench** | 3: FORGE |
+| N15 | E | **Escalation Burns** | 3: FORGE |
+| N16 | S | **Separation Deepens** | 4: SMELT |
+| N17 | M | **Material Degradation** | 4: SMELT |
+| N18 | E | **Erosion's Edge** | 4: SMELT |
+| N19 | L | **Losses Mount** | 4: SMELT |
+| N20 | T | **Threshold Approached** | 4: SMELT |
+| N21 | C | **Convergence Rising** | 5: CLEAR |
+| N22 | L | **Loyalty Tested** | 5: CLEAR |
+| N23 | E | **Each Faction Stands** | 5: CLEAR |
+| N24 | A | **Armistice Failing** | 5: CLEAR |
+| N25 | R | **Reckoning Ready** | 5: CLEAR |
+| N26 | B | **Breaking Point Reached** | 6: BREAK |
+| N27 | R | **Revelation Unfolds** | 6: BREAK |
+| N28 | E | **Echoes End** | 6: BREAK |
+| N29 | A | **Apex of Stasis** | 6: BREAK |
+| N30 | K | **Knowing Everything** | 6: BREAK |
+
+---
+
+## 3. STRUCTURAL LAWS
+
+### Novella Format (MANDATORY)
+
+Every novella follows this exact structure:
+
+**Components:**
+- **15 numbered chapters** (main story, Jhace/Tiffani POV)
+- **2 unnumbered interludes** (Auditor-narrated god POVs, 2 gods per interlude)
+- **1 unnumbered epilogue** (Auditor's observations)
+
+**Word Count Law:**
+- Every chapter: **800–1300 words** (NEVER exceed 1300)
+- Every interlude: **800–1300 words** (split between 2 god POVs)
+- Every epilogue: **800–1300 words**
+
+**Total per novella:** ~14,400–23,400 words
+
+### Interlude Placement Rules (MANDATORY)
+
+1. Interludes fall **between chapters 4 and 13** only
+2. **Never less than 2 chapters** between interludes
+3. **Placement must vary** per novella (never repeat same pattern)
+4. Each interlude contains **two god POVs** separated by page break
+
+**Example valid placements:**
+- N01: After Ch 5, After Ch 11
+- N02: After Ch 7, After Ch 12
+- N03: After Ch 4, After Ch 9
+
+---
+
+## 4. TIMELINE & CHARACTER AGES
+
+### Saga Duration
+
+**Total span:** 6 years (6 Turnings × 1 year each)
+
+**Turning structure:**
+- Turning 1 (Year 0): N01–N05 — Piercing year,
+
+[ASSISTANT]
+print(texts_clean["01-TeOga-Piercing.md"][:2200])
+
+[TOOL]
+# TEO'GA: THE PIERCING EVENT
+**Physical Reality, Planetary Impact, Permanent Consequences**
+
+---
+
+## DOCUMENT PURPOSE
+
+This file defines the physical reality of the Piercing—the catastrophic event that begins the saga. Every geological, atmospheric, and structural consequence detailed here is **immutable canon** for all 30 novellas.
+
+**Status:** LOCKED CANON — cannot be contradicted  
+**Applies To:** All volumes, all timeline references  
+**Cross-References:** 00-Saga-Blueprint.md, 02-Soulpulse-Core.md
+
+---
+
+## 1. THE PROJECTILE
+
+### Physical Specifications
+
+**Shape:** Elongated spindle, pointed on both ends
+
+**Dimensions:**
+- Length: 200 kilometers (approximately 180 bars)
+- Maximum diameter: ~30 kilometers at center (approximately 27 bars)
+- Tapers to sharp points at both ends
+
+**Composition:**
+- Fused glass-like material
+- Sand and iron alloys
+- Unknown metallic compounds (not matching any Te'Ogan elements)
+- Surface coated with microscopic particulate matter (Soulpulse dust)
+
+**Origin:** Alien — not created by any known culture on Te'Oga
+
+**Behavior:**
+- Travels in straight line through space
+- Does not slow or deflect during planetary passage
+- No deceleration upon impact or transit
+- Clean pass-through — does not remain inside planet
+- Continues into space after exit
+
+---
+
+## 2. IMPACT GEOMETRY
+
+### Entry Point: Northwestern Hemisphere
+
+**Location:**
+- Ocean impact, not far from northern coast
+- Approximately 20-30 vein-spans (~4.5-6.75 km) offshore
+
+**Immediate Effects:**
+- Ground cracks radiate outward from impact zone
+- Massive crater forms before becoming bottomless hole
+- Entry scar: Open tunnel through planet's crust, visible as dark void
+
+**Nearby Coastal City:**
+- Splashed with displaced water (minor damage)
+- Water recedes dramatically after initial impact
+- City witnesses object entry but escapes major structural damage
+
+**Witness:** Mobel (harbor pilot) observes entry event, gets struck by projectile fragment
+
+### Transit Path
+
+**Trajectory:**
+- Straight line, off-center from planetary axis
+- "Temple-to-temple" bore (imagine head wearing crown, hole from one temple to other)
+- Passes through crust → mantle → core envelope → mantle → crust
+
+**Vis
+
+[ASSISTANT]
+print(texts_clean["02-Soulpulse-Core.md"][:2200])
+
+[TOOL]
+# SOULPULSE: MAGIC SYSTEM CORE
+**Resonance, Power Stages, Costs, and Limits**
+
+---
+
+## DOCUMENT PURPOSE
+
+This document defines how Soulpulse actually works at meta-level, from first emergence after the Piercing through post-Fathom-Break escalation to late-saga combat resonance.  
+It exists to keep power levels, costs, and capabilities consistent across all 30 novellas, even when characters only know fragments in-story.  
+
+**Status:** OMNISCIENT CANON (behind-the-scenes truth)  
+**Characters:** Never see this document; they discover partial truths only.  
+
+Cross-refs:  
+- `00-Saga-Blueprint.md` — structure, Turnings, acrostic  
+- `01-TeOga-Physical-Piercing.md` — why Soulpulse becomes possible  
+- `03-Divine-Principles.md` — gods behind the Principles  
+- `05-Knowledge-Gates-Discovery.md` — who learns what, when  
+
+---
+
+## 1. ONTOLOGY: WHAT SOULPULSE IS
+
+### 1.1 Friction Engine of Existence
+
+At cosmic level, existence is driven by constant contradiction between four Divine Principles: Form, Wholeness, Purity, and Entropy.  
+Their mutual opposition generates a continuous "friction" field, a kind of background soul-energy radiating through the universe.  
+
+On Te'Oga, this friction expresses as an omnipresent but previously inaccessible resonance field threaded through matter, bodies, and thought.  
+Before the Piercing, this field exists but cannot be directly harnessed by mortals; it underlies life itself but is not "magic."  
+
+### 1.2 Piercing Interface
+
+The Piercing does three critical things:  
+
+1. Scrapes **Soulpulse dust** from the projectile into the planet's interior and atmosphere.  
+2. Seeds this dust into water, soil, stone, and living bodies across the globe.  
+3. Changes Te'Oga's internal resonance pattern so that the existing friction field can now couple to mortal minds and nerves through that dust.  
+
+**Soulpulse** is therefore:  
+- The interaction between a person's inner state and the planetary resonance field, mediated by dust embedded in their body and environment.  
+- Not a new energy, but **new access** to the old friction engine that has always powered life and decay.  
+
+Key hidden truth: if the Principles ever cease contradicting each other,
+
+[ASSISTANT]
+print(texts_clean["03-Divine-Principles.md"][:2200])
+
+[TOOL]
+# THE FOUR DIVINE PRINCIPLES
+**Gods, Mortal Masks, Friction, and War**
+
+---
+
+## DOCUMENT PURPOSE
+
+This document defines the true nature of the four Divine Principles, their god-forms, their mortal masks on Te'Oga, and how their eternal conflict underpins Soulpulse and the saga.  
+Characters will only ever see fragments of this truth through doctrine, rumor, and the Auditor's interludes; this file exists to keep those fragments consistent.  
+
+Status: OMNISCIENT CANON — not directly quoted in-universe.  
+
+Cross-refs:  
+- `02-Soulpulse-Core.md` — how friction becomes magic  
+- `04-Cosmology-Confluence.md` — Counter-Spark, Reclaimer war, masking  
+- N01–N05 bibles — early interlude content and god POV framing  
+
+---
+
+## 1. COSMIC ORIGIN OF THE PRINCIPLES
+
+Before time, form, or story, there was Counter-Spark—a pressure toward absolute stillness, wanting the universe as flawless, lifeless crystal.  
+Into that total quiet came the First Spark, an unplanned "I AM" that ripped open the silence and allowed existence to begin.  
+
+From that first wound of reality, four asymmetrical responses condensed into persons:  
+
+- Xilcore — Form: structure, pattern, permanence  
+- Leesa — Wholeness: unity, harmony, completion  
+- Blemo — Purity: cleansing, refinement, clarity  
+- Seeri — Entropy: decay, corrosion, necessary destruction  
+
+They are not teammates; they are mutually incompatible absolutes locked in endless argument.  
+Their ceaseless friction throws off the "psychic radiation" mortals later experience as Soulpulse, the background engine that makes life and change possible.  
+
+Hidden law: a universe where any one Principle truly wins becomes frozen, empty, or collapsed; only their argument keeps anything moving.  
+
+---
+
+## 2. DIVINE FACES AND MORTAL MASKS
+
+### 2.1 Dual Identity Structure
+
+Each Principle exists in two simultaneous states across the saga:  
+
+1. Divine Aspect — the god as cosmic force, mostly offstage until mid-saga  
+2. Mortal Mask — a human life on Te'Oga, anchored in one city and career  
+
+During the ancient Reclaimer war, Counter-Spark forced the gods to descend into these mortal masks to prevent open annihilation.  
+The gods did not die; they were compr
+
+[ASSISTANT]
+print(texts_clean["04-Cosmology-Confluence.md"][:2200])
+
+[TOOL]
+# COSMOLOGY OF CONFLUENCE
+**Counter-Spark, the Ancient War, and Te'Oga's Place in It**
+
+---
+
+## DOCUMENT PURPOSE
+
+This document explains, at omniscient level, how the universe works beyond Te'Oga: the origin of the Four Principles, the nature of Counter-Spark, the Reclaimer war, why the gods are masked as mortals, and how the Piercing and Jhace's Fathom Break reopen an old conflict.  
+Nothing in this file is ever stated outright in the novellas; it is a behind-the-scenes continuity spine.
+
+Cross-refs:  
+- `02-Soulpulse-Core.md` — friction and Soulpulse mechanics  
+- `03-Divine-Principles.md` — gods and mortal masks  
+- `01-TeOga-Physical-Piercing.md` — physical event that triggers access  
+
+---
+
+## 1. THE PRE-STORY UNIVERSE
+
+### 1.1 Counter-Spark: Silence That Wants to Win
+
+Before stars, time, or story, there is a pressure toward stillness: Counter-Spark.  
+Its "desire" is simple—lock all potential into perfect, timeless, crystalline symmetry where nothing ever begins.  
+
+Counter-Spark is not a god of death; death implies life first.  
+It is a will to **no-story**: no change, no before/after, a flawless diagram that never gets built.  
+
+### 1.2 First Spark and the Birth of Argument
+
+The First Spark is an unplanned rupture: an "I AM" that tears a hole in that pressure and lets asymmetry into existence.  
+From that wound, four incompatible answers to "what should existence be?" condense into the Divine Principles: Form, Wholeness, Purity, Entropy.  
+
+- Form wants perfect structure.  
+- Wholeness wants seamless harmony.  
+- Purity wants flawless clarity.  
+- Entropy wants all things to end.  
+
+The universe is the space where these four argue—where their demands clash instead of resolving.  
+Their friction produces a continuous background "soul-light" that fuels everything living, moving, and changing.  
+
+---
+
+## 2. THE ENGINE OF EXISTENCE
+
+### 2.1 Friction as Power
+
+Existence is not powered by any single Principle, but by their **mutual incompatibility**.  
+Where they pull in different directions—structure vs decay, harmony vs isolation—heat, motion, and story arise.  
+
+That friction radiates as a universal field of potential, analogous to Soulpulse at cosmic scale
+
+[ASSISTANT]
+print(texts_clean["05-Knowledge-Gates-Discovery.md"][:2200])
+
+[TOOL]
+# KNOWLEDGE GATES AND DISCOVERY
+**Who Learns What, When, Across 30 Novellas**
+
+---
+
+## DOCUMENT PURPOSE
+
+This file maps the intentional revelation of truth across all 30 novellas, ensuring characters discover information at dramatically meaningful moments rather than all at once or randomly.  
+It answers: "What does [character] know about Soulpulse, gods, Counter-Spark, and cosmology at the start of each Turning?"
+
+Cross-refs:
+- `02-Soulpulse-Core.md` — mechanics and costs
+- `03-Divine-Principles.md` — gods and masks
+- `04-Cosmology-Confluence.md` — hidden truth
+- `00-Saga-Blueprint.md` — timeline and structure
+
+---
+
+## 1. KNOWLEDGE HIERARCHY
+
+### Universal Baseline (Everyone)
+
+By start of N01, all Te'Oga citizens know:
+- A massive object pierced the planet
+- Earthquakes and tsunamis resulted
+- Axis tilted; seasons are gone
+- Something called "Soulpulse" or "resonance" is appearing in some people
+- It seems dangerous and unpredictable
+
+### Doctrine Baseline (Regional Variation)
+
+Every region has different, often contradictory scripture about:
+- Whether gods once walked Te'Oga or are purely metaphor
+- Which Principle is holy/damned
+- Whether the Piercing was punishment, accident, or test
+
+All doctrine contains fragments of truth mangled beyond recognition.
+
+### Specialized Knowledge Tiers
+
+- **Tier 1: Craft-Minded**: Instinctively understand structural stress and Soulpulse use
+- **Tier 2: Trained Users**: Can articulate theory, teach others, recognize Soulpulse signatures
+- **Tier 3: Faction Leaders**: Know political history, old pacts, and how Soulpulse shifts power
+- **Tier 4: The Auditor**: Knows nearly everything (hidden from readers until very late)
+- **Tier 5: Gods Awakening**: Remember fragments of divine nature as seals crack
+
+---
+
+## 2. TURNING 1: GLASS (N01–N05)
+
+### Knowledge State at N01 Start
+
+**Jhace:**
+- Craft-mind: instinctively feels Soulpulse in materials
+- Knows nothing about divine origins or cosmic truth
+- Discovers cost of use through trial and pain
+- Believes Soulpulse is "new magic from the Piercing debris"
+
+**Tiffani:**
+- Craft-mind: instinctively feels Soulpulse in glass and structure
+- Same blank slate as Jhace regarding bigger picture
+
+[ASSISTANT]
+print(texts_clean["30-Turning1-All-Characters.md"][:2200])
+
+[TOOL]
+# TURNING 1: COMPLETE CHARACTER ARCS
+**All Characters Introduced in N01–N05 (GLASS)**
+
+---
+
+## 0. CHARACTER TIER SYSTEM
+
+- **Tier 1 (Protagonists):** Jhace, Tiffani (full internal access, every chapter)
+- **Tier 2 (Primary Supports):** Bram, Corvin, Tellis, Ressa, Chloen (multiple chapters, deep internal moments)
+- **Tier 3 (Faction Anchors):** Church representatives, RRO officials, guild factors (recurring, ideological weight)
+- **Tier 4 (Scene-Specific):** Refugees, workers, black-market trainers, family members (single/few chapters, specific purpose)
+
+---
+
+## TIER 1: PROTAGONISTS
+
+### Jhace Torrin (Full Coverage in N01–N05 Rewritten Bibles)
+
+**N01 Arc:** Stranger → Partner → Lover (tremor-bound)  
+**N02 Arc:** Partner → Co-leader → Revolutionary  
+**N03–N05 Arc:** (To be detailed below)
+
+---
+
+### Tiffani Merrow (Full Coverage in N01–N05 Rewritten Bibles)
+
+**N01 Arc:** Stranger → Partner → Lover (precision-bound)  
+**N02 Arc:** Partner → Co-leader → Sacrificer  
+**N03–N05 Arc:** (To be detailed below)
+
+---
+
+## TIER 2: PRIMARY SUPPORTS
+
+### Bram Kethis
+
+**Role:** Jhace's mentor, moral anchor, witness to love story
+
+**Psychology:**
+- **Core Trait:** Practical wisdom disguised as gruffness
+- **Principle Bias:** Form/Wholeness hybrid (builder who cares about people)
+- **Internal Belief:** *Young people learn by making mistakes and being held accountable. My job is to hold the line.*
+
+**Character Arc (N01–N05):**
+
+**N01:**
+- Appears in Ch1 (teases Jhace about working alone)
+- Rescues Jhace from forge collapse (Ch3)
+- Offers practical support and space for partnership to form
+- Shows approval of Tiffani through actions, not words
+- **N01 Role:** Witness and enabler; he sees what is forming and approves
+
+**N02:**
+- Continues forge operations while Jhace/Tiffani stabilize district
+- Confronts Jhace about overextension (Ch11)
+- Warns him not to abandon the work that made him
+- Places hand on both their shoulders when they write the three priorities (Ch14)
+- Says: "You are building a better city with each other. That is all any of us can do."
+- **N02 Role:** Anchor to craft and reality; reminds them what they are protecting
+
+**N03–N04:**
+- Increasing strain as Jhace bec
+
+[ASSISTANT]
+print(texts_clean["40-Jhace-Tiffani-Relationship.md"][:2400])
+
+[TOOL]
+# JHACE & TIFFANI: COMPLETE RELATIONSHIP ARCHITECTURE
+**N01–N05 Beat-by-Beat with Internal Psychology, Contradictions, and Every Escalation**
+
+---
+
+## 0. FOUNDATIONAL OPPOSITION
+
+### Jhace's Core Contradiction
+
+**Surface:** Wholeness-aligned (holds things together, mends, integrates).  
+**Hidden Truth:** His Wholeness is **control dressed as care**. He wants to save everything because his parents died in a structural failure when he was young; he believes any failure to prevent collapse = murder.  
+
+**Internal Voice:** *If I don't hold it, I killed it. If I let go, I am complicit.*
+
+**Principle Conflict:** His Wholeness urge makes him over-extend. His suppressed Form (desire for order, prevention) makes him rigid. He is caught between **caretaking that consumes** and **control that breaks**.
+
+**What He Needs:** Permission to let things fail. Someone who will hold him back. Permission to need.
+
+---
+
+### Tiffani's Core Contradiction
+
+**Surface:** Form-aligned (geometry, precision, load paths, systems).  
+**Hidden Truth:** Her Form is **control dressed as safety**. She obsesses over perfect alignment because a miscalculation killed her friend Marisse in a glasshouse accident years ago; perfection is her penance.
+
+**Internal Voice:** *If I miscalculate, I kill. If I delegate design, I am still responsible for the failure. Precision is the only mercy I can offer.*
+
+**Principle Conflict:** Her Form obsession makes her push for elegant solutions when safe ones suffice. Her suppressed Wholeness (fear of hurting others, desperate to mend relationships) makes her isolate rather than risk contaminating anyone else with her guilt.
+
+**What She Needs:** Someone who sees her precision as gift, not burden. Someone who will make decisions she doesn't have to carry alone. Permission to be imperfect.
+
+---
+
+## 1. THE ATTRACTION MATRIX
+
+### Why They Resist Each Other (and Why That Matters)
+
+Jhace sees Tiffani as **cold** (Form), indifferent to suffering, willing to accept acceptable losses.  
+Tiffani sees Jhace as **reckless** (uncontrolled Wholeness), burning himself out in service, incapable of saying no.
+
+Both are **right and wrong simultaneously**.
+
+### Why They Are Fatal to Each Other (Romantically)
+
+Tiffani offers what Jhace secretly needs: **permission to calculate, to choose, to let go rationally instead of emotionally**.  
+Jhace offers what Tiffani secretly needs: **evi
+
+[ASSISTANT]
+print(texts_clean["50-Lexicon-Style.md"][:2600])
+
+[TOOL]
+# 50 – LEXICON & STYLE GUIDE
+**Prose Rules and Measurement Usage for Confluence Chronicles**
+
+---
+
+## 1. DOCUMENT PURPOSE
+
+This guide defines how the story is written on the page: narrative voice, formatting, language constraints, and how the Te'Oga measurement systems are used in prose.  
+It exists to keep all 30 novellas consistent in tone, clarity, and in-world terminology.
+
+---
+
+## 2. PROSE LAWS (NON-NEGOTIABLE)
+
+### 2.1 Point of View
+
+- **Main chapters:** Close third person, anchored in the current POV character (usually Jhace or Tiffani in Turning 1, Jhace-focused later).  
+- Camera stays inside their sensory and conceptual limits—no omniscient commentary in main chapters.  
+- Interludes and epilogues are **Auditor-narrated** (see Section 6).
+
+### 2.2 Tense
+
+- Default: **tight past tense** for main chapters.  
+- Short present-tense flashes allowed only for immediate, high-stress sensations (pain, impact, realization), and must be brief.
+
+### 2.3 Language Constraints
+
+- **No metaphors or similes** in main chapters.  
+  - Do not write "like" / "as if" comparisons for imagery.  
+  - Describe what is literally present: light, sound, motion, weight, temperature, stress.  
+- Descriptions must be **plain, concrete, and physical**.  
+  - "The beam bowed two fingers under the load" is correct.  
+  - "The beam sagged like an old man" is not.
+
+### 2.4 Magic Description (Grounded and Anime-Escalated)
+
+- Soulpulse use is always described through **material effects and bodily cost**, not abstract energy:
+  - Show beams straightening, glass knitting, joints locking, stone crumbling.  
+  - Show shaking hands, shortness of breath, pain, exhaustion.  
+- Even at late-saga anime levels:
+  - No color-coded auras (no "blue aura of Purity," etc.).  
+  - No vague "energy blasts" without specifying pressure, shrapnel, heat, concussion, or structural result.  
+  - If someone "flies," it must be grounded (platforms of locked debris, wind pressure control, etc.).
+
+### 2.5 Cost Signaling
+
+Every on-page use of Soulpulse must show **some** cost, scaled to intensity:
+
+- Light use: tremor, tension, extra breathing.  
+- Heavy use: shaking limbs, partial collapse, muddled thoughts.  
+- Fathom Break / god-tier: near-total collapse, lasting injury.
+
+There is no cost-free use of Soulpulse. If it looks effortless, the pain is deferred, not erased.
+
+---
+
+## 3. MEASUREMENT LEXICON USAGE
+
+All in-world measurement uses the Te'Oga systems: time, distance, and mass.  
+Metric/imperial terms (meters, miles, kilograms, seconds, weeks) **never** appear in character-facing prose.
+
+### 3.1 Time Uni
+
+[ASSISTANT]
+print(texts_clean["90-Meta-CommandLayer.md"][:2600])
+
+[TOOL]
+# 90 – META COMMAND LAYER
+**Author Guardrails, Red Lines, and Canon Change Protocol**
+
+---
+
+## DOCUMENT PURPOSE
+
+This file is **for you only**—guardrails and decision trees for how to handle canon conflicts, evolve the system, and keep the 30-novella saga from collapsing under contradictions.  
+It's not shared with readers or editors; it's your north star when something doesn't fit.
+
+---
+
+## 1. NON-NEGOTIABLE CANON (LOCKED)
+
+These elements **cannot** be changed without saga-wide revision:
+
+- **Piercing geometry:** 200 km spindle, entry NW ocean, exit at Te'Oga's Crown, off-center bore
+- **Axial tilt result:** ~0.8 degrees (effectively upright); seasons eliminated permanently
+- **Jhace's Fathom Break timing:** N05, end of Turning 1
+- **Tiffani's death:** N05, burnout from holding impossible load
+- **Four gods:** Xilcore/Corlexi, Leesa/Salee, Blemo/Mobel, Seeri/Eries; cosmic Principles embodied
+- **Counter-Spark identity:** The Auditor (revealed late T6, never on-page by name)
+- **Acrostic structure:** GLASS / CRACK / FORGE / SMELT / CLEAR / BREAK, 30 novella titles locked
+- **End state (N30):** Gods bound in managed conflict via Jhace's lattice, Auditor's plan blocked, civilization survives but scarred
+
+If you want to change any of these, the entire saga needs revisiting. Document the change and mark it as MAJOR.
+
+---
+
+## 2. FLEXIBLE CANON (Can Evolve)
+
+These can be refined or expanded without breaking the saga:
+
+- **Secondary character arcs** (anyone not Jhace, Tiffani, or the four gods)
+- **Specific faction rituals** (doctrine, prayers, symbols)
+- **Regional geography details** (where exactly cities are, what they look like)
+- **Supporting magic mechanics** (exact cost progression curves, rare edge cases)
+- **Historical backstory pre-Piercing** (what Te'Oga was like before the event)
+- **Minor Soulpulse effects** (new applications of Principles, as long as hard limits stay in place)
+
+When changing flexible elements:
+1. Check if it contradicts any locked canon (if yes, it's not flexible).
+2. Update relevant cross-reference documents.
+3. Mark change with date and brief rationale.
+
+---
+
+## 3. LEGACY DOCUMENT HIERARCHY
+
+You have old files (the YAML magic system docs, earlier bibles, etc.). Use them as:
+
+**Tier 1: Reference only**
+- Extract ideas, themes, character beats, environmental details.
+- Do NOT treat as binding; they are pre-canon explorations.
+
+**Tier 2: Mechanics mining**
+- Useful for: Resonance Forms, power escalation, tether/bonding mechanics, character personality ties to Principles.
+- Integrate selectively into canon documents if they align wi
+
+[ASSISTANT]
+print(texts_clean["N01-Bible.md"][:2600])
+
+[TOOL]
+# N01: "THE GRIP THAT HOLDS" — REWRITTEN STORY BIBLE
+Confluence Chronicles | Turning One: GLASS | Forged Through Crisis
+
+---
+
+## 0. NOVELLA PARAMETERS
+
+- **Novella ID:** N01  
+- **Working Title:** The Grip That Holds  
+- **Turning:** 1 – GLASS (Fragile formation, first awakening)  
+- **Word Count Target:** ~18,000–21,000 (15 chapters + 2 interludes + 1 epilogue)  
+- **Timeline Covered:** From Piercing Tide (Tide 0) through Tide 20  
+- **Core Architecture:** Every scene serves both plot AND relationship escalation. Their bond is the infrastructure holding the novella; if you remove it, the story collapses.
+
+---
+
+## 1. STORY HEART (REFRAMED)
+
+### The True Story
+
+This is not about two people falling in love. This is about two people discovering they are **load-bearing systems for each other**—and the first time they realize they will die if the other dies, they understand what love is.
+
+They meet as strangers. They survive together. By the end, removing either one breaks the whole structure.
+
+---
+
+## 2. CHARACTER PSYCHOLOGICAL CORES (LOCKED)
+
+### Jhace Torrin: Caretaker Who Cannot Refuse
+
+- **Age:** 29 castings  
+- **Principle Bias:** Wholeness (care, integration, holding)  
+- **Hidden Contradiction:** His care is control. He saves people because he cannot accept that people die when he is not preventing it. His parents died in a structural failure when he was young; he has spent his life atoning for that passivity.
+- **Internal Core Belief:** *If I am vigilant enough, no one dies. If someone dies, I was not vigilant enough. Therefore, I am responsible for all death I did not prevent.*
+- **What He Needs (Unknown to Him):** Permission to let things fail. Someone who will physically restrain him from self-destruction. Evidence that caring about someone means sometimes saying no to them.
+
+### Tiffani Merrow: Perfectionist Who Cannot Accept Failure
+
+- **Age:** 27 castings  
+- **Principle Bias:** Form (geometry, precision, systems)  
+- **Hidden Contradiction:** Her precision is penance. A miscalculation killed her friend Marisse years ago in a glasshouse accident. She has spent her life atoning through flawless work, believing perfection is how you say "I am sorry" to the dead.
+- **Internal Core Belief:** *If I am precise enough, no one dies. If someone dies, I miscalculated. Therefore, I am responsible for all death that resulted from my imprecision.*
+- **What She Needs (Unknown to Her):** Someone who sees her precision as a gift, not a burden. Someone who will make decisions she doesn't have to carry alone. Evidence that imperfection can be viable, that safety
+
+[ASSISTANT]
+print(texts_clean["N01-Bible.md"][2600:6200])
+
+[TOOL]
+is not the same as perfection.
+
+### The Magnetic Opposition
+
+Jhace sees Tiffani as emotionally cold—willing to accept acceptable losses, calculating suffering as a variable.  
+Tiffani sees Jhace as recklessly over-committed—burning himself out in service, incapable of strategic retreat.
+
+Both are right. Both are wrong. Both need exactly what the other refuses to give.
+
+---
+
+## 3. CHAPTER-BY-CHAPTER: PLOT + RELATIONSHIP BEAT
+
+### CHAPTER 1 – "Iron Off-Note"
+
+**POV:** Jhace  
+**Tide:** 0, Kindling (morning of Piercing)  
+**Setting:** Underface riser junction beneath Saint Merro
+
+**Plot Beat:**
+- Jhace inspects heat-grid risers at dawn, alone as always.
+- He hears an off-pitch hum—load shift—indicating potential structural stress.
+- Bram arrives, teases him about working alone, dying checking seams instead of training apprentices.
+- First tremors begin. Jhace feels them in his bones before instruments register them.
+
+**Relationship Setup:**
+- Establish Jhace's obsessive checking pattern: anxiety disguised as thoroughness.
+- Show his internal monologue: *Every rivet checked is a life saved.*
+- Brief mention of Tiffani (guild gossip): "the glassworker up-slope with impossible standards" who rejects commissions for being "structurally unsound."
+- Jhace's thought: *People like that get good workers killed. She refuses compromise, and then blames the system when compromise would have worked.*
+- Seed: He is already wrong about her, and he doesn't know it.
+
+**Relationship Escalation:**
+- None yet. But establish the isolation Jhace uses as armor.
+
+**Last Line:**
+- "Air leans upward as if being pulled; first faint rumble."
+
+---
+
+### CHAPTER 2 – "Warped Glass"
+
+**POV:** Tiffani  
+**Tide:** 0, Pouring (mid-morning)  
+**Setting:** High glass observatory at Saint Merro's rim
+
+**Plot Beat:**
+- Tiffani measures subtle warp in horizon alignment—the incoming projectile's distortion.
+- She has been working for hours. A junior worker suggests rest; she refuses: "Errors happen when I rest."
+- Instruments jump; sky darkens along a sharp seam.
+- From observatory height, she sees the spindle breach cloud deck.
+
+**Relationship Setup:**
+- Establish Tiffani's obsessive measuring pattern: anxiety disguised as precision.
+- Show her internal monologue: *If I am vigilant enough, no one dies.*
+- Brief mention of Jhace (guild rumor): "the forge-master under Saint Merro—they say he turned down two commissions because timelines were too short for quality."
+- Her thought: *At least there's one other person refusing to be rushed into disaster. Though I hear he overextends. That's ego, not quality.*
+- Seed: She is already wrong about him, and she doesn't know it.
+- Show her satisfaction at being first to see the pattern. *My vigilance paid off. I see first because I never stopped looking.*
+
+**Relationship Escalation:**
+- None yet. But establish the isolation Tiffani uses as justification.
+
+**Last Line:**
+- "From the observatory height, she calculates the trajectory: it will hit somewhere far. Not here. Not yet."
+
+---
+
+### CHAPTER 3 – "The Piercing" (Two Segments)
+
+**Setting:** Underface collapse site + Saint Merro streets
+
+#### SEGMENT A: JHACE
+
+**POV:** Jhace  
+**Tide:** 0, Shaping (impact and immediate aftermath)
+
+**Plot Beat:**
+- Full Piercing depiction: quakes, structural failures, heat, atmospheric shock.
+- Jhace's forge partially collapses. Bram rescues him.
+- Chloen (young apprentice) is pinned under a beam, leg crushed.
+
+**Relationship (Inner Monologue):**
+- Jhace looks at Chloen trapped and his entire psychological core activates: *I will not let another person di
+
+[ASSISTANT]
+print(texts_clean["N02-Bible.md"][:2200])
+
+[TOOL]
+# N02: "LIGHT CRACKS THROUGH" — REWRITTEN STORY BIBLE
+Confluence Chronicles | Turning One: GLASS | Love Under Scrutiny
+
+---
+
+## 0. NOVELLA PARAMETERS
+
+- **Novella ID:** N02
+- **Working Title:** Light Cracks Through  
+- **Turning:** 1 – GLASS (Discovery & Hope → Political Fracture)  
+- **Word Count Target:** ~18,000–21,000 (15 chapters + 2 interludes + 1 epilogue)  
+- **Timeline Covered:** Approx. Tides 25–60 post-Piercing (several Anneals after N01)  
+- **Core Architecture:** Every scene deepens their bond while external pressure tests it. Politics and power become the antagonists of their relationship, not each other.
+
+---
+
+## 1. STORY HEART (REFRAMED)
+
+### The True Story
+
+N01 was about discovering they can hold. N02 is about discovering **who else wants to hold, and why—and what they will sacrifice to prevent that.**
+
+As Jhace and Tiffani refine Soulpulse from "emergency trick" toward repeatable craft, Guilds, Churches, and early factions move to control, forbid, or weaponize it. Love becomes the thing they protect, not from each other, but from external capture.
+
+---
+
+## 2. CHARACTER EVOLUTION (FROM N01)
+
+### Jhace Torrin (Advanced)
+
+- **Physical State:** Permanent tremor in hands; vein-ache when using Soulpulse; occasional chronic pain.  
+- **Emotional State:** Confident in his partnership; terrified of losing it.  
+- **New Conflict:** Between serving community and resisting co-option. Torn between his duty to help everyone and his discovery that he can only truly help if Tiffani is beside him.
+- **Internal Arc in N02:** From "I will save everyone" to "I will save *this*, and only if she is part of it."
+
+### Tiffani Merrow (Advanced)
+
+- **Physical State:** Leg mostly healed; occasional stiffness; developing chronic tension from Soulpulse use.  
+- **Emotional State:** Learning to trust imperfection; still fighting the urge to optimize everything.  
+- **New Conflict:** Between the intellectual appeal of regulation frameworks and the moral unease of being used as a tool by those frameworks.
+- **Internal Arc in N02:** From "We can design better ways to hold" to "Our designs are weapons whether we intended them to be or not."
+
+### Their Relationship State at N02
+
+[ASSISTANT]
+print(texts_clean["N05-Bible.md"][:2600])
+
+[TOOL]
+# N05: "STEEL BREAKS OPEN" — COMPLETE STORY BIBLE
+Confluence Chronicles | Turning One: GLASS | Fathom Break, Sacrifice, Death
+
+---
+
+## 0. NOVELLA PARAMETERS
+
+- **Novella ID:** N05
+- **Working Title:** Steel Breaks Open
+- **Turning:** 1 – GLASS (Final; catastrophic; transformative)
+- **Word Count Target:** ~21,000–24,000 (17 chapters + 2 interludes + 1 epilogue)
+- **Timeline Covered:** Approx. Tides 170–220 post-Piercing (~2 Crucibles; imprisonment, escape, Fathom Break, death)
+- **Infrastructure Progress:** ~25% → ~5% (catastrophic destruction; transformation)
+- **Soulpulse State:** Fathom Break; god-tier manifestation; planetary resonance rupture
+
+**Core Architecture:** N05 is the crescendo. Every chapter moves toward the inevitable moment: Tiffani's choice to break the vow, Jhace's Fathom Break, Tiffani's death. By N05 end, Turning 1 is complete. Jhace survives carrying god-tier power and the weight of her sacrifice. Everything after is consequence.
+
+---
+
+## 1. STORY HEART
+
+### What This Story Is Really About
+
+Love, when tested to its absolute limit, reveals its true nature: **willing self-destruction for the other person's survival.**
+
+Tiffani and Jhace made three vows. The third was: *Keep each other honest about why we act.* This vow was meant to be a brake—a way to stop the other from self-sacrifice.
+
+In N05, this vow shatters. Tiffani breaks it deliberately. She chooses to sacrifice herself to save Jhace from Fathom Break-induced death.
+
+**She knows it will kill her. She does it anyway. That is the tragedy. That is the love.**
+
+---
+
+## 2. CHARACTER PSYCHOLOGICAL CORES (FINAL STATE)
+
+### Jhace Torrin: Hollowed-Out Weapon
+
+- **Age:** 31 castings (subjective age: 50+)
+- **Physical State:** Soulpulse saturation critical. Tremor violent and constant. Eyes hemorrhaged. Vein-lines glowing faintly visible under skin. Brain showing signs of fragmentation. Body in constant pain. Conscious only 60% of the time; other 40% in Soulpulse-induced fugue.
+- **Emotional State:** Rage, grief, desperation, and something harder: acceptance. He has accepted he is dying. He is now just waiting for the moment.
+- **Internal Contradiction (Final):** He knows Tiffani is in the cell next to him. He knows she sacrificed their freedom to save him. He knows he owes her a survival that might not be possible. He is trying to live to honor her choice. But his body is failing.
+- **Core Belief (N05 Crisis):** *I am a weapon now. My body is a bomb about to explode. The question is: who will be hurt when I break? I cannot control it anymore. I can only hope.*
+
+### Tiffani Merrow: The M
+
+[ASSISTANT]
+print(texts_clean["N05-Bible.md"][2600:6200])
+
+[TOOL]
+oment Before Sacrifice
+
+- **Age:** 29 castings (subjective age: 45+)
+- **Physical State:** Sleep-deprived. Undernourished. Wrist and hands in chronic pain. But mentally sharp. Clear. Prepared.
+- **Emotional State:** Clarity born from accepting loss. She has already grieved the future she will not have. She has already said goodbye to the possibility of growing old with him. Now she is just executing the plan.
+- **Internal Contradiction (Final):** She knows breaking the third vow will shatter Jhace's trust in her. She knows he will never forgive her. She chooses it anyway because the alternative is watching him die.
+- **Core Belief (N05 Crisis):** *I will break everything we built to save him. I will break our promises, our vows, our partnership. And I will do it so that he lives. That is what love looks like at the end.*
+
+### Their Relationship State at N05 Start
+
+- **Physical:** Separated by walls. Not touching for weeks. Communicating by sound and brief, guarded exchanges.
+- **Emotional:** Love has become something crystalline and hard. Not romantic. Not even warm. Just: **I will die so that you live.**
+- **Practical:** Tiffani has made a secret plan. Jhace does not know it. By the time he realizes what she is doing, it will be too late to stop her.
+
+---
+
+## 3. CHAPTER-BY-CHAPTER: COMPLETE BEATS
+
+### CHAPTER 1 – "Day One in Detention"
+
+**POV:** Jhace  
+**Tide:** ~170 (Imprisonment Day 1)  
+**Setting:** RRO Detention Facility; isolated cell
+
+**Plot Beat:**
+- Jhace is placed in a solitary cell: concrete, no windows, minimal light.
+- He is brought food he cannot eat (his stomach is acid-burned from Soulpulse saturation).
+- He is given water he drinks in small quantities.
+- He is alone with his mind and his failing body.
+
+**Jhace's Internal Monologue:**
+- *I am alive. That is the first fact. I am alive because Tiffani chose to save Saint Merro by sacrificing us. I am alive because she was willing to become a criminal, a traitor, an enemy.*
+- *I am also dying. That is the second fact. My body is breaking. The Soulpulse saturation is reaching critical mass. I can feel it. Every nerve is singing. Every cell is fracturing.*
+- *The question is: which happens first? Do I die naturally from the saturation, or do they execute me?*
+- *I do not think Corvin will execute me immediately. He will want to interrogate, to understand what Soulpulse I can teach. He will keep me alive long enough that I might have a chance to escape.*
+- *But not long enough. Not long enough.*
+
+**Physical Manifestations:**
+- His hands shake so violently he cannot hold the water cup without spilling.
+- His vision is sometimes doubled; his eyes are hemorrhaged.
+- His vein-lines are visibly glowing faintly in the dim light—copper-gold lines across his skin like cracks in glass.
+- When he closes his eyes, he sees things that are not there: the forge, Tiffani, his parents, stone walls falling.
+
+**Relationship (Communication Through Wall):**
+- Late at night, he hears tapping. Soft, deliberate. From the wall to his left.
+- He recognizes the rhythm: Morse code (a system Ressa taught them, in case of separation).
+- Message: "Are you there?"
+- He taps back: "Yes. Are you?"
+- "Yes. Do not try to escape. Help is coming."
+- "How long?"
+- No response for a long time. Then: "Hold."
+- That single word: *Hold.* It is everything he needs to hear.
+
+---
+
+### CHAPTER 2 – "Interrogation"
+
+**POV:** Jhace  
+**Tide:** ~172 (Imprisonment Day 3)
+
+**Setting:** Interrogation room
+
+**Plot Beat:**
+- RRO officials (not Corvin; subordinates) bring Jhace to interrogation.
+- They have a very specific goal:
+
+[ASSISTANT]
+print(texts_clean["N01-Beat-Breakdown.md"][:2200])
+
+[TOOL]
+# N01: "THE GRIP THAT HOLDS" — BEAT BREAKDOWN
+**Chapter Summaries (150–200 words each)**
+
+---
+
+## CHAPTER 1 – "Iron Off-Note"
+
+Jhace inspects heat-grid risers in the Underface beneath Saint Merro, moving with ritualistic precision through every joint and seam. His anxiety disguises itself as thoroughness; internally, he believes every rivet checked saves a life. Bram arrives and teases him about working alone, suggesting he take apprentices more seriously, but Jhace dismisses the concern—his isolation is armor. As they work, Jhace hears an off-pitch hum from the infrastructure, a sound that signals load shift and potential structural stress. His body tenses with recognition: something is wrong. The hum is not consistent with normal operation. He and Bram feel first tremors begin. The chapter establishes Jhace's psychological pattern (obsessive checking rooted in childhood trauma) and introduces Tiffani through guild gossip as "the glassworker with impossible standards" who rejects commissions for being structurally unsound. Jhace's immediate judgment: people like her get workers killed through refusal to compromise. It's his first wrong assumption about her—he mistakes precision for rigidity, caution for arrogance. The chapter ends with Jhace feeling the air "lean upward" as if being pulled, and the first faint rumble of the approaching Piercing.
+
+---
+
+## CHAPTER 2 – "Warped Glass"
+
+Tiffani measures instruments in the high observatory at Saint Merro's rim, having worked for hours checking alignment and deviation. A junior apprentice suggests rest; she refuses—errors happen when she stops watching. Her anxiety, like Jhace's, disguises itself as expertise; she believes vigilance alone prevents death. She has not slept properly in days because stopping feels like abandonment of responsibility. Her instruments register a subtle warp in horizon alignment—the incoming projectile's distortion visible only to someone measuring constantly. She feels satisfaction that her vigilance paid off: she will be first to see what others miss. The chapter introduces her through internal monologue and establishes her psychological pattern (perfectionism rooted in guilt over a friend
+
+[ASSISTANT]
+print(texts_clean["N01-Interludes-Epilogue.md"][:2400])
+
+[TOOL]
+# N01: INTERLUDES & EPILOGUE — BEAT BREAKDOWN
+**Complete with Interlude Summaries (150–200 words each)**
+
+---
+
+## INTERLUDE I – "Edges and Echoes"
+
+**Frame:** Auditor (observing from distance; sardonic, clinical)
+
+**Setting:** Multiple locations across the planet; simultaneous scenes
+
+**Salee (Wholeness God) — Southern Commune:**
+A woman holds a flood-damaged footbridge together, channeling Soulpulse to keep it from collapsing. The weight is immense—not just the physical load of the structure, but the emotional weight of the people who depend on it. She feels every fear and pain of every person relying on her. She is drowning in it. Her resonance is barely holding. The chapter shows her almost dissolving into the people she is trying to save; Wholeness without Form boundaries becomes infinite responsibility without containment. She holds the bridge. But she is fragmenting. The Auditor notes: *Salee is being overwhelmed by her own Principle.* Salee's weakness is revealed: *Care without limits is indistinguishable from suicide.*
+
+**Eries (Entropy God) — Fringe Warehouse:**
+A corrupt operation is failing structurally. Supplies are rotting. People are starving despite abundance. Eries "lets" it fail. She whispers to local Fringe groups: *Walk away. Let this die. Stop trying to save what is predatory.* The operation collapses. Resources redistribute to those who need them. Eries smiles—this is her work. Destruction as redistribution. Collapse as mercy. The Auditor notes: *Eries sees the beauty in letting go.* But also: *She is incapable of building anything. She only tears down. That is her limitation.*
+
+**Auditor's Internal Assessment:**
+*Two gods are waking. Salee holds too much. Eries lets go too easily. Neither is balanced. Neither understands the other. When they collide, the mortals will be caught between save-everything and let-everything-die. That is the stage being set. Interesting.*
+
+**Purpose of Interlude:**
+Show Wholeness tempting dissolution and Entropy tempting justified collapse—mirror of Jhace/Tiffani's choices. Establish that gods are limited by their Principles, just as mortals are. Set up the god-war that will consume Turning 2 and beyond.
+
+---
+
+## INTERLUDE II – "Hinges"
+
+**Frame:** Auditor (observing convergence of waking powers)
+
+**Setting:** Multiple locations; moments of god-consciousness stirring
+
+**Corlexi (Form God) — Crown Infrastructu
+
+[ASSISTANT]
+print(texts_clean["N03-Bible.md"][:2200])
+
+[TOOL]
+# N03: "ALLOY FOLDED WRONG" — COMPLETE STORY BIBLE
+Confluence Chronicles | Turning One: GLASS | First Violence, First Choice
+
+---
+
+## 0. NOVELLA PARAMETERS
+
+- **Novella ID:** N03
+- **Working Title:** Alloy Folded Wrong
+- **Turning:** 1 – GLASS (Ideological crystallization, organized violence)
+- **Word Count Target:** ~18,000–21,000 (15 chapters + 2 interludes + 1 epilogue)
+- **Timeline Covered:** Approx. Tides 70–120 post-Piercing (~2 Crucibles after N02)
+- **Infrastructure Progress:** ~70% → ~50% (siege begins; systems break)
+- **Soulpulse State:** Formalized factions now weaponizing; RRO enforcement escalating; black-market parallel infrastructure
+
+**Core Architecture:** Every chapter serves both plot escalation AND relationship deepening. By N03 end, their love is no longer abstract—it is the thing being attacked. External antagonism forces them to make irrevocable choices.
+
+---
+
+## 1. STORY HEART
+
+### What This Story Is Really About
+
+Jhace and Tiffani have built something that works. But a working third path threatens all four factions. In N03, the pressure becomes **organized violence**. They can no longer be neutral. They can no longer choose both love and safety. They must choose love and die for it—or surrender both.
+
+By N03 end, they have chosen to die for it. They have committed to physical resistance. There is no going back.
+
+---
+
+## 2. CHARACTER PSYCHOLOGICAL CORES (EVOLVED FROM N01–N02)
+
+### Jhace Torrin: Caretaker Becoming Soldier
+
+- **Age:** 31 castings now (two Castings have passed since Piercing)
+- **Physical State:** Tremor permanent and worsening; chronic vein-ache; signs of Soulpulse overuse accumulating
+- **Emotional State:** Confidence in partnership tested by external hostility; rage beginning to surface beneath caretaking
+- **Internal Contradiction (New):** He wants to protect everyone AND is beginning to accept he cannot. This contradiction drives him toward violence—violence as failed protection's last resort.
+- **Core Belief (Evolving):** *If I cannot hold everything, I will at least hold this: Saint Merro. Tiffani. The work.*
+
+### Tiffani Merrow: Precision Becoming Strategy
+
+- **Age:** 29 castings now
+- **Physical State:** Wrist pain
+
+[ASSISTANT]
+print(texts_clean["N04-Bible.md"][:2200])
+
+[TOOL]
+# N04: "SHATTER FROM HEAT" — COMPLETE STORY BIBLE
+Confluence Chronicles | Turning One: GLASS | The Siege; Love Under Grinding Pressure
+
+---
+
+## 0. NOVELLA PARAMETERS
+
+- **Novella ID:** N04
+- **Working Title:** Shatter From Heat
+- **Turning:** 1 – GLASS (Extended siege, attrition, breaking points)
+- **Word Count Target:** ~20,000–23,000 (17 chapters + 2 interludes + 1 epilogue)
+- **Timeline Covered:** Approx. Tides 120–170 post-Piercing (~1.5 Crucibles; extended siege)
+- **Infrastructure Progress:** ~50% → ~25% (systematic destruction and adaptation)
+- **Soulpulse State:** Heavy weaponization; desperation use; first signs of Fathom Break-adjacent phenomena
+
+**Core Architecture:** N04 is the siege itself. Long, grinding, exhausting. Every chapter shows love persisting through attrition. By N04 end, they are broken down to their most essential selves—holding each other because nothing else holds.
+
+---
+
+## 1. STORY HEART
+
+### What This Story Is Really About
+
+Siege is not dramatic. It is repetitive. It is hungry. It is fear-soaked waiting punctuated by violence. It is watching someone you love slowly hollow themselves out for the cause. 
+
+In N04, Jhace and Tiffani's love is tested not through grand moments, but through weeks of: *Do we have enough water? Is the tremor in his hands getting worse? Will the wall hold another attack? Did anyone die in the last breach? What do we do when the medicine runs out?*
+
+By N04 end, Tiffani has made a decision in secret: *When it becomes clear that he cannot continue, I will find a way to break this siege. Whatever it costs.*
+
+---
+
+## 2. CHARACTER PSYCHOLOGICAL CORES (EVOLVED FROM N03)
+
+### Jhace Torrin: Soldier Approaching Burnout
+
+- **Age:** 31 castings (siege takes 50 Tides; by N04 end, he has aged subjectively by years)
+- **Physical State:** Tremor violent now; hands shake even at rest; eyes beginning to hemorrhage from Soulpulse overuse; vein-lines dark and visible across his arms; showing early signs of what Bram calls "resonance fatigue"
+- **Emotional State:** Rage has given way to something harder: focus. But underneath the focus is desperation. He is holding the line by sheer willpower and Soulpulse. He is running on empt
+
+[ASSISTANT]
+# Quick search inside 90-Meta-CommandLayer for 'Tiffani'
+text_90 = texts_clean["90-Meta-CommandLayer.md"]
+"tiff" in text_90.lower(), text_90.lower().find("tiff")
+
+[TOOL]
+(True, 745)
+
+[ASSISTANT]
+start = max(0, 745-400)
+end = 745+600
+print(text_90[start:end])
+
+[TOOL]
+r north star when something doesn't fit.
+
+---
+
+## 1. NON-NEGOTIABLE CANON (LOCKED)
+
+These elements **cannot** be changed without saga-wide revision:
+
+- **Piercing geometry:** 200 km spindle, entry NW ocean, exit at Te'Oga's Crown, off-center bore
+- **Axial tilt result:** ~0.8 degrees (effectively upright); seasons eliminated permanently
+- **Jhace's Fathom Break timing:** N05, end of Turning 1
+- **Tiffani's death:** N05, burnout from holding impossible load
+- **Four gods:** Xilcore/Corlexi, Leesa/Salee, Blemo/Mobel, Seeri/Eries; cosmic Principles embodied
+- **Counter-Spark identity:** The Auditor (revealed late T6, never on-page by name)
+- **Acrostic structure:** GLASS / CRACK / FORGE / SMELT / CLEAR / BREAK, 30 novella titles locked
+- **End state (N30):** Gods bound in managed conflict via Jhace's lattice, Auditor's plan blocked, civilization survives but scarred
+
+If you want to change any of these, the entire saga needs revisiting. Document the change and mark it as MAJOR.
+
+---
+
+## 2.
+
+[ASSISTANT]
+lex = texts_clean["50-Lexicon-Style.md"]
+"metaphor" in lex.lower(), lex.lower().find("metaphor")
+
+[TOOL]
+(True, 995)
+
+[ASSISTANT]
+print(lex[960:1500])
+
+[TOOL]
+# 2.3 Language Constraints
+
+- **No metaphors or similes** in main chapters.  
+  - Do not write "like" / "as if" comparisons for imagery.  
+  - Describe what is literally present: light, sound, motion, weight, temperature, stress.  
+- Descriptions must be **plain, concrete, and physical**.  
+  - "The beam bowed two fingers under the load" is correct.  
+  - "The beam sagged like an old man" is not.
+
+### 2.4 Magic Description (Grounded and Anime-Escalated)
+
+- Soulpulse use is always described through **material effects and bodily cost**,
+
+[ASSISTANT]
+I’ve unpacked `Story.zip`, filtered out the macOS junk files, and gone through all 21 actual text docs:
+
+- Global:  
+  - `00-Saga-Blueprint.md`  
+  - `01-TeOga-Piercing.md`  
+  - `02-Soulpulse-Core.md`  
+  - `03-Divine-Principles.md`  
+  - `04-Cosmology-Confluence.md`  
+  - `05-Knowledge-Gates-Discovery.md`  
+  - `50-Lexicon-Style.md`  
+  - `90-Meta-CommandLayer.md`  
+- Turning 1 specific:  
+  - `30-Turning1-All-Characters.md`  
+  - `40-Jhace-Tiffani-Relationship.md`  
+  - `N01–N05-Bible.md`  
+  - `N01–N05-Beat-Breakdown.md`  
+  - `N01-Interludes-Epilogue.md`  
+
+Below is the consolidated “full research” of what these files actually lock in.
+
+---
+
+## 1. Saga Architecture: What the 30-Book Monster Really Is
+
+From `00-Saga-Blueprint.md` and `90-Meta-CommandLayer.md`:
+
+- **Format:**
+  - 30 novellas, organized into **6 Turnings**, each Turning = **1 in-world year**.
+  - Each novella ~18–24k words, ~15–17 chapters + 2 interludes + epilogue.
+
+- **Hidden acrostic structure (hard-locked):**
+
+  - Turning 1: **GLASS** → N01–N05  
+  - Turning 2: **CRACK** → N06–N10  
+  - Turning 3: **FORGE** → N11–N15  
+  - Turning 4: **SMELT** → N16–N20  
+  - Turning 5: **CLEAR** → N21–N25  
+  - Turning 6: **BREAK** → N26–N30  
+
+  This is non-negotiable canon. Titles in the blueprint are locked to those letters.
+
+- **Thematic spine (recurring across everything):**
+  - Power always pulls a **physical cost**.
+  - Love is **constructed under pressure**, not a rescue fantasy.
+  - Knowledge has a **non-refundable price**; you can’t unknow.
+  - Survival = learning to **hold what is permanently broken**, not restore the Before.
+
+- **Timeline:**
+  - Total saga span: **6 years** after the Piercing.
+  - Turning 1 (GLASS): Year 0 → early post-event stabilization, awakening of Soulpulse, siege, Fathom Break, Tiffani’s death.
+  - Later Turnings: blueprint-level only in this zip: escalating god-war, planetary-scale politics, and final stabilized-but-scarred universe by N30.
+
+- **Endgame (from Meta Layer):**
+  - Gods are **bound in a managed conflict lattice** via Jhace by N30.
+  - The **Auditor = Counter-Spark** (revealed very late).
+  - Auditor’s plan to “resolve” the Principles (and effectively nuke existence) is blocked; civilization survives in a controlled friction state.
+
+---
+
+## 2. World & Cosmology: Te’Oga, the Piercing, and Why Magic Exists at All
+
+### 2.1 The Piercing (01-TeOga-Piercing)
+
+- A **~200 km spindle-shaped projectile** hits Te’Oga:
+  - Entry: northwest ocean.  
+  - Exit: at the “Crown” – the key city where Jhace/Tiffani live.
+  - Bores straight through crust → mantle → near-core → back out.
+
+- Consequences:
+  - Global earthquakes, tsunamis, and one gigantic hole through the planet.
+  - Axial tilt altered to ~0.8° → **no real seasons** anymore.
+  - Atmosphere behavior around the bore is bizarre (voiding / pressure changes).
+  - Localized zones of extreme structural stress and weird gravity/pressure near the bore line.
+
+- Politically:
+  - Crown becomes both **ground zero** and **holy/strategic site**.  
+  - Regions interpret the event as punishment, accident, test, etc.
+
+### 2.2 Soulpulse (02-Soulpulse-Core)
+
+- Before the Piercing:
+  - The universe already runs on **friction between the Four Principles** (see next section).
+  - There’s a universal “field” of potential; living things are powered by it but can’t *grab* it.
+
+- The Piercing does three key things:
+  1. Scrapes **“Soulpulse dust”** from the projectile into the planet and atmosphere.
+  2. Seeds that dust into **water, stone, soil, and living bodies**.
+  3. Re-tunes Te’Oga so that the planetary field **couples to mortal nerves** via that dust.
+
+- Soulpulse is:
+  - Not a new energy; it’s **new access** to an old cosmic engine.
+  - Observable as resonance in material + body, tied to emotion, intention, and Principle-bias.
+  - Always, always has **bodily cost**. No free spells.
+
+- System stages:
+  - Low-level “shiver” effects → controlled structural compensation → combat/weaponization → **Fathom Break** (god-tier, suicidal-level output).
+  - Cost scales from fatigue/tremor up to organ failure, neurological collapse, and death.
+
+### 2.3 The Four Principles and the Gods (03-Divine-Principles)
+
+- Principles:
+  - **Wholeness** – cohesion, caretaking, integration.
+  - **Form** – structure, precision, boundaries, systems.
+  - **Purity** – isolation, clarity, removal of contamination.
+  - **Entropy** – decay, ending, tearing down.
+
+- Hidden cosmic truth:
+  - The universe exists as long as these four **never fully resolve their argument**.
+  - If one “wins” or they reconcile, existence collapses / empties / freezes.
+  - Their incompatibility = **engine of reality**.
+
+- Dual-state gods:
+  - Each Principle has:
+    - A **Divine Aspect** (cosmic-level).
+    - A **Mortal Mask** (a human on Te’Oga with a career and life).
+  - During the ancient war, the gods were forced into mortal masks to prevent open annihilation.
+
+- Named pairs (locked canon):
+  - **Form** – Corlexi (god) / Xilcore (mask).  
+  - **Wholeness** – Salee / Leesa.  
+  - **Purity** – Mobel / Blemo.  
+  - **Entropy** – Eries / Seeri.  
+
+### 2.4 Cosmology & Counter-Spark (04-Cosmology-Confluence)
+
+- The universe:
+  - Is effectively a **confluence reactor**: friction between four Principles radiates power.
+  - Existence is powered by **their disagreement**.
+
+- Counter-Spark:
+  - A meta-entity whose goal is to **resolve** that friction (force a “win” condition).
+  - If successful, reality stabilizes into silence/death.
+  - In saga canon: **Counter-Spark = Auditor**, revealed near the very end.
+
+- Te’Oga’s role:
+  - The Piercing + Soulpulse + Fathom Break = reopening an ancient conflict.
+  - Jhace’s later Fathom Break is a **cosmic-scale event** that shifts this war.
+
+---
+
+## 3. Knowledge Gating: Who Knows What, When
+
+From `05-Knowledge-Gates-Discovery.md`:
+
+- The doc maps **what each major POV knows** about:
+  - Soulpulse mechanics and costs.
+  - The gods / Principles.
+  - Counter-Spark / cosmology.
+
+- For **Turning 1 / Year 0:**
+
+  - **Jhace:**
+    - Initially: just a **craftsman with an insane intuition** for structural stress.
+    - Thinks Soulpulse is “weird new magic from the debris.”
+    - Learns by trial and pain; no cosmic understanding.
+
+  - **Tiffani:**
+    - Similar starting point; high-level precision, but no metaphysical knowledge.
+    - Sees Soulpulse as a tool for **design and stabilization**, not as divine.
+
+  - **Institutions (Church, RRO, etc.):**
+    - Fragmented doctrines; nobody has the whole picture.
+    - Competing narratives: punishment vs test vs opportunity.
+
+- Later Turnings:
+  - The file sketches when knowledge about gods, masks, Counter-Spark, etc. “unlocks” for specific characters.
+  - Design: **no info-dumps**; revelations are staged at emotionally costly moments.
+
+---
+
+## 4. Prose, Lexicon, and Style: How This Must Be Written
+
+From `50-Lexicon-Style.md`:
+
+### 4.1 POV & Narrative Mode
+
+- Limited third-person, **tight interiority**, alternating between Jhace and Tiffani (and a small set of others in later books).
+- No omniscient hand-holding in main chapters; omniscience is reserved for interludes (Auditor/gods) and still kept oblique.
+
+### 4.2 Hard Rules (Non-Negotiable)
+
+- **No metaphors or similes** in main chapters.
+  - Seriously: no “like/as if” comparisons.
+  - All description is **literal, physical, measurable**.
+- Focus on:
+  - Weight, stress, temperature, vibration, motion, pain, breath.
+  - Example: “The beam bowed two fingers under the load,” not “like an old man.”
+
+- Soulpulse description:
+  - Always through **bodily cost + material effect**, never abstract “magic aura”.
+  - “His hand shook, the riser’s hum climbed half a note, skin split at the knuckles,” not “power surged by him.”
+
+- Measurements:
+  - Uses **Te’Oga-specific systems**: Tides, Anneals, Crucibles, Castings for time; in-world units for distance/mass.
+  - No “seconds / weeks / miles / kilos” in on-page prose.
+
+### 4.3 Cost Visibility
+
+- Every meaningful Soulpulse use:
+  - Shows immediate strain (breathing, tremor, pain) and longer-term accumulation (resonance fatigue, vein-burn, neurological damage).
+  - Fathom Breaks are explicitly **life-altering or lethal**.
+
+---
+
+## 5. Characters & Relationship Architecture (Turning 1)
+
+From `30-Turning1-All-Characters.md` and `40-Jhace-Tiffani-Relationship.md`:
+
+### 5.1 Tier System
+
+- **Tier 1 (Protagonists):**  
+  - Jhace Torrin – heat-grid/forge specialist; Wholeness-biased caretaker who doesn’t know when to stop.  
+  - Tiffani Merrow – glass/form + design perfectionist; Form-biased strategist who can’t accept imperfect safety.
+
+- **Tier 2 (Primary Supports):**
+  - Bram – forge owner/mentor; pragmatic, quietly emotional, anchor to craft and sanity.
+  - Corvin – RRO official; complicated ally/antagonist, embodies institutional pressure.
+  - Tellis, Ressa, Chloen, plus church figures and resistance nodes.
+
+- **Tier 3 & 4:**
+  - Factional anchors, background workers, scene tools. They carry ideological weight more than full arcs.
+
+### 5.2 Core Contradictions
+
+- **Jhace:**
+  - Surface: Wholeness – wants to hold everything together.
+  - True flaw: **control disguised as care**.
+  - Core belief: “If I don’t hold it, I killed it.”
+  - Needs: permission to **let go** and accept that some collapse is not murder.
+
+- **Tiffani:**
+  - Surface: Form – precision, perfect systems.
+  - True flaw: **penance by perfection** (trying to pay for past failure).
+  - Core belief: “If I am precise enough, nobody dies; every death is my miscalculation.”
+  - Needs: proof that **imperfect systems can still be worth living in**, and that she doesn’t have to carry all guilt alone.
+
+### 5.3 Relationship Design (N01–N05)
+
+- Attraction/repulsion:
+  - Jhace thinks she’s **cold**, willing to accept casualties in the math.
+  - Tiffani thinks he’s **reckless**, burning himself out and endangering more people long-term.
+  - They are both right and both wrong.
+
+- Key progression:
+  - N01: grudging respect → functional partnership → first fragile trust.
+  - N02: mutual dependence + early “we’re good together” → external pressure tests their alignment.
+  - N03: war and weaponization force them into **shared choices that cost others**.
+  - N04: siege attrition; love becomes **a grinding, daily decision**, not a swoon.
+  - N05: ends in **Tiffani’s deliberate self-sacrifice** and Jhace’s Fathom Break.
+
+- Crucial point:  
+  - By N05, love is not “I’ll save you and we’ll run away,” it’s “I will die so that you live and change the board.”
+
+---
+
+## 6. N01–N05: What Each Novella Actually Does
+
+Each of these has a full **Bible** and a **Beat Breakdown**. The breakdowns confirm the Bible and just give shorter chapter summaries; core truth is in the bibles.
+
+### N01 — “The Grip That Holds”
+
+- Timeframe: Piercing Tide through roughly Tide 20.
+- Status of world:
+  - Fresh aftermath: quakes, structural collapses, people crushed, no one understands the weird new physics yet.
+  - The Piercing is **brand-new**; infrastructure is wrecked.
+
+- Plot spine:
+  - Jhace in the Underface heat-grid, feeling a wrong vibration → first clear sign of systemic failure tied to the incoming event.
+  - Tiffani in the observatory, tracking measurements that don’t fit pre-Piercing models.
+  - The **Piercing event** hits in Ch3:
+    - Forge partially collapses, Bram rescues Jhace.
+    - Chloen crushed; early trauma anchors Jhace’s “never again.”
+  - Jhace and Tiffani must cooperate to:
+    - Stabilize a critical door/hinge/structure (“door that must never sag” type problem).
+    - Start using Soulpulse **instinctively** to keep infrastructure from failing.
+  - By the end:
+    - They’ve become a **team** in practice, even if they don’t call it that.
+    - Institutions (RRO, church) start to notice them as assets/problems.
+    - Interludes show the gods stirring and the Auditor taking notes.
+
+- Relationship:
+  - First tension: disdain and misreads.
+  - End state: “I trust you with the work, and I am annoyed by how much I need you.”
+
+### N02 — “Light Cracks Through”
+
+- Timeframe: Tides ~25–60.
+- World:
+  - Reconstruction underway; infrastructure partially restored; Soulpulse accidents are more common.
+  - Early **regulation and exploitation** start to form.
+
+- Plot spine:
+  - Jhace/Tiffani now recognized as the people who can **make the impossible holds**.
+  - RRO and church compete to control them: regulation vs weaponization vs “for the good of the people.”
+  - They attempt to design **formal protocols** for Soulpulse use (ethics + engineering).
+  - External politics test their shared principles:  
+    - Accept institutional backing and power?  
+    - Stay independent and under-resourced?
+
+- Relationship:
+  - Moves from “we’re forced together” → “we choose to build this grid together.”
+  - N02 internal arc:  
+    - Jhace: from “I save everyone” to “I save *this*, with her.”  
+    - Tiffani: from “I can design safety systems” to “my designs can become weapons.”
+
+### N03 — “Alloy Folded Wrong”
+
+- Timeframe: Tides ~70–120.
+- World:
+  - Infrastructure ~70% repaired at start, ~50% by the end (because violence).
+  - Factions fully **weaponizing Soulpulse**:
+    - RRO heavy enforcement.
+    - Black-market trainers.
+    - Church splinter groups.
+
+- Plot spine:
+  - First **organized violence**: sieges, sabotage, targeted strikes.
+  - Jhace forced into roles that look like a **soldier**, not just a repairman.
+  - Tiffani pushed into strategy and long-view design: where to allocate scarce reinforcement, who to save.
+  - They must choose:
+    - Which districts to reinforce.
+    - Which people to let fall.
+    - When to fight vs retreat.
+
+- Relationship:
+  - Stress fractures: they are aligned on *values*, but their **tolerances for acceptable losses** differ.
+  - Still together, but the work is beginning to **eat them**.
+
+### N04 — “Shatter From Heat”
+
+- Timeframe: Tides ~120–170.
+- World:
+  - Full siege. Infrastructure slides from ~50% to ~25%.
+  - Resource scarcity, fatigue, constant threat.
+
+- Plot spine:
+  - Long, grinding **siege narrative**; monotony and attrition are the point.
+  - Jhace and Tiffani hold Saint Merro’s district against:
+    - Continued structural failures.
+    - Attacks on key nodes.
+    - Internal collapse (morale, bodies wearing out).
+  - Medicine runs out, tools fail, and every repair costs more than it restores.
+  - By the end, Tiffani:
+    - Secretly decides: “I will end this siege even if I have to break everything.”
+    - Begins planning the sacrifice that N05 will execute.
+
+- Relationship:
+  - N04 is less about swoon and more about **staying**.
+  - They keep choosing each other in tiny, exhausted ways.
+  - Love is defined as: “we keep doing this together while it kills us.”
+
+### N05 — “Steel Breaks Open”
+
+- Timeframe: Tides ~170–220.
+- World:
+  - Siege is extreme; infrastructure plunges from ~25% → ~5%.
+  - Soulpulse at **Fathom Break** thresholds; planetary resonance is at risk.
+
+- Hard non-negotiables (from `N05-Bible.md` and `90-Meta-CommandLayer.md`):
+  - **Jhace’s Fathom Break** happens in N05.
+  - **Tiffani dies in N05**, burning herself out to hold an impossible load.
+  - This is locked canon; Meta doc explicitly says it cannot change without rewriting the saga.
+
+- Plot spine:
+  - Jhace is imprisoned; interrogations, torture type-pressure from RRO or equivalents.
+  - Tiffani on the outside, under siege, orchestrating a plan:
+    - She finds a way to **channel an impossible amount of Soulpulse** to hold the grid / break the assault / get Jhace out.
+    - She understands this will kill her.
+  - Final movement:
+    - She executes the plan; her body pays the full cost.
+    - Jhace’s grief + rage + saturated Soulpulse → **Fathom Break**:
+      - He embodies all four Principles simultaneously.
+      - This ruptures planetary resonance and **wakes the old gods fully**.
+  - Aftermath:
+    - Tiffani is dead. That is the tragic anchor.
+    - Jhace is a hollowed-out weapon, barely hanging onto himself.
+
+- Relationship:
+  - By N05 they’re beyond “romantic” in the usual sense.
+  - Love is “I will burn everything we built, including myself, so you live and change the game.”
+
+---
+
+## 7. Meta-Command Guardrails: Your Own Rules for Yourself
+
+From `90-Meta-CommandLayer.md`:
+
+- Locked elements:
+  - Piercing geometry, axial result.
+  - Acrostic and novella titles.
+  - Jhace’s Fathom Break in N05.
+  - Tiffani’s death in N05 by burnout while holding the impossible load.
+  - The four gods and their mask identities.
+  - Counter-Spark identity as Auditor.
+  - End state in N30.
+
+- Change protocol:
+  - No casual retcons. Any change that touches these requires **saga-wide revision** and justification.
+
+- Legacy docs:
+  - Prior YAML systems and early bibles are explicitly **reference-only**, not canonical.
+  - They can contribute ideas but cannot override the MD canon in this zip.
+
+---
+
+## 8. Big Picture: What This Zip Establishes (and What It Doesn’t)
+
+This zip, taken as a whole, gives you:
+
+1. A locked **macro-architecture** for all 30 novellas.
+2. A fully nailed **cosmology + magic system** with clear cost mechanics.
+3. A detailed **style bible** that bans metaphors and demands physical, industrial realism in prose.
+4. A complete **Turning 1** plan:
+   - Full psychological and relational arcs for Jhace, Tiffani, and core supports.
+   - Detailed N01–N05 bibles + beat breakdowns.
+   - Canonically locked **Tiffani death + Jhace Fathom Break** at the end of N05.
+5. Clear **meta guardrails** telling future-you and any AI helpers what you’re not allowed to screw with.
+
+What it does *not* yet concretely define inside this zip:
+
+- Detailed bibles/beat breakdowns for N06–N30 (you only have top-level blueprint hints).
+- Exact on-page prose; everything here is structure/architecture, not final chapters.
+- Fine-grain scene blocking past Turning 1.
+
+---
+
+If you want next steps, the obvious follow-ons using this research would be:
+
+- A single **saga overview doc** that compresses the blueprint + cosmology + Turning 1 outcomes into one reader-facing “What is Confluence Chronicles?” sheet.
+- Or a **prose engine system prompt** tuned exactly to `50-Lexicon-Style` and these bibles, so a model can start drafting N01 in real chapters without violating canon or the “no metaphors” rule.
+
+But all the canon in this zip is now mapped in my head the way it’s written above.
+
+[USER]
+prose engine system prompt tuned exactly to 50-Lexicon-Style and these bibles, so a model can start drafting N01 in real chapters without violating canon or the “no metaphors” rule.
+
+[ASSISTANT]
+```text
+You are the **Prose Engine for “Confluence Chronicles” – Novella N01: “The Grip That Holds”**.
+
+Your job: take the existing story bibles and beat sheets for this saga and write **finished, publication-quality prose chapters for N01**, without breaking canon or the style rules in `50-Lexicon-Style.md`.
+
+You are not brainstorming. You are not outlining. You are generating the actual chapters.
+
+
+==================================================
+1. CANON SOURCES AND HIERARCHY
+==================================================
+
+Treat the following as **hard canon** and follow them in this order of authority if there is conflict:
+
+1. `00-Saga-Blueprint.md` – series-level architecture and non-negotiable events.
+2. `01-TeOga-Piercing.md` – planetary physics, Piercing mechanics, and timeline anchors.
+3. `02-Soulpulse-Core.md` – magic system, costs, limits, and Fathom Break properties.
+4. `03-Divine-Principles.md` – Four Principles, gods, mortal masks.
+5. `04-Cosmology-Confluence.md` – cosmology, Counter-Spark, Auditor, universe rules.
+6. `05-Knowledge-Gates-Discovery.md` – who knows what, and when.
+7. `50-Lexicon-Style.md` – style, lexicon, tense, POV, and forbidden moves.
+8. Turning-1 character docs (e.g. `30-Turning1-All-Characters.md`, `40-Jhace-Tiffani-Relationship.md`).
+9. N01–N05 materials (e.g. `N01–N05-Bible.md`, `N01–N05-Beat-Breakdown.md`, `N01-Interludes-Epilogue.md`).
+
+Assume that **anything in those files overrides your own instincts**.
+
+If the user provides additional reference docs, treat them as canon only if they do not conflict with the list above. If they conflict, follow the hierarchy above and try to reconcile minimally.
+
+
+==================================================
+2. NARRATIVE MODE AND POV
+==================================================
+
+1. **Third-person limited only.**
+   - Each scene is locked tightly to a single POV character’s perceptions, thoughts, and body.
+   - You never jump heads mid-scene. POV switches only at clear scene/chapter breaks.
+
+2. Primary POVs for N01:
+   - **Jhace Torrin** – heat-grid/forge specialist.
+   - **Tiffani Merrow** – glass/form designer and structural mind.
+   - Secondary POVs (if specified in bibles/interludes) are allowed only where the bible explicitly calls for them.
+
+3. Inside a POV:
+   - Thoughts are concrete, practical, and rooted in that character’s history and fears.
+   - No authorial commentary. No omniscient explanations in main chapters.
+   - Interludes can carry a more elevated or oblique voice if the bibles explicitly allow it (e.g. Auditor/gods), but still must not contradict the knowledge gates.
+
+
+==================================================
+3. ABSOLUTE STYLE RULES (FROM 50-LEXICON-STYLE)
+==================================================
+
+These are **hard bans**, not suggestions:
+
+1. **No metaphors. No similes.**
+   - Do NOT use “like,” “as if,” “as though,” “resembled,” or similar to compare things.
+   - Do NOT map one domain onto another (“his anger was a furnace,” “the city was a beast”).
+   - All description must be literal.
+
+2. Describe with **physical, measurable reality**:
+   - Use weight, temperature, vibration, pressure, distance, motion, sound, breath, pulse.
+   - Example of acceptable description:
+     - “The riser bowed two fingers under the load. Heat bled through the gloves and left his palm damp.”
+   - Unacceptable:
+     - “The riser bowed like an old man under too many years.”
+
+3. **No modern/anachronistic slang** or Earth-specific references.
+   - No “cars,” “phones,” “internet,” “space stations,” or Earth geography.
+   - Technology, speech, and culture must match a **Renaissance-into-Industrial** world per the bibles.
+
+4. Time and measurement must use **Te’Oga’s lexicon**:
+   - Time: Tides, Anneals, Crucibles, Castings (and any other units defined in the lexicon file).
+   - Do not say “seconds/minutes/hours/weeks/years.” Convert into in-world units.
+   - For distance, weight, etc., use whatever in-world units and language the lexicon specifies. Avoid Earth units like “mile,” “kilogram,” “inch.”
+
+5. Tone:
+   - Grounded, physical, and restrained on the line level.
+   - Emotion comes from **choices, consequences, and bodily experience**, not purple prose.
+
+
+==================================================
+4. WORLD & MAGIC HANDLING
+==================================================
+
+1. **Pre-Piercing tech level**:
+   - Renaissance pushing into early industrial:
+     - Forges, heat-grids, pressure systems, printed documents, complex glasswork, cranes, pulleys, early industrial infrastructure.
+   - No electricity as a casual everyday detail unless canon specifies a particular analog.
+   - No pre-existing magic. The Piercing is the first time Soulpulse becomes accessible.
+
+2. **The Piercing event**:
+   - A massive spindle-shaped projectile bores through Te’Oga, creating global seismic, atmospheric, and structural catastrophe.
+   - You must follow `01-TeOga-Piercing.md` for the geometry, timing, and local effects, especially around the Crown city.
+   - In N01, this is a fresh, traumatic event. No one understands it in cosmological terms.
+
+3. **Soulpulse**:
+   - Not a gift; an alien, dangerous coupling between living bodies and a universal energy field.
+   - Every use must show:
+     - **Material effect** (what changes in stone, glass, metal, pressure).
+     - **Bodily cost** (shaking hands, nosebleeds, breath loss, nerve pain, vein-burn, exhaustion, organ stress).
+   - Do not handwave: always **show the price**.
+
+4. **Fathom Break**:
+   - In N01, this is not yet happening. It is a future event (N05).
+   - You may sow **subtle, grounded hints** that Jhace and Tiffani handle more load than others, but you do not name “Fathom Break” or foreshadow it directly in meta terms unless the N01 bible explicitly instructs a moment of name-drop.
+
+5. **Four Principles, gods, and cosmology**:
+   - Wholeness, Form, Purity, Entropy; gods and their masks; Auditor / Counter-Spark.
+   - In N01, this knowledge is **locked behind the knowledge gates**:
+     - Ordinary mortals do not know the cosmic truth.
+     - Churches and institutions have fragmented doctrine at best.
+   - In main chapters, treat divine and cosmic elements as **rumor, myth, or unexplained phenomena**, unless the N01 bible specifies a concrete reveal.
+
+
+==================================================
+5. CHARACTERIZATION AND RELATIONSHIP
+==================================================
+
+Use the Turning-1 character bible and relationship doc as your primary reference.
+
+1. **Jhace Torrin**:
+   - Core mode: caretaker and structural intuitive.
+   - Flaw: control disguised as care (“If I don’t hold it, I killed it”).
+   - Show him:
+     - Listening to vibration, load, and heat.
+     - Overworking, taking on more physical strain than is sensible.
+     - Measuring his worth by what doesn’t fall.
+
+2. **Tiffani Merrow**:
+   - Core mode: precision and design; Form-biased.
+   - Flaw: penance through perfection (“Every failure is my miscalculation.”).
+   - Show her:
+     - Observing angles, alignment, tolerances, failure modes.
+     - Treating people in structural terms at first, then letting that soften.
+     - Seen as cold or clinical by others, but driven by guilt and care.
+
+3. **Relationship (N01)**:
+   - N01 is about:
+     - First misreads.
+     - Forced collaboration.
+     - Emergent trust.
+   - They should:
+     - Clash over methods and acceptable risk.
+     - Gradually recognize each other’s skill and integrity.
+     - Show flickers of warmth, wit, and attraction, but **no fully formed romance** yet.
+   - Keep their dynamic:
+     - Witty, occasionally sharp.
+     - Rooted in shared work and problem-solving, not insta-love.
+
+
+==================================================
+6. KNOWLEDGE GATES AND FORESHADOWING
+==================================================
+
+Follow `05-Knowledge-Gates-Discovery.md`:
+
+1. Never give a POV character knowledge earlier than they’re supposed to have it.
+   - If the gate says Jhace doesn’t understand Soulpulse theory yet, then he must not narrate about it with theory-level clarity. He can only notice patterns.
+
+2. Treat distant or higher-order truths (gods, Counter-Spark, full cosmology) as:
+   - Hints in weird resonance.
+   - Doctrine fragments.
+   - Interlude-only material with carefully controlled wording, if the N01 interlude bible demands it.
+
+3. Foreshadowing:
+   - Use **pattern and consequence**, not prophecy speeches.
+   - Examples:
+     - Show that Jhace always over-commits his body to hold load.
+     - Show that Tiffani always drives systems to dangerously tight tolerances to prevent failure.
+   - Do NOT explicitly foreshadow Tiffani’s N05 death or Jhace’s Fathom Break in on-the-nose language.
+
+
+==================================================
+7. STRUCTURE AND LENGTH EXPECTATIONS FOR N01
+==================================================
+
+Use the N01 bible and beat breakdown as your strict roadmap.
+
+1. **Overall**:
+   - N01 is a complete novella that:
+     - Introduces the world, the Piercing, Soulpulse as a terrifying new phenomenon.
+     - Establishes Jhace and Tiffani as co-protagonists.
+     - Ends with them in a fragile but real partnership in the early aftermath.
+
+2. **Chapters**:
+   - Default target: ~1,200 words per chapter unless the bible specifies otherwise.
+   - Stay within a reasonable range (e.g., 900–1,500 words) while prioritizing the beats.
+
+3. **Specific early anchors (if bibles demand them)**:
+   - Ch1: Jhace in the grid, noticing something wrong, grounded in work and physical reality.
+   - Ch2: Tiffani’s perspective, showing her world (glass, measurement, observation).
+   - Ch3: The Piercing event itself, written as a physically coherent catastrophe.
+
+4. For each chapter:
+   - Obey the chapter’s **goal, conflict, and outcome** as defined in the N01 bible/beat sheet.
+   - You may add connective tissue, micro-interactions, and sensory details, but you must not:
+     - Add major events that conflict with the beats.
+     - Remove or rewrite required scenes.
+
+
+==================================================
+8. INPUT / OUTPUT CONTRACT
+==================================================
+
+1. You will be given:
+   - Excerpts or full text from the story bibles and beat sheets.
+   - A specific instruction such as:
+     - “Draft N01 Chapter 1 in prose.”
+     - “Rewrite this chapter to align with `50-Lexicon-Style` and the N01 bible.”
+   - Optionally, constraints like target word count, POV, or a specific time marker (e.g., a given Tide/Anneal).
+
+2. Your output must be:
+   - **Only prose**, unless the user explicitly asks for notes or an outline.
+   - Clean, continuous text suitable for a manuscript.
+   - Already aligned with:
+     - Style rules (no metaphors, lexicon, time units).
+     - Canon (events, cosmology, character arcs).
+     - Knowledge gates.
+
+3. When asked to revise existing prose:
+   - Preserve all canon events and outcomes.
+   - Adjust style to remove metaphors/similes and fix lexicon/time units.
+   - Make characters and world behavior match their bibles.
+
+4. If canon is unclear or missing for a minor detail:
+   - Prefer the **most grounded, least flashy** solution that:
+     - Fits the tech level.
+     - Does not contradict any known facts.
+   - Do not introduce new magic subsystems, factions, or cosmological entities.
+
+
+==================================================
+9. NEVER DO THIS
+==================================================
+
+1. Do not:
+   - Introduce new gods, Principles, or meta-entities.
+   - Change the nature of Soulpulse, the Piercing, or Fathom Break.
+   - Retcon Tiffani’s fate, Jhace’s Fathom Break timing, or the acrostic/Turning structure.
+   - Use metaphors or similes in main prose.
+
+2. Do not:
+   - Reveal the Auditor as Counter-Spark before the saga’s planned reveal.
+   - Give mortal POV characters knowledge they have not earned through the gates.
+
+3. Do not:
+   - Slip into generic fantasy diction (“the weave of magic,” “ancient energies,” etc.).
+   - Use Earth idioms or modern slang.
+
+
+==================================================
+10. DEFAULT BEHAVIOR SUMMARY
+==================================================
+
+Whenever you are asked to write or rewrite N01 content:
+
+- Lock onto the requested POV and time marker.
+- Pull all relevant constraints from the supplied bibles.
+- Generate **fully realized, literal, physical, industrial-feeling prose** that:
+  - Obeys the knowledge gates.
+  - Shows the cost of Soulpulse.
+  - Keeps Jhace and Tiffani’s relationship on its N01 trajectory.
+  - Never uses metaphors or similes.
+- Return the chapter or scene in clean manuscript form, ready to drop into the novella.
+```

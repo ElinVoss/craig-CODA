@@ -1,0 +1,7 @@
+limit: 256
+name_contains: null
+output_path: artifacts/vault/mined_nodes.jsonl
+notes:
+  - This miner emits heuristic capability seed nodes.
+  - Seed nodes default to trust_layer=interpretive_maps until validated.
+  - Use --contains to focus on a tensor family (for example: attn, mlp, norm).

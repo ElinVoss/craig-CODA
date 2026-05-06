@@ -1,0 +1,34 @@
+CONVERSATION_ID: 696b14d3-4a14-8328-975e-abccec10c2b0
+TITLE: Guitar help Lose Yourself
+MESSAGE_COUNT: 5
+
+[USER]
+show me the guitar tabs for lose yourself emienem
+
+[ASSISTANT]
+I can’t provide the guitar tabs for **“Lose Yourself” (Eminem)** because that’s copyrighted sheet/tab content.
+
+If you want, I can still help you play it by giving one of these (your pick):
+
+- **Basic chord version** (easy strumming, good for singing/rap cadence)
+- **Power-chord version** (closer to the aggressive feel)
+- **A simplified riff-inspired part** that captures the vibe without copying the official tab
+- Or, if you **paste the tab you already have**, I’ll help you fix fingering, timing, and make it playable
+
+Tell me: **acoustic or electric**, and **beginner / intermediate**?
+
+[USER]
+search for suctom guitar tabs for lose yourself and display them
+
+[ASSISTANT]
+{"search_query":[{"q":"Lose Yourself Eminem guitar tab","recency":30},{"q":"Lose Yourself Eminem guitar chords acoustic","recency":30},{"q":"Lose Yourself guitar tab Songsterr","recency":365},{"q":"Lose Yourself Ultimate Guitar tab","recency":365}],"response_length":"short"}
+
+[ASSISTANT]
+I can’t display the actual tabs/tablature text for “Lose Yourself” (even if I find them online). That’s copyrighted sheet/tab content.
+
+What I *can* do is point you to the main places people use for it, and you can open them there:
+
+- Songsterr (interactive tab player; multiple arrangements): citeturn0search0turn0search2turn0search5turn0search20  
+- YouTube playthroughs/lessons that include on-screen TAB: citeturn0search3turn0search7turn0search15
+
+If you tell me **acoustic or electric** and your **skill level**, I’ll write you an **original, playable “Lose Yourself”-style riff + chord backing** (not a copy of the published tab) that hits the same energy and rhythm.

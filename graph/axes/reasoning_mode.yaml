@@ -1,0 +1,16 @@
+axis: reasoning_mode
+description: How the system should reason.
+
+values:
+  systems:
+    description: Decompose into interacting parts and interfaces.
+  causal:
+    description: Focus on mechanisms and consequences.
+  procedural:
+    description: Step-by-step execution.
+  comparative:
+    description: Compare alternatives.
+  adversarial:
+    description: Look for failure modes and attacks.
+  generative:
+    description: Produce candidate structures or designs.

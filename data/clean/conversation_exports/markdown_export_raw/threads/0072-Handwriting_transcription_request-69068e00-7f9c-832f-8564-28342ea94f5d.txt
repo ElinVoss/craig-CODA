@@ -1,0 +1,191 @@
+CONVERSATION_ID: 69068e00-7f9c-832f-8564-28342ea94f5d
+TITLE: Handwriting transcription request
+MESSAGE_COUNT: 45
+
+[USER]
+{"asset_pointer": "sediment://file_00000000dedc720c9b45f9068b9ae622", "content_type": "image_asset_pointer", "fovea": null, "height": 1536, "metadata": {"asset_pointer_link": null, "container_pixel_height": null, "container_pixel_width": null, "dalle": null, "emu_omit_glimpse_image": null, "emu_patches_override": null, "generation": null, "gizmo": null, "is_no_auth_placeholder": null, "lpe_delta_encoding_channel": null, "lpe_keep_patch_ijhw": null, "sanitized": true, "watermarked_asset_pointer": null}, "size_bytes": 642942, "width": 1152}
+
+{"asset_pointer": "sediment://file_0000000093f471f59018528ddef83ed9", "content_type": "image_asset_pointer", "fovea": null, "height": 1536, "metadata": {"asset_pointer_link": null, "container_pixel_height": null, "container_pixel_width": null, "dalle": null, "emu_omit_glimpse_image": null, "emu_patches_override": null, "generation": null, "gizmo": null, "is_no_auth_placeholder": null, "lpe_delta_encoding_channel": null, "lpe_keep_patch_ijhw": null, "sanitized": true, "watermarked_asset_pointer": null}, "size_bytes": 639693, "width": 1152}
+
+Can you read my handwriting? Type this back to me please
+
+[ASSISTANT]
+from PIL import Image, ImageOps, ImageFilter, ImageEnhance, ImageStat, ImageFont, ImageDraw, Image
+img1=Image.open('/mnt/data/D8AC7BD6-D175-482E-9064-4B932DFF0C77.jpeg')
+img1.size
+
+[TOOL]
+(1152, 1536)
+
+[ASSISTANT]
+img1
+
+[ASSISTANT]
+from PIL import Image, ImageOps, ImageFilter, ImageEnhance, ImageStat, ImageFont, ImageDraw
+img1=Image.open('/mnt/data/D8AC7BD6-D175-482E-9064-4B932DFF0C77.jpeg')
+display(img1)
+
+[TOOL]
+<<ImageDisplayed>>
+
+[ASSISTANT]
+img2=Image.open('/mnt/data/CFF29DA1-EAF4-4B19-B8EB-674E02371D42.jpeg')
+display(img2)
+
+[TOOL]
+<<ImageDisplayed>>
+
+[ASSISTANT]
+img1.crop((120,120,1020,360)).resize((800,350))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=800x350>
+
+[ASSISTANT]
+img1.crop((70,330,1060,520)).resize((900,300))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=900x300>
+
+[ASSISTANT]
+img1.crop((130,410,995,580)).resize((1000,350))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x350>
+
+[ASSISTANT]
+img1.crop((80,370,995,450)).resize((1000,200))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x200>
+
+[ASSISTANT]
+img1.crop((60,540,1020,690)).resize((1000,300))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x300>
+
+[ASSISTANT]
+img1.crop((60,690,1060,840)).resize((1000,300))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x300>
+
+[ASSISTANT]
+img1.crop((20,640,1100,740)).resize((1000,200))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x200>
+
+[ASSISTANT]
+img1.crop((340,705,1030,780)).resize((900,200))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=900x200>
+
+[ASSISTANT]
+img1.crop((50,780,980,910)).resize((1000,300))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x300>
+
+[ASSISTANT]
+img1.crop((45,900,1010,1030)).resize((1000,300))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x300>
+
+[ASSISTANT]
+img1.crop((20,1040,1090,1150)).resize((1000,300))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x300>
+
+[ASSISTANT]
+img1.crop((40,1160,1050,1470)).resize((1000,600))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x600>
+
+[ASSISTANT]
+img1.crop((40,1120,1000,1260)).resize((1000,300))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x300>
+
+[ASSISTANT]
+img2.crop((40,120,1040,380)).resize((1000,400))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x400>
+
+[ASSISTANT]
+img2.crop((40,360,1040,640)).resize((1000,400))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x400>
+
+[ASSISTANT]
+img2.crop((30,630,1040,860)).resize((1000,450))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x450>
+
+[ASSISTANT]
+img2.crop((30,850,1030,1030)).resize((1000,400))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x400>
+
+[ASSISTANT]
+img2.crop((30,1020,1040,1500)).resize((1000,900))
+
+[TOOL]
+<<ImageDisplayed>><PIL.Image.Image image mode=RGB size=1000x900>
+
+[ASSISTANT]
+You bet. Typed clean and faithful:
+
+Final Canonical Turnings (series)
+
+— The First Turning - The Fractured Beginning  
+N1- Grip That Holds (Jhaces Emergence)  
+N2- Light Cracks Throug (Dome Defence)  
+N3- Alloy Folded Wrong (Poisoned Supply)  
+N4- Shatter From Heat (Addiction Crisis)  
+N5- Steal Breaks Open (Fathombreak)
+
+— The Second Turning - The World Learned to Hum  
+N6- Control Spreads Wide (Soulpulse Access)  
+N7- Ruins Form Five (Five Factions)  
+N8- Ash and Hunger (Addiction)  
+N9- Coalition Rises (Movement Organizes)  
+N10- Keeping Each Banner (Factions Solidify)
+
+— The Third Turning - The Gods Walk  
+N11- Fires Burn Out (Soulpulse Addiction)  
+N12- Open the Anvil (Training)  
+N13- Reckon with Divine (First God Battle)  
+N14- Grind Steel Sharp (Confluence Teaching)  
+N15- Each Faction Burns (Five way conflict)
+
+— The Fourth Turning - The Unbound Rise  
+N16- Slowly Mend (Recovery)  
+N17- Melted Collateral (Casualties)  
+N18- Embered Defectors (Allies Join)  
+N19- Last Before Breaking (Preparation)  
+N20- Tempering in Battle (Form vs. Balance)
+
+— The Fifth Turning - The World Takes Sides  
+N21- Confluence Hunted (Gods coordinate)  
+N22- Link the Gods (Alliance Forms)  
+N23- Edge All Weapons (Final Prep)  
+N24- Assault Begins (Battle Phase One)  
+N25- Resist and Hold (Defense Holds)
+
+— The Sixth Turning - The Five-Fold War  
+N26- Banners Split Apart (Alliances Break)  
+N27- Remembered Ghosts (Memory Haunting)  
+N28- Everything Melts (Crucible Warfare)  
+N29- Ash and Quenching (Gods Battle Royale)  
+N30- Keeping the Silence (Gods Killed - Reveal)

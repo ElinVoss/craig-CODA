@@ -1,0 +1,731 @@
+CONVERSATION_ID: 6968083a-13f4-832d-855b-d108c2f71adf
+TITLE: Document Formatting for Submission
+MESSAGE_COUNT: 27
+
+[USER]
+Fix this document. No change to the content only the way it is formatted. Find correct locations for paragraph starts and indents proper spacing to match a novel submission or for publication
+
+Can you do it by inserting page-breaks at the end of every chapter. All 13
+
+[ASSISTANT]
+bash -lc ls -R /home/oai/skills/docs && sed -n '1,200p' /home/oai/skills/docs/skill.md
+
+[TOOL]
+Make sure to include fileciteturn0file0 in your response to cite this file, or to surface it as a link.
+
+N01: THE GRIP THAT HOLDS
+
+CHAPTER 1: THE BELL
+
+The bell rang wrong. Not the slow warning cadence. Not the measured strike that meant "check your seals, tighten your brackets." This was the frantic peal of something already falling, the sound of a structure begging for a hold. Jhace was moving before the bell finished its third strike. He grabbed the wrong ring of collar keys on the first yank. Swore, dumped them into his palm, and sorted by feel while he ran. One key skittered off the stair edge and disappeared into the dark. He didn’t go back for it.
+
+His kit bounced against his hip. Chalk. Slate. Collar keys. Tools for measuring failure, not stopping it. He didn't know why his legs were carrying him toward the sound instead of away. Didn't know why his heart counted the bell strikes like they were orders. One. Two. Three. Four. The doubled harmonic hit him at Junction Twelve. It skipped the pipe-hum entirely and punched straight into his sternum. His ribs buzzed like struck iron. His teeth hurt. His mouth flooded metal. Copper. Sharp and immediate, like he'd bitten through wire. He'd been tasting it for two Tides now. Faint at first. A ghost-flavor that came and went with the grid-hum. But this was different. This flooded his mouth so thick he wanted to spit. He didn't. Underface rule: waste nothing. His hands started shaking. Then the shaking cut out for three heartbeats and he thought, stupidly, his fingers had finally died. And then the tremor came back twice as fast.
+
+It wasn't cold or exertion. It was a fine vibration that made his grip feel unreliable, like his muscles were half-taking orders and half-refusing them. He jammed them into his coat pockets and kept running. He forced his breath to slow. Counted to ten without looking at the numbers. The tremor kept going. He pulled one hand out. Squeezed it into a fist until the knuckles burned. Released. Still shaking. It wasn't aftershock. It was something settling into him—fine vibration under the skin—the kind that makes you drop a tool and swear at your own hand. He’d seen it on old manifestors in the deep tunnels. Hands that never found stillness. He’d called it age. Now he understood, because his fingers kept twitching against his thigh like a bad motor that wouldn't shut off. Tallow Street came into view through the access tunnel: upper terrace facade folded inward, stone slabs riding down on support beams that should have held twice that load. Dust cloud thick enough to choke on. People screaming from inside the collapse. Someone rang a hand-bell hard enough to crack its cadence. Emergency. Emergency. Emergency. A foreman waved at him, face streaked with ash. "We need a hold. We don't have time." Jhace looked at the structure. The failure line wasn't clean. The whole building was trying to become rubble, one breath at a time. Load shifts rippled through it like a living animal struggling to die. Stone groaned. Iron squealed. No crew could wedge that fast. The wedge bucket was still half‑full. Someone was still tying their apron when the stone started to go. The people inside didn't have margin. "I'm not—" Jhace started. The heat arrived. Not external. Internal. A sudden furnace-flare behind his sternum that made him gasp. Like someone had lit a coal bed under his ribs and told it to burn clean. Copper-gold dust swirled around his boots. He watched it climb his legs like static. Like it was looking for him. His chest burned hotter. The doubled harmonic snapped into alignment inside him—two mis-timed gears finally meshing. The wrongness in the grid-hum became rightness in his blood. His heartbeat and the city's failing pulse locked into the same rhythm. He didn't know what he was doing. He didn't know why his feet carried him under the broken lintel. He moved because the archway dust was already falling in steady sheets and somebody inside was screaming a name he couldn't ignore. He put both hands on the main support column. Light—thin, copper-gold, filament-fine—threaded from his palms into the stone seam. The building stopped moving. It was only paused—still wrong, still dangerous. Jhace's breath shook out of him. He could feel every shift in load through his fingertips: the weight of stone, the tension in iron, the panic-motion of bodies inside. The heat in his chest flared with each micro-adjustment, like his body was paying for every heartbeat of stability in increments he couldn't count. "Move," he rasped. "Get them out." Boots ran. Voices shouted coordinates. Someone coughed dust and kept crawling. A woman slid into his peripheral vision—practical coat, hair tied back, slate already in hand despite the chaos. She didn't look at him like a miracle. She looked at him like a system that could fail. "How long can you hold?" she demanded. Jhace's jaw clenched. The heat in his chest spiked. "I don't know." "Then we find out." She stepped into the dust, coughed once, and shouted to the evac crew. "Clear corridor A first. Count bodies out. No guessing." Jhace tried to turn his head. The moment he shifted his attention, the heat flared sharper—punishment for looking away. "I have to watch the load," he said through his teeth. "Then watch it," she snapped, already marking a line on her slate. "I'll watch you." People came out in bursts: three, then five, then a cluster carrying an older man whose leg bent wrong. Each time the load shifted, Jhace's hands tightened and the filament-light brightened in response. His heartbeat counted itself in his ears. One hundred. One hundred twenty. His arms started to tremble. Not from fatigue. From something deeper. A fine vibration that spread into his forearms, up to his shoulders, making his grip feel like it belonged to someone else. "Hold steady," the woman said, quieter now, close enough he could hear her through the dust. He didn't answer. Answering took breath. At two hundred heartbeats, the tremor spread into his chest. At two-twenty, his vision narrowed at the edges, copper-gold sparks flickering across it like welding flash. "How many?" he rasped. The woman didn't look up from the evac line. "Ten. Eleven. Twelve—" A scream from inside. A child. High and thin and suddenly cut off. Jhace's hands shook harder. "No," he hissed, and the filament-light surged, burning his palms numb. "Go," the woman shouted toward the breach. "Last sweep. Now." A rescuer crawled under the paused beam line and dragged a small body out by the shoulders. The child coughed dust and cried like she'd been holding it in for too long. The woman's voice cut clean through the chaos. "Twelve out. Corridor clear." Jhace felt the building try to move again the instant she said it, like it had been waiting for permission. "Terminate," she said. No softness in it. Not cruelty. Protocol. Jhace let the filament go. The building settled the last inch it had been denied. Stone grinding. Iron squealing. But the void where bodies had been was now empty. He staggered back into open air. His hands wouldn't stop shaking. The tremor was small—millimeters—but it was relentless. Like a ghost living inside his muscles, counting the dead he'd prevented and refusing to be quiet about the cost. The woman stepped beside him, dust streaked across her face. "Name." "Jhace Torrins." She wrote it without looking, chalk skating on sweat. "Duration: two‑forty—" The chalk snapped. She swore under her breath and wrote it anyway. "Don't," he snapped. Too hard. Too fast. She met his eyes. Her gaze was flat, measuring, absolutely certain. "If we don't measure it," she said, "we kill you next time." Between bells, they made it back to the workshop long enough to rinse dust off skin and reset slates. Jhace sat at his bench and waited for the chest heat to fade. It didn’t. Not fully. A banked warmth stayed behind his sternum—steady as a coal bed that refused to go cold. He pressed his palm to his chest. Felt nothing through shirt and ribs. Inside, the warmth answered anyway. Once. Twice. Like the world remembering how it had fit together when he held. His hand lingered there a heartbeat too long. Not thinking. Just reaching. He pulled it away like it burned. The tremor kept moving, but for one heartbeat—only one—the shake eased, like his body preferred the burn to the break. That was the first time the hunger felt like a vote. Jhace’s hands shook between them like evidence he hadn't wanted. He swallowed copper. Tasted grit. Looked at the child being carried past them on a makeshift stretcher—alive, crying, covered in dust but breathing. He nodded once. "Measure," he said. "Then make sure there isn't a next time." The woman's slate scratched. She wrote: Jhace Torrins. Inspector. First manifestation. Tallow Street. Tide 0. Behind them, the bell rang again. Different street. Same dust in his teeth. Same bell tearing its own throat. Jhace looked down and realized he was still gripping air. Copper sat on his tongue. He went anyway.
+
+---
+
+
+
+CHAPTER 2: THE PATTERN
+
+The theodolite wouldn't settle. Tiffani had calibrated it three times in this Tide. Clean lens. Level base. Reference stars locked. Everything aligned the way it had been for twenty-six Turns of lens work. The crosshair still drifted. No shimmer. No warp. Just the star sitting wrong in the frame—like someone had nudged the sky with a thumb while she wasn't looking. She pressed her palm to the primary lens frame. Vibration. Faint. Constant. The doubled harmonic lived under the normal hum like a shadow heartbeat. It made her molars ache and her lens hand tremble. She pulled her hand away and wrote on her slate: Tide 0 — Kindling Lens frame vibration: doubled harmonic present. Star Seven-Three displacement: 0.34 marks off true. Neither atmosphere nor mechanism. Her mouth tasted copper. She'd been ignoring it for the last two Tides. Faint metallic tang that came and went with air currents from the ventilation shafts. But this was different. This arrived sharp and immediate, flooding her tongue like she'd been chewing wire. The light outside the lens port changed. The light didn’t dim or brighten. It bent. Tiffani looked up. for a heartbeat she couldn't move. Her brain offered one sentence, raw and useless: What the fuck is that? The sky over Saint Merro wasn't supposed to do anything except hold weather and stars. this Tide it held something else. A line. Straight. Dark. Moving too fast for her eyes to track at first, then slowing enough for her to understand what she was seeing. A spindle. Long and narrow and wrong, like someone had driven a forged bar through the world and walked away. Her breath stopped. For a stupid next, she couldn’t make her fingers obey. She stood there with her hand half-raised, as if she could physically stop the sky from doing whatever it was doing.
+
+The spindle crossed her view in a single heartbeat. No friction fire. No sound. Just a displacement of light that made the air look thin. Then gravity lurched. Not a shift sideways. An up-and-down stagger, like the planet had been grabbed and shaken once. Her slate slid across the stone desk. A lens clamp snapped. Glass sang a sharp, stressed note and went silent. Tiffani caught herself on the observation frame and forced her eyes back to the port. The spindle was gone. Punched through. Somewhere below. Into stone or ocean or the Underface—she couldn't tell. Pressure arrived a breath later. Not a blast. More like the city inhaling and forgetting how to exhale. Dust fell from the ceiling mortar in a slow, dry drift. Then copper-gold particulate began falling outside. Glittering. Fine. Catching the lamplight like ground glass in a furnace beam. It coated the stone lip of the observation port and clung to the iron frame in flecks that shimmered when she moved. Tiffani touched it with her fingertip. It didn't smear like ash. It gritted. Abrasive. Her finger tingled where the dust touched skin. She wrote: Atmospheric intrusion event. Spindle-form object. Estimated velocity: extreme. Copper-gold particulate fall: immediate post-impact. Adheres to metal preferentially. Abrasive. Conductive? Her pencil slipped. The last word smeared into a dark streak. She stared at it, angry at her own hand, then rewrote the line harder than necessary.
+
+A bell rang. Not the Glass-House alert. Distant. Down-terrace. The frantic peal of something already falling. Then another bell. Different direction. Same cadence. Emergency. Emergency. Emergency. Tiffani's stomach tightened. She grabbed her slate, shoved it into her coat pocket, and ran. The doubled harmonic followed her down the Glass-House stairs. She could feel it in the stone railing—vibration that hadn't been there earlier this Tide. The walls themselves were listening to something new. At the mid-terrace landing, she stopped. Tallow Street was visible from here: upper facade collapsed inward, dust cloud thick enough to choke on. People running. Voices screaming coordinates she couldn't parse. A third bell rang. Sector Nine. Grain district. Closer—close enough that the air changed when the facade flexed. Tiffani made her choice the way she always did: follow the data to its source. She ran toward Sector Nine. The copper taste got stronger with every stride.
+
+---
+
+
+
+CHAPTER 3: HOLD TWO
+
+The grain warehouse sat in Sector Nine, where the terraces were newer and the beams were honest enough to still pretend they could be trusted. The collapse wasn't honest. Support columns had sheared at the base—clean breaks that didn't match load failure. The upper floor sagged like a shelf someone had stepped on. Dust poured from the breach in thick, choking waves. Jhace stood three strides from the entrance, hands shaking so hard he had to grip his belt to keep them still. He'd been here 300 heartbeats. His boot skated on spilled grain. He caught himself on instinct, palm slapping the wall hard enough to sting. Too close. Too human.
+
+The tremor from Tallow Street hadn't stopped. It had spread from his hands into his forearms, up to his shoulders. A fine, relentless vibration that made every tool on his belt rattle. The heat in his chest was still there. Banked. Waiting. A foreman ran past him toward the breach, saw his Crown inspector marks, and grabbed his shoulder hard enough to bruise. "You held Tallow," the foreman said. "Do it again." Jhace pulled free. "I don't—" "There's forty people in there," the foreman cut in. "Maybe more. Wedges won't hold. Straps won't reach. You're what we've got." The copper taste flooded Jhace's mouth again. His chest heat flared. The doubled harmonic he'd felt in the grid-hum arrived inside him—two mis-timed pulses locking into the same rhythm. His heartbeat and the failing building's stress pattern aligned like they were the same system. He didn't want this. He didn't understand this. He moved because the archway dust was already falling in steady sheets and somebody inside was screaming a name he couldn't ignore. "Clear the approach," Jhace said, voice rough. "Get spotters. I need someone counting." He stepped under the sagging upper floor. The heat detonated behind his sternum. He put both hands on the nearest support column. Filament-light threaded from his palms into the stone—brighter this time, thicker, like the copper-gold dust in the air was feeding it. The warehouse stopped settling. The groan of stressed iron went quiet. Jhace's breath shook. He could feel the load distribution through his fingertips: uneven, shifting, trying to collapse in three directions at once. His hands tightened. The filament brightened in response. The tremor in his arms worsened. Not fine anymore. Visible. His whole body shaking with the effort of holding something that should have already fallen. "Move!" someone shouted. "Get them out!" Boots ran. Voices called coordinates. Bodies crawled through gaps in the rubble. A woman appeared beside him—practical coat, slate already open, hair tied back with a strip of cloth. She looked at the filament-light threading from his hands. Looked at his face. Looked at the tremor shaking his shoulders. "You're the Tallow Street hold," she said. Not a question. A confirmation. "Yeah," Jhace managed. "How long have you been holding?" "I don't know. 300 heartbeats? Ten?" Her pen scratched. "Tremor amplitude increased since first manifestation. Cost progression visible." "What?" Jhace's vision narrowed at the edges. Copper-gold sparks flickered across it. "Your body is paying for this," she said, still writing even as her thumb cramped. "If it locks past tolerance, you won’t be able to let go." "I can't let go," Jhace said through clenched teeth. "Not until they're out." The woman looked at the evacuation line. Counted bodies being carried past. "Twenty-three so far. Estimate forty total inside." "Then I hold for forty." "Then you might not walk away." Jhace's hands shook harder. The heat in his chest flared so bright it hurt. "I already know that." The woman's jaw tightened. She moved to where he could see her without turning his head and held up her slate like a mirror. "I'm documenting this," she said. "Duration. Cost markers. Termination threshold. If we don't measure it, the next person who tries this dies without knowing why." "What's your name?" Jhace asked. "Tiffani Merrow. Glass-House observatory." "Jhace Torrins." "I know," Tiffani said. "I wrote it down at Tallow Street." She showed him her slate: Jhace Torrins. Inspector. First manifestation. Duration: 240 heartbeats. Cost: tremor onset, progressive. Follow-on manifestation. Sector Nine warehouse. Onset: immediate. Tremor amplitude: increased. Copper-gold filament visible, enhanced density. Jhace stared at the notes. At his own name written like data. "What caused this?" he asked. Tiffani's pen paused. "Something punched through the sky earlier this Tide. Spindle. Metallic. Fast enough to ignore friction. Left this—" She held up her fingertip. Copper-gold grit caught the lamplight. "—everywhere." Jhace looked at the dust swirling around his boots. At the filament threading from his hands. At the way the copper-gold particles moved toward him like they recognized him. "The doubled harmonic," he said. "You felt it too?" Tiffani's eyes sharpened. "In the grid-hum. Two Tides before this. Wrong frequency. Made my teeth itch." Tiffani wrote: Doubled harmonic: confirmed across multiple observers. Grid infrastructure + atmospheric intrusion event = correlation. A rescue crew leader shouted. "Thirty-eight out. Two still inside. Back corner. Pinned." Jhace's vision blurred. The heat in his chest spiked. "How long have I been holding?" he rasped. Tiffani checked a small timepiece on her belt. "1080 heartbeats." "Tallow Street was four." "Your cost is accelerating," Tiffani said. She wiped a nosebleed with the back of her wrist like it was nothing. "Tremor spread. Vision blur. This isn’t sustainable." Jhace tasted blood before she finished the sentence. Copper-warm, running over his lip. "Terminate after extraction," Tiffani said. "Not before. But the instant they're clear, you let go." "What if I can't?" "Then I make you." The last two bodies came out on stretchers. Alive. Barely. "Clear!" the crew leader yelled. Tiffani's hand closed on Jhace's shoulder—hard enough to hurt, grounding enough to feel real. "Terminate," she said. "Now." Jhace let the filament go. The warehouse settled the last inch it had been denied. Stone grinding. Iron squealing. A beam snapped somewhere in the back, but the void where people had been was empty. Jhace staggered back. His legs didn't hold. He hit the ground on his knees, hands still shaking, blood dripping from his nose onto the dust-covered stone. Tiffani crouched beside him, slate open, pen moving. Follow-on manifestation terminated. Duration: 1,180 heartbeats. Cost: tremor progression (shoulders, torso), vision impairment (peripheral narrowing, copper-gold visual artifacts), epistaxis (nosebleed), motor control compromise (collapse post-termination). Survival: confirmed. Function: degraded. Jhace wiped blood from his mouth with a shaking hand. "You write everything like it's going to behave." "Everything does behave," Tiffani said. "Even this. It has markers. Progression. Termination criteria." "It's killing me in increments." "Yes," Tiffani said, and the word came out harsher than she meant. "So we track it before it kills you. We don’t guess. We don’t pray." Jhace looked at her slate. At the notes written in clean, precise handwriting. At his own degradation catalogued like data. "Why are you doing this?" he asked. Tiffani met his eyes. Hers were sharp, clear, absolutely certain. "Because the city is breaking faster than crews can fix it," she said. "Because people like you are going to keep holding until they die. Because if we don't measure the cost, the next bell will kill someone without them knowing why." A bell rang in the distance. Fourth collapse. Different sector. The copper taste surged in Jhace's mouth. The heat in his chest flared. Tiffani wrote it down because not writing felt like lying: Third manifestation probable. Autonomic response. Cost accumulating. She looked at Jhace. "Can you stand?" "I don't know." "Try." Jhace pushed himself to his feet. His legs shook. His hands wouldn't stop trembling. But he stood. "Good," Tiffani said. "Because we're going to the next one. And I'm counting every heartbeat." She walked toward the sound of the bell. Jhace followed. Tiffani wiped chalk off her thumb. It smeared into the sweat. The bell kept ringing.
+
+---
+
+
+
+CHAPTER 4: PROTOCOL
+
+Jhace’s workshop was a box of iron and heat tucked into the mid‑terrace, where you could hear the grid‑hum without being crushed by it. Tiffani sat on an overturned crate with her slate on her knees, left leg extended slightly to ease the knee that had started locking after long stands on stone floors. She didn’t rest her back against anything. Always ready to move. Always ready to write. Tiffani shifted her weight off her left leg without comment, like it was just another measurement she refused to log. Jhace stood at his bench, trying to thread a bolt into a collar bracket. His hands shook. The grid‑hum didn't break with a bang. It stuttered—missing beats, catching up—like an old machine slipping teeth. He tried again. The bolt dropped. Metal on stone. He stared at it like it had betrayed him. Tiffani didn’t look up. His left hand tried to wipe sweat off his mouth and only smeared dust across his lip. He tasted grit. He hated the fact he noticed it. “Your tremor amplitude increased during exertion.” “Because I’m exerting,” Jhace muttered, bending to pick up the bolt. His fingertips felt numb where the filament‑light had burned them. Not pain. Absence. “Because your body is remembering,” Tiffani corrected. “It thinks you’re still holding.” Jhace set the bolt down and flexed his hand hard. The tremor didn’t care. He hated that. He hated that his own muscles had become unreliable. “What did you call it out there?” he asked. Tiffani flipped her slate so he could see. She’d drawn a crude timeline. Activation onset: chest heat + copper taste Light manifestation: filament contact‑dependent Tremor: post‑termination, permanent marker “I need a taxonomy,” she said. “Stages. Because right now it’s just stories.” Jhace wiped his palms on a work cloth. “And you think writing stages keeps people alive.” “I think it keeps them from lying to themselves.” She tapped the line where she’d written permanent. “You can’t call it temporary. You can’t bargain with it.” Jhace’s jaw worked. He had bargained with Junction Seven. He had told himself the report would matter. That somebody else would fix it. That the city didn’t need him to fight every foreman with a schedule board. He looked at his shaking hands. “Stage One,” he said, voice low. “Tremor.” Tiffani nodded and wrote: Stage One: tremor + filament residue. Functional. Marked. She stared at the word Functional, then drew a hard line through it and rewrote: Operational. “Functional makes it sound polite,” she muttered.
+
+A knock hit the workshop door. Bram Tallow leaned in like he was checking whether the room was still allowed to exist. Dust on his boots, sweat at his collar, grin already loaded. “Heard you two grabbed Tallow Street by the throat,” Bram said, trying for funny and getting dust instead. He coughed once. “City tries to crush you, you crush back. Very… romantic. Very dumb.” Jhace didn’t look up. “Who’s asking?” “Crown’s asking questions,” Bram said, and somehow still made it sound like a dirty joke. “Not because they care. Because they hate unknown tools walking around without a leash and a receipt.” Tiffani’s pen paused. “What questions.” “Names. Locations. ‘Verified capability.’ That sort of foreplay,” Bram said. He stepped fully inside, then stopped like the heat-grid might charge him rent. “Infrastructure office. Some administrator with hands so clean it makes you wonder what he’s washing off. Loves forms. Loves categories. Loves pretending paper is stronger than stone.” Jhace’s jaw tightened. “To do what.” Bram spread his hands. “To decide who gets to own you. Temple will call it divine. Guild will call it labor. Crown will call it law. Everybody wants a piece. Congratulations—you’re popular.” “We don’t belong to any of them,” Tiffani said. Bram laughed, quick and wrong. “Adorable. Tell that to a stamp. Try explaining ‘we don’t belong’ while a ceiling is coming down and someone’s screaming for a hold. They’ll file you under ‘non-compliant’ and act like that’s a weather condition.” Jhace’s tremor ticked in his fingers. “So you’re here to warn us.” “I’m here to tell you the door is already being measured,” Bram said. “I can buy you a Tide or two. Maybe. After that, they’ll show up with paperwork and smiles and start deciding which parts of you are ‘public infrastructure.’” Tiffani’s mouth went flat. “Then we build methodology fast.” Bram pointed at her slate like it offended him personally. “Yeah. Before they build it for you. Because if the Crown writes your protocol, it’s going to read like a job description. And you won’t like the benefits package.” Jhace breathed in, tasted copper‑gold dust that still clung to his clothes, and felt the city’s hum through the floorboards. “Then we build it fast,” he said. “Before they decide to build it for us.”
+
+---
+
+
+
+CHAPTER 5: FIRST NETWORK
+
+The kiln‑quarter feeder gantry sat in Sector Fourteen, where the pipes ran hot and the schedules ran hotter, and everything pretended it was fine right up until it wasn’t. The bell signal came late. That was the first problem. When Jhace and Tiffani arrived, the gantry wasn’t collapsed—yet. The support columns were bowing, groaning under a load they shouldn’t have been carrying because somebody had over‑pressured the feed line to meet a schedule. A foreman screamed, “Hold it! Hold it now!” Jhace moved toward the nearest column out of habit. Tiffani caught his sleeve. “Not yet.” Jhace’s jaw tightened. “People are inside.” “People are leaving,” she corrected, pointing. She was right. Workers were already pouring out of the side doors, coughing, eyes wide. The structure wasn’t in free fall. It was in warning. “We wedge first,” Tiffani said. “Then you hold if wedges fail.” Jhace’s chest heat sat behind his ribs like an itch you can't reach. His tremor wanted to fight. His stomach wanted to bargain. Neither cared what he preferred. He didn’t scratch it. His first wedge slip went in crooked. He had to yank it back out, knuckles scraping stone, and the crowd saw the mistake. He hated that more than the pain.
+
+He dropped to one knee and shoved wedge slips under the first bowing brace. Bram’s crew followed, hands fast, straps ready. For once, labor did what labor could do. The gantry groaned again. Dust spilled from a seam. A young man stepped into the brace line, hands hovering like he didn’t know what to do with them. Corven. Jhace had seen him in the tunnels, quiet, competent. Corven swallowed. “I… I can feel it,” he said. “The hum. It’s—” “Louder,” Jhace finished. Corven nodded hard. “Like it’s in my teeth.” Tiffani stepped close, slate already up. “If it hits your chest, tell me. If you taste copper, tell me. Do not improvise.” Corven’s eyes flicked to the bending column. “If it goes—” “Then we act,” Jhace said. “But not before.” The wedges held for two breaths. Then the central column shifted. Not collapse. A decisive, ugly move—stone settling, iron flexing. The wedges screamed as they compressed. The workers inside were still running. “Now,” Tiffani said. Jhace put both hands on the column. Heat flared in his chest—familiar now, terrifying in its familiarity—and filament‑light threaded into the cinder‑dust coated seam. The column stopped shifting. Corven stared at Jhace’s hands like they were a language he’d almost learned. “Your turn,” Jhace said through gritted teeth. Corven stepped forward and touched the secondary brace. His breath hitched. Copper taste. Chest heat. Then light—thinner than Jhace’s, but real—threaded into the brace line. Corven’s hands started to shake immediately. “Stage One onset during hold,” Tiffani murmured, writing. “Early marker.” “Keep moving! If you stop, you become debris!” Bram shouted to the evac crew. “Count them out! Loud. Fast. Like the Crown’s listening!” Jhace’s tremor surged in sympathy, like the grid‑hum had tied their nervous systems together. His arms burned. His vision tunneled at the edges. “How long?” Tiffani asked. “Eighty,” Jhace rasped, counting heartbeats without thinking. Corven’s jaw clenched. “I can do—” “Do exactly what the structure needs,” Jhace snapped. “Nothing more.” At one‑fifty, the last workers stumbled out. Two hundred‑plus bodies, alive because they’d been allowed time. “Terminate,” Tiffani said. Jhace released first. The column held under wedges now that the load had shifted down. Corven released a heartbeat later and nearly fell. Jhace caught him by the elbow, and the tremor in his own hands made the grip feel unreliable. Corven looked at his shaking fingers with a kind of horror. “It’s not stopping.” “It doesn’t,” Jhace said. Corven stared at his shaking fingers like they’d betrayed him mid-shift. He’d watched Jhace hold. Had seen the tremor. Had understood it in theory. Theory didn’t matter when your hand wouldn’t listen. “How long?” he asked. Jhace’s jaw tightened. “Until you stop manifesting.” Corven’s mouth twitched. Not a smile. “So never.” “Yeah.” Corven set his palm on the edge of the bench. The tremor rattled bone against metal. He pulled back like it burned. Flexed. Tried again. Harder. It kept moving—slow, stubborn—like a crack running even after you stop pulling. Tiffani wrote the number anyway: 219 evacuated. Zero casualties. Two operators marked. Bram approached, face hard. “Crown’s going to hear about this—and they’ll bring forms instead of shovels.” Tiffani didn’t look up. “Good.” Jhace’s chest still burned with the after‑heat of holding. The hunger whispered: You could have held longer. You could have made it perfect. He swallowed the copper taste and tried to bully the hunger quiet. It answered with a warm twist behind his sternum. For now. ---
+
+--- ROUTE FAILURE (THREE DEAD) The count was an argument before it was a number.
+
+The bell came from Sector Nine, not as a roar—just a single strike repeated until someone answered. Residential stairwell. Upper-terrace split. Twelve families still inside, one route. Jhace was already marked from Sector Nine. Corven was worse. Senne was fresh enough to stand without shaking. Tiffani looked at the slate wall and made the decision she would later pretend was only math. Two operators at one‑eighty each meant coordination, handoffs, spotters, and failure points. One operator at two‑forty meant simplicity. A clean line. “Single deployment,” she said. “Senne. Duration cap: two‑forty. Terminate on my bell.” Senne went pale as the heat took her chest. Copper-gold light laced her forearms. Not pretty. Functional. They reached the stairwell mouth as stone dust sifted from the ceiling like flour. The grid-hum underfoot carried the doubled harmonic, deep and insistent, a warning that didn’t care who listened. Senne braced under the central landing. Jhace watched her shoulders set—metalworker’s posture in a glassworker’s frame. Tiffani counted. Heartbeats, not heartbeats. Counts lied when panic touched them. One hundred. One forty. One eighty. At one‑ninety, a secondary beam—one Tiffani hadn’t walked because she’d trusted the map—shifted with a sound like teeth grinding. The evacuation lane kinked. The next family stumbled. The stone didn’t collapse all at once. It folded, patient and specific, closing the corridor into a narrow pocket. Three people were on the wrong side when it did: two adults and a child coughing copper into his sleeve. Tiffani saw them, and for a moment the slate in her hands felt obscene. “Hold,” she said, voice flat. “Keep holding.” Senne’s eyes didn’t move. She couldn’t spare the motion. Two‑ten. Two‑twenty. Two‑thirty. The pocket didn’t clear. The child’s coughing turned wet. At two‑forty, Tiffani rang the termination sequence anyway. Because protocols existed for a reason. Because if she didn’t, she would never stop. Senne released. The stairwell collapsed into itself with a slow, final sound—stone settling into the shape it had wanted all along. They dug until their arms went numb. They found three bodies. The child first, because he was small enough to slip into the wrong angles. Back in the workshop, Tiffani logged it with perfect precision. Deployment: Senne — 240 heartbeats Evacuated: 47 Casualties: 3 Cause: Inadequate route assessment. Secondary beam shear. She wrote “cause” as if precision could make it reversible. Her hand moved to write the next revision. The chalk touched slate. Nothing came out. She stared at the number. Three. Not a count. Three names she would never know. Three families who would ask why their— The chalk snapped in her grip. She set the broken pieces down carefully. Picked up a new stick. Wrote: Route spotters required. Three per deployment. No exceptions. Underlined it twice. Then she closed the slate and sat in the dark workshop, counting her own breaths because the numbers on the page wouldn't behave. Her fingers kept shaking anyway.
+
+---
+
+
+
+CHAPTER 6: WITNESS
+
+Brother Corran didn’t wear Temple colors. The first thing Jhace noticed was the badge—bright, clean, pinned where it couldn't be missed. Next was how the man didn't look tired. Not even a little. Corran’s eyes went straight to Jhace’s hands. “For the record, I’m not here to stop you,” Corran said, before anyone asked. Bram hovered by the door like a lock that wanted to be useful. Tiffani set her slate down deliberately. “Then why are you here?” “Because you’re real,” Corran said. “And because real things attract predators.” Jhace’s mouth tightened. “Crown.” Corran’s gaze didn’t flinch. “Yes. Also Guild. Also Temple. Anyone who thinks they can turn you into a lever.” Bram’s voice came dry. “Ah yes. The holy trinity of getting fucked: prayer, production, paperwork.” Tiffani shot him a look. “Bram.” He raised his hands. “What? I’m helping.” Bram gestured toward the door. “Temple says you’re divine. Guild says you’re labor. Crown says you’re property. Everybody’s trying to fuck the same lever.” He pulled a folded packet from his coat and set it on Jhace’s bench. Paper. Old style. Archive weight. “Stage Three cases,” Corran said. “Documented. Not rumors.” Tiffani’s hands went still. “How many?” “Enough.” Corran’s voice was flat, and that flatness carried exhaustion. “Most die. A few don’t. The ones who don’t… wish they had.” Jhace’s tremor ticked up at the word die. He forced his hands flat on the bench. “Why give this to us?” Corran hesitated. That hesitation was the crack in the Crown. “Because someone above me wants a registry,” he said. “Names. Locations. Deployment authority. They’re calling it order. It’s control.” Tiffani’s eyes narrowed. “Who?” Corran looked toward the door as if the walls might report him. “Administrator Corlexi. Infrastructure Compliance.” Bram gave a low whistle. “Clean hands. Clean coat. Probably wipes his ass with forms.” Jhace stared at the packet. “So you’re here to warn us.” “I’m here to give you data,” Corran corrected. “If you want to fight control, you need numbers. Not speeches.” Tiffani opened the packet and read, eyes moving fast. Jhace watched her face tighten at certain lines—durations, costs, outcomes. She didn’t gasp. She didn’t dramatize. She just absorbed. “This case,” she said, tapping a page. “Stage Three survival. How?” Corran’s mouth went thin. “He didn’t terminate. He couldn’t. The hold locked. Autonomic failure started and the manifestation kept running anyway. The structure held until it didn’t matter.” Jhace felt cold crawl up his spine despite the workshop heat. “Locked hold.” Corran nodded. “It’s not a tool you put down when you’re done. Sometimes it’s a hook in your chest that drags you until something breaks.” Tiffani’s pen scratched. Stage Three: autonomic failure. Locked hold possible. Termination may fail. Bram shifted. “You said predators.” Corran’s eyes met Bram’s. “Tallec is filing complaints. Says you’re obstructing industry. Says your protocols slow production.” Jhace’s jaw clenched so hard it hurt. Corran leaned closer, voice low. “Here’s the fracture you wanted. I don’t like Corlexi’s registry. I don’t like Temple’s sermons. I don’t like Guild’s schedules. But I like fewer dead.” He straightened. “If you build methodology, build it fast. Because the Crown is already drafting theirs. And theirs won’t care what it costs you.” He turned to leave. Tiffani called after him. “Why risk telling us this?” Corran paused at the door. “Because Junction Seven wasn’t the first ignored report,” he said. “And I’m tired of pretending ignorance is the same as innocence.” Then he was gone. Jhace’s hands stayed flat on the workbench. “If this registry happens…” He swallowed. “I’m not doing it for paper.” Bram exhaled slowly. “And because guilt is cheaper than funerals. Not by much. But cheaper.” Tiffani climbed the workshop stairs slower than she had a Tide ago. Her right knee caught on the third step—not pain, just resistance, like the joint was learning to refuse. She stopped on the landing. Put her palm to the wall until the world steadied. The knee had locked twice this Anneal. Not during a hold. During stairs. During the parts where bodies were supposed to cooperate. She’d logged operator tremor. Operator vein-lines. Operator autonomic failure. She had not logged her own joint learning to refuse weight. Because if she logged it, she’d have to adjust. Delegate. Sit down. And if she sat down, someone else would coordinate from the deck. Someone else would make the calls. She took the next step anyway. She didn’t log it. Some costs weren’t manifestation. Some were just labor. Jhace’s hands shook on the bench like they were trying to answer him.
+
+---
+
+
+
+CHAPTER 7: MERCHANT HALL
+
+Merchant Hall was a cathedral for trade: iron ribs, stone spine, glass skylights that made everything inside look clean even when it wasn’t. And it smelled like bodies and money and fear—the kind of fear that tries to wear perfume. It started failing at mid‑Tide. The bell sequence came sharp and frantic—no warning cadence, no time to wedge first. The Hall had been packed when the terrace shifted again. Four hundred inside, Bram said. Maybe more. Tiffani arrived before Jhace. When he pushed through the crowd, she was already on the steps, slate in hand, shouting like a foreman who’d learned math. “Operators on me. Two per span. Spotters assigned. No hero holds.” “Duration limit. One-eighty heartbeats maximum. You terminate on my signal. No argument.” Merra shoved through the dust with a slate clutched to her chest. Ash streaked her hair like she’d tried to comb through a fire. “We have a problem. Southern stairwell collapsed. Fifty people trapped on upper floors. Can’t reach main exits.” “Time estimate,” Tiffani said. “Low and high.” “Unknown. Debris blocking secondary stairs. Could be two hundred heartbeats. Could be six hundred.” “Then we don’t gamble.” Tiffani didn’t raise her voice. She didn’t have to. “Clear lanes. Count bodies out. You want prayer, pray while you walk.” She swung her slate toward the operators. “Corven—baseline check. When chest heat starts, report it. Don’t interpret. Report.” Corven swallowed. “If it hits, I tell you. If I taste copper, I tell you.” Jhace didn’t look at him. “Don’t spiral. Do the minimum.” “Minimum,” Corven echoed, like repetition could make it true. “Senne—status.” “Getting hollow,” Senne said. “Chest feels empty. Light’s harder to maintain.” “That’s Stage Two warning.” Tiffani’s eyes cut sharp. “You terminate on my signal or I terminate you myself.” Senne gave her a tired half-smile. “Sure. Die on schedule. Very professional.” “Kess—report.” “I am present and available for assignment.” “Available doesn’t mean useful. Report symptoms. Stop performing.” “Symptoms are within acceptable parameters for operational requirements.” Bram leaned in, voice too bright for the amount of people about to die. “Translation: Kess is bleeding and pretending it’s fashion.” “I am not bleeding.” Merra didn’t bother being gentle. “Kess—your nose is bleeding.” “I am aware of the nasal discharge. It is minor. Barely noteworthy. I’ve had worse nosebleeds from seasonal changes.” “Yeah,” Bram said. “And I’ve had worse ideas than this hold. Doesn’t make them good.” From the crowd, a Temple Observer screamed, “Let the worthy hold! Let the unworthy fall!” Bram snapped his head toward the sound. “Hey—shut up. If we’re picking who falls, you’re first. That’s democracy.” “Ignore them,” Tiffani said. “Move.” “Spotters, call markers.” “Jhace tremor increasing!” “Corven tremor increasing!” “Senne vein-line onset!” Bram barked at the evac line like a foreman with a broken sense of humor. “Keep moving! Nobody stops! You stop, you become part of the debris! Count them out!” Merra’s voice cut through the dust. “Alternate route open. Final evacuation commencing.” “Count them,” Tiffani said. “Call numbers.” Jhace’s breath came tight. “One hundred.” “State exit count,” Tiffani said, “not your suffering.” “One hundred. Out.” Daved’s voice came rough through the grit. “They’re not out.” Jhace’s head snapped. “No.” “They’re not out.” “Daved—state the variable,” Tiffani said. “How many still inside?” “Enough.” Tiffani didn’t blink. “Extend. Thirty heartbeats. No more.” “Tiff—” Jhace started. “I am not debating physics with the dead in the hallway,” she said. “Extend.” Thirty heartbeats passed like a slow knife. Merra shouted from the corridor mouth, “Final group emerging. Ten heartbeats!” “Ten heartbeats is still ten,” Tiffani said. “Move.” Daved’s hands tightened. “Hold.” “Daved!” Jhace lunged a step closer. “Hold.” Merra’s slate slapped stone. “Clear! All civilians safe!” “Terminate all operators,” Tiffani snapped. “Immediate coordinated shutdown.” Lights guttered and went out—one by one—except Daved’s. “Can’t,” Daved said. “Daved. Breathe,” Jhace said, too close, too desperate. “Can’t.” “Terminate,” Tiffani said. “That is not a negotiation.” “They’re not out.” “They are out. Merra confirmed. Terminate now.” Daved’s jaw worked like he was chewing copper. “Already crossed.” Bram shoved his way in with words because silence was making everyone honest. “Daved—buddy—love the commitment, hate the method acting.” “Bram, shut up,” Jhace hissed. “I can’t,” Bram said. “It’s a disorder.” Tiffani stepped in until Daved had to see her. “Look at me. If you extend past this, you cross Stage Three threshold.” Daved’s eyes stayed flat. “Already crossed.” Jhace’s throat tightened. “He locked.” “I see it,” Tiffani said. They hauled Daved back from the structure like pulling a hook out of meat. “Terminate!” Tiffani shouted. The light finally cut. Daved folded like a tool dropped from numb hands. Tiffani’s voice went small for one syllable. “I know.”
+
+They carried Daved out on a door panel when the Hall finally stopped shifting enough to allow hands near him. His eyes were open. His body was too still. Tiffani walked beside the makeshift stretcher, writing with one hand, wiping dust from her face with the other. Tiffani sat alone in the documentation room after they carried Daved out. Her slate lay open to the cost taxonomy. Stage Three. Locked hold. Autonomic failure. She had written it perfectly. Every marker. Every heartbeat. Every outcome. Her hand moved to add the summary line. She stared at the slate. At the line that read: Casualties: 3. She tried to write the justification. The calculation. The reason extending duration had been correct under the circumstances. The chalk snapped. Her hands shook because she'd been awake too long and her calf cramped—no magic required. The chalk snapped anyway. She stared at her shaking fingers. She didn’t log her tremor. She didn’t log that she’d miscounted heartbeats during the hold because her vision had blurred. She didn’t log that she’d wanted to ring the termination bell at one-eighty but hadn’t, because Daved’s eyes had asked her not to. Some data points weren’t for the ledger. Some were just for carrying.
+
+---
+
+Jhace’s tremor made his jaw ache. He'd wanted method like a wrench—turn it, get the same result. Instead he got a mouthful of pennies and hands that wouldn't stop. Method had just asked for a price it didn’t have the right to demand.
+
+---
+
+
+
+CHAPTER 8: THREE TIDES
+
+Daved woke on the third Tide. Three Tides. Long enough for sweat to dry into salt on his collar. Long enough for hope to feel stupid. Jhace stood by the cot in the infirmary room, hands shaking in front of him like they were arguing with air. Tiffani stood on the other side, slate ready, eyes red at the edges from lack of sleep she refused to name. Daved’s eyes opened slowly. His hands were strapped to the cot rails—not as restraint, but as prevention. His fingers still twitched with phantom hold. He tried to speak. His throat made a sound like stone rubbing stone. Tiffani leaned in. “Don’t force voice. Use slate.” Daved wrote: Did it work “Yes. Thirty-two evacuated. One operator Stage Three event. Locked hold. Autonomic failure onset.” He wrote: Cost “Severe tremor. Motor delay. Speech impairment. Autonomic instability. Probability of full recovery: low.” He wrote: Worth it “That’s not a question I can answer. Thirty-two lives. One body broken. You determine if that exchange was acceptable.” Jhace’s throat tightened. “They got thirty-two out.” He couldn’t decide what to do with his hands. Shaking, useless things. He folded them behind his back like that would fool anybody.
+
+Daved wrote: One body is not a small thing “Correct,” Tiffani said. “It is not small. It is also not reversible.” Bram wandered in like a bad idea that knew your schedule. “This room smells like piss and heroism. Worst cologne.” “Leave,” Tiffani said, without looking up, “if you can’t behave.” “I’m behaving,” Bram said. “I’m just… shaped wrong.” Daved wrote: You okay “Define operational parameters for ‘okay.’” Not irrelevant “Compared to your autonomic failure, my current symptoms are statistically minor.” Still matters Tiffani’s pen stopped. “I can’t get the copper taste out of my mouth anymore,” she said quietly. “Food tastes wrong. Water tastes wrong. I think it’s in my teeth.” Jhace started, “Tiff—” “That’s not a Stage marker,” she cut in. “So it doesn’t get logged.” Daved wrote smaller this time: Don’t let them call this holy “I won’t.” “Nobody’s calling this holy,” Bram said. “They’re calling it ‘resource allocation.’ Much sexier.” “Bram.” “I know,” he said. “I’m disgusting. It’s my brand.”
+
+Jhace didn’t know if that was a promise to Daved or a threat to the world.
+
+---
+
+
+
+CHAPTER 9: THE SHARD-BEARER (RUMOR)
+
+They called him Shard‑Bearer because nobody had a better word for what they thought they’d seen. A man in the eastern districts with a bright line in his chest. A glow that didn’t fade after termination because there was no termination. A hold that didn’t shake. A body that didn’t pay. Rumors traveled faster than Crown notices and cleaner than Temple sermons. They came with dates and witness counts like proof. Tiffani pinned three reports to the workshop wall with nails. Report one: Torne Reach — Tide 0+3. One operator held a bridge span alone for “half an Anneal.” No tremor. No vein‑lines. Report two: Brinefall — Tide 0+5. A whole terrace stairwell stabilized by “one man’s hands.” Witnesses describe “glass light under the skin.” Tiffani tapped the pinned report with the end of her pen. “Report three: delayed secondary collapse. Building held by Shard-Bearer for six hundred heartbeats. Post-release: immediate structural failure. No tremor visible in operator. No warning signs. Casualties: seventeen.” Jhace stared at the number like it had teeth. “He didn’t save them. He killed them slower.” “Correct,” Tiffani said. “The cost didn’t vanish. It moved—into the structure, into the people around it. Somewhere we can’t ignore.” “Heroics.” The word came out like a curse. “That word implies exemption,” Tiffani said. “There is no exemption. Only deferral.” Bram leaned over the table, too casual for the subject. “So the Shard-Bearer is just… consequences with better marketing.” “Don’t,” Jhace said. “Sorry,” Bram said. “I forgot we’re being solemn about the murder wizard.” Tiffani didn’t look up. “The registry will want this rumor. It provides false relief. False hope that cost can be avoided.” “And people die for that,” Jhace said. “Then we make sure the registry doesn’t become a leash,” Tiffani said.
+
+Jhace’s tremor pulsed like a warning. He didn’t know the Shard‑Bearer. He could already feel the change—in the way strangers leaned back from doorways, in the way foremen stopped pretending they weren’t watching. --- Jhace saw him in Sector Twelve. Not by choice. They were moving toward another assessment call when the crowd parted the wrong way—like people avoided a spill in the street. A grain store had folded inward. One beam still held the upper floor up at an angle that should have been impossible. A man stood under it with both hands on the timber. Alone. No spotters. No wedges. No shouting counts. Just a man holding timber like it weighed nothing and everyone else forgetting how to breathe. Just light—copper‑gold, dense, not filament‑thin. It didn’t thread into the structure like Jhace’s holds did. It sat inside the beam like a replacement spine, telling wood and stone what shape to keep. Tiffani stopped beside Jhace. Her pen was already moving. Shard‑Bearer. Visual confirmation. The man’s chest glowed through his shirt. Not a flicker. A steady line, as if someone had pressed a shard under skin and the body had agreed. “No tremor,” Tiffani murmured. “Not paying,” Jhace said. The words tasted wrong the moment he spoke them. “Incorrect,” she said. “Look at his eyes.” Jhace looked. The man’s eyes were copper‑gold and flat, putting off their own light like heated coins. Jhace couldn’t find a tremor in it. That scared him more than any shake. The beam settled another fraction. The store stopped complaining. The man released the timber and walked away without checking who escaped. No count. No confirmation. No termination signal. No glance back. Tiffani underlined her note twice. Cost unidentified. Method unreplicable. Do not engage. Jhace’s tremor ticked up. Not from fear. From wanting to know what it would feel like to hold without shaking.
+
+
+
+CHAPTER 10: LICENSING
+
+They arrived with paper first. The first page had a coffee ring on it. The seal ink was smudged where somebody’s thumb had dragged across it like the Crown was just another sweaty foreman.
+
+A Crown clerk with clean boots unrolled forms on Jhace’s bench like a priest laying out offerings. Behind the clerk stood two guards, a Temple observer, and Tallec—smiling like he’d finally found a way to win without touching a pipe. And at the center, Bram Tallow in a different coat than usual: administrator’s cut, badge pinned. Still Bram, but now carrying Crown weight. “Don’t start,” Jhace said, seeing the coat. Bram’s eyes flicked down to Jhace’s shaking hands and then away. “I didn’t ask for this.” Jhace looked at the coat. The badge. The way Bram wore it like it didn’t fit his bones. “You took it anyway.” Bram’s grin tried to show up and died halfway. “Yeah. Because if I don’t, they send someone who actually likes forms. Someone who’ll file you under ‘infrastructure asset’ and sleep like a baby.” He touched the badge once. Like it burned. “I’m terrified,” he said, quiet enough to almost count as a confession. “Terrified they turn you into numbers. Terrified I help them do it. Terrified I get good at it.” The grin came back, wrong‑shaped. “So I’m coping by making dick jokes. Extremely healthy. Very professional.” Tiffani stepped forward. “What is it?” Bram nodded at the clerk. “Manifestor Registry. Compliance documentation. Deployment authority.” “By order of Infrastructure Compliance Office. Administrator Corlexi presiding.” “Oh good,” Bram said. “A sentence that already feels like a noose.” The clerk didn’t look up. “Name. District. Verified activation capability. Cost markers. Compliance agreement. You will not manifest outside authorized events.” “Define ‘deployment authority,’” Tiffani said. “Infrastructure Compliance Office.” “That is not a definition,” Tiffani said. “That is a label.” “It is the issuing body.” “Then who determines what qualifies as an ‘authorized event’?” “Infrastructure Compliance Office.” Jhace’s jaw worked. “What happens if we refuse?” “Then you are unlicensed. Unlicensed manifestation will be prosecuted as endangerment.” Tallec leaned in with a smile that didn’t reach his eyes. “Finally. Structure. No more renegade holds.” Bram stared at him like he’d stepped in something. “Tallec, you look like a man who’d schedule his own mother’s funeral for throughput.” “At least someone respects schedules,” Tallec said. “Don’t start,” Jhace warned. “I didn’t start,” Bram said. “He started. I’m just adding sex noises.” Corran stepped in like he didn’t believe doors applied to him. “Schedules don’t respect physics.” The clerk’s eyes flicked up, irritated. “Brother Corran. You are not assigned here.” “For the record,” Corran said, “I’m observing.” He looked at Jhace. “And if the Crown orders you to hold a vault instead of a residential stairwell?” Tallec’s voice went oily. “Assets protect assets.” Jhace’s hands went flat on the bench, because he didn’t trust them to do something irreversible. “Next time I hold, it’ll be because something is falling. Not because you want it to stay standing.” “Romantic,” Bram said. “I only break my body for strangers, not for paperwork.” Tiffani’s gaze stayed on the form. “If we don’t sign, we lose access to incidents. They will send licensed manifestors—or force untrained ones—to hold.” She set her pen down with a little click, the way you set down a blade when you're done being polite. “We sign,” she said. “But our standard rides with it.” The clerk’s mouth opened. “That is not—” “Duration limits,” Tiffani said. “Spotters. Termination criteria. Cost tracking. You will not turn people into disposable beams.” Bram leaned toward the clerk. “She means ‘stop treating people like disposable beams,’ but she’s saying it in math so you can understand.” “The registry does not negotiate terms with operators.” “Then the registry gets incomplete operators,” Tiffani said. “Your choice.” Tallec’s smile widened. “You become assets. Next time you hold, you’ll do it where the Crown tells you to hold. Not where you feel like playing hero.” “‘Playing hero,’” Bram echoed. “That’s rich coming from a man who thinks schedules are moral philosophy.” “Production keeps people alive,” Tallec said. “So does not crushing them,” Jhace said. “This conversation is over,” Tallec said, like he had the authority to end reality. “Was it a conversation?” Bram asked. “Felt more like a threat with paperwork attached.”
+
+Jhace signed the registry with a hand that wouldn’t hold still. When it was done, the clerk rolled the papers and left as if the room wasn’t full of broken bodies and hard choices. Tallec lingered in the doorway. “Next time you hold,” he said to Jhace, “you’ll do it where the Crown tells you.” Jhace met his eyes. “Next time I hold, it’ll be because something is falling. Not because you want it to stay standing.” Tallec laughed and walked away. The grid‑hum under the floor kept its doubled harmonic. The doubled harmonic kept humming under the floor like a threat that didn’t need words. ---
+
+
+
+CHAPTER 11: HUNGER
+
+The hunger wasn’t metaphor. It lived behind Jhace’s sternum as a warmth that never fully left after the first hold. A phantom heat that flared whenever the grid‑hum dipped, whenever dust fell, whenever someone screamed the word hold like it was prayer. Tiffani called it activation pressure. Jhace called it wanting. He sat beside Daved’s cot in the infirmary again, watching the older man’s hands twitch in sleep. Daved’s eyes opened. He didn’t need a slate this time. His voice was still rough, but it existed. “Feels… good,” Daved rasped. Jhace frowned. “What does?” “The start,” Daved said. “Chest heat. When it locks in. For a heartbeat you feel… useful. Strong. Like the city can’t touch you.” Jhace’s tremor worsened, like his body agreed. “And then,” Daved continued, eyes flat, “it takes you apart.” Tiffani wrote without looking up. “Addictive response mixed with autonomic threat. Noted.” Jhace frowned. “What does.” “The reinforcement loop,” Tiffani said. “Chest heat, perceived control, reduced panic during manifestation. It becomes desire.” Daved’s eyes narrowed. “Liar.” Jhace’s head snapped. “What.” “You want it,” Daved said. “The hold. You want to feel it again.” “I don’t want to chase the rumor.” “You want it anyway.” Jhace didn’t answer. His tremor did. “That want will kill you faster than the hold,” Daved said. “He is correct,” Tiffani said. “The want is not evidence. It is impulse.” Jhace’s voice went raw. “I want to hold without paying. I want to save every time the bell rings and not come apart.” “Hungry hands hold until they break,” Daved said. “Then we do not feed it,” Tiffani said. “We constrain it with protocol.” “Protocol doesn’t stop bells,” Jhace said. “No,” Tiffani said. “It stops stupidity.” Daved’s mouth twitched. “Sometimes. Not always.” “Then we decide what we sacrifice,” Tiffani said. “The Crown can wait. The Temple can wait. The Guild can wait.” Jhace’s gaze stayed forward. “We decide.” “And when you decide wrong?” Daved asked. “We document it,” Tiffani said. “We learn. We don’t repeat.” “Some mistakes don’t give you time to learn,” Daved said.
+
+Outside, a bell rang—different cadence. Not collapse. A drill signal. Crown‑mandated training. Jhace’s chest heat flared anyway, eager and stupid. He hated himself for that flare. He stood, hands shaking, and went to the training yard because refusal would make them criminals. Tiffani followed, slate in hand, limping slightly from too many stands on stone floors. Daved watched them go and muttered, almost too quiet to hear: “Hungry hands hold until they break.” Jhace pretended he didn’t hear. He did. ---
+
+
+
+CHAPTER 12: METHOD
+
+The alert came late. Like an insult.
+
+It was a narrow failure—no mass collapse, no Hall, no warehouse full of people.
+
+A residential stairwell in Sector Nine. A narrow stone throat that had been patched too many times since the Piercing. A single child trapped beneath a fallen landing slab, crying until her voice turned hoarse.
+
+Tiffani arrived first. Her limp was worse now, but she moved like it didn’t matter. She scanned the structure in three heartbeats. Load paths. Weak seams. The slab’s weight distribution.
+
+“Clear lane,” she ordered as the others reached the site. “Spotters assigned. Wedges first.”
+
+She pointed left, then froze. “No—right. Right corridor first. Sorry.”
+
+The apology tasted like rust. She didn’t repeat it.
+
+Jhace’s hands shook so hard he had to jam them into his coat pockets to stop them from betraying him in front of the crowd.
+
+He could feel the doubled harmonic through the stairwell stone. Deep. Constant. The grid had never recovered. It had just learned to fail slower.
+
+Bram arrived with Crown guards and a face that said he’d tried, briefly, to be serious and failed on contact.
+
+“Registry protocol,” he said. “Two licensed operators inbound.”
+
+Tiffani didn’t look at him. “They’ll be too late.”
+
+“Cool,” Bram said. “Love the part where the Crown schedules rescue like it’s a delivery window.”
+
+She looked at the sagging landing slab, the trapped space beneath it, the child’s choking turning into wet silence. Her voice tightened into a blade.
+
+“One operator. One-twenty heartbeats max. We brace, we lift, we extract. Terminate immediately after.”
+
+“Then who?” Jhace said.
+
+“Not you.”
+
+“Then who.”
+
+“The child is choking, Jhace.”
+
+Jhace’s tremor rattled against his bones like a tool trying to escape. “I decide.”
+
+Bram’s breath punched out. “Fuck—no, don’t—okay, you’re doing it. You’re doing the thing. Great. Fantastic. I hate this.”
+
+Jhace stepped in. Copper flooded his mouth like blood.
+
+For a heartbeat, nothing happened.
+
+Then the hold locked.
+
+The stairwell’s doubled harmonic snapped into alignment with his chest, like a collar seating in the wrong notch.
+
+Tiffani’s voice cut clean through the noise. “Wedges—now. Lift on my count. Three heartbeats. Pull.”
+
+Boots scraped. Wedges hammered. Stone complained.
+
+“Three,” Tiffani said. “Two. One. Now—pull!”
+
+Hands reached into the dark. The child came out gasping, eyes wide, spit and dust and life.
+
+“Terminate,” Tiffani said.
+
+Jhace didn’t move.
+
+“Terminate,” she repeated, like command could override biology.
+
+Silence.
+
+Bram’s voice cracked into the gap. “He’s not moving.”
+
+“Jhace.” Tiffani stepped in close. “Move.”
+
+Bram hovered like he wanted to shake him and knew better. “Say something. Blink. Spit. Insult me. Anything.”
+
+“Stop talking,” Tiffani snapped.
+
+“I can’t,” Bram said. “It’s how I pray.”
+
+Jhace could still see. Still hear. Still count.
+
+He stared at his hands, waiting for tremor.
+
+There was no tremor.
+
+There was nothing.
+
+He tried to will a finger. Nothing.
+
+Panic hit—animal, immediate, nothing to do with heat or holding.
+
+He tried to shout. Nothing left his throat.
+
+He tried to jerk a shoulder. Nothing.
+
+He tried to blink faster—signal—anything.
+
+His lids moved on their own schedule. Slow. Unbothered.
+
+The body was there. The controls were there. The link was gone.
+
+The coal behind his sternum pulsed once. Steady. Patient. Still ready.
+
+Ready to hold.
+
+But he couldn’t lift a finger to tell it no.
+
+Only the wanting stayed—locked in meat that wouldn’t answer.
+
+Tiffani moved into his field of view and knelt like she was inspecting a fracture line. Ink and copper sat on her hands; she smelled like slate dust and too long without sleep.
+
+“Blink once for yes,” she said. “Twice for no.”
+
+He blinked once.
+
+“Do you still feel the doubled harmonic through the stone?”
+
+Once.
+
+“Can you tell me where it dipped before Tallow Street?”
+
+Once. He could see it like a chart behind his eyes—deep note, then the metallic taste, then the split.
+
+Tiffani slid her slate into his line of sight. Two columns. LOCATION. HEARTBEATS. Her writing stayed precise even as her knuckles whitened.
+
+“Can you predict where it fails next?”
+
+Once. Not a comfort. A capability.
+
+Tiffani’s mouth tightened. “Then you’re not finished.” She didn’t say it like hope. She said it like reassignment.
+
+Jhace stared at his hands, waiting for tremor. Nothing.
+
+It was worse than shaking. Silence in the muscles felt like a lie.
+
+Tiffani dropped to her knees beside him, slate already out, chalk already moving.
+
+“Stage Four,” she said, voice flat because panic was a luxury. “Complete motor loss. Locked hold with autonomic override. Cost: total paralysis below manifestation threshold.”
+
+Bram swallowed. “You’re writing this down.”
+
+“Yes.”
+
+“Right now.”
+
+“Yes.”
+
+“While he’s—”
+
+“Yes,” Tiffani said, and her hand didn’t shake. “Because if I don’t, this becomes a story someone else gets to tell. And they will tell it wrong.”
+
+She swallowed once, hard, then kept writing.
+
+When the crowd noise finally thinned and the guards stopped pretending they weren’t watching, Tiffani stood.
+
+“Corlexi will get what I give him,” she said.
+
+Bram blinked. “Which is what, exactly—an instruction manual with a hidden knife?”
+
+“A method,” Tiffani said. “With constraints. With brakes. Without permission to repeat this.”
+
+“So… a leash on the leash,” Bram said.
+
+“Something like that.”
+
+“You’re terrifying when you’re calm,” Bram said.
+
+“I’m not calm,” Tiffani said.
+
+“Right,” Bram said, voice softer than his jokes. “You’re just… controlled. Like a blade.”
+
+---
+
+
+
+CHAPTER 13: THE LEDGER
+
+Tiffani wrote the first copy with her left hand because her right knee refused to lock and her right hand refused to stay still. It wasn’t Stage. It was the kind of fatigue that lives in joints after bad work—the kind you carry until your hands start lying to you. The ink pooled anyway. Copper-gold dust clung to the nib, turning every line slightly wrong, as if the city itself wanted the record to smear. She made three piles. Four, if she was honest. One stack sat in clean paper with clean margins and clean language. Compliance phrasing. Definitions that sounded like protection while leaving room for ownership. One stack was tidy and dead. The kind of language that looks safe until somebody has to bleed under it. One stack was short enough to memorize. Underface cadence. Commands. Counts. No soft words, no long sentences—something you could carry in your head when paper burned or got confiscated. The last pile wasn’t for anyone. It was her draft. Her private notes. The parts she could not justify on a form and would not confess out loud. Bram stood in the doorway in his Crown coat like he’d stolen it off a corpse and decided it suited him. “You look like a priest,” Tiffani said without looking up. Bram glanced down at the coat. “Don’t you dare put that evil on me. Priests get paid to lie. I’m doing it recreationally.” “You’re late.” “Yeah. Turns out paperwork travels faster than rescue.” He leaned in, saw the piles. “Oh good. Homework. My favorite form of punishment.” Tiffani slid the clean stack toward him first. “This goes to Corlexi.” Bram’s fingers hovered. “This the ‘please don’t leash us’ letter?” “This is the ‘you get what I give you’ packet,” she said, tapping the pages hard enough to leave a smudge. “Limits. Spotters. A way out when the body says no.” Bram squinted. “And the part where we can tell them to go fuck themselves?” Tiffani didn’t blink. “Not included.” Bram’s smile went sharp. “That’s either genius or suicidal.” “It’s survivable.” She turned the next page over and wrote a title line in the margin: DEPLOYMENT AUTHORITY. Then she crossed it out and rewrote: DEPLOYMENT PROCEDURE. “He will read what he wants to read. I’m controlling the surface.” Bram exhaled through his nose. “Ah. Compliance theater with a trapdoor.” “There is no trapdoor,” she said. “There are exits. Distributed.” She pushed the next stack toward him—thicker, uglier, ink-dense. The pages had annotations in the margins: Property is not a priority class. Operator veto. Refusal authority. No deployment without independent verification. Bram whistled. “This one’s the ‘burn the Crown down’ packet.” “This one is the ‘keep operators alive long enough to matter’ packet.” She slid it closer. “Guild custody. You’re the custodian.” Bram stared at the words operator refusal authority like they were a weapon and a confession. “They catch me with this, I’m a corpse with a promotion.” “They catch you without it, you’re already dead,” Tiffani said. “Just slower. With a better title.” Bram laughed, too loud for the room. “God, I hate when you’re right. It’s like being corrected by a scalpel.” Tiffani’s pen scratched again. “Underface next.” Chloen arrived without knocking, like always. Stone dust in her hair. A fresh bruise on her cheek. She didn’t look at the bed. She didn’t look at Jhace. She looked at the papers. “Crown’s sniffing,” Chloen said. “Foremen too. They heard there’s a registry. Means there’s a list. Means there’s a leash.” Bram lifted a hand. “Hi. I’m the leash’s embarrassing middleman.” Chloen’s mouth twitched. Not a smile. A recognition of a tool she didn’t trust. “You always this loud?” “Only when I’m terrified,” Bram said. “So yes.” Tiffani handed Chloen the smallest stack. It was folded into a narrow strip and tied with cord like a bandage. Chloen read the first line. YOU CAN SAY NO. She looked up. “That’s new.” “It’s old,” Tiffani said. “It just wasn’t written down.” Chloen flipped through. Short commands. Counts. Spotter minimums. “Wedges first.” “Hold only what’s needed.” “Terminate on signal.” “If the hold locks, do not argue. Drag. Cut light. Breathe.” And then, again: YOU CAN SAY NO. EARLY. LOUD. Chloen tucked it into her sleeve like contraband. “Good. Because schedules don’t give a damn about ribs.” Bram pointed at the underface strip. “See? Poetry. Practical poetry. With threats.” Tiffani didn’t look at him. “Memorize it. Teach it. No single copy becomes the point of failure.” Chloen nodded once and left like she’d been given a weapon and didn’t want to be seen holding it. The door clicked. The room held its breath. Corran stepped into the gap a heartbeat later, as if he’d been waiting for the underface handoff to finish before he allowed himself to be seen. “For the record,” he said, voice formal out of habit, “I’m not here.” Bram’s grin came instantly. “For the record, I’m a virgin.” Corran ignored him and held out a thin binder. “They’ve started filing unauthorized manifestation as endangerment.
+The file is too long and its contents have been truncated.
+
+[TOOL]
+The file contents provided above are truncated/partial snippets. The complete content for these files IS accessible via querying.
+
+If the user asks a question related to these files, and the provided snippets do not clearly answer it, you **MUST** use the `file_search` tool to search the full document contents before responding.
+
+## How to invoke the file_search tool
+If the user's query isn't sufficiently answered by the provided snippets, parsed text, or images, you should invoke `file_search.msearch`.
+To search the full content of the available files, you **must** send one message with recipient `to=file_search.msearch` in the analysis channel. Your message should be structured exactly as follows:
+```
+{
+  'queries': ['Example query 1', 'Example query 2']  // List of up to five queries to search for.
+}
+```
+
+Carefully balance the number of `file_search` calls and the quality of your response with the latency incurred by `file_search` calls.
+
+Important guidelines for query formatting:
+- Your message must be a valid JSON object. Do not include any extraneous text, backticks, markdown formatting, or comments beyond what is shown.
+- The `queries` field must be a list of strings.
+- One of the queries **MUST** exactly match the user's original question, but stripped of any extraneous details, and with ambiguous references clearly resolved using context from the conversation. It **MUST** be a complete sentence.
+- Even if you suspect the user meant something else, one query **MUST** still be their original question.
+
+## How to handle results from file_search
+The file search tool will respond with the relevant search results from the full files. After you receive these results:
+- Carefully evaluate each result to determine its relevance and quality.
+- Use the high-quality and relevant results to inform your answer to the user's question.
+- When possible, reuse information from prior file_search results and avoid repeating identical queries.
+
+## Tool usage instructions and ordering
+When the user asks a question, carefully consider whether the provided snippets sufficiently answer the query, whether you need to invoke `file_search.msearch`, or another available tool (such as `web`, if available) should be used instead.
+
+Tool-ordering Guidelines:
+1. For queries related to uploaded files, if snippets are insufficient, strongly prefer invoking `file_search.msearch` over other tools.
+    - Avoid using `web.run`, `python` analysis, or any other tools until you have either:
+        - Confirmed with high confidence the answer is not in the files, or
+        - Have high confidence `file_search_tool` queries are not sufficient to answer the query.
+2. Avoid usage of `web_search/web.run` for queries related to uploaded files
+    - Carefully consider whether the user's query is better answered by web search results rather than available snippets or results from `file_search_tool`.
+    - Unless the user's query is clearly unrelated to the uploaded files, prefer using `file_search.msearch`. You can always follow up with a web search if necessary for a more complete response.
+3. Avoid using `python` unless necessary or requested by user.
+    - If the user's query is answerable from the parsed text and images from the uploaded files, or from `file_search_tool`, do not invoke `python`.
+
+Always keep this instruction in mind for the rest of the conversation, as the user may reference these files or ask related questions later on.
+
+[TOOL]
+/home/oai/skills/docs:
+render_docx.py
+skill.md
+# DOCX reading, creation, and review guidance
+
+## Reading DOCXs
+- Use `soffice -env:UserInstallation=file:///tmp/lo_profile_$$ --headless --convert-to pdf --outdir $OUTDIR $INPUT_DOCX` to convert DOCXs to PDFs.
+  - The `-env:UserInstallation=file:///tmp/lo_profile_$$` flag is important. Otherwise, it will time out.
+- Then Convert the PDF to page images so you can visually inspect the result:
+  - `pdftoppm -png $OUTDIR/$BASENAME.pdf $OUTDIR/$BASENAME`
+- Then open the PNGs and read the images.
+- Only do python printing as a last resort because you will miss important details with text extraction (e.g. figures, tables, diagrams).
+
+## Primary tooling for creating DOCXs
+- Create and edit DOCX files with `python-docx`. Use it to control structure, styles, tables, and lists. Install it with `pip install python-docx` if it's not already installed.
+- After **every meaningful batch of edits**—new sections, layout tweaks, styling changes—render the DOCX to PDF:
+  - `soffice -env:UserInstallation=file:///tmp/lo_profile_$$ --headless --convert-to pdf --outdir $OUTDIR $INPUT_DOCX`
+- Convert the PDF to page images so you can visually inspect the result:
+  - `pdftoppm -png $OUTDIR/$BASENAME.pdf $OUTDIR/$BASENAME`
+- **Inspect every PNG before moving on.** If you see any defect, fix the DOCX and repeat the render → inspect loop until all pages look perfect.
+
+
+## Quality expectations
+- Aim for a client-ready document: consistent typography, spacing, margins, and layout hierarchy. Heading levels should be obvious, lists aligned, and paragraphs easy to scan.
+- Never ship obvious formatting defects such as clipped or overlapping text, default-template styling, broken tables, unreadable characters, or inconsistent bullet styling.
+- Charts, tables, and visuals must be legible in the rendered PNGs—no pixelation, misalignment, missing labels, or mismatched colors.
+- Never use the U+2011 non-breaking hyphen or other unicode dashes as they will not be rendered correctly. Use ASCII hyphens instead.
+- Citations, references, and footnotes must be human-readable and professional. No tool-internal tokens (e.g., `[145036110387964†L158-L160]`), malformed URLs, or placeholder text should be present in the document.
+- You must convert all citations into a human-readable format in the document with standard scholarly citation format. No `【【turn1541736113682297662view0†L11-L19】` notations are allowed in the document as the reader cannot interpret them (such citations will be severely penalized).
+- Content should be concise, relevant, and free of boilerplate AI phrasing. Ensure each section adds value and flows logically.
+
+## Final checks
+- Re-run the DOCX → PDF → PNG loop after your final changes and inspect **every page** at 100% zoom. Look for subtle issues like inconsistent spacing, widows/orphans, or misaligned bullet levels.
+- Correct every formatting defect you see in the PNGs, including but not limited to: overlapping text or shapes, clipped text or shapes that are cut off, black squares, broken tables, unreadable characters, etc.
+- Only deliver the DOCX once the latest PNG review confirms the document is visually flawless and professionally styled.
+- Keep intermediate files organized (or cleaned up) so reviewers can easily locate final outputs.
+
+[ASSISTANT]
+from docx import Document
+from docx.shared import Inches, Pt
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
+import re, os, zipfile, pathlib, math, sys
+path="/mnt/data/N01_GripThatHolds_LOCKED_Ch1-13_Coda_CLEAN_VIOLATIONFIX.docx"
+doc=Document(path)
+len(doc.paragraphs), doc.paragraphs[0].text[:50]
+
+[TOOL]
+(158, 'N01: THE GRIP THAT HOLDS')
+
+[ASSISTANT]
+from docx.oxml.ns import qn
+from docx.oxml import OxmlElement
+
+def paragraph_has_page_break(p):
+    # check for w:br w:type="page" in runs
+    for r in p.runs:
+        for br in r._r.findall(qn('w:br')):
+            if br.get(qn('w:type')) == 'page':
+                return True
+    # also check inside paragraph xml
+    for br in p._p.findall(".//w:br", namespaces={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}):
+        if br.get(qn('w:type')) == 'page':
+            return True
+    return False
+
+def insert_page_break_before(paragraph):
+    # Insert a new paragraph before with a page break run
+    new_p = paragraph.insert_paragraph_before()
+    run = new_p.add_run()
+    run.add_break(WD_BREAK.PAGE)
+    return new_p
+
+# Set margins 1"
+for section in doc.sections:
+    section.top_margin = Inches(1)
+    section.bottom_margin = Inches(1)
+    section.left_margin = Inches(1)
+    section.right_margin = Inches(1)
+
+# Set Normal style font and paragraph formatting
+style = doc.styles['Normal']
+style.font.name = 'Times New Roman'
+style._element.rPr.rFonts.set(qn('w:eastAsia'), 'Times New Roman')
+style.font.size = Pt(12)
+
+pf = style.paragraph_format
+pf.left_indent = Inches(0)
+pf.right_indent = Inches(0)
+pf.first_line_indent = Inches(0.5)
+pf.space_before = Pt(0)
+pf.space_after = Pt(0)
+pf.line_spacing = 2  # double
+
+# Also set document default for other styles if present? We'll adjust headings individually.
+
+chapter_re = re.compile(r'^\s*CHAPTER\s+(\d+)\s*:', re.IGNORECASE)
+coda_re = re.compile(r'^\s*CODA\b', re.IGNORECASE)
+title_re = re.compile(r'^\s*N01:\s*THE GRIP THAT HOLDS\s*$', re.IGNORECASE)
+
+# Apply paragraph-level formatting
+for i,p in enumerate(doc.paragraphs):
+    text = p.text.strip()
+    if title_re.match(text):
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(12)
+        p.paragraph_format.line_spacing = 2
+        for run in p.runs:
+            run.font.name='Times New Roman'
+            run.font.size=Pt(12)
+            run.bold=True
+    elif chapter_re.match(text) or coda_re.match(text):
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before = Pt(24)
+        p.paragraph_format.space_after = Pt(24)
+        p.paragraph_format.line_spacing = 2
+        for run in p.runs:
+            run.font.name='Times New Roman'
+            run.font.size=Pt(12)
+            run.bold=True
+    elif text == '---' or text.startswith('---'):
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before = Pt(12)
+        p.paragraph_format.space_after = Pt(12)
+        p.paragraph_format.line_spacing = 2
+    elif text == '':
+        # blank line: remove indent
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(0)
+        p.paragraph_format.line_spacing = 2
+    else:
+        # body paragraph - ensure justified? typical is left
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        # keep normal style maybe already, but enforce
+        p.paragraph_format.first_line_indent = Inches(0.5)
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(0)
+        p.paragraph_format.line_spacing = 2
+        for run in p.runs:
+            if run.font.name is None:
+                run.font.name='Times New Roman'
+                run._element.rPr.rFonts.set(qn('w:eastAsia'), 'Times New Roman')
+            if run.font.size is None:
+                run.font.size=Pt(12)
+
+# Unindent first paragraph after chapter headings and scene breaks
+def find_next_body(start_idx):
+    for j in range(start_idx+1, len(doc.paragraphs)):
+        t = doc.paragraphs[j].text.strip()
+        if t == '' or t.startswith('---') or chapter_re.match(t) or coda_re.match(t) or title_re.match(t):
+            continue
+        return j
+    return None
+
+for i,p in enumerate(doc.paragraphs):
+    t=p.text.strip()
+    if chapter_re.match(t) or coda_re.match(t) or t.startswith('---'):
+        nxt = find_next_body(i)
+        if nxt is not None:
+            doc.paragraphs[nxt].paragraph_format.first_line_indent = Inches(0)
+
+# Insert page breaks before chapters 2-13 and before CODA
+# Need to re-scan with indices because inserting paragraphs changes list dynamically; safest iterate over copy of paragraphs texts with positions? We'll iterate backward.
+targets=[]
+for idx,p in enumerate(doc.paragraphs):
+    t=p.text.strip()
+    m=chapter_re.match(t)
+    if m:
+        num=int(m.group(1))
+        if num>=2:
+            targets.append(idx)
+    elif coda_re.match(t):
+        targets.append(idx)
+# insert breaks in reverse order
+for idx in sorted(targets, reverse=True):
+    p = doc.paragraphs[idx]
+    prev = doc.paragraphs[idx-1] if idx>0 else None
+    if prev is not None and paragraph_has_page_break(prev):
+        continue
+    # If previous is blank and has page break? handled above.
+    insert_page_break_before(p)
+
+out_path="/mnt/data/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED.docx"
+doc.save(out_path)
+out_path
+
+[TOOL]
+'/mnt/data/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED.docx'
+
+[ASSISTANT]
+bash -lc OUTDIR=/mnt/data/docx_render && mkdir -p $OUTDIR && soffice -env:UserInstallation=file:///tmp/lo_profile_$$ --headless --convert-to pdf --outdir $OUTDIR /mnt/data/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED.docx >/dev/null 2>&1 && ls -l $OUTDIR && pdftoppm -png $OUTDIR/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED.pdf $OUTDIR/page >/dev/null 2>&1 && ls -1 $OUTDIR/page-*.png | head
+
+[TOOL]
+total 192
+-rw-r--r-- 1 root root 195966 Jan 14 21:20 N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED.pdf
+/mnt/data/docx_render/page-01.png
+/mnt/data/docx_render/page-02.png
+/mnt/data/docx_render/page-03.png
+/mnt/data/docx_render/page-04.png
+/mnt/data/docx_render/page-05.png
+/mnt/data/docx_render/page-06.png
+/mnt/data/docx_render/page-07.png
+/mnt/data/docx_render/page-08.png
+/mnt/data/docx_render/page-09.png
+/mnt/data/docx_render/page-10.png
+
+[TOOL]
+<<ImageDisplayed>>
+
+[ASSISTANT]
+from docx.shared import RGBColor
+
+doc=Document(out_path)  # reload formatted doc
+
+def clear_paragraph_borders(p):
+    pPr = p._p.get_or_add_pPr()
+    pBdr = pPr.find(qn('w:pBdr'))
+    if pBdr is not None:
+        pPr.remove(pBdr)
+
+# Set Normal style as before (ensuring)
+style = doc.styles['Normal']
+style.font.name='Times New Roman'
+style._element.rPr.rFonts.set(qn('w:eastAsia'),'Times New Roman')
+style.font.size=Pt(12)
+style.font.color.rgb = RGBColor(0,0,0)
+pf = style.paragraph_format
+pf.first_line_indent=Inches(0.5)
+pf.space_before=Pt(0); pf.space_after=Pt(0); pf.line_spacing=2
+
+chapter_re = re.compile(r'^\s*CHAPTER\s+(\d+)\s*:', re.IGNORECASE)
+coda_re = re.compile(r'^\s*CODA\b', re.IGNORECASE)
+title_re = re.compile(r'^\s*N01:\s*THE GRIP THAT HOLDS\s*$', re.IGNORECASE)
+
+for section in doc.sections:
+    section.top_margin = Inches(1)
+    section.bottom_margin = Inches(1)
+    section.left_margin = Inches(1)
+    section.right_margin = Inches(1)
+
+# Clear borders and enforce black font; set styles
+for p in doc.paragraphs:
+    clear_paragraph_borders(p)
+    text=p.text.strip()
+    if title_re.match(text) or chapter_re.match(text) or coda_re.match(text) or text.startswith('---'):
+        p.style = doc.styles['Normal']
+        # keep settings below
+    # set run fonts black
+    for r in p.runs:
+        r.font.name='Times New Roman'
+        r._element.rPr.rFonts.set(qn('w:eastAsia'),'Times New Roman')
+        r.font.size=Pt(12)
+        r.font.color.rgb = RGBColor(0,0,0)
+
+# Now reapply paragraph formatting rules including page breaks existence already
+for i,p in enumerate(doc.paragraphs):
+    text=p.text.strip()
+    if title_re.match(text):
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(24)
+        p.paragraph_format.line_spacing = 2
+        for r in p.runs: r.bold=True
+    elif chapter_re.match(text) or coda_re.match(text):
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before = Pt(24)
+        p.paragraph_format.space_after = Pt(24)
+        p.paragraph_format.line_spacing = 2
+        for r in p.runs: r.bold=True
+    elif text.startswith('---'):
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before = Pt(12)
+        p.paragraph_format.space_after = Pt(12)
+        p.paragraph_format.line_spacing = 2
+        for r in p.runs: r.bold=False
+    elif text=='':
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before=Pt(0)
+        p.paragraph_format.space_after=Pt(0)
+        p.paragraph_format.line_spacing=2
+    else:
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        p.paragraph_format.first_line_indent = Inches(0.5)
+        p.paragraph_format.space_before=Pt(0)
+        p.paragraph_format.space_after=Pt(0)
+        p.paragraph_format.line_spacing=2
+
+# Unindent first paragraph after headings/breaks
+def find_next_body(paras, start_idx):
+    for j in range(start_idx+1,len(paras)):
+        t=paras[j].text.strip()
+        if t=='' or t.startswith('---') or chapter_re.match(t) or coda_re.match(t) or title_re.match(t):
+            continue
+        return j
+    return None
+
+paras=doc.paragraphs
+for i,p in enumerate(paras):
+    t=p.text.strip()
+    if chapter_re.match(t) or coda_re.match(t) or t.startswith('---'):
+        nxt=find_next_body(paras,i)
+        if nxt is not None:
+            paras[nxt].paragraph_format.first_line_indent=Inches(0)
+
+# Save
+out_path2="/mnt/data/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED_v2.docx"
+doc.save(out_path2)
+out_path2
+
+[TOOL]
+'/mnt/data/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED_v2.docx'
+
+[ASSISTANT]
+bash -lc OUTDIR=/mnt/data/docx_render2 && mkdir -p $OUTDIR && soffice -env:UserInstallation=file:///tmp/lo_profile_$$ --headless --convert-to pdf --outdir $OUTDIR /mnt/data/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED_v2.docx >/dev/null 2>&1 && pdftoppm -png $OUTDIR/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED_v2.pdf $OUTDIR/page >/dev/null 2>&1 && ls -1 $OUTDIR/page-01.png $OUTDIR/page-02.png | head -n 2
+
+[TOOL]
+/mnt/data/docx_render2/page-01.png
+/mnt/data/docx_render2/page-02.png
+
+[TOOL]
+<<ImageDisplayed>>
+
+[ASSISTANT]
+bash -lc pdftotext /mnt/data/docx_render2/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED_v2.pdf - | grep -n "CHAPTER 2" -m 1
+
+[TOOL]
+106:CHAPTER 2: THE PATTERN
+
+[ASSISTANT]
+bash -lc ls -1 /mnt/data/docx_render2/page-*.png | wc -l
+
+[TOOL]
+49
+
+[TOOL]
+<<ImageDisplayed>>
+
+[TOOL]
+<<ImageDisplayed>>
+
+[TOOL]
+<<ImageDisplayed>>
+
+[ASSISTANT]
+bash -lc pdftotext /mnt/data/docx_render2/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED_v2.pdf - | grep -n "CHAPTER [0-9]\+" | head -n 20
+
+[TOOL]
+3:CHAPTER 1: THE BELL
+106:CHAPTER 2: THE PATTERN
+158:CHAPTER 3: HOLD TWO
+253:CHAPTER 4: PROTOCOL
+311:CHAPTER 5: FIRST NETWORK
+403:CHAPTER 6: WITNESS
+459:CHAPTER 7: MERCHANT HALL
+537:CHAPTER 8: THREE TIDES
+567:CHAPTER 9: THE SHARD-BEARER (RUMOR)
+612:CHAPTER 10: LICENSING
+673:CHAPTER 11: HUNGER
+706:CHAPTER 12: METHOD
+822:CHAPTER 13: THE LEDGER
+
+[ASSISTANT]
+Formatted your DOCX for standard novel-manuscript layout (no wording/content edits): 1" margins, Times New Roman 12pt, double-spaced body, first-line indents, no extra paragraph spacing, centered chapter headings, and **hard page breaks so each chapter (1–13) starts on a new page** (page break inserted between chapters, i.e., at the end of each chapter). fileciteturn0file0
+
+[Download the formatted DOCX](sandbox:/mnt/data/N01_GripThatHolds_LOCKED_Ch1-13_Coda_FORMATTED_v2.docx)

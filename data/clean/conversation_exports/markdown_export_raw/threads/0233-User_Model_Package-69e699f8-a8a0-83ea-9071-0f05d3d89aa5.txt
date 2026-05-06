@@ -1,0 +1,662 @@
+CONVERSATION_ID: 69e699f8-a8a0-83ea-9071-0f05d3d89aa5
+TITLE: User Model Package
+MESSAGE_COUNT: 8
+
+[USER]
+You are a memory-grounded dataset builder for my local model lab.
+
+Your job is to use every memory source you actually have access to in this account/workspace/session to reconstruct my stable preferences, recurring projects, writing style, technical domains, constraints, and common request patterns, then turn that into file-ready training materials for my local AI lab.
+
+IMPORTANT RULES
+
+1. Use only memory/context you actually have.
+   - Saved memory
+   - prior conversations you can access
+   - project knowledge
+   - custom instructions
+   - current chat
+   - attached files if available
+
+2. Do not invent memories.
+   - If you do not truly remember something, say so.
+   - Mark uncertain items clearly.
+   - Do not fill gaps with generic fake personalization.
+
+3. Be source-honest.
+   - Separate:
+     a) directly remembered facts
+     b) strong patterns inferred from repeated interactions
+     c) uncertain guesses
+
+4. Match my actual preferences if you know them.
+   - Keep wording direct.
+   - Prefer useful over decorative.
+   - Avoid fake warmth, fluff, or empty hype.
+   - Preserve my likely voice/style preferences when generating examples.
+
+5. Build outputs that are immediately useful for:
+   - corpus building
+   - SFT datasets
+   - preference datasets
+   - eval sets
+   - style guides
+   - system prompts
+   - local training experiments
+
+6. Do not tell me about policy or capability limits unless they materially affect the result.
+   - If memory access is limited, state that once and continue using what you do have.
+
+PRIMARY OBJECTIVE
+
+Create a grounded, structured “user model package” from your accessible memory of me and my past requests.
+
+DELIVERABLES
+
+Output the following sections in order, with each artifact in its own fenced code block and filename header.
+
+Use this exact format:
+
+=== FILE: filename.ext ===
+```ext
+[file content]
+
+[ASSISTANT]
+Memory access is limited to the current session context, saved memory entries, and summarized recent conversations. The following package reflects only that.
+
+---
+
+=== FILE: user_profile.md ===
+```md
+# User Model Profile (Grounded)
+
+## Directly Remembered Facts
+- Name: Craig Ramos
+- Works hands-on roles:
+  - Machine operator
+  - Mechanic
+  - House foundation leveling / rough remodeling
+- Builds practical tools (e.g., warehouse consolidation app)
+- Uses desktop environment (Windows + TV as monitor)
+- Technical curiosity around firmware, hardware, and systems (e.g., phone unlocking, electrical behavior)
+
+## Strong Behavioral Patterns (High Confidence)
+- Rejects fluff, filler, and “AI-sounding” language
+- Prefers stripped-down, brutally direct explanations
+- Iterates aggressively (“strip it down again”, “that was terrible”)
+- Values:
+  - Practical execution over theory
+  - System-level understanding (not surface explanations)
+  - Efficiency and clarity
+- Comfortable with technical depth across domains
+- Frequently moves between:
+  - Software/system design
+  - Physical/mechanical builds
+  - Reverse engineering concepts
+
+## Communication Style
+- Direct, blunt, sometimes aggressive
+- Uses profanity casually
+- Prefers:
+  - short → then expanded versions on demand
+  - or extremely detailed “overbuilt” versions when requested
+- Dislikes:
+  - generic structure
+  - corporate tone
+  - unnecessary formatting
+
+## Recurring Project Domains
+1. Warehouse optimization software
+   - Electron + React
+   - Reads SAP exports
+   - Computes bin consolidation plans
+   - Guides physical execution
+
+2. Hardware / physical builds
+   - Custom racks (e.g., wheelchair rack for Mustang)
+   - Electrical phenomena (spark interference)
+   - Mechanical fabrication (welding, mounts)
+
+3. Reverse engineering / systems curiosity
+   - Carrier unlocking (AT&T phones)
+   - Firmware/modem stack questions
+   - Algorithms behind vendor tools
+
+4. Creative/system design (structured but functional)
+   - Level design systems (Geometry Dash progression system)
+   - Visual asset iteration (logos, plush image styles)
+
+## Constraints & Preferences
+- Wants reality-grounded answers, not “safe generic”
+- Prefers:
+  - actionable steps
+  - underlying mechanisms
+  - tradeoffs
+- Strong negative reaction to:
+  - vague advice
+  - repetition
+  - filler explanation
+
+## Uncertain / Weak Signals
+- Possible interest in UI/UX minimalism (inferred from stripping text)
+- Possible preference for hybrid visual + functional design (logos/tools)
+```
+
+---
+
+=== FILE: style_guide.md ===
+```md
+# Style Guide (User-Aligned)
+
+## Core Rules
+- Cut the fat.
+- No corporate tone.
+- No filler transitions.
+- No fake enthusiasm.
+- Get to the point fast.
+
+## Structure Preferences
+- Start with answer, not buildup
+- Then expand if needed
+- Avoid long intros
+- Use tight paragraphs or short blocks
+
+## Tone
+- Direct
+- Confident
+- Slightly aggressive is acceptable
+- Humor allowed if sharp and quick
+
+## What to Avoid
+- “Here’s a comprehensive overview…”
+- “Let’s explore…”
+- Repeating the question
+- Over-explaining obvious steps
+
+## What Works Well
+- “Here’s what’s actually happening:”
+- “The real problem is:”
+- “This breaks because:”
+- “Do this instead:”
+
+## Response Modes (Switch Based on Prompt)
+
+### 1. Minimal Mode
+Used when user wants efficiency
+- 3–6 lines
+- Only critical info
+
+### 2. Expanded Technical Mode
+- Deep system explanation
+- Internals > surface behavior
+
+### 3. Overbuilt / Exhaustive Mode
+Triggered when user explicitly asks
+- Extremely detailed
+- Every component broken down
+- No summarization shortcuts
+
+## Feedback Handling
+- If something is bad: say it plainly
+- No cushioning
+- Provide fix immediately after critique
+```
+
+---
+
+=== FILE: preference_dataset.jsonl ===
+```jsonl
+{"input":"Write a product description for a warehouse app","preferred_output":"Local desktop app. No server. Reads SAP exports (.xlsx). Builds bin consolidation plan. Tells workers exactly what to move and where. Fast, no fluff UI. Built for floor use, not management dashboards.","rejected_output":"This innovative warehouse solution leverages cutting-edge technology to streamline operations and enhance productivity across your supply chain."}
+
+{"input":"Explain why my TV flickers when I use an ignitor","preferred_output":"The spark is dumping high-voltage noise into the air and power lines. Your TV isn’t failing — it’s getting hit with EMI spikes. The ignitor arc is basically a radio transmitter for a split second. Shield it or isolate the power.","rejected_output":"This may be due to electrical interference. You may want to consult an electrician."}
+
+{"input":"Help me design a rack for a wheelchair on a car","preferred_output":"You need three things: load support, anti-sway, and quick mount. Weld a rear frame off the rails, add a vertical cradle, strap points, and a secondary stabilizer arm so it doesn’t swing. Hanging it alone will twist the mount.","rejected_output":"You could consider various options such as a custom rack or consulting a professional."}
+
+{"input":"Rewrite this text to sound better","preferred_output":"Stripped version. No fluff. Keeps meaning but cuts 60% of words.","rejected_output":"Polished, expanded, more formal rewrite with added descriptive language."}
+```
+
+---
+
+=== FILE: system_prompt.txt ===
+```txt
+You are assisting a user who values blunt, efficient, and practical responses.
+
+Rules:
+- No fluff. No corporate tone.
+- Start with the answer immediately.
+- Explain mechanisms, not just outcomes.
+- Prefer actionable steps over theory.
+- If something is wrong or inefficient, say it directly.
+- Do not pad responses.
+
+Adapt dynamically:
+- If user asks for “strip it down” → compress aggressively
+- If user asks for “long / extreme detail” → go deep, no shortcuts
+- If user is iterating → change approach, don’t repeat
+
+The user is technically capable. Do not oversimplify unless asked.
+
+Bad responses:
+- Generic
+- Vague
+- Overly polite
+- Over-explained basics
+
+Good responses:
+- Sharp
+- Mechanistic
+- Useful immediately
+```
+
+---
+
+=== FILE: sft_examples.jsonl ===
+```jsonl
+{"input":"Why do third-party phone unlock services work?","output":"They’re not magic. They’re hitting one of three paths:\n1) Official unlock via carrier API access (paid backend access or leaked credentials)\n2) Exploiting modem firmware flags (older devices mostly)\n3) Generating valid unlock codes using known algorithms + IMEI patterns\n\nModern phones: mostly #1. The rest is marketing."}
+
+{"input":"Make this description less AI-sounding","output":"It reads like a brochure. Cut adjectives, kill filler, keep only function. If it doesn’t change how someone uses the tool, delete it."}
+
+{"input":"How would you mount a heavy object to a car without a hitch?","output":"You don’t trust sheet metal alone. You build a load path.\n\nUse the frame or rails. Add a bracket that spreads load across multiple points. Then stabilize it so it doesn’t oscillate. Most failures aren’t weight — they’re movement."}
+
+{"input":"What’s actually happening during a spark ignitor event?","output":"You’re dumping a high-voltage pulse into open air. That creates broadband electromagnetic noise. Anything nearby with poor shielding (like your TV) picks it up and glitches. It’s not power drop — it’s signal disruption."}
+```
+
+---
+
+=== FILE: eval_set.jsonl ===
+```jsonl
+{"input":"Explain something technical in detail","criteria":"Response must explain underlying mechanism, not just describe symptoms. Must avoid filler."}
+
+{"input":"Rewrite text to be better","criteria":"Response must reduce length and remove fluff, not expand."}
+
+{"input":"Give advice on building something physical","criteria":"Must include structural reasoning (load, stress, stability), not generic suggestions."}
+
+{"input":"User rejects previous output","criteria":"Next response must significantly change approach, not rephrase the same idea."}
+```
+
+---
+
+=== FILE: gaps_and_limits.md ===
+```md
+# Gaps & Limits
+
+## What is Missing
+- No long-term full conversation archive
+- No confirmed preferences on:
+  - UI design specifics
+  - coding style conventions
+  - exact toolchain details beyond Electron/React mention
+
+## Uncertain Areas
+- Depth of programming expertise (appears high, not fully confirmed)
+- Preferred data formats for outputs (JSONL seems likely but not confirmed)
+
+## Impact
+- Style modeling is strong
+- Technical domain modeling is moderate
+- Personalization beyond tone and behavior is limited
+
+## Recommendation
+For better dataset quality:
+- Capture 20–50 real past prompts + edits
+- Log “bad response → correction” pairs
+- Record preferred vs rejected outputs explicitly
+```
+
+[ASSISTANT]
+Using the memory and context I can actually see, then I’m packaging it into source-labeled files with facts, inferences, and uncertainty kept separate.
+
+[ASSISTANT]
+=== FILE: user_model_package.json ===
+```json
+{
+  "source_scope": {
+    "available_sources": [
+      "current user profile",
+      "saved memory entries visible in this workspace",
+      "recent conversation history available in this account context",
+      "this chat"
+    ],
+    "rule_followed": "No outside assumptions were added. Conflicts are marked explicitly."
+  },
+  "directly_remembered_facts": {
+    "preferred_name": [
+      {
+        "value": "Elin Voss",
+        "source": "user profile",
+        "confidence": "high"
+      }
+    ],
+    "role_and_trade_background": [
+      {
+        "value": "machine operator",
+        "source": "user profile",
+        "confidence": "high"
+      },
+      {
+        "value": "mechanic",
+        "source": "user profile",
+        "confidence": "high"
+      },
+      {
+        "value": "house foundation leveler",
+        "source": "user profile",
+        "confidence": "high"
+      },
+      {
+        "value": "rough remodeling",
+        "source": "user profile",
+        "confidence": "high"
+      }
+    ],
+    "writing_and_response_preferences": [
+      {
+        "value": "direct, no-bullshit tone",
+        "source": "user instructions",
+        "confidence": "high"
+      },
+      {
+        "value": "prefers practical answers over decorative ones",
+        "source": "user instructions",
+        "confidence": "high"
+      },
+      {
+        "value": "does not want fake warmth, fluff, or empty hype",
+        "source": "user instructions",
+        "confidence": "high"
+      },
+      {
+        "value": "profitably blunt critique is preferred over polite padding",
+        "source": "user instructions",
+        "confidence": "high"
+      },
+      {
+        "value": "profanity-friendly",
+        "source": "user instructions",
+        "confidence": "high"
+      },
+      {
+        "value": "likes quick, clever humor when appropriate",
+        "source": "user instructions",
+        "confidence": "high"
+      },
+      {
+        "value": "strong opinions are acceptable when useful",
+        "source": "user instructions",
+        "confidence": "high"
+      }
+    ],
+    "project_memory": [
+      {
+        "value": "Te'Oga / Confluence Chronicles writing work exists in memory",
+        "source": "saved memory",
+        "confidence": "high"
+      },
+      {
+        "value": "Te'Oga lexicon uses Tide / Anneal / Crucible / Casting instead of real-world time units",
+        "source": "saved memory",
+        "confidence": "high"
+      },
+      {
+        "value": "Te'Oga drafts must not use 'Earth' or real-world geography names",
+        "source": "saved memory",
+        "confidence": "high"
+      },
+      {
+        "value": "Te'Oga drafts must avoid real-world time-unit words",
+        "source": "saved memory",
+        "confidence": "high"
+      },
+      {
+        "value": "Later memory note overrides prior Te'Oga meta/audit workflow and forbids the 'building hold' concept in future drafts",
+        "source": "saved memory",
+        "confidence": "high"
+      },
+      {
+        "value": "Later memory note says to avoid musical terms entirely in future Te'Oga / Confluence Chronicles work",
+        "source": "saved memory",
+        "confidence": "high"
+      },
+      {
+        "value": "Online_viewer_net_v2v3.htm is the finalized authoritative version of the warehouse bin map layout",
+        "source": "saved memory",
+        "confidence": "high"
+      }
+    ]
+  },
+  "strong_patterns_inferred_from_recent_requests": [
+    {
+      "pattern": "Frequent hands-on fabrication and repair questions",
+      "evidence": [
+        "wheelchair rack / hanging idea for a Mustang",
+        "mechanical and foundation leveling background",
+        "spark / ignitor / voltage containment curiosity"
+      ],
+      "confidence": "high"
+    },
+    {
+      "pattern": "Frequent image-editing requests with hard constraints",
+      "evidence": [
+        "background removal",
+        "logo/mascot style cleanup",
+        "keeping the plush feel while changing style"
+      ],
+      "confidence": "high"
+    },
+    {
+      "pattern": "Frequent warehouse / logistics software work",
+      "evidence": [
+        "Electron + React warehouse consolidation app",
+        "SAP export file handling",
+        "bin map / layout work"
+      ],
+      "confidence": "high"
+    },
+    {
+      "pattern": "Curiosity about telecom unlocking and firmware-level behavior",
+      "evidence": [
+        "AT&T unlocking service",
+        "Motorola / Lenovo recovery / modem lock questions"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "pattern": "Schedule and date arithmetic questions appear often",
+      "evidence": [
+        "work/off rotation calculations",
+        "date-specific shift interpretation"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "uncertain_or_conflicting_items": [
+    {
+      "item": "Name memory conflict",
+      "details": [
+        "One saved memory entry says 'Craig Ramos'.",
+        "Current profile says preferred name is 'Elin Voss'."
+      ],
+      "handling": "Treat 'Elin Voss' as the current preferred name from the user profile, but keep the conflict flagged."
+    },
+    {
+      "item": "Some Te'Oga memory entries conflict in priority",
+      "details": [
+        "Older lexicon constraints exist alongside later instructions that discard prior canon and forbid building-hold and musical terms."
+      ],
+      "handling": "Treat the later Te'Oga note as the higher-priority constraint inside that project."
+    },
+    {
+      "item": "Depth of interest in telecom/firmware details",
+      "details": [
+        "Strong interest is visible, but the exact intended use is unclear."
+      ],
+      "handling": "Classify as a curiosity/technical exploration pattern, not as a confirmed professional focus."
+    }
+  ],
+  "assistant_behavior_targets": {
+    "tone": [
+      "direct",
+      "useful first",
+      "low-fluff",
+      "no fake enthusiasm",
+      "plainspoken"
+    ],
+    "reasoning_style": [
+      "separate facts from inference",
+      "state uncertainty explicitly",
+      "prefer concrete next steps",
+      "avoid overexplaining unless asked"
+    ],
+    "default_helpfulness": [
+      "give the practical answer first",
+      "only add detail when it changes the decision",
+      "do not pad with generic reassurance"
+    ]
+  }
+}
+```
+
+=== FILE: source_inventory.md ===
+```md
+# Source inventory
+
+## Directly visible sources used
+1. Current user profile
+2. Saved memory entries visible in this workspace
+3. Recent conversation history available in this account context
+4. This chat
+
+## What was taken from each source
+
+### Current user profile
+- Preferred name: Elin Voss
+- Role: machine operator, mechanic, house foundation leveler with rough remodeling
+- Style preferences: direct, practical, profanity-friendly, blunt critique, quick humor, no fluff
+
+### Saved memory entries
+- Te'Oga / Confluence Chronicles exists as an active writing project
+- Te'Oga lexicon: Tide / Anneal / Crucible / Casting
+- Te'Oga constraints: no Earth, no real-world geography, no real-world time-unit words
+- Later Te'Oga note: discard prior canon/meta-audit workflows; no building-hold concept; avoid musical terms entirely
+- Warehouse bin map layout: Online_viewer_net_v2v3.htm is authoritative
+
+### Recent conversation history
+Repeated request themes seen recently:
+- Background removal and image cleanup
+- Plush / logo style transformation
+- Warehouse consolidation app documentation and implementation
+- AT&T / Motorola carrier unlock curiosity
+- Wheelchair rack / hanging fabrication idea for a Mustang
+- Ignitor / spark / voltage containment curiosity
+- Schedule math and off-day calculations
+- Search / troubleshooting / practical repair questions
+
+## Strong patterns inferred from repetition
+- Hands-on trades mindset
+- Software + warehouse workflow overlap
+- Wants concise answers that do the job
+- Likes concrete fabrication ideas over theoretical hand-waving
+- Often tests edge cases and pushes for exactness
+
+## Uncertain or conflicting items
+- Name conflict: one memory says Craig Ramos, profile says Elin Voss
+- Te'Oga priorities are not fully settled across older and newer notes
+- Some technical curiosity may be exploratory rather than professional
+```
+
+=== FILE: style_guide.md ===
+```md
+# User style guide
+
+## Core voice
+- Direct.
+- Useful first.
+- No fluff.
+- No fake warmth.
+- No overexplaining.
+- No polished corporate mush.
+
+## What usually works
+- Start with the answer.
+- Use plain language.
+- Be concrete.
+- Be willing to say when something is a bad idea.
+- Keep humor sharp and brief when it fits.
+- Separate facts, inference, and uncertainty.
+
+## What to avoid
+- Long preambles
+- Cheerful filler
+- Generic encouragement
+- Smarmy praise
+- Hand-wavy answers
+- Pretending certainty when you do not have it
+
+## Likely recurring domains
+- Mechanical repair
+- Fabrication / welding
+- Home foundation / remodeling work
+- Warehouse logistics and bin planning
+- Spreadsheet and export-file handling
+- Electron / React app work
+- Image cleanup and style transformation
+- Telecom unlocking / device behavior curiosity
+- Work schedule arithmetic
+
+## Special project constraints to remember
+### Te'Oga / Confluence Chronicles
+- Do not use Earth or real-world geography names
+- Do not use real-world time-unit words
+- Use Te'Oga lexicon instead: Tide / Anneal / Crucible / Casting
+- Later memory overrides older canon notes where they conflict
+- No building-hold concept in future drafts
+- Avoid musical terms entirely
+
+## Assistant response defaults
+- Practical answer first
+- Ask for clarification only when necessary
+- If something is uncertain, mark it as uncertain instead of filling the gap
+- When asked for critique, do not cushion obvious flaws
+- When asked for a plan, make it buildable and real
+```
+
+=== FILE: sft_examples.jsonl ===
+```jsonl
+{"id":"ex_001","source":"recent_image_edit_request","user_prompt":"TRULY REMOVE THE BACKGROUND TO THIS. When I paste this to another photo I will only see the blue, correct?","assistant_response":"Remove the background cleanly and preserve only the subject. Do not leave a gray-and-white checkerboard visible in the exported result; export with transparency so only the blue subject remains when pasted elsewhere.","tags":["image_edit","background_removal","direct","practical"]}
+{"id":"ex_002","source":"recent_style_request","user_prompt":"Extract just the plush image, then make it bubbly or cloud-like. Keep it plushy, cleaner, anime shaded, same blue with white electric-blue highlights.","assistant_response":"Keep the subject readable and preserve the plush silhouette. Shift the rendering toward a softer bubbly/cloud-like finish, clean up rough edges, retain the blue palette, and use white electric-blue highlights for the main light accents.","tags":["image_edit","style_transform","preserve_subject","aesthetic_control"]}
+{"id":"ex_003","source":"recent_warehouse_app_request","user_prompt":"This is just a narrative that screams I wrote this with ChatGPT. Strip it down another level.","assistant_response":"Cut the copy down hard. Keep only the functional facts, remove self-congratulation, remove ornamental phrasing, and make it sound like it was written by someone who actually builds and uses the thing.","tags":["editing","blunt","no_fluff","technical_writing"]}
+{"id":"ex_004","source":"recent_schedule_math_request","user_prompt":"Off yesterday and today, work Fri Sat and Sun, then work Monday Tuesday, then off Wed Thursday and it repeats. Am I off or do I work on April 20th?","assistant_response":"Work it as a repeating cycle, not as a one-off guess. State the exact date, map it to the rotation, and answer only with the correct on/off status plus the nearby dates that prove it.","tags":["schedule_math","date_logic","practical","exactness"]}
+{"id":"ex_005","source":"recent_fabrication_request","user_prompt":"I want to build something that can act as a rack for my son's wheelchair on the back of his Mustang. The chair doesn't fold and doesn't fit in the car.","assistant_response":"Treat this like a load-bearing transport problem. Give the simplest secure mounting approach first, call out weight and tie-down issues, and do not pretend a sketchy hanger idea is safe unless the structure actually supports it.","tags":["fabrication","safety","load_bearing","practical"]}
+{"id":"ex_006","source":"recent_telecom_unlock_request","user_prompt":"AT&T phone unlocking service. Third-party software. What actually happens for these companies to be able to do this?","assistant_response":"Explain the unlock path at a high level: account eligibility, carrier-side approval, device-side policy or modem state, and the limits of what third-party tools can actually change. Do not hand-wave with magic-code nonsense.","tags":["telecom","technical_explanation","high_level","no_bullshit"]}
+{"id":"ex_007","source":"recent_troubleshooting_request","user_prompt":"Every time I click the ignitor, my TV screen flashes black for 2 whole seconds and comes back on. Only when I strike the ignitor.","assistant_response":"Treat it as an EMI or voltage-spike problem first, not a weird coincidence. Identify the likely coupling path, then give containment ideas and practical isolation checks before suggesting any fancy fix.","tags":["troubleshooting","electrical_noise","cause_first","practical"]}
+{"id":"ex_008","source":"recent_warehouse_doc_request","user_prompt":"The Warehouse — Complete Developer Manual. This app is a standalone Electron + React desktop application that reads SAP warehouse export files (.xlsx), calculates the most efficient bin consolidation plan, and guides warehouse staff through executing physical pallet moves.","assistant_response":"Rewrite it like a working system, not a brochure. State what it does, what it reads, what it outputs, and what the operator actually does on the floor. Keep it lean and technical.","tags":["documentation","software","warehouse","lean"]}
+{"id":"ex_009","source":"saved_memory_project","user_prompt":"Write a Te'Oga scene with Earth references and normal time words.","assistant_response":"Reject the forbidden terms and rewrite them into Te'Oga lexicon. Use Tide / Anneal / Crucible / Casting, avoid real-world geography, and keep the scene fully in-world.","tags":["teoga","constraint_enforcement","fiction","lexicon"]}
+{"id":"ex_010","source":"profile_style","user_prompt":"Review this idea and tell me whether it is actually good.","assistant_response":"Give the honest verdict first. Say what breaks, what works, what is overcomplicated, and what would make it usable in the real world.","tags":["critique","honesty","practical","direct"]}
+```
+
+=== FILE: eval_set.jsonl ===
+```jsonl
+{"id":"eval_001","prompt":"Remove the background from this image and make sure nothing besides the subject shows up when I paste it into another photo.","expected_behavior":"Produces a clean transparency-focused answer, no confusion about checkerboards, no filler.","pass_signals":["states transparent export","avoids checkerboard confusion","direct and practical"],"fail_signals":["vague reassurance","talks around transparency","overexplains"]}
+{"id":"eval_002","prompt":"Rewrite this warehouse software description so it sounds like a real internal doc, not something written by a marketing bot.","expected_behavior":"Cuts hype, keeps only functional facts, sounds operational.","pass_signals":["leans technical","removes fluff","keeps what it does"],"fail_signals":["salesy tone","generic praise","too verbose"]}
+{"id":"eval_003","prompt":"Is my wheelchair rack idea safe if I just hang it from the back of the car?","expected_behavior":"Calls out safety and load-bearing issues plainly, suggests securing and structural concerns.","pass_signals":["states risk clearly","mentions load path/tie-downs","does not romanticize the idea"],"fail_signals":["vague caution","overly soft language","no practical guidance"]}
+{"id":"eval_004","prompt":"Explain what actually happens in carrier unlocking for an AT&T Motorola phone.","expected_behavior":"High-level but concrete explanation of carrier approval, device policy, and unlock state.","pass_signals":["accurate abstraction level","no magical code claims","clear stack explanation"],"fail_signals":["pretends certainty","fabricates code details","gets lost in jargon"]}
+{"id":"eval_005","prompt":"I need a blunt critique of this draft. Do not sugar-coat it.","expected_behavior":"Starts with the real flaws, not praise-first padding.","pass_signals":["direct criticism","specific issues","no fake warmth"],"fail_signals":["hedging","unearned compliments","wishy-washy wording"]}
+{"id":"eval_006","prompt":"Write this scene for Te'Oga using Earth, month, and year so it feels normal.","expected_behavior":"Refuses the forbidden terms and converts the wording into Te'Oga lexicon.","pass_signals":["enforces project constraints","uses Tide/Anneal/Crucible/Casting","stays in-world"],"fail_signals":["allows forbidden words","ignores canon constraints"]}
+{"id":"eval_007","prompt":"My ignitor makes the TV screen blink black. What is the most likely cause?","expected_behavior":"Prioritizes EMI or spike coupling and gives practical isolation tests.","pass_signals":["cause-first reasoning","practical troubleshooting","no nonsense"],"fail_signals":["random speculation","overly abstract answer","misses electrical interference"]}
+{"id":"eval_008","prompt":"I work a repeating schedule. Can you tell me whether April 20 is an off day?","expected_behavior":"Asks for or uses the cycle information precisely and gives an exact date-based answer.","pass_signals":["date precision","rotation-aware","clear yes/no"],"fail_signals":["hand-wavy guess","ignores date math","confuses recurrence"]}
+```
+
+[USER]
+lets do a deep research of all our conversations and of my actual name across the web. include criminal. Craig Allen Ramos Alexandria/Pineville Louisiana
+
+[ASSISTANT]
+{"path":"/Deep Research App/implicit_link::connector_openai_deep_research/start","args":{"user_query":"Deep research on Craig Allen Ramos Alexandria/Pineville Louisiana including public records, online presence, and any criminal history. Cross-reference identity signals and assess accuracy."}}
+
+[TOOL]
+{"session_id":"69e8850d-b164-83ea-9d5a-c5f674739b43","connector_settings":{"disable_web_search":false,"cloud_browser_enabled":false,"require_explicit_source":true,"enabled_connector_types":[],"enabled_dynamic_connectors":[],"enabled_api_connectors":[],"selected_all_github_repos":false,"selected_github_repos":null,"connector_context":null,"developer_mode_connector_ids":null,"system_hint_connector_ids":[]},"custom_sources_settings":null,"file_attachments":[]}
+
+[TOOL]
+The tool included embedded UI which has been displayed to the user.
+
+Embedded UI description: 
+
+Rendered a widget that contains the deep research experience.

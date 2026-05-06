@@ -21,6 +21,30 @@ required_fields:
   - reasoning_score
   - prose_score
   - project_relevance
+  - extracted_from
+extracted_from_schema:
+  nullable: true
+  description: Optional provenance metadata for capability nodes mined from GGUF tensors.
+  required_if_present:
+    - model_name
+    - tensor_name
+    - activation_pattern
+    - mined_at
+  optional_if_present:
+    - model_file          # filename of the source GGUF
+    - layer_index
+    - head_index
+    - component_type      # "attention_head", "mlp_neuron", "residual_stream"
+    - extraction_method   # "heuristic", "activation_probing", "TransformerLens", etc.
+    - extraction_confidence  # 0.0-1.0; how clean was the capability attribution
+    - polysemantic        # bool; does this head serve multiple functions?
+    - polysemantic_roles  # list[str] | null; candidate roles if polysemantic is true
+    - miner_version
+  notes:
+    - polysemantic is critical — most transformer heads activate for multiple tasks.
+    - Nodes with polysemantic=true should default to trust_layer=interpretive_maps.
+    - Nodes with polysemantic=false and extraction_confidence >= 0.7 may be promoted to stable_core.
+    - For human-authored nodes, set extracted_from to null.
 trust_layers:
   stable_core:
     runtime_eligible: true
@@ -67,6 +91,14 @@ path_rules:
     trust_layer: episodic_events
     node_type: event_note
     privacy_level: standard
+  - contains: conversation_exports
+    trust_layer: episodic_events
+    node_type: conversation_record
+    privacy_level: restricted
+  - contains: markdown_export_raw
+    trust_layer: episodic_events
+    node_type: conversation_record
+    privacy_level: restricted
   - contains: prose_voice
     trust_layer: prose_voice
     node_type: prose_fragment
@@ -77,10 +109,10 @@ path_rules:
     privacy_level: internal
 content_rules:
   interpretive_markers:
-    - hypothesis:
-    - interpretation:
-    - possible meaning:
-    - pattern read:
+    - "hypothesis:"
+    - "interpretation:"
+    - "possible meaning:"
+    - "pattern read:"
   review_markers:
     - review only
     - do not auto-load

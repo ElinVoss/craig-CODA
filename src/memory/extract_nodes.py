@@ -19,11 +19,13 @@ MARKDOWN_LINK_PATTERN = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 MENTION_PATTERN = re.compile(r"@([A-Za-z0-9_-]+)")
 
 
-def _read_fragments(path: Path) -> list[str]:
+def _read_fragments(path: Path, source_kind: str | None = None) -> list[str]:
     suffix = path.suffix.lower()
     text = path.read_text(encoding="utf-8").strip()
     if not text:
         return []
+    if source_kind in {"conversation_export_raw", "conversation_transcript"}:
+        return [text]
     if suffix == ".jsonl":
         fragments = []
         for line in text.splitlines():
@@ -104,7 +106,7 @@ def extract_nodes(documents: list[SourceDocument] | None = None) -> list[VaultNo
     nodes: list[VaultNode] = []
     for document in source_documents:
         modified = datetime.utcfromtimestamp(document.path.stat().st_mtime).replace(microsecond=0).isoformat()
-        for index, fragment in enumerate(_read_fragments(document.path), start=1):
+        for index, fragment in enumerate(_read_fragments(document.path, document.source_kind), start=1):
             tags = sorted(set(document.root_tags + TAG_PATTERN.findall(fragment)))
             links = sorted(set(WIKI_LINK_PATTERN.findall(fragment) + MARKDOWN_LINK_PATTERN.findall(fragment)))
             people = sorted(set(MENTION_PATTERN.findall(fragment)))

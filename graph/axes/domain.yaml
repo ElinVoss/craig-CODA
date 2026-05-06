@@ -1,0 +1,14 @@
+axis: domain
+description: Subject area of the prompt.
+
+values:
+  architecture:
+    description: System architecture, graph design, inference structure.
+  implementation:
+    description: Code, files, runtime behavior, tests.
+  research:
+    description: Open-ended model behavior or unsolved questions.
+  product:
+    description: User-facing behavior, experience, packaging.
+  governance:
+    description: Constraints, policies, trust, provenance, auditability.

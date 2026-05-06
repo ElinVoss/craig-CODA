@@ -1,13 +1,38 @@
 # Repo Contract
 
+## Agent Entry Workflow
+
+When an assistant enters this directory, it must not begin with broad repo search.
+
+Required read order before meaningful work:
+
+1. Read `README.md` fully.
+2. Read `CURRENT_STATE.md`.
+3. Read `DECISIONS.md`.
+4. Read `NEXT_STEPS.md`.
+5. Read `ARTIFACTS.md`.
+6. Read `LIVE_HANDOFF.md` before meaningful work.
+7. Read `HANDOFF_PROMPT.md`.
+8. Read `SCOPE_MAP.yaml`.
+9. Resolve the user-given scope or natural onboarding phrase.
+10. Follow only the mapped `read_order` for that scope.
+11. Read local `AGENTS.md` and local `README.md` whenever the route enters a scoped branch.
+12. Start work from that branch's `Continue From Here` prompt.
+13. Update `LIVE_HANDOFF.md` between every meaningful action so the next model inherits the freshest state.
+
+If the user says something like `check out what ive got going`, `bring yourself up to speed`, or `learn this directory`, route to the `handoff` scope first.
+If the scope is still ambiguous after alias matching, ask the user to choose among the named scopes instead of wandering the repo.
+
+`LIVE_HANDOFF.md` is the shared baton file. If true asynchronous updating is not possible in the current environment, update it immediately after each meaningful action and before the next one.
+
 ## Purpose
 
-`model-lab` is a Windows-friendly, local-first repository for building a CPU-first AI lab with two tracks:
+`craig-CODA` is a Windows-friendly, local-first repository for building a CPU-first AI lab with two tracks:
 
 - Teach-a-model: examples, corrections, preferences, and evals for adapting an existing model later.
 - Originate-a-model: local datasets and experiments for training a tiny model from scratch later.
 
-The repo exists to keep the data model, folder structure, and workflow consistent before any training code is added.
+The repo exists to keep the data model, folder structure, workflow, and handoff path consistent while local scratch-training, SFT, runtime, and memory work evolve conservatively.
 
 ## Scope boundaries
 
@@ -15,7 +40,7 @@ The repo exists to keep the data model, folder structure, and workflow consisten
 - Keep the first version simple and readable.
 - Keep large artifacts on `D:`.
 - Do not introduce cloud-only dependencies.
-- Do not add training code until data formats and eval flows are established.
+- Do not expand training or architecture claims faster than the data and eval evidence supports.
 
 ## Coding style
 
@@ -44,7 +69,7 @@ The repo exists to keep the data model, folder structure, and workflow consisten
 
 ## Forbidden actions
 
-- Do not add model training code in this phase.
+- Do not invent or overstate model-training success.
 - Do not add large frameworks casually.
 - Do not add fake production claims.
 - Do not commit anything to git.
@@ -75,5 +100,7 @@ A future task is done when:
 - CPU-first
 - Windows-friendly
 - local-first
-- no training runs until data formats and eval flows exist
+- training scaffolds and checkpoint artifacts already exist
+- vault-authored architecture and CODA adapter wiring already exist
+- current novelty work is Copilot-first donor vaultization, living substrate design, and the later depersonalization-and-refill path
 

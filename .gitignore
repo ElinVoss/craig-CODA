@@ -4,9 +4,6 @@ __pycache__/
 *.pyd
 *.pyo
 
-# Node
-node_modules/
-
 # Virtual environments
 .venv/
 venv/
@@ -70,6 +67,12 @@ Desktop.ini
 # Large generated artifacts
 data/**/generated/
 data/**/cache/
+
+# Personal message data — private, do not commit
+data/raw/messages/
+
+# Embedding model (binary artifact)
+artifacts/embeddings/
 
 # Keep sample data tracked
 !data/sft/sample.jsonl

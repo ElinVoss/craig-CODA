@@ -1,0 +1,601 @@
+CONVERSATION_ID: 6893b843-6edc-8323-97ea-f12d214cdb66
+TITLE: Health inspection checklist
+MESSAGE_COUNT: 17
+
+[USER]
+I need a checklist to prepare for a health inspection for a kitchen  inside a bowling center in Alexandria Louisiana
+
+[ASSISTANT]
+Here's a **comprehensive health inspection checklist** tailored for a **kitchen inside a bowling center in Alexandria, Louisiana**, based on **Louisiana Department of Health (LDH)** food safety regulations and general food code practices.
+
+---
+
+## ✅ Health Inspection Preparation Checklist  
+### 📍 For a Bowling Center Kitchen — Alexandria, LA
+
+---
+
+### 🔹 1. **Licensing & Documentation**
+- [ ] Current LDH food establishment permit is posted and valid.  
+- [ ] Employee food handler certifications and manager food safety certifications are up to date and available.  
+- [ ] Pest control records available and up to date.  
+- [ ] Most recent health inspection report on file.
+
+---
+
+### 🔹 2. **Employee Hygiene & Practices**
+- [ ] Employees are wearing clean uniforms, hair restraints (hats, hairnets, beard nets).  
+- [ ] Handwashing stations fully stocked (soap, hot water, paper towels).  
+- [ ] Employees wash hands properly and frequently.  
+- [ ] No eating, drinking (except closed beverage containers), or smoking in food prep areas.  
+- [ ] Sick employees are not working (illness reporting policy in place).
+
+---
+
+### 🔹 3. **Food Handling & Storage**
+- [ ] All food stored at least 6 inches off the floor.  
+- [ ] Food is covered, labeled, and dated.  
+- [ ] No expired or spoiled food present.  
+- [ ] Raw meat stored below ready-to-eat foods.  
+- [ ] Thermometers present in all refrigerators/freezers and calibrated.  
+- [ ] Refrigerated food at or below 41°F; hot food at or above 135°F.
+
+---
+
+### 🔹 4. **Cooking, Cooling, Reheating**
+- [ ] Cooking temperatures meet food safety standards (e.g., poultry 165°F).  
+- [ ] Food is cooled properly (135°F to 70°F in 2 hours, then to 41°F in 4 more).  
+- [ ] Reheated foods reach 165°F for 15 seconds.  
+- [ ] Microwave reheating procedures documented (if applicable).
+
+---
+
+### 🔹 5. **Cleaning & Sanitizing**
+- [ ] 3-compartment sink is set up correctly: wash, rinse, sanitize.  
+- [ ] Proper sanitizer concentration (chlorine: 50-100 ppm; quats: 200-400 ppm).  
+- [ ] Test strips available and used regularly.  
+- [ ] All food-contact surfaces cleaned and sanitized regularly.  
+- [ ] Cutting boards, knives, utensils, etc., in good condition and sanitized.  
+
+---
+
+### 🔹 6. **Equipment & Facility Maintenance**
+- [ ] Equipment clean, in good repair, and functioning (coolers, fryers, etc.).  
+- [ ] Hood and ventilation systems clean and grease-free.  
+- [ ] Lights have shields or shatter-proof bulbs.  
+- [ ] Floors, walls, and ceilings are clean and in good condition.  
+- [ ] No standing water, leaks, or excessive grease buildup.  
+
+---
+
+### 🔹 7. **Pest Control**
+- [ ] No signs of pests (rodents, insects, droppings).  
+- [ ] Doors and windows have screens or self-closers.  
+- [ ] Pest control company on regular service schedule.  
+
+---
+
+### 🔹 8. **Restrooms**
+- [ ] Restrooms are clean, stocked, and have self-closing doors.  
+- [ ] Handwashing signs posted in all restrooms.  
+
+---
+
+### 🔹 9. **Trash & Waste Disposal**
+- [ ] Trash cans covered, leak-proof, and emptied regularly.  
+- [ ] Grease traps cleaned and properly maintained.  
+- [ ] Dumpster area clean and free from overflow or pests.  
+
+---
+
+### 🔹 10. **Special for Bowling Center**
+- [ ] Snack bar and drink station areas follow the same sanitation and storage rules.  
+- [ ] Any vending machines or self-serve machines are clean and regularly maintained.  
+- [ ] No cross-contamination between recreational areas and food prep areas.  
+
+---
+
+### 📝 Tips Before Inspection Day:
+- Do a mock inspection the day before.
+- Make sure your team knows their roles in food safety.
+- Keep all temperature logs and cleaning logs up to date.
+- Greet the inspector courteously and accompany them during the inspection.
+
+---
+
+Would you like this checklist in printable format (PDF or Word)? I can generate that for you as well.
+
+[USER]
+Printable pdf
+
+[ASSISTANT]
+from fpdf import FPDF
+
+# Create a PDF class
+class PDF(FPDF):
+    def header(self):
+        self.set_font("Arial", "B", 14)
+        self.cell(0, 10, "Health Inspection Preparation Checklist", ln=True, align="C")
+        self.set_font("Arial", "", 12)
+        self.cell(0, 10, "For a Bowling Center Kitchen — Alexandria, LA", ln=True, align="C")
+        self.ln(10)
+
+    def chapter_title(self, title):
+        self.set_font("Arial", "B", 12)
+        self.set_fill_color(200, 220, 255)
+        self.cell(0, 8, title, ln=True, fill=True)
+
+    def chapter_body(self, items):
+        self.set_font("Arial", "", 11)
+        for item in items:
+            self.cell(0, 8, f"[ ] {item}", ln=True)
+        self.ln(5)
+
+pdf = PDF()
+pdf.add_page()
+
+# Sections and items
+checklist = {
+    "1. Licensing & Documentation": [
+        "Current LDH food establishment permit is posted and valid.",
+        "Employee food handler certifications and manager food safety certifications are up to date and available.",
+        "Pest control records available and up to date.",
+        "Most recent health inspection report on file."
+    ],
+    "2. Employee Hygiene & Practices": [
+        "Employees are wearing clean uniforms, hair restraints (hats, hairnets, beard nets).",
+        "Handwashing stations fully stocked (soap, hot water, paper towels).",
+        "Employees wash hands properly and frequently.",
+        "No eating, drinking (except closed beverage containers), or smoking in food prep areas.",
+        "Sick employees are not working (illness reporting policy in place)."
+    ],
+    "3. Food Handling & Storage": [
+        "All food stored at least 6 inches off the floor.",
+        "Food is covered, labeled, and dated.",
+        "No expired or spoiled food present.",
+        "Raw meat stored below ready-to-eat foods.",
+        "Thermometers present in all refrigerators/freezers and calibrated.",
+        "Refrigerated food at or below 41°F; hot food at or above 135°F."
+    ],
+    "4. Cooking, Cooling, Reheating": [
+        "Cooking temperatures meet food safety standards (e.g., poultry 165°F).",
+        "Food is cooled properly (135°F to 70°F in 2 hours, then to 41°F in 4 more).",
+        "Reheated foods reach 165°F for 15 seconds.",
+        "Microwave reheating procedures documented (if applicable)."
+    ],
+    "5. Cleaning & Sanitizing": [
+        "3-compartment sink is set up correctly: wash, rinse, sanitize.",
+        "Proper sanitizer concentration (chlorine: 50-100 ppm; quats: 200-400 ppm).",
+        "Test strips available and used regularly.",
+        "All food-contact surfaces cleaned and sanitized regularly.",
+        "Cutting boards, knives, utensils, etc., in good condition and sanitized."
+    ],
+    "6. Equipment & Facility Maintenance": [
+        "Equipment clean, in good repair, and functioning (coolers, fryers, etc.).",
+        "Hood and ventilation systems clean and grease-free.",
+        "Lights have shields or shatter-proof bulbs.",
+        "Floors, walls, and ceilings are clean and in good condition.",
+        "No standing water, leaks, or excessive grease buildup."
+    ],
+    "7. Pest Control": [
+        "No signs of pests (rodents, insects, droppings).",
+        "Doors and windows have screens or self-closers.",
+        "Pest control company on regular service schedule."
+    ],
+    "8. Restrooms": [
+        "Restrooms are clean, stocked, and have self-closing doors.",
+        "Handwashing signs posted in all restrooms."
+    ],
+    "9. Trash & Waste Disposal": [
+        "Trash cans covered, leak-proof, and emptied regularly.",
+        "Grease traps cleaned and properly maintained.",
+        "Dumpster area clean and free from overflow or pests."
+    ],
+    "10. Special for Bowling Center": [
+        "Snack bar and drink station areas follow the same sanitation and storage rules.",
+        "Any vending machines or self-serve machines are clean and regularly maintained.",
+        "No cross-contamination between recreational areas and food prep areas."
+    ]
+}
+
+# Add each section
+for section, items in checklist.items():
+    pdf.chapter_title(section)
+    pdf.chapter_body(items)
+
+# Save PDF
+output_path = "/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist.pdf"
+pdf.output(output_path)
+
+[TOOL]
+---------------------------------------------------------------------------
+UnicodeEncodeError                        Traceback (most recent call last)
+Cell In[1], line 97
+     95 # Save PDF
+     96 output_path = "/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist.pdf"
+---> 97 pdf.output(output_path)
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1065, in FPDF.output(self, name, dest)
+   1063 #Finish document if necessary
+   1064 if(self.state<3):
+-> 1065     self.close()
+   1066 dest=dest.upper()
+   1067 if(dest==''):
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:246, in FPDF.close(self)
+    244 self._endpage()
+    245 #close document
+--> 246 self._enddoc()
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1636, in FPDF._enddoc(self)
+   1634 def _enddoc(self):
+   1635     self._putheader()
+-> 1636     self._putpages()
+   1637     self._putresources()
+   1638     #Info
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1170, in FPDF._putpages(self)
+   1167 #Page content
+   1168 if self.compress:
+   1169     # manage binary data as latin1 until PEP461 or similar is implemented
+-> 1170     p = self.pages[n].encode("latin1") if PY3K else self.pages[n] 
+   1171     p = zlib.compress(p)
+   1172 else:
+
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2014' in position 167: ordinal not in range(256)
+
+[ASSISTANT]
+# Fix encoding issue by replacing em dashes with regular hyphens
+for section in list(checklist.keys()):
+    new_section = section.replace("—", "-")
+    checklist[new_section] = checklist.pop(section)
+
+# Create a new PDF
+pdf = PDF()
+pdf.add_page()
+
+# Add updated sections
+for section, items in checklist.items():
+    pdf.chapter_title(section)
+    pdf.chapter_body(items)
+
+# Save corrected PDF
+output_path = "/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist.pdf"
+pdf.output(output_path)
+
+[TOOL]
+---------------------------------------------------------------------------
+UnicodeEncodeError                        Traceback (most recent call last)
+Cell In[2], line 17
+     15 # Save corrected PDF
+     16 output_path = "/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist.pdf"
+---> 17 pdf.output(output_path)
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1065, in FPDF.output(self, name, dest)
+   1063 #Finish document if necessary
+   1064 if(self.state<3):
+-> 1065     self.close()
+   1066 dest=dest.upper()
+   1067 if(dest==''):
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:246, in FPDF.close(self)
+    244 self._endpage()
+    245 #close document
+--> 246 self._enddoc()
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1636, in FPDF._enddoc(self)
+   1634 def _enddoc(self):
+   1635     self._putheader()
+-> 1636     self._putpages()
+   1637     self._putresources()
+   1638     #Info
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1170, in FPDF._putpages(self)
+   1167 #Page content
+   1168 if self.compress:
+   1169     # manage binary data as latin1 until PEP461 or similar is implemented
+-> 1170     p = self.pages[n].encode("latin1") if PY3K else self.pages[n] 
+   1171     p = zlib.compress(p)
+   1172 else:
+
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2014' in position 167: ordinal not in range(256)
+
+[ASSISTANT]
+# Fix encoding issues by replacing all non-ASCII characters in checklist content
+import unicodedata
+
+def normalize_text(text):
+    return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
+
+# Normalize all section titles and items
+normalized_checklist = {}
+for section, items in checklist.items():
+    norm_section = normalize_text(section)
+    norm_items = [normalize_text(item) for item in items]
+    normalized_checklist[norm_section] = norm_items
+
+# Create a new PDF with normalized text
+pdf = PDF()
+pdf.add_page()
+
+# Add sections with ASCII-only content
+for section, items in normalized_checklist.items():
+    pdf.chapter_title(section)
+    pdf.chapter_body(items)
+
+# Save final PDF
+output_path = "/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist.pdf"
+pdf.output(output_path)
+
+[TOOL]
+---------------------------------------------------------------------------
+UnicodeEncodeError                        Traceback (most recent call last)
+Cell In[3], line 25
+     23 # Save final PDF
+     24 output_path = "/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist.pdf"
+---> 25 pdf.output(output_path)
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1065, in FPDF.output(self, name, dest)
+   1063 #Finish document if necessary
+   1064 if(self.state<3):
+-> 1065     self.close()
+   1066 dest=dest.upper()
+   1067 if(dest==''):
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:246, in FPDF.close(self)
+    244 self._endpage()
+    245 #close document
+--> 246 self._enddoc()
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1636, in FPDF._enddoc(self)
+   1634 def _enddoc(self):
+   1635     self._putheader()
+-> 1636     self._putpages()
+   1637     self._putresources()
+   1638     #Info
+
+File ~/.local/lib/python3.11/site-packages/fpdf/fpdf.py:1170, in FPDF._putpages(self)
+   1167 #Page content
+   1168 if self.compress:
+   1169     # manage binary data as latin1 until PEP461 or similar is implemented
+-> 1170     p = self.pages[n].encode("latin1") if PY3K else self.pages[n] 
+   1171     p = zlib.compress(p)
+   1172 else:
+
+UnicodeEncodeError: 'latin-1' codec can't encode character '\u2014' in position 167: ordinal not in range(256)
+
+[ASSISTANT]
+# Switch to reportlab to avoid encoding issues with fpdf
+from reportlab.lib.pagesizes import LETTER
+from reportlab.pdfgen import canvas
+
+# Create PDF path
+output_path = "/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist.pdf"
+
+# Initialize canvas
+c = canvas.Canvas(output_path, pagesize=LETTER)
+width, height = LETTER
+c.setFont("Helvetica-Bold", 14)
+c.drawCentredString(width / 2, height - 40, "Health Inspection Preparation Checklist")
+c.setFont("Helvetica", 12)
+c.drawCentredString(width / 2, height - 60, "For a Bowling Center Kitchen - Alexandria, LA")
+
+y = height - 90
+c.setFont("Helvetica-Bold", 12)
+
+# Add each section and items
+for section, items in normalized_checklist.items():
+    if y < 100:
+        c.showPage()
+        y = height - 50
+        c.setFont("Helvetica-Bold", 12)
+    c.drawString(40, y, section)
+    y -= 20
+    c.setFont("Helvetica", 11)
+    for item in items:
+        if y < 60:
+            c.showPage()
+            y = height - 50
+            c.setFont("Helvetica-Bold", 12)
+            c.drawString(40, y, section + " (cont'd)")
+            y -= 20
+            c.setFont("Helvetica", 11)
+        c.drawString(50, y, f"[ ] {item}")
+        y -= 15
+    y -= 10
+    c.setFont("Helvetica-Bold", 12)
+
+# Save PDF
+c.save()
+
+[ASSISTANT]
+Your printable PDF checklist is ready:
+
+📄 [Download the Health Inspection Checklist (PDF)](sandbox:/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist.pdf)
+
+Let me know if you’d like to customize it further or add your logo.
+
+[USER]
+Now I need a daily check list for the same kitchen ensuring all this can be properly maintained
+
+[ASSISTANT]
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import LETTER
+
+# File path for the daily checklist
+daily_checklist_path = "/mnt/data/Daily_Kitchen_Maintenance_Checklist.pdf"
+
+# Setup PDF
+c = canvas.Canvas(daily_checklist_path, pagesize=LETTER)
+width, height = LETTER
+c.setFont("Helvetica-Bold", 14)
+c.drawCentredString(width / 2, height - 40, "Daily Kitchen Maintenance Checklist")
+c.setFont("Helvetica", 12)
+c.drawCentredString(width / 2, height - 60, "Bowling Center Kitchen - Alexandria, LA")
+
+y = height - 90
+c.setFont("Helvetica-Bold", 12)
+
+# Daily checklist categories
+daily_checklist = {
+    "Opening Tasks": [
+        "Check all handwashing stations are stocked (soap, paper towels, warm water).",
+        "Verify food handler hygiene (clean uniforms, hair restraints).",
+        "Inspect all food storage areas for proper labeling, dating, and separation.",
+        "Take and log temperatures of all refrigerators and freezers.",
+        "Ensure sanitizer buckets and test strips are available and properly mixed.",
+        "Ensure all equipment (grills, fryers, ovens) is clean and functional."
+    ],
+    "During Operation": [
+        "Monitor employee handwashing and glove use.",
+        "Check hot holding units (above 135°F) and cold holding units (below 41°F).",
+        "Spot-check food contact surfaces for cleanliness every 4 hours.",
+        "Ensure trash bins are not overflowing and are covered.",
+        "Watch for signs of pests or leaks in prep and storage areas."
+    ],
+    "Closing Tasks": [
+        "Clean and sanitize all food-contact surfaces, utensils, and cutting boards.",
+        "Empty and clean grease traps, floor drains, and trash bins.",
+        "Log final food temperatures for cooling and leftovers.",
+        "Ensure all food is labeled, dated, and stored properly.",
+        "Sweep and mop floors, clean walls and equipment exteriors.",
+        "Secure all food and chemicals; lock storage and utility areas."
+    ],
+    "Daily Logs to Complete": [
+        "Temperature log for refrigerators, freezers, and hot holding.",
+        "Sanitizer concentration check log.",
+        "Food cooling log (if applicable).",
+        "Employee illness/symptom reporting (if any)."
+    ]
+}
+
+# Write checklist to PDF
+for section, items in daily_checklist.items():
+    if y < 100:
+        c.showPage()
+        y = height - 50
+        c.setFont("Helvetica-Bold", 12)
+    c.drawString(40, y, section)
+    y -= 20
+    c.setFont("Helvetica", 11)
+    for item in items:
+        if y < 60:
+            c.showPage()
+            y = height - 50
+            c.setFont("Helvetica-Bold", 12)
+            c.drawString(40, y, section + " (cont'd)")
+            y -= 20
+            c.setFont("Helvetica", 11)
+        c.drawString(50, y, f"[ ] {item}")
+        y -= 15
+    y -= 10
+    c.setFont("Helvetica-Bold", 12)
+
+# Finalize and save
+c.save()
+
+[ASSISTANT]
+Your **Daily Kitchen Maintenance Checklist** is ready:
+
+📄 [Download the Daily Checklist (PDF)](sandbox:/mnt/data/Daily_Kitchen_Maintenance_Checklist.pdf)
+
+Let me know if you want to add date fields, initials/sign-off sections, or convert this into a reusable form.
+
+[USER]
+Include dishes in both the documents
+
+[ASSISTANT]
+# Update both checklists to include dish-related tasks
+
+# 1. Update original health inspection checklist to add dishwashing checks
+normalized_checklist["5. Cleaning & Sanitizing"].extend([
+    "Dishes are washed, rinsed, and sanitized properly (3-compartment sink or dishwasher).",
+    "Dish machine (if used) is functioning and sanitizing correctly (temp or chemical logs maintained).",
+    "Air-dried dishes are stored in a clean, sanitary manner."
+])
+
+# Re-create the inspection checklist PDF with added dish tasks
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import LETTER
+
+inspection_path = "/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist_With_Dishes.pdf"
+c1 = canvas.Canvas(inspection_path, pagesize=LETTER)
+width, height = LETTER
+c1.setFont("Helvetica-Bold", 14)
+c1.drawCentredString(width / 2, height - 40, "Health Inspection Preparation Checklist")
+c1.setFont("Helvetica", 12)
+c1.drawCentredString(width / 2, height - 60, "For a Bowling Center Kitchen - Alexandria, LA")
+y = height - 90
+c1.setFont("Helvetica-Bold", 12)
+
+for section, items in normalized_checklist.items():
+    if y < 100:
+        c1.showPage()
+        y = height - 50
+        c1.setFont("Helvetica-Bold", 12)
+    c1.drawString(40, y, section)
+    y -= 20
+    c1.setFont("Helvetica", 11)
+    for item in items:
+        if y < 60:
+            c1.showPage()
+            y = height - 50
+            c1.setFont("Helvetica-Bold", 12)
+            c1.drawString(40, y, section + " (cont'd)")
+            y -= 20
+            c1.setFont("Helvetica", 11)
+        c1.drawString(50, y, f"[ ] {item}")
+        y -= 15
+    y -= 10
+    c1.setFont("Helvetica-Bold", 12)
+
+c1.save()
+
+# 2. Update daily checklist to include dishwashing tasks
+daily_checklist["Opening Tasks"].append("Ensure dish machine or 3-compartment sink is clean and operational.")
+daily_checklist["During Operation"].append("Monitor dishwashing area for proper procedures and sanitization.")
+daily_checklist["Closing Tasks"].extend([
+    "Ensure all dishes are cleaned, sanitized, air-dried, and stored properly.",
+    "Clean and sanitize dishwashing sinks or machines."
+])
+
+# Re-create the daily checklist PDF with added dish tasks
+daily_checklist_path = "/mnt/data/Daily_Kitchen_Maintenance_Checklist_With_Dishes.pdf"
+c2 = canvas.Canvas(daily_checklist_path, pagesize=LETTER)
+c2.setFont("Helvetica-Bold", 14)
+c2.drawCentredString(width / 2, height - 40, "Daily Kitchen Maintenance Checklist")
+c2.setFont("Helvetica", 12)
+c2.drawCentredString(width / 2, height - 60, "Bowling Center Kitchen - Alexandria, LA")
+y = height - 90
+c2.setFont("Helvetica-Bold", 12)
+
+for section, items in daily_checklist.items():
+    if y < 100:
+        c2.showPage()
+        y = height - 50
+        c2.setFont("Helvetica-Bold", 12)
+    c2.drawString(40, y, section)
+    y -= 20
+    c2.setFont("Helvetica", 11)
+    for item in items:
+        if y < 60:
+            c2.showPage()
+            y = height - 50
+            c2.setFont("Helvetica-Bold", 12)
+            c2.drawString(40, y, section + " (cont'd)")
+            y -= 20
+            c2.setFont("Helvetica", 11)
+        c2.drawString(50, y, f"[ ] {item}")
+        y -= 15
+    y -= 10
+    c2.setFont("Helvetica-Bold", 12)
+
+c2.save()
+
+[ASSISTANT]
+Both updated PDFs now include dishwashing tasks:
+
+- 📄 [Health Inspection Checklist with Dishes](sandbox:/mnt/data/Bowling_Center_Kitchen_Health_Inspection_Checklist_With_Dishes.pdf)  
+- 📄 [Daily Maintenance Checklist with Dishes](sandbox:/mnt/data/Daily_Kitchen_Maintenance_Checklist_With_Dishes.pdf)
+
+Let me know if you'd like these turned into editable forms or logs.

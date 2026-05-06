@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This branch contains the React/Vite browser surface for `craig-CODA`.
+It is an interaction surface, not the repo's primary continuity or reasoning layer.
 
-Currently, two official plugins are available:
+## What Lives Here
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `src/App.tsx`
+- `src/Chat.tsx`
+- `src/ChatWidget.tsx`
 
-## React Compiler
+## Current State
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- the frontend is intentionally minimal
+- it is primarily a chat-oriented surface that talks to the local agent server
+- it does not own the handoff system, route logic, vault rules, or graph memory behavior
 
-## Expanding the ESLint configuration
+## Important Reality
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- if the UI looks too thin, that is because the architecture work happened deeper in the repo first
+- the real source of truth for continuity and runtime behavior lives in:
+  - root handoff docs
+  - `runtime/`
+  - `src/runtime/`
+  - `src/memory/`
+  - `agent/`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Continue From Here
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+You are in the `frontend` scope.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Read in this order:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. `README.md`
+2. `src/App.tsx`
+3. `src/Chat.tsx`
+4. `src/ChatWidget.tsx`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+If the user asks why the UI behaves a certain way, trace into the agent and runtime branches instead of assuming the answer is in React alone.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Keep `D:\craig-CODA\LIVE_HANDOFF.md` current between meaningful actions.

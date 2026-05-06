@@ -1,0 +1,38 @@
+CONVERSATION_ID: 69c3811b-85ac-832e-86e4-86997346e71e
+TITLE: Current In-Demand Resources
+MESSAGE_COUNT: 9
+
+[USER]
+what current resources are people currently looking for right nwo and everyday as to something they would easily purchase today if it were availablee?
+
+[ASSISTANT]
+{"path": "/Deep Research App/implicit_link::connector_openai_deep_research/start", "args": {"user_query": "what current resources are people currently looking for right nwo and everyday as to something they would easily purchase today if it were availablee?"}}
+
+[TOOL]
+{"session_id":"69c3811f-def8-8331-bbd4-f1d1e2f62492","connector_settings":{"disable_web_search":false,"cloud_browser_enabled":false,"require_explicit_source":true,"enabled_connector_types":[],"enabled_dynamic_connectors":[],"enabled_api_connectors":[],"selected_all_github_repos":false,"selected_github_repos":null,"connector_context":null,"developer_mode_connector_ids":null,"system_hint_connector_ids":[]},"custom_sources_settings":null,"file_attachments":[]}
+
+[TOOL]
+The tool included embedded UI which has been displayed to the user.
+
+Embedded UI description: 
+
+Rendered a widget that contains the deep research experience.
+
+[USER]
+not products. services
+
+[ASSISTANT]
+{"path": "/Deep Research App/implicit_link::connector_openai_deep_research/steer", "args": {"user_query": "focus specifically on everyday high-demand services people actively seek and pay for right now, not products"}}
+
+[TOOL]
+The latest state of the widget is: {"plan": {"plan_id": "plan-2026-03-25T15:10:00Z-resources-demand", "version": 1, "title": "Everyday high-demand resources", "steps": [{"id": "step-1", "text": "Search recent news and trend sites for currently high-demand consumer items.", "status": "pending", "reason": null}, {"id": "step-2", "text": "Analyze social media and marketplace listings for frequently purchased products.", "status": "pending", "reason": null}, {"id": "step-3", "text": "Review retail and e-commerce bestseller lists and inventory shortages.", "status": "pending", "reason": null}, {"id": "step-4", "text": "Compile a prioritized list of easily purchasable everyday resources and examples.", "status": "pending", "reason": null}, {"id": "step-5", "text": "Summarize findings with purchase channels and typical price ranges.", "status": "pending", "reason": null}]}, "step_statuses_by_plan": {"plan-2026-03-25T15:10:00Z-resources-demand": {"step-1": "pending", "step-2": "pending", "step-3": "pending", "step-4": "pending", "step-5": "pending"}}, "waiting_for_user_response_on_plan_until": "2026-03-25T06:41:09.378860Z", "status": "waiting_for_user_response_on_plan", "last_updated_at": "2026-03-25T06:31:09.379425Z"}
+
+[TOOL]
+{"session_id":"69c3811f-def8-8331-bbd4-f1d1e2f62492","connector_settings":{"disable_web_search":false,"cloud_browser_enabled":false,"require_explicit_source":true,"enabled_connector_types":[],"enabled_dynamic_connectors":[],"enabled_api_connectors":[],"selected_all_github_repos":false,"selected_github_repos":null,"connector_context":null,"developer_mode_connector_ids":null,"system_hint_connector_ids":[]},"custom_sources_settings":null,"file_attachments":[]}
+
+[TOOL]
+The tool included embedded UI which has been displayed to the user.
+
+Embedded UI description: 
+
+Rendered a widget that contains the deep research experience.

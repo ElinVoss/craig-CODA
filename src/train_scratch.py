@@ -13,6 +13,7 @@ from .io_utils import read_text, write_json
 from .model_factory import build_model
 from .sample_generate import generate_text
 from .tokenizer_loader import load_tokenizer
+from .vault_methods import resolve_stage_config, write_stage_resolution
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -23,7 +24,10 @@ def load_training_config(config_path: str | Path | None = None) -> dict:
     path = Path(config_path)
     if not path.is_absolute():
         path = ROOT / path
-    return yaml.safe_load(path.read_text(encoding="utf-8"))
+    config = yaml.safe_load(path.read_text(encoding="utf-8"))
+    resolved, report = resolve_stage_config("scratch", config)
+    write_stage_resolution("scratch", report)
+    return resolved
 
 
 def set_seed(seed: int) -> None:
@@ -56,7 +60,8 @@ def train(config_path: str | Path | None = None, resume_from: str | Path | None 
     set_seed(int(config["seed"]))
 
     tokenizer, tokenizer_meta = load_tokenizer(config["tokenizer_dir"])
-    model, _, model_summary = build_model()
+    architecture_profile = str(config.get("architecture_profile", "tiny_scratch"))
+    model, _, model_summary = build_model(profile=architecture_profile)
     device = torch.device(str(config["device_preference"]))
     model.to(device)
     model.train()

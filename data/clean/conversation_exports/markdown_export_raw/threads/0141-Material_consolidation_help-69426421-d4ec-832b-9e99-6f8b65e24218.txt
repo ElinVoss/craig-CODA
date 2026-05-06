@@ -1,0 +1,532 @@
+CONVERSATION_ID: 69426421-d4ec-832b-9e99-6f8b65e24218
+TITLE: Material consolidation help
+MESSAGE_COUNT: 22
+
+[USER]
+If I export and share certain sap classic data, could you help me consolidate material
+
+[ASSISTANT]
+Yes—if you export/share SAP Classic data, I can consolidate it.
+
+What I can do with it (common “material consolidation” jobs):
+- **Normalize material numbers** (strip leading zeros, fix formatting, unify legacy vs new IDs)
+- **De-duplicate** (same material listed multiple times across plants/storage locations/vendors)
+- **Cross-walk/merge** between files (e.g., MARA/MARC/MARD/MBEW/MAKT or report extracts)
+- **Rollups** by material / plant / SLoc / batch / valuation type (qty, value, movements)
+- **Clean and standardize descriptions** (case, abbreviations, language variants)
+- **Flag mismatches** (same material different UoM, base unit conflicts, valuation inconsistencies)
+- Output as **one consolidated table** plus optional **exceptions list** (what didn’t match cleanly)
+
+Best export formats:
+- **XLSX** preferred, **CSV** fine, **TXT** fixed-width also workable.
+
+To avoid back-and-forth, export/include these columns if they exist in your report:
+- Material number, material description
+- Plant, storage location (and batch if applicable)
+- Base UoM (and alt UoM if you have it)
+- Qty (unrestricted/quality/blocked if relevant)
+- Value / price (standard or moving avg), currency
+- Valuation type/class, material type, division/product hierarchy (if used)
+- Last movement date / status (if you need “active” filtering)
+
+Practical note: don’t send anything you shouldn’t (pricing/customer names/etc.). If you want, you can paste a **redacted sample** first and I’ll tell you exactly what’s missing for a clean consolidation.
+
+[USER]
+Tell me exactly what and how I get the data so you can see the whole warehouse and where things can and can’t go
+
+[ASSISTANT]
+{"search_query":[{"q":"SAP LE-WM table for storage type search sequence putaway T321","recency":30},{"q":"SAP WM table T301 storage type customizing fields mixed storage capacity check","recency":30},{"q":"SAP WM bin master table LAGP description","recency":30},{"q":"SAP WM material master warehouse management view table MLGT fixed bin LGPLA","recency":30}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn0search0"}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"SAP WM table T321 storage type search sequence putaway control indicator","recency":3650},{"q":"SAP LE-WM storage type search sequence table name T321 T322","recency":3650},{"q":"SAP table T320 assignment warehouse number plant storage location","recency":3650},{"q":"SAP table MLGT warehouse management view fields storage type indicator section indicator putaway strategy removal strategy","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"turn2search3"}],"response_length":"short"}
+
+[ASSISTANT]
+{"open":[{"ref_id":"https://help.sap.com/docs/SUPPORT_CONTENT/erpscm/3362168076.html"}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"LE-WM storage type search sequence table T334 T333 T334S","recency":3650},{"q":"SAP WM table T334 storage type search sequence putaway","recency":3650},{"q":"SAP WM table T333 putaway strategy customizing","recency":3650},{"q":"SAP WM table T331 stock removal strategy search sequence","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+To “see the whole warehouse” and determine **where things can and can’t go**, I need four layers of SAP data:
+
+1) **Warehouse map** (warehouse → storage types → sections → bins)  
+2) **Current stock position** (what’s sitting in each bin right now)  
+3) **Bin/storage-type constraints** (capacity, mixed storage, blocked, bin type, etc.)  
+4) **Putaway/removal rules** (how SAP decides the destination / source bin)
+
+Below is the exact pull list + exactly how to export it.
+
+---
+
+## Step 0 — Decide which path you’re on (30 seconds)
+- If you can run **LS24 / LX23** and it asks for **Warehouse Number (LGNUM)**, you’re on **classic WM (LE-WM)** → follow **WM export set** below.
+- If you *don’t* have LGNUM and everything is only **Plant/Storage Location**, you’re basically **IM-only / Lean WM** → skip to the **IM export set** at the end.
+
+---
+
+## WM export set (classic LE-WM)
+
+### How to export (use this for every item below)
+You have two common ways:
+
+**A) Table export (best, cleanest): SE16N**
+1. Run **SE16N**
+2. Enter the table name (below)
+3. Fill selection fields (I list what to filter on)
+4. Execute
+5. Export: **List → Export → Spreadsheet** (or the ALV export button) → save as **XLSX** (or CSV)
+
+**B) Report export (if you don’t have SE16N access)**
+Run the transaction (below), then **List/ALV → Export → Spreadsheet**.
+
+Keep everything **raw** (no pivots, no subtotals), one file per export.
+
+---
+
+## 1) Warehouse assignment (ties Plant/SLoc to the WM warehouse)
+### Export 1 — Plant/Storage Location → Warehouse Number
+- **Table:** `T320` (Assignment IM Storage Location to WM Warehouse Number) citeturn2search5turn2search18  
+- **Filter:** your Plant(s) and/or Storage Location(s)
+- **Why:** tells me which LGNUM(s) are “the warehouse(s)” you actually use.
+
+---
+
+## 2) Warehouse “map” (structure + bins)
+### Export 2 — Storage types (the big zones/rules buckets)
+- **Table:** `T301` (+ optional descriptions `T301T`) citeturn0search26  
+- **Filter:** `LGNUM` (warehouse number)
+- **Why:** storage type settings control core constraints (capacity checks, mixed storage behavior, etc.). Capacity check behavior is configured here. citeturn0search1
+
+### Export 3 — Storage sections (sub-zones inside a storage type)
+- **Table:** `T302` (+ optional text table if you have it)
+- **Filter:** `LGNUM`
+- **Why:** sections often steer putaway within a storage type (where it *can* go inside that type).
+
+### Export 4 — Storage bins (every bin address + attributes)
+- **Table:** `LAGP` (Storage bins) citeturn0search2turn0search23  
+- **Filter:** `LGNUM` (and optionally limit by `LGTYP` if huge)
+- **Why:** this is the actual bin master: bin address, type, section, blocking status, capacity-relevant attributes, etc.
+
+---
+
+## 3) Stock snapshot (what’s in each bin right now)
+### Export 5 — Quants / stock per bin
+Pick ONE of these approaches:
+
+**Best (table):**
+- **Table:** `LQUA` (quants; stock in WM bins)
+- **Filter:** `LGNUM`
+
+**Or (transaction report):**
+- **T-code:** `LS24` (Quants in Storage Bin) or `LX23` (Stock Overview in Warehouse)
+
+**Why:** without this, you can’t validate “can’t go there” rules vs what’s actually happening in reality.
+
+---
+
+## 4) Material-level steering (why a material is allowed/forced into certain areas)
+### Export 6 — Material master WM view (per warehouse)
+- **Table:** `MLGT` (often extracted via view `MLVST` depending on system) citeturn0search17  
+- **Filter:** `LGNUM` (and optionally Plant if your variant includes it)
+- **Why:** this is where materials carry the steering knobs (storage type indicator/section indicator/fixed bin behavior/etc.) that decide where they *should* go.
+
+---
+
+## 5) The rules that decide “where it can go” (search sequences + access strategy)
+### Export 7 — Storage type search sequences (putaway + removal)
+- **Table:** `T334T` (Storage Type Search) citeturn5search3turn5search23  
+- **Filter:** `LGNUM`
+- **Why:** defines the **sequence of storage types** SAP searches (and it’s different for putaway vs removal using indicators like E/A depending on config). citeturn5search2
+
+### Export 8 — Access strategy for storage type search (how it evaluates candidates)
+- **Table:** `T334U` citeturn5search17  
+- **Filter:** `LGNUM`
+
+### Export 9 — Storage bin type search (if you use bin types)
+- **Table:** `T334P` citeturn5search17  
+- **Filter:** `LGNUM`
+
+---
+
+## 6) Optional but very helpful “why the hell did it do that” exports
+### Export 10 — Storage type control
+- **Table:** `T331` (Storage Type Control) citeturn5search12  
+- **Filter:** `LGNUM`
+
+### Export 11 — WM movement types (if you want process-specific restrictions)
+- **Table:** `T333` (WM Movement Types) citeturn5search15  
+- **Filter:** `LGNUM`
+
+---
+
+## File packaging rules (do this so I can actually consolidate it)
+- Save as: `01_T320.xlsx`, `02_T301.xlsx`, `03_T302.xlsx`, `04_LAGP.xlsx`, `05_LQUA.xlsx`, `06_MLGT.xlsx`, `07_T334T.xlsx`, `08_T334U.xlsx`, `09_T334P.xlsx` (optional), `10_T331.xlsx` (optional), `11_T333.xlsx` (optional)
+- Export them all **the same day/time** (stock snapshots drift fast).
+- Zip them into one archive and share.
+
+---
+
+## If you’re NOT on WM (IM-only / Lean WM)
+You can’t truly model “bin-level where it can’t go” because bins aren’t the stock-holding unit. But I can still map constraints at storage location level.
+
+Export:
+- `MARD` (stock by Plant/Storage Location)
+- `T001L` (storage location master)
+- `MARA` + `MARC` (material master basics + plant view for storage conditions, etc.)
+
+If you give me one screenshot of the header area of **LS24** (just the selection screen fields, not your data), I can tell instantly which path you’re on without guessing.
+
+[USER]
+Step by step I’m on ls24
+
+[ASSISTANT]
+{"search_query":[{"q":"SAP transaction LS24 Quants in Storage Bin selection screen fields warehouse number storage type storage bin","recency":30},{"q":"SAP WM table LAGP storage bin master what transaction to display storage bin master data","recency":3650},{"q":"SAP WM transaction LX23 stock overview in warehouse export","recency":3650},{"q":"SAP WM table LQUA quants in storage bin","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+{"search_query":[{"q":"SAP WM transaction LX03 bin status report empty bins","recency":3650},{"q":"SAP WM transaction LX01 list empty bins","recency":3650},{"q":"SAP WM transaction LS03 display storage bin","recency":3650},{"q":"SAP WM transaction LS24 export to spreadsheet steps","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+### First: what LS24 can and can’t do
+**LS24 is material-centric** (it shows which bins/quants a *given material* is sitting in). It will not give you the full-warehouse picture by itself. For “the whole warehouse and where things can/can’t go,” you need **bin-centric** exports too (mainly **LX03 + LX01**, and ideally bin master/config tables if you can).
+
+---
+
+## A) Full warehouse “map” + what’s occupied/empty (bin-centric)
+
+### 1) LX03 — Bin Status Report (this is the backbone)
+SAP describes LX03 as showing whether bins are occupied or empty, and showing quants when occupied. citeturn1search19
+
+**Steps**
+1. In SAP command field, type **/nLX03** and Enter.
+2. Enter:
+   - **Warehouse Number (LGNUM)** = your warehouse
+   - **Storage Type (LGTYP)** = run **one storage type at a time** (repeat per type)
+   - Leave **Storage Bin** blank if allowed; if not, put `*` or use the **Multiple Selection** icon and enter a range/pattern.
+3. Execute (F8).
+4. Export:
+   - Menu **List → Export → Spreadsheet** citeturn1search8
+   - Choose **XLSX** (or CSV), save as `LX03_<LGNUM>_<LGTYP>.xlsx`
+
+**Result:** every bin in that storage type, and whether it’s empty/occupied.
+
+---
+
+### 2) LX01 — List of Empty Storage Bins (proves what’s available)
+LX01 is the standard report for empty bins. citeturn1search3turn1search2
+
+**Steps**
+1. **/nLX01**
+2. Enter **LGNUM** and **LGTYP** (repeat per storage type)
+3. Execute (F8)
+4. **List → Export → Spreadsheet** citeturn1search8  
+   Save as `LX01_<LGNUM>_<LGTYP>.xlsx`
+
+**Result:** clean list of where things *can go right now* (at least physically empty).
+
+---
+
+## B) What’s actually in the warehouse (stock detail)
+
+### 3) LS24 — Bin locations for a specific material (spot-check + “why is it there”)
+LS24 is commonly used to show all bin locations/quants for a specific material. citeturn1search4turn0search4
+
+**Steps**
+1. **/nLS24**
+2. Enter:
+   - **Warehouse Number (LGNUM)**
+   - **Material** (use leading zeros if your system requires it)
+   - Optional: **Plant / Storage Location / Batch / Stock category** if your screen has them
+3. Execute (F8)
+4. **List → Export → Spreadsheet** citeturn1search8  
+   Save as `LS24_<LGNUM>_<Material>.xlsx`
+
+**How to use it for “whole warehouse”**
+- Run LS24 for **your top movers / problem materials / hazmat / oversized / temperature-controlled** items.
+- Don’t try “all materials” via LS24 unless you want a file the size of a small planet.
+
+---
+
+## C) The “can’t go there” rules (this is the part reports often can’t fully show)
+
+To truly determine **where things can’t go by rule** (capacity checks, mixed storage rules, storage-type search sequences, fixed bin logic, etc.), I need **bin master + WM material master + WM putaway/removal config**. The clean way is table exports (SE16N), because many of these are customizing, not nicely reportable.
+
+### If you have SE16N access (best)
+Export these tables to XLSX/CSV:
+
+1) **Bin master:** `LAGP` (storage bins) citeturn0search1turn0search5  
+2) **Stock/quants:** `LQUA` (quants) citeturn0search3turn0search19  
+3) **Storage types:** `T301` (storage type definition)  
+4) **Storage sections:** `T302`  
+5) **WM material master (per warehouse):** `MLGT` citeturn0search0  
+6) **Putaway/removal search sequence:** `T334T` (storage type search) citeturn0search11  
+
+If SE16N is blocked for you, you’ll need someone with access (superuser/IT) to run those exports once.
+
+---
+
+## Exact file set to send me
+Minimum to “see the warehouse”:
+- `LX03_<LGNUM>_<LGTYP>.xlsx` for each storage type
+- `LX01_<LGNUM>_<LGTYP>.xlsx` for each storage type
+
+To diagnose “why it goes where it goes”:
+- A handful of `LS24_<LGNUM>_<Material>.xlsx` for problem materials
+- (Ideally) SE16N exports listed above
+
+---
+
+## One rule so your exports don’t become useless
+Export **all files back-to-back the same day** (stock moves constantly). Don’t pivot, don’t subtotal, raw export only.
+
+If you tell me your **LGNUM** and list of **storage types** you use (or just paste the storage type list from F4), I’ll tell you the exact order to run LX03/LX01 so you cover everything with the fewest runs.
+
+[USER]
+076 and material type 110
+
+[ASSISTANT]
+LS24 + warehouse **076** + material type **110** means you need two exports:
+
+1) **Where stock is in WM (076)**  
+2) **Which materials are type 110** (LS24 cannot filter by material type)
+
+Do this exactly.
+
+---
+
+## 1) Get “everything in warehouse 076” (bin-level stock)
+
+### 1.1 Get the storage type list for 076
+Pick one method:
+
+**Method A (fast, if you have SE16N):**
+1. `/nSE16N`
+2. Table = `T301`
+3. Field `LGNUM` = `076`
+4. Execute
+5. Export to XLSX → save `T301_LGNUM076.xlsx`  
+This file tells us every storage type used in 076.
+
+**Method B (no SE16N):**
+1. `/nLX03`
+2. Put `LGNUM = 076`
+3. Click into **Storage Type (LGTYP)** and hit **F4** to see the list (write them down)
+
+### 1.2 Export bin status (repeat per storage type)
+1. `/nLX03`
+2. `LGNUM = 076`
+3. `LGTYP = <one storage type from your list>`
+4. Execute (F8)
+5. Export: **List → Export → Spreadsheet**
+6. Save as `LX03_076_<LGTYP>.xlsx`
+
+Repeat for every storage type in 076.
+
+### 1.3 Export empty bins (repeat per storage type)
+1. `/nLX01`
+2. `LGNUM = 076`
+3. `LGTYP = <same storage type>`
+4. Execute (F8)
+5. Export → save as `LX01_076_<LGTYP>.xlsx`
+
+---
+
+## 2) Get “all materials of type 110” (material master list)
+
+### Option A (best if you have it): MM60
+1. `/nMM60`
+2. Selection: **Material Type = 110**
+3. (If possible) restrict to your plant(s) to keep it sane
+4. Execute
+5. Export → save as `MM60_MT110.xlsx`
+
+### Option B (if you have SE16N): MARA
+1. `/nSE16N`
+2. Table = `MARA`
+3. Field `MTART = 110`
+4. (Optional) add `MATNR` range if the list is huge
+5. Execute
+6. Export → save as `MARA_MT110.xlsx`
+
+Optional but useful for readability:
+- `MAKT` (material description): filter `SPRAS = EN` (or your language) and export `MATNR, MAKTX` as `MAKT_desc.xlsx`
+
+---
+
+## 3) What I’ll give you after you share those files
+From those exports, I’ll produce:
+- A list of **every material type 110 currently in warehouse 076**
+- For each one: **bin(s), storage type, quant/qty, stock category**
+- A list of **empty candidate bins** (from LX01)
+- An **exceptions list**: things sitting in bins that look “wrong” (blocked bins, mixed storage conflicts, capacity issues, etc.) *as far as your exports show*
+
+---
+
+## Send me this minimum set
+- All `LX03_076_*.xlsx`
+- All `LX01_076_*.xlsx`
+- One of: `MM60_MT110.xlsx` **or** `MARA_MT110.xlsx`
+- (Optional) `MAKT_desc.xlsx`
+
+If you can only export **one** storage type right now, start with the one that holds most of your stock (usually bulk/high rack), and send those 2 files plus the MT110 list.
+
+[USER]
+Not authorized for se16n
+
+[ASSISTANT]
+{"search_query":[{"q":"SAP transaction MM60 material type selection screen MTART","recency":30},{"q":"SAP transaction MB52 selection material type field MTART","recency":30},{"q":"SAP WM transaction LX03 bin status report export to spreadsheet","recency":30},{"q":"SAP WM transaction LX01 list of empty storage bins","recency":30}],"response_length":"medium"}
+
+[ASSISTANT]
+{"search_query":[{"q":"SAP WM transaction LX04 capacity used per storage type","recency":3650},{"q":"SAP WM transaction LX05 block bins","recency":3650}],"response_length":"short"}
+
+[ASSISTANT]
+SE16N isn’t required. With **warehouse 076** and **material type 110**, pull these exports and I can reconstruct (1) what’s where and (2) what space is actually available, plus highlight “no-go” bins based on what the standard reports expose.
+
+## 1) Get the complete list of materials with type 110
+**T-code: MM60** (material list; can be selected by material type) citeturn0search0turn0search18
+
+Step-by-step:
+1. Run **/nMM60**
+2. In selection, set **Material Type = 110**
+3. If you have it, also restrict to the **Plant(s)** that feed warehouse 076 (keeps the list sane).
+4. Execute (F8)
+5. Export to Excel: **List → Export → Spreadsheet** citeturn0search10  
+   Save as: `MM60_MT110.xlsx`
+
+If you’re not authorized for MM60 either, you’ll need someone with master-data/report access to export that one list for you.
+
+---
+
+## 2) Get “the whole warehouse” stock position (all bins + what’s in them)
+**T-code: LX03 (Bin Status Report)** citeturn0search7turn0search2
+
+Step-by-step:
+1. Run **/nLX03**
+2. Enter **Warehouse Number (LGNUM) = 076**
+3. Click **Storage Type (LGTYP)** → press **F4** → this is your storage-type list to loop through.
+4. For each storage type:
+   - Put that **LGTYP** in
+   - Execute (F8)
+   - Export: **List → Export → Spreadsheet** citeturn0search10  
+   Save each as: `LX03_076_<LGTYP>.xlsx`
+
+This gives me bin-by-bin occupancy and (when occupied) the quant lines/materials.
+
+---
+
+## 3) Get “where things can go right now” (empty bin list)
+**T-code: LX01 (List of Empty Storage Bins)** citeturn0search11turn0search7
+
+Step-by-step:
+1. Run **/nLX01**
+2. Enter **LGNUM = 076**
+3. For each **LGTYP** from the same list:
+   - Execute (F8)
+   - Export: **List → Export → Spreadsheet** citeturn0search10  
+   Save each as: `LX01_076_<LGTYP>.xlsx`
+
+---
+
+## 4) Optional but strongly recommended (this is where “can’t go” starts showing up)
+
+### 4.1 Capacity pressure by storage type
+**T-code: LX04 (Capacity Used)** citeturn1search2turn1search0  
+Export it the same way; save: `LX04_076_<LGTYP>.xlsx` (or one per warehouse if your screen allows).
+
+### 4.2 Blocked bins (hard “can’t go there”)
+Blocking/unblocking bins is a standard WM function citeturn1search17 and many sites use **LS06** to list/block bins by selection. citeturn1search1  
+If you can run **/nLS06**, pull a list (don’t actually block anything unless that’s your job), export it, save: `LS06_076_blocked_bins.xlsx`.
+
+---
+
+## Exactly what to send
+Minimum:
+- `MM60_MT110.xlsx`
+- All `LX03_076_*.xlsx`
+- All `LX01_076_*.xlsx`
+
+Better:
+- Add `LX04_076_*.xlsx`
+- Add `LS06_076_blocked_bins.xlsx`
+
+From those, I’ll consolidate to:
+- Every **type 110** material currently in **warehouse 076** with its bin(s) and qty
+- A ranked list of **candidate empty bins** by storage type
+- A “no-go” list: **blocked bins**, storage types at/near capacity, and obvious conflicts visible in the exports
+
+Do the exports back-to-back (same day, close together) so the snapshot isn’t drifting while you’re pulling it.
+
+[USER]
+Not authorized for se16n
+
+[ASSISTANT]
+No SE16N needed. If you’re authorized for **LS24**, you can still get me what I need using **warehouse reports** + **material list**.
+
+## What to export (minimum set)
+
+### 1) Whole-warehouse stock, bin-level (this replaces trying to brute-force LS24)
+**T-code: LX23** (stock overview for the warehouse)
+
+Steps:
+1. Run **/nLX23**
+2. Enter **Warehouse number = 076**
+3. Leave **Material** blank (you want everything)
+4. Execute (F8)
+5. Export: **List/ALV → Export → Spreadsheet**  
+   Save as: `LX23_076_all_stock.xlsx`
+
+If LX23 is too heavy or limited, use **LX03** per storage type (see #3).
+
+---
+
+### 2) All empty bins (where things *can go right now*)
+**T-code: LX01** (empty bins)
+
+Steps:
+1. Run **/nLX01**
+2. **Warehouse = 076**
+3. For **Storage type (LGTYP)**: press **F4** and pick one storage type
+4. Execute → Export → save `LX01_076_<LGTYP>.xlsx`
+5. Repeat for every storage type in the F4 list
+
+---
+
+### 3) If you can’t get a clean “all stock” from LX23: bin status per storage type
+**T-code: LX03**
+
+Steps:
+1. Run **/nLX03**
+2. **Warehouse = 076**
+3. Pick one **LGTYP** (F4)
+4. Execute → Export → save `LX03_076_<LGTYP>.xlsx`
+5. Repeat for each storage type
+
+---
+
+### 4) List of all materials with **material type 110**
+This is the only piece that isn’t “warehouse” data, and LS24 can’t filter by material type.
+
+Try these in order (stop at the first one you’re allowed to run):
+- **MM60** → select **Material Type = 110** → export `MM60_MT110.xlsx`
+- If MM60 is blocked, check if you have **any Z material list report** your site uses (often named like `ZMM*` / `ZMAT*`) that can filter on **MTART**; export that.
+
+If you have *no* way to export a “materials where type = 110” list, you’ll need someone with master-data reporting access to dump it once. Without it, I can map the whole warehouse, but I can’t reliably isolate “type 110 only.”
+
+---
+
+## Send me these files
+- `LX23_076_all_stock.xlsx` **(or)** all `LX03_076_*.xlsx`
+- all `LX01_076_*.xlsx`
+- `MM60_MT110.xlsx` (or equivalent)
+
+From that I can output:
+- Every **type 110** item currently sitting in **076** with **bin(s) + qty**
+- A list of **valid empty bins** by storage type
+- A “can’t go” list based on what’s observable: **non-empty bins, blocked/invalid bins if flagged, and storage-type availability** (true rule-based restrictions need config tables, but we can still catch a lot from these exports)
+
+If you tell me whether **LX23** runs for you (yes/no), I’ll tell you which path is fastest: single-file LX23 vs looping LX03.

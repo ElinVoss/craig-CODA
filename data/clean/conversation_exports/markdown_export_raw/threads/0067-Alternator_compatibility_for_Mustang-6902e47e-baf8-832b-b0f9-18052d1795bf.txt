@@ -1,0 +1,59 @@
+CONVERSATION_ID: 6902e47e-baf8-832b-b0f9-18052d1795bf
+TITLE: Alternator compatibility for Mustang
+MESSAGE_COUNT: 9
+
+[USER]
+Let’s say I’m going to a junk yard to pull an alternator for a 4.0 2006 mustang. What other vehicles share the same alternator?
+
+[ASSISTANT]
+{"search_query": [{"q": "2006 Mustang 4.0 alternator part number Motorcraft"}, {"q": "Mustang 4.0L V6 alternator interchange 2005 2006 2007 2008 2009"}, {"q": "Motorcraft alternator for 2006 Ford Mustang 4.0L applications fitment cross reference"}, {"q": "2006 Ford Mustang V6 4.0L alternator amperage 135A part"}, {"q": "which vehicles use same alternator as 2006 Mustang V6"}], "response_length": "short"}
+
+[ASSISTANT]
+{"search_query": [{"q": "Motorcraft GL-905 applications"}, {"q": "Ford 6R3T-10300-CB applications alternator"}, {"q": "4R3T-10300-AA alternator applications Ford"}], "response_length": "short"}
+
+[ASSISTANT]
+{"search_query": [{"q": "Lester 8437 alternator applications Ford"}, {"q": "8437 alternator Interchange list"}], "response_length": "short"}
+
+[ASSISTANT]
+{"search_query": [{"q": "Lester 8437 applications beyond Mustang site:*"}, {"q": "Ford Lester 8437 alternator fits what vehicles"}], "response_length": "short"}
+
+[ASSISTANT]
+{"search_query": [{"q": "Ford 6G alternator 3:00 clock 8437 Mustang"}, {"q": "Mustang 4.0 alternator clock position 3:00 6G"}], "response_length": "short"}
+
+[ASSISTANT]
+{"search_query": [{"q": "Motorcraft GL-609 applications Ford"}, {"q": "Motorcraft GL-905 applications Mustang 2005 4.0L GL-905 Ford catalog"}, {"q": "Ford service part 6R3Z-10346-A applications"}], "response_length": "short"}
+
+[ASSISTANT]
+{"search_query": [{"q": "2010 Mustang 4.0 alternator part number"}, {"q": "GR3Z-10346-A alternator Mustang 2010 4.0"}], "response_length": "short"}
+
+[ASSISTANT]
+Short answer: you’re hunting an alternator that basically only swaps with other S197 V6 Mustangs. So at the yard, look for:
+
+- **2005–2008 Mustang 4.0 V6 (S197)** — direct fit. That’s the same unit. citeturn6search1turn3search7
+
+Everything else is a trap:
+
+- **2009–2010 Mustang 4.0 V6** uses a different Denso-style 150 A unit and won’t plug-and-play. Different clocking/connector. citeturn6search8turn6search9  
+- **4.6 GT alternators** are not the same. Different case/clocking. Don’t get cute. citeturn6search1  
+- **Explorer/Ranger 4.0** pieces look related, but mounting ears and clock position differ. You can make a 6G work by re-clocking and parts-swapping, but that’s “I like suffering” territory, not a clean junkyard pull. citeturn4search13
+
+### What to match on the tag
+If you want to be surgical instead of lucky, these numbers are your friends:
+
+- **Ford OE**: 4R3T-10300-AA/AB, 6R3T-10300-CB, service 6R3Z-10346-A/-BRM  
+- **Motorcraft**: GL-609, GL-905  
+- **Lester**: 8437  
+Those are all the same fit for the 2005–2008 4.0 V6 Mustang alternator. citeturn5search4
+
+### Specs to eyeball so you don’t drag home a paperweight
+- **6G family, 12 V, ~135 A**, internal fan/regulator, 6-groove pulley. citeturn0search13turn4search6  
+- **Clocking** roughly **3:00** with the oval 3-pin plug. If the plug is somewhere goofy, you grabbed the wrong case or a different application. citeturn3search8turn4search6
+
+### Yard pro-tips (because you know they never charge the batteries in there)
+- Spin it: gritty bearings or wobble = leave it.  
+- Check the **one-way/clutch pulley** isn’t seized. Many remans use a decoupler; if it’s locked solid, pass. citeturn0search13  
+- Snag the pigtail if they’ll let you. Future you will thank present you.
+
+If you absolutely must Frankenstein something, you can re-clock a Ford 6G by splitting the case and rotating the front housing, but now you’re doing a bench job in a gravel lot. Your call. citeturn4search13
+
+Bottom line: at a self-serve yard, stick to **’05–’08 V6 Mustangs** and match the numbers. Anything else is an arts-and-crafts project with sparks. citeturn6search1turn3search7

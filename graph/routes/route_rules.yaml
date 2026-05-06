@@ -1,0 +1,110 @@
+schema_version: 0.1
+
+# L1 Routing Decisions (locked)
+#
+# match_logic: all_axes_any_value
+#   Within one axis: ANY listed value may match.
+#   Across axes: ALL specified axes must match.
+#   Example: intent: [design, build] AND domain: [architecture]
+#     means (intent is design OR build) AND (domain is architecture)
+#
+# multi_route_behavior: union_dedupe
+#   All matching routes apply. Merge activated nodes by union + dedupe.
+#
+# weights_at_l1: inert
+#   Weights exist on node definitions for forward compatibility.
+#   The route engine does not score or order by weight at L1.
+#
+# unknown_axis_behavior: required_axis_unknown_fails_match
+#   If a route specifies an axis and the prompt has "unknown" or missing
+#   for that axis, that route does NOT match.
+#   If no routes match at all, return constraint_mode: semantic_only.
+
+match_logic: all_axes_any_value
+multi_route_behavior: union_dedupe
+weights_at_l1: inert
+unknown_axis_behavior: required_axis_unknown_fails_match
+
+confidence_bands:
+  normal:
+    min: 0.60
+  partial:
+    min: 0.40
+    max: 0.59
+  semantic_only:
+    max: 0.39
+
+routes:
+  l1_architecture_design:
+    description: Architecture/design/build prompts about the graph-native model system.
+    match:
+      intent:
+        - design
+        - build
+      domain:
+        - architecture
+      reasoning_mode:
+        - systems
+        - generative
+        - procedural
+    activate:
+      capabilities:
+        - architectural_decomposition
+        - implementation_planning
+        - tradeoff_analysis
+      constraints:
+        - avoid_rag_framing
+        - distinguish_engineering_from_research
+        - prefer_minimal_working_version
+        - prompt_enters_graph
+
+  l1_research_boundary:
+    description: Prompts touching open research areas, especially L3/L4 behavior.
+    match:
+      domain:
+        - research
+    activate:
+      capabilities:
+        - tradeoff_analysis
+        - failure_mode_detection
+      constraints:
+        - distinguish_engineering_from_research
+        - avoid_rag_framing
+        - prompt_enters_graph
+
+  l1_implementation_build:
+    description: Concrete implementation requests.
+    match:
+      intent:
+        - build
+      domain:
+        - implementation
+        - architecture
+      reasoning_mode:
+        - procedural
+        - systems
+    activate:
+      capabilities:
+        - implementation_planning
+        - architectural_decomposition
+      constraints:
+        - prefer_minimal_working_version
+        - prompt_enters_graph
+
+  l1_evaluation:
+    description: Critique, judgment, or tradeoff-analysis prompts.
+    match:
+      intent:
+        - evaluate
+        - decide
+      reasoning_mode:
+        - comparative
+        - adversarial
+        - systems
+    activate:
+      capabilities:
+        - tradeoff_analysis
+        - failure_mode_detection
+      constraints:
+        - distinguish_engineering_from_research
+        - prompt_enters_graph

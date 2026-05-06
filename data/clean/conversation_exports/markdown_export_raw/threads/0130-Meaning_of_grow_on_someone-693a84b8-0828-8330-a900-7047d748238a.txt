@@ -1,0 +1,19 @@
+CONVERSATION_ID: 693a84b8-0828-8330-a900-7047d748238a
+TITLE: Meaning of grow on someone
+MESSAGE_COUNT: 2
+
+[USER]
+What does it mean to grow on someone?
+
+[ASSISTANT]
+“To grow on someone” = you **didn’t like them (or liked them only a little) at first, but over time you start liking them more and more.**
+
+It can apply to:
+- **People:** “I didn’t like him at first, but he’s growing on me.”  
+- **Things (music, food, shows, etc.):** “This song was mid at first, but it’s starting to grow on me.”
+
+Core idea:
+- First impression: **meh / unsure / maybe even annoyed**
+- After spending time with them/it: **you notice good qualities**, you feel more comfortable, and your feelings shift toward **fondness or affection**.
+
+It does **not** usually mean “I’m suddenly obsessed.” It’s more like a **slow burn** type of liking.

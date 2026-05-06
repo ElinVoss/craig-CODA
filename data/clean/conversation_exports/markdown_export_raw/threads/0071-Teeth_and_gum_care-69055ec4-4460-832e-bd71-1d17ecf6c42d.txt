@@ -1,0 +1,147 @@
+CONVERSATION_ID: 69055ec4-4460-832e-bd71-1d17ecf6c42d
+TITLE: Teeth and gum care
+MESSAGE_COUNT: 17
+
+[USER]
+{"asset_pointer": "sediment://file_00000000236c71f783a8c5b01317ea58", "content_type": "image_asset_pointer", "fovea": null, "height": 1536, "metadata": {"asset_pointer_link": null, "container_pixel_height": null, "container_pixel_width": null, "dalle": null, "emu_omit_glimpse_image": null, "emu_patches_override": null, "generation": null, "gizmo": null, "is_no_auth_placeholder": null, "lpe_delta_encoding_channel": null, "lpe_keep_patch_ijhw": null, "sanitized": true, "watermarked_asset_pointer": null}, "size_bytes": 489843, "width": 1153}
+
+What’s wrong with my gums/teeth?
+
+[ASSISTANT]
+I’m not your dentist, but here’s the straight read from that photo:
+
+**What I’m seeing**
+- Yellow/whitish buildup stuck near the gumline on the lower fronts. That’s plaque turning into tartar (calculus). Toothbrushes don’t remove tartar once it hardens.
+- Gum edges look a bit puffy/red → mild gingivitis.
+- Crowding on the lower incisors. Tight, overlapped teeth trap gunk and make this worse.
+- A few chalky white spots and small chips on edges → early enamel wear/demineralization.
+- Maybe a hint of gum recession between the lower fronts.
+
+**What that means**
+- Not a crisis, but it’s the classic “needs a proper cleaning” situation. Leave it and you’re auditioning for bleeding gums, bad breath, sensitivity, and eventually bone loss/loose teeth.
+
+**Do this now (1–2 weeks)**
+- Brush 2×/day for 2 minutes with a soft brush. Angle 45° at the gumline and actually scrub the rim where tooth meets gum.
+- Floss nightly. For those tight lower fronts, add a tiny interdental brush (0.6–0.8 mm) or a water flosser if your fingers hate you.
+- Rinse: warm saltwater after meals for a few days. If gums bleed a lot, a 0.12% chlorhexidine rinse for 7 days can calm things down, but it can stain. Otherwise an alcohol-free antiseptic rinse daily is fine.
+- Fluoride matters: standard paste is fine; if you get frequent cavities, ask for a 5,000-ppm prescription paste.
+- Don’t DIY scrape with picks or, god forbid, a rotary tool. You’ll gouge the enamel or your gums. The hardened stuff needs a hygienist’s scaler/ultrasonic.
+- Cut the usual enamel killers: frequent sipping of sugary/acidic drinks, tobacco/vapes. Chew sugar-free gum to keep saliva flowing.
+
+**Book a cleaning**
+- Ask for a full exam with periodontal charting. If pockets are 4 mm+ or there’s a lot of tartar under the gums, you’ll need scaling and root planing (“deep cleaning”). With your crowding, an orthodontic consult is worth it; straightening makes maintenance way easier and reduces chipping.
+
+**Get urgent care if**
+- Swelling, throbbing pain, pus/bad taste, fever, a tooth feels loose, or any mouth sore lasts more than 2 weeks.
+
+Short version: you’ve got tartar and early gum inflammation plus crowding. Clean-up, tighten your home routine, then let a pro de-gunk the hard stuff. Your mouth will stop complaining once you stop treating it like a parts bin.
+
+[USER]
+I use crystal meth but only anortnitni don’t smoke it
+
+[USER]
+I use crystal meth but only snort it I don’t smoke it
+
+[ASSISTANT]
+Thanks for being straight about it. I’m not here to judge you; I am here to keep your mouth from falling apart.
+
+Snorting meth still wrecks teeth and gums. It’s not just a “smokers get meth-mouth” thing.
+
+**Why snorting messes up your mouth**
+- **Dry mouth**: meth shuts down saliva. No saliva = acid wins = cavities explode along the gumline.
+- **Vasoconstriction**: less blood to gums → recession, slower healing, infections.
+- **Clenching/grinding**: stimulant jaw tension chips and wears the front teeth.
+- **Diet/aftercare**: sipping energy drinks/soda while high and then passing out without brushing is the perfect cavity factory.
+- **Post-nasal drip**: irritates the palate and gums, adds to dryness.
+
+The pic you sent already shows tartar at the gumline, early gingivitis, crowding, and some enamel wear. Meth will step on the gas.
+
+**Harm-reduction that actually helps (do these even if you’re still using)**
+- **Hydrate**: lots of water. Skip energy drinks/soda; if you must, use a straw and finish fast.
+- **Neutralize after a session**: swish 1/2 tsp baking soda in a cup of water for 30–60 seconds. Don’t brush for 30–60 minutes after acids or you’ll sand your enamel.
+- **Fluoride**: brush 2×/day with fluoride paste; at night spit, don’t rinse. If you can get it, use a **5,000-ppm prescription** paste nightly.
+- **Xylitol**: chew sugar-free gum/lozenges often to get saliva going.
+- **Mechanical clean**: soft brush, 45° at the gumline, 2 minutes. Floss nightly. Add a tiny interdental brush for the crowded lower fronts or a water flosser.
+- **Short course antiseptic**: if gums are puffy/bleeding, use **0.12% chlorhexidine** rinse 1–2×/day for 7 days max. It works; it can stain if you overdo it.
+- **Grinding**: grab a boil-and-bite night guard to protect edges until a dentist can fit a real one.
+- **Nasal care**: gentle saline rinse after use to cut the irritating drip that keeps your mouth dry.
+
+**Professional help that’s worth it**
+- **Book a cleaning**: ask for periodontal charting. Heavy buildup or 4 mm+ pockets = “deep cleaning.”
+- **Fluoride varnish** and, if you can swing it, **custom trays** for high-strength fluoride at home.
+- **Ortho consult** down the line; straightening crowded lowers makes hygiene way easier and slows chips/recession.
+
+**Red flags: get seen fast if you notice**
+- Facial swelling, throbbing pain, pus/bad taste, fever.
+- A tooth that suddenly feels loose.
+- Sores that don’t heal in 2 weeks.
+- Bleeding that won’t quit.
+
+If you ever want help cutting back or quitting, there are nonjudgmental, confidential options and meds that make it easier. In the meantime, protect what you’ve got. Your gums don’t care whether you snort or smoke; they just bleed either way.
+
+[USER]
+What meds make it easier
+
+[ASSISTANT]
+{"search_query": [{"q": "ADAPT-2 trial bupropion naltrexone methamphetamine use disorder NEJM 2021"}, {"q": "mirtazapine randomized clinical trial methamphetamine use men who have sex with men JAMA 2019"}, {"q": "ASAM AAAP guideline stimulant use disorder 2024"}, {"q": "contingency management stimulant use disorder evidence Cochrane review"}, {"q": "lisdexamfetamine trial methamphetamine use disorder randomized controlled"}], "response_length": "short"}
+
+[ASSISTANT]
+{"open": [{"ref_id": "turn0search0"}], "response_length": "short"}
+
+[ASSISTANT]
+{"open": [{"ref_id": "turn0search10"}], "response_length": "short"}
+
+[ASSISTANT]
+{"open": [{"ref_id": "turn0search11"}], "response_length": "short"}
+
+[ASSISTANT]
+{"open": [{"ref_id": "turn0search6"}], "find": [{"ref_id": "turn4view0", "pattern": "mirtazapine"}, {"ref_id": "turn4view0", "pattern": "mg"}], "response_length": "short"}
+
+[ASSISTANT]
+{"open": [{"ref_id": "turn0search22"}], "response_length": "short"}
+
+[ASSISTANT]
+{"open": [{"ref_id": "turn0search9"}], "response_length": "short"}
+
+[ASSISTANT]
+{"open": [{"ref_id": "turn0search4"}], "response_length": "short"}
+
+[ASSISTANT]
+{"open": [{"ref_id": "turn0search20"}], "response_length": "short"}
+
+[ASSISTANT]
+{"search_query": [{"q": "SAMHSA National Helpline 1-800-662-HELP"}, {"q": "Georgia Crisis and Access Line phone number 1-800-715-4225"}], "response_length": "short"}
+
+[ASSISTANT]
+Respect for asking. Short version: there isn’t a single magic “meth-quit pill,” but a few meds have real, if modest, evidence. Pair any of them with **contingency management** (programs that pay/reward clean tests). That combo is what moves the needle.
+
+## Meds with the best evidence
+
+- **Extended-release naltrexone + bupropion XL**  
+  What it is: a monthly naltrexone shot plus daily bupropion. In a large trial, this combo beat placebo for reducing meth use; effect size wasn’t huge, but it was real. Typical study dosing: **naltrexone ER 380 mg IM every 3 weeks** + **bupropion ER 450 mg/day**. Watch-outs: you must be **opioid-free** first or you’ll trigger withdrawal; check liver enzymes; bupropion can raise seizure risk, especially with heavy alcohol use or eating disorders. citeturn2view0  
+  Follow-up work showed continued benefit across the full 12 weeks when treatment was extended. citeturn8view0
+
+- **Mirtazapine (30 mg at night)**  
+  Sleep/appetite friendly antidepressant. Two randomized trials in men and transgender women who have sex with men showed reduced meth use and some risk behaviors; also helped mood and sleep. Side effects: sedation, weight gain. citeturn4view0
+
+- **Topiramate**  
+  Anticonvulsant that may help some people cut stimulant use. Side effects can be annoying: brain fog, tingling fingers, kidney stones; hydrate. Guideline backs it as a **conditional, low-certainty** option. citeturn5view0
+
+- **Bupropion alone**  
+  Can help lighter/less-than-daily users. Also treats depression and nicotine cravings. Still off-label and not a powerhouse, but reasonable to try. citeturn5view0
+
+- **Prescription stimulants (e.g., lisdexamfetamine) under a specialist**  
+  “Agonist” therapy is emerging. A 12-week RCT using **high-dose lisdexamfetamine** cut total days of use during treatment, but maintenance after stopping was weak. This is specialist territory with close monitoring for blood pressure, insomnia, and misuse risk. citeturn7view0
+
+## What actually boosts success
+- **Contingency management (CM)** has the strongest evidence of anything for stimulant use disorder. Ask specifically if a clinic offers CM; stack it with the meds above. citeturn5view0turn0search13
+
+## How to start (Atlanta)
+- You can ask a primary-care or addiction clinician for: “bupropion XL, consider XR-naltrexone shots; screen for opioid use first, check LFTs; discuss CM.” That’s a normal conversation in 2025 thanks to new guidelines. citeturn5view0
+- To find low-BS, confidential care fast: **SAMHSA National Helpline 1-800-662-HELP (4357)**. For local crisis help and rapid linkage in Georgia: **Georgia Crisis & Access Line 1-800-715-4225** (they also coordinate mobile crisis teams). citeturn9search0turn9search1
+
+## Safety notes that matter
+- If you use any opioids, pills off the street, or pressed tabs: **don’t take naltrexone** unless you’ve been fully opioid-free; it blocks opioids and can precipitate withdrawal. citeturn2view0  
+- Bupropion lowers seizure threshold; mix with dehydration, heavy alcohol, or big stimulant binges and your odds get worse. That’s not scare talk; that’s neurology. citeturn5view0
+
+Bottom line: meds help, but they’re assist, not autopilot. The combo with the most support is **naltrexone shot + bupropion XL**, with **mirtazapine** a solid backup when sleep and appetite are wrecked. If a clinic offers **contingency management**, take it. It’s the closest thing to “cheat codes” we’ve got. citeturn2view0turn4view0turn5view0

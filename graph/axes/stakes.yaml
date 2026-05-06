@@ -1,0 +1,10 @@
+axis: stakes
+description: Risk level if the answer is wrong.
+
+values:
+  low:
+    description: Exploratory or reversible.
+  medium:
+    description: Affects implementation direction.
+  high:
+    description: Could cause architectural lock-in, safety issue, or costly error.

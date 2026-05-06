@@ -1,0 +1,13 @@
+CONVERSATION_ID: 68e33cf5-dd2c-8326-9992-4706ade60627
+TITLE: Memory recall query
+MESSAGE_COUNT: 2
+
+[USER]
+Do you have memory that I've been writing a multi-series saga of novellas?
+
+[ASSISTANT]
+I don’t have memory enabled in this chat, so I can’t recall details from past conversations — including whether you’ve been writing a multi-series saga of novellas.  
+
+If you’d like me to remember things like that for future chats, you can turn on memory by going to **Settings → Personalization → Memory**.  
+
+That said, I’d love to hear about your saga! What’s it about?

@@ -1,0 +1,97 @@
+CONVERSATION_ID: 69cee60c-84ec-832d-98e8-e611a8d88153
+TITLE: Merry-go-round Description
+MESSAGE_COUNT: 11
+
+[USER]
+those things at the park you sit on and turn the table in from of you to revolve around it
+
+[ASSISTANT]
+You’re talking about a **merry-go-round**, also called a **roundabout** or **spinner**.
+
+The specific kind you’re describing—where you sit and there’s a table/wheel in the middle you grab and spin—is often called a:
+- **Sit-and-spin**
+- **Hand-driven merry-go-round**
+- **Playground spinner**
+
+Same idea: you crank or push the center and the whole platform rotates. Some newer ones are lower to the ground and smoother so kids don’t get launched into orbit like the old-school death traps.
+
+[USER]
+send me a link of pictures of one so we know we are on the same page
+
+[ASSISTANT]
+search("send me a link of pictures of one so we know we are on the same page")
+
+[ASSISTANT]
+Yeah—this is exactly what you’re talking about.
+
+image_group{"layout":"carousel","aspect_ratio":"1:1","image_refs":["turn0search5","turn0search8","turn0search2","turn0search1"]}
+
+That’s a **playground merry-go-round / spinner**—flat platform, bars or a center wheel, you sit or stand and spin it. citeturn0search0  
+
+If the one in your head had more of a **center wheel you crank while sitting**, that’s just a *variant* of this—usually called a **sit-and-spin spinner**. citeturn0search6  
+
+If this isn’t the exact version (like you remember a table-like wheel right in front of you), say what’s different and I’ll dial it in exactly.
+
+[USER]
+neither of those had the center table
+
+[ASSISTANT]
+search("neither of those had the center table")
+
+[ASSISTANT]
+Alright—*this* is the one you meant. The center “table/wheel” you grab and spin is real.
+
+image_group{"layout":"carousel","aspect_ratio":"1:1","image_refs":["turn0search0","turn0search4","turn0search9"]}
+
+That thing is usually called a:
+- **ReviWheel spinner**
+- **Center-wheel playground spinner**
+- Sometimes just **“spinner with hand wheel”**
+
+Key detail:  
+You sit around it and **spin a wheel in the middle to rotate the whole platform** citeturn0search0
+
+There isn’t one universal name (which is why it’s annoying to search). Even people online just call it “that spinny thing with the wheel” half the time.
+
+If that still isn’t it, tell me:
+- do you sit **on seats** or just a flat platform?
+- is the wheel vertical (like a steering wheel) or horizontal (like a table)?
+
+I’ll nail the exact model.
+
+[USER]
+only one person can get on it. that was close though
+
+[ASSISTANT]
+search("only one person can get on it. that was close though")
+
+[ASSISTANT]
+Alright, now we’re locked in.
+
+You’re thinking of a **single-person spinner with a center wheel/pole you control yourself**—not the big group ones.
+
+These are the closest real matches:
+
+image_group{"layout":"carousel","aspect_ratio":"1:1","image_refs":["turn0search0","turn0search11","turn0search4","turn0search8"]}
+
+The correct names manufacturers use are:
+- **Solo Spinner** citeturn0search0  
+- **Single Pirouette spinner** citeturn0search11  
+- **Synchro Spinner (1-person)** citeturn0search4  
+
+These are all **one-person spin platforms** where:
+- you sit or stand
+- grab a **center pole / wheel / handle**
+- and spin yourself like a maniac
+
+Important detail:  
+A lot of older playgrounds had a version where the center piece felt more like a **“table” or horizontal wheel**, but modern designs switched to **vertical poles or handles** for safety (less chance of smashed fingers / broken wrists). That’s why it’s hard to find your exact memory.  
+
+So what you remember is basically:
+> a **single-user hand-driven spinner (older style)**
+
+If you want the *exact* version from your childhood, tell me:
+- was the center thing flat like a **pizza/table**, or upright like a **steering wheel/pole**  
+- did your feet hang or sit on a little seat  
+
+I can narrow it down to the exact model or at least the closest modern equivalent.

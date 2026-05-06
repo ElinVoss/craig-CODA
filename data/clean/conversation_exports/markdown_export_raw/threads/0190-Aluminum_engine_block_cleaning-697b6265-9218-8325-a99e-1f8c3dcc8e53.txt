@@ -1,0 +1,346 @@
+CONVERSATION_ID: 697b6265-9218-8325-a99e-1f8c3dcc8e53
+TITLE: Aluminum engine block cleaning
+MESSAGE_COUNT: 10
+
+[USER]
+The best chemical to clean an aluminum engine block with
+
+[ASSISTANT]
+Depends what you’re cleaning off (oil/grease vs rust/coolant scale vs baked-on gasket crap). Aluminum is picky: the “best” chemical is the one that **doesn’t pit/etch** it while still touching the mess.
+
+## If you want one safest all-around choice (most situations)
+**Aviation/Aluminum-safe water-based degreaser**  
+- Examples: “aircraft/aluminum safe” formulas (Simple Green **Extreme** / “Aircraft & Precision” type products, Zep “aluminum safe” degreasers, etc.).  
+- Why: Cuts oil/grease well, usually non-caustic or buffered so it won’t eat the block if you don’t leave it soaking for hours.
+
+**How to use:** dilute per label, scrub, keep it wet 2–5 minutes, rinse thoroughly, blow dry.
+
+## Best for coolant scale / mineral deposits (inside water jackets, radiator passages)
+**Citric acid flush** (gentle, effective on scale)  
+- Mix: ~2–5% by weight (roughly 20–50 g per liter of hot water).  
+- Circulate/soak 30–60 minutes (don’t leave it overnight), then flush hard with clean water.  
+- Optional: follow with a quick rinse of baking-soda water (light neutralize), then final water rinse.
+
+## Best for gasket residue / RTV smears (deck surface, timing cover surface)
+**Gasket remover (aerosol) + plastic scraper**  
+- Works without gouging aluminum like a steel razor will.  
+- Finish with **brake cleaner** (chlorinated *or* non-chlorinated) for a final wipe.
+
+## Best for heavy greasy exterior grime (but still aluminum-safe)
+**Kerosene/mineral spirits** (old-school, effective, low risk to aluminum)  
+- Great if the block is out of the car and you can wash afterward.  
+- Follow with soap/water rinse and dry immediately.
+
+---
+
+# What to avoid on aluminum (common ways people ruin blocks)
+- **Oven cleaner / lye (sodium hydroxide, NaOH)**: will aggressively attack aluminum.
+- **Strong acids** like **muriatic/hydrochloric**: can pit/etch fast.
+- **Bleach / chlorine products**: bad corrosion issues.
+- **High-strength “purple” caustic degreasers** (some are sodium hydroxide-based): can stain/etch unless explicitly labeled aluminum-safe and used briefly.
+
+---
+
+## Quick “do it right” process (block on a stand)
+1. Scrape chunks first (plastic scraper).
+2. Degrease (aluminum-safe degreaser) + brush.
+3. Spot-treat gasket areas (gasket remover).
+4. Final rinse, then blow out bolt holes/oil passages with air.
+5. Light oil wipe on machined surfaces if it’s going to sit.
+
+If you tell me **what you’re trying to remove** (oil sludge, baked-on carbon, coolant crust, corrosion, gasket residue) and whether it’s **bare block out of the car vs assembled engine**, I’ll point to the best exact chemical + mix + dwell time for that case.
+
+[USER]
+I have the engine apart. I’m cleaning all of the inside and out.
+
+[ASSISTANT]
+Plan: give you a safe chemical “stack” for aluminum (inside + outside), plus the order to use them so you don’t trap crap in oil passages or etch the block.
+
+## The best chemical setup for an aluminum block (fully apart)
+
+### 1) Main degreaser (inside + outside): **aluminum-safe water-based degreaser**
+This is your workhorse for oil/grease sludge without eating the block.
+- Use a product specifically labeled **aluminum/aircraft safe** (non-caustic or buffered).
+- Mix per label (usually 4:1 to 10:1).
+- Scrub with nylon brushes. Keep it wet 2–5 minutes. Don’t let it dry on the metal.
+- Rinse hard with hot water.
+
+**Why this is #1:** Most “industrial” degreasers are sodium hydroxide-based and will stain/etch aluminum. Aluminum-safe stuff avoids that.
+
+### 2) Oil passages + galleries: **hot water + degreaser + brushes, then brake cleaner**
+After degreasing:
+- Run **rifle brushes / long bottle brushes** through every oil gallery you can access.
+- Flush with hot water.
+- Blow dry with compressed air.
+- Finish the galleries with **brake cleaner** (short bursts), then air again.
+
+**Rule:** If you can’t blow it out until bone-dry, you’re not done.
+
+### 3) Coolant jackets / mineral scale: **citric acid**
+If there’s crusty white/green coolant deposits or rust staining in jackets:
+- Mix **2–5% citric acid in hot water**.
+- Soak/flush 30–60 minutes.
+- Rinse thoroughly.
+- Optional quick neutralize rinse: a little baking soda in water, then final rinse.
+
+**Why citric:** It eats scale without being an aluminum murder-acid.
+
+### 4) Deck surface / gasket residue: **gasket remover + plastic scraper**
+- Spray gasket remover, wait per can, scrape plastic.
+- Repeat until clean.
+- Final wipe with brake cleaner.
+
+**Avoid:** hard steel razors on the deck if you’re not skilled; it’s easy to gouge.
+
+### 5) Rusty steel bits (caps, crank, rings, etc.)
+Not the aluminum block, but since you said “everything”:
+- Use a **chelator** like Evapo-Rust on *steel parts only*.
+- Keep that stuff off bearings.
+
+---
+
+## What NOT to use on the aluminum block
+- Oven cleaner / lye / “purple” caustic degreasers unless explicitly aluminum-safe (even then, short contact only).
+- Muriatic acid / strong wheel acids.
+- Bleach or anything chlorinated as a “cleaner.”
+
+---
+
+## Order of operations (works, doesn’t trap dirt)
+1) Scrape chunks & sludge first (dry).
+2) Degrease + brush (inside/outside).
+3) Hot rinse.
+4) Oil galleries brush + flush.
+5) Brake cleaner in galleries + blow out.
+6) Citric acid in coolant jackets (only if scaled).
+7) Final rinse.
+8) Immediate dry: compressed air + heat gun or sunlight.
+9) Protect machined surfaces: light oil film if it’s sitting.
+
+---
+
+## Two practical tips that matter
+- **Don’t mix chemicals.** Rinse between steps like your life depends on it.
+- **Dry immediately.** Aluminum corrodes fast when you leave water in crevices; steel parts flash-rust even faster.
+
+If you tell me what engine it is and what you’re seeing (oil sludge, milkshake, rust in bores, coolant crust), I’ll tighten this into a “use these exact 3 products + ratios” plan.
+
+[USER]
+2016 Hyundai Sonata 2.4 gdi theta engine. I’m doing a complete tear down and rebuild bearings. Cam crank everything.
+
+[ASSISTANT]
+For a full Theta II 2.4 GDI teardown/rebuild, you want a cleaning “stack” that’s **aluminum-safe**, actually clears the **oil galleries**, and won’t leave residues that wipe out new bearings on startup.
+
+## The short list (what to buy / use)
+### Aluminum block + head (bare castings)
+1) **Aluminum-safe water-based degreaser** (non-caustic / “aircraft/aluminum safe”)  
+   - This is your main cleaner for sludge and general grime.
+
+2) **Mineral spirits / kerosene**  
+   - Best for heavy varnish/oil film on castings and parts. Doesn’t attack aluminum.
+
+3) **Brake cleaner (non-chlorinated preferred)**  
+   - Final “no-residue” rinse on metal parts and passages *after* degreasing/solvent cleaning.
+
+4) **Citric acid** (powder)  
+   - For coolant jacket scale/mineral crust without eating aluminum.
+
+### Steel parts (crank, cams, bolts, brackets)
+5) **Chelator rust remover** (Evapo-Rust type)  
+   - Only for steel. Keep it off bearings.
+
+### Carbon (GDI pistons/valves)
+6) **GDI/intake carbon cleaner** *or* **carb/throttle-body cleaner** (spot use)  
+   - Only where you have baked carbon. Don’t soak rubber/plastics.
+
+---
+
+## What NOT to use (this is how people ruin aluminum)
+- **Oven cleaner / lye / sodium hydroxide “purple” degreasers** (unless explicitly aluminum-safe and used briefly)  
+- **Muriatic acid / strong wheel acid**  
+- **Bleach / chlorine cleaners**  
+These pit aluminum and can leave corrosion that becomes bearing glitter later.
+
+---
+
+## The correct cleaning workflow (block & head)
+### 1) Knock the bulk off first
+- Plastic scrapers, picks for corners, nylon/bronze brushes.
+- Get rid of thick sludge before you introduce liquids.
+
+### 2) Degrease (water-based, aluminum-safe)
+- Spray/soak 2–5 minutes (don’t let it dry).
+- Scrub with nylon brushes.
+- Hot water rinse.
+
+### 3) Solvent wash (mineral spirits) for varnish + stubborn oil film
+- Brush on, scrub, wipe off.
+- Follow with a detergent rinse (or another degreaser pass) so you’re not leaving solvent film everywhere.
+
+### 4) Oil galleries (this is the bearing-saver step)
+- Run **rifle brushes** through every oil passage you can access (block + crank if drilled + head galleries).
+- Flush with hot water.
+- Flush with brake cleaner.
+- Blow out with compressed air until *absolutely dry*.
+
+**If you skip brushing galleries, you’re gambling with your new bearings.** This engine sheds nasty sludge when neglected.
+
+### 5) Coolant jackets (only if scaled)
+- **2–5% citric acid in hot water**, soak/flush 30–60 minutes max.
+- Rinse thoroughly.
+- Blow dry.
+
+### 6) Final clean and protection
+- Final brake-cleaner wipe on machined surfaces.
+- Blow dry.
+- Light oil film on cylinder walls/deck/crank journals if they’ll sit.
+
+---
+
+## Parts-specific notes (Theta 2.4 GDI reality)
+### Crankshaft
+- Clean with mineral spirits + brushes; brake-clean final.
+- Brush the oil holes hard.
+- Blow through every drilling.
+- Immediately oil the journals after they’re clean/dry.
+
+### Cams
+- Same deal: solvent + brush, brake-clean final.
+- Don’t go caveman with abrasives on lobes/journals.
+
+### Pistons/rings
+- Carbon: use carbon cleaner + plastic/wood tools + brass brush lightly.
+- Ring lands: use a ring-groove cleaner or an old ring (carefully) to scrape.
+- Don’t soak pistons in harsh caustic.
+
+### Bearings
+- Do **not** “clean and reuse” old bearings for a rebuild—trash them.
+- Do **not** blast brake cleaner onto new bearing shells and then touch them with dirty hands. Keep them surgically clean and dry until assembly lube.
+
+### Block cylinders
+- Chemical cleaning won’t fix rust/pitting/out-of-round. That’s hone/bore work.
+- After honing, wash with hot soapy water until a white rag comes out clean, then oil.
+
+---
+
+## Machine shop vs DIY (blunt truth)
+If you’re doing cam/crank/bearings, the best “chemical” is often: **machine shop jet wash + hot tank/thermal clean** on the bare castings, then you do the gallery brushing and final rinse at home. It’s hard to beat professionally cleaned castings for getting hidden sludge out.
+
+---
+
+## Fast checklist so you don’t wipe it on first start
+- [ ] Every oil gallery brushed + solvent flushed + air dried  
+- [ ] No water trapped (freeze plug areas, blind holes, balance shaft/oil passages if present)  
+- [ ] After final wash, **white rag stays clean** on cylinders and decks  
+- [ ] All machined surfaces get a light oil film if sitting  
+- [ ] New oil pump/relief inspected (and honestly: if it’s questionable, replace)
+
+If you tell me what you’re seeing (sludge level, rust in bores, coolant crust, metal in pan), I’ll tailor the exact steps and where this engine typically hides the nastiest contamination.
+
+[USER]
+Can I clean it with diesel?
+
+[ASSISTANT]
+Yes—**diesel works as a solvent degreaser**, especially on a bare aluminum block/head and steel parts. It’s not “best,” but it’s **usable** if you do it right.
+
+## What diesel is good for
+- Dissolving **oil sludge, varnish, greasy film**
+- Soaking filthy steel parts (brackets, bolts, timing covers, etc.)
+- Pre-cleaning before you move to a proper wash
+
+## What diesel is bad at (and what can bite you)
+- Leaves an **oily residue** that will hang in oil galleries and bolt holes
+- Doesn’t touch **coolant scale** or **carbon** well
+- If you stop at “diesel-clean,” you can contaminate **new bearings** on startup
+
+## If you use diesel, do it like this
+1) **Scrape first** (plastic scraper) to remove chunks/sludge.
+2) **Brush with diesel** (nylon/parts brush). Don’t just dunk and call it done.
+3) **Drain/wipe** thoroughly.
+4) **Follow with a real wash**: hot water + dish soap or aluminum-safe degreaser. Scrub again.
+5) **Flush oil galleries**: rifle brushes + hot water flush.
+6) **Final rinse**: brake cleaner through galleries and machined surfaces.
+7) **Blow dry hard** with compressed air until completely dry.
+8) **Light oil film** on cylinders/deck/journals if it’ll sit.
+
+That “wash after diesel” step is non-negotiable if you’re rebuilding bearings.
+
+## Where I would NOT use diesel
+- On/near **new bearings** or freshly cleaned bearing saddles right before assembly
+- Any place you can’t rinse/flush afterward (hidden passages you can’t brush)
+
+## Better cheap alternative if you can get it
+- **Mineral spirits** or **kerosene**: similar cleaning power, usually less stinky and often leaves less “heavy” residue than diesel.
+
+If you tell me your setup (parts washer? pressure washer? compressed air available?), I can give you a tight, minimal-step workflow that won’t risk the rebuild.
+
+[USER]
+I have a high pressure nosel on a hose and I do have air, yes
+
+[ASSISTANT]
+Use that setup. With **pressure water + air**, diesel becomes a solid “first-cut” cleaner **as long as you finish with a detergent wash and a dry, residue-free pass**.
+
+## The safe, effective workflow (bare block/head + teardown parts)
+
+### 0) Set up so you don’t trap crap
+- Keep the block/head **bare** (no bearings, no seals, no sensors).
+- If you can remove **gallery plugs / restrictors** without drama, do it. If you can’t, no big—just spend more time brushing/flush + air.
+
+### 1) Diesel pre-clean (cuts sludge/varnish)
+- Brush diesel on, scrub hard (nylon + bottle brushes).
+- Let it dwell 2–5 minutes max.
+- Wipe what you can with rags.
+
+**Do not stop here.** Diesel leaves an oily film that will end up in your new bearings.
+
+### 2) Pressure rinse (water)
+- Hit everything with your high-pressure nozzle to blast loosened sludge out of corners and cavities.
+- Don’t be shy with volume—flow is your friend.
+
+### 3) Soap/degreaser wash (this is what removes diesel residue)
+Pick one:
+- **Aluminum-safe degreaser** (best), OR
+- Hot water + **Dawn** (works surprisingly well if you scrub)
+
+Process:
+- Apply, scrub, keep it wet, then pressure rinse thoroughly.
+
+### 4) Oil galleries: brush + flush + air (bearing-saver step)
+- Run **rifle brushes / long bottle brushes** through every oil gallery you can access.
+- Pressure flush through every passage opening.
+- Immediately **blow out with air** until you get *no mist*, just dry air.
+
+### 5) Final “no residue” pass
+- Spray **brake cleaner** into oil passages, threaded holes, and machined surfaces.
+- Blow out again.
+
+Brake cleaner + air is how you evict the last oily film and water.
+
+### 6) Dry it like you mean it
+- Blow every hole, crevice, and casting pocket.
+- Then add heat if you can (sunlight, space heater nearby, or heat gun on low). You’re trying to drive out hidden moisture.
+
+### 7) Protect machined surfaces if it’s going to sit
+- Light wipe of clean engine oil on:
+  - Cylinder walls
+  - Deck surface
+  - Main saddles (after final clean)
+  - Crank journals (if already cleaned)
+
+## Coolant jackets (only if crusty)
+If you’ve got mineral crust/green-white scale inside water jackets:
+- Do a separate step with **2–5% citric acid in hot water**, 30–60 minutes max.
+- Rinse hard.
+- Air dry.
+(Do this **before** your final brake-clean pass.)
+
+## What not to do with the pressure nozzle
+- Don’t pressure-wash **new bearings** (or anything you already “final cleaned” for assembly).
+- Don’t blast directly into areas with delicate pressed-in parts you intend to reuse (rare on a bare block, but still).
+
+## Quick sanity checks before assembly
+- After the final cleaning: wipe cylinders/deck with a white rag—**it should come off clean**.
+- Blow through galleries: you shouldn’t see oily mist or dirty droplets.
+- Threaded holes: dry, no pooled water.
+
+If you tell me whether the block is **sludged** (thick tar) or mostly just oily/dirty, I’ll tell you where to spend time (on these engines, the galleries are the make-or-break part).

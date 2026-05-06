@@ -1,0 +1,99 @@
+CONVERSATION_ID: 69cee22d-05d4-832b-b1a1-576149a6dae0
+TITLE: Work Schedule April 20
+MESSAGE_COUNT: 10
+
+[USER]
+off yesterday and today work frisat and sun. work monday tuesday then off wed thursday and it repeats. am i off or do i work on april 20th
+
+[ASSISTANT]
+April 20, 2026 is a **Monday**.
+
+Your cycle:
+- Off: Wed–Thu  
+- Work: Fri–Sat–Sun  
+- Work: Mon–Tue  
+- Repeat
+
+So Monday falls in your **work block**.
+
+**You’re working on April 20th.**
+
+[USER]
+no id be off monday tuesday and work wed thursay and be off the next weekend and it repeats
+
+[ASSISTANT]
+Alright—using the corrected rotation:
+
+- **Off:** Mon–Tue  
+- **Work:** Wed–Thu  
+- **Off:** Fri–Sat–Sun  
+- Repeat
+
+Now check **April 20, 2026 (Monday)** → that lands in your **Mon–Tue off block**.
+
+**You are OFF on April 20th.**
+
+[USER]
+on the 18th?
+
+[ASSISTANT]
+April 18, 2026 is a **Saturday**.
+
+In your corrected rotation:
+- Mon–Tue: off  
+- Wed–Thu: work  
+- Fri–Sat–Sun: off  
+
+So **April 18th (Saturday)** falls in your **off block**.
+
+**You’re off on the 18th.**
+
+[USER]
+id work the 18th if im off on the 20th
+
+[ASSISTANT]
+Yeah—your logic is right, which means the earlier mapping was off.
+
+If **April 20 (Mon) is OFF**, then your pattern around it has to be:
+
+- **Apr 20 (Mon): OFF**  
+- **Apr 19 (Sun): OFF**  
+- **Apr 18 (Sat): WORK**  
+- **Apr 17 (Fri): WORK**  
+- **Apr 16 (Thu): OFF**  
+- **Apr 15 (Wed): OFF**
+
+So:
+
+**April 18th (Saturday) — you’re WORKING.**
+
+[USER]
+hypoglisemic
+
+[ASSISTANT]
+**Hypoglycemia** = low blood sugar (typically under ~70 mg/dL).
+
+**Common symptoms:**
+- Shaky, sweaty, cold
+- Fast heartbeat
+- Dizzy or lightheaded
+- Blurred vision
+- Irritable, confused, or “out of it”
+- In bad cases: fainting or seizures
+
+**Fast fix (don’t overthink it):**
+- Take **15–20g of quick sugar**:
+  - Juice (½ cup)
+  - Regular soda (not diet)
+  - Glucose tablets
+  - Honey or sugar
+- Wait ~15 minutes, check how you feel, repeat if needed
+- Then eat something with carbs + protein (sandwich, crackers + peanut butter) so it doesn’t crash again
+
+**Causes:**
+- Skipping meals
+- Too much insulin/diabetes meds
+- Heavy physical work without eating (your kind of job makes this common)
+- Alcohol without food
+
+If this is happening often, or you’re blacking out / nearly blacking out, that’s not “tough it out” territory—get it checked.
