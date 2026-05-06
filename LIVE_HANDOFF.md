@@ -1107,3 +1107,19 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the next task is operational, not analytical: inspect remote state, ignored-file risk, and push blockers, then stage/commit/push the full local repo state to GitHub
   - the intent is broad sync, not selective publication
 - next immediate move: verify remote, branch, ignored files, and potential GitHub push blockers before staging everything
+
+### 2026-05-06T00:56 America/Chicago | Codex | scope=`handoff`
+
+- action: staged the full non-ignored working tree, committed it, and pushed `main` to `origin/main`
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - new published commit is `8fb739c` with message: `sync: overwrite remote with current local workspace state`
+  - push to `https://github.com/ElinVoss/craig-CODA.git` succeeded
+  - `main` now tracks `origin/main` at the same commit
+  - GitHub emitted warnings, not rejections, for large tracked files over the recommended 50 MB threshold:
+    - `artifacts/vault/nodes.jsonl` at ~63.26 MB
+    - `data/pretrain/conversation_exports/markdown_export_raw/conversation_threads.txt` at ~62.29 MB
+    - `data/pretrain/conversation_exports/markdown_export_raw/conversation_utterances.txt` at ~61.85 MB
+  - important boundary: the only remaining local differences are ignored paths (`!!`) such as `.env`, caches, logs, checkpoint artifacts, tokenizers, samples, and other ignored generated outputs; those were not force-added into Git
+- next immediate move: wait for the user to decide whether the ignored local-only paths should stay local or whether a second explicit force-add publication pass is desired despite secret/size risk
