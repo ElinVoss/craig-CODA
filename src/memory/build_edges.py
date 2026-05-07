@@ -21,13 +21,24 @@ def build_edges(nodes: list[VaultNode]) -> list[VaultEdge]:
         for link in node.links:
             by_link_target[link.lower()].append(node)
 
+    # shared_link and shared_project carry genuine structural signal and are safe to propagate.
+    # same_source and shared_tag are too coarse — they create hubs that flood the field.
+    _propagation_eligible = {"shared_link", "shared_project"}
+
     def add_edge(source_id: str, target_id: str, edge_type: str, weight: float, rationale: str) -> None:
         if source_id == target_id:
             return
         key = tuple(sorted((source_id, target_id))) + (edge_type,)
         if key not in edges or weight > edges[key].weight:
             left, right = sorted((source_id, target_id))
-            edges[key] = VaultEdge(source_id=left, target_id=right, edge_type=edge_type, weight=weight, rationale=rationale)
+            edges[key] = VaultEdge(
+                source_id=left,
+                target_id=right,
+                edge_type=edge_type,
+                weight=weight,
+                rationale=rationale,
+                propagation_eligible=edge_type in _propagation_eligible,
+            )
 
     for grouped in by_source.values():
         for index, left in enumerate(grouped):

@@ -72,6 +72,7 @@ class VaultEdge:
     edge_type: str
     weight: float
     rationale: str
+    propagation_eligible: bool = True
 
     def to_dict(self) -> dict:
         return asdict(self)

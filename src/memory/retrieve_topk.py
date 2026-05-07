@@ -12,6 +12,7 @@ from .memory_store import load_memory_graph
 from .node_schema import VaultNode
 from .query_classifier import classify_query_profile
 from .score_fusion import fuse_scores, load_query_profiles, trust_adjustment
+from .spreading_activation import build_propagation_adjacency, run_spreading_activation
 
 
 @dataclass
@@ -31,6 +32,7 @@ def retrieve_nodes(
     retrieval_profile: str | None = None,
     mode: str | None = None,
     top_k: int | None = None,
+    use_propagation: bool = False,
 ) -> list[RetrievalResult]:
     nodes, edges = load_memory_graph()
     profile = retrieval_profile or classify_query_profile(query)
@@ -38,6 +40,7 @@ def retrieve_nodes(
     limit = int(top_k or profiles[profile]["top_k"])
     adjacency = build_adjacency(edges)
     results: list[RetrievalResult] = []
+    seed_scores: dict[str, float] = {}
 
     for node in nodes:
         allowed, trust_multiplier = trust_adjustment(node, profile)
@@ -61,6 +64,7 @@ def retrieve_nodes(
             confidence=node.confidence,
             trust_multiplier=trust_multiplier,
         )
+        seed_scores[node.id] = total_score
         results.append(
             RetrievalResult(
                 node=node,
@@ -78,5 +82,18 @@ def retrieve_nodes(
                 },
             )
         )
+
+    if use_propagation:
+        nodes_by_id = {n.id: n for n in nodes}
+        prop_adjacency = build_propagation_adjacency(edges)
+        final_potential = run_spreading_activation(
+            seed_scores=seed_scores,
+            adjacency=prop_adjacency,
+            nodes_by_id=nodes_by_id,
+        )
+        for result in results:
+            if result.node.id in final_potential:
+                result.total_score = final_potential[result.node.id]
+                result.breakdown["propagation_potential"] = final_potential[result.node.id]
 
     return sorted(results, key=lambda item: item.total_score, reverse=True)[:limit]

@@ -1,18 +1,17 @@
 {
-  "node_count": 398,
-  "edge_count": 34614,
+  "node_count": 339,
+  "edge_count": 32987,
   "trust_layers": {
     "review_only": 100,
-    "episodic_events": 202,
+    "episodic_events": 150,
     "interpretive_maps": 6,
-    "project_constraints": 80,
+    "project_constraints": 78,
     "prose_voice": 4,
-    "stable_core": 6
+    "stable_core": 1
   },
   "source_kinds": {
     "conversation_transcript": 233,
     "curated_memory": 32,
-    "runtime_bundle": 59,
     "gguf_extraction": 74
   },
   "top_tags": [
@@ -37,14 +36,6 @@
       74
     ],
     [
-      "style",
-      52
-    ],
-    [
-      "voice",
-      52
-    ],
-    [
       "#attention",
       36
     ],
@@ -55,6 +46,14 @@
     [
       "examples",
       32
+    ],
+    [
+      "vault_seed",
+      32
+    ],
+    [
+      "1",
+      30
     ]
   ]
 }
