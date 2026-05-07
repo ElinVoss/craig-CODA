@@ -126,6 +126,8 @@
 - the Dolphin donor pass exists under `vaultization/dolphin/`
 - the exact-donor Qwen2.5-Omni-7B contrast pass exists under `vaultization/qwen2_5_omni_7b/`
 - the standalone host-kit repo used for second-machine exact-donor collection exists under `vaultization/qwen2_5_omni_7b/host_kit_repo/`
+- the Craig behavioral reference package is now imported under `vaultization/craig_behavioral_reference/` — 7 behavioral categories, 80 prompts each (560 total), 50 assertions each (350 total), plus 10 core rules; this is the shared stimulus source for all new donor passes
+- five new donor vaultization passes are scaffolded: Gemma (pass 3), GPT (pass 4, decision reversal), Kimi (pass 5), Nemotron (pass 6), LLaMA (pass 7) — each has a `_method.md` under `vaultization/{donor}/`
 
 ## What Is Also Present
 

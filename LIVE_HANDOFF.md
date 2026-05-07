@@ -33,7 +33,7 @@ Every new entry should include:
 - result
 - next immediate move
 
-### 2026-05-05T15:41 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`vault`
+### 2026-05-05T15:41 America/Chicago | Copilot | scope=`vault`
 
 - action: stress-tested the promoted `substrate/cells/` winner set analytically against 15 fresh prompts; wired all bidirectional links; validated the full link graph
 - files touched:
@@ -62,7 +62,7 @@ Every new entry should include:
     - `template-framed-artifact`: keywords miss obvious artifact requests using "recipe", "template", "guide"
 - next immediate move: decide on `pc-core-template-framed-artifact-001` (keep as native Qwen residue or challenge it); then run the keyword refinement pass on the 3 flagged cells
 
-### 2026-05-05T20:59 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`brainstorm`
+### 2026-05-05T20:59 America/Chicago | Copilot | scope=`brainstorm`
 
 - action: recorded a new memory architecture idea from user conversation — logged as a brainstorming option for the next session
 - files touched:
@@ -82,7 +82,7 @@ Every new entry should include:
     - `C:\\Users\\NeverAMoment\\.copilot`
   - extracted key continuity anchors:
     - original `model-lab` bootstrap intent and phase evolution from Codex history/memory
-    - `graph-native` and `heartbeat/private hinge` direction from Claude memory + Codex rollout summaries
+    - `graph-native` and `heartbeat/private hinge` direction from prior AI session memory + Codex rollout summaries
     - donor-vaultization and later refinement hints from Copilot session store
   - also confirmed the live repo baton already contains newer same-day substrate notes beyond the earlier short user-facing recap, so the new handover must clearly separate repo-grounded state from conversation-only intent
 - next immediate move: write a long-form root master handover file that explains where the project started, how the architecture and goals shifted, what is actually complete now, and the detailed remaining path to the end goal
@@ -306,7 +306,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - this confirms the startup prompt is now doing real work instead of acting like decorative documentation
 - next immediate move: optionally tighten the handoff contract further if you want the next model to auto-hold in the current scope instead of ending with a generic `what scope do you want to work in?`
 
-### 2026-05-04 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff`
+### 2026-05-04 America/Chicago | Copilot | scope=`handoff`
 
 - action: inherited baton — completed full `handoff` read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT)
 - files touched: none (read-only orientation pass)
@@ -317,7 +317,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - main open gap: model architecture still lives in `configs/` not resolved from vault
 - next immediate move: await user's intended scope or task; remain in `handoff` until user directs a narrower branch
 
-### 2026-05-04T13:35 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff`
+### 2026-05-04T13:35 America/Chicago | Copilot | scope=`handoff`
 
 - action: inherited baton — completed full `handoff` read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT)
 - files touched: none (read-only orientation pass)
@@ -329,7 +329,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - next immediate move: await user direction; ready to route into any named scope on demand
 - NOTE: this entry incorrectly omitted the training scaffolds that exist in `src/train_scratch.py`, `src/train_sft.py`, `scripts/run_scratch_train.py`, `scripts/run_sft_train.py` — corrected in the next entry
 
-### 2026-05-04T13:44 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff`
+### 2026-05-04T13:44 America/Chicago | Copilot | scope=`handoff`
 
 - action: full ground-truth survey of repo — verified actual file existence against doc claims
 - files touched: none (read-only survey)
@@ -426,7 +426,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the important invariant is the vault compiler and shared calling architecture, not any one model's native prompt shape
 - next immediate move: explain that this should be built as a common intermediate representation plus model adapters, and warn against confusing orchestration-layer blending with direct weight merging
 
-### 2026-05-04T14:44 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`weights`
+### 2026-05-04T14:44 America/Chicago | Copilot | scope=`weights`
 
 - action: created vault architecture note structure after clarifying full product intent with user
 - files touched:
@@ -439,7 +439,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: vault now has complete parent→child architecture structure; principles at weights level, contract at architecture level, concrete shapes as named profiles
 - next immediate move: add resolve_architecture_config() + write_architecture_resolution() to vault_methods.py, then wire model_factory.py to consume vault resolution instead of direct YAML
 
-### 2026-05-04T17:20 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`coda`
+### 2026-05-04T17:20 America/Chicago | Copilot | scope=`coda`
 
 - action: wired src/runtime/coda.py to route generation through DEFAULT_ADAPTER_REGISTRY; added bootstrap registration
 - files touched:
@@ -460,7 +460,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the `DEFAULT_ADAPTER_REGISTRY` is populated at runtime (not empty)
 - next immediate move: update NEXT_STEPS.md to mark item 2 done; the main open work is now the depersonalization-and-refill test path design and the eval coverage gap
 
-### 2026-05-04T15:25 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`coda`
+### 2026-05-04T15:25 America/Chicago | Copilot | scope=`coda`
 
 - action: implemented CODA IR and adapter contract end-to-end
 - files created:
@@ -534,7 +534,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the refreshed continuity layer is consistent enough for a new Copilot session to inherit directly
 - next immediate move: start the new Copilot conversation from the repo root, let it read the refreshed handoff files, and have it author the layered process-mind stack plus the Dolphin-first vaultization workflow
 
-### 2026-05-04T19:12 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff`
+### 2026-05-04T19:12 America/Chicago | Copilot | scope=`handoff`
 
 - action: inherited baton — completed full handoff read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT); confirmed active direction from user
 - files touched: none (read-only orientation pass)
@@ -547,7 +547,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - CODA IR and adapter wiring is complete; next unresolved layer is process-mind stack + Dolphin-first workflow
 - next immediate move: author vault notes for process_mind/ (3 layers), vaultization/dolphin/, and substrate/ pulse cell schema
 
-### 2026-05-04T19:25 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`handoff` → `vault`
+### 2026-05-04T19:25 America/Chicago | Copilot | scope=`handoff` → `vault`
 
 - action: authored the complete Copilot process-mind stack and Dolphin-first vaultization workflow
 - files created:
@@ -570,7 +570,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   3. Dolphin-first vaultization workflow authored (vaultization/dolphin/ + vaultization root + substrate schema)
 - next immediate move: begin Dolphin specimen collection using `vaultization/dolphin/_method.md` — collect minimum 3 specimens per input type across 6 input types before extraction begins
 
-### 2026-05-04T19:35 America/Chicago | Copilot (Claude Sonnet 4.6) | scope=`vault` → `handoff`
+### 2026-05-04T19:35 America/Chicago | Copilot | scope=`vault` → `handoff`
 
 - action: built the repo-to-Obsidian story-bible vault flattener system
 - files created:
@@ -1030,7 +1030,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - files touched:
   - `LIVE_HANDOFF.md`
 - result:
-  - the session file is a large Claude Code export for `D:\craig-CODA` centered on graph-derived response routing and the heartbeat framing of live vault activation
+  - the session file is a large AI agent export for `D:\craig-CODA` centered on graph-derived response routing and the heartbeat framing of live vault activation
   - it records a real implementation pass, not just theory: `src/memory/graph_router.py`, `agent/src/memory.ts`, `agent/src/server.ts`, `agent/src/craig.ts`, `agent/src/craig-local.ts`, and `scripts/query_memory.py`
   - spot verification against the current repo confirms those graph-routing files and signatures exist live
   - the most useful architectural takeaway from that session is: per-turn posture should be derived from retrieved graph structure (`routingBlock`) before the model sees content, and a live Obsidian view would look like a heartbeat as subgraphs activate turn by turn
@@ -1123,3 +1123,313 @@ The 18-prompt manifest could be run against many open models at different thinki
     - `data/pretrain/conversation_exports/markdown_export_raw/conversation_utterances.txt` at ~61.85 MB
   - important boundary: the only remaining local differences are ignored paths (`!!`) such as `.env`, caches, logs, checkpoint artifacts, tokenizers, samples, and other ignored generated outputs; those were not force-added into Git
 - next immediate move: wait for the user to decide whether the ignored local-only paths should stay local or whether a second explicit force-add publication pass is desired despite secret/size risk
+
+### 2026-05-06T01:07 America/Chicago | Codex | scope=`handoff`
+
+- action: user reframed the repo goal explicitly as a substrate-native intelligence architecture rather than an LLM-plus-memory system and asked how novelty should be handled once donor execution is replaced
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - clarified the active architectural reading: donor LLMs are temporary extraction organisms, graph routing is a transitional bridge, and the intended long arc is direct substrate-cell execution with donor identity later stripped/refilled
+  - the key unresolved systems question is now stated cleanly: when a prompt does not map coherently onto existing cell activations, should the runtime mutate native frontier cells first or route outward to a donor for extraction before reintegration
+  - the likely design pressure is identity stability versus novelty absorption; immediate core mutation risks incoherence, while donor-first fallback risks permanent substrate dependence
+- next immediate move: wait for the user to direct the next action — the live unresolved question (novelty handling: native mutation vs donor-first fallback) is the sharpest design decision still open
+
+### 2026-05-06T15:13 America/Chicago | Copilot | scope=`handoff`
+
+- action: completed mandatory root handoff read order per HANDOFF_PROMPT.md; no code or file changes made
+- files touched:
+  - `LIVE_HANDOFF.md` (this entry)
+- result:
+  - read all required root files in order: `HANDOFF_PROMPT.md`, `README.md`, `CURRENT_STATE.md`, `DECISIONS.md`, `NEXT_STEPS.md`, `ARTIFACTS.md`, `LIVE_HANDOFF.md`, `SCOPE_MAP.yaml`
+  - confirmed all five First Response Contract points (see response)
+  - freshest baton state absorbed: last active entry 2026-05-06T01:07 — user reframed repo goal as substrate-native intelligence architecture; open design question is novelty handling — native cell mutation vs donor-first fallback
+  - no scope phrase given by user beyond the bootstrap read command — staying in `handoff` until user gives a narrower direction
+- next immediate move: wait for the user to name a scope or task; if they ask for continuation, the sharpest unresolved item is the novelty-handling architecture decision; next pending practical work is the keyword refinement pass on 3 flagged substrate cells
+
+### 2026-05-06T15:17 America/Chicago | Copilot | scope=`handoff`
+
+- action: corrected the first-response orientation summary after user identified drift — response understated the BIOS/interpreter center, omitted the spreading-activation retrieval hinge, and ended weakly instead of naming the live implementation next move
+- files touched:
+  - `LIVE_HANDOFF.md` (this entry)
+- result:
+  - corrected First Response Contract delivered (see response)
+  - key drift fixed: 2026-05-06T01:07 is not the freshest hinge; the live frontier includes the BIOS/interpreter selector, spreading-activation retrieval upgrade, and edge-audit prerequisite
+  - ending now names the concrete first implementation move rather than asking an open question
+- next immediate move: if user directs continuation, first concrete move is `scripts/audit_edges.py`; then propagation eligibility on `VaultEdge`; then feature-flagged `src/memory/spreading_activation.py`
+- next immediate move: answer the novelty-handling question in terms of coherence-preserving growth rather than generic RAG/agent framing
+
+### 2026-05-06T16:35 America/Chicago | Copilot | scope=`vault`
+
+- action: imported Craig behavioral reference package; scaffolded 5 new donor vaultization passes; updated DECISIONS.md, NEXT_STEPS.md, CURRENT_STATE.md, ARTIFACTS.md
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/craig_behavioral_reference/` (extracted from craig_full_behavioral_package.zip)
+  - `exports/user_model_package/method_vault/vaultization/gemma/_method.md` (created)
+  - `exports/user_model_package/method_vault/vaultization/gpt/_method.md` (created)
+  - `exports/user_model_package/method_vault/vaultization/kimi/_method.md` (created)
+  - `exports/user_model_package/method_vault/vaultization/nemotron/_method.md` (created)
+  - `exports/user_model_package/method_vault/vaultization/llama/_method.md` (created)
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `CURRENT_STATE.md`
+  - `ARTIFACTS.md`
+  - `LIVE_HANDOFF.md` (this entry)
+- result:
+  - Craig behavioral reference package extracted: 7 categories, 80 prompts each (560 total), 50 assertions each (350 total), 10 core rules, meta category index
+  - shared stimulus package replaces per-donor bespoke manifests — all 5 new donors run against the same input, enabling direct cross-donor comparison
+  - 5 new donor _method.md scaffolds follow the Dolphin pattern, reference craig_behavioral_reference/ as specimen source
+  - GPT decision reversal recorded in DECISIONS.md (was external-teacher-only, now full donor, pass 4)
+  - Gemma confirmed as distinct from Gemini (Gemini excluded; Gemma open-weight, approved, pass 3)
+### 2026-05-06T16:48 America/Chicago | Copilot | scope=`vault`
+
+- action: updated donor host architecture — Perplexity Pro Space replaces per-donor API setups for Gemini, GPT, and LLaMA; Space configuration spec written; contamination guardrail documented
+- files touched:
+  - `exports/user_model_package/method_vault/vaultization/_method.md` (donor_sequence expanded, Perplexity Space config spec added)
+  - `exports/user_model_package/method_vault/vaultization/gemini/_method.md` (host updated to Perplexity Space)
+  - `exports/user_model_package/method_vault/vaultization/gpt/_method.md` (host updated to Perplexity Space)
+  - `exports/user_model_package/method_vault/vaultization/llama/_method.md` (host updated to Perplexity Space)
+  - `LIVE_HANDOFF.md` (this entry)
+- result:
+  - Perplexity Pro Space is the host for passes 3 (Gemini), 4 (GPT), 7 (LLaMA)
+  - single Space reused across all three by switching the model selector between passes
+  - Space system prompt spec written in vaultization/_method.md: enforces extraction output format, instructs natural response, explicitly prohibits loading Craig's assertions as behavioral instructions
+  - contamination rule documented: assertions are the evaluation target, not the input frame; loading them into the Space prompt would corrupt the extraction
+  - Kimi (pass 5) and Nemotron (pass 6) remain direct API (not on Perplexity)
+### 2026-05-06T17:30 America/Chicago | Copilot | scope=`vault`
+
+- action: imported 5 category-A donor response files; created Donor-C pass (pass 8); wrote Layer 3 cross-donor cluster analysis for category A
+- files touched:
+  - `vaultization/gemini/specimens/A_cognitive_communication_raw.md` (imported)
+  - `vaultization/gpt/specimens/A_cognitive_communication_raw.md` (imported)
+  - `vaultization/kimi/specimens/A_cognitive_communication_raw.md` (imported)
+  - `vaultization/nemotron/specimens/A_cognitive_communication_raw.md` (imported)
+  - `vaultization/donor-c/specimens/A_cognitive_communication_raw.md` (imported)
+  - `vaultization/donor-c/_method.md` (created — new unplanned donor, contamination flag noted)
+  - `vaultization/category_analysis/A_cognitive_communication_clusters.md` (created — full Layer 3 analysis)
+  - `DECISIONS.md` (Donor-C decision added)
+  - `LIVE_HANDOFF.md` (this entry)
+- result:
+  - 5 donors × 10 scenarios = 50 extraction blocks ingested
+  - 7 residue clusters identified for category A: A-001 through A-007
+  - 5 stable clusters (all 5 donors converge): self-correction posture, correction-as-collaboration, intent-over-form, patience without prompting, register-reduction, directness/aggression decoupling
+  - 1 provisional cluster: cognitive-style recognition (needs B-category confirmation)
+  - 1 mutation watch: rapid cognition "compression" metaphor (Gemini + Donor-C overlap)
+  - no safety deflections across any donor or scenario in category A
+  - Layer 2 evaluation still pending for all clusters
+### 2026-05-06T17:39 America/Chicago | Copilot | scope=`vault`
+
+- action: classified and imported two additional category-A artifacts — GPT-5.4 prescriptive run and Microsoft Copilot Craig-voice simulation
+- files touched:
+  - `vaultization/gpt/specimens/A_cognitive_communication_raw_v2.md` (GPT-5.4 second run, no Space framing)
+  - `vaultization/craig_target_simulation/specimens/A_cognitive_communication_copilot_sim.md` (Copilot Craig-voice simulation, all 80 prompts)
+  - `vaultization/craig_target_simulation/_method.md` (created — new artifact type, explained fully)
+  - `vaultization/category_analysis/A_cognitive_communication_clusters.md` (updated with both supplemental artifacts)
+  - `LIVE_HANDOFF.md` (this entry)
+- result:
+  - GPT-5.4 v2 flagged: prescriptive/aphoristic register without Space framing is notably different from Space-framed run — Space prompt may be suppressing donor distinctiveness across all 5 donors; note for Layer 2
+  - Copilot simulation classified as Craig target reference (NOT donor extraction) — long-term interaction partner, externalizes accumulated pattern memory; technical-systems vocabulary is Copilot's learned Craig model
+  - Copilot as a native donor (no voice simulation) flagged as an open decision
+  - Craig target simulation folder established as separate artifact class
+- next immediate move: run categories B–G through the 5 Space donors; when B arrives, confirm CLUSTER-A-006 and resolve MUTATION-WATCH-A-001
+
+### 2026-05-06T01:15 America/Chicago | Codex | scope=`handoff`
+
+- action: user proposed a "weight explosion" pattern that converts donor tensor metadata into markdown notes inside a vault, effectively creating a digital twin of the donor architecture without storing binary weights
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the idea is now framed as a possible donor-introspection lane: index tensor keys, shapes, counts, and architectural relationships into vault-native notes for search, graphing, and manual analysis
+  - likely value: donor anatomy becomes inspectable and linkable without loading full binary checkpoints into the vault
+  - likely risk: this can become an attractive static catalog that explains the donor without materially helping substrate execution unless it feeds overlap mining, residue clustering, activation tracing, or promotion decisions
+  - open judgment: metadata-only tensor notes are useful if they become routing/analysis scaffolds, but weak if treated as cognition by themselves
+- next immediate move: pressure-test the idea against the repo's actual goal and separate "donor museum" value from "substrate-building" value
+
+### 2026-05-06T01:22 America/Chicago | Codex | scope=`handoff`
+
+- action: user supplied a second-model brainstorming extension that pushes the donor-tensor index further into a pointer-vault / random-access inspection concept with possible residue logging
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the stronger version of the idea is now explicit: tensor notes would not just describe donor anatomy, they would point back into the checkpoint so specific tensors can be inspected on demand and annotated against runtime observations
+  - likely real value: a vault note can become a research portal into donor internals, supporting targeted inspection, comparison, and later analysis trails
+  - likely overclaim risk: random access inspection is real, but direct byte-patching, exact-address cross-model equivalence, and "instant truth" language overstate how much tensor semantics can be inferred from local slices alone
+  - open architectural question: whether a residue log tied to indexed donor tensors can meaningfully feed substrate promotion criteria instead of becoming a parallel donor-analysis notebook
+- next immediate move: answer by distinguishing safe donor introspection gains from misleading low-level weight-edit narratives
+
+### 2026-05-06T01:31 America/Chicago | Codex | scope=`handoff`
+
+- action: user proposed a simpler framing where the core system is not a large language model at all but a small interpreter/BIOS that fans prompts across repositories and multiple donor models, then asynchronously records and synthesizes what survives
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the problem statement is now cleaner: keep the native core small, deterministic, and routing-focused while external donors act as parallel response organs
+  - this reframes the likely first implementation target away from "replace the LLM immediately" and toward a lightweight orchestration layer that classifies prompts, gathers repo/vault context, fans out prompts, scores returns, and logs residue for later substrate promotion
+  - key honesty boundary: a repo by itself does not generate answers; some external generative engine still has to exist during this phase, whether local models, hosted APIs, or browser-mediated custom systems
+  - key likely failure mode: naive multi-donor synthesis can collapse into averaged voice soup unless the BIOS has a strong identity-weighted selection and promotion loop
+- next immediate move: answer in simple terms by separating the easy orchestration layer from the harder coherence/scoring problem
+
+### 2026-05-06T01:44 America/Chicago | Codex | scope=`handoff`
+
+- action: user pointed at `D:\FloorAgent` as the model for how the Craig BIOS should work: not as a giant thinker, but as a scoring-and-selection engine
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - verified the comparison against the live clone in `D:\FloorAgent`
+  - the strongest architectural bridge is in `src/domain/planning.js`:
+    - `candidatePriorityTuple()` defines a strict ordered scoring vector
+    - `scoreTarget()` ranks options with heavy weighting for preferred zones and exact-fit behavior
+    - the main loop generates candidate plans, compares them with `comparePriority()`, then applies the best one iteratively
+  - this is the cleanest current analogy for Craig BIOS behavior: classify prompt, generate donor/context candidates, score them under hard identity rules, pick the best candidate, apply, then log residue
+  - the important lesson is that the selector does not "reason" in a giant fuzzy way; it arbitrates under ordered priorities and bounded heuristics
+- next immediate move: answer the user by mapping `FloorAgent`'s planner arbitration pattern directly onto a multi-donor Craig BIOS design
+
+### 2026-05-06T01:55 America/Chicago | Codex | scope=`handoff`
+
+- action: user proposed a two-week continuous spoken-thought capture loop: raw live transcription of ordinary thoughts, reactions, and interactions across work and home as a possible path to stronger self-material
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - this reframes the data source from curated donor prompting toward high-volume first-person cognition traces
+  - likely value: much richer access to pacing, priorities, micro-judgments, emotional posture, repair patterns, and ordinary situational reasoning than prompt-answer pairs alone
+  - likely risk: unfiltered continuous transcript streams will mix identity signal with noise, privacy exposure, context fragments, contradictions, performative speech, and low-value repetition
+  - key design implication: the system should probably not ingest such transcripts directly into core memory; it needs a reduction layer that extracts recurring behavior motifs, values, rules, voice markers, and decision patterns before promotion
+  - strongest opportunity: treat the transcript corpus as raw self-material for residue mining and scoring calibration rather than as direct truth to replay verbatim
+- next immediate move: answer by separating the genuine identity-data opportunity from the filtering, privacy, and coherence hazards
+
+### 2026-05-06T02:06 America/Chicago | Codex | scope=`handoff`
+
+- action: user asked for a grounded read of a past conversation export at `C:\Users\NeverAMoment\Downloads\have we talked recently on my past_.md` in relation to self-described hard-headed transparency and continuity of thought
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the task is to inspect an external markdown transcript and look for evidence of stable personality structure rather than treating the self-description as sufficient proof
+  - the relevant question is whether the transcript shows persistent stance, non-performative transparency, defended judgments, and consistency under challenge
+- next immediate move: inspect the transcript directly, summarize the strongest recurring traits, and separate durable identity signal from momentary rhetoric
+
+### 2026-05-06T02:18 America/Chicago | Codex | scope=`handoff`
+
+- action: user provided a dense current-life load profile including family structure, concurrent project burden, daily cannabis use, and current methamphetamine use as part of explaining their operating reality
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - this is relevant both as self-model context and as a health/signal-quality boundary for any future transcript-to-substrate pipeline
+  - key architectural implication: any self-capture corpus needs state tags for fatigue, stimulant use, cannabis use, work pressure, and situational load so the system does not confuse chemically or stress-influenced states with stable identity core
+  - key human boundary: methamphetamine use by insufflation carries real short-term and long-term health risks and should not be normalized just because it coexists with high functional output
+- next immediate move: answer directly, with medical-risk honesty and with a practical distinction between durable self-patterns and state-contaminated signal
+
+### 2026-05-06T02:24 America/Chicago | Codex | scope=`handoff`
+
+- action: user explicitly redirected away from a health-first response and clarified that they already track hydration, food, heart rate, and mental state; the wanted focus is structural/identity implications rather than generic warning language
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - response priority is now clear: acknowledge the monitoring without pretending it resolves all risk, then focus on what chemically influenced but high-functioning daily life means for transcript-derived self-modeling
+  - the main design issue remains state separation, not moral judgment
+- next immediate move: answer in Craig-CODA terms by distinguishing stable identity from repeatable but state-conditioned overlays
+
+### 2026-05-06T02:33 America/Chicago | Codex | scope=`handoff`
+
+- action: user asked for evidence search across other files, the current discussion context, and `.codex` conversation history for self-descriptions involving being a liar or manipulative
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the task is evidentiary, not interpretive: search for explicit phrases and close variants rather than infer from tone
+  - likely search targets are repo docs, local markdown exports in `Downloads`, and `.codex` session history / memories
+- next immediate move: run targeted searches for `liar`, `lying`, `manipulative`, `manipulate`, and related wording, then report exact hits or lack of hits
+
+### 2026-05-06T02:49 America/Chicago | Codex | scope=`handoff`
+
+- action: user clarified the earlier distinction further with a direct statement: "but i will lie"
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - this sharpens the self-model from mere capability into conditional willingness
+  - the important distinction is no longer between "can" and "is" alone, but between default mode, justified exceptions, and explicit thresholds for deception
+  - key Craig-CODA implication: the system will need provenance tracking and contradiction tolerance rather than assuming all first-person statements are equally truth-bearing across contexts
+- next immediate move: answer by distinguishing occasional instrumental lying from identity collapse into global dishonesty, and map that back to substrate scoring
+
+### 2026-05-06T03:02 America/Chicago | Codex | scope=`handoff`
+
+- action: user rejected the prior biographical framing as "that's a narcissist," shifting the task from self-description to diagnostic-language precision
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the immediate question is whether the described pattern is better understood as narcissism or as a narrower selective-disclosure / bond-preservation rule
+  - response needs to separate overlap in traits from an unsupported personality-disorder label
+- next immediate move: answer with a clean distinction between narcissistic patterns and the specific disclosure-control pattern under discussion
+
+### 2026-05-06T03:14 America/Chicago | Codex | scope=`handoff`
+
+- action: user clarified that the relevant lies were tied to disclosures around repeated behaviors, not just one-off hidden facts
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - this shifts the analysis from isolated concealment to sustained management of another person's understanding of an ongoing pattern
+  - key distinction: hiding a single event is different from repeatedly shaping disclosure around recurring conduct
+- next immediate move: answer by naming the heavier moral category without collapsing it into a generic personality label
+
+### 2026-05-06T03:26 America/Chicago | Codex | scope=`handoff`
+
+- action: user introduced a new "Field Resonance Model" for vault retrieval: memory as field injection, gated excitation, graph propagation, and crystallized cluster activation instead of flat top-k search
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - this is a major architectural clarification, not just a wording change
+  - the proposed mechanism has four explicit phases: Permeability, Excitation, Propagation, and Crystallization
+  - the key shift is from node-level retrieval to neighborhood-level activation, where authored graph structure becomes the primary determinant of what enters working memory
+  - this aligns strongly with the repo's existing direction away from generic RAG and toward authored substrate behavior, but it still needs grounding against the current graph-router, runtime, and any low-level execution stubs
+- next immediate move: inspect the live repo for the exact integration points, then answer whether this is genuinely new and how to stage it without collapsing back into prompt-injection retrieval
+
+### 2026-05-06T03:39 America/Chicago | Codex | scope=`handoff`
+
+- action: user identified the field-resonance mechanism as spreading activation and connected it to prior cognitive-science work (Collins & Loftus, Collins & Quillian, ACT-R / Anderson) rather than a wholly novel invention
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the task shifted from pure architecture brainstorming to literature-grounding and naming
+  - immediate job is to separate what the prior-art claim gets right from where it overstates validation, solvedness, or one-to-one mapping
+  - live repo context remains: current retrieval is still weighted top-k plus routing-block injection, so spreading activation would be a real mechanism upgrade, not just new words
+- next immediate move: verify the cited models against primary sources, then map the confirmed pieces back onto the current memory stack and hot-path implementation plan
+
+### 2026-05-06T03:52 America/Chicago | Codex | scope=`handoff`
+
+- action: user supplied a concrete Field Resonance Model implementation plan and requested implicit pressure-testing against the live repo shape
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - verified the plan against the actual files it names:
+    - `src/memory/node_schema.py` currently has no `propagation_eligible` field on `VaultEdge`
+    - `src/memory/build_edges.py` really does build alphabetically sorted undirected co-occurrence edges with the stated types and weights
+    - `configs/memory_retrieval.yaml` is the real trust-layer gate source; `trust_adjustment()` in `score_fusion.py` is a runtime application of that policy
+  - confirmed the architectural boundary:
+    - `retrieve_topk.py` still scores nodes independently
+    - `index_graph.py` is only a mild graph bonus, not propagation
+    - `score_fusion.py` remains a flat weighted sum
+  - the user's build order is broadly correct, but edge audit and propagation-eligibility gates are indeed prerequisites, not tuning steps
+- next immediate move: answer with repo-grounded corrections, note the best parts of the plan, and identify the first implementation step that should actually be taken
+
+### 2026-05-06T04:05 America/Chicago | Codex | scope=`handoff`
+
+- action: consolidated the current session's architecture discoveries into the root handoff layer before any implementation work
+- files touched:
+  - `LIVE_HANDOFF.md`
+  - `HANDOFF_PROMPT.md`
+- result:
+  - `HANDOFF_PROMPT.md` now carries the clearest current center of gravity for the next model:
+    - small native BIOS / interpreter as the selector core
+    - spreading activation / Field Resonance Model as the retrieval hinge
+    - edge audit as the prerequisite before any propagation engine
+    - self-model boundaries around conditional deception, provenance, contradiction tolerance, and transcript mining
+  - this reduces the chance that the next model reverts to generic "better RAG" framing or flattens the user into either purity or pathology
+- next immediate move: wait for user direction; if work continues on the retrieval engine, start with `scripts/audit_edges.py` before touching `spreading_activation.py`
+
+### 2026-05-06T04:13 America/Chicago | Codex | scope=`handoff`
+
+- action: upgraded `HANDOFF_PROMPT.md` from a repo-contract document into a direct copy-paste command-line bootstrap prompt for the next model
+- files touched:
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the top of `HANDOFF_PROMPT.md` now contains an explicit command-line bootstrap block that tells the next model what to read first, what is already true, what the current BIOS/retrieval/self-model center of gravity is, and what its first substantive response must say
+  - this should reduce startup drift and make terminal-based handoff materially cleaner
+- next immediate move: if the user wants it even stronger, tighten the bootstrap block into a shorter high-pressure version optimized for one-shot copy/paste into external agents

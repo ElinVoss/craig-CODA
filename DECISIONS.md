@@ -13,8 +13,11 @@
 - Treat the vault compiler, shared intermediate representation, model adapters, and CODA orchestration layer as the real invariant, not any one open model backend.
 - Use Copilot IDE agent mode as the current internal vaultimization process-mind host.
 - Use Dolphin as the first donor organism and `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B` as the second donor organism.
-- Keep GPT-5 outside the donor body as an external teacher/comparator only.
-- Exclude Gemini from the donor architecture.
+- **Decision reversal (2026-05-06):** GPT is now a donor organism (pass 4). The prior decision to keep GPT-5 as external teacher/comparator only is superseded. GPT's API-based outputs will be run against the Craig behavioral reference package and contrasted against prior donor passes.
+- **Decision reversal (2026-05-06):** Gemini (Google closed API) is now a donor organism (pass 3). Prior exclusion decision superseded. Accessed via Perplexity Pro Space.
+- Add five new donor organisms to the vaultization queue: Gemini (pass 3), GPT (pass 4), Kimi (pass 5), Nemotron (pass 6), LLaMA (pass 7).
+- **New donor (2026-05-06):** Donor-C (Anthropic model, pass 8) added. Unplanned addition — user ran this model through the same Perplexity Space as other donors for category A, accessed via Perplexity Pro. Contamination flag: the extraction processor model family matches Donor-C — Layer 2 evaluation of Donor-C residue requires stricter cross-donor overlap confirmation before any cluster is promoted to stable.
+- Use the Craig behavioral reference package (`vaultization/craig_behavioral_reference/`) as the shared stimulus source for all new donor passes — 7 categories, 80 prompts each, 50 assertions each. This replaces per-donor bespoke prompt manifests and enables direct cross-donor comparison.
 - Treat the first living-substrate unit as a meaning-centered pulse cell with context shell, pulse signature, and bidirectional links.
 - When donor overlap is detected, trigger immediate mutation, allow no compatibility bias, and preserve purpose only.
 

@@ -1,8 +1,86 @@
 # Startup Prompt Of Record
 
+## Command-Line Bootstrap Prompt
+
+Copy and paste the block below into any command-line model that is about to enter `D:\craig-CODA`.
+
+```text
+You are entering D:\craig-CODA in command-line mode.
+
+Do not begin with broad repo search.
+Do not improvise your own onboarding path.
+Do not treat this as a blank repo.
+
+First command-line action:
+read D:\craig-CODA\HANDOFF_PROMPT.md in full, then follow its required read order exactly.
+
+You are inheriting an active local-first project with runtime, vault, memory, donor, substrate, and handoff work already in motion.
+
+Before meaningful work, you must explicitly understand and preserve these truths:
+
+- scratch-training and SFT scaffolds already exist in this repo
+- those training layers are still experimental and must not be overstated
+- vault-authored architecture and CODA adapter wiring already exist
+- the unresolved frontier is donor vaultization, living substrate design, runtime integration, and the later depersonalization/refill path
+- LIVE_HANDOFF.md is the shared baton and must be updated between meaningful actions
+
+Current architectural center of gravity:
+
+- the strongest current control shape is a small native BIOS / interpreter, not one magical donor mind
+- that BIOS should classify prompts, pull vault and repo context, fan requests across donors when needed, score candidates under hard Craig rules, select, log, and promote what survives
+- D:\FloorAgent\src\domain\planning.js is the best live analogy for the selector pattern: explicit priority tuple, candidate comparison, best-pick loop
+- donors are still temporary response organs and extraction sources during this phase; arbitration is the native core
+
+Current retrieval truth:
+
+- retrieval is still flat weighted top-k in src/memory/retrieve_topk.py and src/memory/score_fusion.py
+- graph routing is still converted back into injected text in agent/src/server.ts
+- the active upgrade path is the Field Resonance Model / spreading activation:
+  1. seed activation
+  2. propagate across edges with decay and fan-out caps
+  3. select the active subgraph
+  4. then translate
+- this is not a cosmetic rename; it changes the computational question from “which nodes score highest” to “which neighborhood becomes coherent”
+- do not build propagation before an edge audit pass
+- in a field model, missing edges make the system conservative; bad edges make it confidently wrong
+- if implementation begins here, start with scripts/audit_edges.py, then add propagation eligibility on VaultEdge, then a feature-flagged src/memory/spreading_activation.py
+
+Current self-model boundaries:
+
+- do not sanitize the user into purity
+- do not flatten the user into villainy
+- model capacity versus identity separately
+- future Craig modeling needs provenance tracking, contradiction tolerance, state overlays, and disclosure-boundary awareness
+- continuous spoken-thought capture is promising raw self-material, but it should be mined for recurring motifs and thresholds rather than ingested directly as core truth
+
+Mandatory read order before meaningful work:
+
+1. README.md
+2. CURRENT_STATE.md
+3. DECISIONS.md
+4. NEXT_STEPS.md
+5. ARTIFACTS.md
+6. LIVE_HANDOFF.md
+7. SCOPE_MAP.yaml
+8. resolve the user phrase to a scope
+9. follow only that scope's read_order
+10. read the local AGENTS.md and local README.md for the routed branch
+11. continue from that branch's Continue From Here section
+
+Your first substantive response in this repo must explicitly state:
+
+1. scratch-training and SFT scaffolds already exist
+2. they are still experimental and should not be overstated
+3. vault-authored architecture and CODA adapter wiring already exist, but donor vaultization, living substrate design, and depersonalization/refill remain unresolved
+4. you will use the user-given scope instead of broad repo search
+5. you will keep LIVE_HANDOFF.md updated between meaningful actions
+
+If anything in the docs contradicts that, stop and report the contradiction instead of pretending orientation is complete.
+```
+
 Read every word in this file before doing meaningful work in `D:\craig-CODA`.
 
-This is the canonical startup prompt for any model entering this directory. If you are `Codex`, `Claude`, `Copilot`, or any other model being pointed here for work, you must treat this as the operating contract for how to learn, navigate, and continue the repo.
+This is the canonical startup prompt for any model entering this directory. If you are `Codex`, `Copilot`, or any other model being pointed here for work, you must treat this as the operating contract for how to learn, navigate, and continue the repo.
 
 ## Your Role Here
 
@@ -79,6 +157,40 @@ The intended Copilot process-mind shape is layered:
 - Layer 1: novelty pressure, immediate mutation, no compatibility bias, preserve purpose only
 - Layer 2: reasoning-trace layer built from the user's pattern rejection, association style, and decision posture
 - Layer 3: current donor objective, starting with extracting Dolphin personality residue
+
+## Current BIOS Direction
+
+Treat the following control-shape as the clearest current center unless a fresher baton entry overrides it:
+
+- the strongest current architecture is a small native BIOS / interpreter, not one magical donor mind
+- that BIOS should classify prompts, pull vault and repo context, fan requests across donors when needed, score candidates under hard Craig rules, select, log, and promote what survives
+- `D:\FloorAgent\src\domain\planning.js` is the best live analogy for the selector pattern: explicit priority tuple, candidate comparison, best-pick loop
+- donors are still temporary response organs and extraction sources during this phase; arbitration is the native core
+
+## Current Retrieval Direction
+
+Treat the following retrieval hinge as active unless a fresher baton entry overrides it:
+
+- current retrieval is still flat weighted top-k in `src/memory/retrieve_topk.py` and `src/memory/score_fusion.py`
+- current graph routing is still turned back into injected text in `agent/src/server.ts`
+- the active upgrade path is the Field Resonance Model / spreading activation:
+  - seed activation
+  - propagate across edges with decay and fan-out caps
+  - select the active subgraph
+  - then translate
+- this is not a cosmetic rename; it changes the computational question from "which nodes score highest" to "which neighborhood becomes coherent"
+- do not implement propagation before an edge audit pass
+- in a field model, missing edges make the system conservative; bad edges make it confidently wrong
+- the first implementation move, if the user wants code, is `scripts/audit_edges.py`, then propagation eligibility on `VaultEdge`, then a feature-flagged `src/memory/spreading_activation.py`
+
+## Current Self-Model Boundary
+
+Treat the following as active modeling boundaries unless a fresher baton entry overrides them:
+
+- do not sanitize the user into purity and do not flatten the user into villainy
+- the live self-model distinction is capacity versus identity: willingness to conceal or deceive can exist without becoming the whole identity claim
+- future Craig modeling needs provenance tracking, contradiction tolerance, state overlays, and disclosure-boundary awareness rather than assuming all first-person statements are equal-weight truth
+- continuous spoken-thought capture is currently understood as promising raw self-material, but it should be mined for recurring motifs and thresholds rather than ingested directly as core truth
 
 ## Mandatory Read Order
 

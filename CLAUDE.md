@@ -1,4 +1,4 @@
-# Claude Guidance
+# AI Guidance
 
 `craig-CODA` is a local-first Windows repo for a CPU-first AI lab with two tracks:
 
