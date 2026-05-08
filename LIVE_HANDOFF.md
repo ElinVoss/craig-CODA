@@ -32,6 +32,17 @@ Every new entry should include:
 - result
 - next immediate move
 
+### 2026-05-08T17:05:16 America/Chicago | scope=`handoff`
+
+- action: committed and pushed the full local repo delta to `origin/main` after confirming there was no remote divergence to reconcile
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - `origin/main` advanced from `e2e69bc` to `d5ba925`
+  - the push preserved existing remote state, because `main` and `origin/main` matched before staging and commit
+  - local-only additions were published, including the `craig-coda/` subtree, new runtime and memory files, and the continuity-doc cleanup that removed branded assistant affiliation wording from the handoff layer
+- next immediate move: wait for the next user task from the now-synced repo state
+
 ### 2026-05-08T17:03:05 America/Chicago | scope=`handoff`
 
 - action: removed branded assistant affiliation wording from the root continuity layer and normalized the baton format so handoff notes no longer carry product-stamp metadata
