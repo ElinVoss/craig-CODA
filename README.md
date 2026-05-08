@@ -211,10 +211,10 @@ It now also governs:
 
 The current donor path is:
 
-- Copilot IDE agent mode as the internal process-mind host
+- the local interactive agent mode as the internal process-mind host
 - Dolphin as the first donor organism
 - exact-donor `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B` as the second donor organism
-- GPT-5 only as an external teacher/comparator
+- the expanded donor queue now continues with Gemini (pass 3), GPT (pass 4), Kimi (pass 5), Nemotron (pass 6), LLaMA (pass 7), and a contamination-flagged pass 8 for stricter cross-donor confirmation
 
 The current substrate path is:
 

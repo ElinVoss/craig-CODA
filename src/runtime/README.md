@@ -25,7 +25,7 @@ It is where prompt interpretation, planning, mode resolution, prompt compilation
 - mode routing is file-based and governed by `configs/runtime_modes.yaml`
 - prompt compilation can append retrieved memory context
 - `coda.py` now routes through the adapter registry rather than hardcoding one backend path
-- the older episodic lane still lives here through `coda.py`; the vault graph did not erase that older memory path
+- `coda.py` now queries the vault graph directly, derives graph routing, and injects translated graph memory into the compiled prompt rather than relying on the older episodic SQLite lane
 
 ## Important Distinction
 

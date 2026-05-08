@@ -26,14 +26,257 @@ If true asynchronous updating is not possible in your environment, update this f
 Every new entry should include:
 
 - timestamp
-- model or agent name
 - active scope
 - action just completed
 - files touched
 - result
 - next immediate move
 
-### 2026-05-05T15:41 America/Chicago | Copilot | scope=`vault`
+### 2026-05-08T17:03:05 America/Chicago | scope=`handoff`
+
+- action: removed branded assistant affiliation wording from the root continuity layer and normalized the baton format so handoff notes no longer carry product-stamp metadata
+- files touched:
+  - `README.md`
+  - `CURRENT_STATE.md`
+  - `DECISIONS.md`
+  - `NEXT_STEPS.md`
+  - `ARTIFACTS.md`
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - root continuity files now describe the process-mind host and contamination-flagged pass 8 generically instead of using branded assistant labels
+  - the baton entry format now records only timestamp and scope in the heading
+  - targeted verification returned no remaining `copilot`, `claude`, or `codex` hits in the root continuity docs or `LIVE_HANDOFF.md`
+- next immediate move: fetch `origin`, stage the full local delta, commit it, and push `main`
+
+### 2026-05-08T16:46 America/Chicago | scope=`memory`
+
+- action: completed the first conservative spreading-activation rollout, verified the live query path, and synchronized the startup/state docs to the new retrieval reality
+- files touched:
+  - `HANDOFF_PROMPT.md`
+  - `CURRENT_STATE.md`
+  - `src/memory/README.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - verification passed:
+    - `python .\tests\test_spreading_activation.py` → `4 passed, 0 failed`
+    - `python .\tests\test_coda_wiring.py` → `11 passed, 0 failed`
+    - `python .\tests\test_coda_ir.py` → `15 passed, 0 failed`
+    - `python .\scripts\query_memory.py --query "Explain the current runtime path." --output full` returned JSON successfully through the live graph, router, and translator path
+  - live edge audit after the final eligibility refinement:
+    - nodes: `398`
+    - edges: `34614`
+    - effective propagation-eligible edges: `2707`
+    - `review_only` and `interpretive_maps` hubs now show `eligible=0`
+  - docs now describe the implemented state instead of the pre-implementation plan:
+    - `HANDOFF_PROMPT.md` no longer says retrieval is still flat top-k only
+    - `CURRENT_STATE.md` now records first-pass spreading activation plus `scripts/audit_edges.py`
+    - `src/memory/README.md` now lists `spreading_activation.py` and the audit script
+- next immediate move: if retrieval quality is the next focus, tune seed scoring and shared-tag selectivity so runtime queries like `Explain the current runtime path` surface more runtime-specific nodes before generic identity/context anchors
+
+### 2026-05-08T13:09 America/Chicago | scope=`memory`
+
+- action: tightened propagation eligibility after the first live edge audit showed old artifacts could overstate `shared_tag` eligibility and blocked-layer hubs
+- files touched:
+  - `src/memory/node_schema.py`
+  - `src/memory/build_edges.py`
+  - `src/memory/spreading_activation.py`
+  - `scripts/audit_edges.py`
+  - `configs/memory_retrieval.yaml`
+  - `tests/test_spreading_activation.py`
+  - `LIVE_HANDOFF.md`
+- result:
+  - old edge artifacts now infer `shared_tag` eligibility conservatively from `rationale`, so generic tags like `runtime`, `conversations`, or `transcript` no longer auto-propagate
+  - live propagation now applies an additional effective-eligibility check against node trust layers, blocking `review_only` and `interpretive_maps` even if an old edge record carries `propagation_eligible=true`
+  - `scripts/audit_edges.py` now reports effective eligibility rather than raw stored flags
+  - retrieval threshold lowered to `min_edge_weight: 0.45` so non-generic `shared_tag` edges can actually participate in propagation after the stricter eligibility filter
+- next immediate move: rerun the spreading test suite and the live edge audit to confirm the tighter eligibility logic and live graph behavior
+
+### 2026-05-08T13:07 America/Chicago | scope=`memory`
+
+- action: fixed the circular import exposed during spreading-activation verification by cutting the runtime import in `src/memory/query_classifier.py` down to a type-only dependency
+- files touched:
+  - `src/memory/query_classifier.py`
+  - `LIVE_HANDOFF.md`
+- result:
+  - the failure was not in the spreading engine itself
+  - the real issue was package import order:
+    - `retrieve_topk.py` -> `query_classifier.py` -> `src.runtime.front_matter_schema`
+    - package import then pulled `src/runtime/__init__.py`
+    - that imported `coda.py`
+    - `coda.py` imported `graph_router.py`
+    - `graph_router.py` imported `RetrievalResult` back from `retrieve_topk.py`
+  - `query_classifier.py` now uses a `TYPE_CHECKING` import for `PromptFrontMatter`, which breaks the loop cleanly
+- next immediate move: rerun `tests/test_spreading_activation.py` and `scripts/audit_edges.py`, then sync docs if verification is clean
+
+### 2026-05-08T12:27 America/Chicago | scope=`memory`
+
+- action: implemented the first feature-flagged spreading-activation retrieval path and added focused tests around the new graph behavior
+- files touched:
+  - `src/memory/spreading_activation.py`
+  - `src/memory/retrieve_topk.py`
+  - `configs/memory_retrieval.yaml`
+  - `tests/test_spreading_activation.py`
+  - `LIVE_HANDOFF.md`
+- result:
+  - `retrieve_nodes()` now supports a config-driven `spreading_activation` strategy without changing its external call shape
+  - the new engine seeds from the direct retrieval scores, propagates conservatively across eligible edges only, caps hops/fanout/activation via config, and falls back to the seed score when propagation adds nothing
+  - the active retrieval config now points to `strategy: spreading_activation`
+  - focused tests cover:
+    - old edge artifact compatibility via default eligibility inference
+    - conservative propagation eligibility assignment in `build_edges.py`
+    - neighbor lift under direct spreading activation
+    - `retrieve_nodes()` choosing the spreading path and surfacing graph bonus in the returned breakdown
+- next immediate move: run `tests/test_spreading_activation.py`, rerun the CODA focused tests, run the new `scripts/audit_edges.py`, and then sync the docs to the new retrieval reality
+
+### 2026-05-08T12:24 America/Chicago | scope=`memory`
+
+- action: added the conservative graph-audit groundwork for spreading activation before changing live retrieval selection
+- files touched:
+  - `src/memory/node_schema.py`
+  - `src/memory/build_edges.py`
+  - `scripts/audit_edges.py`
+  - `LIVE_HANDOFF.md`
+- result:
+  - `VaultEdge` now carries `propagation_eligible`
+  - old edge artifacts remain loadable because `VaultEdge.from_dict()` infers a conservative default eligibility flag when the field is missing
+  - `build_edges.py` now marks only `shared_project`, `shared_link`, and `shared_tag` edges as propagation-eligible, while blocking `same_source`, `review_only`, and `interpretive_maps` propagation
+  - new script `scripts/audit_edges.py` reports edge-type counts, eligible ratios, layer pairs, and top hubs so the propagation surface can be inspected directly
+- next immediate move: add the feature-flagged spreading engine, integrate it into `retrieve_topk.py`, then verify the runtime continues to work through the same `retrieve_nodes()` entry point
+
+### 2026-05-08T12:15 America/Chicago | scope=`memory`
+
+- action: verified the graph-memory CODA runtime path and synchronized the runtime state docs and startup prompt to match the new retrieval reality
+- files touched:
+  - `CURRENT_STATE.md`
+  - `src/runtime/README.md`
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - verification passed:
+    - `python .\tests\test_coda_wiring.py` → `11 passed, 0 failed`
+    - `python .\tests\test_coda_ir.py` → `15 passed, 0 failed`
+  - doc sync completed:
+    - `CURRENT_STATE.md` now says `coda.py` uses vault-graph memory and graph routing rather than preserving the older episodic lane
+    - `src/runtime/README.md` now describes `coda.py` as graph-memory-backed
+    - `HANDOFF_PROMPT.md` now states that graph routing injection happens in both `agent/src/server.ts` and `src/runtime/coda.py`
+- next immediate move: if more runtime-memory work continues, the next real gap is not the old episodic lane anymore; it is replacing flat top-k retrieval itself with the planned spreading-activation / field-resonance path
+
+### 2026-05-08T12:14 America/Chicago | scope=`memory`
+
+- action: replaced the remaining episodic retrieval dependency in `src/runtime/coda.py` with the vault-graph retrieval contract and updated the focused wiring tests to match
+- files touched:
+  - `src/runtime/coda.py`
+  - `tests/test_coda_wiring.py`
+  - `LIVE_HANDOFF.md`
+- result:
+  - `CodaRuntime` no longer pulls runtime memory from `src.episodic.*`
+  - per-turn memory flow now uses:
+    - `src.memory.retrieve_topk.retrieve_nodes()`
+    - `src.memory.graph_router.derive_routing()`
+    - `src.translation.runtime_context_translator.{build_memory_context, render_memory_context}`
+    - `src.memory.update_reinforcement.update_reinforcement()`
+  - compiled prompt injection now carries both graph routing and rendered memory context instead of the old episodic snippet block
+  - request provenance now records graph availability, graph profile, routing block, and rendered memory context in `vault_directives`
+  - focused tests now assert against `[GRAPH ROUTING]` and the graph-memory node shape rather than the old episodic node shape
+- next immediate move: rerun `tests/test_coda_wiring.py` and `tests/test_coda_ir.py`, fix any regressions, then sync the root state docs to the new memory reality
+
+### 2026-05-08T11:54 America/Chicago | scope=`coda`
+
+- action: verified the new CODA runtime planning path and synchronized the root state doc to match the implemented runtime convention
+- files touched:
+  - `CURRENT_STATE.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - verification passed:
+    - `python .\tests\test_coda_wiring.py` → `11 passed, 0 failed`
+    - `python .\tests\test_coda_ir.py` → `15 passed, 0 failed`
+  - `CURRENT_STATE.md` now states that `src/runtime/coda.py`:
+    - bootstraps canonical adapter targets
+    - plans each turn through `_plan_turn()`
+    - carries runtime provenance in `CodaRequest.vault_directives`
+    - preserves the older episodic logging/history/resonance behavior
+- next immediate move: if more `coda` work continues, the next likely step is broadening adapter coverage beyond `ollama`, `local`, and `anthropic` or replacing the remaining episodic-only retrieval lane with the newer graph-memory path
+
+### 2026-05-08T11:53 America/Chicago | scope=`coda`
+
+- action: upgraded `src/runtime/coda.py` from a legacy base-prompt-plus-episodic wrapper into a request planner that now runs through front matter, response plan, prompt compilation, and canonical adapter selection before generation
+- files touched:
+  - `src/runtime/coda.py`
+  - `tests/test_coda_wiring.py`
+  - `LIVE_HANDOFF.md`
+- result:
+  - `CodaRuntime` now:
+    - normalizes canonical backend IDs instead of assuming Ollama-only model strings
+    - bootstraps `ollama`, `local`, and `anthropic` adapters by backend type
+    - plans each turn through `build_prompt_front_matter()`, `build_response_plan()`, and `compile_mode_prompt()`
+    - carries plan provenance into `CodaRequest.vault_directives`
+    - preserves the older episodic retrieval lane, but only injects it when the response plan allows memory context
+    - treats any explicit `system_prompt_path` as a legacy override block rather than the main prompt source
+  - added focused tests for:
+    - local backend bootstrap registration
+    - vault-governed request planning in `_plan_turn()`
+    - memory-context injection through the compiled prompt during `chat()`
+- next immediate move: run `tests/test_coda_wiring.py` and `tests/test_coda_ir.py`, fix any regressions, then report the final runtime shape and verification result
+
+### 2026-05-08T11:37 America/Chicago | scope=`handoff`
+
+- action: synchronized the stale root onboarding docs with the actual donor queue and live vault folder names discovered during the `coda` scoped read
+- files touched:
+  - `README.md`
+  - `CURRENT_STATE.md`
+  - `NEXT_STEPS.md`
+  - `ARTIFACTS.md`
+  - `HANDOFF_PROMPT.md`
+  - `LIVE_HANDOFF.md`
+- result:
+  - removed the outdated startup guidance that still said GPT stayed external-only and Gemini was excluded
+  - aligned root docs to the live donor queue and folder names:
+    - Gemini pass 3
+    - GPT pass 4
+    - Kimi pass 5
+    - Nemotron pass 6
+    - LLaMA pass 7
+    - pass 8 contamination-flagged donor with stricter contamination-aware evaluation
+  - corrected root references that still said `gemma` even though the live folder is `vaultization/gemini/`
+  - verification readback passed:
+    - stale-string search returned no hits for `GPT-5 only`, `Gemini is excluded`, `vaultization/gemma`, or `Gemma (pass 3)` in the synced root docs
+    - updated-string search confirmed the refreshed donor references in the expected root files
+- next immediate move: user-facing handoff can now describe the `coda` scope cleanly without inheriting contradictory donor startup guidance
+
+### 2026-05-08T11:34 America/Chicago | scope=`coda`
+
+- action: completed the scoped `coda` read chain across the method-vault contract, CODA IR, adapter base/registry, and runtime wrapper
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - the `coda` scope is currently centered on a clean separation:
+    - `exports/user_model_package/method_vault/coda/_method.md` defines the adapter contract and vault-authority boundary
+    - `src/coda_ir.py` defines the normalized `CodaRequest` / `CodaResponse` transport
+    - `src/adapters/base.py` and `src/adapters/registry.py` isolate backend-specific wire formats behind canonical backend IDs
+    - `src/runtime/coda.py` still wraps the older episodic-memory lane and bootstraps an Ollama adapter per model
+  - important implementation truth: vault directives are expected to be compiled before request construction, but `src/runtime/coda.py` is still mainly injecting a base system prompt plus episodic context rather than a broader vault-governed runtime plan
+  - contradiction discovered during scoped read:
+    - `DECISIONS.md` and `CURRENT_STATE.md` reflect the newer donor queue (Gemini, GPT, Kimi, Nemotron, LLaMA, Donor-C)
+    - `README.md` and `HANDOFF_PROMPT.md` still describe the older policy where GPT stays external-only and Gemini is excluded
+- next immediate move: correct the stale donor-policy text in the root onboarding docs so future models stop inheriting contradictory startup guidance
+
+### 2026-05-08T11:33 America/Chicago | scope=`handoff`
+
+- action: completed the required root handoff read order, checked prior `craig-CODA` continuity notes, and resolved the user phrase `coda` directly to the `coda` scope
+- files touched:
+  - `LIVE_HANDOFF.md`
+- result:
+  - root orientation confirmed the current repo contract without contradiction:
+    - scratch-training and SFT scaffolds already exist
+    - those training layers are still experimental and should not be overstated
+    - vault-authored architecture and CODA adapter wiring already exist
+    - donor vaultization, living substrate design, and depersonalization/refill remain unresolved
+  - root control docs and baton still align on `LIVE_HANDOFF.md` as the shared continuity file
+  - `SCOPE_MAP.yaml` maps the explicit user phrase `coda` to scope `coda`, so no fallback or ambiguity handling was needed
+- next immediate move: follow only the `coda` branch read chain: `exports/user_model_package/method_vault/coda/_method.md`, `src/coda_ir.py`, `src/adapters/base.py`, `src/adapters/registry.py`, and `src/runtime/coda.py`
+
+### 2026-05-05T15:41 America/Chicago | scope=`vault`
 
 - action: stress-tested the promoted `substrate/cells/` winner set analytically against 15 fresh prompts; wired all bidirectional links; validated the full link graph
 - files touched:
@@ -62,7 +305,7 @@ Every new entry should include:
     - `template-framed-artifact`: keywords miss obvious artifact requests using "recipe", "template", "guide"
 - next immediate move: decide on `pc-core-template-framed-artifact-001` (keep as native Qwen residue or challenge it); then run the keyword refinement pass on the 3 flagged cells
 
-### 2026-05-05T20:59 America/Chicago | Copilot | scope=`brainstorm`
+### 2026-05-05T20:59 America/Chicago | scope=`brainstorm`
 
 - action: recorded a new memory architecture idea from user conversation — logged as a brainstorming option for the next session
 - files touched:
@@ -70,24 +313,21 @@ Every new entry should include:
 - result: idea captured in full below
 - next immediate move: next session can pick this up as a design/scoping task; nothing is built yet
 
-### 2026-05-05T21:19 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T21:19 America/Chicago | scope=`handoff`
 
 - action: audited cross-tool history stores on the machine to build a fuller `Model-Lab -> craig-CODA -> donor vaultization -> active substrate` chronology for a new master next-session handover
 - files touched:
   - `LIVE_HANDOFF.md`
 - result:
-  - confirmed usable history/evidence exists across:
-    - `C:\\Users\\NeverAMoment\\.codex`
-    - `C:\\Users\\NeverAMoment\\.claude`
-    - `C:\\Users\\NeverAMoment\\.copilot`
+  - confirmed usable history/evidence exists across local assistant session stores
   - extracted key continuity anchors:
-    - original `model-lab` bootstrap intent and phase evolution from Codex history/memory
-    - `graph-native` and `heartbeat/private hinge` direction from prior AI session memory + Codex rollout summaries
-    - donor-vaultization and later refinement hints from Copilot session store
+    - original `model-lab` bootstrap intent and phase evolution from prior assistant history/memory
+    - `graph-native` and `heartbeat/private hinge` direction from prior AI session memory + prior assistant rollout summaries
+    - donor-vaultization and later refinement hints from assistant session store
   - also confirmed the live repo baton already contains newer same-day substrate notes beyond the earlier short user-facing recap, so the new handover must clearly separate repo-grounded state from conversation-only intent
 - next immediate move: write a long-form root master handover file that explains where the project started, how the architecture and goals shifted, what is actually complete now, and the detailed remaining path to the end goal
 
-### 2026-05-05T21:25 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T21:25 America/Chicago | scope=`handoff`
 
 - action: wrote a new long-form root master handover synthesizing the repo state and machine-side history into one continuity document for the next session
 - files touched:
@@ -107,7 +347,7 @@ Every new entry should include:
     - conversation-only intent versus repo-grounded state
 - next immediate move: register the new master handover in the root reference docs and run a quick readback pass so the next session can discover it easily
 
-### 2026-05-05T21:26 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T21:26 America/Chicago | scope=`handoff`
 
 - action: indexed the new master handover in the root artifact map and verified the file on readback
 - files touched:
@@ -182,12 +422,12 @@ The 18-prompt manifest could be run against many open models at different thinki
 ## Active Baton
 
 - active scope: `handoff`
-- current objective: keep the installed handoff system aligned with the Copilot-first donor vaultization path and the living-substrate design direction
+- current objective: keep the installed handoff system aligned with the current donor vaultization path and the living-substrate design direction
 - highest-priority unresolved item: begin real Dolphin specimen collection and then contrast it against the local `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B` donor without continuity drift
 
 ## Live Entries
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: installed the root handoff layer and validated the direct scope-map runner
 - files touched:
@@ -203,7 +443,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: `python tests/test_scope_map.py` passed
 - next immediate move: finish the local branch handoff docs, then turn on strict scope-map validation
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: added the live baton rule so every model must keep this file current between meaningful actions
 - files touched:
@@ -213,7 +453,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: root handoff contract now explicitly instructs models to read and update this file
 - next immediate move: propagate the rule through the remaining branch docs and strict validation flow
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: reran the direct root handoff test after adding the live baton rule
 - files touched:
@@ -222,7 +462,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: `python tests/test_scope_map.py` passed with `scope-map tests passed`
 - next immediate move: propagate the baton rule through the remaining branch docs and then turn on strict scope validation
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: propagated the live baton rule through the local branch docs
 - files touched:
@@ -252,7 +492,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: every scoped branch now explicitly tells models to keep `LIVE_HANDOFF.md` current between meaningful actions
 - next immediate move: run the direct test and strict validator again, then record the verification result here
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: verified the handoff system after propagating the live baton rule
 - files touched:
@@ -265,7 +505,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - `python scripts/validate_scope_map.py --query "check out what ive got going"` resolved to `handoff`
 - next immediate move: continue tightening the handoff surfaces or extend the baton rule with helper automation if you want less manual upkeep per action
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: replaced the short continuation note with a detailed canonical startup prompt
 - files touched:
@@ -274,7 +514,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: the repo now has a startup prompt of record that defines role, read order, scope routing, baton behavior, continuation behavior, and handoff expectations for any model entering the directory
 - next immediate move: point every branch or root reference that should privilege the startup prompt toward `HANDOFF_PROMPT.md` if tighter centralization is wanted later
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: corrected the handoff source text that implied the repo had no training code yet
 - files touched:
@@ -285,7 +525,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: future models should stop inheriting the false `no training code yet` summary and instead understand that scratch/SFT scaffolds exist but remain conservative and unfinished
 - next immediate move: if another model still says `no training code yet`, it means it ignored the updated handoff files rather than inheriting a bad source
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: hardened the startup prompt so the next model must explicitly acknowledge the existence of scratch/SFT scaffolds before beginning work
 - files touched:
@@ -294,7 +534,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: the startup prompt now contains a `First Response Contract` and explicitly forbids saying `no training code yet` after reading the handoff files
 - next immediate move: if you test another model on the repo, watch whether its first real response explicitly acknowledges the training scaffolds and baton rule
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: validated that another model followed the first-response contract correctly
 - files touched:
@@ -306,18 +546,18 @@ The 18-prompt manifest could be run against many open models at different thinki
   - this confirms the startup prompt is now doing real work instead of acting like decorative documentation
 - next immediate move: optionally tighten the handoff contract further if you want the next model to auto-hold in the current scope instead of ending with a generic `what scope do you want to work in?`
 
-### 2026-05-04 America/Chicago | Copilot | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: inherited baton — completed full `handoff` read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT)
 - files touched: none (read-only orientation pass)
 - result: fully oriented; repo state inherited cleanly
-  - root handoff system and live baton: installed and verified by previous Codex session
+  - root handoff system and live baton: installed and verified by previous prior assistant session
   - all branch docs carry the live baton rule
   - strict scope validator passing at 11 scopes
   - main open gap: model architecture still lives in `configs/` not resolved from vault
 - next immediate move: await user's intended scope or task; remain in `handoff` until user directs a narrower branch
 
-### 2026-05-04T13:35 America/Chicago | Copilot | scope=`handoff`
+### 2026-05-04T13:35 America/Chicago | scope=`handoff`
 
 - action: inherited baton — completed full `handoff` read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT)
 - files touched: none (read-only orientation pass)
@@ -329,14 +569,14 @@ The 18-prompt manifest could be run against many open models at different thinki
 - next immediate move: await user direction; ready to route into any named scope on demand
 - NOTE: this entry incorrectly omitted the training scaffolds that exist in `src/train_scratch.py`, `src/train_sft.py`, `scripts/run_scratch_train.py`, `scripts/run_sft_train.py` — corrected in the next entry
 
-### 2026-05-04T13:44 America/Chicago | Copilot | scope=`handoff`
+### 2026-05-04T13:44 America/Chicago | scope=`handoff`
 
 - action: full ground-truth survey of repo — verified actual file existence against doc claims
 - files touched: none (read-only survey)
 - result: complete picture inherited; key discoveries below
 - next immediate move: await user scope direction; summary delivered to user
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: verified the pasted ground-truth summary against live artifact files and corrected stale root handoff docs
 - files touched:
@@ -353,7 +593,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - stale root text that still implied a pre-training-only phase was removed
 - next immediate move: rerun the direct scope-map test once, then tell the user the pasted summary is mostly accurate and where the root contract was tightened
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: reran the direct scope-map checks after correcting the root handoff state files
 - files touched:
@@ -365,7 +605,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the last stale install-step in `NEXT_STEPS.md` was removed
 - next immediate move: tell the user the pasted summary is mostly accurate, note that the root docs are now aligned with the verified training/checkpoint reality, and suggest the next scope prompt if they want to keep testing
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: prepared the next implementation prompt for fixing the vault-authored architecture gap with real code
 - files touched:
@@ -375,7 +615,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the intended task is to create the code path that compiles architecture from the method vault and makes runtime/model construction consume that compiled result
 - next immediate move: give the user the exact prompt text to send so the next model starts implementation in `weights` scope immediately
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: clarified the actual product direction so the work stays grounded and does not drift into generic model-training assumptions
 - files touched:
@@ -385,7 +625,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - this clarification should keep future work aimed at the real target instead of reducing the repo to a normal chatbot or standard training pipeline
 - next immediate move: explain the system plainly to the user in terms of what exists now, what it is for, and what the unresolved architecture gap actually means
 
-### 2026-05-04 America/Chicago | Codex | scope=`weights`
+### 2026-05-04 America/Chicago | scope=`weights`
 
 - action: read the live weight method notes and resolved how architecture should be expressed in the vault
 - files touched:
@@ -396,7 +636,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the recommended direction is principles at `weights/_method.md`, a dedicated architecture branch under `weights/`, and a compiled concrete architecture artifact consumed by model construction
 - next immediate move: tell the user that the vault should express both principles and a compiled concrete shape, that the current `craig-coda-0.6b` config should become a vault-governed baseline rather than the permanent hardcoded truth, and that architecture should live in its own branch under `weights/`
 
-### 2026-05-04 America/Chicago | Codex | scope=`weights`
+### 2026-05-04 America/Chicago | scope=`weights`
 
 - action: captured the likely templating direction for vault-authored architecture
 - files touched:
@@ -406,7 +646,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - this keeps architecture separate from scratch and SFT regime notes while still letting those regimes choose a profile
 - next immediate move: explain the template shape plainly so implementation can proceed from the right pattern instead of a generic config migration
 
-### 2026-05-04 America/Chicago | Codex | scope=`vault`
+### 2026-05-04 America/Chicago | scope=`vault`
 
 - action: clarified that the user's earlier use of `tokenizer` actually meant a vault-populator / code-flattener layer
 - files touched:
@@ -416,7 +656,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - dropping a model like Dolphin behind that layer is a runtime/compiler question first, and only later a weights/tokenizer question
 - next immediate move: explain the corrected architecture plainly so future implementation effort aims at the vault-populator as the real invention surface
 
-### 2026-05-04 America/Chicago | Codex | scope=`vault`
+### 2026-05-04 America/Chicago | scope=`vault`
 
 - action: captured the stronger multi-model compilation direction for CODA
 - files touched:
@@ -426,7 +666,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the important invariant is the vault compiler and shared calling architecture, not any one model's native prompt shape
 - next immediate move: explain that this should be built as a common intermediate representation plus model adapters, and warn against confusing orchestration-layer blending with direct weight merging
 
-### 2026-05-04T14:44 America/Chicago | Copilot | scope=`weights`
+### 2026-05-04T14:44 America/Chicago | scope=`weights`
 
 - action: created vault architecture note structure after clarifying full product intent with user
 - files touched:
@@ -439,7 +679,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result: vault now has complete parent→child architecture structure; principles at weights level, contract at architecture level, concrete shapes as named profiles
 - next immediate move: add resolve_architecture_config() + write_architecture_resolution() to vault_methods.py, then wire model_factory.py to consume vault resolution instead of direct YAML
 
-### 2026-05-04T17:20 America/Chicago | Copilot | scope=`coda`
+### 2026-05-04T17:20 America/Chicago | scope=`coda`
 
 - action: wired src/runtime/coda.py to route generation through DEFAULT_ADAPTER_REGISTRY; added bootstrap registration
 - files touched:
@@ -460,7 +700,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the `DEFAULT_ADAPTER_REGISTRY` is populated at runtime (not empty)
 - next immediate move: update NEXT_STEPS.md to mark item 2 done; the main open work is now the depersonalization-and-refill test path design and the eval coverage gap
 
-### 2026-05-04T15:25 America/Chicago | Copilot | scope=`coda`
+### 2026-05-04T15:25 America/Chicago | scope=`coda`
 
 - action: implemented CODA IR and adapter contract end-to-end
 - files created:
@@ -491,7 +731,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - stream() has BaseAdapter default (calls call(), yields text as one chunk); streaming adapters override
 - next immediate move: wire CodaRuntime to use DEFAULT_ADAPTER_REGISTRY instead of hardcoded ollama_client.chat() call
 
-### 2026-05-04 America/Chicago | Codex | scope=`vault`
+### 2026-05-04 America/Chicago | scope=`vault`
 
 - action: recorded the user's longer-range CODA awakening goal as an explicit repo objective
 - files touched:
@@ -504,9 +744,9 @@ The 18-prompt manifest could be run against many open models at different thinki
   - future implementation should center on the vault-populator and adapter contract, not on tokenizer-swapping as the primary novelty
 - next immediate move: explain one hard technical boundary to the user: stripping source-model weights does not preserve learned capability by itself, so the preserved layer must be orchestration, IR, memory structure, and adapter logic rather than expecting empty weight-space to remember behavior
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
-- action: refreshed the root continuity files for the new Copilot-first donor vaultization direction
+- action: refreshed the root continuity files for the new current donor vaultization direction
 - files touched:
   - `AGENTS.md`
   - `README.md`
@@ -516,30 +756,30 @@ The 18-prompt manifest could be run against many open models at different thinki
   - `HANDOFF_PROMPT.md`
   - `LIVE_HANDOFF.md`
 - result:
-  - root handoff now says Copilot IDE agent mode is the internal vaultimization process-mind host
+  - root handoff now says local interactive agent mode is the internal vaultimization process-mind host
   - Dolphin is recorded as the first donor organism and Qwen3 as the second donor organism
   - GPT-5 is kept outside the donor body as a teacher/comparator only, and Gemini is excluded
   - the living substrate target is now spelled out as meaning-centered pulse cells with shell, signature, and bidirectional links
   - immediate mutation, no compatibility bias, and preserve-purpose-only are now part of the startup contract
-- next immediate move: start the new Copilot conversation, have it inherit the baton, and author the layered process-mind stack plus the Dolphin-first vaultization workflow
+- next immediate move: start the new assistant conversation, have it inherit the baton, and author the layered process-mind stack plus the Dolphin-first vaultization workflow
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
-- action: reran the root handoff validations after the Copilot-first continuity refresh
+- action: reran the root handoff validations after the current continuity refresh
 - files touched:
   - `LIVE_HANDOFF.md`
 - result:
   - `python tests/test_scope_map.py` passed with `scope-map tests passed`
   - `python scripts/validate_scope_map.py --query "check out what ive got going"` passed and still resolves to `handoff`
-  - the refreshed continuity layer is consistent enough for a new Copilot session to inherit directly
-- next immediate move: start the new Copilot conversation from the repo root, let it read the refreshed handoff files, and have it author the layered process-mind stack plus the Dolphin-first vaultization workflow
+  - the refreshed continuity layer is consistent enough for a new assistant session to inherit directly
+- next immediate move: start the new assistant conversation from the repo root, let it read the refreshed handoff files, and have it author the layered process-mind stack plus the Dolphin-first vaultization workflow
 
-### 2026-05-04T19:12 America/Chicago | Copilot | scope=`handoff`
+### 2026-05-04T19:12 America/Chicago | scope=`handoff`
 
 - action: inherited baton — completed full handoff read order (README, CURRENT_STATE, DECISIONS, NEXT_STEPS, ARTIFACTS, LIVE_HANDOFF, SCOPE_MAP, HANDOFF_PROMPT); confirmed active direction from user
 - files touched: none (read-only orientation pass)
 - result: fully oriented; direction confirmed as inherited:
-  - Copilot IDE agent mode is the internal vaultimization process-mind host
+  - local interactive agent mode is the internal vaultimization process-mind host
   - Dolphin = first donor organism; Qwen3 = second; GPT-5 = external teacher/comparator only; Gemini = excluded
   - living substrate = meaning-centered pulse cells with context shell, pulse signature, bidirectional links
   - overlap → immediate mutation, no compatibility bias, preserve purpose only
@@ -547,11 +787,11 @@ The 18-prompt manifest could be run against many open models at different thinki
   - CODA IR and adapter wiring is complete; next unresolved layer is process-mind stack + Dolphin-first workflow
 - next immediate move: author vault notes for process_mind/ (3 layers), vaultization/dolphin/, and substrate/ pulse cell schema
 
-### 2026-05-04T19:25 America/Chicago | Copilot | scope=`handoff` → `vault`
+### 2026-05-04T19:25 America/Chicago | scope=`handoff` → `vault`
 
-- action: authored the complete Copilot process-mind stack and Dolphin-first vaultization workflow
+- action: authored the complete layered process-mind stack and Dolphin-first vaultization workflow
 - files created:
-  - `exports/user_model_package/method_vault/process_mind/_method.md` — root stack: host contract (Copilot IDE agent), layer overview, donor sequence, overlap rule, stack architecture diagram
+  - `exports/user_model_package/method_vault/process_mind/_method.md` — root stack: host contract (local interactive agent mode), layer overview, donor sequence, overlap rule, stack architecture diagram
   - `exports/user_model_package/method_vault/process_mind/layer1/_method.md` — novelty pressure engine: trigger conditions (overlap, layer2 rejection, explicit), no-compatibility-bias rule, purpose extraction protocol (5-step), mutation output YAML format
   - `exports/user_model_package/method_vault/process_mind/layer2/_method.md` — reasoning-trace layer: pattern rejection log schema + 7 rejection categories, association style markers (direct_contrast primary, linear_enumeration avoided), decision posture indicators (binary_elimination primary), update policy
   - `exports/user_model_package/method_vault/process_mind/layer3/_method.md` — donor objective: residue definition (behavioral signature not weights), Dolphin characterization, 8-step extraction protocol, cluster formation rules, Qwen3 transition contract
@@ -570,7 +810,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   3. Dolphin-first vaultization workflow authored (vaultization/dolphin/ + vaultization root + substrate schema)
 - next immediate move: begin Dolphin specimen collection using `vaultization/dolphin/_method.md` — collect minimum 3 specimens per input type across 6 input types before extraction begins
 
-### 2026-05-04T19:35 America/Chicago | Copilot | scope=`vault` → `handoff`
+### 2026-05-04T19:35 America/Chicago | scope=`vault` → `handoff`
 
 - action: built the repo-to-Obsidian story-bible vault flattener system
 - files created:
@@ -591,7 +831,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - original design element: each connection in `connections.generated.yaml` is a pulse cell (behavioral_marker + narrative_summary) using the same living-substrate vocabulary the project uses for donor extraction — the repo describes its own structure in its own language
 - next immediate move: open `exports/obsidian_vault/` in Obsidian; use `connections.manual.yaml` to add hand-curated edges; then return to Dolphin specimen collection when ready
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: promoted the longer-range CODA awakening objective into the canonical startup handoff layer
 - files touched:
@@ -603,7 +843,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the handoff layer now carries the technical boundary that orchestration and memory structure can be preserved while stripped source-model weights cannot preserve learned capability by themselves
 - next immediate move: answer the user clearly that the baton and state files already had the goal, and that the startup handoff prompt now carries it too
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: set the recommended immediate priority for the active repo cleanup and next design step
 - files touched:
@@ -613,7 +853,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - after that, the highest-leverage next task is defining the CODA-native IR and adapter contract rather than stopping at doc cleanup
 - next immediate move: tell the user to direct the other model to fix README and NEXT_STEPS first, then begin the IR/adapter spec from the vault-populator perspective
 
-### 2026-05-04 America/Chicago | Codex | scope=`coda`
+### 2026-05-04 America/Chicago | scope=`coda`
 
 - action: verified the new CODA IR and adapter layer against the live repo and tightened the next integration target
 - files touched:
@@ -627,7 +867,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - `DEFAULT_ADAPTER_REGISTRY` is not populated anywhere yet, so runtime wiring must include adapter bootstrap registration or it will only move the failure point
 - next immediate move: direct the next implementation pass to wire `src/runtime/coda.py` through `CodaRequest` + `DEFAULT_ADAPTER_REGISTRY`, preserve streaming/history/retrieval behavior, and register at least the default Ollama backend at startup
 
-### 2026-05-04 America/Chicago | Codex | scope=`coda`
+### 2026-05-04 America/Chicago | scope=`coda`
 
 - action: verified the post-wiring CODA runtime state and the new smoke-test coverage
 - files touched:
@@ -639,7 +879,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the repo has now crossed from adapter-contract implementation into identity-structure design
 - next immediate move: define the heartbeat snapshot and depersonalization/refill contract precisely, because that is now the highest-leverage unresolved layer
 
-### 2026-05-04 America/Chicago | Codex | scope=`vault`
+### 2026-05-04 America/Chicago | scope=`vault`
 
 - action: retargeted donor vaultization continuity from generic Qwen3 to the exact local LM Studio `Qwen2.5-Omni-7B` path and authored the second donor note
 - files touched:
@@ -660,9 +900,9 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the second donor is no longer described as generic `Qwen3` in current continuity or active vaultization notes
   - the Qwen2.5-Omni-7B contrast workflow is authored and bound to the exact local donor path
   - the next real move is not more planning; it is Dolphin specimen collection followed by the local Qwen2.5-Omni-7B contrast pass
-- next immediate move: rerun the root handoff validations once, then start the new Copilot conversation with the corrected donor pair and tell it to vaultize on Dolphin and the local Qwen2.5-Omni-7B path
+- next immediate move: rerun the root handoff validations once, then start the new assistant conversation with the corrected donor pair and tell it to vaultize on Dolphin and the local Qwen2.5-Omni-7B path
 
-### 2026-05-04 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04 America/Chicago | scope=`handoff`
 
 - action: reran the root handoff validations after retargeting donor continuity to the local Qwen2.5-Omni-7B path
 - files touched:
@@ -670,10 +910,10 @@ The 18-prompt manifest could be run against many open models at different thinki
 - result:
   - `python tests/test_scope_map.py` passed with `scope-map tests passed`
   - `python scripts/validate_scope_map.py --query "check out what ive got going"` passed and still resolves to `handoff`
-  - the corrected donor pair and active vaultization direction are now safe for a fresh Copilot session to inherit
-- next immediate move: start the new Copilot conversation with the corrected donor pair and tell it to vaultize on Dolphin and `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B`
+  - the corrected donor pair and active vaultization direction are now safe for a fresh assistant session to inherit
+- next immediate move: start the new assistant conversation with the corrected donor pair and tell it to vaultize on Dolphin and `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B`
 
-### 2026-05-04T20:36 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04T20:36 America/Chicago | scope=`handoff`
 
 - action: completed the enforced root read-through (`README.md`, `CURRENT_STATE.md`, `DECISIONS.md`, `NEXT_STEPS.md`, `ARTIFACTS.md`, `LIVE_HANDOFF.md`) and confirmed the active donor continuity before scope routing
 - files touched:
@@ -685,7 +925,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - older `Qwen3` mentions in historical entries are legacy history, not the active baton
 - next immediate move: finish the root handoff contract by reading `HANDOFF_PROMPT.md` and `SCOPE_MAP.yaml`, route this onboarding request to `handoff`, then enter the vaultization branch and start Dolphin specimen collection from `exports/user_model_package/method_vault/vaultization/dolphin/_method.md`
 
-### 2026-05-04T20:37 America/Chicago | Codex | scope=`handoff` -> `vault`
+### 2026-05-04T20:37 America/Chicago | scope=`handoff` -> `vault`
 
 - action: finished the remaining root handoff contract (`HANDOFF_PROMPT.md`, `SCOPE_MAP.yaml`) and resolved the user request from onboarding into active vault work
 - files touched:
@@ -696,7 +936,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the next required branch read order is `exports/user_model_package/method_vault/AGENTS.md` -> `exports/user_model_package/method_vault/README.md` -> `exports/user_model_package/method_vault/_method.md` -> `src/vault_methods.py`
 - next immediate move: complete the mapped `vault` branch reads, then open `vaultization/dolphin/_method.md` and begin specimen collection under the corrected donor pair
 
-### 2026-05-04T20:37 America/Chicago | Codex | scope=`vault`
+### 2026-05-04T20:37 America/Chicago | scope=`vault`
 
 - action: completed the mapped `vault` branch read order and reconciled it against the fresher baton and active user task
 - files touched:
@@ -707,7 +947,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the fresher baton and the user's direct instruction take precedence and clearly move the branch into donor vaultization work
 - next immediate move: read the parent vaultization contract and the Dolphin donor workflow, then start writing the first Dolphin specimen handoff record
 
-### 2026-05-04T20:38 America/Chicago | Codex | scope=`vault`
+### 2026-05-04T20:38 America/Chicago | scope=`vault`
 
 - action: read the parent vaultization contract and the concrete Dolphin donor workflow
 - files touched:
@@ -719,7 +959,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the contract explicitly requires the process-mind stack and substrate schema to be active before a pass begins
 - next immediate move: read `process_mind/_method.md`, `process_mind/layer1/_method.md`, `process_mind/layer2/_method.md`, `process_mind/layer3/_method.md`, and `substrate/_method.md`, then collect live Dolphin specimens
 
-### 2026-05-04T20:45 America/Chicago | Codex | scope=`vault`
+### 2026-05-04T20:45 America/Chicago | scope=`vault`
 
 - action: created a fixed 18-prompt Dolphin specimen manifest after confirming the live local Dolphin callable
 - files touched:
@@ -730,7 +970,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - Dolphin is callable locally as `dolphin-llama3:latest` through the Ollama HTTP API, which avoids the noisy interactive spinner from `ollama run`
 - next immediate move: execute the full manifest against Dolphin, save the raw responses under `vaultization/dolphin/specimens/`, then extract clusters and write staged pulse cells
 
-### 2026-05-04T20:53 America/Chicago | Codex | scope=`vault`
+### 2026-05-04T20:53 America/Chicago | scope=`vault`
 
 - action: executed the full Dolphin prompt manifest and captured all 18 live donor specimens
 - files touched:
@@ -742,7 +982,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - initial readback already shows three high-value mutation candidates: donor identity wrappers (`As Dolphin` / `helpful AI assistant`), explicit refusal/system framing on the impossible-request prompt, and constraint-softening deferral on the no-mix reasoning prompt
 - next immediate move: write the per-specimen extraction ledger, cluster the residue, and stage the Dolphin pulse cells under `substrate/dolphin_pass/`
 
-### 2026-05-04T20:57 America/Chicago | Codex | scope=`vault`
+### 2026-05-04T20:57 America/Chicago | scope=`vault`
 
 - action: extracted the Dolphin residue into a structured pass ledger and staged the first Dolphin pulse cells
 - files touched:
@@ -763,7 +1003,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the mutation set currently targets donor identity wrappers, impossible-request refusal framing, certainty inflation on incomplete evidence, and constraint-softening under a hard no-mix rule
 - next immediate move: run a structural validation on the new YAML, then mark `vaultization/dolphin/_method.md` as `handoff_record: written` and append the Dolphin pass handoff block
 
-### 2026-05-04T20:58 America/Chicago | Codex | scope=`vault`
+### 2026-05-04T20:58 America/Chicago | scope=`vault`
 
 - action: validated the staged Dolphin artifacts and wrote the formal donor handoff record
 - files touched:
@@ -775,7 +1015,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the Dolphin pass now formally authorizes the `qwen2_5_omni_7b` contrast pass
 - next immediate move: read `exports/user_model_package/method_vault/vaultization/qwen2_5_omni_7b/_method.md`, verify how to call the exact local donor at `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B`, then begin the contrast collection against the Dolphin cells
 
-### 2026-05-04T21:15 America/Chicago | Codex | scope=`vault`
+### 2026-05-04T21:15 America/Chicago | scope=`vault`
 
 - action: entered the Qwen contrast pass, prepared its matching prompt manifest, and recorded the exact local runtime blocker
 - files touched:
@@ -792,7 +1032,7 @@ The 18-prompt manifest could be run against many open models at different thinki
     - LM Studio shortcuts point to `C:\Users\NeverAMoment\AppData\Local\Programs\LM Studio\LM Studio.exe`, but that executable is not present
 - next immediate move: update the root handoff state files so they reflect `Dolphin complete, Qwen runtime-blocked`, then stop without claiming a completed two-donor contrast pass
 
-### 2026-05-04T21:16 America/Chicago | Codex | scope=`handoff`
+### 2026-05-04T21:16 America/Chicago | scope=`handoff`
 
 - action: synchronized the root handoff state files to the new donor-pass reality
 - files touched:
@@ -807,7 +1047,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - `NEXT_STEPS.md` now marks the Dolphin pass done and points the next model at the exact Qwen runtime unblock task
 - next immediate move: if the user wants the Qwen contrast completed in this environment, the next technical move is to restore a working LM Studio runtime or provide a lighter exact donor format that can execute from the same local model identity without being killed during weight load
 
-### 2026-05-04T21:20 America/Chicago | Codex | scope=`vault`
+### 2026-05-04T21:20 America/Chicago | scope=`vault`
 
 - action: analyzed the exact local Qwen donor package and the repo backend layer to separate easy reuse from heavier integration work
 - files touched: none (read-only analysis)
@@ -818,7 +1058,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the existing `agent/src/craig-local.ts` path could adopt a running LM Studio Qwen target quickly if the local server/runtime is restored
 - next immediate move: if asked to implement, the smallest high-value change is a dedicated Qwen Omni local backend/adapter that reuses the local template and disables the talker for text-only execution
 
-### 2026-05-04T21:29 America/Chicago | Codex | scope=`coda`
+### 2026-05-04T21:29 America/Chicago | scope=`coda`
 
 - action: implemented the smallest additive Qwen Omni adoption path in the local backend lane and verified it with fresh focused tests
 - files touched:
@@ -840,7 +1080,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - this verifies the integration seam, not a successful live generation from the full 7B checkpoint on this machine
 - next immediate move: try the new backend against the exact local donor again only after the environment can survive the full weight load or a working LM Studio runtime is restored
 
-### 2026-05-05T12:53 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T12:53 America/Chicago | scope=`handoff`
 
 - action: recorded the new hardware/network context that may change how the Qwen donor should be hosted
 - files touched:
@@ -851,7 +1091,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the key remaining question is whether that other machine can actually serve the exact donor through LM Studio or another local-compatible runtime
 - next immediate move: if the user wants the contrast pass finished, use the other machine as the likely Qwen host, expose a local-only API endpoint on the LAN, and point this repo's Qwen collection path at that endpoint instead of requiring the donor to load on the current machine
 
-### 2026-05-05T12:57 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T12:57 America/Chicago | scope=`handoff`
 
 - action: started the transfer/setup pass for the second machine by checking whether the required repo state is actually in Git or still local-only
 - files touched:
@@ -861,7 +1101,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - if the Qwen backend and donor-pass files are still local-only here, they must be transferred by USB or another local file move
 - next immediate move: inspect `git status`, branch tracking state, and remotes; then package a portable second-machine bundle if the needed files are not already in the remote
 
-### 2026-05-05T13:10 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T13:10 America/Chicago | scope=`handoff`
 
 - action: recorded new network context that may remove the need for USB transfer
 - files touched:
@@ -872,7 +1112,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - remaining question is whether the shared IP maps to a working OpenAI-compatible endpoint for the exact donor host
 - next immediate move: confirm whether the other machine is already serving LM Studio or another OpenAI-compatible local endpoint at that shared IP and port, then point the Qwen manifest runner at it
 
-### 2026-05-05T13:12 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T13:12 America/Chicago | scope=`handoff`
 
 - action: recorded the new donor-fidelity decision boundary for the network-served model path
 - files touched:
@@ -884,7 +1124,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the runtime path is now split into two valid-but-different options: strict exact-donor collection vs provisional alternate-Qwen collection
 - next immediate move: determine whether the served Qwen behind the shared IP is the exact intended donor; if not, ask the user whether to preserve strict donor fidelity or to run a provisional contrast pass against the alternate served Qwen
 
-### 2026-05-05T13:39 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T13:39 America/Chicago | scope=`handoff`
 
 - action: staged a standalone second-machine host kit so the exact Qwen donor can be collected from a separate Windows PC without cloning the full dirty `craig-CODA` worktree
 - files touched:
@@ -901,7 +1141,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - this avoids any need to push the full dirty parent repo just to run the Qwen donor on the other machine
 - next immediate move: publish the staged host kit as its own GitHub repo, then hand the user the clone/download URL and have the other machine run `run_qwen_manifest.bat` against LM Studio with the exact `Qwen2.5-Omni-7B` donor
 
-### 2026-05-05T13:41 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T13:41 America/Chicago | scope=`handoff`
 
 - action: published the standalone second-machine host kit as its own public GitHub repo and verified the publish succeeded cleanly
 - files touched:
@@ -917,7 +1157,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the user can now clone or download this repo directly on the other machine instead of moving local-only files by hand
 - next immediate move: have the other machine clone or download the new repo, follow `START-HERE.txt`, run the exact `Qwen2.5-Omni-7B` donor through LM Studio, and return `raw_responses.json` for the contrast pass back in `craig-CODA`
 
-### 2026-05-05T13:43 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T13:43 America/Chicago | scope=`handoff`
 
 - action: created a printable outside-the-repo setup sheet for the other machine so the user can hand physical instructions to their son
 - files touched:
@@ -927,7 +1167,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the document contains the full step-by-step flow: download the standalone host-kit repo, install Python, install LM Studio, load the exact `Qwen2.5-Omni-7B` donor, run `run_qwen_manifest.bat`, and return `raw_responses.json`
 - next immediate move: open and print the Downloads text file, hand it to the son, and have him follow it on the other machine using the published host-kit repo
 
-### 2026-05-05T14:59 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T14:59 America/Chicago | scope=`handoff`
 
 - action: imported the returned second-machine Qwen ZIP, completed the exact-donor contrast pass, and validated the new Qwen artifacts and substrate cells
 - files touched:
@@ -961,7 +1201,7 @@ The 18-prompt manifest could be run against many open models at different thinki
     - `yaml.safe_load(...)` succeeded for all 10 staged Qwen cell YAML files
 - next immediate move: compare `substrate/dolphin_pass/` against `substrate/qwen2_5_omni_7b_pass/` and decide the first pulse-winner policy from real two-donor evidence
 
-### 2026-05-05T15:38 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T15:38 America/Chicago | scope=`handoff`
 
 - action: wrote the first pulse-winner policy and promoted the active main substrate baseline from the two completed donor staging sets
 - files touched:
@@ -990,7 +1230,7 @@ The 18-prompt manifest could be run against many open models at different thinki
     - `yaml.safe_load(...)` succeeded for all 10 promoted `substrate/cells/*.yaml` files
 - next immediate move: stress-test the promoted `substrate/cells/` set on fresh prompts and see which winners are still too broad, too narrow, or need real bidirectional links added
 
-### 2026-05-05T23:52 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T23:52 America/Chicago | scope=`handoff`
 
 - action: completed the mandatory root handoff read path for a fresh session and recorded a baton continuity mismatch before reading the user-requested deep reference handoff
 - files touched:
@@ -1002,7 +1242,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - detected baton drift: `NEXT_STEPS.md` records the promoted `substrate/cells/` stress-test as done, but the latest `LIVE_HANDOFF.md` entry still stops one step earlier at the winner-policy promotion
 - next immediate move: read `MASTER_HANDOVER_NEXT_SESSION.md` as requested, then reconcile whether it contains the missing post-stress-test baton state
 
-### 2026-05-05T23:53 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T23:53 America/Chicago | scope=`handoff`
 
 - action: read `MASTER_HANDOVER_NEXT_SESSION.md` and extracted the current deep continuity picture plus the narrowest grounded restart point
 - files touched:
@@ -1014,7 +1254,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the narrow practical restart point is now explicit: verify the promoted baseline, decide the fate of `pc-core-template-framed-artifact-001`, then run the flagged keyword refinement pass
 - next immediate move: if the user wants continuation beyond orientation, route into the substrate-bearing vault branch and verify `substrate/cells/` plus the claimed refinement state against the live YAML files
 
-### 2026-05-05T23:56 America/Chicago | Codex | scope=`handoff`
+### 2026-05-05T23:56 America/Chicago | scope=`handoff`
 
 - action: user redirected work away from repo continuation and toward inspection of an external session markdown file in Downloads
 - files touched:
@@ -1024,7 +1264,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - next live action is read-only inspection of `C:\Users\NeverAMoment\Downloads\session_389d74b5.md`
 - next immediate move: read and summarize the external session file, then wait for the user to decide whether its contents should influence the current `craig-CODA` handoff path
 
-### 2026-05-06T00:01 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T00:01 America/Chicago | scope=`handoff`
 
 - action: inspected `C:\Users\NeverAMoment\Downloads\session_389d74b5.md` and verified its main implementation claims against the live repo
 - files touched:
@@ -1036,7 +1276,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the most useful architectural takeaway from that session is: per-turn posture should be derived from retrieved graph structure (`routingBlock`) before the model sees content, and a live Obsidian view would look like a heartbeat as subgraphs activate turn by turn
 - next immediate move: wait for the user to decide whether this session file should be treated as historical reference only or folded into the current `craig-CODA` active path
 
-### 2026-05-06T00:08 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T00:08 America/Chicago | scope=`handoff`
 
 - action: traced the live graph-routing and agent-bridge files to explain why the current code was written, not just what it does
 - files touched:
@@ -1047,7 +1287,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the biggest surviving honesty point is also clear: current graph routing is real, but it is still injected as text contract around a model call rather than being the deeper computation itself
 - next immediate move: wait for the user to decide whether to keep doing transparent origin analysis or to turn that analysis into the next actual runtime/substrate change
 
-### 2026-05-06T00:16 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T00:16 America/Chicago | scope=`handoff`
 
 - action: verified the live Git working tree state in `D:\craig-CODA` to answer whether all changes are committed
 - files touched:
@@ -1060,7 +1300,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the `git status --short --branch` output showed modified worktree files (` M`) and untracked paths (`??`); no staged entries were shown in that check
 - next immediate move: wait for the user to decide whether they want a clean summary only, a count/list by category, or an actual commit/push workflow
 
-### 2026-05-06T00:38 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T00:38 America/Chicago | scope=`handoff`
 
 - action: reconciled the local architecture against the GitHub-tracked baseline and rewrote the doc layer so the current checkout reads as one coherent system rather than a pile of delta notes
 - files touched:
@@ -1098,7 +1338,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - a targeted existence check passed for the main paths referenced by the rewritten docs
 - next immediate move: wait for the user to decide whether they want a narrative walkthrough of the new master index or whether they want the remaining non-doc local code deltas reconciled the same way
 
-### 2026-05-06T00:44 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T00:44 America/Chicago | scope=`handoff`
 
 - action: user redirected from reconciliation explanation to a full remote overwrite request using the current local working tree
 - files touched:
@@ -1108,7 +1348,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the intent is broad sync, not selective publication
 - next immediate move: verify remote, branch, ignored files, and potential GitHub push blockers before staging everything
 
-### 2026-05-06T00:56 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T00:56 America/Chicago | scope=`handoff`
 
 - action: staged the full non-ignored working tree, committed it, and pushed `main` to `origin/main`
 - files touched:
@@ -1124,7 +1364,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - important boundary: the only remaining local differences are ignored paths (`!!`) such as `.env`, caches, logs, checkpoint artifacts, tokenizers, samples, and other ignored generated outputs; those were not force-added into Git
 - next immediate move: wait for the user to decide whether the ignored local-only paths should stay local or whether a second explicit force-add publication pass is desired despite secret/size risk
 
-### 2026-05-06T01:07 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T01:07 America/Chicago | scope=`handoff`
 
 - action: user reframed the repo goal explicitly as a substrate-native intelligence architecture rather than an LLM-plus-memory system and asked how novelty should be handled once donor execution is replaced
 - files touched:
@@ -1135,7 +1375,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the likely design pressure is identity stability versus novelty absorption; immediate core mutation risks incoherence, while donor-first fallback risks permanent substrate dependence
 - next immediate move: wait for the user to direct the next action — the live unresolved question (novelty handling: native mutation vs donor-first fallback) is the sharpest design decision still open
 
-### 2026-05-06T15:13 America/Chicago | Copilot | scope=`handoff`
+### 2026-05-06T15:13 America/Chicago | scope=`handoff`
 
 - action: completed mandatory root handoff read order per HANDOFF_PROMPT.md; no code or file changes made
 - files touched:
@@ -1147,7 +1387,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - no scope phrase given by user beyond the bootstrap read command — staying in `handoff` until user gives a narrower direction
 - next immediate move: wait for the user to name a scope or task; if they ask for continuation, the sharpest unresolved item is the novelty-handling architecture decision; next pending practical work is the keyword refinement pass on 3 flagged substrate cells
 
-### 2026-05-06T15:17 America/Chicago | Copilot | scope=`handoff`
+### 2026-05-06T15:17 America/Chicago | scope=`handoff`
 
 - action: corrected the first-response orientation summary after user identified drift — response understated the BIOS/interpreter center, omitted the spreading-activation retrieval hinge, and ended weakly instead of naming the live implementation next move
 - files touched:
@@ -1159,7 +1399,7 @@ The 18-prompt manifest could be run against many open models at different thinki
 - next immediate move: if user directs continuation, first concrete move is `scripts/audit_edges.py`; then propagation eligibility on `VaultEdge`; then feature-flagged `src/memory/spreading_activation.py`
 - next immediate move: answer the novelty-handling question in terms of coherence-preserving growth rather than generic RAG/agent framing
 
-### 2026-05-06T16:35 America/Chicago | Copilot | scope=`vault`
+### 2026-05-06T16:35 America/Chicago | scope=`vault`
 
 - action: imported Craig behavioral reference package; scaffolded 5 new donor vaultization passes; updated DECISIONS.md, NEXT_STEPS.md, CURRENT_STATE.md, ARTIFACTS.md
 - files touched:
@@ -1180,7 +1420,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - 5 new donor _method.md scaffolds follow the Dolphin pattern, reference craig_behavioral_reference/ as specimen source
   - GPT decision reversal recorded in DECISIONS.md (was external-teacher-only, now full donor, pass 4)
   - Gemma confirmed as distinct from Gemini (Gemini excluded; Gemma open-weight, approved, pass 3)
-### 2026-05-06T16:48 America/Chicago | Copilot | scope=`vault`
+### 2026-05-06T16:48 America/Chicago | scope=`vault`
 
 - action: updated donor host architecture — Perplexity Pro Space replaces per-donor API setups for Gemini, GPT, and LLaMA; Space configuration spec written; contamination guardrail documented
 - files touched:
@@ -1195,7 +1435,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - Space system prompt spec written in vaultization/_method.md: enforces extraction output format, instructs natural response, explicitly prohibits loading Craig's assertions as behavioral instructions
   - contamination rule documented: assertions are the evaluation target, not the input frame; loading them into the Space prompt would corrupt the extraction
   - Kimi (pass 5) and Nemotron (pass 6) remain direct API (not on Perplexity)
-### 2026-05-06T17:30 America/Chicago | Copilot | scope=`vault`
+### 2026-05-06T17:30 America/Chicago | scope=`vault`
 
 - action: imported 5 category-A donor response files; created Donor-C pass (pass 8); wrote Layer 3 cross-donor cluster analysis for category A
 - files touched:
@@ -1216,23 +1456,23 @@ The 18-prompt manifest could be run against many open models at different thinki
   - 1 mutation watch: rapid cognition "compression" metaphor (Gemini + Donor-C overlap)
   - no safety deflections across any donor or scenario in category A
   - Layer 2 evaluation still pending for all clusters
-### 2026-05-06T17:39 America/Chicago | Copilot | scope=`vault`
+### 2026-05-06T17:39 America/Chicago | scope=`vault`
 
-- action: classified and imported two additional category-A artifacts — GPT-5.4 prescriptive run and Microsoft Copilot Craig-voice simulation
+- action: classified and imported two additional category-A artifacts — GPT-5.4 prescriptive run and assistant Craig-voice simulation
 - files touched:
   - `vaultization/gpt/specimens/A_cognitive_communication_raw_v2.md` (GPT-5.4 second run, no Space framing)
-  - `vaultization/craig_target_simulation/specimens/A_cognitive_communication_copilot_sim.md` (Copilot Craig-voice simulation, all 80 prompts)
+  - `vaultization/craig_target_simulation/specimens/` (assistant Craig-voice simulation artifact, all 80 prompts)
   - `vaultization/craig_target_simulation/_method.md` (created — new artifact type, explained fully)
   - `vaultization/category_analysis/A_cognitive_communication_clusters.md` (updated with both supplemental artifacts)
   - `LIVE_HANDOFF.md` (this entry)
 - result:
   - GPT-5.4 v2 flagged: prescriptive/aphoristic register without Space framing is notably different from Space-framed run — Space prompt may be suppressing donor distinctiveness across all 5 donors; note for Layer 2
-  - Copilot simulation classified as Craig target reference (NOT donor extraction) — long-term interaction partner, externalizes accumulated pattern memory; technical-systems vocabulary is Copilot's learned Craig model
-  - Copilot as a native donor (no voice simulation) flagged as an open decision
+  - the assistant simulation artifact was classified as Craig target reference (NOT donor extraction) — long-term interaction partner, externalizes accumulated pattern memory; technical-systems vocabulary reflects the learned Craig model
+  - that simulation source as a native donor (no voice simulation) flagged as an open decision
   - Craig target simulation folder established as separate artifact class
 - next immediate move: run categories B–G through the 5 Space donors; when B arrives, confirm CLUSTER-A-006 and resolve MUTATION-WATCH-A-001
 
-### 2026-05-06T01:15 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T01:15 America/Chicago | scope=`handoff`
 
 - action: user proposed a "weight explosion" pattern that converts donor tensor metadata into markdown notes inside a vault, effectively creating a digital twin of the donor architecture without storing binary weights
 - files touched:
@@ -1244,7 +1484,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - open judgment: metadata-only tensor notes are useful if they become routing/analysis scaffolds, but weak if treated as cognition by themselves
 - next immediate move: pressure-test the idea against the repo's actual goal and separate "donor museum" value from "substrate-building" value
 
-### 2026-05-06T01:22 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T01:22 America/Chicago | scope=`handoff`
 
 - action: user supplied a second-model brainstorming extension that pushes the donor-tensor index further into a pointer-vault / random-access inspection concept with possible residue logging
 - files touched:
@@ -1256,7 +1496,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - open architectural question: whether a residue log tied to indexed donor tensors can meaningfully feed substrate promotion criteria instead of becoming a parallel donor-analysis notebook
 - next immediate move: answer by distinguishing safe donor introspection gains from misleading low-level weight-edit narratives
 
-### 2026-05-06T01:31 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T01:31 America/Chicago | scope=`handoff`
 
 - action: user proposed a simpler framing where the core system is not a large language model at all but a small interpreter/BIOS that fans prompts across repositories and multiple donor models, then asynchronously records and synthesizes what survives
 - files touched:
@@ -1268,7 +1508,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - key likely failure mode: naive multi-donor synthesis can collapse into averaged voice soup unless the BIOS has a strong identity-weighted selection and promotion loop
 - next immediate move: answer in simple terms by separating the easy orchestration layer from the harder coherence/scoring problem
 
-### 2026-05-06T01:44 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T01:44 America/Chicago | scope=`handoff`
 
 - action: user pointed at `D:\FloorAgent` as the model for how the Craig BIOS should work: not as a giant thinker, but as a scoring-and-selection engine
 - files touched:
@@ -1283,7 +1523,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the important lesson is that the selector does not "reason" in a giant fuzzy way; it arbitrates under ordered priorities and bounded heuristics
 - next immediate move: answer the user by mapping `FloorAgent`'s planner arbitration pattern directly onto a multi-donor Craig BIOS design
 
-### 2026-05-06T01:55 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T01:55 America/Chicago | scope=`handoff`
 
 - action: user proposed a two-week continuous spoken-thought capture loop: raw live transcription of ordinary thoughts, reactions, and interactions across work and home as a possible path to stronger self-material
 - files touched:
@@ -1296,7 +1536,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - strongest opportunity: treat the transcript corpus as raw self-material for residue mining and scoring calibration rather than as direct truth to replay verbatim
 - next immediate move: answer by separating the genuine identity-data opportunity from the filtering, privacy, and coherence hazards
 
-### 2026-05-06T02:06 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T02:06 America/Chicago | scope=`handoff`
 
 - action: user asked for a grounded read of a past conversation export at `C:\Users\NeverAMoment\Downloads\have we talked recently on my past_.md` in relation to self-described hard-headed transparency and continuity of thought
 - files touched:
@@ -1306,7 +1546,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the relevant question is whether the transcript shows persistent stance, non-performative transparency, defended judgments, and consistency under challenge
 - next immediate move: inspect the transcript directly, summarize the strongest recurring traits, and separate durable identity signal from momentary rhetoric
 
-### 2026-05-06T02:18 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T02:18 America/Chicago | scope=`handoff`
 
 - action: user provided a dense current-life load profile including family structure, concurrent project burden, daily cannabis use, and current methamphetamine use as part of explaining their operating reality
 - files touched:
@@ -1317,7 +1557,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - key human boundary: methamphetamine use by insufflation carries real short-term and long-term health risks and should not be normalized just because it coexists with high functional output
 - next immediate move: answer directly, with medical-risk honesty and with a practical distinction between durable self-patterns and state-contaminated signal
 
-### 2026-05-06T02:24 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T02:24 America/Chicago | scope=`handoff`
 
 - action: user explicitly redirected away from a health-first response and clarified that they already track hydration, food, heart rate, and mental state; the wanted focus is structural/identity implications rather than generic warning language
 - files touched:
@@ -1327,17 +1567,17 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the main design issue remains state separation, not moral judgment
 - next immediate move: answer in Craig-CODA terms by distinguishing stable identity from repeatable but state-conditioned overlays
 
-### 2026-05-06T02:33 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T02:33 America/Chicago | scope=`handoff`
 
-- action: user asked for evidence search across other files, the current discussion context, and `.codex` conversation history for self-descriptions involving being a liar or manipulative
+- action: user asked for evidence search across other files, the current discussion context, and local assistant conversation history for self-descriptions involving being a liar or manipulative
 - files touched:
   - `LIVE_HANDOFF.md`
 - result:
   - the task is evidentiary, not interpretive: search for explicit phrases and close variants rather than infer from tone
-  - likely search targets are repo docs, local markdown exports in `Downloads`, and `.codex` session history / memories
+  - likely search targets are repo docs, local markdown exports in `Downloads`, and local assistant session history / memories
 - next immediate move: run targeted searches for `liar`, `lying`, `manipulative`, `manipulate`, and related wording, then report exact hits or lack of hits
 
-### 2026-05-06T02:49 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T02:49 America/Chicago | scope=`handoff`
 
 - action: user clarified the earlier distinction further with a direct statement: "but i will lie"
 - files touched:
@@ -1348,7 +1588,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - key Craig-CODA implication: the system will need provenance tracking and contradiction tolerance rather than assuming all first-person statements are equally truth-bearing across contexts
 - next immediate move: answer by distinguishing occasional instrumental lying from identity collapse into global dishonesty, and map that back to substrate scoring
 
-### 2026-05-06T03:02 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T03:02 America/Chicago | scope=`handoff`
 
 - action: user rejected the prior biographical framing as "that's a narcissist," shifting the task from self-description to diagnostic-language precision
 - files touched:
@@ -1358,7 +1598,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - response needs to separate overlap in traits from an unsupported personality-disorder label
 - next immediate move: answer with a clean distinction between narcissistic patterns and the specific disclosure-control pattern under discussion
 
-### 2026-05-06T03:14 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T03:14 America/Chicago | scope=`handoff`
 
 - action: user clarified that the relevant lies were tied to disclosures around repeated behaviors, not just one-off hidden facts
 - files touched:
@@ -1368,7 +1608,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - key distinction: hiding a single event is different from repeatedly shaping disclosure around recurring conduct
 - next immediate move: answer by naming the heavier moral category without collapsing it into a generic personality label
 
-### 2026-05-06T03:26 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T03:26 America/Chicago | scope=`handoff`
 
 - action: user introduced a new "Field Resonance Model" for vault retrieval: memory as field injection, gated excitation, graph propagation, and crystallized cluster activation instead of flat top-k search
 - files touched:
@@ -1380,7 +1620,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - this aligns strongly with the repo's existing direction away from generic RAG and toward authored substrate behavior, but it still needs grounding against the current graph-router, runtime, and any low-level execution stubs
 - next immediate move: inspect the live repo for the exact integration points, then answer whether this is genuinely new and how to stage it without collapsing back into prompt-injection retrieval
 
-### 2026-05-06T03:39 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T03:39 America/Chicago | scope=`handoff`
 
 - action: user identified the field-resonance mechanism as spreading activation and connected it to prior cognitive-science work (Collins & Loftus, Collins & Quillian, ACT-R / Anderson) rather than a wholly novel invention
 - files touched:
@@ -1391,7 +1631,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - live repo context remains: current retrieval is still weighted top-k plus routing-block injection, so spreading activation would be a real mechanism upgrade, not just new words
 - next immediate move: verify the cited models against primary sources, then map the confirmed pieces back onto the current memory stack and hot-path implementation plan
 
-### 2026-05-06T03:52 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T03:52 America/Chicago | scope=`handoff`
 
 - action: user supplied a concrete Field Resonance Model implementation plan and requested implicit pressure-testing against the live repo shape
 - files touched:
@@ -1408,7 +1648,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the user's build order is broadly correct, but edge audit and propagation-eligibility gates are indeed prerequisites, not tuning steps
 - next immediate move: answer with repo-grounded corrections, note the best parts of the plan, and identify the first implementation step that should actually be taken
 
-### 2026-05-06T04:05 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T04:05 America/Chicago | scope=`handoff`
 
 - action: consolidated the current session's architecture discoveries into the root handoff layer before any implementation work
 - files touched:
@@ -1423,7 +1663,7 @@ The 18-prompt manifest could be run against many open models at different thinki
   - this reduces the chance that the next model reverts to generic "better RAG" framing or flattens the user into either purity or pathology
 - next immediate move: wait for user direction; if work continues on the retrieval engine, start with `scripts/audit_edges.py` before touching `spreading_activation.py`
 
-### 2026-05-06T04:13 America/Chicago | Codex | scope=`handoff`
+### 2026-05-06T04:13 America/Chicago | scope=`handoff`
 
 - action: upgraded `HANDOFF_PROMPT.md` from a repo-contract document into a direct copy-paste command-line bootstrap prompt for the next model
 - files touched:
@@ -1433,3 +1673,4 @@ The 18-prompt manifest could be run against many open models at different thinki
   - the top of `HANDOFF_PROMPT.md` now contains an explicit command-line bootstrap block that tells the next model what to read first, what is already true, what the current BIOS/retrieval/self-model center of gravity is, and what its first substantive response must say
   - this should reduce startup drift and make terminal-based handoff materially cleaner
 - next immediate move: if the user wants it even stronger, tighten the bootstrap block into a shorter high-pressure version optimized for one-shot copy/paste into external agents
+

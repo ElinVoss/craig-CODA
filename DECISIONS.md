@@ -11,7 +11,7 @@
 - Keep the trained tiny scratch lane clearly separated from the untrained `craig-coda-0.6b` target config.
 - Model architecture resolves from the vault — `weights/architecture/` holds named profiles; `configs/model_architecture.yaml` is a legacy fallback only.
 - Treat the vault compiler, shared intermediate representation, model adapters, and CODA orchestration layer as the real invariant, not any one open model backend.
-- Use Copilot IDE agent mode as the current internal vaultimization process-mind host.
+- Use the local interactive agent mode as the current internal vaultimization process-mind host.
 - Use Dolphin as the first donor organism and `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B` as the second donor organism.
 - **Decision reversal (2026-05-06):** GPT is now a donor organism (pass 4). The prior decision to keep GPT-5 as external teacher/comparator only is superseded. GPT's API-based outputs will be run against the Craig behavioral reference package and contrasted against prior donor passes.
 - **Decision reversal (2026-05-06):** Gemini (Google closed API) is now a donor organism (pass 3). Prior exclusion decision superseded. Accessed via Perplexity Pro Space.
@@ -26,7 +26,7 @@
 - Root handoff files still need to stay synchronized with the real checkpoint and eval state as the repo changes.
 - Eval quality for the scratch lane is still too weak to support stronger model claims.
 - The craig_target profile has not been trained yet.
-- ~~The Copilot layered process-mind stack still needs to be authored.~~ **Satisfied** — `process_mind/_method.md` + 3 layer notes authored.
+- ~~The layered process-mind stack still needs to be authored.~~ **Satisfied** — `process_mind/_method.md` + 3 layer notes authored.
 - ~~The Dolphin-first vaultization workflow still needs to be defined as a concrete donor pass.~~ **Satisfied** — `vaultization/dolphin/_method.md` authored.
 - ~~The living substrate pulse cell schema needs to be specified.~~ **Satisfied** — `substrate/_method.md` authored with full YAML schema.
 - The Qwen2.5-Omni-7B contrast pass is satisfied by exact-donor outputs collected on a second Windows LM Studio host and imported back into this repo.

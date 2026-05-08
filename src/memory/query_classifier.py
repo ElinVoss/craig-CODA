@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from src.runtime.front_matter_schema import PromptFrontMatter
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from src.runtime.front_matter_schema import PromptFrontMatter
 
 
 def classify_query_profile(query: str, front_matter: PromptFrontMatter | None = None) -> str:

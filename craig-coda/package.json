@@ -1,0 +1,24 @@
+{
+  "name": "coda",
+  "version": "0.1.0",
+  "description": "Audit, consolidate, prune. Then disappear.",
+  "type": "module",
+  "bin": {
+    "coda": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "run:audit": "node src/cli.js audit",
+    "run:plan": "node src/cli.js plan",
+    "run:prune": "node src/cli.js prune",
+    "run:status": "node src/cli.js status",
+    "run:graduation": "node src/cli.js graduation"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "commander": "^12.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

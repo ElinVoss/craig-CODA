@@ -33,17 +33,17 @@ Current architectural center of gravity:
 
 Current retrieval truth:
 
-- retrieval is still flat weighted top-k in src/memory/retrieve_topk.py and src/memory/score_fusion.py
-- graph routing is still converted back into injected text in agent/src/server.ts
-- the active upgrade path is the Field Resonance Model / spreading activation:
+- retrieval now supports a first conservative spreading-activation pass in `src/memory/spreading_activation.py`, selected through `src/memory/retrieve_topk.py`
+- graph routing is still converted back into injected text in agent/src/server.ts and src/runtime/coda.py
+- the active retrieval shape is now:
   1. seed activation
   2. propagate across edges with decay and fan-out caps
   3. select the active subgraph
   4. then translate
 - this is not a cosmetic rename; it changes the computational question from “which nodes score highest” to “which neighborhood becomes coherent”
-- do not build propagation before an edge audit pass
+- a conservative edge audit pass now exists at scripts/audit_edges.py
 - in a field model, missing edges make the system conservative; bad edges make it confidently wrong
-- if implementation begins here, start with scripts/audit_edges.py, then add propagation eligibility on VaultEdge, then a feature-flagged src/memory/spreading_activation.py
+- the next improvement path here is edge-quality tuning and deeper propagation behavior, not reintroducing the old flat-only runtime path
 
 Current self-model boundaries:
 
@@ -80,7 +80,7 @@ If anything in the docs contradicts that, stop and report the contradiction inst
 
 Read every word in this file before doing meaningful work in `D:\craig-CODA`.
 
-This is the canonical startup prompt for any model entering this directory. If you are `Codex`, `Copilot`, or any other model being pointed here for work, you must treat this as the operating contract for how to learn, navigate, and continue the repo.
+This is the canonical startup prompt for any model entering this directory. If you are any assistant or model being pointed here for work, you must treat this as the operating contract for how to learn, navigate, and continue the repo.
 
 ## Your Role Here
 
@@ -142,17 +142,16 @@ Important boundary:
 
 Treat the following near-term path as active unless a fresher baton entry overrides it:
 
-- Copilot IDE agent mode is the chosen internal vaultimization process-mind host
+- the local interactive agent mode is the chosen internal vaultimization process-mind host
 - Dolphin is the first donor organism
 - `D:\.lmstudio\models\lmstudio-community\Qwen2.5-Omni-7B` is the second donor organism
-- GPT-5 is allowed only as an external teacher/comparator
-- Gemini is excluded from the donor architecture
+- the expanded donor queue now includes Gemini (pass 3), GPT (pass 4), Kimi (pass 5), Nemotron (pass 6), LLaMA (pass 7), and a contamination-flagged pass 8 for stricter cross-donor confirmation
 - the first living substrate should be composed of meaning-centered pulse cells with context shell, pulse signature, and bidirectional links
 - when donor overlap is detected, mutation should start immediately
 - compatibility bias is disallowed during that mutation pass
 - preserve purpose only, not inherited mechanism or donor habit
 
-The intended Copilot process-mind shape is layered:
+The intended process-mind shape is layered:
 
 - Layer 1: novelty pressure, immediate mutation, no compatibility bias, preserve purpose only
 - Layer 2: reasoning-trace layer built from the user's pattern rejection, association style, and decision posture
@@ -171,17 +170,17 @@ Treat the following control-shape as the clearest current center unless a freshe
 
 Treat the following retrieval hinge as active unless a fresher baton entry overrides it:
 
-- current retrieval is still flat weighted top-k in `src/memory/retrieve_topk.py` and `src/memory/score_fusion.py`
-- current graph routing is still turned back into injected text in `agent/src/server.ts`
-- the active upgrade path is the Field Resonance Model / spreading activation:
+- current retrieval now supports a first conservative spreading-activation pass in `src/memory/spreading_activation.py`, selected through `src/memory/retrieve_topk.py`
+- current graph routing is still turned back into injected text in `agent/src/server.ts` and `src/runtime/coda.py`
+- the active retrieval shape is now:
   - seed activation
   - propagate across edges with decay and fan-out caps
   - select the active subgraph
   - then translate
 - this is not a cosmetic rename; it changes the computational question from "which nodes score highest" to "which neighborhood becomes coherent"
-- do not implement propagation before an edge audit pass
+- a conservative edge audit pass now exists at `scripts/audit_edges.py`
 - in a field model, missing edges make the system conservative; bad edges make it confidently wrong
-- the first implementation move, if the user wants code, is `scripts/audit_edges.py`, then propagation eligibility on `VaultEdge`, then a feature-flagged `src/memory/spreading_activation.py`
+- the next implementation move here is edge-quality tuning and deeper propagation behavior, not rebuilding the flat-only path
 
 ## Current Self-Model Boundary
 
@@ -306,7 +305,7 @@ Do this in order:
 
 Remain in `handoff` until the user gives or confirms a narrower branch.
 When the user's intent touches CODA identity, vault population, multi-model compilation, heartbeat structure, or Craig awakening, keep this long-range objective in working memory while routing the nearer-term task.
-When the user's intent touches donor vaultization, Copilot process-mind design, or living substrate invention, keep the current vaultization direction in working memory while routing the nearer-term task.
+When the user's intent touches donor vaultization, process-mind design, or living substrate invention, keep the current vaultization direction in working memory while routing the nearer-term task.
 
 ## What Not To Do
 

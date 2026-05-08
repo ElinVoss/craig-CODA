@@ -25,6 +25,31 @@
 
 backends:
 
+  # ── Remote server (LM Studio at 192.168.4.25:1234) ─────────────────────────
+  # Primary inference path. Requires the server to be reachable over Ethernet.
+  # The adapter probes /v1/models before every call; offline mode activates
+  # automatically if the cable is unplugged. Model name is sent in the request
+  # but LM Studio uses whichever model is currently loaded.
+  - backend_name: lmstudio:qwen2.5-7b-instruct
+    enabled: true
+    backend_type: lmstudio
+    model_family: qwen2.5
+    model_id_or_local_path: "http://192.168.4.25:1234/v1"
+    quant_format: Q4_K_M
+    device_preference: remote-gpu
+    dtype_preference: null
+    max_context_length: 32768
+    generation_defaults:
+      temperature: 0.7
+      top_p: 0.9
+      repetition_penalty: 1.1
+      max_new_tokens: 512
+    role: production
+    notes: >
+      Qwen 2.5 7B hosted on the server GPU via LM Studio OpenAI-compatible API.
+      This is the primary remote inference path. Falls back gracefully to offline
+      mode (no inference) if server unreachable. Adapter: src/adapters/lmstudio_adapter.py.
+
   - backend_name: qwen2.5-omni-7b-text
     enabled: false
     backend_type: qwen2_5_omni

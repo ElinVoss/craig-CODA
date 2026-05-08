@@ -65,10 +65,10 @@
   - `src/adapters/ollama_adapter.py`
   - `src/adapters/anthropic_adapter.py`
   - `src/adapters/local_backend_adapter.py`
-- `src/runtime/coda.py` is wired to the adapter registry:
-  - `CodaRuntime._bootstrap_adapter()` registers an adapter on init
-  - `CodaRuntime.chat()` builds `CodaRequest` and routes through `adapter.stream()`
-  - prior retrieval, streaming, history, and resonance behavior were preserved
+- `src/runtime/coda.py` now uses the richer runtime planning path and the vault graph retrieval lane:
+  - `CodaRuntime._bootstrap_adapter()` registers canonical `ollama`, `local`, or `anthropic` targets on init
+  - `CodaRuntime._plan_turn()` classifies the prompt, builds the response plan, optionally retrieves vault-graph memory, derives graph routing, compiles the mode prompt, and records runtime provenance into `CodaRequest.vault_directives`
+  - `CodaRuntime.chat()` routes the planned request through `adapter.stream()` while preserving history and reinforcing retrieved graph nodes for later retrieval weighting
 - the richer runtime package exists under `src/runtime/`:
   - front matter builder and classifier
   - response plan builder
@@ -80,10 +80,11 @@
 
 - the vault graph path exists under `src/memory/`
 - conversation transcript extraction is treated specially
-- retrieval supports lexical fallback and embedding-based semantic retrieval
+- retrieval supports lexical fallback, embedding-based semantic retrieval, and a first conservative spreading-activation pass through `src/memory/spreading_activation.py`
 - the graph router exists:
   - `src/memory/graph_router.py`
   - graph structure now derives a routing block with posture, response mode, coverage, and blocked-layer behavior
+- `scripts/audit_edges.py` now audits effective propagation eligibility across the live graph before deeper propagation tuning
 - async indexing exists:
   - `src/memory/async_indexer.py`
   - `scripts/run_async_indexer.py`
@@ -118,7 +119,7 @@
 
 ### Donor, vaultization, and substrate lane
 
-- the Copilot process-mind stack is authored under `exports/user_model_package/method_vault/process_mind/`
+- the process-mind stack is authored under `exports/user_model_package/method_vault/process_mind/`
 - the vaultization contract is authored under `exports/user_model_package/method_vault/vaultization/`
 - the living substrate pulse-cell schema is authored under `exports/user_model_package/method_vault/substrate/_method.md`
 - the first pulse-winner policy is written in `substrate/pulse_winner_policy.md`
@@ -127,7 +128,8 @@
 - the exact-donor Qwen2.5-Omni-7B contrast pass exists under `vaultization/qwen2_5_omni_7b/`
 - the standalone host-kit repo used for second-machine exact-donor collection exists under `vaultization/qwen2_5_omni_7b/host_kit_repo/`
 - the Craig behavioral reference package is now imported under `vaultization/craig_behavioral_reference/` — 7 behavioral categories, 80 prompts each (560 total), 50 assertions each (350 total), plus 10 core rules; this is the shared stimulus source for all new donor passes
-- five new donor vaultization passes are scaffolded: Gemma (pass 3), GPT (pass 4, decision reversal), Kimi (pass 5), Nemotron (pass 6), LLaMA (pass 7) — each has a `_method.md` under `vaultization/{donor}/`
+- five new donor vaultization passes are scaffolded: Gemini (pass 3), GPT (pass 4, decision reversal), Kimi (pass 5), Nemotron (pass 6), LLaMA (pass 7) — each has a `_method.md` under `vaultization/{donor}/`
+- an additional contamination-flagged donor pass (pass 8) now exists in the vaultization lane; category A is already imported and carries a stricter contamination flag for Layer 2 evaluation
 
 ## What Is Also Present
 

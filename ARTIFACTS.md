@@ -64,7 +64,7 @@
 - `exports/user_model_package/method_vault/process_mind/layer3/_method.md`
 - `exports/user_model_package/method_vault/coda/_method.md`
 - `exports/user_model_package/method_vault/vaultization/craig_behavioral_reference/` — shared Craig behavioral stimulus package (7 categories, 560 prompts, 350 assertions, 10 core rules); used as the input source for all new donor passes
-- `exports/user_model_package/method_vault/vaultization/gemma/_method.md`
+- `exports/user_model_package/method_vault/vaultization/gemini/_method.md`
 - `exports/user_model_package/method_vault/vaultization/gpt/_method.md`
 - `exports/user_model_package/method_vault/vaultization/kimi/_method.md`
 - `exports/user_model_package/method_vault/vaultization/nemotron/_method.md`

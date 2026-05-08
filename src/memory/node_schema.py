@@ -3,6 +3,35 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from typing import Optional
 
+_GENERIC_SHARED_TAGS = {
+    "chatgpt",
+    "constraints",
+    "conversations",
+    "examples",
+    "identity",
+    "runtime",
+    "stable",
+    "style",
+    "transcript",
+    "vault_seed",
+}
+
+
+def _shared_tag_from_rationale(rationale: str) -> str:
+    prefix = "shared tag:"
+    lowered = rationale.lower().strip()
+    if not lowered.startswith(prefix):
+        return ""
+    return lowered.split(":", 1)[1].strip()
+
+
+def default_propagation_eligible(edge_type: str, rationale: str = "") -> bool:
+    """Conservative default for older edge artifacts that lack the flag."""
+    if edge_type == "shared_tag":
+        tag = _shared_tag_from_rationale(rationale)
+        return bool(tag) and tag not in _GENERIC_SHARED_TAGS
+    return edge_type in {"shared_project", "shared_link", "shared_tag"}
+
 
 @dataclass
 class NodeProvenance:
@@ -72,10 +101,19 @@ class VaultEdge:
     edge_type: str
     weight: float
     rationale: str
+    propagation_eligible: bool = False
 
     def to_dict(self) -> dict:
         return asdict(self)
 
     @classmethod
     def from_dict(cls, value: dict) -> "VaultEdge":
+        if "propagation_eligible" not in value:
+            value = {
+                **value,
+                "propagation_eligible": default_propagation_eligible(
+                    value.get("edge_type", ""),
+                    value.get("rationale", ""),
+                ),
+            }
         return cls(**value)

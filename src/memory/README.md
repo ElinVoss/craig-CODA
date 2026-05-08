@@ -22,6 +22,7 @@ It is where source material becomes nodes, nodes become indexed graph state, gra
 - `index_voice.py`
 - `index_reinforcement.py`
 - `retrieve_topk.py`
+- `spreading_activation.py`
 - `score_fusion.py`
 - `query_classifier.py`
 - `update_reinforcement.py`
@@ -32,11 +33,12 @@ It is where source material becomes nodes, nodes become indexed graph state, gra
 - `async_indexer.py`
 - `gguf_mining.py`
 - `consolidate_memories.py`
+- `../../scripts/audit_edges.py`
 
 ## Current State
 
 - conversation transcript extraction is now a first-class path, not generic chunking
-- retrieval supports both lexical fallback and embedding-backed semantic search
+- retrieval supports lexical fallback, embedding-backed semantic search, and a first conservative spreading-activation path through `retrieve_topk.py`
 - trust layers are first-class and are not decorative metadata
 - `graph_router.py` derives a per-turn routing contract from the retrieved subgraph:
   - response mode
@@ -44,6 +46,7 @@ It is where source material becomes nodes, nodes become indexed graph state, gra
   - trust ceiling
   - blocked-layer behavior
   - edge-cluster visibility
+- `spreading_activation.py` now seeds from direct retrieval scores, propagates only across conservative eligible edges, and stays behind the existing `retrieve_nodes()` entry point
 - `async_indexer.py` writes embedding sidecars without mutating the main node file
 - `gguf_mining.py` can emit heuristic capability-seed nodes from a GGUF file
 
