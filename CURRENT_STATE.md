@@ -105,7 +105,7 @@
 - `agent/src/craig-local.ts` defines the local OpenAI-compatible variant
 - `agent/src/cli.ts` provides the terminal loop
 - `scripts/setup_server_host.py` now stages the remote GPU server workspace:
-  - copies the existing Qwen other-machine host kit
+  - copies the existing Qwen other-machine host kit when that optional bundle is present
   - writes `.env.server` plus `client_connection.env`
   - creates `awaken_payload/` for later bootstrap delivery
   - emits `bootstrap_report.json` with LM Studio detection and probe status

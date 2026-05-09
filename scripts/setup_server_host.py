@@ -229,6 +229,22 @@ def _awaken_readme_text() -> str:
     )
 
 
+def _host_kit_placeholder_text(source: Path) -> str:
+    return "\n".join(
+        [
+            "QWEN HOST KIT NOT BUNDLED",
+            "",
+            "This GitHub clone does not include the optional exact-donor host kit bundle.",
+            "The server workspace can still run as the remote LM Studio host without it.",
+            "",
+            f"Expected source path: {source}",
+            "",
+            "Only copy the host kit here later if you need the exact donor manifest run.",
+            "",
+        ]
+    )
+
+
 def _probe_bat_text(local_url: str) -> str:
     return "\n".join(
         [
@@ -242,7 +258,14 @@ def _probe_bat_text(local_url: str) -> str:
     )
 
 
-def _pending_actions(lmstudio_exe: Path | None, probe_ok: bool, models: list[str]) -> list[str]:
+def _pending_actions(
+    lmstudio_exe: Path | None,
+    probe_ok: bool,
+    models: list[str],
+    *,
+    host_kit_requested: bool,
+    host_kit_source_exists: bool,
+) -> list[str]:
     pending: list[str] = []
     if lmstudio_exe is None:
         pending.append("Install LM Studio on the server machine.")
@@ -250,6 +273,8 @@ def _pending_actions(lmstudio_exe: Path | None, probe_ok: bool, models: list[str
         pending.append("Start the LM Studio local server and make sure it listens on the configured port.")
     if probe_ok and not models:
         pending.append("Load the target model in LM Studio before handing the server to the client.")
+    if host_kit_requested and not host_kit_source_exists:
+        pending.append("Optional Qwen host kit bundle was not present in this GitHub clone; copy it later only if you need the exact-donor manifest run.")
     pending.append("Copy client_connection.env to the main machine and mirror the values into its .env.")
     pending.append("Keep future awakening payloads under awaken_payload once that flow is implemented.")
     return pending
@@ -280,10 +305,15 @@ def stage_server_host(
     for path in (dest, awaken_dir, tools_dir, logs_dir):
         path.mkdir(parents=True, exist_ok=True)
 
+    host_kit_source_exists = HOST_KIT_SOURCE.exists()
+    host_kit_staged = False
     if copy_host_kit:
-        if not HOST_KIT_SOURCE.exists():
-            raise FileNotFoundError(f"Host kit source not found: {HOST_KIT_SOURCE}")
-        _copytree(HOST_KIT_SOURCE, host_kit_dir)
+        host_kit_dir.mkdir(parents=True, exist_ok=True)
+        if host_kit_source_exists:
+            _copytree(HOST_KIT_SOURCE, host_kit_dir)
+            host_kit_staged = True
+        else:
+            _write_text(host_kit_dir / "README.txt", _host_kit_placeholder_text(HOST_KIT_SOURCE))
 
     if PROBE_SOURCE.exists():
         shutil.copy2(PROBE_SOURCE, tools_dir / "probe_server.py")
@@ -335,7 +365,19 @@ def stage_server_host(
             "client_connection_env": str(dest / "client_connection.env"),
             "server_env": str(dest / ".env.server"),
         },
-        "pending_actions": _pending_actions(detected_lmstudio, probe_ok, models),
+        "host_kit": {
+            "requested": copy_host_kit,
+            "source_exists": host_kit_source_exists,
+            "staged": host_kit_staged,
+            "source_path": str(HOST_KIT_SOURCE),
+        },
+        "pending_actions": _pending_actions(
+            detected_lmstudio,
+            probe_ok,
+            models,
+            host_kit_requested=copy_host_kit,
+            host_kit_source_exists=host_kit_source_exists,
+        ),
     }
     _write_text(dest / "bootstrap_report.json", json.dumps(report, indent=2, ensure_ascii=False))
     return report

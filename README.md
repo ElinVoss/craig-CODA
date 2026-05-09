@@ -289,6 +289,8 @@ npm run dev
 python .\scripts\setup_server_host.py --dest C:\CODA-SERVER --skip-probe
 ```
 
+The helper will stage a normal GitHub clone even if the optional Qwen exact-donor host kit bundle is not present locally.
+
 ## Master Index
 
 For the exhaustive current-state map, read `MASTER_INDEX.md`.
