@@ -55,6 +55,7 @@ If something gets imported, normalized, built, trained, inspected, compared, or 
 - `test_front_matter.py`
 - `monitor_training.py`
 - `run_qwen_manifest_openai_compat.py`
+- `setup_server_host.py`
 
 ## Current State
 
@@ -62,6 +63,7 @@ If something gets imported, normalized, built, trained, inspected, compared, or 
 - the graph-memory query bridge is real and is consumed by the local agent server
 - async indexing and GGUF mining are both present and no longer just conceptual notes
 - handoff-system validation also lives here, because continuity is treated as executable contract rather than prose only
+- a Windows-friendly server bootstrap helper now stages the GPU host workspace, copies the proven Qwen host kit, and emits client/server env files plus an awakening drop area
 
 ## Continue From Here
 

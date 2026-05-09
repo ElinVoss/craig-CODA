@@ -283,6 +283,12 @@ npm install
 npm run dev
 ```
 
+### Remote server host prep
+
+```powershell
+python .\scripts\setup_server_host.py --dest C:\CODA-SERVER --skip-probe
+```
+
 ## Master Index
 
 For the exhaustive current-state map, read `MASTER_INDEX.md`.

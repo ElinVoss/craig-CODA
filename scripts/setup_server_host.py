@@ -1,0 +1,386 @@
+"""setup_server_host.py - prepare the GPU server machine workspace.
+
+This script does not pretend it can silently install every desktop dependency.
+It stages everything Craig-CODA controls on the server machine, probes the
+local LM Studio server if it is already running, and records the exact manual
+steps that still remain.
+
+What it prepares:
+  - a dedicated server workspace root
+  - a copied Qwen host kit for exact-donor runs
+  - local server env/config files
+  - a client-connection env snippet for the main machine
+  - an awaken_payload/ drop area for later bootstrap delivery
+  - a machine-readable bootstrap_report.json
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import platform
+import shutil
+import socket
+import sys
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlparse
+from urllib.request import Request, urlopen
+
+
+ROOT = Path(__file__).resolve().parents[1]
+HOST_KIT_SOURCE = (
+    ROOT
+    / "exports"
+    / "user_model_package"
+    / "method_vault"
+    / "vaultization"
+    / "qwen2_5_omni_7b"
+    / "host_kit_repo"
+)
+PROBE_SOURCE = ROOT / "scripts" / "probe_server.py"
+
+DEFAULT_DEST = Path(r"C:\CODA-SERVER")
+DEFAULT_LOCAL_URL = "http://127.0.0.1:1234"
+DEFAULT_API_KEY = "lm-studio"
+DEFAULT_MODEL_LABEL = "Qwen2.5-Omni-7B"
+
+
+def _timestamp() -> str:
+    return datetime.now().isoformat(timespec="seconds")
+
+
+def _normalize_base_url(url: str) -> str:
+    return url.rstrip("/")
+
+
+def _with_v1(url: str) -> str:
+    base = _normalize_base_url(url)
+    return base if base.endswith("/v1") else f"{base}/v1"
+
+
+def _port_from_url(url: str, default: int = 1234) -> int:
+    parsed = urlparse(_with_v1(url))
+    return parsed.port or default
+
+
+def _private_ipv4_candidates() -> list[str]:
+    candidates: set[str] = set()
+    hostnames = [socket.gethostname(), socket.getfqdn()]
+    for host in hostnames:
+        try:
+            for family, _, _, _, sockaddr in socket.getaddrinfo(host, None, socket.AF_INET):
+                if family != socket.AF_INET:
+                    continue
+                ip = sockaddr[0]
+                if ip and not ip.startswith("127."):
+                    candidates.add(ip)
+        except socket.gaierror:
+            continue
+    return sorted(candidates)
+
+
+def _pick_advertised_host(explicit_host: str | None) -> str:
+    if explicit_host:
+        return explicit_host
+    candidates = _private_ipv4_candidates()
+    if candidates:
+        return candidates[0]
+    return socket.gethostname()
+
+
+def _candidate_lmstudio_paths() -> list[Path]:
+    local_appdata = os.environ.get("LOCALAPPDATA", "")
+    program_files = os.environ.get("ProgramFiles", r"C:\Program Files")
+    user_profile = os.environ.get("USERPROFILE", "")
+    candidates = [
+        Path(local_appdata) / "Programs" / "LM Studio" / "LM Studio.exe",
+        Path(program_files) / "LM Studio" / "LM Studio.exe",
+        Path(user_profile) / "AppData" / "Local" / "Programs" / "LM Studio" / "LM Studio.exe",
+    ]
+    return [path for path in candidates if str(path)]
+
+
+def detect_lmstudio_exe(explicit_path: str | None = None) -> Path | None:
+    if explicit_path:
+        path = Path(explicit_path)
+        return path if path.exists() else None
+    for candidate in _candidate_lmstudio_paths():
+        if candidate.exists():
+            return candidate
+    return None
+
+
+def probe_local_server(base_url: str, api_key: str, timeout: int = 3) -> tuple[bool, str, list[str]]:
+    url = _with_v1(base_url) + "/models"
+    req = Request(url, headers={"Authorization": f"Bearer {api_key}"})
+    try:
+        with urlopen(req, timeout=timeout) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+        models = [str(item.get("id")) for item in payload.get("data", []) if item.get("id")]
+        if models:
+            return True, f"OK - models: {', '.join(models)}", models
+        return True, "OK - server reachable but no models are loaded", []
+    except HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        return False, f"HTTP {exc.code}: {body}", []
+    except URLError as exc:
+        return False, f"Could not reach server: {exc.reason}", []
+    except Exception as exc:  # pragma: no cover - defensive fallback
+        return False, str(exc), []
+
+
+def _copytree(src: Path, dest: Path) -> None:
+    shutil.copytree(src, dest, dirs_exist_ok=True)
+
+
+def _write_text(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+
+def _server_env_text(
+    local_url: str,
+    advertised_url: str,
+    api_key: str,
+    awaken_dir: Path,
+    host_kit_dir: Path,
+    model_label: str,
+) -> str:
+    return "\n".join(
+        [
+            f"# Generated by scripts/setup_server_host.py at {_timestamp()}",
+            "SERVER_ROLE=remote_gpu_server",
+            f"LMSTUDIO_SERVER={_normalize_base_url(local_url)}",
+            f"LOCAL_MODEL_URL={_with_v1(local_url)}",
+            f"LOCAL_MODEL_API_KEY={api_key}",
+            f"LMSTUDIO_ADVERTISED_URL={_normalize_base_url(advertised_url)}",
+            f"SERVER_MODEL_LABEL={model_label}",
+            f"AWAKEN_PAYLOAD_DIR={awaken_dir}",
+            f"QWEN_HOST_KIT_DIR={host_kit_dir}",
+            "",
+        ]
+    )
+
+
+def _client_env_text(advertised_url: str, api_key: str) -> str:
+    return "\n".join(
+        [
+            f"# Generated by scripts/setup_server_host.py at {_timestamp()}",
+            "CRAIG_BACKEND=local",
+            f"LMSTUDIO_SERVER={_normalize_base_url(advertised_url)}",
+            f"LOCAL_MODEL_URL={_with_v1(advertised_url)}",
+            f"LOCAL_MODEL_API_KEY={api_key}",
+            "",
+        ]
+    )
+
+
+def _start_here_text(
+    dest: Path,
+    lmstudio_exe: Path | None,
+    local_url: str,
+    advertised_url: str,
+    model_label: str,
+) -> str:
+    lmstudio_line = str(lmstudio_exe) if lmstudio_exe is not None else "LM Studio not detected yet"
+    return "\n".join(
+        [
+            "CRAIG-CODA SERVER START HERE",
+            "",
+            "This workspace was generated for the GPU server machine.",
+            "",
+            "What is already staged:",
+            f"- server workspace root: {dest}",
+            f"- local LM Studio URL: {_normalize_base_url(local_url)}",
+            f"- client-visible LM Studio URL: {_normalize_base_url(advertised_url)}",
+            f"- target donor/model label: {model_label}",
+            f"- detected LM Studio path: {lmstudio_line}",
+            "",
+            "What to do next:",
+            "1. Install LM Studio if it is not already installed.",
+            "2. Load the target model in LM Studio.",
+            "3. Start the LM Studio local server.",
+            "4. Double-click probe_local_server.bat to verify the server sees the model.",
+            "5. If you need the exact-donor run, open qwen-host-kit and run run_qwen_manifest.bat.",
+            "6. Give client_connection.env to the main machine so it can talk to this server.",
+            "",
+            "Future awakening path:",
+            "- drop later push/pull payloads under awaken_payload\\",
+            "- the client bootstrap can fetch from that location after first contact",
+            "",
+        ]
+    )
+
+
+def _awaken_readme_text() -> str:
+    return "\n".join(
+        [
+            "AWAKEN PAYLOAD DROP AREA",
+            "",
+            "Later server-to-client awakening payloads can be staged here.",
+            "Keep the payload shape explicit and versioned.",
+            "Do not treat this directory as live state until a client-side",
+            "bootstrap/apply step exists to consume it.",
+            "",
+        ]
+    )
+
+
+def _probe_bat_text(local_url: str) -> str:
+    return "\n".join(
+        [
+            "@echo off",
+            "setlocal",
+            "python tools\\probe_server.py --url " + _normalize_base_url(local_url),
+            "echo.",
+            "pause",
+            "",
+        ]
+    )
+
+
+def _pending_actions(lmstudio_exe: Path | None, probe_ok: bool, models: list[str]) -> list[str]:
+    pending: list[str] = []
+    if lmstudio_exe is None:
+        pending.append("Install LM Studio on the server machine.")
+    if not probe_ok:
+        pending.append("Start the LM Studio local server and make sure it listens on the configured port.")
+    if probe_ok and not models:
+        pending.append("Load the target model in LM Studio before handing the server to the client.")
+    pending.append("Copy client_connection.env to the main machine and mirror the values into its .env.")
+    pending.append("Keep future awakening payloads under awaken_payload once that flow is implemented.")
+    return pending
+
+
+def stage_server_host(
+    dest: Path,
+    local_url: str = DEFAULT_LOCAL_URL,
+    advertise_host: str | None = None,
+    api_key: str = DEFAULT_API_KEY,
+    model_label: str = DEFAULT_MODEL_LABEL,
+    probe: bool = True,
+    timeout: int = 3,
+    lmstudio_exe: str | None = None,
+    copy_host_kit: bool = True,
+) -> dict[str, Any]:
+    dest = dest.resolve()
+    advertised_host = _pick_advertised_host(advertise_host)
+    local_url = _normalize_base_url(local_url)
+    advertised_url = f"http://{advertised_host}:{_port_from_url(local_url)}"
+    detected_lmstudio = detect_lmstudio_exe(lmstudio_exe)
+
+    awaken_dir = dest / "awaken_payload"
+    host_kit_dir = dest / "qwen-host-kit"
+    tools_dir = dest / "tools"
+    logs_dir = dest / "logs"
+
+    for path in (dest, awaken_dir, tools_dir, logs_dir):
+        path.mkdir(parents=True, exist_ok=True)
+
+    if copy_host_kit:
+        if not HOST_KIT_SOURCE.exists():
+            raise FileNotFoundError(f"Host kit source not found: {HOST_KIT_SOURCE}")
+        _copytree(HOST_KIT_SOURCE, host_kit_dir)
+
+    if PROBE_SOURCE.exists():
+        shutil.copy2(PROBE_SOURCE, tools_dir / "probe_server.py")
+
+    _write_text(
+        dest / ".env.server",
+        _server_env_text(
+            local_url=local_url,
+            advertised_url=advertised_url,
+            api_key=api_key,
+            awaken_dir=awaken_dir,
+            host_kit_dir=host_kit_dir,
+            model_label=model_label,
+        ),
+    )
+    _write_text(dest / "client_connection.env", _client_env_text(advertised_url=advertised_url, api_key=api_key))
+    _write_text(dest / "START-SERVER-HOST.txt", _start_here_text(dest, detected_lmstudio, local_url, advertised_url, model_label))
+    _write_text(awaken_dir / "README.txt", _awaken_readme_text())
+    _write_text(dest / "probe_local_server.bat", _probe_bat_text(local_url))
+
+    probe_ok = False
+    probe_message = "probe skipped"
+    models: list[str] = []
+    if probe:
+        probe_ok, probe_message, models = probe_local_server(local_url, api_key, timeout=timeout)
+
+    report = {
+        "generated_at": _timestamp(),
+        "workspace_root": str(dest),
+        "python": {
+            "executable": sys.executable,
+            "version": platform.python_version(),
+        },
+        "network": {
+            "local_url": local_url,
+            "advertised_url": advertised_url,
+            "private_ipv4_candidates": _private_ipv4_candidates(),
+        },
+        "lmstudio": {
+            "detected_exe": str(detected_lmstudio) if detected_lmstudio is not None else None,
+            "probe_ran": probe,
+            "probe_ok": probe_ok,
+            "probe_message": probe_message,
+            "models": models,
+        },
+        "paths": {
+            "host_kit_dir": str(host_kit_dir),
+            "awaken_payload_dir": str(awaken_dir),
+            "client_connection_env": str(dest / "client_connection.env"),
+            "server_env": str(dest / ".env.server"),
+        },
+        "pending_actions": _pending_actions(detected_lmstudio, probe_ok, models),
+    }
+    _write_text(dest / "bootstrap_report.json", json.dumps(report, indent=2, ensure_ascii=False))
+    return report
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Stage the Craig-CODA GPU server workspace on a Windows host.")
+    parser.add_argument("--dest", default=str(DEFAULT_DEST), help="Destination workspace root (default: C:\\CODA-SERVER)")
+    parser.add_argument("--local-url", default=DEFAULT_LOCAL_URL, help="Local LM Studio base URL on the server machine")
+    parser.add_argument("--advertise-host", default=None, help="LAN host/IP clients should use; auto-detected if omitted")
+    parser.add_argument("--api-key", default=DEFAULT_API_KEY, help="API key expected by the local OpenAI-compatible server")
+    parser.add_argument("--model-label", default=DEFAULT_MODEL_LABEL, help="Human label for the target server model")
+    parser.add_argument("--timeout", type=int, default=3, help="Probe timeout in seconds")
+    parser.add_argument("--lmstudio-exe", default=None, help="Exact LM Studio executable path if you want to override detection")
+    parser.add_argument("--skip-probe", action="store_true", help="Do not probe the local LM Studio server during setup")
+    parser.add_argument("--skip-host-kit", action="store_true", help="Do not copy the bundled Qwen host kit into the workspace")
+    args = parser.parse_args()
+
+    report = stage_server_host(
+        dest=Path(args.dest),
+        local_url=args.local_url,
+        advertise_host=args.advertise_host,
+        api_key=args.api_key,
+        model_label=args.model_label,
+        probe=not args.skip_probe,
+        timeout=args.timeout,
+        lmstudio_exe=args.lmstudio_exe,
+        copy_host_kit=not args.skip_host_kit,
+    )
+
+    print("")
+    print("Craig-CODA server workspace prepared")
+    print(f"  Root            : {report['workspace_root']}")
+    print(f"  Local server    : {report['network']['local_url']}")
+    print(f"  Client URL      : {report['network']['advertised_url']}")
+    print(f"  LM Studio       : {report['lmstudio']['detected_exe'] or 'NOT DETECTED'}")
+    print(f"  Probe           : {'ONLINE' if report['lmstudio']['probe_ok'] else 'PENDING'}  {report['lmstudio']['probe_message']}")
+    print(f"  Report          : {Path(report['workspace_root']) / 'bootstrap_report.json'}")
+    print("")
+    print("Pending actions:")
+    for item in report["pending_actions"]:
+        print(f"  - {item}")
+    print("")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

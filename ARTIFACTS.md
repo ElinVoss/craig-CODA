@@ -91,8 +91,10 @@
 - `src/memory/async_indexer.py`
 - `src/memory/gguf_mining.py`
 - `src/memory/graph_router.py`
+- `scripts/setup_server_host.py`
 - `tests/test_qwen2_5_omni_backend.py`
 - `tests/test_coda_ir.py`
 - `tests/test_coda_wiring.py`
+- `tests/test_setup_server_host.py`
 - `tests/test_l1_routing.py`
 - `tests/test_scope_map.py`

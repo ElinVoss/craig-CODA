@@ -104,6 +104,11 @@
 - `agent/src/craig.ts` defines the OpenAI-backed agent contract and tools
 - `agent/src/craig-local.ts` defines the local OpenAI-compatible variant
 - `agent/src/cli.ts` provides the terminal loop
+- `scripts/setup_server_host.py` now stages the remote GPU server workspace:
+  - copies the existing Qwen other-machine host kit
+  - writes `.env.server` plus `client_connection.env`
+  - creates `awaken_payload/` for later bootstrap delivery
+  - emits `bootstrap_report.json` with LM Studio detection and probe status
 - the frontend exists under `frontend/`, but remains a minimal chat-oriented browser surface rather than the main continuity layer
 
 ### Training and backend lanes
